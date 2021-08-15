@@ -2,9 +2,12 @@
 # Reference: https://intellij-support.jetbrains.com/hc/en-us/articles/206544839
 
 # User-specific stuff
+.idea/**
 .idea/**/workspace.xml
+.idea/**/.name
 .idea/**/tasks.xml
 .idea/**/vcs.xml
+.idea/**/misc.xml
 .idea/**/usage.statistics.xml
 .idea/**/dictionaries
 .idea/**/shelf
