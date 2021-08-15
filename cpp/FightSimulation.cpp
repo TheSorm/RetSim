@@ -23,15 +23,15 @@ double FightSimulation::run() {
         if (!eventQueue.empty() && eventQueue.top()->timeUntil() < (player.timeOfNextSwing() - time)) {
             std::shared_ptr<Event> currentEvent = eventQueue.top();
             eventQueue.pop();
-            std::cout << time << ": Event: " << currentEvent->toString() << std::endl;
 
             std::vector<std::shared_ptr<Event>> resultingEvents;
+            time += currentEvent->timeUntil();
             damage += currentEvent->execute(resultingEvents, &time);
             for (auto const &resultingEvent: resultingEvents) {
                 eventQueue.push(resultingEvent);
             }
 
-            time += currentEvent->timeUntil();
+            std::cout << time << ": Event: " << currentEvent->toString() << std::endl;
         } else {
             time += player.timeOfNextSwing() - time;
 

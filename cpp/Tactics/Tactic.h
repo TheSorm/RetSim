@@ -6,6 +6,6 @@
 
 class Tactic {
 public:
-    virtual std::unique_ptr<Event> getActionBetween(int* time, int timeWindowEnd, Player& player) = 0;
+    virtual std::unique_ptr<Event> getActionBetween(int *time, int timeWindowEnd, Player &player) = 0;
 };
 

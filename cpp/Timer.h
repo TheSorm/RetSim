@@ -3,10 +3,11 @@
 
 class Timer {
 public:
-    Timer(int* time, int timeUntilExpiration);
+    Timer(int *time, int timeUntilExpiration);
+
     int timeLeft();
 
 private:
-    int* time;
+    int *time;
     int expirationTime;
 };

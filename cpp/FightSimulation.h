@@ -8,6 +8,7 @@
 class FightSimulation {
 public:
     FightSimulation(Player player, Enemy enemy, std::shared_ptr<Tactic> tactic, int fightDuration);
+
     double run();
 
 private:

@@ -5,6 +5,8 @@ Player::Player() {
     spellIdToFunction.emplace(35395, [](Player &player) { return player.castCrusaderStrike(); });
 
     spellIdToCooldownState.emplace(35395, false);
+
+    spellIdToCooldown.emplace(35395, 6 * 1000);
 }
 
 int Player::timeOfNextSwing() {
@@ -30,6 +32,14 @@ bool Player::isOnCooldown(int spellId) {
 int Player::castCrusaderStrike() {
     spellIdToCooldownState[35395] = true;
     return 1212;
+}
+
+void Player::finishCooldownOf(int spellId) {
+    spellIdToCooldownState[spellId] = false;
+}
+
+int Player::getSpellCooldown(int spellId) {
+    return spellIdToCooldown[spellId];
 }
 
 

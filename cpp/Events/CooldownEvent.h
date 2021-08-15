@@ -1,10 +1,11 @@
 #pragma once
 
+
 #include "Event.h"
 
-class CastEvent : public Event {
+class CooldownEvent : public Event {
 public:
-    explicit CastEvent(Timer eventTimer, Player &player, int spellID);
+    CooldownEvent(Timer eventTimer, Player &player, int spellID);
 
     int timeUntil() override;
 

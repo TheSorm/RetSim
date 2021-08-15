@@ -1,20 +1,22 @@
 #include "CastEvent.h"
+#include "CooldownEvent.h"
 #include <iostream>
 
-CastEvent::CastEvent(Timer eventTimer, Player& player, int spellID) : Event(eventTimer, player), spellID{spellID}{
+CastEvent::CastEvent(Timer eventTimer, Player &player, int spellID) : Event(eventTimer, player), spellId{spellID} {
 }
 
 int CastEvent::timeUntil() {
     return eventTimer.timeLeft();
 }
 
-int CastEvent::execute(std::vector<std::shared_ptr<Event>>& resultingEvents, int* time) {
-    //resultingEvents.emplace_back(std::make_unique<CastEvent>(Timer(time, 12 * 1000), player, 99));
-    return player->cast(spellID);
+int CastEvent::execute(std::vector<std::shared_ptr<Event>> &resultingEvents, int *time) {
+    resultingEvents.emplace_back(
+            std::make_unique<CooldownEvent>(Timer(time, player->getSpellCooldown(spellId)), *player, spellId));
+    return player->cast(spellId);
 }
 
 std::string CastEvent::toString() {
-    return "Cast spell: " + std::to_string(spellID);
+    return "Cast spell: " + std::to_string(spellId);
 }
 
 
