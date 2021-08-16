@@ -18,6 +18,8 @@ public:
 
     void finishCooldownOf(int spellId);
 
+    void removeAura(int auraId);
+
     int getSpellCooldown(int spellId);
 
 private:
@@ -26,6 +28,7 @@ private:
     int timeOfLastSwing = 0;
     std::unordered_map<int, std::function<int(Player &player)>> spellIdToFunction;
     std::unordered_map<int, bool> spellIdToCooldownState;
+    std::unordered_map<int, bool> auraIdToAuraSate;
     std::unordered_map<int, int> spellIdToCooldown;
 
 };

@@ -5,6 +5,7 @@ Player::Player() {
     spellIdToFunction.emplace(35395, [](Player &player) { return player.castCrusaderStrike(); });
 
     spellIdToCooldownState.emplace(35395, false);
+    auraIdToAuraSate.emplace(33807, false);
 
     spellIdToCooldown.emplace(35395, 6 * 1000);
 }
@@ -38,8 +39,13 @@ void Player::finishCooldownOf(int spellId) {
     spellIdToCooldownState[spellId] = false;
 }
 
+void Player::removeAura(int auraId) {
+    auraIdToAuraSate[auraId] = false;
+}
+
 int Player::getSpellCooldown(int spellId) {
     return spellIdToCooldown[spellId];
 }
+
 
 
