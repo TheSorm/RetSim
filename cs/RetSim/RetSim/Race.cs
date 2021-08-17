@@ -1,6 +1,6 @@
 ﻿namespace RetSim
 {
-    public class Race
+    public record Race
     {
         public string Name { get; set; } = "Fictional Race";
         public BaseStats Stats { get; set; }
@@ -23,7 +23,7 @@
         public static Race Human = new Race("Human", new BaseStats(126, 77, 83, 120, 3197, 2673, 190, 0.6f, 3.32f, 5));
     }
 
-    public class BaseStats
+    public record BaseStats
     {
         public int Strength { get; set; }
         public int Agility { get; set; }
