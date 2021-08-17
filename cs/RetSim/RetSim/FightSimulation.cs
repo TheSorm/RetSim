@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using static RetSim.Program;
 
 namespace RetSim
 {
@@ -22,47 +23,49 @@ namespace RetSim
         {
             int time = 0;
             int damage = 0;
-            EventQueue eventQueue = new();
+            var queue = new EventQueue();
+
             while (time <= fightDuration)
             {
-                eventQueue.Sort();
-                if (!eventQueue.Empty() && eventQueue.GetNext().ExpirationTime < player.TimeOfNextSwing())
+                queue.Sort();
+
+                if (!queue.Empty() && queue.GetNext().ExpirationTime < player.TimeOfNextSwing())
                 {
-                    Event currentEvent = eventQueue.GetNext();
-                    eventQueue.RemoveNext();
+                    Event currentEvent = queue.GetNext();
+                    queue.RemoveNext();
                     time += currentEvent.ExpirationTime - time;
 
                     List<Event> resultingEvents = new();
                     damage += currentEvent.Execute(resultingEvents, time);
-                    eventQueue.Push(resultingEvents);
+                    queue.AddRange(resultingEvents);
 
-                    Console.WriteLine(time + ": Event: " + currentEvent.ToString());
+                    Logger.Log(time + ": Event: " + currentEvent.ToString());
                 }
+
                 else
                 {
                     time += player.TimeOfNextSwing() - time;
 
                     damage += player.MeleeAttack(time);
 
-                    Console.WriteLine(time + ": MeleeAttack");
+                    Logger.Log(time + ": MeleeAttack");
                 }
 
-                eventQueue.Sort();
+                queue.Sort();
+
                 int timeUntilNextEvent;
-                if (!eventQueue.Empty() && eventQueue.GetNext().ExpirationTime < (time - player.TimeOfNextSwing()))
-                {
-                    timeUntilNextEvent = eventQueue.GetNext().ExpirationTime;
-                }
-                else
-                {
-                    timeUntilNextEvent = (time - player.TimeOfNextSwing());
-                }
-                Event playerAction = tactic.getActionBetween(time, timeUntilNextEvent, player);
 
-                if (playerAction != null)
-                {
-                    eventQueue.Push(playerAction);
-                }
+                if (!queue.Empty() && queue.GetNext().ExpirationTime < (time - player.TimeOfNextSwing()))                
+                    timeUntilNextEvent = queue.GetNext().ExpirationTime;
+                
+                else               
+                    timeUntilNextEvent = (time - player.TimeOfNextSwing());
+                
+                Event playerAction = tactic.GetActionBetween(time, timeUntilNextEvent, player);
+
+                if (playerAction != null)                
+                    queue.Add(playerAction);
+                
 
             }
 

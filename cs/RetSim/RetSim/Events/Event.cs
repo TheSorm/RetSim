@@ -1,8 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace RetSim
 {
-    abstract internal class Event
+    abstract internal class Event : IComparable<Event>
     {
         protected Player player;
         public int ExpirationTime { get; private set; }
@@ -13,5 +14,10 @@ namespace RetSim
             this.player = player;
         }
         internal abstract int Execute(List<Event> resultingEvents, int time);
+
+        public int CompareTo(Event other)
+        {
+            return ExpirationTime.CompareTo(other.ExpirationTime);
+        }
     }
 }

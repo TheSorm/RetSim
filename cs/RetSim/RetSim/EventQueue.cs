@@ -3,48 +3,34 @@ using System.Collections.Generic;
 
 namespace RetSim
 {
-    internal class EventQueue
+    internal class EventQueue : List<Event>
     {
-        List<Event> eventQueue = new();
-        internal EventQueue()
-        {
-        }
 
-        internal void Push(Event e)
+        new public Event this[int index]
         {
-            eventQueue.Add(e);
-        }
-
-        internal void Push(List<Event> resultingEvents)
-        {
-            eventQueue.AddRange(resultingEvents);
-        }
-
-        internal void Sort()
-        {
-            eventQueue.Sort(delegate (Event x, Event y)
+            get
             {
-                if (x == null && y == null) return 0;
-                else if (x == null) return -1;
-                else if (y == null) return 1;
-                else return x.ExpirationTime > y.ExpirationTime ? -1 : 1;
-            });
+                if (index > Count)
+                    return null;
+
+                else
+                    return base[index];
+            }
         }
 
         internal Event GetNext()
         {
-            return eventQueue[0];
+            return this[0];
         }
 
         internal void RemoveNext()
         {
-            eventQueue.RemoveAt(0);
+            RemoveAt(0);
         }
 
         internal bool Empty()
         {
-            return eventQueue.Count == 0;
+            return Count == 0;
         }
-
     }
 }

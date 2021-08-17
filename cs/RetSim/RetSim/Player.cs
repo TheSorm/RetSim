@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace RetSim
 {
-    internal class Player
+    internal partial class Player
     {
         private int timeOfLastSwing;
         private Dictionary<int, int> spellIdToLastCastTime = new();
@@ -16,7 +16,7 @@ namespace RetSim
                 spellIdToLastCastTime.Add(spellEntry.Key, int.MinValue);
             }
 
-            spellIdToSpellCast.Add(Spellbook.crusaderStrike.SpellId, (time, resultingEvents) => CastCrusaderStrike(time, resultingEvents));
+            spellIdToSpellCast.Add(Spellbook.crusaderStrike.ID, (time, resultingEvents) => CastCrusaderStrike(time, resultingEvents));
         }
 
         internal int CastSpell(int spellId, int time, List<Event> resultingEvents)
@@ -31,7 +31,7 @@ namespace RetSim
 
         internal int CastCrusaderStrike(int time, List<Event> resultingEvents)
         {
-            spellIdToLastCastTime[Spellbook.crusaderStrike.SpellId] = time;
+            spellIdToLastCastTime[Spellbook.crusaderStrike.ID] = time;
             return 1212;
         }
 
@@ -57,3 +57,4 @@ namespace RetSim
         }
     }
 }
+
