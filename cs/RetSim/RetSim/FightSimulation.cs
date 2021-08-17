@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RetSim.Events;
+using System;
 using System.Collections.Generic;
 using static RetSim.Program;
 
@@ -24,13 +25,15 @@ namespace RetSim
             int time = 0;
             int damage = 0;
             var queue = new EventQueue();
+            queue.Add(new AutoAttackEvent(0, player)); //probably gets moved into a start function of the tactic
 
             while (time <= fightDuration)
             {
-                queue.Sort();
+                int timeUntilNextEvent = fightDuration;
 
-                if (!queue.Empty() && queue.GetNext().ExpirationTime < player.TimeOfNextSwing())
+                if (!queue.Empty())
                 {
+                    queue.Sort();
                     Event currentEvent = queue.GetNext();
                     queue.RemoveNext();
                     time += currentEvent.ExpirationTime - time;
@@ -40,33 +43,18 @@ namespace RetSim
                     queue.AddRange(resultingEvents);
 
                     Logger.Log(time + ": Event: " + currentEvent.ToString());
+
+                    if (!queue.Empty())
+                    {
+                        queue.Sort();
+                        timeUntilNextEvent = queue.GetNext().ExpirationTime - time;
+                    }
                 }
 
-                else
-                {
-                    time += player.TimeOfNextSwing() - time;
-
-                    damage += player.MeleeAttack(time);
-
-                    Logger.Log(time + ": MeleeAttack");
-                }
-
-                queue.Sort();
-
-                int timeUntilNextEvent;
-
-                if (!queue.Empty() && queue.GetNext().ExpirationTime < (time - player.TimeOfNextSwing()))                
-                    timeUntilNextEvent = queue.GetNext().ExpirationTime;
-                
-                else               
-                    timeUntilNextEvent = (time - player.TimeOfNextSwing());
-                
                 Event playerAction = tactic.GetActionBetween(time, timeUntilNextEvent, player);
 
                 if (playerAction != null)                
                     queue.Add(playerAction);
-                
-
             }
 
             return (damage / (fightDuration / 1000.0));

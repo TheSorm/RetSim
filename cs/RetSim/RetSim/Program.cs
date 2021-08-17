@@ -6,9 +6,7 @@
 
         static void Main(string[] args)
         {
-            Enemy enemy = new();
-            Player player = new ();
-            FightSimulation fightSimulation = new (new Player(), enemy, new EliteTactic(), 30 * 1000);
+            FightSimulation fightSimulation = new (new Player(), new Enemy(), new EliteTactic(), 30 * 1000);
 
             double result = fightSimulation.Run();
 

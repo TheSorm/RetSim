@@ -6,7 +6,7 @@ namespace RetSim
     abstract public class Event : IComparable<Event>
     {
         protected Player player;
-        public int ExpirationTime { get; private set; }
+        public int ExpirationTime { get; set; }
 
         protected Event(int expirationTime, Player player)
         {

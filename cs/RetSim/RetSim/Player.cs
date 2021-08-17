@@ -1,19 +1,20 @@
-﻿using System;
+﻿using RetSim.Events;
+using System;
 using System.Collections.Generic;
 
 namespace RetSim
 {
     public partial class Player
     {
-        private int timeOfLastSwing;
-        private Dictionary<int, int> spellIdToLastCastTime = new();
+        private AutoAttackEvent nextAutoAttack;
+        private Dictionary<int, Event> spellIdToCooldownEndEvent = new();
         private Dictionary<int, Func<int, List<Event>, int>> spellIdToSpellCast = new();
 
         public Player()
         {
             foreach (var spellEntry in Spellbook.ByID)
             {
-                spellIdToLastCastTime.Add(spellEntry.Key, int.MinValue);
+                spellIdToCooldownEndEvent.Add(spellEntry.Key, null);
             }
 
             spellIdToSpellCast.Add(Spellbook.crusaderStrike.ID, (time, resultingEvents) => CastCrusaderStrike(time, resultingEvents));
@@ -24,36 +25,43 @@ namespace RetSim
             int cooldown = Spellbook.ByID[spellId].Cooldown;
             if (cooldown > 0)
             {
-                resultingEvents.Add(new CooldownEndEvent(time + cooldown, this, spellId));
+                Event cooldownEnd = new CooldownEndEvent(time + cooldown, this, spellId);
+                resultingEvents.Add(cooldownEnd);
+                spellIdToCooldownEndEvent[spellId] = cooldownEnd;
             }
             return spellIdToSpellCast[spellId](time, resultingEvents);
         }
 
         public int CastCrusaderStrike(int time, List<Event> resultingEvents)
         {
-            spellIdToLastCastTime[Spellbook.crusaderStrike.ID] = time;
             return 1212;
         }
 
         public int TimeOfNextSwing()
         {
-            return timeOfLastSwing + 3500;
+            return nextAutoAttack.ExpirationTime;
         }
 
-        public int MeleeAttack(int time)
+        public int MeleeAttack(int time, List<Event> resultingEvents)
         {
-            timeOfLastSwing = time;
+            nextAutoAttack = new AutoAttackEvent(time + 3500, this);
+            resultingEvents.Add(nextAutoAttack);
             return 1234;
         }
 
-        public bool IsSpellOnCooldown(int id, int time)
+        public void RemoveCooldownOf(int id)
         {
-            return spellIdToLastCastTime[id] + Spellbook.ByID[id].Cooldown > time;
+            spellIdToCooldownEndEvent[id] = null;
         }
 
-        public int GetCooldwonRemaining(int id, int time)
+        public bool IsSpellOnCooldown(int id)
         {
-            return spellIdToLastCastTime[id] + Spellbook.ByID[id].Cooldown - time;
+            return spellIdToCooldownEndEvent[id] != null;
+        }
+
+        public int GetEndOfCooldown(int id)
+        {
+            return spellIdToCooldownEndEvent[id] != null ? spellIdToCooldownEndEvent[id].ExpirationTime : 0;
         }
     }
 }

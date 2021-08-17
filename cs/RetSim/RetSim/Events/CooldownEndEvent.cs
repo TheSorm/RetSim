@@ -14,6 +14,7 @@ namespace RetSim
 
         public override int Execute(List<Event> resultingEvents, int time)
         {
+            player.RemoveCooldownOf(spellId);
             return 0;
         }
 
