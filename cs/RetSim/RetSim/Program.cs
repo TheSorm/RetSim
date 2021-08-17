@@ -6,11 +6,11 @@
 
         static void Main(string[] args)
         {
-            FightSimulation fightSimulation = new (new Player(), new Enemy(), new EliteTactic(), 30 * 1000);
+            FightSimulation fightSimulation = new(new Player(), new Enemy(), new EliteTactic(), 30 * 1000);
 
             double result = fightSimulation.Run();
 
-            Logger.Log("DPS:" + result);            
+            Logger.Log("DPS:" + result);
         }
     }
 }

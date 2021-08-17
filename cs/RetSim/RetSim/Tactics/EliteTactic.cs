@@ -4,7 +4,7 @@
     {
         public EliteTactic()
         {
-           
+
         }
 
         public override Event GetActionBetween(int start, int end, Player player)

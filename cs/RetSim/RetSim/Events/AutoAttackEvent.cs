@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace RetSim.Events
 {
@@ -14,7 +10,7 @@ namespace RetSim.Events
 
         public override int Execute(List<Event> resultingEvents, int time)
         {
-            return player.MeleeAttack(time, resultingEvents); 
+            return player.MeleeAttack(time, resultingEvents);
         }
 
         public override string ToString()

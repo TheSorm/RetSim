@@ -1,5 +1,4 @@
 ﻿using RetSim.Events;
-using System;
 using System.Collections.Generic;
 using static RetSim.Program;
 
@@ -53,7 +52,7 @@ namespace RetSim
 
                 Event playerAction = tactic.GetActionBetween(time, timeUntilNextEvent, player);
 
-                if (playerAction != null)                
+                if (playerAction != null)
                     queue.Add(playerAction);
             }
 
