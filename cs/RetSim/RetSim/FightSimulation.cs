@@ -28,14 +28,14 @@ namespace RetSim
 
             while (time <= fightDuration)
             {
-                int timeUntilNextEvent = fightDuration;
+                int timeOfNextEvent = fightDuration;
 
                 if (!queue.Empty())
                 {
                     queue.Sort();
                     Event currentEvent = queue.GetNext();
                     queue.RemoveNext();
-                    time += currentEvent.ExpirationTime - time;
+                    time = currentEvent.ExpirationTime;
 
                     List<Event> resultingEvents = new();
                     damage += currentEvent.Execute(resultingEvents, time);
@@ -46,11 +46,11 @@ namespace RetSim
                     if (!queue.Empty())
                     {
                         queue.Sort();
-                        timeUntilNextEvent = queue.GetNext().ExpirationTime - time;
+                        timeOfNextEvent = queue.GetNext().ExpirationTime;
                     }
                 }
 
-                Event playerAction = tactic.GetActionBetween(time, timeUntilNextEvent, player);
+                Event playerAction = tactic.GetActionBetween(time, timeOfNextEvent, player);
 
                 if (playerAction != null)
                     queue.Add(playerAction);
