@@ -4,14 +4,14 @@ using static RetSim.Program;
 
 namespace RetSim
 {
-    internal class FightSimulation
+    public class FightSimulation
     {
         private Player player;
         private Enemy enemy;
         private Tactic tactic;
         private readonly int fightDuration;
 
-        internal FightSimulation(Player player, Enemy enemy, Tactic tactic, int fightDuration)
+        public FightSimulation(Player player, Enemy enemy, Tactic tactic, int fightDuration)
         {
             this.player = player;
             this.enemy = enemy;
@@ -19,7 +19,7 @@ namespace RetSim
             this.fightDuration = fightDuration;
         }
 
-        internal double Run()
+        public double Run()
         {
             int time = 0;
             int damage = 0;

@@ -1,7 +1,7 @@
 ﻿
 namespace RetSim
 {
-    internal record Spell
+    public record Spell
     {
         public int ID { get; init; }
         public string Name { get; init; }

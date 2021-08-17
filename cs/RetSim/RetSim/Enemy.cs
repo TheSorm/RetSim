@@ -1,6 +1,6 @@
 ﻿namespace RetSim
 {
-    internal class Enemy
+    public class Enemy
     {
     }
 }

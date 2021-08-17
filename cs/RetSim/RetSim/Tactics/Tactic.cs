@@ -1,7 +1,7 @@
 ﻿namespace RetSim
 {
-    abstract internal class Tactic
+    abstract public class Tactic
     {
-        internal abstract Event GetActionBetween(int start, int end, Player player);
+        public abstract Event GetActionBetween(int start, int end, Player player);
     }
 }

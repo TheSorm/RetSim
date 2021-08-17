@@ -3,15 +3,15 @@ using System.Collections.Generic;
 
 namespace RetSim
 {
-    internal partial class Player
+    public partial class Player
     {
         private int timeOfLastSwing;
         private Dictionary<int, int> spellIdToLastCastTime = new();
         private Dictionary<int, Func<int, List<Event>, int>> spellIdToSpellCast = new();
 
-        internal Player()
+        public Player()
         {
-            foreach (var spellEntry in Spellbook.byID)
+            foreach (var spellEntry in Spellbook.ByID)
             {
                 spellIdToLastCastTime.Add(spellEntry.Key, int.MinValue);
             }
@@ -19,9 +19,9 @@ namespace RetSim
             spellIdToSpellCast.Add(Spellbook.crusaderStrike.ID, (time, resultingEvents) => CastCrusaderStrike(time, resultingEvents));
         }
 
-        internal int CastSpell(int spellId, int time, List<Event> resultingEvents)
+        public int CastSpell(int spellId, int time, List<Event> resultingEvents)
         {
-            int cooldown = Spellbook.byID[spellId].Cooldown;
+            int cooldown = Spellbook.ByID[spellId].Cooldown;
             if (cooldown > 0)
             {
                 resultingEvents.Add(new CooldownEndEvent(time + cooldown, this, spellId));
@@ -29,31 +29,31 @@ namespace RetSim
             return spellIdToSpellCast[spellId](time, resultingEvents);
         }
 
-        internal int CastCrusaderStrike(int time, List<Event> resultingEvents)
+        public int CastCrusaderStrike(int time, List<Event> resultingEvents)
         {
             spellIdToLastCastTime[Spellbook.crusaderStrike.ID] = time;
             return 1212;
         }
 
-        internal int TimeOfNextSwing()
+        public int TimeOfNextSwing()
         {
             return timeOfLastSwing + 3500;
         }
 
-        internal int MeleeAttack(int time)
+        public int MeleeAttack(int time)
         {
             timeOfLastSwing = time;
             return 1234;
         }
 
-        internal bool IsSpellOnCooldown(int spellId, int time)
+        public bool IsSpellOnCooldown(int id, int time)
         {
-            return spellIdToLastCastTime[spellId] + Spellbook.byID[spellId].Cooldown > time;
+            return spellIdToLastCastTime[id] + Spellbook.ByID[id].Cooldown > time;
         }
 
-        internal int GetCooldwonRemaining(int spellId, int time)
+        public int GetCooldwonRemaining(int id, int time)
         {
-            return spellIdToLastCastTime[spellId] + Spellbook.byID[spellId].Cooldown - time;
+            return spellIdToLastCastTime[id] + Spellbook.ByID[id].Cooldown - time;
         }
     }
 }

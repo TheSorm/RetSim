@@ -1,13 +1,13 @@
 ﻿namespace RetSim
 {
-    internal class SulisTactic : Tactic
+    public class SulisTactic : Tactic
     {
-        internal SulisTactic()
+        public SulisTactic()
         {
 
         }
 
-        internal override Event GetActionBetween(int start, int end, Player player)
+        public override Event GetActionBetween(int start, int end, Player player)
         {
             if (!player.IsSpellOnCooldown(Spellbook.crusaderStrike.ID, start))
             {

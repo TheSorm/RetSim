@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace RetSim
 {
-    abstract internal class Event : IComparable<Event>
+    abstract public class Event : IComparable<Event>
     {
         protected Player player;
         public int ExpirationTime { get; private set; }
@@ -13,7 +13,7 @@ namespace RetSim
             this.ExpirationTime = expirationTime;
             this.player = player;
         }
-        internal abstract int Execute(List<Event> resultingEvents, int time);
+        public abstract int Execute(List<Event> resultingEvents, int time);
 
         public int CompareTo(Event other)
         {

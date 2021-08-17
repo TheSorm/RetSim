@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace RetSim
 {
-    internal class CooldownEndEvent : Event
+    public class CooldownEndEvent : Event
     {
         private int spellId;
 
@@ -12,14 +12,14 @@ namespace RetSim
             this.spellId = spellId;
         }
 
-        internal override int Execute(List<Event> resultingEvents, int time)
+        public override int Execute(List<Event> resultingEvents, int time)
         {
             return 0;
         }
 
         public override string ToString()
         {
-            return "Cooldown of " + Spellbook.byID[spellId].Name + " ends";
+            return "Cooldown of " + Spellbook.ByID[spellId].Name + " ends";
         }
     }
 }

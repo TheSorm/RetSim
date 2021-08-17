@@ -1,13 +1,13 @@
 ﻿namespace RetSim
 {
-    internal class EliteTactic : Tactic
+    public class EliteTactic : Tactic
     {
-        internal EliteTactic()
+        public EliteTactic()
         {
            
         }
 
-        internal override Event GetActionBetween(int start, int end, Player player)
+        public override Event GetActionBetween(int start, int end, Player player)
         {
             if (!player.IsSpellOnCooldown(Spellbook.crusaderStrike.ID, start))
             {

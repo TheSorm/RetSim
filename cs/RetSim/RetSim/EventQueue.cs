@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace RetSim
 {
-    internal class EventQueue : List<Event>
+    public class EventQueue : List<Event>
     {
 
         new public Event this[int index]
@@ -18,17 +18,17 @@ namespace RetSim
             }
         }
 
-        internal Event GetNext()
+        public Event GetNext()
         {
             return this[0];
         }
 
-        internal void RemoveNext()
+        public void RemoveNext()
         {
             RemoveAt(0);
         }
 
-        internal bool Empty()
+        public bool Empty()
         {
             return Count == 0;
         }
