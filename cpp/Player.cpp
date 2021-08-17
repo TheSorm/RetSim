@@ -6,8 +6,6 @@ Player::Player() {
 
     spellIdToCooldownState.emplace(35395, false);
     auraIdToAuraSate.emplace(33807, false);
-
-    spellIdToCooldown.emplace(35395, 6 * 1000);
 }
 
 int Player::timeOfNextSwing() {
@@ -41,10 +39,6 @@ void Player::finishCooldownOf(int spellId) {
 
 void Player::removeAura(int auraId) {
     auraIdToAuraSate[auraId] = false;
-}
-
-int Player::getSpellCooldown(int spellId) {
-    return spellIdToCooldown[spellId];
 }
 
 
