@@ -7,6 +7,7 @@ namespace RetSim
     public partial class Player
     {
         private AutoAttackEvent nextAutoAttack;
+        private GCDEndEvent gcd;
         private Dictionary<int, CooldownEndEvent> spellIdToCooldownEndEvent = new();
         private Dictionary<int, AuraEndEvent> auraIdToAuraEndEvent = new();
 
@@ -27,6 +28,24 @@ namespace RetSim
                 resultingEvents.Add(cooldownEnd);
                 spellIdToCooldownEndEvent[spellId] = cooldownEnd;
             }
+
+            switch (Spellbook.ByID[spellId].GCD)
+            {
+                case Spellbook.GCDType.Physical:
+                    {
+                        gcd = new GCDEndEvent(time + Spellbook.defaultGCDTime, this);
+                        resultingEvents.Add(gcd);
+                        break;
+                    }
+                case Spellbook.GCDType.Spell:
+                    {
+                        gcd = new GCDEndEvent(time + Spellbook.defaultGCDTime, this);
+                        resultingEvents.Add(gcd);
+                        break;
+                    }
+                default: break;
+            }
+
             return spellIdToSpellCast[spellId](time, resultingEvents);
         }
 
@@ -50,7 +69,7 @@ namespace RetSim
 
         public int TimeOfNextSwing()
         {
-            return nextAutoAttack.ExpirationTime;
+            return nextAutoAttack != null ? nextAutoAttack.ExpirationTime : -1;
         }
 
         public int MeleeAttack(int time, List<Event> resultingEvents)
@@ -58,6 +77,21 @@ namespace RetSim
             nextAutoAttack = new AutoAttackEvent(time + 3500, this);
             resultingEvents.Add(nextAutoAttack);
             return 1234;
+        }
+
+        public void RemoveGCD()
+        {
+            gcd = null;
+        }
+
+        public bool OnGCD()
+        {
+            return gcd != null;
+        }
+
+        public int GetEndOfGCD()
+        {
+            return gcd != null ? gcd.ExpirationTime : -1;
         }
 
         public void RemoveCooldownOf(int id)
@@ -72,7 +106,7 @@ namespace RetSim
 
         public int GetEndOfCooldown(int id)
         {
-            return spellIdToCooldownEndEvent.TryGetValue(id, out CooldownEndEvent cooldownEvent) ? cooldownEvent.ExpirationTime : 0;
+            return spellIdToCooldownEndEvent.TryGetValue(id, out CooldownEndEvent cooldownEvent) ? cooldownEvent.ExpirationTime : -1;
         }
 
         public void RemoveAura(int id)
@@ -86,7 +120,7 @@ namespace RetSim
         }
         public int GetEndOfAura(int id)
         {
-            return auraIdToAuraEndEvent.TryGetValue(id, out AuraEndEvent auraEvent) ? auraEvent.ExpirationTime : 0;
+            return auraIdToAuraEndEvent.TryGetValue(id, out AuraEndEvent auraEvent) ? auraEvent.ExpirationTime : -1;
         }
     }
 }
