@@ -4,7 +4,6 @@ namespace RetSim
 {
     public class EventQueue : List<Event>
     {
-
         new public Event this[int index]
         {
             get
