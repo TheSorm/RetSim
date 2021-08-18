@@ -84,7 +84,7 @@ namespace RetSim
             gcd = null;
         }
 
-        public bool OnGCD()
+        public bool IsOnGCD()
         {
             return gcd != null;
         }
@@ -99,7 +99,7 @@ namespace RetSim
             spellIdToCooldownEndEvent.Remove(id);
         }
 
-        public bool IsSpellOnCooldown(int id)
+        public bool IsOnCooldown(int id)
         {
             return spellIdToCooldownEndEvent.ContainsKey(id);
         }
