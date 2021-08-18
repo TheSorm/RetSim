@@ -12,10 +12,21 @@ namespace RetSim
         }
 
         public static readonly Aura sealOfTheCrusader = new() { ID = 20306, Name = "Seal of the Crusader", Duration = 30 * 1000 };
+        public static readonly Aura sealOfCommand = new() { ID = 27170, Name = "Seal of Command", Duration = 30 * 1000 };
+        public static readonly Aura sealOfBlood = new() { ID = 31892, Name = "Seal of Blood", Duration = 30 * 1000 };
 
         public static readonly Dictionary<int, Aura> ByID = new()
         {
             { sealOfTheCrusader.ID, sealOfTheCrusader },
+            { sealOfCommand.ID, sealOfCommand },
+            { sealOfBlood.ID, sealOfBlood },
+        };
+
+        public static readonly HashSet<Aura> Seals = new()
+        {
+            sealOfTheCrusader,
+            sealOfCommand,
+            sealOfBlood
         };
     }
 }

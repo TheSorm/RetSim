@@ -6,6 +6,8 @@ namespace RetSim
 {
     public partial class Player
     {
+        private const int SealOfCommandOverlap = 400;
+
         private AutoAttackEvent nextAutoAttack;
         private GCDEndEvent gcd;
         private Dictionary<int, CooldownEndEvent> spellIdToCooldownEndEvent = new();
@@ -17,6 +19,9 @@ namespace RetSim
         {
             spellIdToSpellCast.Add(Spellbook.crusaderStrike.ID, (time, resultingEvents) => CastCrusaderStrike(time, resultingEvents));
             spellIdToSpellCast.Add(Spellbook.sealOfTheCrusader.ID, (time, resultingEvents) => CastSealOfTheCrusader(time, resultingEvents));
+            spellIdToSpellCast.Add(Spellbook.sealOfCommand.ID, (time, resultingEvents) => CastSealOfCommand(time, resultingEvents));
+            spellIdToSpellCast.Add(Spellbook.sealOfBlood.ID, (time, resultingEvents) => CastSealOfBlood(time, resultingEvents));
+
         }
 
         public int CastSpell(int spellId, int time, List<Event> resultingEvents)
@@ -63,8 +68,35 @@ namespace RetSim
 
         public int CastSealOfTheCrusader(int time, List<Event> resultingEvents)
         {
+            RemoveCurrentSeal(time);
             ApplyAura(Auras.sealOfTheCrusader.ID, time, resultingEvents);
             return 0;
+        }
+
+        public int CastSealOfCommand(int time, List<Event> resultingEvents)
+        {
+            RemoveCurrentSeal(time);
+            ApplyAura(Auras.sealOfCommand.ID, time, resultingEvents);
+            return 0;
+        }
+
+        public int CastSealOfBlood(int time, List<Event> resultingEvents)
+        {
+            RemoveCurrentSeal(time);
+            ApplyAura(Auras.sealOfBlood.ID, time, resultingEvents);
+            return 0;
+        }
+
+        private void RemoveCurrentSeal(int time)
+        {
+            foreach (Auras.Aura seal in Auras.Seals)
+            {
+                if (auraIdToAuraEndEvent.ContainsKey(seal.ID))
+                {
+                    auraIdToAuraEndEvent[seal.ID].ExpirationTime = (seal == Auras.sealOfCommand) ? time + SealOfCommandOverlap : time;
+                    break;
+                }
+            }
         }
 
         public int TimeOfNextSwing()
