@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace RetSim
+﻿namespace RetSim
 {
     public static class Helpers
     {

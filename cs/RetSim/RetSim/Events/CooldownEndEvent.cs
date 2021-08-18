@@ -1,11 +1,11 @@
 ﻿
 using System.Collections.Generic;
 
-namespace RetSim
+namespace RetSim.Events
 {
     public class CooldownEndEvent : Event
     {
-        private int spellId;
+        private readonly int spellId;
 
         public CooldownEndEvent(int expirationTime, Player player, int spellId) : base(expirationTime, player)
         {

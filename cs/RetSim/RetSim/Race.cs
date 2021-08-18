@@ -4,7 +4,7 @@ namespace RetSim
 {
     public static class Races
     {
-        public static Race Human = new Race
+        public static readonly Race Human = new()
         {
             Name = "Human",
             Stats = new RaceStats
@@ -16,7 +16,7 @@ namespace RetSim
             }
         };
 
-        public static Race Dwarf = new Race
+        public static readonly Race Dwarf = new()
         {
             Name = "Dwarf",
             Stats = new RaceStats
@@ -28,7 +28,7 @@ namespace RetSim
             }
         };
 
-        public static Race Draenei = new Race
+        public static readonly Race Draenei = new()
         {
             Name = "Draenei",
             Stats = new RaceStats
@@ -40,7 +40,7 @@ namespace RetSim
             }
         };
 
-        public static Race BloodElf = new Race
+        public static readonly Race BloodElf = new()
         {
             Name = "Blood Elf",
             Stats = new RaceStats
@@ -52,7 +52,7 @@ namespace RetSim
             }
         };
 
-        public static Dictionary<string, Race> ByName = new Dictionary<string, Race>()
+        public static readonly Dictionary<string, Race> ByName = new()
         {
             { Human.Name, Human },
             { Dwarf.Name, Dwarf },

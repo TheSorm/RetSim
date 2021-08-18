@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using RetSim.Events;
+using System.Collections.Generic;
 
 namespace RetSim
 {

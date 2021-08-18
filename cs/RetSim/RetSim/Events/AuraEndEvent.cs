@@ -1,14 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace RetSim.Events
 {
-    class AuraEndEvent : Event
+    public class AuraEndEvent : Event
     {
-        private int auraId;
+        private readonly int auraId;
         public AuraEndEvent(int expirationTime, Player player, int auraId) : base(expirationTime, player)
         {
             this.auraId = auraId;
@@ -17,7 +13,7 @@ namespace RetSim.Events
         public override int Execute(int time, List<Event> resultingEvents)
         {
             player.RemoveAura(auraId);
-            return 0; 
+            return 0;
         }
 
         public override string ToString()

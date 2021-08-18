@@ -1,4 +1,5 @@
 ﻿using RetSim.Events;
+using RetSim.Tactics;
 using System.Collections.Generic;
 using static RetSim.Program;
 

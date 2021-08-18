@@ -1,4 +1,6 @@
-﻿namespace RetSim
+﻿using RetSim.Events;
+
+namespace RetSim.Tactics
 {
     public class SulisTactic : Tactic
     {

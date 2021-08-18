@@ -1,4 +1,4 @@
-﻿namespace RetSim
+﻿namespace RetSim.Loggers
 {
     abstract class AbstractLogger
     {

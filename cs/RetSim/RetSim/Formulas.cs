@@ -4,7 +4,7 @@ namespace RetSim
 {
     public static class Formulas
     {
-        public static Random RNG = new Random();
+        public static readonly Random RNG = new();
 
         public static class Damage
         {
@@ -28,7 +28,7 @@ namespace RetSim
             }
 
             public static int GetRNG(int min, int max)
-            { 
+            {
                 return RNG.Next(min, max + 1);
             }
 
@@ -92,7 +92,7 @@ namespace RetSim
 
                 float roll = GetRNGDecimal(331.6f, 361.6f);
 
-                float damage = (roll + bonus) * damageModifier * holyDamageModifier  + jotc;
+                float damage = (roll + bonus) * damageModifier * holyDamageModifier + jotc;
 
                 return GetPreciseDamage(damage);
             }

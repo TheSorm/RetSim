@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
 
-namespace RetSim
+namespace RetSim.Events
 {
     public class CastEvent : Event
     {
-        private int spellId;
+        private readonly int spellId;
         public CastEvent(int expirationTime, Player player, int spellId) : base(expirationTime, player)
         {
             this.spellId = spellId;

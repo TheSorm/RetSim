@@ -1,4 +1,7 @@
-﻿namespace RetSim
+﻿using RetSim.Loggers;
+using RetSim.Tactics;
+
+namespace RetSim
 {
     class Program
     {

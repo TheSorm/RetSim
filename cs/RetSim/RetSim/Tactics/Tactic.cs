@@ -1,4 +1,6 @@
-﻿namespace RetSim
+﻿using RetSim.Events;
+
+namespace RetSim.Tactics
 {
     abstract public class Tactic
     {

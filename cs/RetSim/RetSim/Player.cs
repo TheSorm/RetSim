@@ -10,13 +10,12 @@ namespace RetSim
         private Dictionary<int, CooldownEndEvent> spellIdToCooldownEndEvent = new();
         private Dictionary<int, AuraEndEvent> auraIdToAuraEndEvent = new();
 
-        private Dictionary<int, Func<int, List<Event>, int>> spellIdToSpellCast = new();
+        private static readonly Dictionary<int, Func<int, List<Event>, int>> spellIdToSpellCast = new();
 
         public Player()
         {
             spellIdToSpellCast.Add(Spellbook.crusaderStrike.ID, (time, resultingEvents) => CastCrusaderStrike(time, resultingEvents));
             spellIdToSpellCast.Add(Spellbook.sealOfTheCrusader.ID, (time, resultingEvents) => CastSealOfTheCrusader(time, resultingEvents));
-
         }
 
         public int CastSpell(int spellId, int time, List<Event> resultingEvents)
@@ -24,7 +23,7 @@ namespace RetSim
             int cooldown = Spellbook.ByID[spellId].Cooldown;
             if (cooldown > 0)
             {
-                CooldownEndEvent cooldownEnd = new CooldownEndEvent(time + cooldown, this, spellId);
+                CooldownEndEvent cooldownEnd = new(time + cooldown, this, spellId);
                 resultingEvents.Add(cooldownEnd);
                 spellIdToCooldownEndEvent[spellId] = cooldownEnd;
             }

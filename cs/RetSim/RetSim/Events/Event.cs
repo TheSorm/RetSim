@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace RetSim
+namespace RetSim.Events
 {
     abstract public class Event : IComparable<Event>
     {
@@ -10,7 +10,7 @@ namespace RetSim
 
         protected Event(int expirationTime, Player player)
         {
-            this.ExpirationTime = expirationTime;
+            ExpirationTime = expirationTime;
             this.player = player;
         }
         public abstract int Execute(int time, List<Event> resultingEvents);
