@@ -7,17 +7,16 @@ namespace RetSim
     public partial class Player
     {
         private AutoAttackEvent nextAutoAttack;
-        private Dictionary<int, Event> spellIdToCooldownEndEvent = new();
+        private Dictionary<int, CooldownEndEvent> spellIdToCooldownEndEvent = new();
+        private Dictionary<int, AuraEndEvent> auraIdToAuraEndEvent = new();
+
         private Dictionary<int, Func<int, List<Event>, int>> spellIdToSpellCast = new();
 
         public Player()
         {
-            foreach (var spellEntry in Spellbook.ByID)
-            {
-                spellIdToCooldownEndEvent.Add(spellEntry.Key, null);
-            }
-
             spellIdToSpellCast.Add(Spellbook.crusaderStrike.ID, (time, resultingEvents) => CastCrusaderStrike(time, resultingEvents));
+            spellIdToSpellCast.Add(Spellbook.sealOfTheCrusader.ID, (time, resultingEvents) => CastSealOfTheCrusader(time, resultingEvents));
+
         }
 
         public int CastSpell(int spellId, int time, List<Event> resultingEvents)
@@ -25,16 +24,29 @@ namespace RetSim
             int cooldown = Spellbook.ByID[spellId].Cooldown;
             if (cooldown > 0)
             {
-                Event cooldownEnd = new CooldownEndEvent(time + cooldown, this, spellId);
+                CooldownEndEvent cooldownEnd = new CooldownEndEvent(time + cooldown, this, spellId);
                 resultingEvents.Add(cooldownEnd);
                 spellIdToCooldownEndEvent[spellId] = cooldownEnd;
             }
             return spellIdToSpellCast[spellId](time, resultingEvents);
         }
 
+        public void ApplyAura(int auraId, int time, List<Event> resultingEvents)
+        {
+            AuraEndEvent auraEndEvent = new(time + Auras.ByID[auraId].Duration, this, auraId);
+            auraIdToAuraEndEvent[Auras.ByID[auraId].ID] = auraEndEvent;
+            resultingEvents.Add(auraEndEvent);
+        }
+
         public int CastCrusaderStrike(int time, List<Event> resultingEvents)
         {
             return 1212;
+        }
+
+        public int CastSealOfTheCrusader(int time, List<Event> resultingEvents)
+        {
+            ApplyAura(Auras.sealOfTheCrusader.ID, time, resultingEvents);
+            return 0;
         }
 
         public int TimeOfNextSwing()
@@ -51,17 +63,31 @@ namespace RetSim
 
         public void RemoveCooldownOf(int id)
         {
-            spellIdToCooldownEndEvent[id] = null;
+            spellIdToCooldownEndEvent.Remove(id);
         }
 
         public bool IsSpellOnCooldown(int id)
         {
-            return spellIdToCooldownEndEvent[id] != null;
+            return spellIdToCooldownEndEvent.ContainsKey(id);
         }
 
         public int GetEndOfCooldown(int id)
         {
-            return spellIdToCooldownEndEvent[id] != null ? spellIdToCooldownEndEvent[id].ExpirationTime : 0;
+            return spellIdToCooldownEndEvent.TryGetValue(id, out CooldownEndEvent cooldownEvent) ? cooldownEvent.ExpirationTime : 0;
+        }
+
+        public void RemoveAura(int id)
+        {
+            spellIdToCooldownEndEvent.Remove(id);
+        }
+
+        public bool HasAura(int id)
+        {
+            return auraIdToAuraEndEvent.ContainsKey(id);
+        }
+        public int GetEndOfAura(int id)
+        {
+            return auraIdToAuraEndEvent.TryGetValue(id, out AuraEndEvent auraEvent) ? auraEvent.ExpirationTime : 0;
         }
     }
 }

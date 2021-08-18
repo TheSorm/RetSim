@@ -25,6 +25,7 @@ namespace RetSim
             int damage = 0;
             var queue = new EventQueue();
             queue.Add(new AutoAttackEvent(0, player)); //probably gets moved into a start function of the tactic
+            queue.Add(new CastEvent(0, player, Spellbook.sealOfTheCrusader.ID));
 
             while (time <= fightDuration)
             {
@@ -47,6 +48,7 @@ namespace RetSim
                     {
                         queue.Sort();
                         timeOfNextEvent = queue.GetNext().ExpirationTime;
+                        if (time == timeOfNextEvent) continue;
                     }
                 }
 
