@@ -33,13 +33,13 @@ namespace RetSim
             {
                 case Spellbook.GCDType.Physical:
                     {
-                        gcd = new GCDEndEvent(time + Spellbook.defaultGCDTime, this);
+                        gcd = new GCDEndEvent(time + Spellbook.DefaultGCDTime, this);
                         resultingEvents.Add(gcd);
                         break;
                     }
                 case Spellbook.GCDType.Spell:
                     {
-                        gcd = new GCDEndEvent(time + Spellbook.defaultGCDTime, this);
+                        gcd = new GCDEndEvent(time + Spellbook.DefaultGCDTime, this);
                         resultingEvents.Add(gcd);
                         break;
                     }

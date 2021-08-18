@@ -4,7 +4,7 @@ namespace RetSim
 {
     public static class Spellbook
     {
-        public static readonly int defaultGCDTime = 1500;
+        public const int DefaultGCDTime = 1500;
         public enum GCDType
         {
             Physical,
