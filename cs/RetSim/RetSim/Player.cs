@@ -68,26 +68,23 @@ namespace RetSim
 
         public int CastSealOfTheCrusader(int time, List<Event> resultingEvents)
         {
-            RemoveCurrentSeal(time);
-            ApplyAura(Auras.sealOfTheCrusader.ID, time, resultingEvents);
+            ChnageSealTo(Auras.sealOfTheCrusader.ID, time, resultingEvents);
             return 0;
         }
 
         public int CastSealOfCommand(int time, List<Event> resultingEvents)
         {
-            RemoveCurrentSeal(time);
-            ApplyAura(Auras.sealOfCommand.ID, time, resultingEvents);
+            ChnageSealTo(Auras.sealOfCommand.ID, time, resultingEvents);
             return 0;
         }
 
         public int CastSealOfBlood(int time, List<Event> resultingEvents)
         {
-            RemoveCurrentSeal(time);
-            ApplyAura(Auras.sealOfBlood.ID, time, resultingEvents);
+            ChnageSealTo(Auras.sealOfBlood.ID, time, resultingEvents);
             return 0;
         }
 
-        private void RemoveCurrentSeal(int time)
+        private void ChnageSealTo(int id, int time, List<Event> resultingEvents)
         {
             foreach (Auras.Aura seal in Auras.Seals)
             {
@@ -97,6 +94,7 @@ namespace RetSim
                     break;
                 }
             }
+            ApplyAura(id, time, resultingEvents);
         }
 
         public int TimeOfNextSwing()
