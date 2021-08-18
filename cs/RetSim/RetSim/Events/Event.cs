@@ -13,7 +13,7 @@ namespace RetSim
             this.ExpirationTime = expirationTime;
             this.player = player;
         }
-        public abstract int Execute(List<Event> resultingEvents, int time);
+        public abstract int Execute(int time, List<Event> resultingEvents);
 
         public int CompareTo(Event other)
         {

@@ -10,7 +10,7 @@ namespace RetSim
             this.spellId = spellId;
         }
 
-        public override int Execute(List<Event> resultingEvents, int time)
+        public override int Execute(int time, List<Event> resultingEvents)
         {
             return player.CastSpell(spellId, time, resultingEvents);
         }

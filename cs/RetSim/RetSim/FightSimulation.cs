@@ -38,7 +38,7 @@ namespace RetSim
                     time = currentEvent.ExpirationTime;
 
                     List<Event> resultingEvents = new();
-                    damage += currentEvent.Execute(resultingEvents, time);
+                    damage += currentEvent.Execute(time, resultingEvents);
                     queue.AddRange(resultingEvents);
 
                     Logger.Log(time + ": Event: " + currentEvent.ToString());
