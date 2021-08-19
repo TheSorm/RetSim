@@ -13,7 +13,7 @@ namespace RetSim.Events
 
         public override int Execute(int time, List<Event> resultingEvents)
         {
-            player.RemoveAura(auraId);
+            //player.RemoveAura(auraId);
             return 0;
         }
 

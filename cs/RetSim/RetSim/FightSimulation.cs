@@ -26,8 +26,8 @@ namespace RetSim
             int damage = 0;
             var queue = new EventQueue();
             queue.Add(new AutoAttackEvent(0, player)); //probably gets moved into a start function of the tactic
-            queue.Add(new CastEvent(0, player, Spellbook.sealOfCommand.ID));
-            queue.Add(new CastEvent(17200, player, Spellbook.sealOfBlood.ID));
+            queue.Add(new CastEvent(0, player, Spells.SealOfCommand.ID));
+            queue.Add(new CastEvent(17200, player, Spells.SealOfBlood.ID));
 
             while (time <= fightDuration)
             {

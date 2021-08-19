@@ -15,13 +15,14 @@ namespace RetSim.Events
 
         public override int Execute(int time, List<Event> resultingEvents)
         {
-            player.RemoveCooldownOf(spellId);
+            player.Spellbook.ByID[spellId].EndCooldown();
+
             return 0;
         }
 
         public override string ToString()
         {
-            return "Cooldown of " + Spellbook.ByID[spellId].Name + " ends";
+            return "Cooldown of " + Spells.ByID[spellId].Name + " ends";
         }
     }
 }

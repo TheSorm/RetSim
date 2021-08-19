@@ -11,10 +11,11 @@ namespace RetSim.Tactics
 
         public override Event GetActionBetween(int start, int end, Player player)
         {
-            if (!player.IsOnCooldown(Spellbook.crusaderStrike.ID) && !player.IsOnGCD())
+            if (!player.Spellbook.ByID[Spells.CrusaderStrike.ID].IsOnCooldown && !player.IsOnGCD())
             {
-                return new CastEvent(start + 0, player, Spellbook.crusaderStrike.ID);
+                return new CastEvent(start + 0, player, Spells.CrusaderStrike.ID);
             }
+
             return null;
         }
     }

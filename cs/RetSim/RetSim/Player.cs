@@ -6,53 +6,28 @@ namespace RetSim
 {
     public partial class Player
     {
+        public Spellbook Spellbook { get; private set; }
+
         private const int SealOfCommandOverlap = 400;
 
         private AutoAttackEvent nextAutoAttack;
         private GCDEndEvent gcd;
 
-        private Dictionary<int, CooldownEndEvent> spellIdToCooldownEndEvent = new();
+
+
         private Dictionary<int, AuraEndEvent> auraIdToAuraEndEvent = new();
 
         private static readonly Dictionary<int, Func<int, List<Event>, int>> spellIdToSpellCast = new();
 
         public Player()
         {
-            spellIdToSpellCast.Add(Spellbook.crusaderStrike.ID, (time, resultingEvents) => CastCrusaderStrike(time, resultingEvents));
-            spellIdToSpellCast.Add(Spellbook.sealOfTheCrusader.ID, (time, resultingEvents) => CastSealOfTheCrusader(time, resultingEvents));
-            spellIdToSpellCast.Add(Spellbook.sealOfCommand.ID, (time, resultingEvents) => CastSealOfCommand(time, resultingEvents));
-            spellIdToSpellCast.Add(Spellbook.sealOfBlood.ID, (time, resultingEvents) => CastSealOfBlood(time, resultingEvents));
+            //spellIdToSpellCast.Add(Spellbook.crusaderStrike.ID, (time, resultingEvents) => CastCrusaderStrike(time, resultingEvents));
+            //spellIdToSpellCast.Add(Spellbook.sealOfTheCrusader.ID, (time, resultingEvents) => CastSealOfTheCrusader(time, resultingEvents));
+            //spellIdToSpellCast.Add(Spellbook.sealOfCommand.ID, (time, resultingEvents) => CastSealOfCommand(time, resultingEvents));
+            //spellIdToSpellCast.Add(Spellbook.sealOfBlood.ID, (time, resultingEvents) => CastSealOfBlood(time, resultingEvents));
 
-        }
+            Spellbook = new Spellbook(this);
 
-        public int CastSpell(int spellId, int time, List<Event> resultingEvents)
-        {
-            int cooldown = Spellbook.ByID[spellId].Cooldown;
-            if (cooldown > 0)
-            {
-                CooldownEndEvent cooldownEnd = new(time + cooldown, this, spellId);
-                resultingEvents.Add(cooldownEnd);
-                spellIdToCooldownEndEvent[spellId] = cooldownEnd;
-            }
-
-            switch (Spellbook.ByID[spellId].GCD)
-            {
-                case Spellbook.GCDType.Physical:
-                    {
-                        gcd = new GCDEndEvent(time + Spellbook.DefaultGCDTime, this);
-                        resultingEvents.Add(gcd);
-                        break;
-                    }
-                case Spellbook.GCDType.Spell:
-                    {
-                        gcd = new GCDEndEvent(time + Spellbook.DefaultGCDTime, this);
-                        resultingEvents.Add(gcd);
-                        break;
-                    }
-                default: break;
-            }
-
-            return spellIdToSpellCast[spellId](time, resultingEvents);
         }
 
         public void ApplyAura(int auraId, int time, List<Event> resultingEvents)
@@ -123,26 +98,6 @@ namespace RetSim
         public int GetEndOfGCD()
         {
             return gcd != null ? gcd.ExpirationTime : -1;
-        }
-
-        public void RemoveCooldownOf(int id)
-        {
-            spellIdToCooldownEndEvent.Remove(id);
-        }
-
-        public bool IsOnCooldown(int id)
-        {
-            return spellIdToCooldownEndEvent.ContainsKey(id);
-        }
-
-        public int GetEndOfCooldown(int id)
-        {
-            return spellIdToCooldownEndEvent.TryGetValue(id, out CooldownEndEvent cooldownEvent) ? cooldownEvent.ExpirationTime : -1;
-        }
-
-        public void RemoveAura(int id)
-        {
-            spellIdToCooldownEndEvent.Remove(id);
         }
 
         public bool HasAura(int id)

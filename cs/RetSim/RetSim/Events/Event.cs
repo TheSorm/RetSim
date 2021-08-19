@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace RetSim.Events
 {
-    abstract public class Event : IComparable<Event>
+    public abstract class Event : IComparable<Event>
     {
         protected Player player;
         public int ExpirationTime { get; set; }

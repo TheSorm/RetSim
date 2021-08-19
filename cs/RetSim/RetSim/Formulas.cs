@@ -37,51 +37,51 @@ namespace RetSim
                 return RNG.Next((int)(min * 100), (int)(max * 100)) / 100f;
             }
 
-            public static float GetWeaponDamage(int weaponDamage, float apBonus, int bonusDamage, float weaponDamageModifier)
+            public static float GetWeaponDamage(int weapon, float ap, int bonus)
             {
-                return (weaponDamage + apBonus + bonusDamage) * weaponDamageModifier;
+                return weapon + ap + bonus;
             }
 
-            public static int Melee(int weaponMin, int weaponMax, int weaponSpeed, int bonusWeaponDamage, int ap, float weaponDamageModifier, float damageModifier)
+            public static int Melee(int weaponMin, int weaponMax, int weaponSpeed, int bonusWeaponDamage, int ap, float damageModifier)
             {
                 float bonus = GetAPBonus(ap, weaponSpeed);
 
                 int weapon = GetRNG(weaponMin, weaponMax);
 
-                float damage = GetWeaponDamage(weapon, bonus, bonusWeaponDamage, weaponDamageModifier) * damageModifier;
+                float damage = GetWeaponDamage(weapon, bonus, bonusWeaponDamage) * damageModifier;
 
                 return GetPreciseDamage(damage);
             }
 
-            public static int SealOfBlood(int weaponMin, int weaponMax, int weaponSpeed, int bonusWeaponDamage, int ap, float weaponDamageModifier, float damageModifier, float holyDamageModifier, float jotc)
+            public static int SealOfBlood(int weaponMin, int weaponMax, int weaponSpeed, int bonusWeaponDamage, int ap, float damageModifier, float holyDamageModifier, float jotc)
             {
                 float bonus = GetAPBonus(ap, weaponSpeed);
 
                 int weapon = GetRNG(weaponMin, weaponMax);
 
-                float damage = GetWeaponDamage(weapon, bonus, bonusWeaponDamage, weaponDamageModifier) * damageModifier * holyDamageModifier * 0.35f + jotc;
+                float damage = GetWeaponDamage(weapon, bonus, bonusWeaponDamage) * damageModifier * holyDamageModifier * 0.35f + jotc;
 
                 return GetPreciseDamage(damage);
             }
 
-            public static int SealOfCommand(int weaponMin, int weaponMax, int weaponSpeed, int bonusWeaponDamage, int ap, float weaponDamageModifier, float damageModifier, float holyDamageModifier, float jotc)
+            public static int SealOfCommand(int weaponMin, int weaponMax, int weaponSpeed, int bonusWeaponDamage, int ap, float damageModifier, float holyDamageModifier, float jotc)
             {
                 float bonus = GetAPBonus(ap, weaponSpeed);
 
                 int weapon = GetRNG(weaponMin, weaponMax);
 
-                float damage = GetWeaponDamage(weapon, bonus, bonusWeaponDamage, weaponDamageModifier) * damageModifier * holyDamageModifier * 0.7f + jotc;
+                float damage = GetWeaponDamage(weapon, bonus, bonusWeaponDamage) * damageModifier * holyDamageModifier * 0.7f + jotc;
 
                 return GetPreciseDamage(damage);
             }
 
-            public static int CrusaderStrike(int weaponMin, int weaponMax, int bonusWeaponDamage, int ap, float weaponDamageModifier, float damageModifier, float csBonusMod, int csBonusDamage)
+            public static int NormalizedWeaponDamage(int min, int max, int bonus, int ap, float modifier)
             {
-                float bonus = GetAPBonusNormalized(ap);
+                float apBonus = GetAPBonusNormalized(ap);
 
-                int weapon = GetRNG(weaponMin, weaponMax);
+                int weapon = GetRNG(min, max);
 
-                float damage = GetWeaponDamage(weapon + csBonusDamage, bonus, bonusWeaponDamage, weaponDamageModifier) * damageModifier * 1.1f * csBonusMod;
+                float damage = GetWeaponDamage(weapon, apBonus, bonus) * modifier;
 
                 return GetPreciseDamage(damage);
             }
