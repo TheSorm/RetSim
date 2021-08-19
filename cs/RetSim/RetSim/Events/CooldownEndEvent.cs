@@ -5,9 +5,10 @@ namespace RetSim.Events
 {
     public class CooldownEndEvent : Event
     {
+        private const int GCDEndEventPriority = 2;
         private readonly int spellId;
 
-        public CooldownEndEvent(int expirationTime, Player player, int spellId) : base(expirationTime, player)
+        public CooldownEndEvent(int expirationTime, Player player, int spellId) : base(expirationTime, GCDEndEventPriority, player)
         {
             this.spellId = spellId;
         }

@@ -4,8 +4,9 @@ namespace RetSim.Events
 {
     public class AuraEndEvent : Event
     {
+        private const int AuraEndEventPriority = 1;
         private readonly int auraId;
-        public AuraEndEvent(int expirationTime, Player player, int auraId) : base(expirationTime, player)
+        public AuraEndEvent(int expirationTime, Player player, int auraId) : base(expirationTime, AuraEndEventPriority, player)
         {
             this.auraId = auraId;
         }

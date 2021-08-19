@@ -4,8 +4,9 @@ namespace RetSim.Events
 {
     public class CastEvent : Event
     {
+        private const int CastEventPriority = 3;
         private readonly int spellId;
-        public CastEvent(int expirationTime, Player player, int spellId) : base(expirationTime, player)
+        public CastEvent(int expirationTime, Player player, int spellId) : base(expirationTime, CastEventPriority, player)
         {
             this.spellId = spellId;
         }

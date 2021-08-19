@@ -4,7 +4,9 @@ namespace RetSim.Events
 {
     public class AutoAttackEvent : Event
     {
-        public AutoAttackEvent(int expirationTime, Player player) : base(expirationTime, player)
+        private const int AutoAttackEventPriority = 4;
+
+        public AutoAttackEvent(int expirationTime, Player player) : base(expirationTime, AutoAttackEventPriority, player)
         {
         }
 
