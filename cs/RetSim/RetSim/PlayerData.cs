@@ -5,7 +5,6 @@ namespace RetSim
     public partial class Player
     {
         public Random random = new Random();
-
         public string Name { get; set; } = "TestPlayer";
 
         //public Weapon Weapon { get; set; }
