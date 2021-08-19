@@ -19,12 +19,12 @@ namespace RetSim
 
             public static float GetAPBonus(int ap, float weaponSpeed)
             {
-                return ap / 14f * weaponSpeed;
+                return ap / (float)Constants.Stats.APPerDPS * weaponSpeed;
             }
 
             public static float GetAPBonusNormalized(int ap)
             {
-                return ap / 14f * 3.3f;
+                return ap / (float)Constants.Stats.APPerDPS * Constants.Stats.NormalizedWeaponSpeed;
             }
 
             public static int GetRNG(int min, int max)
@@ -115,6 +115,19 @@ namespace RetSim
                 float damage = (64 + bonus) * damageModifier * holyDamageModifier + jotc;
 
                 return GetPreciseDamage(damage);
+            }
+        }
+
+        public static class Stats 
+        { 
+            public static int GetAPFromStrength(int strength)
+            {
+                return strength * Constants.Stats.APPerStrength;
+            }
+
+            public static float GetCritFromAgility(int agility)
+            {
+                return agility / Constants.Stats.AgilityPerCrit;
             }
         }
     }

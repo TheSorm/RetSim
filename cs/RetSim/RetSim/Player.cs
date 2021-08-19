@@ -10,6 +10,7 @@ namespace RetSim
 
         private AutoAttackEvent nextAutoAttack;
         private GCDEndEvent gcd;
+
         private Dictionary<int, CooldownEndEvent> spellIdToCooldownEndEvent = new();
         private Dictionary<int, AuraEndEvent> auraIdToAuraEndEvent = new();
 
@@ -68,29 +69,29 @@ namespace RetSim
 
         public int CastSealOfTheCrusader(int time, List<Event> resultingEvents)
         {
-            ChnageSealTo(Auras.sealOfTheCrusader.ID, time, resultingEvents);
+            ChangeSeal(Auras.SealOfTheCrusader.ID, time, resultingEvents);
             return 0;
         }
 
         public int CastSealOfCommand(int time, List<Event> resultingEvents)
         {
-            ChnageSealTo(Auras.sealOfCommand.ID, time, resultingEvents);
+            ChangeSeal(Auras.SealOfCommand.ID, time, resultingEvents);
             return 0;
         }
 
         public int CastSealOfBlood(int time, List<Event> resultingEvents)
         {
-            ChnageSealTo(Auras.sealOfBlood.ID, time, resultingEvents);
+            ChangeSeal(Auras.SealOfBlood.ID, time, resultingEvents);
             return 0;
         }
 
-        private void ChnageSealTo(int id, int time, List<Event> resultingEvents)
+        private void ChangeSeal(int id, int time, List<Event> resultingEvents)
         {
-            foreach (Auras.Aura seal in Auras.Seals)
+            foreach (Aura seal in Auras.Seals)
             {
                 if (auraIdToAuraEndEvent.ContainsKey(seal.ID))
                 {
-                    auraIdToAuraEndEvent[seal.ID].ExpirationTime = (seal == Auras.sealOfCommand) ? time + SealOfCommandOverlap : time;
+                    auraIdToAuraEndEvent[seal.ID].ExpirationTime = (seal == Auras.SealOfCommand) ? time + SealOfCommandOverlap : time;
                     break;
                 }
             }

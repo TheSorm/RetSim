@@ -74,16 +74,4 @@ namespace RetSim
         public int Intellect { get; init; }
         public int Stamina { get; init; }
     }
-
-    /*
-     *  Race Independent Base Stats
-     *
-     *  Health = 3197,
-     *  Mana = 2673,
-     *
-     *  AttackPower = 190,
-     *  CritChance = 0.6f,
-     *
-     *  SpellCritChance = 3.32f
-     */
 }
