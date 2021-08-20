@@ -40,8 +40,7 @@ namespace RetSim
         Arcane = 7
     }
 
-    //TODO Change name to Spell list or glossar
-    public static class Spells
+    public static class SpellGlossary
     {
         public static readonly Spell CrusaderStrike = new()
         {

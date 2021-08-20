@@ -28,11 +28,10 @@ namespace RetSim
             Mana = 5000;
         }
 
-        public List<Event> Cast(Spell spell, int time)
+        public void Cast(Spell spell, int time, List<Event> resultingEvents)
         {
-            return Spellbook.Use(spell, time);
+            Spellbook.Use(spell, time, resultingEvents);
         }
-
 
         public void ApplyAura(int auraId, int time, List<Event> resultingEvents)
         {
@@ -41,30 +40,7 @@ namespace RetSim
             resultingEvents.Add(auraEndEvent);
         }
 
-        //TODO remove casts
-        public int CastCrusaderStrike(int time, List<Event> resultingEvents)
-        {
-            return 1212;
-        }
-
-        public int CastSealOfTheCrusader(int time, List<Event> resultingEvents)
-        {
-            ChangeSeal(Auras.SealOfTheCrusader.ID, time, resultingEvents);
-            return 0;
-        }
-
-        public int CastSealOfCommand(int time, List<Event> resultingEvents)
-        {
-            ChangeSeal(Auras.SealOfCommand.ID, time, resultingEvents);
-            return 0;
-        }
-
-        public int CastSealOfBlood(int time, List<Event> resultingEvents)
-        {
-            ChangeSeal(Auras.SealOfBlood.ID, time, resultingEvents);
-            return 0;
-        }
-
+       
         private void ChangeSeal(int id, int time, List<Event> resultingEvents)
         {
             foreach (Aura seal in Auras.Seals)

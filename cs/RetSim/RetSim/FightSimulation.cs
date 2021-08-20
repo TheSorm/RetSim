@@ -26,8 +26,8 @@ namespace RetSim
             int damage = 0;
             var queue = new EventQueue();
             queue.Add(new AutoAttackEvent(0, player)); //probably gets moved into a start function of the tactic
-            queue.Add(new CastEvent(0, player, Spells.SealOfCommand.ID));
-            queue.Add(new CastEvent(17200, player, Spells.SealOfBlood.ID));
+            queue.Add(new CastEvent(0, player, SpellGlossary.SealOfCommand));
+            queue.Add(new CastEvent(17200, player, SpellGlossary.SealOfBlood));
 
             while (time <= fightDuration)
             {
@@ -35,14 +35,11 @@ namespace RetSim
 
                 if (!queue.Empty())
                 {
-                    //TODO make this structure queue a sorted structure.
-                    //TODO remove damage from events
                     queue.Sort();
                     Event currentEvent = queue.GetNext();
                     queue.RemoveNext();
                     time = currentEvent.ExpirationTime;
 
-                    //TODO change to pass not return 
                     List<Event> resultingEvents = new();
                     damage += currentEvent.Execute(time, resultingEvents);
                     queue.AddRange(resultingEvents);

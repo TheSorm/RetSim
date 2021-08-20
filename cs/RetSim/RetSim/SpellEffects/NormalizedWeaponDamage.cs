@@ -12,12 +12,9 @@ namespace RetSim.SpellEffects
             Modifier = modifier;
         }
 
-        //TODO dont return event
-        public override List<Event> Resolve(Player caster, Spell spell, int time)
+        public override void Resolve(Player caster, Spell spell, int time, List<Event> resultingEvents)
         {
             int damage = Formulas.Damage.NormalizedWeaponDamage(341, 513, 0, 2000, Modifier);
-
-            return new List<Event> { new DamageEvent(time, caster, spell.Name, "Hit", damage, spell.School) };
         }
     }
 }

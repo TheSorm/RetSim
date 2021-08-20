@@ -12,9 +12,6 @@ namespace RetSim.Events
 
         public override int Execute(int time, List<Event> resultingEvents)
         {
-            int damage = Formulas.Damage.Melee(341, 513, 3.6f, 0, 2000, 1f);
-
-            resultingEvents.Add(new DamageEvent(ExpirationTime, player, "Melee", "Hit", damage, School.Physical));
             return player.MeleeAttack(time, resultingEvents);
         }
 

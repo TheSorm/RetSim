@@ -2,7 +2,7 @@
 
 namespace RetSim.Events
 {
-    public class DamageEvent : Event
+    public class TODODamageCombatLogEvent : Event
     {
         private const int DamageEventPriority = 1;
 
@@ -11,7 +11,7 @@ namespace RetSim.Events
         private int damage { get; set; }
         public School school { get; set; }
 
-        public DamageEvent(int expirationTime, Player player, string source, string result, int damage, School school) : base(expirationTime, DamageEventPriority, player)
+        public TODODamageCombatLogEvent(int expirationTime, Player player, string source, string result, int damage, School school) : base(expirationTime, DamageEventPriority, player)
         {
             this.source = source;
             this.result = result;

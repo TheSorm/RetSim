@@ -8,30 +8,19 @@ namespace RetSim
     {
         private Player player { get; init; }
 
-        //TODO Remove
-        public Dictionary<int, Spell> ByID = new Dictionary<int, Spell>();
-
         public Spellbook(Player player)
         {
             this.player = player;
 
-            Add(Spells.CrusaderStrike, null);
-            Add(Spells.SealOfCommand, null);
-            Add(Spells.SealOfBlood, null);
-            Add(Spells.SealOfTheCrusader, null);
+            Add(SpellGlossary.CrusaderStrike);
+            Add(SpellGlossary.SealOfCommand);
+            Add(SpellGlossary.SealOfBlood);
+            Add(SpellGlossary.SealOfTheCrusader);
         }
 
-        //TODO remove check
         public new void Add(Spell spell, CooldownEndEvent end = null)
         {
-            if (ContainsKey(spell))
-                return;
-
-            else
-            {
-                base.Add(spell, null);
-                ByID.Add(spell.ID, spell);
-            }      
+            base.Add(spell, null);  
         }
 
         public bool IsOnCooldown(Spell spell)
@@ -44,55 +33,30 @@ namespace RetSim
             return spell.ManaCost <= player.Mana;
         }
 
-        //TODO remove checks
-        public List<Event> Use(Spell spell, int time)
+        public void Use(Spell spell, int time, List<Event> resultingEvents)
         {
-            //TODO: Fix mana check & remove mana from player
-
-            var events = new List<Event>();
-
-            if (IsOnCooldown(spell))
+            foreach (SpellEffect effect in spell.Effects)
             {
-                //Add spell cast fail - cooldown not ready event
+                effect.Resolve(player, spell, time, resultingEvents);
             }
 
-            else if (player.IsOnGCD())
+            if (spell.Cooldown > 0)
+                resultingEvents.Add(StartCooldown(spell, time));
+
+            if (spell.GCD.Category != GCDCategory.None && spell.GCD.Duration > 0)
             {
-                //Add spell cast fail - cannot use ability yet
+                var gcd = new GCDEndEvent(time + spell.GCD.Duration, player);
+
+                player.StartGCD(gcd);
+                resultingEvents.Add(gcd);
             }
-
-            else if (!SufficientMana(spell))
-            {
-                //Add spell cast fail - insufficient mana event
-            }
-
-            else
-            {
-                foreach (SpellEffect effect in spell.Effects)
-                {
-                    events.AddRange(effect.Resolve(player, spell, time));
-                }
-
-                if (spell.Cooldown > 0)
-                    events.Add(StartCooldown(spell, time));
-
-                if (spell.GCD.Category != GCDCategory.None && spell.GCD.Duration > 0)
-                {
-                    var gcd = new GCDEndEvent(time + spell.GCD.Duration, player);
-
-                    player.StartGCD(gcd);
-                    events.Add(gcd);
-                }
-            }
-
-            return events;
         }
 
         private CooldownEndEvent StartCooldown(Spell spell, int time)
         {
             if (spell.Cooldown > 0 && !IsOnCooldown(spell))
             {
-                var cooldown = new CooldownEndEvent(time + spell.Cooldown, player, spell.ID);
+                var cooldown = new CooldownEndEvent(time + spell.Cooldown, player, spell);
 
                 this[spell] = cooldown;
 
@@ -102,17 +66,9 @@ namespace RetSim
             else return null;
         }
 
-        //TODO remove check
-        public bool EndCooldown(Spell spell)
+        public void EndCooldown(Spell spell)
         {
-            if (IsOnCooldown(spell))
-            {
-                this[spell] = null;
-
-                return true;
-            }
-
-            else return false;
+            this[spell] = null;
         }
     }
 }
