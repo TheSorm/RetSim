@@ -118,8 +118,8 @@ namespace RetSim
             }
         }
 
-        public static class Stats 
-        { 
+        public static class Stats
+        {
             public static int GetAPFromStrength(int strength)
             {
                 return strength * Constants.Stats.APPerStrength;

@@ -20,7 +20,7 @@ namespace RetSim
 
         public new void Add(Spell spell, CooldownEndEvent end = null)
         {
-            base.Add(spell, null);  
+            base.Add(spell, null);
         }
 
         public bool IsOnCooldown(Spell spell)

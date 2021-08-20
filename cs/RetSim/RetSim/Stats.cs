@@ -32,11 +32,11 @@
 
         public float SpellCrit { get; private set; }
         public int SpellCritRating { get; private set; }
-        
+
         public float SpellHit { get; private set; }
-        public int SpellHitRating {  get; private set; }
+        public int SpellHitRating { get; private set; }
 
         public float SpellHaste { get; private set; }
-        public int SpellHasteRating {  get; private set; }
+        public int SpellHasteRating { get; private set; }
     }
 }

@@ -4,25 +4,25 @@ namespace RetSim
 {
     public static class Auras
     {
-        public static readonly Aura SealOfTheCrusader = new() 
-        { 
-            ID = 20306, 
-            Name = "Seal of the Crusader", 
-            Duration = 30 * 1000 
+        public static readonly Aura SealOfTheCrusader = new()
+        {
+            ID = 20306,
+            Name = "Seal of the Crusader",
+            Duration = 30 * 1000
         };
 
-        public static readonly Aura SealOfCommand = new() 
-        { 
-            ID = 27170, 
-            Name = "Seal of Command", 
-            Duration = 30 * 1000 
+        public static readonly Aura SealOfCommand = new()
+        {
+            ID = 27170,
+            Name = "Seal of Command",
+            Duration = 30 * 1000
         };
 
-        public static readonly Aura SealOfBlood = new() 
-        { 
-            ID = 31892, 
-            Name = "Seal of Blood", 
-            Duration = 30 * 1000 
+        public static readonly Aura SealOfBlood = new()
+        {
+            ID = 31892,
+            Name = "Seal of Blood",
+            Duration = 30 * 1000
         };
 
         public static readonly Dictionary<int, Aura> ByID = new()

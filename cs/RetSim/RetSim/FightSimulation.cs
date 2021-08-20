@@ -1,6 +1,7 @@
 ﻿using RetSim.Events;
 using RetSim.Tactics;
 using System.Collections.Generic;
+using System.Linq;
 using static RetSim.Program;
 
 namespace RetSim

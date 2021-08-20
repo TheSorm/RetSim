@@ -12,7 +12,7 @@
 
         private int currentHealth;
         public int CurrentHealth { get { return currentHealth; } set { currentHealth = value <= 0 ? 0 : value < Health ? value : Health; } }
-        
+
 
     }
 }

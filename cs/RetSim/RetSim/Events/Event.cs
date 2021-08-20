@@ -9,7 +9,7 @@ namespace RetSim.Events
         public int ExpirationTime { get; set; }
         public int Priority { get; init; }
 
-        protected Event(int expirationTime, int priority,  Player player)
+        protected Event(int expirationTime, int priority, Player player)
         {
             ExpirationTime = expirationTime;
             Priority = priority;
@@ -19,7 +19,7 @@ namespace RetSim.Events
 
         public int CompareTo(Event other)
         {
-            return ExpirationTime.CompareTo(other.ExpirationTime) == 0? Priority.CompareTo(other.Priority) : ExpirationTime.CompareTo(other.ExpirationTime);
+            return ExpirationTime.CompareTo(other.ExpirationTime) == 0 ? Priority.CompareTo(other.Priority) : ExpirationTime.CompareTo(other.ExpirationTime);
         }
     }
 }

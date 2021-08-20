@@ -40,7 +40,7 @@ namespace RetSim
             resultingEvents.Add(auraEndEvent);
         }
 
-       
+
         private void ChangeSeal(int id, int time, List<Event> resultingEvents)
         {
             foreach (Aura seal in Auras.Seals)

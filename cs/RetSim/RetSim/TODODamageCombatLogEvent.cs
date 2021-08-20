@@ -6,8 +6,8 @@ namespace RetSim.Events
     {
         private const int DamageEventPriority = 1;
 
-        private string source {  get; set; }
-        private string result {  get; set; }
+        private string source { get; set; }
+        private string result { get; set; }
         private int damage { get; set; }
         public School school { get; set; }
 
