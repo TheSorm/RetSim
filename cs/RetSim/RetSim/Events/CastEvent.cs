@@ -6,11 +6,14 @@ namespace RetSim.Events
     {
         private const int CastEventPriority = 3;
         private readonly int spellId;
+
+        //TODO change to Spell instead of id
         public CastEvent(int expirationTime, Player player, int spellId) : base(expirationTime, CastEventPriority, player)
         {
             this.spellId = spellId;
         }
 
+        //TODO change to not return list but accept one
         public override int Execute(int time, List<Event> resultingEvents)
         {
             //MY CODE

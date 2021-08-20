@@ -35,11 +35,14 @@ namespace RetSim
 
                 if (!queue.Empty())
                 {
+                    //TODO make this structure queue a sorted structure.
+                    //TODO remove damage from events
                     queue.Sort();
                     Event currentEvent = queue.GetNext();
                     queue.RemoveNext();
                     time = currentEvent.ExpirationTime;
 
+                    //TODO change to pass not return 
                     List<Event> resultingEvents = new();
                     damage += currentEvent.Execute(time, resultingEvents);
                     queue.AddRange(resultingEvents);

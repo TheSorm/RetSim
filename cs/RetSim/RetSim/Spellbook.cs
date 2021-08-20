@@ -8,6 +8,7 @@ namespace RetSim
     {
         private Player player { get; init; }
 
+        //TODO Remove
         public Dictionary<int, Spell> ByID = new Dictionary<int, Spell>();
 
         public Spellbook(Player player)
@@ -20,6 +21,7 @@ namespace RetSim
             Add(Spells.SealOfTheCrusader, null);
         }
 
+        //TODO remove check
         public new void Add(Spell spell, CooldownEndEvent end = null)
         {
             if (ContainsKey(spell))
@@ -42,6 +44,7 @@ namespace RetSim
             return spell.ManaCost <= player.Mana;
         }
 
+        //TODO remove checks
         public List<Event> Use(Spell spell, int time)
         {
             //TODO: Fix mana check & remove mana from player
@@ -99,6 +102,7 @@ namespace RetSim
             else return null;
         }
 
+        //TODO remove check
         public bool EndCooldown(Spell spell)
         {
             if (IsOnCooldown(spell))

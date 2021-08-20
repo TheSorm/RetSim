@@ -12,6 +12,7 @@ namespace RetSim.SpellEffects
             Modifier = modifier;
         }
 
+        //TODO dont return event
         public override List<Event> Resolve(Player caster, Spell spell, int time)
         {
             int damage = Formulas.Damage.NormalizedWeaponDamage(341, 513, 0, 2000, Modifier);

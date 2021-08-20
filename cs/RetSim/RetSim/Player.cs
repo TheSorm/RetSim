@@ -41,6 +41,7 @@ namespace RetSim
             resultingEvents.Add(auraEndEvent);
         }
 
+        //TODO remove casts
         public int CastCrusaderStrike(int time, List<Event> resultingEvents)
         {
             return 1212;
