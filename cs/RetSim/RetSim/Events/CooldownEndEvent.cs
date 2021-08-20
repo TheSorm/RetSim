@@ -15,7 +15,7 @@ namespace RetSim.Events
 
         public override int Execute(int time, List<Event> resultingEvents)
         {
-            player.Spellbook.ByID[spellId].EndCooldown();
+            player.Spellbook.EndCooldown(player.Spellbook.ByID[spellId]);
 
             return 0;
         }

@@ -2,7 +2,7 @@
 
 namespace RetSim.Events
 {
-    class GCDEndEvent : Event
+    public class GCDEndEvent : Event
     {
         private const int GCDEndEventPriority = 0;
         public GCDEndEvent(int expirationTime, Player player) : base(expirationTime, GCDEndEventPriority, player)

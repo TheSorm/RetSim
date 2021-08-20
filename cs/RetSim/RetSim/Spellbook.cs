@@ -1,40 +1,114 @@
 ﻿using RetSim.Events;
+using RetSim.SpellEffects;
 using System.Collections.Generic;
 
 namespace RetSim
 {
-    public class Spellbook : List<PlayerSpell>
+    public class Spellbook : Dictionary<Spell, CooldownEndEvent>
     {
-        public Dictionary<int, PlayerSpell> ByID = new Dictionary<int, PlayerSpell>();
-
         private Player player { get; init; }
+
+        public Dictionary<int, Spell> ByID = new Dictionary<int, Spell>();
 
         public Spellbook(Player player)
         {
             this.player = player;
 
-            Add(new PlayerSpell(Spells.CrusaderStrike));
+            Add(Spells.CrusaderStrike, null);
+            Add(Spells.SealOfCommand, null);
+            Add(Spells.SealOfBlood, null);
+            Add(Spells.SealOfTheCrusader, null);
         }
 
-        public new void Add(PlayerSpell spell)
+        public new void Add(Spell spell, CooldownEndEvent end = null)
         {
-            if (Contains(spell))
+            if (ContainsKey(spell))
                 return;
 
             else
             {
-                base.Add(spell);
-                ByID.Add(spell.Spell.ID, spell);
-            }
+                base.Add(spell, null);
+                ByID.Add(spell.ID, spell);
+            }      
         }
 
-        public List<Event> Use(PlayerSpell spell, int time)
+        public bool IsOnCooldown(Spell spell)
         {
-            List<Event> events = spell.Use(time, player);
+            return this[spell] != null;
+        }
+
+        public bool SufficientMana(Spell spell)
+        {
+            return spell.ManaCost <= player.Mana;
+        }
+
+        public List<Event> Use(Spell spell, int time)
+        {
+            //TODO: Fix mana check & remove mana from player
+
+            var events = new List<Event>();
+
+            if (IsOnCooldown(spell))
+            {
+                //Add spell cast fail - cooldown not ready event
+            }
+
+            else if (player.IsOnGCD())
+            {
+                //Add spell cast fail - cannot use ability yet
+            }
+
+            else if (!SufficientMana(spell))
+            {
+                //Add spell cast fail - insufficient mana event
+            }
+
+            else
+            {
+                foreach (SpellEffect effect in spell.Effects)
+                {
+                    events.AddRange(effect.Resolve(player, spell, time));
+                }
+
+                if (spell.Cooldown > 0)
+                    events.Add(StartCooldown(spell, time));
+
+                if (spell.GCD.Category != GCDCategory.None && spell.GCD.Duration > 0)
+                {
+                    var gcd = new GCDEndEvent(time + spell.GCD.Duration, player);
+
+                    player.StartGCD(gcd);
+                    events.Add(gcd);
+                }
+            }
 
             return events;
         }
 
+        private CooldownEndEvent StartCooldown(Spell spell, int time)
+        {
+            if (spell.Cooldown > 0 && !IsOnCooldown(spell))
+            {
+                var cooldown = new CooldownEndEvent(time + spell.Cooldown, player, spell.ID);
 
+                this[spell] = cooldown;
+
+                return cooldown;
+            }
+
+            else return null;
+        }
+
+        public bool EndCooldown(Spell spell)
+        {
+            if (IsOnCooldown(spell))
+            {
+                this[spell] = null;
+
+                return true;
+            }
+
+            else return false;
+        }
     }
 }

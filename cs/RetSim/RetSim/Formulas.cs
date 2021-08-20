@@ -42,13 +42,24 @@ namespace RetSim
                 return weapon + ap + bonus;
             }
 
-            public static int Melee(int weaponMin, int weaponMax, int weaponSpeed, int bonusWeaponDamage, int ap, float damageModifier)
+            public static int Melee(int min, int max, float weaponSpeed, int bonus, int ap, float modifier)
             {
-                float bonus = GetAPBonus(ap, weaponSpeed);
+                float apBonus = GetAPBonus(ap, weaponSpeed);
 
-                int weapon = GetRNG(weaponMin, weaponMax);
+                int weapon = GetRNG(min, max);
 
-                float damage = GetWeaponDamage(weapon, bonus, bonusWeaponDamage) * damageModifier;
+                float damage = GetWeaponDamage(weapon, apBonus, bonus) * modifier;
+
+                return GetPreciseDamage(damage);
+            }
+
+            public static int NormalizedWeaponDamage(int min, int max, int bonus, int ap, float modifier)
+            {
+                float apBonus = GetAPBonusNormalized(ap);
+
+                int weapon = GetRNG(min, max);
+
+                float damage = GetWeaponDamage(weapon, apBonus, bonus) * modifier;
 
                 return GetPreciseDamage(damage);
             }
@@ -71,17 +82,6 @@ namespace RetSim
                 int weapon = GetRNG(weaponMin, weaponMax);
 
                 float damage = GetWeaponDamage(weapon, bonus, bonusWeaponDamage) * damageModifier * holyDamageModifier * 0.7f + jotc;
-
-                return GetPreciseDamage(damage);
-            }
-
-            public static int NormalizedWeaponDamage(int min, int max, int bonus, int ap, float modifier)
-            {
-                float apBonus = GetAPBonusNormalized(ap);
-
-                int weapon = GetRNG(min, max);
-
-                float damage = GetWeaponDamage(weapon, apBonus, bonus) * modifier;
 
                 return GetPreciseDamage(damage);
             }

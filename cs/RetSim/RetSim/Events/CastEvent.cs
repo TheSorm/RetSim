@@ -19,6 +19,9 @@ namespace RetSim.Events
             //SULIS CODE
             //return player.CastSpell(spellId, time, resultingEvents);
 
+            List<Event> result = player.Cast(player.Spellbook.ByID[spellId], ExpirationTime);
+            resultingEvents.AddRange(result);
+
             return 0;
         }
 

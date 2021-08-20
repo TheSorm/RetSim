@@ -8,9 +8,12 @@ namespace RetSim
     {
         public Spellbook Spellbook { get; private set; }
 
+        public int Mana { get; set; }
+
         private const int SealOfCommandOverlap = 400;
 
         private AutoAttackEvent nextAutoAttack;
+
         private GCDEndEvent gcd;
 
 
@@ -21,14 +24,15 @@ namespace RetSim
 
         public Player()
         {
-            //spellIdToSpellCast.Add(Spellbook.crusaderStrike.ID, (time, resultingEvents) => CastCrusaderStrike(time, resultingEvents));
-            //spellIdToSpellCast.Add(Spellbook.sealOfTheCrusader.ID, (time, resultingEvents) => CastSealOfTheCrusader(time, resultingEvents));
-            //spellIdToSpellCast.Add(Spellbook.sealOfCommand.ID, (time, resultingEvents) => CastSealOfCommand(time, resultingEvents));
-            //spellIdToSpellCast.Add(Spellbook.sealOfBlood.ID, (time, resultingEvents) => CastSealOfBlood(time, resultingEvents));
-
             Spellbook = new Spellbook(this);
-
+            Mana = 5000;
         }
+
+        public List<Event> Cast(Spell spell, int time)
+        {
+            return Spellbook.Use(spell, time);
+        }
+
 
         public void ApplyAura(int auraId, int time, List<Event> resultingEvents)
         {
@@ -83,6 +87,11 @@ namespace RetSim
             nextAutoAttack = new AutoAttackEvent(time + 3500, this);
             resultingEvents.Add(nextAutoAttack);
             return 1234;
+        }
+
+        public void StartGCD(GCDEndEvent gcd)
+        {
+            this.gcd = gcd;
         }
 
         public void RemoveGCD()
