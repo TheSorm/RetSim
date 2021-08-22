@@ -11,9 +11,10 @@ namespace RetSim
         {
             this.Player = player;
 
-            Add(AuraGlossary.SealOfCommand);
-            Add(AuraGlossary.SealOfBlood);
-            Add(AuraGlossary.SealOfTheCrusader);
+            foreach (var aura in AuraGlossary.ByID.Values)
+            {
+                Add(aura);
+            }
         }
         public new void Add(Aura aura, AuraEndEvent end = null)
         {

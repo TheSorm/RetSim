@@ -10,12 +10,12 @@ namespace RetSim
 
         public Spellbook(Player player)
         {
-            this.Player = player;
+            Player = player;
 
-            Add(SpellGlossary.CrusaderStrike);
-            Add(SpellGlossary.SealOfCommand);
-            Add(SpellGlossary.SealOfBlood);
-            Add(SpellGlossary.SealOfTheCrusader);
+            foreach(var spell in SpellGlossary.ByID.Values)
+            {
+                Add(spell);
+            }
         }
 
         public new void Add(Spell spell, CooldownEndEvent end = null)
