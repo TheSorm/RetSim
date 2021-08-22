@@ -4,6 +4,16 @@ A WoW TBC Classic Retribution Paladin Simulator
 * Combat Logger 
   * Damage logger instead of returns
 * Proc System 
+  * Proc Data
+    *1. Its proc type (mask)
+    *2. The spell it triggers on proc
+    *3. Its proc chance (%)
+    *4. Its cooldown
+  * Spell Effects return proc-mask
+  * Events return proc mask from spell effect
+  * Compare spell effect proc-mask with all active procs proc-maskes
+  * Evaluate randome chance for proc
+  * Create new spell cast event if proc happens
 * Player State
   * Player Stats
   * Player Stat Modifier
