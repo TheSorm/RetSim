@@ -1,48 +1,49 @@
-﻿using System.Collections.Generic;
+﻿using RetSim.Events;
+using System.Collections.Generic;
 
 namespace RetSim
 {
-    public static class Auras
+    public class Auras : Dictionary<Aura, AuraEndEvent>
     {
-        public static readonly Aura SealOfTheCrusader = new()
-        {
-            ID = 20306,
-            Name = "Seal of the Crusader",
-            Duration = 30 * 1000
-        };
+        private Player Player { get; init; }
 
-        public static readonly Aura SealOfCommand = new()
+        public Auras(Player player)
         {
-            ID = 27170,
-            Name = "Seal of Command",
-            Duration = 30 * 1000
-        };
+            this.Player = player;
 
-        public static readonly Aura SealOfBlood = new()
+            Add(AuraGlossary.SealOfCommand);
+            Add(AuraGlossary.SealOfBlood);
+            Add(AuraGlossary.SealOfTheCrusader);
+        }
+        public new void Add(Aura aura, AuraEndEvent end = null)
         {
-            ID = 31892,
-            Name = "Seal of Blood",
-            Duration = 30 * 1000
-        };
+            base.Add(aura, null);
+        }
 
-        public static readonly Dictionary<int, Aura> ByID = new()
+        public bool IsActive(Aura aura)
         {
-            { SealOfTheCrusader.ID, SealOfTheCrusader },
-            { SealOfCommand.ID, SealOfCommand },
-            { SealOfBlood.ID, SealOfBlood },
-        };
+            return this[aura] != null;
+        }
 
-        public static readonly HashSet<Aura> Seals = new()
+        public void Apply(Aura aura, int time, List<Event> resultingEvents)
         {
-            SealOfTheCrusader,
-            SealOfCommand,
-            SealOfBlood
-        };
-    }
-    public record Aura
-    {
-        public int ID { get; init; }
-        public string Name { get; init; }
-        public int Duration { get; init; }
+            foreach (AuraEffect effect in aura.Effects)
+            {
+                effect.Apply(Player, aura, time, resultingEvents);
+            }
+
+            this[aura] = new AuraEndEvent(time + aura.Duration, Player, aura);
+            resultingEvents.Add(this[aura]);
+        }
+
+        public void Cancle(Aura aura, int time, List<Event> resultingEvents)
+        {
+            foreach (AuraEffect effect in aura.Effects)
+            {
+                effect.Remove(Player, aura, time, resultingEvents);
+            }
+
+            this[aura] = null;
+        }
     }
 }

@@ -5,21 +5,21 @@ namespace RetSim.Events
     public class AuraEndEvent : Event
     {
         private const int AuraEndEventPriority = 1;
-        private readonly int auraId;
-        public AuraEndEvent(int expirationTime, Player player, int auraId) : base(expirationTime, AuraEndEventPriority, player)
+        private readonly Aura aura;
+        public AuraEndEvent(int expirationTime, Player player, Aura aura) : base(expirationTime, AuraEndEventPriority, player)
         {
-            this.auraId = auraId;
+            this.aura = aura;
         }
 
         public override int Execute(int time, List<Event> resultingEvents)
         {
-            //player.RemoveAura(auraId);
+            player.Auras.Cancle(aura, time, resultingEvents);
             return 0;
         }
 
         public override string ToString()
         {
-            return Auras.ByID[auraId].Name + " fades";
+            return aura.Name + " fades";
         }
     }
 }

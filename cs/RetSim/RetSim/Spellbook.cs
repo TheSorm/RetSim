@@ -6,11 +6,11 @@ namespace RetSim
 {
     public class Spellbook : Dictionary<Spell, CooldownEndEvent>
     {
-        private Player player { get; init; }
+        private Player Player { get; init; }
 
         public Spellbook(Player player)
         {
-            this.player = player;
+            this.Player = player;
 
             Add(SpellGlossary.CrusaderStrike);
             Add(SpellGlossary.SealOfCommand);
@@ -30,14 +30,14 @@ namespace RetSim
 
         public bool SufficientMana(Spell spell)
         {
-            return spell.ManaCost <= player.Mana;
+            return spell.ManaCost <= Player.Mana;
         }
 
         public void Use(Spell spell, int time, List<Event> resultingEvents)
         {
             foreach (SpellEffect effect in spell.Effects)
             {
-                effect.Resolve(player, spell, time, resultingEvents);
+                effect.Resolve(Player, spell, time, resultingEvents);
             }
 
             if (spell.Cooldown > 0)
@@ -45,9 +45,9 @@ namespace RetSim
 
             if (spell.GCD.Category != GCDCategory.None && spell.GCD.Duration > 0)
             {
-                var gcd = new GCDEndEvent(time + spell.GCD.Duration, player);
+                var gcd = new GCDEndEvent(time + spell.GCD.Duration, Player);
 
-                player.StartGCD(gcd);
+                Player.StartGCD(gcd);
                 resultingEvents.Add(gcd);
             }
         }
@@ -56,7 +56,7 @@ namespace RetSim
         {
             if (spell.Cooldown > 0 && !IsOnCooldown(spell))
             {
-                var cooldown = new CooldownEndEvent(time + spell.Cooldown, player, spell);
+                var cooldown = new CooldownEndEvent(time + spell.Cooldown, Player, spell);
 
                 this[spell] = cooldown;
 
