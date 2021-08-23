@@ -6,14 +6,17 @@ namespace RetSim
     public class Auras : Dictionary<Aura, AuraEndEvent>
     {
         private Player Player { get; init; }
+        public Dictionary<Aura, int> Stacks { get; private set; }
 
-        public Auras(Player player)
+    public Auras(Player player)
         {
             this.Player = player;
+            Stacks = new();
 
             foreach (var aura in AuraGlossary.ByID.Values)
             {
                 Add(aura);
+                Stacks.Add(aura, 0);
             }
         }
         public new void Add(Aura aura, AuraEndEvent end = null)
@@ -28,22 +31,36 @@ namespace RetSim
 
         public void Apply(Aura aura, int time, List<Event> resultingEvents)
         {
-            foreach (AuraEffect effect in aura.Effects)
+            if (Stacks[aura] < aura.MaxStacks)
             {
-                effect.Apply(Player, aura, time, resultingEvents);
+                foreach (AuraEffect effect in aura.Effects)
+                {
+                    effect.Apply(Player, aura, time, resultingEvents);
+                }
+                Stacks[aura]++;
             }
 
-            this[aura] = new AuraEndEvent(time + aura.Duration, Player, aura);
-            resultingEvents.Add(this[aura]);
+            if(this[aura] == null)
+            {
+                this[aura] = new AuraEndEvent(time + aura.Duration, Player, aura);
+                resultingEvents.Add(this[aura]);
+            }
+            else
+            {
+                this[aura].ExpirationTime = time + aura.Duration;
+            }
         }
 
         public void Cancle(Aura aura, int time, List<Event> resultingEvents)
         {
-            foreach (AuraEffect effect in aura.Effects)
+            for(int i = 0; i < Stacks[aura]; i++)
             {
-                effect.Remove(Player, aura, time, resultingEvents);
+                foreach (AuraEffect effect in aura.Effects)
+                {
+                    effect.Remove(Player, aura, time, resultingEvents);
+                }
             }
-
+            Stacks[aura] = 0;
             this[aura] = null;
         }
     }

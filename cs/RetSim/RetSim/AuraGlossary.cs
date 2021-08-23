@@ -9,6 +9,7 @@ namespace RetSim
             ID = 20306,
             Name = "Seal of the Crusader",
             Duration = 30 * 1000,
+            MaxStacks = 1,
             Effects = new List<AuraEffect>()
             { }
         };
@@ -18,6 +19,7 @@ namespace RetSim
             ID = 27170,
             Name = "Seal of Command",
             Duration = 30 * 1000,
+            MaxStacks = 1,
             Effects = new List<AuraEffect>()
             { }
         };
@@ -27,6 +29,7 @@ namespace RetSim
             ID = 31892,
             Name = "Seal of Blood",
             Duration = 30 * 1000,
+            MaxStacks = 1,
             Effects = new List<AuraEffect>()
             { }
         };
@@ -50,6 +53,7 @@ namespace RetSim
         public int ID { get; init; }
         public string Name { get; init; }
         public int Duration { get; init; }
+        public int MaxStacks { get; init; }
         public List<AuraEffect> Effects { get; init; }
     }
 }
