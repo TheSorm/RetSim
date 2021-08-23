@@ -10,7 +10,7 @@ namespace RetSim.Events
         {
         }
 
-        public override int Execute(int time, List<Event> resultingEvents)
+        public override ProcMask Execute(int time, List<Event> resultingEvents)
         {
             return player.MeleeAttack(time, resultingEvents);
         }

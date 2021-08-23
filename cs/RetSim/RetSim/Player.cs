@@ -7,6 +7,7 @@ namespace RetSim
     {
         public Spellbook Spellbook { get; private set; }
         public Auras Auras { get; private set; }
+        public Procs Procs { get; private set; }
 
         public int Mana { get; set; }
 
@@ -18,12 +19,18 @@ namespace RetSim
         {
             Spellbook = new Spellbook(this);
             Auras = new Auras(this);
+            Procs = new Procs(this);
             Mana = 5000;
         }
 
-        public void Cast(Spell spell, int time, List<Event> resultingEvents)
+        public ProcMask Cast(Spell spell, int time, List<Event> resultingEvents)
         {
-            Spellbook.Use(spell, time, resultingEvents);
+            return Spellbook.Use(spell, time, resultingEvents);
+        }
+
+        public void Proc(ProcMask procMask, int time, List<Event> resultingEvents)
+        {
+            Procs.Proc(procMask, time, resultingEvents);
         }
 
         public void Apply(Aura aura, int time, List<Event> resultingEvents)
@@ -36,11 +43,11 @@ namespace RetSim
             return nextAutoAttack != null ? nextAutoAttack.ExpirationTime : -1;
         }
 
-        public int MeleeAttack(int time, List<Event> resultingEvents)
+        public ProcMask MeleeAttack(int time, List<Event> resultingEvents)
         {
             nextAutoAttack = new AutoAttackEvent(time + 3500, this);
             resultingEvents.Add(nextAutoAttack);
-            return 1234;
+            return ProcMask.OnMeleeAutoAttack;
         }
 
         public void StartGCD(GCDEndEvent gcd)

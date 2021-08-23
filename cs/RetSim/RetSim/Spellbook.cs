@@ -12,7 +12,7 @@ namespace RetSim
         {
             Player = player;
 
-            foreach(var spell in SpellGlossary.ByID.Values)
+            foreach (var spell in SpellGlossary.ByID.Values)
             {
                 Add(spell);
             }
@@ -33,11 +33,12 @@ namespace RetSim
             return spell.ManaCost <= Player.Mana;
         }
 
-        public void Use(Spell spell, int time, List<Event> resultingEvents)
+        public ProcMask Use(Spell spell, int time, List<Event> resultingEvents)
         {
+            ProcMask procMask = ProcMask.None;
             foreach (SpellEffect effect in spell.Effects)
             {
-                effect.Resolve(Player, spell, time, resultingEvents);
+                procMask |= effect.Resolve(Player, spell, time, resultingEvents);
             }
 
             if (spell.Cooldown > 0)
@@ -50,6 +51,8 @@ namespace RetSim
                 Player.StartGCD(gcd);
                 resultingEvents.Add(gcd);
             }
+
+            return procMask;
         }
 
         private CooldownEndEvent StartCooldown(Spell spell, int time)

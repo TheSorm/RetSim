@@ -13,11 +13,11 @@ namespace RetSim.Events
             this.spell = spell;
         }
 
-        public override int Execute(int time, List<Event> resultingEvents)
+        public override ProcMask Execute(int time, List<Event> resultingEvents)
         {
             player.Spellbook.EndCooldown(spell);
 
-            return 0;
+            return ProcMask.None;
         }
 
         public override string ToString()

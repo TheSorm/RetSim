@@ -2,7 +2,7 @@
 
 namespace RetSim.Events
 {
-    public class TODODamageCombatLogEvent : Event
+    public class TODODamageCombatLogEvent
     {
         private const int DamageEventPriority = 1;
 
@@ -11,7 +11,7 @@ namespace RetSim.Events
         private int damage { get; set; }
         public School school { get; set; }
 
-        public TODODamageCombatLogEvent(int expirationTime, Player player, string source, string result, int damage, School school) : base(expirationTime, DamageEventPriority, player)
+        public TODODamageCombatLogEvent(int expirationTime, Player player, string source, string result, int damage, School school)
         {
             this.source = source;
             this.result = result;
@@ -19,14 +19,14 @@ namespace RetSim.Events
             this.school = school;
         }
 
-        public override int Execute(int time, List<Event> resultingEvents)
+        public int Execute(int time, List<Event> resultingEvents)
         {
             //player.RemoveAura(auraId);
 
             return 0;
         }
 
-        public override string ToString()
+        public string ToString()
         {
             return FormatInput();
         }

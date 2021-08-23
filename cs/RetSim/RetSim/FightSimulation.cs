@@ -23,9 +23,8 @@ namespace RetSim
         public double Run()
         {
             int time = 0;
-            int damage = 0;
             var queue = new EventQueue();
-            queue.Add(new AutoAttackEvent(0, player)); //probably gets moved into a start function of the tactic
+            queue.Add(new AutoAttackEvent(0, player)); //TODO: Move into a start function of the tactic
             queue.Add(new CastEvent(0, player, SpellGlossary.SealOfCommand));
             queue.Add(new CastEvent(17200, player, SpellGlossary.SealOfBlood));
 
@@ -41,7 +40,8 @@ namespace RetSim
                     time = currentEvent.ExpirationTime;
 
                     List<Event> resultingEvents = new();
-                    damage += currentEvent.Execute(time, resultingEvents);
+                    ProcMask procMask = currentEvent.Execute(time, resultingEvents);
+                    player.Proc(procMask, time, resultingEvents);
                     queue.AddRange(resultingEvents);
 
                     Logger.Log(time + ": Event: " + currentEvent.ToString());
@@ -60,7 +60,7 @@ namespace RetSim
                     queue.Add(playerAction);
             }
 
-            return (damage / (fightDuration / 1000.0));
+            return (1111 / (fightDuration / 1000.0));
         }
 
 

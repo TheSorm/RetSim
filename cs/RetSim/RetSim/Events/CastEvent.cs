@@ -12,10 +12,9 @@ namespace RetSim.Events
             this.spell = spell;
         }
 
-        public override int Execute(int time, List<Event> resultingEvents)
+        public override ProcMask Execute(int time, List<Event> resultingEvents)
         {
-            player.Cast(spell, ExpirationTime, resultingEvents);
-            return 0;
+            return player.Cast(spell, ExpirationTime, resultingEvents);
         }
 
         public override string ToString()

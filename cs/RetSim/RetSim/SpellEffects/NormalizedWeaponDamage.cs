@@ -12,9 +12,11 @@ namespace RetSim.SpellEffects
             Modifier = modifier;
         }
 
-        public override void Resolve(Player caster, Spell spell, int time, List<Event> resultingEvents)
+        public override ProcMask Resolve(Player caster, Spell spell, int time, List<Event> resultingEvents)
         {
             int damage = Formulas.Damage.NormalizedWeaponDamage(341, 513, 0, 2000, Modifier);
+
+            return ProcMask.OnMeleeAutoAttack;
         }
     }
 }

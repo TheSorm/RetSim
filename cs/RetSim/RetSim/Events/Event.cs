@@ -15,7 +15,7 @@ namespace RetSim.Events
             Priority = priority;
             this.player = player;
         }
-        public abstract int Execute(int time, List<Event> resultingEvents);
+        public abstract ProcMask Execute(int time, List<Event> resultingEvents);
 
         public int CompareTo(Event other)
         {

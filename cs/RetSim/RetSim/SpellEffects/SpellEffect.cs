@@ -7,6 +7,6 @@ namespace RetSim.SpellEffects
     {
         public SpellEffect() { }
 
-        public abstract void Resolve(Player caster, Spell spell, int time, List<Event> resultingEvents);
+        public abstract ProcMask Resolve(Player caster, Spell spell, int time, List<Event> resultingEvents);
     }
 }

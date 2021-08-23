@@ -11,10 +11,10 @@ namespace RetSim.Events
             this.aura = aura;
         }
 
-        public override int Execute(int time, List<Event> resultingEvents)
+        public override ProcMask Execute(int time, List<Event> resultingEvents)
         {
             player.Auras.Cancle(aura, time, resultingEvents);
-            return 0;
+            return ProcMask.None;
         }
 
         public override string ToString()
