@@ -3,6 +3,11 @@ A WoW TBC Classic Retribution Paladin Simulator
 ## TODO
 * Combat Logger 
   * Damage logger
+* Auras 
+  * Aura Stacks
+* Spells
+  * Cast spells
+  * Periodic spells
 * Player State
   * Player Stats
   * Player Stat Modifier
