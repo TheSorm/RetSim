@@ -32,7 +32,7 @@ namespace RetSim
             Name = "Magtheridon Melee Trinket",
             ProcMask = ProcMask.OnMeleeAutoAttack | ProcMask.OnMeleeSpecialAttack,
             //Spell = SpellGlossary.Haste,
-            Chance = 15,
+            Chance = 6,
             //Cooldown = 20 * 1000,
         };
 
