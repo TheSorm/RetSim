@@ -9,6 +9,8 @@ namespace RetSim
         public Auras Auras { get; private set; }
         public Procs Procs { get; private set; }
 
+        public int WeaponSpeed { get; set; }
+
         public int Mana { get; set; }
 
         private AutoAttackEvent nextAutoAttack;
@@ -20,6 +22,7 @@ namespace RetSim
             Spellbook = new Spellbook(this);
             Auras = new Auras(this);
             Procs = new Procs(this);
+            WeaponSpeed = 3500;
             Mana = 5000;
         }
 

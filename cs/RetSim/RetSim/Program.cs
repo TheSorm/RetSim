@@ -9,7 +9,9 @@ namespace RetSim
 
         static void Main(string[] args)
         {
-            FightSimulation fightSimulation = new(new Player(), new Enemy(), new EliteTactic(), 30 * 1000);
+            Glossaries.Initialize();
+
+            FightSimulation fightSimulation = new(new Player(), new Enemy(), new EliteTactic(), 35 * 1000);
 
             double result = fightSimulation.Run();
 

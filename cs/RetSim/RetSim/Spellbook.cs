@@ -12,7 +12,7 @@ namespace RetSim
         {
             Player = player;
 
-            foreach (var spell in SpellGlossary.ByID.Values)
+            foreach (var spell in Glossaries.Spells.ByID.Values)
             {
                 Add(spell);
             }

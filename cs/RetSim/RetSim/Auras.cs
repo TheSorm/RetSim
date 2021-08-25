@@ -3,65 +3,80 @@ using System.Collections.Generic;
 
 namespace RetSim
 {
-    public class Auras : Dictionary<Aura, AuraEndEvent>
+    public class Auras : Dictionary<Aura, AuraState>
     {
         private Player Player { get; init; }
-        public Dictionary<Aura, int> Stacks { get; private set; }
 
-    public Auras(Player player)
+        public Auras(Player player)
         {
             this.Player = player;
-            Stacks = new();
 
-            foreach (var aura in AuraGlossary.ByID.Values)
+            foreach (var aura in Glossaries.Auras.ByID.Values)
             {
-                Add(aura);
-                Stacks.Add(aura, 0);
+                Add(aura, new AuraState());
             }
-        }
-        public new void Add(Aura aura, AuraEndEvent end = null)
-        {
-            base.Add(aura, null);
         }
 
         public bool IsActive(Aura aura)
         {
-            return this[aura] != null;
+            return this[aura].End != null;
+        }
+
+        public int GetRemainingDuration(Aura aura, int time)
+        {
+            if (this[aura].End == null)
+                return 0;
+
+            else
+                return this[aura].End.ExpirationTime - time;
         }
 
         public void Apply(Aura aura, int time, List<Event> resultingEvents)
         {
-            if (Stacks[aura] < aura.MaxStacks)
+            if (this[aura].Stacks < aura.MaxStacks)
             {
                 foreach (AuraEffect effect in aura.Effects)
                 {
                     effect.Apply(Player, aura, time, resultingEvents);
                 }
-                Stacks[aura]++;
+
+                this[aura].Stacks++;
             }
 
-            if(this[aura] == null)
+            if (this[aura].End == null)
             {
-                this[aura] = new AuraEndEvent(time + aura.Duration, Player, aura);
-                resultingEvents.Add(this[aura]);
+                this[aura].End = new AuraEndEvent(time + aura.Duration, Player, aura);
+                resultingEvents.Add(this[aura].End);
             }
+
             else
-            {
-                this[aura].ExpirationTime = time + aura.Duration;
-            }
+                this[aura].End.ExpirationTime = time + aura.Duration;            
         }
 
-        public void Cancle(Aura aura, int time, List<Event> resultingEvents)
+        public void Cancel(Aura aura, int time, List<Event> resultingEvents)
         {
-            for(int i = 0; i < Stacks[aura]; i++)
+            for (int i = 0; i < this[aura].Stacks; i++)
             {
                 foreach (AuraEffect effect in aura.Effects)
                 {
                     effect.Remove(Player, aura, time, resultingEvents);
                 }
             }
-            Stacks[aura] = 0;
-            this[aura] = null;
+
+            this[aura].Stacks = 0;
+            this[aura].End = null;
+        }
+    }
+
+    public class AuraState
+    {
+        public AuraEndEvent End { get; set; }
+        public int Stacks { get; set; }
+
+        public AuraState()
+        {
+            End = null;
+            Stacks = 0;
         }
     }
 }

@@ -16,16 +16,22 @@ namespace RetSim
         {
             foreach (var proc in this)
             {
-                if (!Player.Spellbook.IsOnCooldown(proc.Spell) && (proc.ProcMask & procMask) != ProcMask.None && CheckForProc(proc))
+                if (!Player.Spellbook.IsOnCooldown(proc.Spell) && (proc.ProcMask & procMask) != ProcMask.None && CheckForProc(proc, Player))
                 {
                     resultingEvents.Add(new CastEvent(time, Player, proc.Spell)); //TODO: Increase Prio of those cast events
+                    //Program.Logger.Log($"{proc.Name} procced");
                 }
             }
         }
 
-        private static bool CheckForProc(Proc proc)
+        private static bool CheckForProc(Proc proc, Player player)
         {
-            return Formulas.Damage.GetRNG(0, 99) < proc.Chance; //TODO: extract RNG to a better place
+            if (proc.PPM == 0)
+                return RNG.Roll100(proc.Chance);
+
+            else
+                return RNG.Roll10000(Helpers.UpgradeFraction(player.WeaponSpeed * proc.PPM / 600));
+
         }
     }
 }

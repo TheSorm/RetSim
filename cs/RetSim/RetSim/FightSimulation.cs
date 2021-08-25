@@ -24,9 +24,10 @@ namespace RetSim
         {
             int time = 0;
             var queue = new EventQueue();
-            queue.Add(new AutoAttackEvent(0, player)); //TODO: Move into a start function of the tactic
-            queue.Add(new CastEvent(0, player, SpellGlossary.SealOfCommand));
-            queue.Add(new CastEvent(17200, player, SpellGlossary.SealOfBlood));
+
+            player.Procs.Add(Glossaries.Procs.MagtheridonMeleeTrinket);
+
+            queue.AddRange(tactic.PreFight(player));
 
             while (time <= fightDuration)
             {

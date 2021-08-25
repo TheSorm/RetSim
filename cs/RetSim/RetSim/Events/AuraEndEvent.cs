@@ -13,7 +13,7 @@ namespace RetSim.Events
 
         public override ProcMask Execute(int time, List<Event> resultingEvents)
         {
-            player.Auras.Cancle(aura, time, resultingEvents);
+            player.Auras.Cancel(aura, time, resultingEvents);
             return ProcMask.None;
         }
 

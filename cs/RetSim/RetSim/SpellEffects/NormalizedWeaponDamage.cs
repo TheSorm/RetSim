@@ -16,7 +16,7 @@ namespace RetSim.SpellEffects
         {
             int damage = Formulas.Damage.NormalizedWeaponDamage(341, 513, 0, 2000, Modifier);
 
-            return ProcMask.OnMeleeAutoAttack; // TODO: Is that all?
+            return ProcMask.OnMeleeSpecialAttack; // TODO: Is that all?
         }
     }
 }
