@@ -27,8 +27,8 @@ namespace RetSim.Tactics
                 if (player.Auras.GetRemainingDuration(Glossaries.Auras.SealOfCommand, start) < 5000)
                     return new CastEvent(start + 0, player, Glossaries.Spells.SealOfCommand);
 
-                else if (!player.Spellbook.IsOnCooldown(Glossaries.Spells.CrusaderStrike))                
-                    return new CastEvent(start + 0, player, Glossaries.Spells.CrusaderStrike);                
+                else if (!player.Spellbook.IsOnCooldown(Glossaries.Spells.CrusaderStrike))
+                    return new CastEvent(start + 0, player, Glossaries.Spells.CrusaderStrike);
             }
 
             return null;

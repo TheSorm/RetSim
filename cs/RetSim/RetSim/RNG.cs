@@ -15,7 +15,7 @@ namespace RetSim
                 return true;
 
             else
-                return generator.Next(0, 100) < input;            
+                return generator.Next(0, 100) < input;
         }
 
         public static bool Roll10000(int input)

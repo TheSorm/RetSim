@@ -50,7 +50,7 @@ namespace RetSim
             }
 
             else
-                this[aura].End.ExpirationTime = time + aura.Duration;            
+                this[aura].End.ExpirationTime = time + aura.Duration;
         }
 
         public void Cancel(Aura aura, int time, List<Event> resultingEvents)

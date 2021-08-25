@@ -12,7 +12,7 @@ namespace RetSim
         public int CastTime { get; init; }
         public School School { get; init; }
         public GCD GCD { get; init; }
-        public List<SpellEffect> Effects { get; init; }
+        public List<SpellEffect> Effects { get; set; }
     }
 
     public record GCD

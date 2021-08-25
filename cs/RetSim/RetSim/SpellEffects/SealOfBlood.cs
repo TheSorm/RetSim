@@ -6,7 +6,7 @@ namespace RetSim.SpellEffects
     public class SealOfBlood : SpellEffect
     {
 
-        public SealOfBlood(): base()
+        public SealOfBlood() : base()
         {
         }
 
