@@ -30,7 +30,7 @@ namespace RetSim
 
         public bool SufficientMana(Spell spell)
         {
-            return spell.ManaCost <= Player.Mana;
+            return spell.ManaCost <= Player.Stats.Mana;
         }
 
         public ProcMask Use(Spell spell, int time, List<Event> resultingEvents)

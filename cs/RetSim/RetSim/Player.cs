@@ -5,25 +5,23 @@ namespace RetSim
 {
     public partial class Player
     {
-        public Spellbook Spellbook { get; private set; }
-        public Auras Auras { get; private set; }
-        public Procs Procs { get; private set; }
+        public Spellbook Spellbook { get; init; }
+        public Auras Auras { get; init; }
+        public Procs Procs { get; init; }
+        public PlayerStats Stats { get; init; }
 
         public int WeaponSpeed { get; set; }
-
-        public int Mana { get; set; }
 
         private AutoAttackEvent nextAutoAttack;
 
         private GCDEndEvent gcd;
 
-        public Player()
+        public Player(Race race, Equipment equipment)
         {
             Spellbook = new Spellbook(this);
             Auras = new Auras(this);
             Procs = new Procs(this);
-            WeaponSpeed = 3500;
-            Mana = 5000;
+            Stats = new PlayerStats(race, equipment);
         }
 
         public ProcMask Cast(Spell spell, int time, List<Event> resultingEvents)
@@ -48,7 +46,7 @@ namespace RetSim
 
         public ProcMask MeleeAttack(int time, List<Event> resultingEvents)
         {
-            nextAutoAttack = new AutoAttackEvent(time + 3500, this);
+            nextAutoAttack = new AutoAttackEvent(time + Stats.AttackSpeed, this);
             resultingEvents.Add(nextAutoAttack);
             return ProcMask.OnMeleeAutoAttack;
         }

@@ -1,42 +1,81 @@
 ﻿namespace RetSim
 {
-    public class Stats
+    public record Stats
     {
-        public virtual int Stamina { get; private set; }
-        public virtual int Health { get; private set; }
+        public int Stamina { get; init; }
 
-        public int Intellect { get; private set; }
-        public int Mana { get; private set; }
-        public int ManaPer5 { get; private set; }
+        public int Intellect { get; init; }
+        public int ManaPer5 { get; init; }
 
-        public int Strength { get; private set; }
-        public int AttackPower { get; private set; }
+        public int Strength { get; init; }
+        public int AttackPower { get; init; }
 
-        public int Agility { get; private set; }
-        public float CritChance { get; private set; }
-        public int CritRating { get; private set; }
+        public int Agility { get; init; }
+        public float CritChance { get; init; }
+        public int CritRating { get; init; }
 
-        public float HitChance { get; private set; }
-        public int HitRating { get; private set; }
+        public float HitChance { get; init; }
+        public int HitRating { get; init; }
 
-        public float Haste { get; private set; }
-        public int HasteRating { get; private set; }
+        public float Haste { get; init; }
+        public int HasteRating { get; init; }
 
-        public int Expertise { get; private set; }
-        public int ExpertiseRating { get; private set; }
+        public int Expertise { get; init; }
+        public int ExpertiseRating { get; init; }
 
-        public int ArmorPenetration { get; private set; }
-        public int WeaponDamage { get; private set; }
+        public int ArmorPenetration { get; init; }
+        public int WeaponDamage { get; init; }
 
-        public int SpellPower { get; private set; }
+        public int SpellPower { get; init; }
 
-        public float SpellCrit { get; private set; }
-        public int SpellCritRating { get; private set; }
+        public float SpellCrit { get; init; }
+        public int SpellCritRating { get; init; }
 
-        public float SpellHit { get; private set; }
-        public int SpellHitRating { get; private set; }
+        public float SpellHit { get; init; }
+        public int SpellHitRating { get; init; }
 
-        public float SpellHaste { get; private set; }
-        public int SpellHasteRating { get; private set; }
+        public float SpellHaste { get; init; }
+        public int SpellHasteRating { get; init; }
+
+        public static Stats operator +(Stats a, Stats b)
+        {
+            return new Stats
+            {
+                Stamina = a.Stamina + b.Stamina,
+
+                Intellect = a.Intellect + b.Intellect,
+                ManaPer5 = a.ManaPer5 + b.ManaPer5,
+
+                Strength = a.Strength + b.Strength,
+                AttackPower = a.AttackPower + b.AttackPower,
+
+                Agility = a.Agility + b.Agility,
+                CritChance = a.CritChance + b.CritChance,
+                CritRating = a.CritRating + b.CritRating,
+
+                HitChance = a.HitChance + b.HitChance,
+                HitRating = a.HitRating + b.HitRating,
+
+                Haste = a.Haste + b.Haste,
+                HasteRating = a.HasteRating + b.HasteRating,
+
+                Expertise = a.Expertise + b.Expertise,
+                ExpertiseRating = a.ExpertiseRating + b.ExpertiseRating,
+
+                ArmorPenetration = a.ArmorPenetration + b.ArmorPenetration,
+                WeaponDamage = a.WeaponDamage + b.WeaponDamage,
+
+                SpellPower = a.SpellPower + b.SpellPower,
+
+                SpellCrit = a.SpellCrit + b.SpellCrit,
+                SpellCritRating = a.SpellCritRating + b.SpellCritRating,
+
+                SpellHit = a.SpellHit + b.SpellHit,
+                SpellHitRating = a.SpellHitRating + b.SpellHitRating,
+
+                SpellHaste = a.SpellHaste + b.SpellHaste,
+                SpellHasteRating = a.SpellHasteRating + b.SpellHasteRating
+            };
+        }
     }
 }

@@ -21,8 +21,8 @@ A WoW TBC Classic Retribution Paladin Simulator
 * AutoAttack
   * Update it with maybe using SpellEffects (Pride "has some other ideas for that anyway")
 * Player State
-  * Static Stats: calculated from gear, static buffs, race, base stats ect.
-  * Dynamic Stats: stats from dynamic buffs / Stat Modifier
+  * Static Stats: Add static buffs (base stats etc.)
+  * Dynamic Stats: Stat Modifier
 * Change Event Queue to SortedSet
   * Option 1: Every event gets a reference to the queue and if the event is updated, the quque re-adds the event. 
 Instead of passing around a list to collect the resulting events, the event queue itself is passed and new events are added to it with a reference to it.

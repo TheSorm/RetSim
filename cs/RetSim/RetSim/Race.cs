@@ -7,7 +7,7 @@ namespace RetSim
         public static readonly Race Human = new()
         {
             Name = "Human",
-            Stats = new RaceStats
+            Stats = new Stats
             {
                 Strength = 126,
                 Agility = 77,
@@ -19,7 +19,7 @@ namespace RetSim
         public static readonly Race Dwarf = new()
         {
             Name = "Dwarf",
-            Stats = new RaceStats
+            Stats = new Stats
             {
                 Strength = 128,
                 Agility = 73,
@@ -31,7 +31,7 @@ namespace RetSim
         public static readonly Race Draenei = new()
         {
             Name = "Draenei",
-            Stats = new RaceStats
+            Stats = new Stats
             {
                 Strength = 127,
                 Agility = 74,
@@ -43,7 +43,7 @@ namespace RetSim
         public static readonly Race BloodElf = new()
         {
             Name = "Blood Elf",
-            Stats = new RaceStats
+            Stats = new Stats
             {
                 Strength = 123,
                 Agility = 79,
@@ -64,14 +64,6 @@ namespace RetSim
     public record Race
     {
         public string Name { get; init; }
-        public RaceStats Stats { get; init; }
-    }
-
-    public record RaceStats
-    {
-        public int Strength { get; init; }
-        public int Agility { get; init; }
-        public int Intellect { get; init; }
-        public int Stamina { get; init; }
+        public Stats Stats { get; init; }
     }
 }
