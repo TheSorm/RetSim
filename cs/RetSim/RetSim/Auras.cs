@@ -5,11 +5,11 @@ namespace RetSim
 {
     public class Auras : Dictionary<Aura, AuraState>
     {
-        private Player Player { get; init; }
+        private Player player { get; init; }
 
-        public Auras(Player player)
+        public Auras(Player parent)
         {
-            this.Player = player;
+            player = parent;
 
             foreach (var aura in Glossaries.Auras.ByID.Values)
             {
@@ -37,7 +37,7 @@ namespace RetSim
             {
                 foreach (AuraEffect effect in aura.Effects)
                 {
-                    effect.Apply(Player, aura, time, resultingEvents);
+                    effect.Apply(player, aura, time, resultingEvents);
                 }
 
                 this[aura].Stacks++;
@@ -45,7 +45,7 @@ namespace RetSim
 
             if (this[aura].End == null)
             {
-                this[aura].End = new AuraEndEvent(time + aura.Duration, Player, aura);
+                this[aura].End = new AuraEndEvent(time + aura.Duration, player, aura);
                 resultingEvents.Add(this[aura].End);
             }
 
@@ -59,7 +59,7 @@ namespace RetSim
             {
                 foreach (AuraEffect effect in aura.Effects)
                 {
-                    effect.Remove(Player, aura, time, resultingEvents);
+                    effect.Remove(player, aura, time, resultingEvents);
                 }
             }
 

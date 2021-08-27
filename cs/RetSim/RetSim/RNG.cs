@@ -6,28 +6,42 @@ namespace RetSim
     {
         private static Random generator = new Random();
 
-        public static bool Roll100(int input)
+        private static bool Roll(int input, int limit)
         {
-            if (input <= 0)
+            if (input <= Constants.Misc.Zero)
                 return false;
 
-            else if (input >= 100)
+            else if (input >= limit)
                 return true;
 
             else
-                return generator.Next(0, 100) < input;
+                return generator.Next(0, limit) < input;
         }
 
-        public static bool Roll10000(int input)
+        public static bool Roll100(int input)
         {
-            if (input <= 0)
-                return false;
+            return Roll(input, Constants.Misc.OneHundred);
+        }
 
-            else if (input >= 10000)
-                return true;
+        public static bool Roll100(float input)
+        {
+            int integer = Helpers.UpgradeFraction(input);
 
-            else
-                return generator.Next(0, 10000) < input;
+            return Roll(integer, 10000);
+        }
+
+        /// <summary>
+        /// Converts a decimal damage value to integer by randomly rolling against its first 2 decimal places. F.e. 1024.75 has a 75% chance of returning 1025 and a 25% chance of returning 1024.
+        /// </summary>
+        /// <param name="damage">The damage that would be dealt, as a decimal number.</param>
+        /// <returns>The damage value that should be dealt, expressed as a randomly rolled integer.</returns>
+        public static int RollDamage(float damage)
+        {
+            int fraction = Helpers.GetFraction(damage);
+
+            int random = Roll100(fraction) ? Constants.Misc.One : Constants.Misc.Zero;
+
+            return (int)damage + random;
         }
 
         public static int RollRange(int min, int max)
@@ -37,7 +51,7 @@ namespace RetSim
 
         public static float RollRange(float min, float max)
         {
-            return generator.Next((int)(min * 100), (int)(max * 100) + 1) / 100f;
+            return RollRange((int)(min * 100), (int)(max * 100)) / 100f;
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace RetSim
 {
-    public record Stats
+    public class Stats
     {
         public int Stamina { get; init; }
 
@@ -36,6 +36,44 @@
 
         public float SpellHaste { get; init; }
         public int SpellHasteRating { get; init; }
+
+        public Stats()
+        {
+            Stamina = 0;
+
+            Intellect = 0;
+            ManaPer5 = 0;
+            
+            Strength = 0;
+            AttackPower = 0;
+
+            Agility = 0;
+            CritChance = 0;
+            CritRating = 0; 
+
+            HitChance = 0;
+            HitRating = 0;
+
+            Haste = 0;
+            HasteRating = 0;
+
+            Expertise = 0;
+            ExpertiseRating = 0;
+
+            ArmorPenetration = 0;
+            WeaponDamage = 0;
+
+            SpellPower = 0;
+
+            SpellCrit = 0;
+            SpellCritRating = 0;
+
+            SpellHit = 0;
+            SpellHitRating = 0;
+
+            SpellHaste = 0;
+            SpellHasteRating = 0;
+        }
 
         public static Stats operator +(Stats a, Stats b)
         {

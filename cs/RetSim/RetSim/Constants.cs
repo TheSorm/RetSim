@@ -29,12 +29,18 @@
             public const int AgilityPerCrit = 25;
             public const int IntellectPerSpellCrit = 80;
 
-            public const float DodgePerExpertise = 0.25f;
+            public const int HitPenalty = 1;
+
+            public const int CritSuppression = 3;
+            public const float CritAuraSuppression = 1.8f;
+
+            public const int ExpertiseCap = 26;
+            public const int ExpertisePerDodge = 4;
 
             public const float PhysicalCritBonus = 1f;
             public const float SpellCritBonus = 0.5f;
 
-            public const float NormalizedWeaponSpeed = 3.3f;
+            public const int NormalizedWeaponSpeed = 3300;
         }
 
         public static class Ratings
@@ -61,8 +67,15 @@
             public const float GlancingChance = 24f;
             public const float GlancePenaltyMax = 35f;
             public const float GlancePenaltyMin = 15f;
+        }
 
-
+        public static class Misc
+        {
+            public const int SecondsPerMin = 60;
+            public const int MillisecondsPerSec = 1000;
+            public const int OneHundred = 100;
+            public const int One = 1;
+            public const int Zero = 0;
         }
     }
 

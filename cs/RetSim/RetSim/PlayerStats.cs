@@ -1,63 +1,62 @@
 ﻿namespace RetSim
 {
-    public record PlayerStats : Stats
+    public class PlayerStats : Stats
     {
-        private Stats TemporaryStats { get; init; }
-        private readonly Stats staticStats;
+        private Player player;
 
-        public PlayerStats(Race race, Equipment equipment)
+        public Stats Temporary { get; set; }
+        private readonly Stats permanent;
+
+        public PlayerStats(Player parent, Race race, Equipment equipment)
         {
-            TemporaryStats = new Stats();
-            staticStats = race.Stats;
-            staticStats += equipment.Stats;
-            AttackSpeed = equipment.AttackSpeed;
+            player = parent;
+            Temporary = new Stats();
+            permanent = race.Stats + equipment.Stats;
         }
 
-        public int Health { get { return Constants.BaseStats.Health + Stamina * Constants.Stats.HealthPerStamina; } }
-        public int Mana { get { return Constants.BaseStats.Mana + Intellect * Constants.Stats.ManaPerIntellect; } }
+        public int MaxHealth { get { return Constants.BaseStats.Health + Stamina * Constants.Stats.HealthPerStamina; } }
+        public int MaxMana { get { return Constants.BaseStats.Mana + Intellect * Constants.Stats.ManaPerIntellect; } }
 
-        private int currentHealth;
-        public int CurrentHealth { get { return currentHealth; } set { currentHealth = ((value <= 0) ? 0 : value < Health ? value : Health); } }
+        private int health, mana;
+        public int Health { get { return health; } set { health = value <= 0 ? 0 : value <= MaxHealth ? value : MaxHealth; } }
+        public int Mana { get { return mana; } set { mana = value <= 0 ? 0 : value <= MaxHealth ? value : MaxHealth; } }
 
-        private int currentMana;
-        public int CurrentMana { get { return currentMana; } set { currentMana = ((value <= 0) ? 0 : value < Mana ? value : Mana); } }
+        public new int Stamina { get { return (int)((permanent.Stamina + Temporary.Stamina) * player.Modifiers.AllStats); } }
 
-        public int AttackSpeed { get; init; }
+        public new int Intellect { get { return (int)((permanent.Intellect + Temporary.Intellect) * player.Modifiers.Intellect * player.Modifiers.AllStats); } }
+        public new int ManaPer5 { get { return permanent.ManaPer5 + Temporary.ManaPer5; } }
 
-        public new int Stamina { get { return staticStats.Stamina + TemporaryStats.Stamina; } }
+        public new int Strength { get { return (int)((permanent.Strength + Temporary.Strength) * player.Modifiers.Strength * player.Modifiers.AllStats); } }
+        public new int AttackPower { get { return (int)((permanent.AttackPower + Temporary.AttackPower + Constants.BaseStats.AttackPower + Strength * Constants.Stats.APPerStrength) * player.Modifiers.AttackPower); } }
 
-        public new int Intellect { get { return staticStats.Intellect + TemporaryStats.Intellect; } }
-        public new int ManaPer5 { get { return staticStats.ManaPer5 + TemporaryStats.ManaPer5; } }
+        public new int Agility { get { return (int)((permanent.Agility + Temporary.Agility) * player.Modifiers.AllStats); } }
+        public new int CritRating { get { return permanent.CritRating + Temporary.CritRating; } }
+        public new float CritChance { get { return permanent.CritChance + Temporary.CritChance + Constants.BaseStats.CritChance + (Agility / Constants.Stats.AgilityPerCrit) + (CritRating / Constants.Ratings.Crit); } }
 
-        public new int Strength { get { return staticStats.Strength + TemporaryStats.Strength; } }
-        public new int AttackPower { get { return staticStats.AttackPower + TemporaryStats.AttackPower; } }
+        public new int HitRating { get { return permanent.HitRating + Temporary.HitRating; } }
+        public new float HitChance { get { return permanent.HitChance + Temporary.HitChance + (HitRating / Constants.Ratings.Hit); } }
+        public float HitPenalty { get { return (int)HitChance >= Constants.Stats.HitPenalty ? Constants.Stats.HitPenalty : HitChance; } }
+        public float EffectiveHitChance { get { return HitChance - HitPenalty; } }
 
-        public new int Agility { get { return staticStats.Agility + TemporaryStats.Agility; } }
-        public new float CritChance { get { return staticStats.CritChance + TemporaryStats.CritChance; } }
-        public new int CritRating { get { return staticStats.CritRating + TemporaryStats.CritRating; } }
+        public new int HasteRating { get { return permanent.HasteRating + Temporary.HasteRating; } }
+        public new float Haste { get { return (Constants.Misc.One + (HasteRating / (Constants.Ratings.Haste * Constants.Misc.OneHundred))) * player.Modifiers.AttackSpeed; } }
 
-        public new float HitChance { get { return staticStats.HitChance + TemporaryStats.HitChance; } }
-        public new int HitRating { get { return staticStats.HitRating + TemporaryStats.HitRating; } }
+        public new int ExpertiseRating { get { return permanent.ExpertiseRating + Temporary.ExpertiseRating; } }
+        public new int Expertise { get { return permanent.Expertise + Temporary.Expertise + (int)(ExpertiseRating / Constants.Ratings.Expertise); } }
+        public float DodgeChanceReduction { get { return Expertise >= Constants.Stats.ExpertiseCap ? Constants.Stats.ExpertiseCap / Constants.Stats.ExpertisePerDodge : Expertise / Constants.Stats.ExpertisePerDodge; } }
 
-        public new float Haste { get { return staticStats.Haste + TemporaryStats.Haste; } }
-        public new int HasteRating { get { return staticStats.HasteRating + TemporaryStats.HasteRating; } }
+        public new int ArmorPenetration { get { return permanent.ArmorPenetration + Temporary.ArmorPenetration; } }
+        public new int WeaponDamage { get { return permanent.WeaponDamage + Temporary.WeaponDamage; } }
 
-        public new int Expertise { get { return staticStats.Expertise + TemporaryStats.Expertise; } }
-        public new int ExpertiseRating { get { return staticStats.ExpertiseRating + TemporaryStats.ExpertiseRating; } }
+        public new int SpellPower { get { return permanent.SpellPower + Temporary.SpellPower; } }
 
-        public new int ArmorPenetration { get { return staticStats.ArmorPenetration + TemporaryStats.ArmorPenetration; } }
-        public new int WeaponDamage { get { return staticStats.WeaponDamage + TemporaryStats.WeaponDamage; } }
+        public new int SpellCritRating { get { return permanent.SpellCritRating + Temporary.SpellCritRating; } }
+        public new float SpellCrit { get { return permanent.SpellCrit + Temporary.SpellCrit + Constants.BaseStats.SpellCritChance + (Intellect / Constants.Stats.IntellectPerSpellCrit) + (SpellCritRating / Constants.Ratings.SpellCrit); } }
 
-        public new int SpellPower { get { return staticStats.SpellPower + TemporaryStats.SpellPower; } }
+        public new int SpellHitRating { get { return permanent.SpellHitRating + Temporary.SpellHitRating; } }
+        public new float SpellHit { get { return permanent.SpellHit + Temporary.SpellHit + (SpellHitRating / Constants.Ratings.SpellHit); } }
 
-        public new float SpellCrit { get { return staticStats.SpellCrit + TemporaryStats.SpellCrit; } }
-        public new int SpellCritRating { get { return staticStats.SpellCritRating + TemporaryStats.SpellCritRating; } }
-
-        public new float SpellHit { get { return staticStats.SpellHit + TemporaryStats.SpellHit; } }
-        public new int SpellHitRating { get { return staticStats.SpellHitRating + TemporaryStats.SpellHitRating; } }
-
-        public new float SpellHaste { get { return staticStats.SpellHaste + TemporaryStats.SpellHaste; } }
-        public new int SpellHasteRating { get { return staticStats.SpellHasteRating + TemporaryStats.SpellHasteRating; } }
-
+        public new int SpellHasteRating { get { return permanent.SpellHasteRating + Temporary.SpellHasteRating; } }
+        public new float SpellHaste { get { return (Constants.Misc.One + (SpellHasteRating / (Constants.Ratings.SpellHaste * Constants.Misc.OneHundred))) * player.Modifiers.CastSpeed; } }
     }
 }

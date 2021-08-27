@@ -5,32 +5,32 @@ namespace RetSim
 {
     public class Procs : List<Proc>
     {
-        private Player Player { get; init; }
+        private Player player { get; init; }
 
-        public Procs(Player player)
+        public Procs(Player parent)
         {
-            Player = player;
+            player = parent;
         }
 
-        public void Proc(ProcMask procMask, int time, List<Event> resultingEvents)
+        public void CheckProcs(ProcMask mask, int time, List<Event> results)
         {
             foreach (var proc in this)
             {
-                if (!Player.Spellbook.IsOnCooldown(proc.Spell) && (proc.ProcMask & procMask) != ProcMask.None && CheckForProc(proc, Player))
+                if (!player.Spellbook.IsOnCooldown(proc.Spell) && (proc.ProcMask & mask) != ProcMask.None && RollProc(proc, player))
                 {
-                    resultingEvents.Add(new CastEvent(time, Player, proc.Spell)); //TODO: Increase Prio of those cast events
+                    results.Add(new CastEvent(time, player, proc.Spell)); //TODO: Increase Prio of those cast events
                     //Program.Logger.Log($"{proc.Name} procced");
                 }
             }
         }
 
-        private static bool CheckForProc(Proc proc, Player player)
+        private static bool RollProc(Proc proc, Player player)
         {
             if (proc.PPM == 0)
                 return RNG.Roll100(proc.Chance);
 
             else
-                return RNG.Roll10000(Helpers.UpgradeFraction(player.WeaponSpeed * proc.PPM / 600));
+                return RNG.Roll100(Helpers.PPMToChance(proc.PPM, player));
 
         }
     }

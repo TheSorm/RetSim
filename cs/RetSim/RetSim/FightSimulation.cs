@@ -42,7 +42,7 @@ namespace RetSim
 
                     List<Event> resultingEvents = new();
                     ProcMask procMask = currentEvent.Execute(time, resultingEvents);
-                    player.Proc(procMask, time, resultingEvents);
+                    player.CheckForProcs(procMask, time, resultingEvents);
                     queue.AddRange(resultingEvents);
 
                     Logger.Log(time + ": Event: " + currentEvent.ToString());

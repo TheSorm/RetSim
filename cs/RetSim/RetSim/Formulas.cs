@@ -6,15 +6,6 @@ namespace RetSim
     {
         public static class Damage
         {
-            public static int GetPreciseDamage(float damage)
-            {
-                int fraction = Helpers.GetFractional(damage);
-
-                int random = RNG.Roll100(fraction) ? 1 : 0;
-
-                return (int)Math.Floor(damage) + random;
-            }
-
             public static float GetAPBonus(int ap, float weaponSpeed)
             {
                 return ap / (float)Constants.Stats.APPerDPS * weaponSpeed;
@@ -38,7 +29,7 @@ namespace RetSim
 
                 float damage = GetWeaponDamage(weapon, apBonus, bonus) * modifier;
 
-                return GetPreciseDamage(damage);
+                return RNG.RollDamage(damage);
             }
 
             public static int NormalizedWeaponDamage(int min, int max, int bonus, int ap, float modifier)
@@ -49,7 +40,7 @@ namespace RetSim
 
                 float damage = GetWeaponDamage(weapon, apBonus, bonus) * modifier;
 
-                return GetPreciseDamage(damage);
+                return RNG.RollDamage(damage);
             }
 
             public static int SealOfBlood(int weaponMin, int weaponMax, int weaponSpeed, int bonusWeaponDamage, int ap, float damageModifier, float holyDamageModifier, float jotc)
@@ -60,7 +51,7 @@ namespace RetSim
 
                 float damage = GetWeaponDamage(weapon, bonus, bonusWeaponDamage) * damageModifier * holyDamageModifier * 0.35f + jotc;
 
-                return GetPreciseDamage(damage);
+                return RNG.RollDamage(damage);
             }
 
             public static int SealOfCommand(int weaponMin, int weaponMax, int weaponSpeed, int bonusWeaponDamage, int ap, float damageModifier, float holyDamageModifier, float jotc)
@@ -71,7 +62,7 @@ namespace RetSim
 
                 float damage = GetWeaponDamage(weapon, bonus, bonusWeaponDamage) * damageModifier * holyDamageModifier * 0.7f + jotc;
 
-                return GetPreciseDamage(damage);
+                return RNG.RollDamage(damage);
             }
 
             public static int JudgementOfBlood(int sp, float holyDamageModifier, float damageModifier, float jotc)
@@ -82,7 +73,7 @@ namespace RetSim
 
                 float damage = (roll + bonus) * damageModifier * holyDamageModifier + jotc;
 
-                return GetPreciseDamage(damage);
+                return RNG.RollDamage(damage);
             }
 
             public static int JudgementOfCommand(int sp, float holyDamageModifier, float damageModifier, float jotc, float jocDamageMod)
@@ -93,7 +84,7 @@ namespace RetSim
 
                 float damage = (roll + bonus) * damageModifier * holyDamageModifier * jocDamageMod + jotc;
 
-                return GetPreciseDamage(damage);
+                return RNG.RollDamage(damage);
             }
 
             public static int ConsecrationTick(int sp, float holyDamageModifier, float damageModifier, float jotc, int consBonusSP)
@@ -102,7 +93,7 @@ namespace RetSim
 
                 float damage = (64 + bonus) * damageModifier * holyDamageModifier + jotc;
 
-                return GetPreciseDamage(damage);
+                return RNG.RollDamage(damage);
             }
         }
 

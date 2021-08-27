@@ -9,7 +9,7 @@ namespace RetSim
         public ProcMask ProcMask { get; init; }
         public Spell Spell { get; set; }
         public int Chance { get; init; }
-        public int PPM { get; init; }
+        public float PPM { get; init; }
         // public int Cooldown { get; init; } TODO: Cooldown on spell instead of proc?
     }
 
