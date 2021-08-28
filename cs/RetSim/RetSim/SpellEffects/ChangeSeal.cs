@@ -19,8 +19,7 @@ namespace RetSim.SpellEffects
                 if (caster.Auras.IsActive(other))
                 {
                     if (other.Persist == 0)
-                        caster.Auras.Cancel(other, time, results);
-
+                        caster.Auras[other].End.ExpirationTime = time;
                     else
                         caster.Auras[other].End.ExpirationTime = time + other.Persist;
                 }
