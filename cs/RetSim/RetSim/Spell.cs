@@ -12,6 +12,8 @@ namespace RetSim
         public int CastTime { get; init; }
         public School School { get; init; }
         public GCD GCD { get; init; }
+        public float Coefficient { get; init; }
+        public HitCheck HitCheck { get; init; }
         public List<SpellEffect> Effects { get; set; }
     }
 
@@ -38,5 +40,14 @@ namespace RetSim
         Frost = 5,
         Shadow = 6,
         Arcane = 7
+    }
+
+    public enum HitCheck
+    {
+        None = 0,
+        Auto = 1,
+        Special = 2,
+        Ranged = 3,
+        Magic = 4
     }
 }

@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace RetSim
+﻿namespace RetSim
 {
     public static class Helpers
     {
@@ -23,8 +21,6 @@ namespace RetSim
         {
             return (int)(fraction * Constants.Misc.OneHundred) + GetFraction(fraction);
         }
-
-
 
         /// <summary>
         /// Converts a given PPM to its respective proc chance %, based on the given player's weapon speed.

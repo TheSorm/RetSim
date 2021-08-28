@@ -5,7 +5,7 @@ namespace RetSim
 {
     public class Auras : Dictionary<Aura, AuraState>
     {
-        private Player player { get; init; }
+        private readonly Player player;
 
         public Auras(Player parent)
         {
@@ -19,38 +19,46 @@ namespace RetSim
 
         public bool IsActive(Aura aura)
         {
-            return this[aura].End != null;
+            return this[aura].Active;
         }
 
         public int GetRemainingDuration(Aura aura, int time)
         {
-            if (this[aura].End == null)
+            if (!this[aura].Active || this[aura].End == null)
                 return 0;
 
             else
                 return this[aura].End.ExpirationTime - time;
         }
 
-        public void Apply(Aura aura, int time, List<Event> resultingEvents)
+        public void Apply(Aura aura, int time, List<Event> results)
         {
-            if (this[aura].Stacks < aura.MaxStacks)
+            if (this[aura].Active)
             {
-                foreach (AuraEffect effect in aura.Effects)
-                {
-                    effect.Apply(player, aura, time, resultingEvents);
-                }
+                if (this[aura].Stacks < aura.MaxStacks)                
+                    ApplyEffects(aura, time, results);
 
-                this[aura].Stacks++;
-            }
-
-            if (this[aura].End == null)
-            {
-                this[aura].End = new AuraEndEvent(time + aura.Duration, player, aura);
-                resultingEvents.Add(this[aura].End);
+                this[aura].End.ExpirationTime = time + aura.Duration;
             }
 
             else
-                this[aura].End.ExpirationTime = time + aura.Duration;
+            {                
+                ApplyEffects(aura, time, results);
+
+                this[aura].Active = true;
+                this[aura].End = new AuraEndEvent(time + aura.Duration, player, aura);
+
+                results.Add(this[aura].End);
+            }
+        }
+        private void ApplyEffects(Aura aura, int time, List<Event> results)
+        {
+            foreach (AuraEffect effect in aura.Effects)
+            {
+                effect.Apply(player, aura, time, results);
+            }
+
+            this[aura].Stacks++;
         }
 
         public void Cancel(Aura aura, int time, List<Event> resultingEvents)
@@ -63,18 +71,21 @@ namespace RetSim
                 }
             }
 
-            this[aura].Stacks = 0;
+            this[aura].Active = false;
             this[aura].End = null;
+            this[aura].Stacks = 0;
         }
     }
 
     public class AuraState
     {
+        public bool Active { get; set; }
         public AuraEndEvent End { get; set; }
         public int Stacks { get; set; }
 
         public AuraState()
         {
+            Active = false;
             End = null;
             Stacks = 0;
         }

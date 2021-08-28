@@ -7,17 +7,19 @@ namespace RetSim
 {
     public class FightSimulation
     {
-        private Player player;
-        private Enemy enemy;
-        private Tactic tactic;
-        private readonly int fightDuration;
+        private readonly Player player;
+        private readonly Enemy enemy;
+        private readonly Tactic tactic;
+        private readonly int duration;
 
-        public FightSimulation(Player player, Enemy enemy, Tactic tactic, int fightDuration)
+
+        public FightSimulation(Player player, Enemy enemy, Tactic tactic, int minDuration, int maxDuration)
         {
             this.player = player;
             this.enemy = enemy;
             this.tactic = tactic;
-            this.fightDuration = fightDuration;
+            duration = RNG.RollRange(minDuration, maxDuration);
+
         }
 
         public double Run()
@@ -25,45 +27,44 @@ namespace RetSim
             int time = 0;
             var queue = new EventQueue();
 
-            player.Procs.Add(Glossaries.Procs.MagtheridonMeleeTrinket);
+            player.Procs.Add(Glossaries.Procs.DragonspineTrophy);
 
             queue.AddRange(tactic.PreFight(player));
 
-            while (time <= fightDuration)
+            while (time <= duration)
             {
-                int timeOfNextEvent = fightDuration;
+                int nextTimestamp = duration;
 
-                if (!queue.Empty())
+                if (!queue.IsEmpty())
                 {
                     queue.Sort();
-                    Event currentEvent = queue.GetNext();
+                    Event curent = queue.GetNext();
                     queue.RemoveNext();
-                    time = currentEvent.ExpirationTime;
+                    time = curent.ExpirationTime;
 
-                    List<Event> resultingEvents = new();
-                    ProcMask procMask = currentEvent.Execute(time, resultingEvents);
-                    player.CheckForProcs(procMask, time, resultingEvents);
-                    queue.AddRange(resultingEvents);
+                    List<Event> results = new();
+                    ProcMask mask = curent.Execute(time, results);
+                    player.CheckForProcs(mask, time, results);
+                    queue.AddRange(results);
 
-                    Logger.Log(time + ": Event: " + currentEvent.ToString());
+                    Logger.Log(time + ": Event: " + curent.ToString());
 
-                    if (!queue.Empty())
+                    if (!queue.IsEmpty())
                     {
                         queue.Sort();
-                        timeOfNextEvent = queue.GetNext().ExpirationTime;
-                        if (time == timeOfNextEvent) continue;
+                        nextTimestamp = queue.GetNext().ExpirationTime;
+                        if (time == nextTimestamp) continue;
                     }
                 }
 
-                Event playerAction = tactic.GetActionBetween(time, timeOfNextEvent, player);
+                Event playerAction = tactic.GetActionBetween(time, nextTimestamp, player);
 
                 if (playerAction != null)
                     queue.Add(playerAction);
             }
 
-            return (1111 / (fightDuration / 1000.0));
+            return (1111 / (duration / 1000.0));
         }
-
-
     }
+
 }

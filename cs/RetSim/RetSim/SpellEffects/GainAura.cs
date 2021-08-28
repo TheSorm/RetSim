@@ -14,9 +14,9 @@ namespace RetSim.SpellEffects
             IsSpellcast = spellcast;
         }
 
-        public override ProcMask Resolve(Player caster, Spell spell, int time, List<Event> resultingEvents)
+        public override ProcMask Resolve(Player caster, Spell spell, int time, List<Event> results)
         {
-            caster.Auras.Apply(Aura, time, resultingEvents);
+            caster.Auras.Apply(Aura, time, results);
 
             Program.Logger.Log($"Player gains {Aura.Name}.");
 

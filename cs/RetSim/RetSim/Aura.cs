@@ -10,4 +10,11 @@ namespace RetSim
         public int MaxStacks { get; init; }
         public List<AuraEffect> Effects { get; set; }
     }
+
+    public record Seal : Aura
+    {
+        public int Persist { get; init; }
+
+        public List<Seal> ExclusiveWith { get; set; }
+    }
 }

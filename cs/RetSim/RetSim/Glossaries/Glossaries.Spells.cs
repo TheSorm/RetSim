@@ -15,13 +15,14 @@ namespace RetSim
                 Cooldown = 6000,
                 CastTime = 0,
                 School = School.Physical,
+                HitCheck = HitCheck.Special,
                 GCD = new GCD() { Duration = 1500, Category = GCDCategory.Physical },
             };
 
             public static readonly Spell SealOfCommand = new()
             {
                 ID = 27170,
-                Name = "Seal of Command",
+                Name = "Seal of Command (Aura)",
                 ManaCost = 280,
                 Cooldown = 0,
                 CastTime = 0,
@@ -32,18 +33,19 @@ namespace RetSim
             public static readonly Spell SealOfCommandProc = new()
             {
                 ID = 20424,
-                Name = "Seal of Command DAMAGE",
+                Name = "Seal of Command",
                 ManaCost = 0,
                 Cooldown = 1 * 1000,
                 CastTime = 0,
                 School = School.Holy,
+                HitCheck = HitCheck.Special,
                 GCD = new GCD() { Duration = 0, Category = GCDCategory.None },
             };
 
             public static readonly Spell SealOfBlood = new()
             {
                 ID = 31892,
-                Name = "Seal of Blood",
+                Name = "Seal of Blood (Aura)",
                 ManaCost = 210,
                 Cooldown = 0,
                 CastTime = 0,
@@ -54,11 +56,12 @@ namespace RetSim
             public static readonly Spell SealOfBloodProc = new()
             {
                 ID = 31893,
-                Name = "Seal of Blood DAMAGE",
+                Name = "Seal of Blood",
                 ManaCost = 0,
                 Cooldown = 0,
                 CastTime = 0,
                 School = School.Holy,
+                HitCheck = HitCheck.Special,
                 GCD = new GCD() { Duration = 0, Category = GCDCategory.None },
             };
 
@@ -101,11 +104,11 @@ namespace RetSim
                 CrusaderStrike.Effects = new List<SpellEffect>()
                     { new NormalizedWeaponDamage(1.1f) };
                 SealOfCommand.Effects = new List<SpellEffect>()
-                    { new GainAura(Auras.SealOfCommand, true) };
+                    { new ChangeSeal(Auras.SealOfCommand) };
                 SealOfCommandProc.Effects = new List<SpellEffect>()
                     { new NormalizedWeaponDamage(0.7f) };
                 SealOfBlood.Effects = new List<SpellEffect>()
-                    { new GainAura(Auras.SealOfBlood, true) };
+                    { new ChangeSeal(Auras.SealOfBlood) };
                 SealOfBloodProc.Effects = new List<SpellEffect>()
                     { new SealOfBlood() };
                 DragonspineTrophy.Effects = new List<SpellEffect>()

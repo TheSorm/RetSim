@@ -4,7 +4,7 @@ namespace RetSim
 {
     public static class RNG
     {
-        private static Random generator = new Random();
+        private static readonly Random generator = new();
 
         private static bool Roll(int input, int limit)
         {

@@ -5,16 +5,17 @@ namespace RetSim
 {
     public class EventQueue : List<Event>
     {
-        new public Event this[int index]
-        {
-            get
-            {
-                if (index > Count)
-                    return null;
 
-                else
-                    return base[index];
-            }
+        public new void Add(Event e)
+        {
+            if (e != null)
+                base.Add(e);
+        }
+
+        public new void AddRange(List<Event> events)
+        {
+            foreach (Event e in events)
+                Add(e);
         }
 
         public Event GetNext()
@@ -27,7 +28,7 @@ namespace RetSim
             RemoveAt(0);
         }
 
-        public bool Empty()
+        public bool IsEmpty()
         {
             return Count == 0;
         }

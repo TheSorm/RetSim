@@ -6,7 +6,7 @@ namespace RetSim
 {
     public class Spellbook : Dictionary<Spell, CooldownEndEvent>
     {
-        private Player player { get; init; }
+        private readonly Player player;
 
         public Spellbook(Player caster)
         {
@@ -33,26 +33,27 @@ namespace RetSim
             return spell.ManaCost <= player.Stats.Mana;
         }
 
-        public ProcMask Use(Spell spell, int time, List<Event> resultingEvents)
+        public ProcMask Use(Spell spell, int time, List<Event> results)
         {
-            ProcMask procMask = ProcMask.None;
+            ProcMask mask = ProcMask.None;
+
             foreach (SpellEffect effect in spell.Effects)
             {
-                procMask |= effect.Resolve(player, spell, time, resultingEvents);
+                mask |= effect.Resolve(player, spell, time, results);
             }
 
             if (spell.Cooldown > 0)
-                resultingEvents.Add(StartCooldown(spell, time));
+                results.Add(StartCooldown(spell, time));
 
             if (spell.GCD.Category != GCDCategory.None && spell.GCD.Duration > 0)
             {
                 var gcd = new GCDEndEvent(time + spell.GCD.Duration, player);
 
                 player.StartGCD(gcd);
-                resultingEvents.Add(gcd);
+                results.Add(gcd);
             }
 
-            return procMask;
+            return mask;
         }
 
         private CooldownEndEvent StartCooldown(Spell spell, int time)

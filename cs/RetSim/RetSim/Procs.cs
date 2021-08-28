@@ -5,12 +5,18 @@ namespace RetSim
 {
     public class Procs : List<Proc>
     {
-        private Player player { get; init; }
+        private readonly Player player;
 
         public Procs(Player parent)
         {
             player = parent;
         }
+
+        //public new void Add(Proc proc)
+        //{
+        //    if (!Contains(proc))
+        //        base.Add(proc);
+        //}
 
         public void CheckProcs(ProcMask mask, int time, List<Event> results)
         {
@@ -26,7 +32,7 @@ namespace RetSim
 
         private static bool RollProc(Proc proc, Player player)
         {
-            if (proc.PPM == 0)
+            if (proc.PPM == 0f)
                 return RNG.Roll100(proc.Chance);
 
             else

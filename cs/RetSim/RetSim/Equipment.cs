@@ -1,11 +1,9 @@
-﻿
-namespace RetSim
+﻿namespace RetSim
 {
     public record Equipment
     {
         public Stats Stats { get; init; }
         public int AttackSpeed { get; init; }
-
 
         public Equipment()
         {

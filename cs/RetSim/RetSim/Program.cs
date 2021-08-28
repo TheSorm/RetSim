@@ -9,7 +9,7 @@ namespace RetSim
 
         static void Main(string[] args)
         {
-            FightSimulation fightSimulation = new(new Player(Races.Human, new Equipment()), new Enemy(), new EliteTactic(), 35 * 1000);
+            FightSimulation fightSimulation = new(new Player(Races.Human, new Equipment()), new Enemy(), new EliteTactic(), 35000, 40000);
 
             double result = fightSimulation.Run();
 

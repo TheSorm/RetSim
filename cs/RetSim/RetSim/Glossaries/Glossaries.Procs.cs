@@ -12,7 +12,7 @@ namespace RetSim
                 Name = "Seal of Command",
                 ProcMask = ProcMask.OnMeleeAutoAttack,
                 Chance = 100,
-                PPM = 7
+                PPM = 15
                 //Cooldown = 1000,
             };
 
@@ -26,10 +26,10 @@ namespace RetSim
                 //Cooldown = 0
             };
 
-            public static readonly Proc MagtheridonMeleeTrinket = new()
+            public static readonly Proc DragonspineTrophy = new()
             {
                 ID = 34774,
-                Name = "Magtheridon Melee Trinket",
+                Name = "Dragonspine Trophy",
                 ProcMask = ProcMask.OnMeleeAutoAttack | ProcMask.OnMeleeSpecialAttack,
                 Chance = 100,
                 PPM = 1
@@ -40,14 +40,14 @@ namespace RetSim
             {
                 { SealOfCommand.ID, SealOfCommand },
                 { SealOfBlood.ID, SealOfBlood },
-                { MagtheridonMeleeTrinket.ID, MagtheridonMeleeTrinket },
+                { DragonspineTrophy.ID, DragonspineTrophy },
             };
 
             static Procs()
             {
                 SealOfCommand.Spell = Spells.SealOfCommandProc;
                 SealOfBlood.Spell = Spells.SealOfBloodProc;
-                MagtheridonMeleeTrinket.Spell = Spells.DragonspineTrophy;
+                DragonspineTrophy.Spell = Spells.DragonspineTrophy;
             }
         }
     }

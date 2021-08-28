@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace RetSim
+﻿namespace RetSim
 {
     public static class Formulas
     {
@@ -94,27 +92,6 @@ namespace RetSim
                 float damage = (64 + bonus) * damageModifier * holyDamageModifier + jotc;
 
                 return RNG.RollDamage(damage);
-            }
-        }
-
-        public static class Stats
-        {
-            public static int GetAPFromStrength(int strength)
-            {
-                return strength * Constants.Stats.APPerStrength;
-            }
-
-            public static float GetCritFromAgility(int agility)
-            {
-                return agility / Constants.Stats.AgilityPerCrit;
-            }
-        }
-
-        public static class Misc
-        {
-            public static int PPMToChance(int ppm, int weapon)
-            {
-                return ppm * weapon / 60000 * 100;
             }
         }
     }
