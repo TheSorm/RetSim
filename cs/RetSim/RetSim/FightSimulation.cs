@@ -63,7 +63,7 @@ namespace RetSim
                     queue.Add(playerAction);
             }
 
-            return (1111 / (duration / 1000.0));
+            return 0;
         }
     }
 

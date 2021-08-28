@@ -45,7 +45,6 @@ namespace RetSim
             {
                 ApplyEffects(aura, time, results);
 
-                this[aura].Active = true;
                 this[aura].End = new AuraEndEvent(time + aura.Duration, player, aura);
 
                 results.Add(this[aura].End);
@@ -71,7 +70,6 @@ namespace RetSim
                 }
             }
 
-            this[aura].Active = false;
             this[aura].End = null;
             this[aura].Stacks = 0;
         }
@@ -79,13 +77,12 @@ namespace RetSim
 
     public class AuraState
     {
-        public bool Active { get; set; }
+        public bool Active { get => Stacks > 0; }
         public AuraEndEvent End { get; set; }
         public int Stacks { get; set; }
 
         public AuraState()
         {
-            Active = false;
             End = null;
             Stacks = 0;
         }
