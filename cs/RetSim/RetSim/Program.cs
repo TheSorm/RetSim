@@ -1,5 +1,8 @@
 ﻿using RetSim.Loggers;
 using RetSim.Tactics;
+using System.Collections.Generic;
+using System.Net;
+using System.Text.Json;
 
 namespace RetSim
 {
@@ -9,11 +12,45 @@ namespace RetSim
 
         static void Main(string[] args)
         {
-            FightSimulation fightSimulation = new(new Player(Races.Human, new Equipment()), new Enemy(), new EliteTactic(), 35000, 40000);
+            Glossaries.Items.Initialize(LoadWeponData(), LoadArmorData());
+
+            Equipment equipment = new()
+            {
+                Head = Glossaries.Items.HeadsByID[32087],
+                Neck = Glossaries.Items.NecksByID[29119],
+                Shoulder = Glossaries.Items.ShouldersByID[33173],
+                Cloak = Glossaries.Items.CloaksByID[24259],
+                Chest = Glossaries.Items.ChestsByID[23522],
+                Wrist = Glossaries.Items.WristsByID[23537],
+                Hand = Glossaries.Items.HandsByID[30644],
+                Waist = Glossaries.Items.WaistsByID[27985],
+                Legs = Glossaries.Items.LegsByID[31544],
+                Feet = Glossaries.Items.FeetsByID[25686],
+                Finger1 = Glossaries.Items.FingersByID[30834],
+                Finger2 = Glossaries.Items.FingersByID[29177],
+                Trinket1 = Glossaries.Items.TrinketsByID[23206],
+                Trinket2 = Glossaries.Items.TrinketsByID[28288],
+                Relic = Glossaries.Items.RelicsByID[27484],
+                Weapon = Glossaries.Items.WeaponByID[28429],
+            };
+
+            FightSimulation fightSimulation = new(new Player(Races.Human, equipment), new Enemy(), new EliteTactic(), 35000, 40000);
 
             double result = fightSimulation.Run();
 
             Logger.Log("DPS:" + result);
+        }
+
+        public static List<WowItemData.Weapon> LoadWeponData()
+        {
+            using WebClient wc = new();
+            return JsonSerializer.Deserialize<List<WowItemData.Weapon>>(wc.DownloadString("https://raw.githubusercontent.com/TheSorm/RetSim/main/data/weapons.json"));
+        }
+
+        public static List<WowItemData.Armor> LoadArmorData()
+        {
+            using WebClient wc = new();
+            return JsonSerializer.Deserialize<List<WowItemData.Armor>>(wc.DownloadString("https://raw.githubusercontent.com/TheSorm/RetSim/main/data/armor.json"));
         }
     }
 }

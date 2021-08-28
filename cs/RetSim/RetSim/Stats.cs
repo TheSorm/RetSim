@@ -43,13 +43,13 @@
 
             Intellect = 0;
             ManaPer5 = 0;
-            
+
             Strength = 0;
             AttackPower = 0;
 
             Agility = 0;
             CritChance = 0;
-            CritRating = 0; 
+            CritRating = 0;
 
             HitChance = 0;
             HitRating = 0;

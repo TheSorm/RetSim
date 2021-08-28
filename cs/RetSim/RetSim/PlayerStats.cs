@@ -18,7 +18,7 @@
         public int MaxMana => Constants.BaseStats.Mana + Intellect * Constants.Stats.ManaPerIntellect;
 
         private int health, mana;
-        public int Health { get => health;  set => health = value <= 0 ? 0 : value <= MaxHealth ? value : MaxHealth; }
+        public int Health { get => health; set => health = value <= 0 ? 0 : value <= MaxHealth ? value : MaxHealth; }
         public int Mana { get => mana; set => mana = value <= 0 ? 0 : value <= MaxHealth ? value : MaxHealth; }
 
         public new int Stamina => (int)((permanent.Stamina + Temporary.Stamina) * player.Modifiers.AllStats);

@@ -36,7 +36,7 @@ namespace RetSim.Tactics
             if (gcd == 0 && player.Auras[Glossaries.Auras.SealOfCommand].Active)
                 return new CastEvent(player.TimeOfNextSwing() - 390, player, Spells.SealOfBlood);
 
-            
+
 
             //if (!player.IsOnGCD())
             //{

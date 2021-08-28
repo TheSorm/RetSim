@@ -12,7 +12,7 @@ namespace RetSim
                 base.Add(e);
         }
 
-        public new void AddRange(List<Event> events)
+        public void AddRange(List<Event> events)
         {
             foreach (Event e in events)
                 Add(e);

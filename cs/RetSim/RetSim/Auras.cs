@@ -35,14 +35,14 @@ namespace RetSim
         {
             if (this[aura].Active)
             {
-                if (this[aura].Stacks < aura.MaxStacks)                
+                if (this[aura].Stacks < aura.MaxStacks)
                     ApplyEffects(aura, time, results);
 
                 this[aura].End.ExpirationTime = time + aura.Duration;
             }
 
             else
-            {                
+            {
                 ApplyEffects(aura, time, results);
 
                 this[aura].Active = true;
