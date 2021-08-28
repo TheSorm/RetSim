@@ -1,4 +1,5 @@
 ﻿using RetSim.Events;
+using System;
 using System.Collections.Generic;
 using static RetSim.Glossaries;
 
@@ -30,8 +31,8 @@ namespace RetSim.Tactics
             if (gcd == 0 && !player.Auras[Glossaries.Auras.SealOfCommand].Active && swing - gcd > 1510 && end > start + gcd)
                 return new CastEvent(start + gcd, player, Spells.SealOfCommand);
 
-            if (gcd == 0 && player.Auras[Glossaries.Auras.SealOfCommand].Active && end > player.TimeOfNextSwing() - 390 && start < player.TimeOfNextSwing() - 390)
-                return new CastEvent(player.TimeOfNextSwing() - 390, player, Spells.SealOfBlood);
+            if (gcd == 0 && player.Auras[Glossaries.Auras.SealOfCommand].Active && end > player.TimeOfNextSwing() - 390)
+                return new CastEvent(Math.Max(player.TimeOfNextSwing() - 390, start), player, Spells.SealOfBlood);
 
 
 
