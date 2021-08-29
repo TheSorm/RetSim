@@ -93,7 +93,8 @@ namespace RetSim
         {
             foreach (var itemSpell in item.Spells)
             {
-                resultSpells.Add(Glossaries.Spells.ByID[itemSpell.ID]);
+                if(Glossaries.Spells.ByID.ContainsKey(itemSpell.ID))
+                    resultSpells.Add(Glossaries.Spells.ByID[itemSpell.ID]);
             }
         }
 
