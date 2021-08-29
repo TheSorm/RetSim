@@ -10,27 +10,6 @@
             Type = type;
         }
 
-        public Socket(string socket)
-        {
-            switch (socket)
-            {
-                case "Meta":
-                    Type = SocketType.Meta;
-                    break;
-                case "Red":
-                    Type = SocketType.Red;
-                    break;
-                case "Yellow":
-                    Type = SocketType.Yellow;
-                    break;
-                case "Blue":
-                    Type = SocketType.Blue;
-                    break;
-                default:
-                    break;
-            }
-        }
-
         internal bool IsActive()
         {
             //TODO Implement
@@ -40,9 +19,9 @@
 
     public enum SocketType
     {
-        Meta,
-        Red,
-        Yellow,
-        Blue
+        Meta = 1,
+        Red = 2,
+        Yellow = 3,
+        Blue = 4
     }
 }

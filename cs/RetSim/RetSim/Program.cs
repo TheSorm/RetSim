@@ -1,4 +1,5 @@
-﻿using RetSim.Loggers;
+﻿using RetSim.Items;
+using RetSim.Loggers;
 using RetSim.Tactics;
 using System.Collections.Generic;
 using System.Net;
@@ -41,16 +42,16 @@ namespace RetSim
             Logger.Log("DPS:" + result);
         }
 
-        public static List<WowItemData.Weapon> LoadWeponData()
+        public static List<EquippableWeapon> LoadWeponData()
         {
             using WebClient wc = new();
-            return JsonSerializer.Deserialize<List<WowItemData.Weapon>>(wc.DownloadString("https://raw.githubusercontent.com/TheSorm/RetSim/main/data/weapons.json"));
+            return JsonSerializer.Deserialize<List<EquippableWeapon>>(wc.DownloadString("https://raw.githubusercontent.com/TheSorm/RetSim/main/data/weapons.json"));
         }
 
-        public static List<WowItemData.Armor> LoadArmorData()
+        public static List<EquippableArmor> LoadArmorData()
         {
             using WebClient wc = new();
-            return JsonSerializer.Deserialize<List<WowItemData.Armor>>(wc.DownloadString("https://raw.githubusercontent.com/TheSorm/RetSim/main/data/armor.json"));
+            return JsonSerializer.Deserialize<List<EquippableArmor>>(wc.DownloadString("https://raw.githubusercontent.com/TheSorm/RetSim/main/data/armor.json"));
         }
     }
 }

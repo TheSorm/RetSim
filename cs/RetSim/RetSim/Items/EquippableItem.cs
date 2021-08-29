@@ -4,133 +4,89 @@ namespace RetSim.Items
 {
     public class EquippableItem
     {
-        private readonly Stats baseStats;
-        public Stats Stats { get => CalculateStats(); }
         public int ID { get; init; }
-        public string Name { get; set; }
+        public string Name { get; init; }
+        public int ItemLevel { get; init; }
+        public string Quality { get; init; }
         public string InventoryType { get; init; }
+        public ItemStats ItemStats { get; init; }
         public Set Set { get; init; }
-        public List<Spell> Spells { get; init; }
+        public List<ItemSpell> Spells { get; init; }
         public Socket Socket1 { get; init; }
         public Socket Socket2 { get; init; }
         public Socket Socket3 { get; init; }
-        public SocketBonus Bonus { get; init; }
+        public ItemStats SocketBonus { get; init; }
+        public int Phase { get; init; }
 
-        public EquippableItem(WowItemData.Item data)
+        public bool IsSocketBonusActive()
         {
-            if (data.Stats != null)
+            if(Socket1 == null || SocketBonus == null)
             {
-                baseStats = new()
-                {
-                    Stamina = data.Stats.Stamina,
-                    Intellect = data.Stats.Intellect,
-                    ManaPer5 = data.Stats.ManaPer5,
-
-                    Strength = data.Stats.Strength,
-                    AttackPower = data.Stats.AttackPower,
-
-                    Agility = data.Stats.Agility,
-                    CritRating = data.Stats.Crit,
-
-                    HitRating = data.Stats.Hit,
-                    HasteRating = data.Stats.Haste,
-
-                    ExpertiseRating = data.Stats.Expertise,
-
-                    ArmorPenetration = data.Stats.ArmorPenetration,
-
-                    SpellPower = data.Stats.SpellDamage,
-                    SpellCritRating = data.Stats.SpellCrit,
-                    SpellHitRating = data.Stats.SpellHit,
-                    SpellHasteRating = data.Stats.SpellHaste,
-                };
-            }
-            else
-            {
-                baseStats = new();
+                return false;
             }
 
-            ID = data.ID;
-            Name = data.Name;
-            InventoryType = data.InventoryType;
-
-            if (data.Set != null)
-            {
-                Set = new() { ID = data.Set.ID, Name = data.Set.Name };
-            }
-
-            if (data.Spells != null)
-            {
-                Spells = new();
-                foreach (WowItemData.Spell itemSpell in data.Spells)
-                {
-                    if (Glossaries.Spells.ByID.ContainsKey(itemSpell.ID))
-                    {
-                        Spells.Add(Glossaries.Spells.ByID[itemSpell.ID]);
-                    }
-                }
-            }
-
-            if (data.Socket1 != null)
-            {
-                Socket1 = new Socket(data.Socket1);
-            }
-
-            if (data.Socket2 != null)
-            {
-                Socket2 = new Socket(data.Socket2);
-            }
-
-            if (data.Socket3 != null)
-            {
-                Socket3 = new Socket(data.Socket3);
-            }
-
-            if (data.SocketBonus != null)
-            {
-                Bonus = new() { Stat = data.SocketBonus.Stat, Value = data.SocketBonus.Value };
-            }
+            return Socket1.IsActive() && (Socket2 == null || Socket2.IsActive()) && (Socket3 == null || Socket3.IsActive()); 
         }
+    }
 
-        private Stats CalculateStats()
+    public record Set
+    {
+        public int ID { get; init; }
+        public string Name { get; init; }
+    }
+
+    public enum ItemStatNames
+    {
+        Strength = 0,
+        AttackPower = 1,
+        Agility = 2,
+        Crit = 3,
+        Hit = 4,
+        Haste = 5,
+        Expertise = 6,
+        ArmorPenetration = 7,
+        SpellDamage = 8,
+        SpellHealing = 9,
+        SpellCrit = 10,
+        SpellHit = 11,
+        SpellHaste = 12,
+        Intellect = 13,
+        Spirit = 14,
+        ManaPer5 = 15,
+        Stamina = 16,
+        Defense = 17,
+        Dodge = 18,
+        Parry = 19,
+        Block = 20,
+        Resilience = 21,
+    }
+
+    public class ItemStats : Dictionary<ItemStatNames, int>
+    {
+        public new int this[ItemStatNames key]
         {
-            if (Bonus != null)
+            get
             {
-                if ((Socket1 == null || Socket1.IsActive()) && (Socket2 == null || Socket2.IsActive()) && (Socket3 == null || Socket3.IsActive()))
+                if (ContainsKey(key))
                 {
-                    switch (Bonus.Stat)
-                    {
-                        case "Strength":
-                            return baseStats + new Stats() { Strength = Bonus.Value };
-                        case "Agility":
-                            return baseStats + new Stats() { Agility = Bonus.Value };
-                        case "Stamina":
-                            return baseStats + new Stats() { Stamina = Bonus.Value };
-                        case "Intellect":
-                            return baseStats + new Stats() { Intellect = Bonus.Value };
-                        case "Critical Strike Rating":
-                            return baseStats + new Stats() { CritRating = Bonus.Value };
-                        case "Mana per 5 sec":
-                            return baseStats + new Stats() { ManaPer5 = Bonus.Value };
-                        case "Hit Rating":
-                            return baseStats + new Stats() { HitRating = Bonus.Value };
-                        case "Haste Rating":
-                            return baseStats + new Stats() { HasteRating = Bonus.Value };
-                        case "Expertise Rating":
-                            return baseStats + new Stats() { ExpertiseRating = Bonus.Value };
-                        case "Spell Critical Strike Rating":
-                            return baseStats + new Stats() { SpellCritRating = Bonus.Value };
-                        case "Spell Hit Rating":
-                            return baseStats + new Stats() { SpellHit = Bonus.Value };
-                        //case "Spirit":
-                        //    return baseStats + new Stats() { Spirit = Bonus.Value };
-                        default:
-                            break;
-                    }
+                    return base[key];
+                }
+                else
+                {
+                    return 0;
                 }
             }
-
-            return baseStats;
+            set
+            {
+                if (ContainsKey(key))
+                {
+                    base[key] = value;
+                }
+                else
+                {
+                    Add(key, value);
+                }
+            }
         }
     }
 
@@ -140,7 +96,7 @@ namespace RetSim.Items
         public int Value { get; init; }
     }
 
-    public record Set
+    public record ItemSpell
     {
         public int ID { get; init; }
         public string Name { get; init; }
