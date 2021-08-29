@@ -9,15 +9,21 @@
     "ItemLevel": 94,
     "Quality": "RARE",
     "InventoryType": "TWOHWEAPON",
-    "Stats": {
+    "ItemStats": {
       "Strength": 25,
-      "Crit": 22,
-      "Stamina": 21
+      "Stamina": 21,
+      "Crit": 22
     },
-    "Phase": 1,
-    "Socket1": "Red",
-    "Socket2": "Yellow",
-    "Socket3": "Blue"
+    "Socket1": {
+      "Type": 2
+    },
+    "Socket2": {
+      "Type": 3
+    },
+    "Socket3": {
+      "Type": 4
+    },
+    "Phase": 1
   },
   {
     "MinDamag": 176,
@@ -29,7 +35,7 @@
     "ItemLevel": 94,
     "Quality": "RARE",
     "InventoryType": "TWOHWEAPON",
-    "Stats": {
+    "ItemStats": {
       "Strength": 29,
       "Agility": 28,
       "Stamina": 42
@@ -46,7 +52,7 @@
     "ItemLevel": 97,
     "Quality": "RARE",
     "InventoryType": "TWOHWEAPON",
-    "Stats": {
+    "ItemStats": {
       "Strength": 42,
       "Agility": 27
     },
@@ -62,7 +68,7 @@
     "ItemLevel": 97,
     "Quality": "RARE",
     "InventoryType": "TWOHWEAPON",
-    "Stats": {
+    "ItemStats": {
       "Strength": 42,
       "Agility": 27
     },
@@ -78,10 +84,10 @@
     "ItemLevel": 97,
     "Quality": "RARE",
     "InventoryType": "TWOHWEAPON",
-    "Stats": {
+    "ItemStats": {
       "Strength": 34,
-      "Crit": 29,
-      "Stamina": 33
+      "Stamina": 33,
+      "Crit": 29
     },
     "Phase": 1
   },
@@ -95,10 +101,10 @@
     "ItemLevel": 100,
     "Quality": "EPIC",
     "InventoryType": "TWOHWEAPON",
-    "Stats": {
-      "Haste": 24,
+    "ItemStats": {
       "Stamina": 39,
-      "Defense": 27
+      "Defense": 27,
+      "Expertise": 24
     },
     "Spells": [
       {
@@ -118,7 +124,7 @@
     "ItemLevel": 100,
     "Quality": "RARE",
     "InventoryType": "TWOHWEAPON",
-    "Stats": {
+    "ItemStats": {
       "Strength": 40,
       "Agility": 35
     },
@@ -134,9 +140,9 @@
     "ItemLevel": 100,
     "Quality": "RARE",
     "InventoryType": "TWOHWEAPON",
-    "Stats": {
-      "AttackPower": 80,
-      "Crit": 35
+    "ItemStats": {
+      "Crit": 35,
+      "AttackPower": 80
     },
     "Phase": 1
   },
@@ -150,9 +156,9 @@
     "ItemLevel": 100,
     "Quality": "RARE",
     "InventoryType": "TWOHWEAPON",
-    "Stats": {
-      "AttackPower": 70,
-      "Stamina": 60
+    "ItemStats": {
+      "Stamina": 60,
+      "AttackPower": 70
     },
     "Phase": 1
   },
@@ -166,10 +172,10 @@
     "ItemLevel": 100,
     "Quality": "EPIC",
     "InventoryType": "TWOHWEAPON",
-    "Stats": {
+    "ItemStats": {
       "Strength": 37,
-      "Hit": 36,
-      "Stamina": 54
+      "Stamina": 54,
+      "Hit": 36
     },
     "Phase": 1
   },
@@ -201,10 +207,10 @@
     "ItemLevel": 100,
     "Quality": "EPIC",
     "InventoryType": "TWOHWEAPON",
-    "Stats": {
+    "ItemStats": {
       "Strength": 32,
-      "Intellect": 29,
-      "Stamina": 30
+      "Stamina": 30,
+      "Intellect": 29
     },
     "Spells": [
       {
@@ -224,10 +230,10 @@
     "ItemLevel": 100,
     "Quality": "EPIC",
     "InventoryType": "TWOHWEAPON",
-    "Stats": {
-      "Haste": 24,
+    "ItemStats": {
       "Stamina": 39,
-      "Defense": 27
+      "Defense": 27,
+      "Expertise": 24
     },
     "Spells": [
       {
@@ -251,7 +257,7 @@
     "ItemLevel": 103,
     "Quality": "RARE",
     "InventoryType": "TWOHWEAPON",
-    "Stats": {
+    "ItemStats": {
       "Strength": 31,
       "Agility": 30,
       "Stamina": 45
@@ -268,7 +274,7 @@
     "ItemLevel": 105,
     "Quality": "EPIC",
     "InventoryType": "TWOHWEAPON",
-    "Stats": {
+    "ItemStats": {
       "Strength": 50,
       "Hit": 37
     },
@@ -290,9 +296,9 @@
     "ItemLevel": 105,
     "Quality": "EPIC",
     "InventoryType": "TWOHWEAPON",
-    "Stats": {
-      "AttackPower": 112,
-      "Crit": 30
+    "ItemStats": {
+      "Crit": 30,
+      "AttackPower": 112
     },
     "Phase": 1
   },
@@ -306,10 +312,10 @@
     "ItemLevel": 105,
     "Quality": "EPIC",
     "InventoryType": "TWOHWEAPON",
-    "Stats": {
+    "ItemStats": {
       "Strength": 50,
-      "Crit": 21,
-      "Stamina": 46
+      "Stamina": 46,
+      "Crit": 21
     },
     "Phase": 1
   },
@@ -323,10 +329,10 @@
     "ItemLevel": 105,
     "Quality": "EPIC",
     "InventoryType": "TWOHWEAPON",
-    "Stats": {
-      "AttackPower": 102,
+    "ItemStats": {
+      "Stamina": 31,
       "Crit": 30,
-      "Stamina": 31
+      "AttackPower": 102
     },
     "Phase": 1
   },
@@ -364,11 +370,11 @@
     "ItemLevel": 105,
     "Quality": "EPIC",
     "InventoryType": "TWOHWEAPON",
-    "Stats": {
+    "ItemStats": {
       "Strength": 31,
-      "Crit": 31,
-      "Hit": 20,
       "Stamina": 46,
+      "Hit": 20,
+      "Crit": 31,
       "Resilience": 21
     },
     "Phase": 53
@@ -383,12 +389,12 @@
     "ItemLevel": 105,
     "Quality": "EPIC",
     "InventoryType": "TWOHWEAPON",
-    "Stats": {
-      "AttackPower": 62,
-      "Crit": 31,
-      "Hit": 20,
+    "ItemStats": {
       "Stamina": 46,
-      "Resilience": 21
+      "Hit": 20,
+      "Crit": 31,
+      "Resilience": 21,
+      "AttackPower": 62
     },
     "Phase": 53
   },
@@ -402,11 +408,11 @@
     "ItemLevel": 105,
     "Quality": "EPIC",
     "InventoryType": "TWOHWEAPON",
-    "Stats": {
+    "ItemStats": {
       "Strength": 31,
-      "Crit": 31,
-      "Hit": 20,
       "Stamina": 46,
+      "Hit": 20,
+      "Crit": 31,
       "Resilience": 21
     },
     "Spells": [
@@ -427,12 +433,12 @@
     "ItemLevel": 105,
     "Quality": "EPIC",
     "InventoryType": "TWOHWEAPON",
-    "Stats": {
-      "AttackPower": 62,
-      "Crit": 31,
-      "Hit": 20,
+    "ItemStats": {
       "Stamina": 46,
-      "Resilience": 21
+      "Hit": 20,
+      "Crit": 31,
+      "Resilience": 21,
+      "AttackPower": 62
     },
     "Phase": 53
   },
@@ -446,11 +452,11 @@
     "ItemLevel": 105,
     "Quality": "EPIC",
     "InventoryType": "TWOHWEAPON",
-    "Stats": {
+    "ItemStats": {
       "Strength": 31,
-      "Crit": 31,
-      "Hit": 20,
       "Stamina": 46,
+      "Hit": 20,
+      "Crit": 31,
       "Resilience": 21
     },
     "Phase": 53
@@ -465,7 +471,7 @@
     "ItemLevel": 105,
     "Quality": "EPIC",
     "InventoryType": "TWOHWEAPON",
-    "Stats": {
+    "ItemStats": {
       "AttackPower": 110
     },
     "Phase": 53
@@ -480,11 +486,11 @@
     "ItemLevel": 105,
     "Quality": "EPIC",
     "InventoryType": "TWOHWEAPON",
-    "Stats": {
-      "SpellDamage": 168,
+    "ItemStats": {
+      "Stamina": 55,
       "Intellect": 37,
-      "ManaPer5": 15,
-      "Stamina": 55
+      "SpellDamage": 168,
+      "ManaPer5": 15
     },
     "Phase": 1
   },
@@ -498,7 +504,7 @@
     "ItemLevel": 107,
     "Quality": "EPIC",
     "InventoryType": "TWOHWEAPON",
-    "Stats": {
+    "ItemStats": {
       "Strength": 47,
       "Agility": 42
     },
@@ -520,9 +526,9 @@
     "ItemLevel": 107,
     "Quality": "EPIC",
     "InventoryType": "TWOHWEAPON",
-    "Stats": {
-      "AttackPower": 96,
-      "Crit": 47
+    "ItemStats": {
+      "Crit": 47,
+      "AttackPower": 96
     },
     "Phase": 1
   },
@@ -536,7 +542,7 @@
     "ItemLevel": 107,
     "Quality": "EPIC",
     "InventoryType": "TWOHWEAPON",
-    "Stats": {
+    "ItemStats": {
       "Strength": 37,
       "Agility": 37,
       "Stamina": 55
@@ -553,12 +559,12 @@
     "ItemLevel": 109,
     "Quality": "RARE",
     "InventoryType": "TWOHWEAPON",
-    "Stats": {
+    "ItemStats": {
       "Strength": 27,
       "Agility": 27,
+      "Stamina": 27,
       "Hit": 26,
-      "Haste": 17,
-      "Stamina": 27
+      "Expertise": 17
     },
     "Phase": 1
   },
@@ -572,7 +578,7 @@
     "ItemLevel": 109,
     "Quality": "RARE",
     "InventoryType": "TWOHWEAPON",
-    "Stats": {
+    "ItemStats": {
       "Strength": 51,
       "Crit": 21
     },
@@ -588,12 +594,12 @@
     "ItemLevel": 109,
     "Quality": "RARE",
     "InventoryType": "TWOHWEAPON",
-    "Stats": {
+    "ItemStats": {
       "Strength": 30,
-      "Crit": 17,
-      "SpellCrit": 17,
+      "Stamina": 27,
       "Intellect": 30,
-      "Stamina": 27
+      "SpellCrit": 17,
+      "Crit": 17
     },
     "Phase": 1
   },
@@ -607,9 +613,9 @@
     "ItemLevel": 109,
     "Quality": "RARE",
     "InventoryType": "TWOHWEAPON",
-    "Stats": {
-      "AttackPower": 80,
-      "Stamina": 60
+    "ItemStats": {
+      "Stamina": 60,
+      "AttackPower": 80
     },
     "Phase": 3
   },
@@ -623,7 +629,7 @@
     "ItemLevel": 112,
     "Quality": "RARE",
     "InventoryType": "TWOHWEAPON",
-    "Stats": {
+    "ItemStats": {
       "Strength": 31,
       "Stamina": 50,
       "Resilience": 40
@@ -640,10 +646,10 @@
     "ItemLevel": 112,
     "Quality": "RARE",
     "InventoryType": "TWOHWEAPON",
-    "Stats": {
-      "AttackPower": 80,
+    "ItemStats": {
+      "Stamina": 50,
       "Crit": 27,
-      "Stamina": 50
+      "AttackPower": 80
     },
     "Phase": 1
   },
@@ -657,10 +663,10 @@
     "ItemLevel": 115,
     "Quality": "RARE",
     "InventoryType": "TWOHWEAPON",
-    "Stats": {
+    "ItemStats": {
       "Strength": 29,
-      "Crit": 45,
-      "Stamina": 28
+      "Stamina": 28,
+      "Crit": 45
     },
     "Phase": 1
   },
@@ -674,10 +680,10 @@
     "ItemLevel": 115,
     "Quality": "RARE",
     "InventoryType": "TWOHWEAPON",
-    "Stats": {
-      "AttackPower": 72,
+    "ItemStats": {
+      "Stamina": 33,
       "Crit": 35,
-      "Stamina": 33
+      "AttackPower": 72
     },
     "Phase": 1
   },
@@ -691,11 +697,11 @@
     "ItemLevel": 115,
     "Quality": "RARE",
     "InventoryType": "TWOHWEAPON",
-    "Stats": {
+    "ItemStats": {
       "Strength": 31,
-      "Crit": 30,
+      "Stamina": 28,
       "Intellect": 26,
-      "Stamina": 28
+      "Crit": 30
     },
     "Phase": 1
   },
@@ -709,11 +715,11 @@
     "ItemLevel": 115,
     "Quality": "RARE",
     "InventoryType": "TWOHWEAPON",
-    "Stats": {
-      "AttackPower": 62,
+    "ItemStats": {
       "Agility": 35,
+      "Stamina": 30,
       "Hit": 24,
-      "Stamina": 30
+      "AttackPower": 62
     },
     "Phase": 1
   },
@@ -727,19 +733,24 @@
     "ItemLevel": 115,
     "Quality": "RARE",
     "InventoryType": "TWOHWEAPON",
-    "Stats": {
+    "ItemStats": {
       "Strength": 28,
       "Agility": 17,
       "Stamina": 33
     },
-    "Phase": 1,
-    "Socket1": "Red",
-    "Socket2": "Red",
-    "Socket3": "Red",
+    "Socket1": {
+      "Type": 2
+    },
+    "Socket2": {
+      "Type": 2
+    },
+    "Socket3": {
+      "Type": 2
+    },
     "SocketBonus": {
-      "Stat": "Stamina",
-      "Value": 6
-    }
+      "Stamina": 6
+    },
+    "Phase": 1
   },
   {
     "MinDamag": 268,
@@ -751,19 +762,21 @@
     "ItemLevel": 115,
     "Quality": "RARE",
     "InventoryType": "TWOHWEAPON",
-    "Stats": {
-      "AttackPower": 50,
+    "ItemStats": {
       "Stamina": 22,
-      "Resilience": 27
+      "Resilience": 27,
+      "AttackPower": 50
     },
-    "Phase": 1,
-    "Socket1": "Red",
-    "Socket2": "Yellow",
-    "Socket3": "Blue",
-    "SocketBonus": {
-      "Stat": "Resilience Rating",
-      "Value": 4
-    }
+    "Socket1": {
+      "Type": 2
+    },
+    "Socket2": {
+      "Type": 3
+    },
+    "Socket3": {
+      "Type": 4
+    },
+    "Phase": 1
   },
   {
     "MinDamag": 261,
@@ -775,10 +788,10 @@
     "ItemLevel": 115,
     "Quality": "RARE",
     "InventoryType": "TWOHWEAPON",
-    "Stats": {
+    "ItemStats": {
       "Strength": 42,
-      "Crit": 26,
-      "Stamina": 45
+      "Stamina": 45,
+      "Crit": 26
     },
     "Phase": 1
   },
@@ -792,11 +805,11 @@
     "ItemLevel": 115,
     "Quality": "RARE",
     "InventoryType": "TWOHWEAPON",
-    "Stats": {
+    "ItemStats": {
       "Strength": 28,
-      "Crit": 28,
-      "Hit": 18,
       "Stamina": 42,
+      "Hit": 18,
+      "Crit": 28,
       "Resilience": 19
     },
     "Phase": 1
@@ -811,7 +824,7 @@
     "ItemLevel": 115,
     "Quality": "RARE",
     "InventoryType": "TWOHWEAPON",
-    "Stats": {
+    "ItemStats": {
       "Strength": 26,
       "Stamina": 28
     },
@@ -833,16 +846,22 @@
     "ItemLevel": 115,
     "Quality": "RARE",
     "InventoryType": "TWOHWEAPON",
-    "Stats": {
+    "ItemStats": {
       "Strength": 20,
-      "Crit": 21,
+      "Stamina": 30,
       "Intellect": 28,
-      "Stamina": 30
+      "Crit": 21
     },
-    "Phase": 1,
-    "Socket1": "Red",
-    "Socket2": "Yellow",
-    "Socket3": "Blue"
+    "Socket1": {
+      "Type": 2
+    },
+    "Socket2": {
+      "Type": 3
+    },
+    "Socket3": {
+      "Type": 4
+    },
+    "Phase": 1
   },
   {
     "MinDamag": 319,
@@ -854,7 +873,7 @@
     "ItemLevel": 115,
     "Quality": "EPIC",
     "InventoryType": "TWOHWEAPON",
-    "Stats": {
+    "ItemStats": {
       "Strength": 52
     },
     "Spells": [
@@ -875,11 +894,11 @@
     "ItemLevel": 115,
     "Quality": "EPIC",
     "InventoryType": "TWOHWEAPON",
-    "Stats": {
-      "AttackPower": 80,
+    "ItemStats": {
       "Agility": 40,
-      "ManaPer5": 8,
-      "Stamina": 46
+      "Stamina": 46,
+      "AttackPower": 80,
+      "ManaPer5": 8
     },
     "Phase": 1
   },
@@ -893,11 +912,11 @@
     "ItemLevel": 115,
     "Quality": "RARE",
     "InventoryType": "TWOHWEAPON",
-    "Stats": {
+    "ItemStats": {
       "Strength": 28,
-      "Crit": 28,
-      "Hit": 18,
       "Stamina": 42,
+      "Hit": 18,
+      "Crit": 28,
       "Resilience": 19
     },
     "Phase": 1
@@ -912,12 +931,12 @@
     "ItemLevel": 115,
     "Quality": "RARE",
     "InventoryType": "TWOHWEAPON",
-    "Stats": {
-      "AttackPower": 56,
-      "Crit": 28,
-      "Hit": 18,
+    "ItemStats": {
       "Stamina": 42,
-      "Resilience": 19
+      "Hit": 18,
+      "Crit": 28,
+      "Resilience": 19,
+      "AttackPower": 56
     },
     "Phase": 1
   },
@@ -931,11 +950,11 @@
     "ItemLevel": 115,
     "Quality": "RARE",
     "InventoryType": "TWOHWEAPON",
-    "Stats": {
+    "ItemStats": {
       "Strength": 28,
-      "Crit": 28,
-      "Hit": 18,
       "Stamina": 42,
+      "Hit": 18,
+      "Crit": 28,
       "Resilience": 19
     },
     "Spells": [
@@ -956,12 +975,12 @@
     "ItemLevel": 115,
     "Quality": "RARE",
     "InventoryType": "TWOHWEAPON",
-    "Stats": {
-      "AttackPower": 56,
-      "Crit": 28,
-      "Hit": 18,
+    "ItemStats": {
       "Stamina": 42,
-      "Resilience": 19
+      "Hit": 18,
+      "Crit": 28,
+      "Resilience": 19,
+      "AttackPower": 56
     },
     "Phase": 1
   },
@@ -975,11 +994,11 @@
     "ItemLevel": 115,
     "Quality": "RARE",
     "InventoryType": "TWOHWEAPON",
-    "Stats": {
+    "ItemStats": {
       "Strength": 28,
-      "Crit": 28,
-      "Hit": 18,
       "Stamina": 42,
+      "Hit": 18,
+      "Crit": 28,
       "Resilience": 19
     },
     "Phase": 1
@@ -994,11 +1013,11 @@
     "ItemLevel": 115,
     "Quality": "RARE",
     "InventoryType": "TWOHWEAPON",
-    "Stats": {
+    "ItemStats": {
       "Strength": 28,
-      "Crit": 28,
-      "Hit": 18,
       "Stamina": 42,
+      "Hit": 18,
+      "Crit": 28,
       "Resilience": 19
     },
     "Phase": 1
@@ -1013,12 +1032,12 @@
     "ItemLevel": 115,
     "Quality": "RARE",
     "InventoryType": "TWOHWEAPON",
-    "Stats": {
-      "AttackPower": 56,
-      "Crit": 28,
-      "Hit": 18,
+    "ItemStats": {
       "Stamina": 42,
-      "Resilience": 19
+      "Hit": 18,
+      "Crit": 28,
+      "Resilience": 19,
+      "AttackPower": 56
     },
     "Phase": 1
   },
@@ -1032,11 +1051,11 @@
     "ItemLevel": 115,
     "Quality": "RARE",
     "InventoryType": "TWOHWEAPON",
-    "Stats": {
+    "ItemStats": {
       "Strength": 28,
-      "Crit": 28,
-      "Hit": 18,
       "Stamina": 42,
+      "Hit": 18,
+      "Crit": 28,
       "Resilience": 19
     },
     "Spells": [
@@ -1057,12 +1076,12 @@
     "ItemLevel": 115,
     "Quality": "RARE",
     "InventoryType": "TWOHWEAPON",
-    "Stats": {
-      "AttackPower": 56,
-      "Crit": 28,
-      "Hit": 18,
+    "ItemStats": {
       "Stamina": 42,
-      "Resilience": 19
+      "Hit": 18,
+      "Crit": 28,
+      "Resilience": 19,
+      "AttackPower": 56
     },
     "Phase": 1
   },
@@ -1076,9 +1095,9 @@
     "ItemLevel": 115,
     "Quality": "RARE",
     "InventoryType": "TWOHWEAPON",
-    "Stats": {
-      "AttackPower": 84,
-      "Hit": 42
+    "ItemStats": {
+      "Hit": 42,
+      "AttackPower": 84
     },
     "Phase": 1
   },
@@ -1092,9 +1111,9 @@
     "ItemLevel": 115,
     "Quality": "RARE",
     "InventoryType": "TWOHWEAPON",
-    "Stats": {
-      "AttackPower": 84,
-      "Hit": 42
+    "ItemStats": {
+      "Hit": 42,
+      "AttackPower": 84
     },
     "Phase": 1
   },
@@ -1108,10 +1127,10 @@
     "ItemLevel": 115,
     "Quality": "RARE",
     "InventoryType": "TWOHWEAPON",
-    "Stats": {
-      "AttackPower": 92,
+    "ItemStats": {
       "Agility": 26,
-      "Hit": 19
+      "Hit": 19,
+      "AttackPower": 92
     },
     "Phase": 1
   },
@@ -1125,10 +1144,10 @@
     "ItemLevel": 115,
     "Quality": "RARE",
     "InventoryType": "TWOHWEAPON",
-    "Stats": {
-      "AttackPower": 92,
+    "ItemStats": {
       "Agility": 26,
-      "Hit": 19
+      "Hit": 19,
+      "AttackPower": 92
     },
     "Phase": 1
   },
@@ -1142,7 +1161,7 @@
     "ItemLevel": 115,
     "Quality": "RARE",
     "InventoryType": "TWOHWEAPON",
-    "Stats": {
+    "ItemStats": {
       "Agility": 54,
       "Stamina": 33
     },
@@ -1158,9 +1177,9 @@
     "ItemLevel": 115,
     "Quality": "RARE",
     "InventoryType": "TWOHWEAPON",
-    "Stats": {
-      "Crit": 37,
-      "Stamina": 34
+    "ItemStats": {
+      "Stamina": 34,
+      "Crit": 37
     },
     "Spells": [
       {
@@ -1180,11 +1199,11 @@
     "ItemLevel": 115,
     "Quality": "RARE",
     "InventoryType": "TWOHWEAPON",
-    "Stats": {
+    "ItemStats": {
       "Strength": 35,
-      "Hit": 26,
+      "Stamina": 24,
       "Intellect": 32,
-      "Stamina": 24
+      "Hit": 26
     },
     "Phase": 1
   },
@@ -1198,10 +1217,10 @@
     "ItemLevel": 115,
     "Quality": "RARE",
     "InventoryType": "TWOHWEAPON",
-    "Stats": {
+    "ItemStats": {
       "Strength": 46,
-      "Crit": 19,
-      "Stamina": 39
+      "Stamina": 39,
+      "Crit": 19
     },
     "Phase": 3
   },
@@ -1227,11 +1246,11 @@
     "ItemLevel": 115,
     "Quality": "RARE",
     "InventoryType": "TWOHWEAPON",
-    "Stats": {
+    "ItemStats": {
       "Strength": 31,
+      "Stamina": 45,
       "Crit": 26,
-      "Haste": 19,
-      "Stamina": 45
+      "Expertise": 19
     },
     "Phase": 5
   },
@@ -1245,10 +1264,10 @@
     "ItemLevel": 115,
     "Quality": "RARE",
     "InventoryType": "TWOHWEAPON",
-    "Stats": {
+    "ItemStats": {
+      "Stamina": 48,
       "AttackPower": 70,
-      "ArmorPenetration": 224,
-      "Stamina": 48
+      "ArmorPenetration": 224
     },
     "Phase": 5
   },
@@ -1262,18 +1281,23 @@
     "ItemLevel": 120,
     "Quality": "EPIC",
     "InventoryType": "TWOHWEAPON",
-    "Stats": {
+    "ItemStats": {
       "Strength": 50,
       "Crit": 30
     },
-    "Phase": 1,
-    "Socket1": "Red",
-    "Socket2": "Yellow",
-    "Socket3": "Yellow",
+    "Socket1": {
+      "Type": 2
+    },
+    "Socket2": {
+      "Type": 3
+    },
+    "Socket3": {
+      "Type": 3
+    },
     "SocketBonus": {
-      "Stat": "Expertise Rating",
-      "Value": 4
-    }
+      "Expertise": 4
+    },
+    "Phase": 1
   },
   {
     "MinDamag": 341,
@@ -1285,11 +1309,11 @@
     "ItemLevel": 123,
     "Quality": "EPIC",
     "InventoryType": "TWOHWEAPON",
-    "Stats": {
+    "ItemStats": {
       "Strength": 32,
-      "Crit": 35,
-      "Hit": 20,
       "Stamina": 48,
+      "Hit": 20,
+      "Crit": 35,
       "Resilience": 28
     },
     "Phase": 1
@@ -1304,12 +1328,12 @@
     "ItemLevel": 123,
     "Quality": "EPIC",
     "InventoryType": "TWOHWEAPON",
-    "Stats": {
-      "AttackPower": 64,
-      "Crit": 35,
-      "Hit": 20,
+    "ItemStats": {
       "Stamina": 48,
-      "Resilience": 28
+      "Hit": 20,
+      "Crit": 35,
+      "Resilience": 28,
+      "AttackPower": 64
     },
     "Phase": 1
   },
@@ -1323,11 +1347,11 @@
     "ItemLevel": 123,
     "Quality": "EPIC",
     "InventoryType": "TWOHWEAPON",
-    "Stats": {
+    "ItemStats": {
       "Strength": 32,
-      "Crit": 35,
-      "Hit": 20,
       "Stamina": 48,
+      "Hit": 20,
+      "Crit": 35,
       "Resilience": 28
     },
     "Phase": 1
@@ -1342,11 +1366,11 @@
     "ItemLevel": 123,
     "Quality": "EPIC",
     "InventoryType": "TWOHWEAPON",
-    "Stats": {
-      "AttackPower": 70,
-      "Crit": 35,
+    "ItemStats": {
       "Stamina": 48,
-      "Resilience": 36
+      "Crit": 35,
+      "Resilience": 36,
+      "AttackPower": 70
     },
     "Phase": 1
   },
@@ -1360,7 +1384,7 @@
     "ItemLevel": 123,
     "Quality": "EPIC",
     "InventoryType": "TWOHWEAPON",
-    "Stats": {
+    "ItemStats": {
       "Strength": 49,
       "Agility": 44
     },
@@ -1386,9 +1410,9 @@
     "ItemLevel": 123,
     "Quality": "EPIC",
     "InventoryType": "TWOHWEAPON",
-    "Stats": {
-      "AttackPower": 106,
-      "Crit": 52
+    "ItemStats": {
+      "Crit": 52,
+      "AttackPower": 106
     },
     "Phase": 1
   },
@@ -1402,7 +1426,7 @@
     "ItemLevel": 123,
     "Quality": "EPIC",
     "InventoryType": "TWOHWEAPON",
-    "Stats": {
+    "ItemStats": {
       "Strength": 37,
       "Agility": 37,
       "Stamina": 55
@@ -1425,11 +1449,11 @@
     "ItemLevel": 123,
     "Quality": "EPIC",
     "InventoryType": "TWOHWEAPON",
-    "Stats": {
+    "ItemStats": {
       "Strength": 32,
-      "Crit": 35,
-      "Hit": 20,
       "Stamina": 48,
+      "Hit": 20,
+      "Crit": 35,
       "Resilience": 28
     },
     "Spells": [
@@ -1450,7 +1474,7 @@
     "ItemLevel": 125,
     "Quality": "EPIC",
     "InventoryType": "TWOHWEAPON",
-    "Stats": {
+    "ItemStats": {
       "Strength": 49,
       "Agility": 43,
       "Stamina": 51
@@ -1473,14 +1497,19 @@
         "Name": "Drain Life"
       }
     ],
-    "Phase": 1,
-    "Socket1": "Red",
-    "Socket2": "Red",
-    "Socket3": "Red",
+    "Socket1": {
+      "Type": 2
+    },
+    "Socket2": {
+      "Type": 2
+    },
+    "Socket3": {
+      "Type": 2
+    },
     "SocketBonus": {
-      "Stat": "Critical Strike Rating",
-      "Value": 4
-    }
+      "Crit": 4
+    },
+    "Phase": 1
   },
   {
     "MinDamag": 345,
@@ -1492,9 +1521,9 @@
     "ItemLevel": 125,
     "Quality": "EPIC",
     "InventoryType": "TWOHWEAPON",
-    "Stats": {
-      "AttackPower": 124,
-      "Stamina": 66
+    "ItemStats": {
+      "Stamina": 66,
+      "AttackPower": 124
     },
     "Phase": 1
   },
@@ -1508,19 +1537,24 @@
     "ItemLevel": 125,
     "Quality": "EPIC",
     "InventoryType": "TWOHWEAPON",
-    "Stats": {
+    "ItemStats": {
       "Strength": 44,
-      "Intellect": 37,
-      "Stamina": 41
+      "Stamina": 41,
+      "Intellect": 37
     },
-    "Phase": 1,
-    "Socket1": "Red",
-    "Socket2": "Red",
-    "Socket3": "Blue",
+    "Socket1": {
+      "Type": 2
+    },
+    "Socket2": {
+      "Type": 2
+    },
+    "Socket3": {
+      "Type": 4
+    },
     "SocketBonus": {
-      "Stat": "Intellect",
-      "Value": 4
-    }
+      "Intellect": 4
+    },
+    "Phase": 1
   },
   {
     "MinDamag": 374,
@@ -1532,7 +1566,7 @@
     "ItemLevel": 130,
     "Quality": "EPIC",
     "InventoryType": "TWOHWEAPON",
-    "Stats": {
+    "ItemStats": {
       "ManaPer5": 11
     },
     "Phase": 1
@@ -1547,7 +1581,7 @@
     "ItemLevel": 130,
     "Quality": "EPIC",
     "InventoryType": "TWOHWEAPON",
-    "Stats": {
+    "ItemStats": {
       "ManaPer5": 11
     },
     "Phase": 1
@@ -1586,7 +1620,7 @@
     "ItemLevel": 130,
     "Quality": "EPIC",
     "InventoryType": "TWOHWEAPON",
-    "Stats": {
+    "ItemStats": {
       "AttackPower": 110
     },
     "Phase": 53
@@ -1601,14 +1635,18 @@
     "ItemLevel": 132,
     "Quality": "EPIC",
     "InventoryType": "TWOHWEAPON",
-    "Stats": {
-      "AttackPower": 94,
+    "ItemStats": {
       "Agility": 39,
-      "Stamina": 58
+      "Stamina": 58,
+      "AttackPower": 94
     },
-    "Phase": 4,
-    "Socket1": "Red",
-    "Socket2": "Blue"
+    "Socket1": {
+      "Type": 2
+    },
+    "Socket2": {
+      "Type": 4
+    },
+    "Phase": 4
   },
   {
     "MinDamag": 371,
@@ -1620,7 +1658,7 @@
     "ItemLevel": 134,
     "Quality": "EPIC",
     "InventoryType": "TWOHWEAPON",
-    "Stats": {
+    "ItemStats": {
       "Strength": 50,
       "Stamina": 51
     },
@@ -1642,7 +1680,7 @@
     "ItemLevel": 136,
     "Quality": "EPIC",
     "InventoryType": "TWOHWEAPON",
-    "Stats": {
+    "ItemStats": {
       "Strength": 52,
       "Agility": 44
     },
@@ -1668,9 +1706,9 @@
     "ItemLevel": 136,
     "Quality": "EPIC",
     "InventoryType": "TWOHWEAPON",
-    "Stats": {
-      "AttackPower": 112,
-      "Crit": 56
+    "ItemStats": {
+      "Crit": 56,
+      "AttackPower": 112
     },
     "Phase": 1
   },
@@ -1684,7 +1722,7 @@
     "ItemLevel": 136,
     "Quality": "EPIC",
     "InventoryType": "TWOHWEAPON",
-    "Stats": {
+    "ItemStats": {
       "Strength": 42,
       "Agility": 42,
       "Stamina": 61
@@ -1707,11 +1745,11 @@
     "ItemLevel": 136,
     "Quality": "EPIC",
     "InventoryType": "TWOHWEAPON",
-    "Stats": {
+    "ItemStats": {
       "Strength": 42,
-      "Crit": 42,
-      "Hit": 18,
       "Stamina": 55,
+      "Hit": 18,
+      "Crit": 42,
       "Resilience": 33
     },
     "Phase": 2
@@ -1726,12 +1764,12 @@
     "ItemLevel": 136,
     "Quality": "EPIC",
     "InventoryType": "TWOHWEAPON",
-    "Stats": {
-      "AttackPower": 84,
-      "Crit": 42,
-      "Hit": 18,
+    "ItemStats": {
       "Stamina": 55,
-      "Resilience": 33
+      "Hit": 18,
+      "Crit": 42,
+      "Resilience": 33,
+      "AttackPower": 84
     },
     "Phase": 2
   },
@@ -1745,11 +1783,11 @@
     "ItemLevel": 136,
     "Quality": "EPIC",
     "InventoryType": "TWOHWEAPON",
-    "Stats": {
+    "ItemStats": {
       "Strength": 42,
-      "Crit": 42,
-      "Hit": 18,
       "Stamina": 55,
+      "Hit": 18,
+      "Crit": 42,
       "Resilience": 33
     },
     "Phase": 2
@@ -1764,11 +1802,11 @@
     "ItemLevel": 136,
     "Quality": "EPIC",
     "InventoryType": "TWOHWEAPON",
-    "Stats": {
+    "ItemStats": {
       "Strength": 42,
-      "Crit": 42,
-      "Hit": 18,
       "Stamina": 55,
+      "Hit": 18,
+      "Crit": 42,
       "Resilience": 33
     },
     "Spells": [
@@ -1789,11 +1827,11 @@
     "ItemLevel": 136,
     "Quality": "EPIC",
     "InventoryType": "TWOHWEAPON",
-    "Stats": {
-      "AttackPower": 82,
-      "Crit": 42,
+    "ItemStats": {
       "Stamina": 55,
-      "Resilience": 42
+      "Crit": 42,
+      "Resilience": 42,
+      "AttackPower": 82
     },
     "Phase": 2
   },
@@ -1807,10 +1845,10 @@
     "ItemLevel": 138,
     "Quality": "EPIC",
     "InventoryType": "TWOHWEAPON",
-    "Stats": {
-      "AttackPower": 120,
+    "ItemStats": {
+      "Stamina": 49,
       "Haste": 45,
-      "Stamina": 49
+      "AttackPower": 120
     },
     "Phase": 4
   },
@@ -1824,15 +1862,21 @@
     "ItemLevel": 141,
     "Quality": "EPIC",
     "InventoryType": "TWOHWEAPON",
-    "Stats": {
-      "AttackPower": 110,
+    "ItemStats": {
+      "Stamina": 53,
       "Crit": 37,
-      "Stamina": 53
+      "AttackPower": 110
     },
-    "Phase": 2,
-    "Socket1": "Red",
-    "Socket2": "Yellow",
-    "Socket3": "Blue"
+    "Socket1": {
+      "Type": 2
+    },
+    "Socket2": {
+      "Type": 3
+    },
+    "Socket3": {
+      "Type": 4
+    },
+    "Phase": 2
   },
   {
     "MinDamag": 365,
@@ -1844,11 +1888,11 @@
     "ItemLevel": 141,
     "Quality": "EPIC",
     "InventoryType": "TWOHWEAPON",
-    "Stats": {
-      "AttackPower": 100,
+    "ItemStats": {
       "Agility": 51,
+      "Stamina": 57,
       "Hit": 30,
-      "Stamina": 57
+      "AttackPower": 100
     },
     "Phase": 3
   },
@@ -1862,11 +1906,11 @@
     "ItemLevel": 141,
     "Quality": "EPIC",
     "InventoryType": "TWOHWEAPON",
-    "Stats": {
+    "ItemStats": {
       "Strength": 51,
+      "Stamina": 45,
       "Crit": 38,
-      "Haste": 50,
-      "Stamina": 45
+      "Haste": 50
     },
     "Phase": 3
   },
@@ -1880,10 +1924,10 @@
     "ItemLevel": 141,
     "Quality": "EPIC",
     "InventoryType": "TWOHWEAPON",
-    "Stats": {
+    "ItemStats": {
       "Strength": 65,
-      "ArmorPenetration": 315,
-      "Stamina": 63
+      "Stamina": 63,
+      "ArmorPenetration": 315
     },
     "Phase": 3
   },
@@ -1897,13 +1941,13 @@
     "ItemLevel": 146,
     "Quality": "EPIC",
     "InventoryType": "TWOHWEAPON",
-    "Stats": {
+    "ItemStats": {
       "Strength": 46,
-      "Crit": 46,
-      "Hit": 15,
-      "ArmorPenetration": 98,
       "Stamina": 62,
-      "Resilience": 33
+      "Hit": 15,
+      "Crit": 46,
+      "Resilience": 33,
+      "ArmorPenetration": 98
     },
     "Phase": 3
   },
@@ -1917,13 +1961,13 @@
     "ItemLevel": 146,
     "Quality": "EPIC",
     "InventoryType": "TWOHWEAPON",
-    "Stats": {
-      "AttackPower": 92,
-      "Crit": 46,
-      "Hit": 15,
-      "ArmorPenetration": 98,
+    "ItemStats": {
       "Stamina": 62,
-      "Resilience": 33
+      "Hit": 15,
+      "Crit": 46,
+      "Resilience": 33,
+      "AttackPower": 92,
+      "ArmorPenetration": 98
     },
     "Phase": 3
   },
@@ -1937,13 +1981,13 @@
     "ItemLevel": 146,
     "Quality": "EPIC",
     "InventoryType": "TWOHWEAPON",
-    "Stats": {
+    "ItemStats": {
       "Strength": 46,
-      "Crit": 46,
-      "Hit": 15,
-      "ArmorPenetration": 98,
       "Stamina": 62,
-      "Resilience": 33
+      "Hit": 15,
+      "Crit": 46,
+      "Resilience": 33,
+      "ArmorPenetration": 98
     },
     "Phase": 3
   },
@@ -1957,11 +2001,11 @@
     "ItemLevel": 146,
     "Quality": "EPIC",
     "InventoryType": "TWOHWEAPON",
-    "Stats": {
-      "AttackPower": 92,
-      "Crit": 47,
+    "ItemStats": {
       "Stamina": 62,
-      "Resilience": 42
+      "Crit": 47,
+      "Resilience": 42,
+      "AttackPower": 92
     },
     "Phase": 3
   },
@@ -1975,10 +2019,10 @@
     "ItemLevel": 146,
     "Quality": "EPIC",
     "InventoryType": "TWOHWEAPON",
-    "Stats": {
-      "AttackPower": 108,
+    "ItemStats": {
       "Crit": 55,
-      "Haste": 53
+      "Haste": 53,
+      "AttackPower": 108
     },
     "Phase": 5
   },
@@ -2016,10 +2060,10 @@
     "ItemLevel": 151,
     "Quality": "EPIC",
     "InventoryType": "TWOHWEAPON",
-    "Stats": {
+    "ItemStats": {
       "Strength": 75,
-      "ArmorPenetration": 335,
-      "Stamina": 49
+      "Stamina": 49,
+      "ArmorPenetration": 335
     },
     "Phase": 3
   },
@@ -2033,13 +2077,15 @@
     "ItemLevel": 154,
     "Quality": "EPIC",
     "InventoryType": "TWOHWEAPON",
-    "Stats": {
-      "AttackPower": 120,
+    "ItemStats": {
       "Agility": 52,
-      "Haste": 53
+      "Haste": 53,
+      "AttackPower": 120
     },
-    "Phase": 5,
-    "Socket1": "Yellow"
+    "Socket1": {
+      "Type": 3
+    },
+    "Phase": 5
   },
   {
     "MinDamag": 404,
@@ -2051,13 +2097,13 @@
     "ItemLevel": 154,
     "Quality": "EPIC",
     "InventoryType": "TWOHWEAPON",
-    "Stats": {
+    "ItemStats": {
       "Strength": 50,
-      "Crit": 50,
-      "Hit": 19,
-      "ArmorPenetration": 98,
       "Stamina": 66,
-      "Resilience": 33
+      "Hit": 19,
+      "Crit": 50,
+      "Resilience": 33,
+      "ArmorPenetration": 98
     },
     "Phase": 5
   },
@@ -2071,13 +2117,13 @@
     "ItemLevel": 154,
     "Quality": "EPIC",
     "InventoryType": "TWOHWEAPON",
-    "Stats": {
-      "AttackPower": 100,
-      "Crit": 50,
-      "Hit": 19,
-      "ArmorPenetration": 98,
+    "ItemStats": {
       "Stamina": 66,
-      "Resilience": 33
+      "Hit": 19,
+      "Crit": 50,
+      "Resilience": 33,
+      "AttackPower": 100,
+      "ArmorPenetration": 98
     },
     "Phase": 5
   },
@@ -2091,13 +2137,13 @@
     "ItemLevel": 154,
     "Quality": "EPIC",
     "InventoryType": "TWOHWEAPON",
-    "Stats": {
+    "ItemStats": {
       "Strength": 50,
-      "Crit": 50,
-      "Hit": 19,
-      "ArmorPenetration": 98,
       "Stamina": 66,
-      "Resilience": 33
+      "Hit": 19,
+      "Crit": 50,
+      "Resilience": 33,
+      "ArmorPenetration": 98
     },
     "Phase": 5
   },
@@ -2111,11 +2157,11 @@
     "ItemLevel": 154,
     "Quality": "EPIC",
     "InventoryType": "TWOHWEAPON",
-    "Stats": {
-      "AttackPower": 102,
-      "Crit": 51,
+    "ItemStats": {
       "Stamina": 68,
-      "Resilience": 42
+      "Crit": 51,
+      "Resilience": 42,
+      "AttackPower": 102
     },
     "Phase": 5
   },
@@ -2147,20 +2193,25 @@
     "ItemLevel": 164,
     "Quality": "EPIC",
     "InventoryType": "TWOHWEAPON",
-    "Stats": {
-      "AttackPower": 126,
+    "ItemStats": {
+      "Stamina": 75,
       "Crit": 42,
       "Haste": 32,
-      "Stamina": 75
+      "AttackPower": 126
     },
-    "Phase": 5,
-    "Socket1": "Red",
-    "Socket2": "Red",
-    "Socket3": "Red",
+    "Socket1": {
+      "Type": 2
+    },
+    "Socket2": {
+      "Type": 2
+    },
+    "Socket3": {
+      "Type": 2
+    },
     "SocketBonus": {
-      "Stat": "Stamina",
-      "Value": 6
-    }
+      "Stamina": 6
+    },
+    "Phase": 5
   },
   {
     "MinDamag": 496,
@@ -2172,10 +2223,10 @@
     "ItemLevel": 175,
     "Quality": "LEGENDARY",
     "InventoryType": "TWOHWEAPON",
-    "Stats": {
-      "AttackPower": 150,
+    "ItemStats": {
+      "Stamina": 75,
       "Crit": 50,
-      "Stamina": 75
+      "AttackPower": 150
     },
     "Spells": [
       {
