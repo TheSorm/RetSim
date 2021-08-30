@@ -1,28 +1,28 @@
-﻿
-using System.Collections.Generic;
-
-namespace RetSim.Events
+﻿namespace RetSim.Events
 {
     public class CooldownEndEvent : Event
-    {
-        private const int GCDEndEventPriority = 2;
-        private readonly Spell spell;
+    {        
+        private const int BasePriority = 2;
 
-        public CooldownEndEvent(int expirationTime, Player player, Spell spell) : base(expirationTime, GCDEndEventPriority, player)
+        private Spell Spell { get; init; }
+
+        public CooldownEndEvent(Spell spell, FightSimulation fight, int timestamp, int priority = 0) : base(fight, timestamp, priority + BasePriority)
         {
-            this.spell = spell;
+            Spell = spell;
+
+            Fight.Player.Spellbook.StartCooldown(spell, this);
         }
 
-        public override ProcMask Execute(int time, List<Event> resultingEvents)
+        public override ProcMask Execute(object arguments = null)
         {
-            player.Spellbook.EndCooldown(spell);
+            Fight.Player.Spellbook.EndCooldown(Spell);
 
             return ProcMask.None;
         }
 
         public override string ToString()
         {
-            return "Cooldown of " + spell.Name + " ends";
+            return $"Cooldown of {Spell.Name} ends";
         }
     }
 }

@@ -7,6 +7,16 @@ namespace RetSim
     {
         public static class Spells
         {
+            public static readonly Spell Melee = new()
+            {
+                ID = 1,
+                Name = "Melee",
+                ManaCost = 0,
+                Cooldown = 0,
+                CastTime = 0,
+                GCD = new SpellGCD() { Duration = 0, Category = Category.None },
+            };
+
             public static readonly Spell CrusaderStrike = new()
             {
                 ID = 35395,
@@ -14,9 +24,8 @@ namespace RetSim
                 ManaCost = 236,
                 Cooldown = 6000,
                 CastTime = 0,
-                School = School.Physical,
-                HitCheck = HitCheck.Special,
-                GCD = new GCD() { Duration = 1500, Category = GCDCategory.Physical },
+                
+                GCD = new SpellGCD() { Duration = 1500, Category = Category.Physical },
             };
 
             public static readonly Spell SealOfCommand = new()
@@ -26,8 +35,7 @@ namespace RetSim
                 ManaCost = 280,
                 Cooldown = 0,
                 CastTime = 0,
-                School = School.Holy,
-                GCD = new GCD() { Duration = 1500, Category = GCDCategory.Spell },
+                GCD = new SpellGCD() { Duration = 1500, Category = Category.Spell },
             };
 
             public static readonly Spell SealOfCommandProc = new()
@@ -37,9 +45,7 @@ namespace RetSim
                 ManaCost = 0,
                 Cooldown = 1 * 1000,
                 CastTime = 0,
-                School = School.Holy,
-                HitCheck = HitCheck.Special,
-                GCD = new GCD() { Duration = 0, Category = GCDCategory.None },
+                GCD = new SpellGCD() { Duration = 0, Category = Category.None },
             };
 
             public static readonly Spell SealOfBlood = new()
@@ -49,8 +55,7 @@ namespace RetSim
                 ManaCost = 210,
                 Cooldown = 0,
                 CastTime = 0,
-                School = School.Holy,
-                GCD = new GCD() { Duration = 1500, Category = GCDCategory.Spell },
+                GCD = new SpellGCD() { Duration = 1500, Category = Category.Spell },
             };
 
             public static readonly Spell SealOfBloodProc = new()
@@ -60,9 +65,7 @@ namespace RetSim
                 ManaCost = 0,
                 Cooldown = 0,
                 CastTime = 0,
-                School = School.Holy,
-                HitCheck = HitCheck.Special,
-                GCD = new GCD() { Duration = 0, Category = GCDCategory.None },
+                GCD = new SpellGCD() { Duration = 0, Category = Category.None },
             };
 
             public static readonly Spell SealOfTheCrusader = new()
@@ -72,8 +75,7 @@ namespace RetSim
                 ManaCost = 210,
                 Cooldown = 0,
                 CastTime = 0,
-                School = School.Holy,
-                GCD = new GCD() { Duration = 1500, Category = GCDCategory.Spell },
+                GCD = new SpellGCD() { Duration = 1500, Category = Category.Spell },
                 Effects = new List<SpellEffect>()
                 { }
             };
@@ -85,8 +87,7 @@ namespace RetSim
                 ManaCost = 0,
                 Cooldown = 20 * 1000,
                 CastTime = 0,
-                School = School.None,
-                GCD = new GCD() { Duration = 0, Category = GCDCategory.None },
+                GCD = new SpellGCD() { Duration = 0, Category = Category.None },
             };
 
             public static readonly Dictionary<int, Spell> ByID = new()
@@ -101,16 +102,82 @@ namespace RetSim
             };
             static Spells()
             {
+                Melee.Effects = new List<SpellEffect>()
+                {
+                    new WeaponDamage()
+                    {
+                        Spell = Melee,
+                        School = School.Physical,
+                        DefenseCategory = DefenseType.Auto,
+                        CritCategory = Category.Physical,
+                        Normalized = false,
+                        OnCast = ProcMask.None,
+                        OnHit = ProcMask.OnMeleeAutoAttack,
+                        OnCrit = ProcMask.OnCrit | ProcMask.OnMeleeCrit,
+                        Percentage = 1f,
+                        Coefficient = 0,
+                        HolyCoefficient = 0
+                    }
+                };
+
                 CrusaderStrike.Effects = new List<SpellEffect>()
-                    { new NormalizedWeaponDamage(1.1f) };
+                {
+                    new CrusaderStrike()
+                    {
+                        School = School.Physical,
+                        DefenseCategory = DefenseType.Special,
+                        CritCategory = Category.Physical,
+                        Normalized = true,
+                        OnCast = ProcMask.None,
+                        OnHit = ProcMask.OnMeleeSpecialAttack,
+                        OnCrit = ProcMask.OnCrit | ProcMask.OnMeleeCrit,
+                        Coefficient = 0,
+                        HolyCoefficient = 0
+                    }
+                };
+
                 SealOfCommand.Effects = new List<SpellEffect>()
-                    { new ChangeSeal(Auras.SealOfCommand) };
+                { new SealChange(Auras.SealOfCommand) };
+
                 SealOfCommandProc.Effects = new List<SpellEffect>()
-                    { new NormalizedWeaponDamage(0.7f) };
+                {
+                    new WeaponDamage()
+                    {
+                        Spell = SealOfCommandProc,
+                        School =  School.Holy,
+                        DefenseCategory = DefenseType.Special,
+                        CritCategory = Category.Physical,
+                        Normalized = false,
+                        OnCast = ProcMask.None,
+                        OnHit = ProcMask.OnMeleeAutoAttack | ProcMask.OnMeleeSpecialAttack,
+                        OnCrit = ProcMask.OnCrit | ProcMask.OnMeleeCrit,
+                        Percentage = 0.7f,
+                        Coefficient = 0.2f,
+                        HolyCoefficient = 0.29f
+                    }
+                };
+
                 SealOfBlood.Effects = new List<SpellEffect>()
-                    { new ChangeSeal(Auras.SealOfBlood) };
+                { new SealChange(Auras.SealOfBlood) };
+
                 SealOfBloodProc.Effects = new List<SpellEffect>()
-                    { new SealOfBlood() };
+                {
+                    new WeaponDamage()
+                    {
+                        Spell = SealOfBloodProc,
+                        School = School.Holy,
+                        DefenseCategory = DefenseType.Special,
+                        CritCategory = Category.Physical,
+                        Normalized = false,
+                        OnCast = ProcMask.None,
+                        OnHit = ProcMask.None,
+                        OnCrit = ProcMask.OnCrit,
+                        Percentage = 0.35f,
+                        Coefficient = 0,
+                        HolyCoefficient = 0
+                    }
+                };
+
                 DragonspineTrophy.Effects = new List<SpellEffect>()
                     { new GainAura(Auras.DragonspineTrophy, false) };
 

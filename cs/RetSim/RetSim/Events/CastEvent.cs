@@ -1,25 +1,24 @@
-﻿using System.Collections.Generic;
-
-namespace RetSim.Events
+﻿namespace RetSim.Events
 {
     public class CastEvent : Event
     {
-        private const int CastEventPriority = 3;
-        private readonly Spell spell;
+        private const int BasePriority = 3;
 
-        public CastEvent(int expirationTime, Player player, Spell spell) : base(expirationTime, CastEventPriority, player)
+        private Spell Spell { get; init; }
+
+        public CastEvent(Spell spell, FightSimulation fight, int timestamp, int priority = 0) : base(fight, timestamp, priority + BasePriority)
         {
-            this.spell = spell;
+            Spell = spell;
         }
 
-        public override ProcMask Execute(int time, List<Event> resultingEvents)
+        public override ProcMask Execute(object arguments = null)
         {
-            return player.Cast(spell, ExpirationTime, resultingEvents);
+            return Fight.Player.Cast(Spell, Fight);
         }
 
         public override string ToString()
         {
-            return "Cast " + spell.Name;
+            return "Cast " + Spell.Name;
         }
     }
 }

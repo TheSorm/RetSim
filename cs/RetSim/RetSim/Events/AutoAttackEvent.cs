@@ -1,18 +1,22 @@
-﻿using System.Collections.Generic;
-
-namespace RetSim.Events
+﻿namespace RetSim.Events
 {
     public class AutoAttackEvent : Event
     {
-        private const int AutoAttackEventPriority = 4;
+        private const int BasePriority = 4;
 
-        public AutoAttackEvent(int expirationTime, Player player) : base(expirationTime, AutoAttackEventPriority, player)
+        public AutoAttackEvent(FightSimulation fight, int timestamp, int priority = 0) : base(fight, timestamp, priority + BasePriority)
         {
         }
 
-        public override ProcMask Execute(int time, List<Event> resultingEvents)
+        public override ProcMask Execute(object arguments = null)
         {
-            return player.MeleeAttack(time, resultingEvents);
+            Fight.Player.NextAutoAttack = new AutoAttackEvent(Fight, Timestamp + Fight.Player.Weapon.EffectiveSpeed);
+
+            Fight.Player.Cast(Glossaries.Spells.Melee, Fight);
+
+            Fight.Queue.Add(Fight.Player.NextAutoAttack);            
+
+            return ProcMask.OnMeleeAutoAttack;
         }
 
         public override string ToString()

@@ -10,20 +10,17 @@ namespace RetSim
         public int ManaCost { get; init; }
         public int Cooldown { get; init; }
         public int CastTime { get; init; }
-        public School School { get; init; }
-        public GCD GCD { get; init; }
-        public float Coefficient { get; init; }
-        public HitCheck HitCheck { get; init; }
+        public SpellGCD GCD { get; init; }
         public List<SpellEffect> Effects { get; set; }
     }
 
-    public record GCD
+    public record SpellGCD
     {
         public int Duration { get; init; }
-        public GCDCategory Category { get; init; }
+        public Category Category { get; init; }
     }
 
-    public enum GCDCategory
+    public enum Category
     {
         None = 0,
         Physical = 1,
@@ -32,7 +29,7 @@ namespace RetSim
 
     public enum School
     {
-        None = 0,
+        Typeless = 0,
         Physical = 1,
         Holy = 2,
         Fire = 3,
@@ -42,7 +39,7 @@ namespace RetSim
         Arcane = 7
     }
 
-    public enum HitCheck
+    public enum DefenseType
     {
         None = 0,
         Auto = 1,

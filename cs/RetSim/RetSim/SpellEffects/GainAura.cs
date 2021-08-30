@@ -1,7 +1,4 @@
-﻿using RetSim.Events;
-using System.Collections.Generic;
-
-namespace RetSim.SpellEffects
+﻿namespace RetSim.SpellEffects
 {
     public class GainAura : SpellEffect
     {
@@ -14,9 +11,9 @@ namespace RetSim.SpellEffects
             IsSpellcast = spellcast;
         }
 
-        public override ProcMask Resolve(Player caster, Spell spell, int time, List<Event> results)
+        public override ProcMask Resolve(FightSimulation fight)
         {
-            caster.Auras.Apply(Aura, time, results);
+            fight.Player.Auras.Apply(Aura, fight);
 
             Program.Logger.Log($"Player gains {Aura.Name}.");
 

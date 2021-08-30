@@ -18,13 +18,13 @@ namespace RetSim
         //        base.Add(proc);
         //}
 
-        public void CheckProcs(ProcMask mask, int time, List<Event> results)
+        public void CheckProcs(ProcMask mask, FightSimulation fight)
         {
             foreach (var proc in this)
             {
                 if (!player.Spellbook.IsOnCooldown(proc.Spell) && (proc.ProcMask & mask) != ProcMask.None && RollProc(proc, player))
                 {
-                    results.Add(new CastEvent(time, player, proc.Spell)); //TODO: Increase Prio of those cast events
+                    fight.Queue.Add(new CastEvent(proc.Spell, fight, fight.Timestamp)); //TODO: Increase Prio of those cast events
                     //Program.Logger.Log($"{proc.Name} procced");
                 }
             }
@@ -37,7 +37,6 @@ namespace RetSim
 
             else
                 return RNG.Roll100(Helpers.PPMToChance(proc.PPM, player));
-
         }
     }
 }

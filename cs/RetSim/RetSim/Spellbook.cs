@@ -13,14 +13,21 @@ namespace RetSim
             player = caster;
 
             foreach (var spell in Glossaries.Spells.ByID.Values)
-            {
                 Add(spell);
-            }
         }
 
         public new void Add(Spell spell, CooldownEndEvent end = null)
         {
             base.Add(spell, null);
+        }
+        public void StartCooldown(Spell spell, CooldownEndEvent cooldown)
+        {
+            this[spell] = cooldown;
+        }
+
+        public void EndCooldown(Spell spell)
+        {
+            this[spell] = null;
         }
 
         public bool IsOnCooldown(Spell spell)
@@ -33,46 +40,20 @@ namespace RetSim
             return spell.ManaCost <= player.Stats.Mana;
         }
 
-        public ProcMask Use(Spell spell, int time, List<Event> results)
+        public ProcMask Use(Spell spell, FightSimulation fight)
         {
             ProcMask mask = ProcMask.None;
 
             foreach (SpellEffect effect in spell.Effects)
-            {
-                mask |= effect.Resolve(player, spell, time, results);
-            }
+                mask |= effect.Resolve(fight);
 
             if (spell.Cooldown > 0)
-                results.Add(StartCooldown(spell, time));
+                fight.Queue.Add(new CooldownEndEvent(spell, fight, fight.Timestamp + spell.Cooldown));
 
-            if (spell.GCD.Category != GCDCategory.None && spell.GCD.Duration > 0)
-            {
-                var gcd = new GCDEndEvent(time + spell.GCD.Duration, player);
-
-                player.StartGCD(gcd);
-                results.Add(gcd);
-            }
+            if (spell.GCD.Category != Category.None && spell.GCD.Duration > 0)
+                fight.Queue.Add(new GCDEndEvent(fight, fight.Timestamp + spell.GCD.Duration));
 
             return mask;
-        }
-
-        private CooldownEndEvent StartCooldown(Spell spell, int time)
-        {
-            if (spell.Cooldown > 0 && !IsOnCooldown(spell))
-            {
-                var cooldown = new CooldownEndEvent(time + spell.Cooldown, player, spell);
-
-                this[spell] = cooldown;
-
-                return cooldown;
-            }
-
-            else return null;
-        }
-
-        public void EndCooldown(Spell spell)
-        {
-            this[spell] = null;
         }
     }
 }

@@ -1,98 +1,149 @@
-﻿namespace RetSim
+﻿using System;
+using System.Collections.Generic;
+
+namespace RetSim
 {
     public static class Formulas
     {
         public static class Damage
         {
-            public static float GetAPBonus(int ap, float weaponSpeed)
+            public static float GetDamageModifier(DamageResult result, Category crit, Player player)
             {
-                return ap / (float)Constants.Stats.APPerDPS * weaponSpeed;
+                return result switch
+                {
+                    DamageResult.Crit => 1 + GetCritDamage(crit, player),
+                    DamageResult.Glancing => RollGlancingDamage(),
+                    _ => 1f,
+                };
             }
 
-            public static float GetAPBonusNormalized(int ap)
+            public static float GetCritChance(Category category, Player player)
             {
-                return ap / (float)Constants.Stats.APPerDPS * Constants.Stats.NormalizedWeaponSpeed;
+                return category switch
+                {
+                    Category.Physical => player.Stats.CritChance,
+                    Category.Spell => player.Stats.SpellCrit,
+                    _ => 0f,
+                };
             }
 
-            public static float GetWeaponDamage(int weapon, float ap, int bonus)
+            public static float GetCritDamage(Category category, Player player)
             {
-                return weapon + ap + bonus;
+                return category switch
+                {
+                    Category.Physical => player.Stats.EffectiveCritDamage,
+                    Category.Spell => player.Stats.EffectiveSpellCritDamage,
+                    _ => 0f,
+                };
             }
 
-            public static int Melee(int min, int max, float weaponSpeed, int bonus, int ap, float modifier)
+            public static float GetSchoolModifier(School school, Player player)
             {
-                float apBonus = GetAPBonus(ap, weaponSpeed);
-
-                int weapon = RNG.RollRange(min, max);
-
-                float damage = GetWeaponDamage(weapon, apBonus, bonus) * modifier;
-
-                return RNG.RollDamage(damage);
+                return school switch
+                {
+                    School.Physical => player.Modifiers.Physical,
+                    School.Holy => player.Modifiers.Holy,
+                    School.Shadow => player.Modifiers.Shadow,
+                    School.Arcane => player.Modifiers.Arcane,
+                    School.Fire => player.Modifiers.Fire,
+                    School.Frost => player.Modifiers.Frost,
+                    School.Nature => player.Modifiers.Nature,
+                    _ => 1f,
+                };
             }
 
-            public static int NormalizedWeaponDamage(int min, int max, int bonus, int ap, float modifier)
+            public static float RollGlancingDamage()
             {
-                float apBonus = GetAPBonusNormalized(ap);
-
-                int weapon = RNG.RollRange(min, max);
-
-                float damage = GetWeaponDamage(weapon, apBonus, bonus) * modifier;
-
-                return RNG.RollDamage(damage);
+                return RNG.RollRange(Constants.Boss.GlancePenaltyMin * 100, Constants.Boss.GlancePenaltyMax * 100) / 10000f;
             }
 
-            public static int SealOfBlood(int weaponMin, int weaponMax, int weaponSpeed, int bonusWeaponDamage, int ap, float damageModifier, float holyDamageModifier, float jotc)
+
+            public static bool CritCheck(float crit)
             {
-                float bonus = GetAPBonus(ap, weaponSpeed);
-
-                int weapon = RNG.RollRange(weaponMin, weaponMax);
-
-                float damage = GetWeaponDamage(weapon, bonus, bonusWeaponDamage) * damageModifier * holyDamageModifier * 0.35f + jotc;
-
-                return RNG.RollDamage(damage);
-            }
-
-            public static int SealOfCommand(int weaponMin, int weaponMax, int weaponSpeed, int bonusWeaponDamage, int ap, float damageModifier, float holyDamageModifier, float jotc)
-            {
-                float bonus = GetAPBonus(ap, weaponSpeed);
-
-                int weapon = RNG.RollRange(weaponMin, weaponMax);
-
-                float damage = GetWeaponDamage(weapon, bonus, bonusWeaponDamage) * damageModifier * holyDamageModifier * 0.7f + jotc;
-
-                return RNG.RollDamage(damage);
-            }
-
-            public static int JudgementOfBlood(int sp, float holyDamageModifier, float damageModifier, float jotc)
-            {
-                float bonus = sp * 0.429f;
-
-                float roll = RNG.RollRange(331.6f, 361.6f);
-
-                float damage = (roll + bonus) * damageModifier * holyDamageModifier + jotc;
-
-                return RNG.RollDamage(damage);
-            }
-
-            public static int JudgementOfCommand(int sp, float holyDamageModifier, float damageModifier, float jotc, float jocDamageMod)
-            {
-                float bonus = sp * 0.429f;
-
-                float roll = RNG.RollRange(456, 504) / 2f;
-
-                float damage = (roll + bonus) * damageModifier * holyDamageModifier * jocDamageMod + jotc;
-
-                return RNG.RollDamage(damage);
-            }
-
-            public static int ConsecrationTick(int sp, float holyDamageModifier, float damageModifier, float jotc, int consBonusSP)
-            {
-                float bonus = (sp + consBonusSP) * 0.119f;
-
-                float damage = (64 + bonus) * damageModifier * holyDamageModifier + jotc;
-
-                return RNG.RollDamage(damage);
+                return RNG.RollRange(0, 10000) < Helpers.UpgradeFraction(crit);
             }
         }
+
+
+
+        public static class HitChecks
+        {
+            public static readonly Dictionary<DefenseType, Func<float, float, float, Tuple<AttackResult, DamageResult>>> CheckToFunction = new()
+            {
+                { DefenseType.Auto, Auto },
+                { DefenseType.Special, Special },
+                { DefenseType.Ranged, Ranged },
+                { DefenseType.Magic, Ranged },
+                { DefenseType.None, None }
+            };
+
+            public static Tuple<AttackResult, DamageResult> Auto(float miss, float dodge, float crit)
+            {
+                AttackResult attack = AttackResult.Hit;
+                DamageResult damage = DamageResult.None;
+
+                int random = RNG.RollRange(0, 10000);
+
+                float m = Helpers.UpgradeFraction(miss);
+                float d = Helpers.UpgradeFraction(dodge) + m;
+                float g = Constants.Boss.UpgradedGlancingChance + d;
+                float c = Helpers.UpgradeFraction(crit) + g;
+
+                if (random < m)
+                    attack = AttackResult.Miss;
+
+                else if (random < d)
+                    attack = AttackResult.Dodge;
+
+                else if (random < g)
+                    damage = DamageResult.Glancing;
+
+                else if (random < c)
+                    damage = DamageResult.Crit;
+
+                return Tuple.Create(attack, damage);
+            }
+
+            public static Tuple<AttackResult, DamageResult> Special(float miss, float dodge, float crit)
+            {
+                AttackResult attack = AttackResult.Hit;
+                DamageResult damage = DamageResult.None;
+
+                int random = RNG.RollRange(0, 10000);
+
+                float m = Helpers.UpgradeFraction(miss);
+                float d = Helpers.UpgradeFraction(dodge) + m;
+
+                if (random < m)
+                    attack = AttackResult.Miss;
+
+                else if (random < d)
+                    attack = AttackResult.Dodge;
+
+                else if (Damage.CritCheck(crit))
+                    damage = DamageResult.Crit;
+
+                return Tuple.Create(attack, damage);
+            }
+
+            public static Tuple<AttackResult, DamageResult> Ranged(float miss, float dodge, float crit)
+            {
+                int random = RNG.RollRange(0, 10000);
+
+                float m = Helpers.UpgradeFraction(miss);
+
+                AttackResult attack = (random < m) ? AttackResult.Miss : AttackResult.Hit;
+                DamageResult damage = attack == AttackResult.Hit && Damage.CritCheck(crit) ? DamageResult.Crit : DamageResult.None;
+
+                return Tuple.Create(attack, damage);
+            }
+
+            public static Tuple<AttackResult, DamageResult> None(float miss, float dodge, float crit)
+            {
+                return Tuple.Create(AttackResult.Hit, Damage.CritCheck(crit) ? DamageResult.Crit : DamageResult.None);
+            }
+
+        }
+
     }
 }

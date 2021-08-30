@@ -9,30 +9,29 @@ namespace RetSim.Tactics
     {
         public EliteTactic()
         {
-
         }
 
-        public override List<Event> PreFight(Player player)
+        public override List<Event> PreFight(FightSimulation fight)
         {
             return new List<Event>()
             {
-                new CastEvent(0, player, Spells.SealOfCommand),
-                new CastEvent(1500, player, Spells.SealOfBlood),
-                new AutoAttackEvent(1500, player)
+                new CastEvent(Spells.SealOfCommand, fight, 0),
+                new CastEvent(Spells.SealOfBlood, fight, 1500),
+                new AutoAttackEvent(fight, 1500)
             };
         }
 
-        public override Event GetActionBetween(int start, int end, Player player)
+        public override Event GetActionBetween(int start, int end, FightSimulation fight)
         {
-            var swing = player.TimeOfNextSwing() - start;
-            var gcd = player.IsOnGCD() ? player.GetGCDEnd() - start : 0;
-            var cs = player.Spellbook.IsOnCooldown(Spells.CrusaderStrike) ? player.Spellbook[Spells.CrusaderStrike].ExpirationTime - start : 0;
+            var swing = fight.Player.TimeOfNextSwing() - start;
+            var gcd = fight.Player.GCD.GetDuration(start);
+            var cs = fight.Player.Spellbook.IsOnCooldown(Spells.CrusaderStrike) ? fight.Player.Spellbook[Spells.CrusaderStrike].Timestamp - start : 0;
 
-            if (gcd == 0 && !player.Auras[Glossaries.Auras.SealOfCommand].Active && swing - gcd > 1510 && end > start + gcd)
-                return new CastEvent(start + gcd, player, Spells.SealOfCommand);
+            if (gcd == 0 && !fight.Player.Auras[Glossaries.Auras.SealOfCommand].Active && swing - gcd > 1510 && end > start + gcd)
+                return new CastEvent(Spells.SealOfCommand, fight, start + gcd);
 
-            if (gcd == 0 && player.Auras[Glossaries.Auras.SealOfCommand].Active && end > player.TimeOfNextSwing() - 390)
-                return new CastEvent(Math.Max(player.TimeOfNextSwing() - 390, start), player, Spells.SealOfBlood);
+            if (gcd == 0 && fight.Player.Auras[Glossaries.Auras.SealOfCommand].Active && end > fight.Player.TimeOfNextSwing() - 390)
+                return new CastEvent(Spells.SealOfBlood, fight, Math.Max(fight.Player.TimeOfNextSwing() - 390, start));
 
 
 

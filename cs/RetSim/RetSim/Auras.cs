@@ -28,46 +28,45 @@ namespace RetSim
                 return 0;
 
             else
-                return this[aura].End.ExpirationTime - time;
+                return this[aura].End.Timestamp - time;
         }
 
-        public void Apply(Aura aura, int time, List<Event> results)
+        public void Apply(Aura aura, FightSimulation fight)
         {
             if (this[aura].Active)
             {
                 if (this[aura].Stacks < aura.MaxStacks)
-                    ApplyEffects(aura, time, results);
+                    ApplyEffects(aura, fight);
 
-                this[aura].End.ExpirationTime = time + aura.Duration;
+                this[aura].End.Timestamp = fight.Timestamp + aura.Duration;
             }
 
             else
             {
-                ApplyEffects(aura, time, results);
+                ApplyEffects(aura, fight);
 
-                this[aura].End = new AuraEndEvent(time + aura.Duration, player, aura);
+                this[aura].End = new AuraEndEvent(aura, fight, fight.Timestamp + aura.Duration);
 
-                results.Add(this[aura].End);
+                fight.Queue.Add(this[aura].End);
             }
         }
-        private void ApplyEffects(Aura aura, int time, List<Event> results)
+
+        private void ApplyEffects(Aura aura, FightSimulation fight)
         {
             foreach (AuraEffect effect in aura.Effects)
             {
-                effect.Apply(player, aura, time, results);
+                effect.Apply(aura, fight);
             }
 
             this[aura].Stacks++;
         }
 
-        public void Cancel(Aura aura, int time, List<Event> resultingEvents)
+        public void Cancel(Aura aura, FightSimulation fight)
         {
             for (int i = 0; i < this[aura].Stacks; i++)
             {
-                foreach (AuraEffect effect in aura.Effects)
-                {
-                    effect.Remove(player, aura, time, resultingEvents);
-                }
+                foreach (AuraEffect effect in aura.Effects)                
+                    effect.Remove(aura, fight);                
             }
 
             this[aura].End = null;

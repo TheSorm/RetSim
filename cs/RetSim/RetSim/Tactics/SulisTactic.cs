@@ -10,15 +10,15 @@ namespace RetSim.Tactics
 
         }
 
-        public override List<Event> PreFight(Player player)
+        public override List<Event> PreFight(FightSimulation fight)
         {
             return new List<Event>()
             {
-                new AutoAttackEvent(0, player)
+                new AutoAttackEvent(fight, 0)
             };
         }
 
-        public override Event GetActionBetween(int start, int end, Player player)
+        public override Event GetActionBetween(int start, int end, FightSimulation fight)
         {
             return null;
         }

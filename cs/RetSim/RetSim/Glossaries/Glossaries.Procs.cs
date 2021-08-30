@@ -12,7 +12,7 @@ namespace RetSim
                 Name = "Seal of Command",
                 ProcMask = ProcMask.OnMeleeAutoAttack,
                 Chance = 100,
-                PPM = 15
+                PPM = 7
                 //Cooldown = 1000,
             };
 

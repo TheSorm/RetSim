@@ -62,11 +62,12 @@
         {
             public const int Level = 73;
 
-            public const float MissChance = 8f;
+            public const int MissChance = 8;
             public const float DodgeChance = 6.5f;
-            public const float GlancingChance = 24f;
-            public const float GlancePenaltyMax = 35f;
-            public const float GlancePenaltyMin = 15f;
+            public const int GlancingChance = 24;
+            public const int UpgradedGlancingChance = 2400;
+            public const int GlancePenaltyMax = 35;
+            public const int GlancePenaltyMin = 15;
         }
 
         public static class Misc
@@ -76,6 +77,8 @@
             public const int OneHundred = 100;
             public const int One = 1;
             public const int Zero = 0;
+
+            public const string MillisecondFormatter = "{0:00:00:000}";
         }
     }
 

@@ -31,5 +31,7 @@
         public float Fire { get; set; } = 1f;
 
         public float Shadow { get; set; } = 1f;
+
+        public float Nature { get; set; } = 1f;
     }
 }

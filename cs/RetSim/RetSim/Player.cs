@@ -1,5 +1,4 @@
 ﻿using RetSim.Events;
-using System.Collections.Generic;
 
 namespace RetSim
 {
@@ -12,10 +11,9 @@ namespace RetSim
         public Spellbook Spellbook { get; init; }
         public Auras Auras { get; init; }
         public Procs Procs { get; init; }
+        public GCD GCD { get; init; }
 
-        private AutoAttackEvent nextAutoAttack;
-
-        private GCDEndEvent gcd;
+        public AutoAttackEvent NextAutoAttack { get; set; }
 
         public Player(Race race, Equipment equipment)
         {
@@ -26,53 +24,27 @@ namespace RetSim
             Spellbook = new Spellbook(this);
             Auras = new Auras(this);
             Procs = new Procs(this);
+            GCD = new GCD();
         }
 
-        public ProcMask Cast(Spell spell, int time, List<Event> results)
+        public ProcMask Cast(Spell spell, FightSimulation fight)
         {
-            return Spellbook.Use(spell, time, results);
+            return Spellbook.Use(spell, fight);
         }
 
-        public void CheckForProcs(ProcMask mask, int time, List<Event> results)
+        public void CheckForProcs(ProcMask mask, FightSimulation fight)
         {
-            Procs.CheckProcs(mask, time, results);
+            Procs.CheckProcs(mask, fight);
         }
 
-        public void Apply(Aura aura, int time, List<Event> results)
+        public void Apply(Aura aura, FightSimulation fight)
         {
-            Auras.Apply(aura, time, results);
+            Auras.Apply(aura, fight);
         }
 
         public int TimeOfNextSwing()
         {
-            return nextAutoAttack != null ? nextAutoAttack.ExpirationTime : -1;
-        }
-
-        public ProcMask MeleeAttack(int time, List<Event> results)
-        {
-            nextAutoAttack = new AutoAttackEvent(time + Weapon.EffectiveSpeed, this);
-            results.Add(nextAutoAttack);
-            return ProcMask.OnMeleeAutoAttack;
-        }
-
-        public void StartGCD(GCDEndEvent gcd)
-        {
-            this.gcd = gcd;
-        }
-
-        public void RemoveGCD()
-        {
-            gcd = null;
-        }
-
-        public bool IsOnGCD()
-        {
-            return gcd != null;
-        }
-
-        public int GetGCDEnd()
-        {
-            return gcd != null ? gcd.ExpirationTime : -1;
+            return NextAutoAttack != null ? NextAutoAttack.Timestamp : -1;
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using RetSim.Items;
+using RetSim.Log;
 using RetSim.Loggers;
 using RetSim.Tactics;
 using System.Collections.Generic;
@@ -35,11 +36,13 @@ namespace RetSim
                 Weapon = Glossaries.Items.WeaponByID[28429],
             };
 
-            FightSimulation fightSimulation = new(new Player(Races.Human, equipment), new Enemy(), new EliteTactic(), 35000, 40000);
+            FightSimulation fight = new(new Player(Races.Human, equipment), new Enemy(), new EliteTactic(), 35000, 40000);
 
-            double result = fightSimulation.Run();
+            fight.Run();
 
-            Logger.Log("DPS:" + result);
+            fight.Output();
+
+
         }
 
         public static List<EquippableWeapon> LoadWeponData()

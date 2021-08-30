@@ -1,12 +1,7 @@
-﻿using RetSim.Events;
-using System.Collections.Generic;
-
-namespace RetSim.SpellEffects
+﻿namespace RetSim.SpellEffects
 {
     public abstract class SpellEffect
     {
-        public SpellEffect() { }
-
-        public abstract ProcMask Resolve(Player caster, Spell spell, int time, List<Event> resultingEvents);
+        public abstract ProcMask Resolve(FightSimulation fight);
     }
 }

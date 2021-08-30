@@ -33,10 +33,21 @@
         public new int CritRating => permanent.CritRating + Temporary.CritRating;
         public new float CritChance => permanent.CritChance + Temporary.CritChance + Constants.BaseStats.CritChance + (Agility / Constants.Stats.AgilityPerCrit) + (CritRating / Constants.Ratings.Crit);
 
+        public float EffectiveCritDamage => Constants.Stats.PhysicalCritBonus;
+
         public new int HitRating => permanent.HitRating + Temporary.HitRating;
         public new float HitChance => permanent.HitChance + Temporary.HitChance + (HitRating / Constants.Ratings.Hit);
         public float HitPenalty => (int)HitChance >= Constants.Stats.HitPenalty ? Constants.Stats.HitPenalty : HitChance;
         public float EffectiveHitChance => HitChance - HitPenalty;
+        public float EffectiveMissChance 
+        { 
+            get 
+            {  
+                float miss = Constants.Boss.MissChance - EffectiveHitChance;
+
+                return miss > 0 ? miss : 0;
+            } 
+        }
 
         public new int HasteRating => permanent.HasteRating + Temporary.HasteRating;
         public new float Haste => (Constants.Misc.One + (HasteRating / (Constants.Ratings.Haste * Constants.Misc.OneHundred))) * player.Modifiers.AttackSpeed;
@@ -44,6 +55,15 @@
         public new int ExpertiseRating => permanent.ExpertiseRating + Temporary.ExpertiseRating;
         public new int Expertise => permanent.Expertise + Temporary.Expertise + (int)(ExpertiseRating / Constants.Ratings.Expertise);
         public float DodgeChanceReduction => Expertise >= Constants.Stats.ExpertiseCap ? Constants.Stats.ExpertiseCap / Constants.Stats.ExpertisePerDodge : Expertise / Constants.Stats.ExpertisePerDodge;
+        public float EffectiveDodgeChance
+        {
+            get
+            {
+                float dodge = Constants.Boss.DodgeChance - DodgeChanceReduction;
+
+                return dodge > 0 ? dodge : 0;
+            }
+        }
 
         public new int ArmorPenetration => permanent.ArmorPenetration + Temporary.ArmorPenetration;
         public new int WeaponDamage => permanent.WeaponDamage + Temporary.WeaponDamage;
@@ -52,6 +72,8 @@
 
         public new int SpellCritRating => permanent.SpellCritRating + Temporary.SpellCritRating;
         public new float SpellCrit => permanent.SpellCrit + Temporary.SpellCrit + Constants.BaseStats.SpellCritChance + (Intellect / Constants.Stats.IntellectPerSpellCrit) + (SpellCritRating / Constants.Ratings.SpellCrit);
+
+        public float EffectiveSpellCritDamage => Constants.Stats.SpellCritBonus;
 
         public new int SpellHitRating => permanent.SpellHitRating + Temporary.SpellHitRating;
         public new float SpellHit => permanent.SpellHit + Temporary.SpellHit + (SpellHitRating / Constants.Ratings.SpellHit);

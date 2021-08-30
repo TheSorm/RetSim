@@ -1,25 +1,27 @@
-﻿using System.Collections.Generic;
-
-namespace RetSim.Events
+﻿namespace RetSim.Events
 {
     public class AuraEndEvent : Event
     {
-        private const int AuraEndEventPriority = 1;
-        private readonly Aura aura;
-        public AuraEndEvent(int expirationTime, Player player, Aura aura) : base(expirationTime, AuraEndEventPriority, player)
+        private const int BasePriority = 1;
+
+        private Aura Aura { get; init; }
+
+
+        public AuraEndEvent(Aura aura, FightSimulation fight, int timestamp, int priority = 0) : base(fight, timestamp, priority + BasePriority)
         {
-            this.aura = aura;
+            Aura = aura;
         }
 
-        public override ProcMask Execute(int time, List<Event> resultingEvents)
+        public override ProcMask Execute(object arguments = null)
         {
-            player.Auras.Cancel(aura, time, resultingEvents);
+            Fight.Player.Auras.Cancel(Aura, Fight);
+
             return ProcMask.None;
         }
 
         public override string ToString()
         {
-            return aura.Name + " fades";
-        }
+            return Aura.Name + " fades.";
+        }        
     }
 }

@@ -19,7 +19,9 @@
         /// <returns>The truncated integer representation of the processed fraction.</returns>
         public static int UpgradeFraction(float fraction)
         {
-            return (int)(fraction * Constants.Misc.OneHundred) + GetFraction(fraction);
+            float mult = fraction * Constants.Misc.OneHundred;
+
+            return (int)mult + (int)(GetFraction(mult) / 100f);
         }
 
         /// <summary>

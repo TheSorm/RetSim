@@ -1,7 +1,4 @@
-﻿using RetSim.Events;
-using System.Collections.Generic;
-
-namespace RetSim.AuraEffects
+﻿namespace RetSim.AuraEffects
 {
     public class GainProc : AuraEffect
     {
@@ -12,13 +9,14 @@ namespace RetSim.AuraEffects
             Proc = proc;
         }
 
-        public override void Apply(Player caster, Aura aura, int time, List<Event> resultingEvents)
+        public override void Apply(Aura aura, FightSimulation fight)
         {
-            caster.Procs.Add(Proc);
+            fight.Player.Procs.Add(Proc);
         }
-        public override void Remove(Player caster, Aura aura, int time, List<Event> resultingEvents)
+
+        public override void Remove(Aura aura, FightSimulation fight)
         {
-            caster.Procs.Remove(Proc);
+            fight.Player.Procs.Remove(Proc);
         }
     }
 }

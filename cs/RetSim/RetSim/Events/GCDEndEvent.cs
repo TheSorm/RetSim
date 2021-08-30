@@ -1,17 +1,18 @@
-﻿using System.Collections.Generic;
-
-namespace RetSim.Events
+﻿namespace RetSim.Events
 {
     public class GCDEndEvent : Event
     {
-        private const int GCDEndEventPriority = 0;
-        public GCDEndEvent(int expirationTime, Player player) : base(expirationTime, GCDEndEventPriority, player)
+        private const int BasePriority = 0;
+
+        public GCDEndEvent(FightSimulation simulation, int timestamp, int priority = 0) : base(simulation, timestamp, priority + BasePriority)
         {
+            Fight.Player.GCD.Start(this);
         }
 
-        public override ProcMask Execute(int time, List<Event> resultingEvents)
+        public override ProcMask Execute(object arguments = null)
         {
-            player.RemoveGCD();
+            Fight.Player.GCD.End();
+
             return ProcMask.None;
         }
 
