@@ -1,9 +1,9 @@
 ﻿using RetSim.Events;
 using System.Collections.Generic;
 
-namespace RetSim
+namespace RetSim.EventQueues
 {
-    public class EventQueue : List<Event>
+    public class ListQueue : List<Event>, IEventQueue
     {
 
         public new void Add(Event e)
@@ -23,14 +23,29 @@ namespace RetSim
             return this[0];
         }
 
-        public void RemoveNext()
+        public Event RemoveNext()
         {
+            Event next = this[0];
             RemoveAt(0);
+            return next;
+        }
+
+        public void EnsureSorting()
+        {
+            Sort();
         }
 
         public bool IsEmpty()
         {
             return Count == 0;
+        }
+
+        public void UpdateRemove(Event e)
+        {
+        }
+
+        public void UpdateAdd(Event e)
+        {
         }
     }
 }

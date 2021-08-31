@@ -3,6 +3,7 @@ using RetSim.Tactics;
 using RetSim.Log;
 using System.Collections.Generic;
 using static RetSim.Program;
+using RetSim.EventQueues;
 
 namespace RetSim
 {
@@ -13,7 +14,7 @@ namespace RetSim
         public readonly Tactic Tactic;
 
         public readonly CombatLog CombatLog;
-        public readonly EventQueue Queue;
+        public readonly IEventQueue Queue;
         public int Timestamp { get; set; }
 
         public readonly int Duration;
@@ -25,7 +26,7 @@ namespace RetSim
             Tactic = tactic;
 
             CombatLog = new CombatLog();
-            Queue = new EventQueue();
+            Queue = new ListQueue();
 
             Timestamp = 0;
 
@@ -44,30 +45,24 @@ namespace RetSim
 
                 if (!Queue.IsEmpty())
                 {
-                    Queue.Sort();
-                    Event curent = Queue.GetNext();
-                    Queue.RemoveNext();
+                    Queue.EnsureSorting();
+                    Event curent = Queue.RemoveNext();
                     Timestamp = curent.Timestamp;
 
-                    List<Event> results = new();
                     ProcMask mask = curent.Execute();
                     Player.CheckForProcs(mask, this);
-                    Queue.AddRange(results);
 
                     Logger.Log(Timestamp + ": Event: " + curent.ToString());
 
                     if (!Queue.IsEmpty())
                     {
-                        Queue.Sort();
+                        Queue.EnsureSorting();
                         nextTimestamp = Queue.GetNext().Timestamp;
                         if (Timestamp == nextTimestamp) continue;
                     }
                 }
 
-                Event playerAction = Tactic.GetActionBetween(Timestamp, nextTimestamp, this);
-
-                if (playerAction != null)
-                    Queue.Add(playerAction);
+                Queue.Add(Tactic.GetActionBetween(Timestamp, nextTimestamp, this));
             }
 
             return CombatLog;
