@@ -26,7 +26,7 @@ namespace RetSim
             Tactic = tactic;
 
             CombatLog = new CombatLog();
-            Queue = new ListQueue();
+            Queue = new MinQueue();
 
             Timestamp = 0;
 

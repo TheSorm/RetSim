@@ -15,7 +15,6 @@ A WoW TBC Classic Retribution Paladin Simulator
 * Spell, Aura, Proc Data 
 * Proc
   * ProcCooldwonEnd Events 
-    * Option 1: Invisible (tactic can not react)
-    * Option 2: Own Cooldwon Event (tactic can react)
+    * Option 1: Proc has (invisible) Cooldown (tactic can not react)
+    * Option 2: Proc-Spell has Cooldown (tactic can react)
   * Should Prio on ProcEvents should be higher than on normal cast events?
-  * Cooldown on Procs instead of Spells (Only if we want to implement downranking)
