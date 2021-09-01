@@ -23,8 +23,7 @@ namespace RetSim
                 Name = "Crusader Strike",
                 ManaCost = 236,
                 Cooldown = 6000,
-                CastTime = 0,
-                
+                CastTime = 0,                
                 GCD = new SpellGCD() { Duration = 1500, Category = Category.Physical },
             };
 
@@ -92,6 +91,7 @@ namespace RetSim
 
             public static readonly Dictionary<int, Spell> ByID = new()
             {
+                { Melee.ID, Melee },
                 { CrusaderStrike.ID, CrusaderStrike },
                 { SealOfCommand.ID, SealOfCommand },
                 { SealOfCommandProc.ID, SealOfCommandProc },
@@ -122,8 +122,9 @@ namespace RetSim
 
                 CrusaderStrike.Effects = new List<SpellEffect>()
                 {
-                    new CrusaderStrike()
+                    new WeaponDamage()
                     {
+                        Spell = CrusaderStrike,
                         School = School.Physical,
                         DefenseCategory = DefenseType.Special,
                         CritCategory = Category.Physical,
@@ -131,6 +132,7 @@ namespace RetSim
                         OnCast = ProcMask.None,
                         OnHit = ProcMask.OnMeleeSpecialAttack,
                         OnCrit = ProcMask.OnCrit | ProcMask.OnMeleeCrit,
+                        Percentage = 1.1f,
                         Coefficient = 0,
                         HolyCoefficient = 0
                     }

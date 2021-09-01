@@ -1,4 +1,6 @@
-﻿namespace RetSim
+﻿using System.Collections.Generic;
+
+namespace RetSim
 {
     public static class Constants
     {
@@ -31,8 +33,6 @@
 
             public const int HitPenalty = 1;
 
-            public const int CritSuppression = 3;
-            public const float CritAuraSuppression = 1.8f;
 
             public const int ExpertiseCap = 26;
             public const int ExpertisePerDodge = 4;
@@ -62,12 +62,32 @@
         {
             public const int Level = 73;
 
+            public const float ArmorMagicNumber = 10557.5f;
+
             public const int MissChance = 8;
             public const float DodgeChance = 6.5f;
             public const int GlancingChance = 24;
             public const int UpgradedGlancingChance = 2400;
             public const int GlancePenaltyMax = 35;
             public const int GlancePenaltyMin = 15;
+
+            public const int CritSuppression = 3;
+            public const float CritAuraSuppression = 1.8f;
+
+            public const int SpellMissChance = 17;
+            public const int MininumSpellMissChance = 1;
+
+            public const int LevelResistance = 28;
+            public const int ResistanceCap = Level * 5;
+
+            public static readonly Dictionary<float, int> ResistanceProbabilities = new()
+            {
+                { 0.25f, 1 },
+                { 0.5f, 5 },
+                { 0.75f, 18 },
+                //{ 1f, 82 },
+            };
+
         }
 
         public static class Misc

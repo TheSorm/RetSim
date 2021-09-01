@@ -7,12 +7,6 @@
         public int Timestamp { get; init; }        
         public int Mana { get; init; }
 
-        public LogEntry(int timestamp, int mana)
-        {
-            Timestamp = timestamp;
-            Mana = mana;
-        }
-
         protected abstract string FormatInput();
 
         public override string ToString()

@@ -36,7 +36,7 @@ namespace RetSim
                 Weapon = Glossaries.Items.WeaponByID[28429],
             };
 
-            FightSimulation fight = new(new Player(Races.Human, equipment), new Enemy(), new EliteTactic(), 35000, 40000);
+            FightSimulation fight = new(new Player(Races.Human, equipment), new Enemy(Armor.Warrior), new EliteTactic(), 35000, 40000);
 
             fight.Run();
 

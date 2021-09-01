@@ -1,4 +1,6 @@
-﻿namespace RetSim
+﻿using System;
+
+namespace RetSim
 {
     public static class Helpers
     {
@@ -35,6 +37,14 @@
             float chance = player.Weapon.BaseSpeed * ppm / 600;
 
             return chance < Constants.Misc.Zero ? Constants.Misc.Zero : chance > Constants.Misc.OneHundred ? Constants.Misc.OneHundred : chance;
+        }
+    }
+
+    public static class Extensions
+    {
+        public static float Rounded(this float f)
+        {
+            return (float)Math.Round(f, 2);
         }
     }
 }

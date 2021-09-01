@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace RetSim
 {
@@ -42,6 +43,29 @@ namespace RetSim
             int random = Roll100(fraction) ? Constants.Misc.One : Constants.Misc.Zero;
 
             return (int)damage + random;
+        }
+
+        public static float RollGlancing()
+        {
+            return RollRange(Constants.Boss.GlancePenaltyMin * 100, Constants.Boss.GlancePenaltyMax * 100) / 10000f;
+        }
+
+        public static float RollPartialResist()
+        {
+            int random = RollRange(1, 100);
+
+            float result = 1f;
+
+            foreach (KeyValuePair<float, int> value in  Constants.Boss.ResistanceProbabilities)
+            {
+                if (random <= value.Value)
+                {
+                    result = value.Key;
+                    break;
+                }
+            }
+
+            return result;
         }
 
         public static int RollRange(int min, int max)

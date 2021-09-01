@@ -70,7 +70,7 @@ namespace RetSim
 
         public void Output()
         {
-            Logger.Log($"\nPlayer stats: {Player.Stats.AttackPower} AP / {Player.Stats.CritChance}% Crit / {Player.Stats.HitChance}% Hit / {Player.Stats.Expertise} Expertise");
+            Logger.Log($"\nPlayer stats: {Player.Stats.AttackPower} AP / {Player.Stats.CritChance.Rounded()}% Crit / {Player.Stats.HitChance.Rounded()}% Hit / {Player.Stats.Expertise} Expertise");
 
             Logger.Log($"\nExpected duration: {Duration}");
             Logger.Log($"Real duration: {Timestamp}\n");
@@ -78,7 +78,7 @@ namespace RetSim
             foreach (string s in CombatLog.Log)
                 Logger.Log(s);
 
-            Logger.Log($"\nTotal DPS: {CombatLog.DPS}");
+            Logger.Log($"\nTotal DPS: {CombatLog.DPS.Rounded()}");
             Logger.Log($"Total Damage: {CombatLog.Damage}");
 
             foreach (string s in CombatLog.DamageBreakdown.Keys)
@@ -109,9 +109,9 @@ namespace RetSim
                 float dps = (float)damage / CombatLog.Duration * 1000;
                 float hit = count - miss - dodge;
 
-                Logger.Log($"DPS: {dps} - {dps / CombatLog.DPS * 100}%");
-                Logger.Log($"Damage: {damage} - {damage / CombatLog.Damage * 100}%");
-                Logger.Log($"{count} Casts: {crit} Crit ({crit / count * 100}%) / {hit} Hit ({hit / count * 100}%) / {miss} Miss ({miss / count * 100}%) / {dodge} Dodge ({dodge / count * 100}%)");
+                Logger.Log($"DPS: {dps.Rounded()} - {(dps / CombatLog.DPS * 100).Rounded()}%");
+                Logger.Log($"Damage: {damage} - {(damage * 100f / CombatLog.Damage).Rounded()}%");
+                Logger.Log($"{count} Casts: {crit} Crit ({(crit / hit * 100).Rounded()}%) / {hit} Hit ({(hit / count * 100).Rounded()}%) / {miss} Miss ({(miss / count * 100).Rounded()}%) / {dodge} Dodge ({(dodge / count * 100).Rounded()}%)");
 
             }
         }

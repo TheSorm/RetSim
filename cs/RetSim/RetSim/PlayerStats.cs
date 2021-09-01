@@ -21,15 +21,15 @@
         public int Health { get => health; set => health = value <= 0 ? 0 : value <= MaxHealth ? value : MaxHealth; }
         public int Mana { get => mana; set => mana = value <= 0 ? 0 : value <= MaxHealth ? value : MaxHealth; }
 
-        public new int Stamina => (int)((permanent.Stamina + Temporary.Stamina) * player.Modifiers.AllStats);
+        public new int Stamina => (int)((permanent.Stamina + Temporary.Stamina) * player.Modifiers.Stats.All);
 
-        public new int Intellect => (int)((permanent.Intellect + Temporary.Intellect) * player.Modifiers.Intellect * player.Modifiers.AllStats);
+        public new int Intellect => (int)((permanent.Intellect + Temporary.Intellect) * player.Modifiers.Stats.Intellect * player.Modifiers.Stats.All);
         public new int ManaPer5 => permanent.ManaPer5 + Temporary.ManaPer5;
 
-        public new int Strength => (int)((permanent.Strength + Temporary.Strength) * player.Modifiers.Strength * player.Modifiers.AllStats);
-        public new int AttackPower => (int)((permanent.AttackPower + Temporary.AttackPower + Constants.BaseStats.AttackPower + (Strength * Constants.Stats.APPerStrength)) * player.Modifiers.AttackPower);
+        public new int Strength => (int)((permanent.Strength + Temporary.Strength) * player.Modifiers.Stats.Strength * player.Modifiers.Stats.All);
+        public new int AttackPower => (int)((permanent.AttackPower + Temporary.AttackPower + Constants.BaseStats.AttackPower + (Strength * Constants.Stats.APPerStrength)) * player.Modifiers.Stats.AttackPower);
 
-        public new int Agility => (int)((permanent.Agility + Temporary.Agility) * player.Modifiers.AllStats);
+        public new int Agility => (int)((permanent.Agility + Temporary.Agility) * player.Modifiers.Stats.All);
         public new int CritRating => permanent.CritRating + Temporary.CritRating;
         public new float CritChance => permanent.CritChance + Temporary.CritChance + Constants.BaseStats.CritChance + (Agility / Constants.Stats.AgilityPerCrit) + (CritRating / Constants.Ratings.Crit);
 
@@ -77,6 +77,16 @@
 
         public new int SpellHitRating => permanent.SpellHitRating + Temporary.SpellHitRating;
         public new float SpellHit => permanent.SpellHit + Temporary.SpellHit + (SpellHitRating / Constants.Ratings.SpellHit);
+
+        public float EffectiveSpellMissChance
+        {
+            get
+            {
+                float miss = Constants.Boss.SpellMissChance - SpellHit;
+
+                return miss > Constants.Boss.MininumSpellMissChance ? Constants.Boss.MininumSpellMissChance : Constants.Misc.Zero;
+            }
+        }
 
         public new int SpellHasteRating => permanent.SpellHasteRating + Temporary.SpellHasteRating;
         public new float SpellHaste => (Constants.Misc.One + (SpellHasteRating / (Constants.Ratings.SpellHaste * Constants.Misc.OneHundred))) * player.Modifiers.CastSpeed;
