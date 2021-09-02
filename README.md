@@ -2,7 +2,7 @@
 A WoW TBC Classic Retribution Paladin Simulator
 ## TODO
 * Combat Logger 
-  * More combat events
+  * More combat events (like aura gain/fade)
 * Spells
   * Cast spells
     * Low prio
@@ -10,8 +10,7 @@ A WoW TBC Classic Retribution Paladin Simulator
   * Periodic spells
     * Create CastEvents for every tick (but this "sounds wrong")
 * Gear 
-  * Sets
-  * Gems
+  * Enchants
 * Spell, Aura, Proc Data 
 * Proc
   * ProcCooldwonEnd Events 
