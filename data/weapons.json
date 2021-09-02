@@ -1,7 +1,7 @@
 [
   {
-    "MinDamag": 212,
-    "MaxDamag": 318,
+    "MinDamage": 212,
+    "MaxDamage": 318,
     "AttackSpeed": 3600,
     "DPS": 73.61111,
     "ID": 24461,
@@ -9,11 +9,12 @@
     "ItemLevel": 94,
     "Quality": "RARE",
     "InventoryType": "TWOHWEAPON",
-    "ItemStats": {
+    "Stats": {
       "Strength": 25,
       "Stamina": 21,
       "Crit": 22
     },
+    "Spells": [],
     "Socket1": {
       "Type": 2
     },
@@ -26,8 +27,8 @@
     "Phase": 1
   },
   {
-    "MinDamag": 176,
-    "MaxDamag": 265,
+    "MinDamage": 176,
+    "MaxDamage": 265,
     "AttackSpeed": 3000,
     "DPS": 73.49999,
     "ID": 25537,
@@ -35,16 +36,17 @@
     "ItemLevel": 94,
     "Quality": "RARE",
     "InventoryType": "TWOHWEAPON",
-    "ItemStats": {
+    "Stats": {
       "Strength": 29,
       "Agility": 28,
       "Stamina": 42
     },
+    "Spells": [],
     "Phase": 1
   },
   {
-    "MinDamag": 181,
-    "MaxDamag": 273,
+    "MinDamage": 181,
+    "MaxDamage": 273,
     "AttackSpeed": 3000,
     "DPS": 75.666664,
     "ID": 25603,
@@ -52,15 +54,16 @@
     "ItemLevel": 97,
     "Quality": "RARE",
     "InventoryType": "TWOHWEAPON",
-    "ItemStats": {
+    "Stats": {
       "Strength": 42,
       "Agility": 27
     },
+    "Spells": [],
     "Phase": 1
   },
   {
-    "MinDamag": 181,
-    "MaxDamag": 273,
+    "MinDamage": 181,
+    "MaxDamage": 273,
     "AttackSpeed": 3000,
     "DPS": 75.666664,
     "ID": 25608,
@@ -68,15 +71,16 @@
     "ItemLevel": 97,
     "Quality": "RARE",
     "InventoryType": "TWOHWEAPON",
-    "ItemStats": {
+    "Stats": {
       "Strength": 42,
       "Agility": 27
     },
+    "Spells": [],
     "Phase": 1
   },
   {
-    "MinDamag": 205,
-    "MaxDamag": 309,
+    "MinDamage": 205,
+    "MaxDamage": 309,
     "AttackSpeed": 3400,
     "DPS": 75.588234,
     "ID": 25944,
@@ -84,16 +88,17 @@
     "ItemLevel": 97,
     "Quality": "RARE",
     "InventoryType": "TWOHWEAPON",
-    "ItemStats": {
+    "Stats": {
       "Strength": 34,
       "Stamina": 33,
       "Crit": 29
     },
+    "Spells": [],
     "Phase": 1
   },
   {
-    "MinDamag": 270,
-    "MaxDamag": 406,
+    "MinDamage": 270,
+    "MaxDamage": 406,
     "AttackSpeed": 3200,
     "DPS": 105.625,
     "ID": 29171,
@@ -101,7 +106,7 @@
     "ItemLevel": 100,
     "Quality": "EPIC",
     "InventoryType": "TWOHWEAPON",
-    "ItemStats": {
+    "Stats": {
       "Stamina": 39,
       "Defense": 27,
       "Expertise": 24
@@ -115,8 +120,8 @@
     "Phase": 1
   },
   {
-    "MinDamag": 207,
-    "MaxDamag": 311,
+    "MinDamage": 207,
+    "MaxDamage": 311,
     "AttackSpeed": 3300,
     "DPS": 78.48484,
     "ID": 30086,
@@ -124,15 +129,16 @@
     "ItemLevel": 100,
     "Quality": "RARE",
     "InventoryType": "TWOHWEAPON",
-    "ItemStats": {
+    "Stats": {
       "Strength": 40,
       "Agility": 35
     },
+    "Spells": [],
     "Phase": 1
   },
   {
-    "MinDamag": 213,
-    "MaxDamag": 321,
+    "MinDamage": 213,
+    "MaxDamage": 321,
     "AttackSpeed": 3400,
     "DPS": 78.52941,
     "ID": 30088,
@@ -140,15 +146,16 @@
     "ItemLevel": 100,
     "Quality": "RARE",
     "InventoryType": "TWOHWEAPON",
-    "ItemStats": {
+    "Stats": {
       "Crit": 35,
       "AttackPower": 80
     },
+    "Spells": [],
     "Phase": 1
   },
   {
-    "MinDamag": 220,
-    "MaxDamag": 330,
+    "MinDamage": 220,
+    "MaxDamage": 330,
     "AttackSpeed": 3500,
     "DPS": 78.57143,
     "ID": 30093,
@@ -156,15 +163,16 @@
     "ItemLevel": 100,
     "Quality": "RARE",
     "InventoryType": "TWOHWEAPON",
-    "ItemStats": {
+    "Stats": {
       "Stamina": 60,
       "AttackPower": 70
     },
+    "Spells": [],
     "Phase": 1
   },
   {
-    "MinDamag": 270,
-    "MaxDamag": 406,
+    "MinDamage": 270,
+    "MaxDamage": 406,
     "AttackSpeed": 3200,
     "DPS": 105.625,
     "ID": 30830,
@@ -172,16 +180,17 @@
     "ItemLevel": 100,
     "Quality": "EPIC",
     "InventoryType": "TWOHWEAPON",
-    "ItemStats": {
+    "Stats": {
       "Strength": 37,
       "Stamina": 54,
       "Hit": 36
     },
+    "Spells": [],
     "Phase": 1
   },
   {
-    "MinDamag": 295,
-    "MaxDamag": 444,
+    "MinDamage": 295,
+    "MaxDamage": 444,
     "AttackSpeed": 3500,
     "DPS": 105.57142,
     "ID": 31318,
@@ -189,6 +198,7 @@
     "ItemLevel": 100,
     "Quality": "EPIC",
     "InventoryType": "TWOHWEAPON",
+    "Stats": {},
     "Spells": [
       {
         "ID": 38282,
@@ -198,8 +208,8 @@
     "Phase": 1
   },
   {
-    "MinDamag": 304,
-    "MaxDamag": 457,
+    "MinDamage": 304,
+    "MaxDamage": 457,
     "AttackSpeed": 3600,
     "DPS": 105.69444,
     "ID": 31322,
@@ -207,7 +217,7 @@
     "ItemLevel": 100,
     "Quality": "EPIC",
     "InventoryType": "TWOHWEAPON",
-    "ItemStats": {
+    "Stats": {
       "Strength": 32,
       "Stamina": 30,
       "Intellect": 29
@@ -221,8 +231,8 @@
     "Phase": 1
   },
   {
-    "MinDamag": 270,
-    "MaxDamag": 406,
+    "MinDamage": 270,
+    "MaxDamage": 406,
     "AttackSpeed": 3200,
     "DPS": 105.625,
     "ID": 35674,
@@ -230,7 +240,7 @@
     "ItemLevel": 100,
     "Quality": "EPIC",
     "InventoryType": "TWOHWEAPON",
-    "ItemStats": {
+    "Stats": {
       "Stamina": 39,
       "Defense": 27,
       "Expertise": 24
@@ -248,8 +258,8 @@
     "Phase": 53
   },
   {
-    "MinDamag": 221,
-    "MaxDamag": 333,
+    "MinDamage": 221,
+    "MaxDamage": 333,
     "AttackSpeed": 3400,
     "DPS": 81.47059,
     "ID": 25762,
@@ -257,16 +267,17 @@
     "ItemLevel": 103,
     "Quality": "RARE",
     "InventoryType": "TWOHWEAPON",
-    "ItemStats": {
+    "Stats": {
       "Strength": 31,
       "Agility": 30,
       "Stamina": 45
     },
+    "Spells": [],
     "Phase": 1
   },
   {
-    "MinDamag": 286,
-    "MaxDamag": 430,
+    "MinDamage": 286,
+    "MaxDamage": 430,
     "AttackSpeed": 3300,
     "DPS": 108.48484,
     "ID": 23541,
@@ -274,7 +285,7 @@
     "ItemLevel": 105,
     "Quality": "EPIC",
     "InventoryType": "TWOHWEAPON",
-    "ItemStats": {
+    "Stats": {
       "Strength": 50,
       "Hit": 37
     },
@@ -287,8 +298,8 @@
     "Phase": 1
   },
   {
-    "MinDamag": 295,
-    "MaxDamag": 443,
+    "MinDamage": 295,
+    "MaxDamage": 443,
     "AttackSpeed": 3400,
     "DPS": 108.52941,
     "ID": 23543,
@@ -296,15 +307,16 @@
     "ItemLevel": 105,
     "Quality": "EPIC",
     "InventoryType": "TWOHWEAPON",
-    "ItemStats": {
+    "Stats": {
       "Crit": 30,
       "AttackPower": 112
     },
+    "Spells": [],
     "Phase": 1
   },
   {
-    "MinDamag": 286,
-    "MaxDamag": 430,
+    "MinDamage": 286,
+    "MaxDamage": 430,
     "AttackSpeed": 3300,
     "DPS": 108.48484,
     "ID": 23546,
@@ -312,16 +324,17 @@
     "ItemLevel": 105,
     "Quality": "EPIC",
     "InventoryType": "TWOHWEAPON",
-    "ItemStats": {
+    "Stats": {
       "Strength": 50,
       "Stamina": 46,
       "Crit": 21
     },
+    "Spells": [],
     "Phase": 1
   },
   {
-    "MinDamag": 304,
-    "MaxDamag": 456,
+    "MinDamage": 304,
+    "MaxDamage": 456,
     "AttackSpeed": 3500,
     "DPS": 108.57142,
     "ID": 29356,
@@ -329,16 +342,17 @@
     "ItemLevel": 105,
     "Quality": "EPIC",
     "InventoryType": "TWOHWEAPON",
-    "ItemStats": {
+    "Stats": {
       "Stamina": 31,
       "Crit": 30,
       "AttackPower": 102
     },
+    "Spells": [],
     "Phase": 1
   },
   {
-    "MinDamag": 313,
-    "MaxDamag": 470,
+    "MinDamage": 313,
+    "MaxDamage": 470,
     "AttackSpeed": 3600,
     "DPS": 108.74999,
     "ID": 29833,
@@ -346,11 +360,13 @@
     "ItemLevel": 105,
     "Quality": "EPIC",
     "InventoryType": "TWOHWEAPON",
+    "Stats": {},
+    "Spells": [],
     "Phase": 1
   },
   {
-    "MinDamag": 260,
-    "MaxDamag": 391,
+    "MinDamage": 260,
+    "MaxDamage": 391,
     "AttackSpeed": 3000,
     "DPS": 108.49999,
     "ID": 29880,
@@ -358,11 +374,13 @@
     "ItemLevel": 105,
     "Quality": "EPIC",
     "InventoryType": "TWOHWEAPON",
+    "Stats": {},
+    "Spells": [],
     "Phase": 1
   },
   {
-    "MinDamag": 313,
-    "MaxDamag": 470,
+    "MinDamage": 313,
+    "MaxDamage": 470,
     "AttackSpeed": 3600,
     "DPS": 108.74999,
     "ID": 32181,
@@ -370,18 +388,19 @@
     "ItemLevel": 105,
     "Quality": "EPIC",
     "InventoryType": "TWOHWEAPON",
-    "ItemStats": {
+    "Stats": {
       "Strength": 31,
       "Stamina": 46,
       "Hit": 20,
       "Crit": 31,
       "Resilience": 21
     },
+    "Spells": [],
     "Phase": 53
   },
   {
-    "MinDamag": 313,
-    "MaxDamag": 470,
+    "MinDamage": 313,
+    "MaxDamage": 470,
     "AttackSpeed": 3600,
     "DPS": 108.74999,
     "ID": 32182,
@@ -389,18 +408,19 @@
     "ItemLevel": 105,
     "Quality": "EPIC",
     "InventoryType": "TWOHWEAPON",
-    "ItemStats": {
+    "Stats": {
       "Stamina": 46,
       "Hit": 20,
       "Crit": 31,
       "Resilience": 21,
       "AttackPower": 62
     },
+    "Spells": [],
     "Phase": 53
   },
   {
-    "MinDamag": 313,
-    "MaxDamag": 470,
+    "MinDamage": 313,
+    "MaxDamage": 470,
     "AttackSpeed": 3600,
     "DPS": 108.74999,
     "ID": 32183,
@@ -408,7 +428,7 @@
     "ItemLevel": 105,
     "Quality": "EPIC",
     "InventoryType": "TWOHWEAPON",
-    "ItemStats": {
+    "Stats": {
       "Strength": 31,
       "Stamina": 46,
       "Hit": 20,
@@ -424,8 +444,8 @@
     "Phase": 53
   },
   {
-    "MinDamag": 191,
-    "MaxDamag": 287,
+    "MinDamage": 191,
+    "MaxDamage": 287,
     "AttackSpeed": 2200,
     "DPS": 108.63636,
     "ID": 32184,
@@ -433,18 +453,19 @@
     "ItemLevel": 105,
     "Quality": "EPIC",
     "InventoryType": "TWOHWEAPON",
-    "ItemStats": {
+    "Stats": {
       "Stamina": 46,
       "Hit": 20,
       "Crit": 31,
       "Resilience": 21,
       "AttackPower": 62
     },
+    "Spells": [],
     "Phase": 53
   },
   {
-    "MinDamag": 313,
-    "MaxDamag": 470,
+    "MinDamage": 313,
+    "MaxDamage": 470,
     "AttackSpeed": 3600,
     "DPS": 108.74999,
     "ID": 32186,
@@ -452,18 +473,19 @@
     "ItemLevel": 105,
     "Quality": "EPIC",
     "InventoryType": "TWOHWEAPON",
-    "ItemStats": {
+    "Stats": {
       "Strength": 31,
       "Stamina": 46,
       "Hit": 20,
       "Crit": 31,
       "Resilience": 21
     },
+    "Spells": [],
     "Phase": 53
   },
   {
-    "MinDamag": 313,
-    "MaxDamag": 470,
+    "MinDamage": 313,
+    "MaxDamage": 470,
     "AttackSpeed": 3600,
     "DPS": 108.74999,
     "ID": 32421,
@@ -471,14 +493,15 @@
     "ItemLevel": 105,
     "Quality": "EPIC",
     "InventoryType": "TWOHWEAPON",
-    "ItemStats": {
+    "Stats": {
       "AttackPower": 110
     },
+    "Spells": [],
     "Phase": 53
   },
   {
-    "MinDamag": 182,
-    "MaxDamag": 274,
+    "MinDamage": 182,
+    "MaxDamage": 274,
     "AttackSpeed": 2100,
     "DPS": 108.57142,
     "ID": 32854,
@@ -486,17 +509,19 @@
     "ItemLevel": 105,
     "Quality": "EPIC",
     "InventoryType": "TWOHWEAPON",
-    "ItemStats": {
+    "Stats": {
       "Stamina": 55,
       "Intellect": 37,
       "SpellDamage": 168,
+      "SpellHealing": 168,
       "ManaPer5": 15
     },
+    "Spells": [],
     "Phase": 1
   },
   {
-    "MinDamag": 315,
-    "MaxDamag": 474,
+    "MinDamage": 315,
+    "MaxDamage": 474,
     "AttackSpeed": 3600,
     "DPS": 109.58333,
     "ID": 28428,
@@ -504,7 +529,7 @@
     "ItemLevel": 107,
     "Quality": "EPIC",
     "InventoryType": "TWOHWEAPON",
-    "ItemStats": {
+    "Stats": {
       "Strength": 47,
       "Agility": 42
     },
@@ -517,8 +542,8 @@
     "Phase": 1
   },
   {
-    "MinDamag": 324,
-    "MaxDamag": 487,
+    "MinDamage": 324,
+    "MaxDamage": 487,
     "AttackSpeed": 3700,
     "DPS": 109.59459,
     "ID": 28434,
@@ -526,15 +551,16 @@
     "ItemLevel": 107,
     "Quality": "EPIC",
     "InventoryType": "TWOHWEAPON",
-    "ItemStats": {
+    "Stats": {
       "Crit": 47,
       "AttackPower": 96
     },
+    "Spells": [],
     "Phase": 1
   },
   {
-    "MinDamag": 333,
-    "MaxDamag": 500,
+    "MinDamage": 333,
+    "MaxDamage": 500,
     "AttackSpeed": 3800,
     "DPS": 109.605255,
     "ID": 28440,
@@ -542,16 +568,17 @@
     "ItemLevel": 107,
     "Quality": "EPIC",
     "InventoryType": "TWOHWEAPON",
-    "ItemStats": {
+    "Stats": {
       "Strength": 37,
       "Agility": 37,
       "Stamina": 55
     },
+    "Spells": [],
     "Phase": 1
   },
   {
-    "MinDamag": 251,
-    "MaxDamag": 378,
+    "MinDamage": 251,
+    "MaxDamage": 378,
     "AttackSpeed": 3600,
     "DPS": 87.36111,
     "ID": 30009,
@@ -559,18 +586,19 @@
     "ItemLevel": 109,
     "Quality": "RARE",
     "InventoryType": "TWOHWEAPON",
-    "ItemStats": {
+    "Stats": {
       "Strength": 27,
       "Agility": 27,
       "Stamina": 27,
       "Hit": 26,
       "Expertise": 17
     },
+    "Spells": [],
     "Phase": 1
   },
   {
-    "MinDamag": 223,
-    "MaxDamag": 336,
+    "MinDamage": 223,
+    "MaxDamage": 336,
     "AttackSpeed": 3200,
     "DPS": 87.34375,
     "ID": 31010,
@@ -578,15 +606,16 @@
     "ItemLevel": 109,
     "Quality": "RARE",
     "InventoryType": "TWOHWEAPON",
-    "ItemStats": {
+    "Stats": {
       "Strength": 51,
       "Crit": 21
     },
+    "Spells": [],
     "Phase": 1
   },
   {
-    "MinDamag": 230,
-    "MaxDamag": 346,
+    "MinDamage": 230,
+    "MaxDamage": 346,
     "AttackSpeed": 3300,
     "DPS": 87.27272,
     "ID": 31062,
@@ -594,18 +623,19 @@
     "ItemLevel": 109,
     "Quality": "RARE",
     "InventoryType": "TWOHWEAPON",
-    "ItemStats": {
+    "Stats": {
       "Strength": 30,
       "Stamina": 27,
       "Intellect": 30,
       "SpellCrit": 17,
       "Crit": 17
     },
+    "Spells": [],
     "Phase": 1
   },
   {
-    "MinDamag": 237,
-    "MaxDamag": 357,
+    "MinDamage": 237,
+    "MaxDamage": 357,
     "AttackSpeed": 3400,
     "DPS": 87.352936,
     "ID": 32829,
@@ -613,15 +643,16 @@
     "ItemLevel": 109,
     "Quality": "RARE",
     "InventoryType": "TWOHWEAPON",
-    "ItemStats": {
+    "Stats": {
       "Stamina": 60,
       "AttackPower": 80
     },
+    "Spells": [],
     "Phase": 3
   },
   {
-    "MinDamag": 250,
-    "MaxDamag": 418,
+    "MinDamage": 250,
+    "MaxDamage": 418,
     "AttackSpeed": 3700,
     "DPS": 90.27026,
     "ID": 27524,
@@ -629,16 +660,17 @@
     "ItemLevel": 112,
     "Quality": "RARE",
     "InventoryType": "TWOHWEAPON",
-    "ItemStats": {
+    "Stats": {
       "Strength": 31,
       "Stamina": 50,
       "Resilience": 40
     },
+    "Spells": [],
     "Phase": 1
   },
   {
-    "MinDamag": 253,
-    "MaxDamag": 380,
+    "MinDamage": 253,
+    "MaxDamage": 380,
     "AttackSpeed": 3500,
     "DPS": 90.428566,
     "ID": 31291,
@@ -646,16 +678,17 @@
     "ItemLevel": 112,
     "Quality": "RARE",
     "InventoryType": "TWOHWEAPON",
-    "ItemStats": {
+    "Stats": {
       "Stamina": 50,
       "Crit": 27,
       "AttackPower": 80
     },
+    "Spells": [],
     "Phase": 1
   },
   {
-    "MinDamag": 253,
-    "MaxDamag": 381,
+    "MinDamage": 253,
+    "MaxDamage": 381,
     "AttackSpeed": 3400,
     "DPS": 93.23529,
     "ID": 27769,
@@ -663,16 +696,17 @@
     "ItemLevel": 115,
     "Quality": "RARE",
     "InventoryType": "TWOHWEAPON",
-    "ItemStats": {
+    "Stats": {
       "Strength": 29,
       "Stamina": 28,
       "Crit": 45
     },
+    "Spells": [],
     "Phase": 1
   },
   {
-    "MinDamag": 253,
-    "MaxDamag": 381,
+    "MinDamage": 253,
+    "MaxDamage": 381,
     "AttackSpeed": 3400,
     "DPS": 93.23529,
     "ID": 27829,
@@ -680,16 +714,17 @@
     "ItemLevel": 115,
     "Quality": "RARE",
     "InventoryType": "TWOHWEAPON",
-    "ItemStats": {
+    "Stats": {
       "Stamina": 33,
       "Crit": 35,
       "AttackPower": 72
     },
+    "Spells": [],
     "Phase": 1
   },
   {
-    "MinDamag": 245,
-    "MaxDamag": 408,
+    "MinDamage": 245,
+    "MaxDamage": 408,
     "AttackSpeed": 3500,
     "DPS": 93.285706,
     "ID": 27840,
@@ -697,17 +732,18 @@
     "ItemLevel": 115,
     "Quality": "RARE",
     "InventoryType": "TWOHWEAPON",
-    "ItemStats": {
+    "Stats": {
       "Strength": 31,
       "Stamina": 28,
       "Intellect": 26,
       "Crit": 30
     },
+    "Spells": [],
     "Phase": 1
   },
   {
-    "MinDamag": 261,
-    "MaxDamag": 392,
+    "MinDamage": 261,
+    "MaxDamage": 392,
     "AttackSpeed": 3500,
     "DPS": 93.285706,
     "ID": 27903,
@@ -715,17 +751,18 @@
     "ItemLevel": 115,
     "Quality": "RARE",
     "InventoryType": "TWOHWEAPON",
-    "ItemStats": {
+    "Stats": {
       "Agility": 35,
       "Stamina": 30,
       "Hit": 24,
       "AttackPower": 62
     },
+    "Spells": [],
     "Phase": 1
   },
   {
-    "MinDamag": 253,
-    "MaxDamag": 381,
+    "MinDamage": 253,
+    "MaxDamage": 381,
     "AttackSpeed": 3400,
     "DPS": 93.23529,
     "ID": 27986,
@@ -733,11 +770,12 @@
     "ItemLevel": 115,
     "Quality": "RARE",
     "InventoryType": "TWOHWEAPON",
-    "ItemStats": {
+    "Stats": {
       "Strength": 28,
       "Agility": 17,
       "Stamina": 33
     },
+    "Spells": [],
     "Socket1": {
       "Type": 2
     },
@@ -753,8 +791,8 @@
     "Phase": 1
   },
   {
-    "MinDamag": 268,
-    "MaxDamag": 403,
+    "MinDamage": 268,
+    "MaxDamage": 403,
     "AttackSpeed": 3600,
     "DPS": 93.19444,
     "ID": 28222,
@@ -762,11 +800,12 @@
     "ItemLevel": 115,
     "Quality": "RARE",
     "InventoryType": "TWOHWEAPON",
-    "ItemStats": {
+    "Stats": {
       "Stamina": 22,
       "Resilience": 27,
       "AttackPower": 50
     },
+    "Spells": [],
     "Socket1": {
       "Type": 2
     },
@@ -779,8 +818,8 @@
     "Phase": 1
   },
   {
-    "MinDamag": 261,
-    "MaxDamag": 392,
+    "MinDamage": 261,
+    "MaxDamage": 392,
     "AttackSpeed": 3500,
     "DPS": 93.285706,
     "ID": 28253,
@@ -788,16 +827,17 @@
     "ItemLevel": 115,
     "Quality": "RARE",
     "InventoryType": "TWOHWEAPON",
-    "ItemStats": {
+    "Stats": {
       "Strength": 42,
       "Stamina": 45,
       "Crit": 26
     },
+    "Spells": [],
     "Phase": 1
   },
   {
-    "MinDamag": 268,
-    "MaxDamag": 403,
+    "MinDamage": 268,
+    "MaxDamage": 403,
     "AttackSpeed": 3600,
     "DPS": 93.19444,
     "ID": 28293,
@@ -805,18 +845,19 @@
     "ItemLevel": 115,
     "Quality": "RARE",
     "InventoryType": "TWOHWEAPON",
-    "ItemStats": {
+    "Stats": {
       "Strength": 28,
       "Stamina": 42,
       "Hit": 18,
       "Crit": 28,
       "Resilience": 19
     },
+    "Spells": [],
     "Phase": 1
   },
   {
-    "MinDamag": 261,
-    "MaxDamag": 392,
+    "MinDamage": 261,
+    "MaxDamage": 392,
     "AttackSpeed": 3500,
     "DPS": 93.285706,
     "ID": 28367,
@@ -824,7 +865,7 @@
     "ItemLevel": 115,
     "Quality": "RARE",
     "InventoryType": "TWOHWEAPON",
-    "ItemStats": {
+    "Stats": {
       "Strength": 26,
       "Stamina": 28
     },
@@ -837,8 +878,8 @@
     "Phase": 1
   },
   {
-    "MinDamag": 245,
-    "MaxDamag": 408,
+    "MinDamage": 245,
+    "MaxDamage": 408,
     "AttackSpeed": 3500,
     "DPS": 93.285706,
     "ID": 28393,
@@ -846,12 +887,13 @@
     "ItemLevel": 115,
     "Quality": "RARE",
     "InventoryType": "TWOHWEAPON",
-    "ItemStats": {
+    "Stats": {
       "Strength": 20,
       "Stamina": 30,
       "Intellect": 28,
       "Crit": 21
     },
+    "Spells": [],
     "Socket1": {
       "Type": 2
     },
@@ -864,8 +906,8 @@
     "Phase": 1
   },
   {
-    "MinDamag": 319,
-    "MaxDamag": 479,
+    "MinDamage": 319,
+    "MaxDamage": 479,
     "AttackSpeed": 3500,
     "DPS": 113.99999,
     "ID": 28573,
@@ -873,7 +915,7 @@
     "ItemLevel": 115,
     "Quality": "EPIC",
     "InventoryType": "TWOHWEAPON",
-    "ItemStats": {
+    "Stats": {
       "Strength": 52
     },
     "Spells": [
@@ -885,8 +927,8 @@
     "Phase": 1
   },
   {
-    "MinDamag": 319,
-    "MaxDamag": 479,
+    "MinDamage": 319,
+    "MaxDamage": 479,
     "AttackSpeed": 3500,
     "DPS": 113.99999,
     "ID": 28587,
@@ -894,17 +936,18 @@
     "ItemLevel": 115,
     "Quality": "EPIC",
     "InventoryType": "TWOHWEAPON",
-    "ItemStats": {
+    "Stats": {
       "Agility": 40,
       "Stamina": 46,
       "AttackPower": 80,
       "ManaPer5": 8
     },
+    "Spells": [],
     "Phase": 1
   },
   {
-    "MinDamag": 268,
-    "MaxDamag": 403,
+    "MinDamage": 268,
+    "MaxDamage": 403,
     "AttackSpeed": 3600,
     "DPS": 93.19444,
     "ID": 28917,
@@ -912,18 +955,19 @@
     "ItemLevel": 115,
     "Quality": "RARE",
     "InventoryType": "TWOHWEAPON",
-    "ItemStats": {
+    "Stats": {
       "Strength": 28,
       "Stamina": 42,
       "Hit": 18,
       "Crit": 28,
       "Resilience": 19
     },
+    "Spells": [],
     "Phase": 1
   },
   {
-    "MinDamag": 268,
-    "MaxDamag": 403,
+    "MinDamage": 268,
+    "MaxDamage": 403,
     "AttackSpeed": 3600,
     "DPS": 93.19444,
     "ID": 28918,
@@ -931,18 +975,19 @@
     "ItemLevel": 115,
     "Quality": "RARE",
     "InventoryType": "TWOHWEAPON",
-    "ItemStats": {
+    "Stats": {
       "Stamina": 42,
       "Hit": 18,
       "Crit": 28,
       "Resilience": 19,
       "AttackPower": 56
     },
+    "Spells": [],
     "Phase": 1
   },
   {
-    "MinDamag": 268,
-    "MaxDamag": 403,
+    "MinDamage": 268,
+    "MaxDamage": 403,
     "AttackSpeed": 3600,
     "DPS": 93.19444,
     "ID": 28919,
@@ -950,7 +995,7 @@
     "ItemLevel": 115,
     "Quality": "RARE",
     "InventoryType": "TWOHWEAPON",
-    "ItemStats": {
+    "Stats": {
       "Strength": 28,
       "Stamina": 42,
       "Hit": 18,
@@ -966,8 +1011,8 @@
     "Phase": 1
   },
   {
-    "MinDamag": 164,
-    "MaxDamag": 246,
+    "MinDamage": 164,
+    "MaxDamage": 246,
     "AttackSpeed": 2200,
     "DPS": 93.181816,
     "ID": 28923,
@@ -975,18 +1020,19 @@
     "ItemLevel": 115,
     "Quality": "RARE",
     "InventoryType": "TWOHWEAPON",
-    "ItemStats": {
+    "Stats": {
       "Stamina": 42,
       "Hit": 18,
       "Crit": 28,
       "Resilience": 19,
       "AttackPower": 56
     },
+    "Spells": [],
     "Phase": 1
   },
   {
-    "MinDamag": 268,
-    "MaxDamag": 403,
+    "MinDamage": 268,
+    "MaxDamage": 403,
     "AttackSpeed": 3600,
     "DPS": 93.19444,
     "ID": 28942,
@@ -994,18 +1040,19 @@
     "ItemLevel": 115,
     "Quality": "RARE",
     "InventoryType": "TWOHWEAPON",
-    "ItemStats": {
+    "Stats": {
       "Strength": 28,
       "Stamina": 42,
       "Hit": 18,
       "Crit": 28,
       "Resilience": 19
     },
+    "Spells": [],
     "Phase": 1
   },
   {
-    "MinDamag": 268,
-    "MaxDamag": 403,
+    "MinDamage": 268,
+    "MaxDamage": 403,
     "AttackSpeed": 3600,
     "DPS": 93.19444,
     "ID": 28943,
@@ -1013,18 +1060,19 @@
     "ItemLevel": 115,
     "Quality": "RARE",
     "InventoryType": "TWOHWEAPON",
-    "ItemStats": {
+    "Stats": {
       "Strength": 28,
       "Stamina": 42,
       "Hit": 18,
       "Crit": 28,
       "Resilience": 19
     },
+    "Spells": [],
     "Phase": 1
   },
   {
-    "MinDamag": 268,
-    "MaxDamag": 403,
+    "MinDamage": 268,
+    "MaxDamage": 403,
     "AttackSpeed": 3600,
     "DPS": 93.19444,
     "ID": 28945,
@@ -1032,18 +1080,19 @@
     "ItemLevel": 115,
     "Quality": "RARE",
     "InventoryType": "TWOHWEAPON",
-    "ItemStats": {
+    "Stats": {
       "Stamina": 42,
       "Hit": 18,
       "Crit": 28,
       "Resilience": 19,
       "AttackPower": 56
     },
+    "Spells": [],
     "Phase": 1
   },
   {
-    "MinDamag": 268,
-    "MaxDamag": 403,
+    "MinDamage": 268,
+    "MaxDamage": 403,
     "AttackSpeed": 3600,
     "DPS": 93.19444,
     "ID": 28948,
@@ -1051,7 +1100,7 @@
     "ItemLevel": 115,
     "Quality": "RARE",
     "InventoryType": "TWOHWEAPON",
-    "ItemStats": {
+    "Stats": {
       "Strength": 28,
       "Stamina": 42,
       "Hit": 18,
@@ -1067,8 +1116,8 @@
     "Phase": 1
   },
   {
-    "MinDamag": 164,
-    "MaxDamag": 246,
+    "MinDamage": 164,
+    "MaxDamage": 246,
     "AttackSpeed": 2200,
     "DPS": 93.181816,
     "ID": 28949,
@@ -1076,18 +1125,19 @@
     "ItemLevel": 115,
     "Quality": "RARE",
     "InventoryType": "TWOHWEAPON",
-    "ItemStats": {
+    "Stats": {
       "Stamina": 42,
       "Hit": 18,
       "Crit": 28,
       "Resilience": 19,
       "AttackPower": 56
     },
+    "Spells": [],
     "Phase": 1
   },
   {
-    "MinDamag": 261,
-    "MaxDamag": 392,
+    "MinDamage": 261,
+    "MaxDamage": 392,
     "AttackSpeed": 3500,
     "DPS": 93.285706,
     "ID": 29137,
@@ -1095,15 +1145,16 @@
     "ItemLevel": 115,
     "Quality": "RARE",
     "InventoryType": "TWOHWEAPON",
-    "ItemStats": {
+    "Stats": {
       "Hit": 42,
       "AttackPower": 84
     },
+    "Spells": [],
     "Phase": 1
   },
   {
-    "MinDamag": 261,
-    "MaxDamag": 392,
+    "MinDamage": 261,
+    "MaxDamage": 392,
     "AttackSpeed": 3500,
     "DPS": 93.285706,
     "ID": 29138,
@@ -1111,15 +1162,16 @@
     "ItemLevel": 115,
     "Quality": "RARE",
     "InventoryType": "TWOHWEAPON",
-    "ItemStats": {
+    "Stats": {
       "Hit": 42,
       "AttackPower": 84
     },
+    "Spells": [],
     "Phase": 1
   },
   {
-    "MinDamag": 261,
-    "MaxDamag": 392,
+    "MinDamage": 261,
+    "MaxDamage": 392,
     "AttackSpeed": 3500,
     "DPS": 93.285706,
     "ID": 29166,
@@ -1127,16 +1179,17 @@
     "ItemLevel": 115,
     "Quality": "RARE",
     "InventoryType": "TWOHWEAPON",
-    "ItemStats": {
+    "Stats": {
       "Agility": 26,
       "Hit": 19,
       "AttackPower": 92
     },
+    "Spells": [],
     "Phase": 1
   },
   {
-    "MinDamag": 261,
-    "MaxDamag": 392,
+    "MinDamage": 261,
+    "MaxDamage": 392,
     "AttackSpeed": 3500,
     "DPS": 93.285706,
     "ID": 29167,
@@ -1144,16 +1197,17 @@
     "ItemLevel": 115,
     "Quality": "RARE",
     "InventoryType": "TWOHWEAPON",
-    "ItemStats": {
+    "Stats": {
       "Agility": 26,
       "Hit": 19,
       "AttackPower": 92
     },
+    "Spells": [],
     "Phase": 1
   },
   {
-    "MinDamag": 246,
-    "MaxDamag": 370,
+    "MinDamage": 246,
+    "MaxDamage": 370,
     "AttackSpeed": 3300,
     "DPS": 93.33333,
     "ID": 29329,
@@ -1161,15 +1215,16 @@
     "ItemLevel": 115,
     "Quality": "RARE",
     "InventoryType": "TWOHWEAPON",
-    "ItemStats": {
+    "Stats": {
       "Agility": 54,
       "Stamina": 33
     },
+    "Spells": [],
     "Phase": 1
   },
   {
-    "MinDamag": 276,
-    "MaxDamag": 414,
+    "MinDamage": 276,
+    "MaxDamage": 414,
     "AttackSpeed": 3700,
     "DPS": 93.24323,
     "ID": 30789,
@@ -1177,7 +1232,7 @@
     "ItemLevel": 115,
     "Quality": "RARE",
     "InventoryType": "TWOHWEAPON",
-    "ItemStats": {
+    "Stats": {
       "Stamina": 34,
       "Crit": 37
     },
@@ -1190,8 +1245,8 @@
     "Phase": 1
   },
   {
-    "MinDamag": 252,
-    "MaxDamag": 420,
+    "MinDamage": 252,
+    "MaxDamage": 420,
     "AttackSpeed": 3600,
     "DPS": 93.33333,
     "ID": 31299,
@@ -1199,17 +1254,18 @@
     "ItemLevel": 115,
     "Quality": "RARE",
     "InventoryType": "TWOHWEAPON",
-    "ItemStats": {
+    "Stats": {
       "Strength": 35,
       "Stamina": 24,
       "Intellect": 32,
       "Hit": 26
     },
+    "Spells": [],
     "Phase": 1
   },
   {
-    "MinDamag": 268,
-    "MaxDamag": 403,
+    "MinDamage": 268,
+    "MaxDamage": 403,
     "AttackSpeed": 3600,
     "DPS": 93.19444,
     "ID": 32663,
@@ -1217,16 +1273,17 @@
     "ItemLevel": 115,
     "Quality": "RARE",
     "InventoryType": "TWOHWEAPON",
-    "ItemStats": {
+    "Stats": {
       "Strength": 46,
       "Stamina": 39,
       "Crit": 19
     },
+    "Spells": [],
     "Phase": 3
   },
   {
-    "MinDamag": 746,
-    "MaxDamag": 747,
+    "MinDamage": 746,
+    "MaxDamage": 747,
     "AttackSpeed": 8000,
     "DPS": 93.3125,
     "ID": 32951,
@@ -1234,11 +1291,13 @@
     "ItemLevel": 115,
     "Quality": "RARE",
     "InventoryType": "TWOHWEAPON",
+    "Stats": {},
+    "Spells": [],
     "Phase": 53
   },
   {
-    "MinDamag": 276,
-    "MaxDamag": 414,
+    "MinDamage": 276,
+    "MaxDamage": 414,
     "AttackSpeed": 3700,
     "DPS": 93.24323,
     "ID": 34673,
@@ -1246,17 +1305,18 @@
     "ItemLevel": 115,
     "Quality": "RARE",
     "InventoryType": "TWOHWEAPON",
-    "ItemStats": {
+    "Stats": {
       "Strength": 31,
       "Stamina": 45,
       "Crit": 26,
       "Expertise": 19
     },
+    "Spells": [],
     "Phase": 5
   },
   {
-    "MinDamag": 283,
-    "MaxDamag": 426,
+    "MinDamage": 283,
+    "MaxDamage": 426,
     "AttackSpeed": 3800,
     "DPS": 93.28947,
     "ID": 34794,
@@ -1264,16 +1324,17 @@
     "ItemLevel": 115,
     "Quality": "RARE",
     "InventoryType": "TWOHWEAPON",
-    "ItemStats": {
+    "Stats": {
       "Stamina": 48,
       "AttackPower": 70,
       "ArmorPenetration": 224
     },
+    "Spells": [],
     "Phase": 5
   },
   {
-    "MinDamag": 346,
-    "MaxDamag": 519,
+    "MinDamage": 346,
+    "MaxDamage": 519,
     "AttackSpeed": 3700,
     "DPS": 116.891884,
     "ID": 30722,
@@ -1281,10 +1342,11 @@
     "ItemLevel": 120,
     "Quality": "EPIC",
     "InventoryType": "TWOHWEAPON",
-    "ItemStats": {
+    "Stats": {
       "Strength": 50,
       "Crit": 30
     },
+    "Spells": [],
     "Socket1": {
       "Type": 2
     },
@@ -1300,8 +1362,8 @@
     "Phase": 1
   },
   {
-    "MinDamag": 341,
-    "MaxDamag": 513,
+    "MinDamage": 341,
+    "MaxDamage": 513,
     "AttackSpeed": 3600,
     "DPS": 118.61111,
     "ID": 24550,
@@ -1309,18 +1371,19 @@
     "ItemLevel": 123,
     "Quality": "EPIC",
     "InventoryType": "TWOHWEAPON",
-    "ItemStats": {
+    "Stats": {
       "Strength": 32,
       "Stamina": 48,
       "Hit": 20,
       "Crit": 35,
       "Resilience": 28
     },
+    "Spells": [],
     "Phase": 1
   },
   {
-    "MinDamag": 341,
-    "MaxDamag": 513,
+    "MinDamage": 341,
+    "MaxDamage": 513,
     "AttackSpeed": 3600,
     "DPS": 118.61111,
     "ID": 28298,
@@ -1328,18 +1391,19 @@
     "ItemLevel": 123,
     "Quality": "EPIC",
     "InventoryType": "TWOHWEAPON",
-    "ItemStats": {
+    "Stats": {
       "Stamina": 48,
       "Hit": 20,
       "Crit": 35,
       "Resilience": 28,
       "AttackPower": 64
     },
+    "Spells": [],
     "Phase": 1
   },
   {
-    "MinDamag": 341,
-    "MaxDamag": 513,
+    "MinDamage": 341,
+    "MaxDamage": 513,
     "AttackSpeed": 3600,
     "DPS": 118.61111,
     "ID": 28299,
@@ -1347,18 +1411,19 @@
     "ItemLevel": 123,
     "Quality": "EPIC",
     "InventoryType": "TWOHWEAPON",
-    "ItemStats": {
+    "Stats": {
       "Strength": 32,
       "Stamina": 48,
       "Hit": 20,
       "Crit": 35,
       "Resilience": 28
     },
+    "Spells": [],
     "Phase": 1
   },
   {
-    "MinDamag": 208,
-    "MaxDamag": 313,
+    "MinDamage": 208,
+    "MaxDamage": 313,
     "AttackSpeed": 2200,
     "DPS": 118.40909,
     "ID": 28300,
@@ -1366,17 +1431,18 @@
     "ItemLevel": 123,
     "Quality": "EPIC",
     "InventoryType": "TWOHWEAPON",
-    "ItemStats": {
+    "Stats": {
       "Stamina": 48,
       "Crit": 35,
       "Resilience": 36,
       "AttackPower": 70
     },
+    "Spells": [],
     "Phase": 1
   },
   {
-    "MinDamag": 341,
-    "MaxDamag": 513,
+    "MinDamage": 341,
+    "MaxDamage": 513,
     "AttackSpeed": 3600,
     "DPS": 118.61111,
     "ID": 28429,
@@ -1384,7 +1450,7 @@
     "ItemLevel": 123,
     "Quality": "EPIC",
     "InventoryType": "TWOHWEAPON",
-    "ItemStats": {
+    "Stats": {
       "Strength": 49,
       "Agility": 44
     },
@@ -1401,8 +1467,8 @@
     "Phase": 1
   },
   {
-    "MinDamag": 351,
-    "MaxDamag": 527,
+    "MinDamage": 351,
+    "MaxDamage": 527,
     "AttackSpeed": 3700,
     "DPS": 118.648636,
     "ID": 28435,
@@ -1410,15 +1476,16 @@
     "ItemLevel": 123,
     "Quality": "EPIC",
     "InventoryType": "TWOHWEAPON",
-    "ItemStats": {
+    "Stats": {
       "Crit": 52,
       "AttackPower": 106
     },
+    "Spells": [],
     "Phase": 1
   },
   {
-    "MinDamag": 360,
-    "MaxDamag": 541,
+    "MinDamage": 360,
+    "MaxDamage": 541,
     "AttackSpeed": 3800,
     "DPS": 118.55263,
     "ID": 28441,
@@ -1426,7 +1493,7 @@
     "ItemLevel": 123,
     "Quality": "EPIC",
     "InventoryType": "TWOHWEAPON",
-    "ItemStats": {
+    "Stats": {
       "Strength": 37,
       "Agility": 37,
       "Stamina": 55
@@ -1440,8 +1507,8 @@
     "Phase": 1
   },
   {
-    "MinDamag": 189,
-    "MaxDamag": 285,
+    "MinDamage": 189,
+    "MaxDamage": 285,
     "AttackSpeed": 2000,
     "DPS": 118.5,
     "ID": 28476,
@@ -1449,7 +1516,7 @@
     "ItemLevel": 123,
     "Quality": "EPIC",
     "InventoryType": "TWOHWEAPON",
-    "ItemStats": {
+    "Stats": {
       "Strength": 32,
       "Stamina": 48,
       "Hit": 20,
@@ -1465,8 +1532,8 @@
     "Phase": 1
   },
   {
-    "MinDamag": 345,
-    "MaxDamag": 518,
+    "MinDamage": 345,
+    "MaxDamage": 518,
     "AttackSpeed": 3600,
     "DPS": 119.86111,
     "ID": 28773,
@@ -1474,16 +1541,17 @@
     "ItemLevel": 125,
     "Quality": "EPIC",
     "InventoryType": "TWOHWEAPON",
-    "ItemStats": {
+    "Stats": {
       "Strength": 49,
       "Agility": 43,
       "Stamina": 51
     },
+    "Spells": [],
     "Phase": 1
   },
   {
-    "MinDamag": 354,
-    "MaxDamag": 532,
+    "MinDamage": 354,
+    "MaxDamage": 532,
     "AttackSpeed": 3700,
     "DPS": 119.72972,
     "ID": 28774,
@@ -1491,6 +1559,7 @@
     "ItemLevel": 125,
     "Quality": "EPIC",
     "InventoryType": "TWOHWEAPON",
+    "Stats": {},
     "Spells": [
       {
         "ID": 34696,
@@ -1512,8 +1581,8 @@
     "Phase": 1
   },
   {
-    "MinDamag": 345,
-    "MaxDamag": 518,
+    "MinDamage": 345,
+    "MaxDamage": 518,
     "AttackSpeed": 3600,
     "DPS": 119.86111,
     "ID": 28794,
@@ -1521,15 +1590,16 @@
     "ItemLevel": 125,
     "Quality": "EPIC",
     "InventoryType": "TWOHWEAPON",
-    "ItemStats": {
+    "Stats": {
       "Stamina": 66,
       "AttackPower": 124
     },
+    "Spells": [],
     "Phase": 1
   },
   {
-    "MinDamag": 345,
-    "MaxDamag": 518,
+    "MinDamage": 345,
+    "MaxDamage": 518,
     "AttackSpeed": 3600,
     "DPS": 119.86111,
     "ID": 28800,
@@ -1537,11 +1607,12 @@
     "ItemLevel": 125,
     "Quality": "EPIC",
     "InventoryType": "TWOHWEAPON",
-    "ItemStats": {
+    "Stats": {
       "Strength": 44,
       "Stamina": 41,
       "Intellect": 37
     },
+    "Spells": [],
     "Socket1": {
       "Type": 2
     },
@@ -1557,8 +1628,8 @@
     "Phase": 1
   },
   {
-    "MinDamag": 374,
-    "MaxDamag": 561,
+    "MinDamage": 374,
+    "MaxDamage": 561,
     "AttackSpeed": 3800,
     "DPS": 123.026306,
     "ID": 27974,
@@ -1566,14 +1637,15 @@
     "ItemLevel": 130,
     "Quality": "EPIC",
     "InventoryType": "TWOHWEAPON",
-    "ItemStats": {
+    "Stats": {
       "ManaPer5": 11
     },
+    "Spells": [],
     "Phase": 1
   },
   {
-    "MinDamag": 196,
-    "MaxDamag": 295,
+    "MinDamage": 196,
+    "MaxDamage": 295,
     "AttackSpeed": 2000,
     "DPS": 122.75,
     "ID": 27975,
@@ -1581,14 +1653,15 @@
     "ItemLevel": 130,
     "Quality": "EPIC",
     "InventoryType": "TWOHWEAPON",
-    "ItemStats": {
+    "Stats": {
       "ManaPer5": 11
     },
+    "Spells": [],
     "Phase": 1
   },
   {
-    "MinDamag": 374,
-    "MaxDamag": 561,
+    "MinDamage": 374,
+    "MaxDamage": 561,
     "AttackSpeed": 3800,
     "DPS": 123.026306,
     "ID": 28021,
@@ -1596,11 +1669,13 @@
     "ItemLevel": 130,
     "Quality": "EPIC",
     "InventoryType": "TWOHWEAPON",
+    "Stats": {},
+    "Spells": [],
     "Phase": 1
   },
   {
-    "MinDamag": 196,
-    "MaxDamag": 295,
+    "MinDamage": 196,
+    "MaxDamage": 295,
     "AttackSpeed": 2000,
     "DPS": 122.75,
     "ID": 28022,
@@ -1608,11 +1683,13 @@
     "ItemLevel": 130,
     "Quality": "EPIC",
     "InventoryType": "TWOHWEAPON",
+    "Stats": {},
+    "Spells": [],
     "Phase": 1
   },
   {
-    "MinDamag": 354,
-    "MaxDamag": 532,
+    "MinDamage": 354,
+    "MaxDamage": 532,
     "AttackSpeed": 3600,
     "DPS": 123.05555,
     "ID": 32422,
@@ -1620,14 +1697,15 @@
     "ItemLevel": 130,
     "Quality": "EPIC",
     "InventoryType": "TWOHWEAPON",
-    "ItemStats": {
+    "Stats": {
       "AttackPower": 110
     },
+    "Spells": [],
     "Phase": 53
   },
   {
-    "MinDamag": 358,
-    "MaxDamag": 537,
+    "MinDamage": 358,
+    "MaxDamage": 537,
     "AttackSpeed": 3600,
     "DPS": 124.30555,
     "ID": 33492,
@@ -1635,11 +1713,12 @@
     "ItemLevel": 132,
     "Quality": "EPIC",
     "InventoryType": "TWOHWEAPON",
-    "ItemStats": {
+    "Stats": {
       "Agility": 39,
       "Stamina": 58,
       "AttackPower": 94
     },
+    "Spells": [],
     "Socket1": {
       "Type": 2
     },
@@ -1649,8 +1728,8 @@
     "Phase": 4
   },
   {
-    "MinDamag": 371,
-    "MaxDamag": 558,
+    "MinDamage": 371,
+    "MaxDamage": 558,
     "AttackSpeed": 3700,
     "DPS": 125.54053,
     "ID": 30090,
@@ -1658,7 +1737,7 @@
     "ItemLevel": 134,
     "Quality": "EPIC",
     "InventoryType": "TWOHWEAPON",
-    "ItemStats": {
+    "Stats": {
       "Strength": 50,
       "Stamina": 51
     },
@@ -1671,8 +1750,8 @@
     "Phase": 2
   },
   {
-    "MinDamag": 365,
-    "MaxDamag": 549,
+    "MinDamage": 365,
+    "MaxDamage": 549,
     "AttackSpeed": 3600,
     "DPS": 126.94444,
     "ID": 28430,
@@ -1680,7 +1759,7 @@
     "ItemLevel": 136,
     "Quality": "EPIC",
     "InventoryType": "TWOHWEAPON",
-    "ItemStats": {
+    "Stats": {
       "Strength": 52,
       "Agility": 44
     },
@@ -1697,8 +1776,8 @@
     "Phase": 1
   },
   {
-    "MinDamag": 375,
-    "MaxDamag": 564,
+    "MinDamage": 375,
+    "MaxDamage": 564,
     "AttackSpeed": 3700,
     "DPS": 126.891884,
     "ID": 28436,
@@ -1706,15 +1785,16 @@
     "ItemLevel": 136,
     "Quality": "EPIC",
     "InventoryType": "TWOHWEAPON",
-    "ItemStats": {
+    "Stats": {
       "Crit": 56,
       "AttackPower": 112
     },
+    "Spells": [],
     "Phase": 1
   },
   {
-    "MinDamag": 386,
-    "MaxDamag": 579,
+    "MinDamage": 386,
+    "MaxDamage": 579,
     "AttackSpeed": 3800,
     "DPS": 126.97368,
     "ID": 28442,
@@ -1722,7 +1802,7 @@
     "ItemLevel": 136,
     "Quality": "EPIC",
     "InventoryType": "TWOHWEAPON",
-    "ItemStats": {
+    "Stats": {
       "Strength": 42,
       "Agility": 42,
       "Stamina": 61
@@ -1736,8 +1816,8 @@
     "Phase": 1
   },
   {
-    "MinDamag": 365,
-    "MaxDamag": 549,
+    "MinDamage": 365,
+    "MaxDamage": 549,
     "AttackSpeed": 3600,
     "DPS": 126.94444,
     "ID": 31959,
@@ -1745,18 +1825,19 @@
     "ItemLevel": 136,
     "Quality": "EPIC",
     "InventoryType": "TWOHWEAPON",
-    "ItemStats": {
+    "Stats": {
       "Strength": 42,
       "Stamina": 55,
       "Hit": 18,
       "Crit": 42,
       "Resilience": 33
     },
+    "Spells": [],
     "Phase": 2
   },
   {
-    "MinDamag": 365,
-    "MaxDamag": 549,
+    "MinDamage": 365,
+    "MaxDamage": 549,
     "AttackSpeed": 3600,
     "DPS": 126.94444,
     "ID": 31966,
@@ -1764,18 +1845,19 @@
     "ItemLevel": 136,
     "Quality": "EPIC",
     "InventoryType": "TWOHWEAPON",
-    "ItemStats": {
+    "Stats": {
       "Stamina": 55,
       "Hit": 18,
       "Crit": 42,
       "Resilience": 33,
       "AttackPower": 84
     },
+    "Spells": [],
     "Phase": 2
   },
   {
-    "MinDamag": 365,
-    "MaxDamag": 549,
+    "MinDamage": 365,
+    "MaxDamage": 549,
     "AttackSpeed": 3600,
     "DPS": 126.94444,
     "ID": 31984,
@@ -1783,18 +1865,19 @@
     "ItemLevel": 136,
     "Quality": "EPIC",
     "InventoryType": "TWOHWEAPON",
-    "ItemStats": {
+    "Stats": {
       "Strength": 42,
       "Stamina": 55,
       "Hit": 18,
       "Crit": 42,
       "Resilience": 33
     },
+    "Spells": [],
     "Phase": 2
   },
   {
-    "MinDamag": 203,
-    "MaxDamag": 305,
+    "MinDamage": 203,
+    "MaxDamage": 305,
     "AttackSpeed": 2000,
     "DPS": 127,
     "ID": 32014,
@@ -1802,7 +1885,7 @@
     "ItemLevel": 136,
     "Quality": "EPIC",
     "InventoryType": "TWOHWEAPON",
-    "ItemStats": {
+    "Stats": {
       "Strength": 42,
       "Stamina": 55,
       "Hit": 18,
@@ -1818,8 +1901,8 @@
     "Phase": 2
   },
   {
-    "MinDamag": 223,
-    "MaxDamag": 335,
+    "MinDamage": 223,
+    "MaxDamage": 335,
     "AttackSpeed": 2200,
     "DPS": 126.81818,
     "ID": 32025,
@@ -1827,17 +1910,18 @@
     "ItemLevel": 136,
     "Quality": "EPIC",
     "InventoryType": "TWOHWEAPON",
-    "ItemStats": {
+    "Stats": {
       "Stamina": 55,
       "Crit": 42,
       "Resilience": 42,
       "AttackPower": 82
     },
+    "Spells": [],
     "Phase": 2
   },
   {
-    "MinDamag": 380,
-    "MaxDamag": 570,
+    "MinDamage": 380,
+    "MaxDamage": 570,
     "AttackSpeed": 3700,
     "DPS": 128.37837,
     "ID": 33478,
@@ -1845,16 +1929,17 @@
     "ItemLevel": 138,
     "Quality": "EPIC",
     "InventoryType": "TWOHWEAPON",
-    "ItemStats": {
+    "Stats": {
       "Stamina": 49,
       "Haste": 45,
       "AttackPower": 120
     },
+    "Spells": [],
     "Phase": 4
   },
   {
-    "MinDamag": 375,
-    "MaxDamag": 564,
+    "MinDamage": 375,
+    "MaxDamage": 564,
     "AttackSpeed": 3600,
     "DPS": 130.41666,
     "ID": 29993,
@@ -1862,11 +1947,12 @@
     "ItemLevel": 141,
     "Quality": "EPIC",
     "InventoryType": "TWOHWEAPON",
-    "ItemStats": {
+    "Stats": {
       "Stamina": 53,
       "Crit": 37,
       "AttackPower": 110
     },
+    "Spells": [],
     "Socket1": {
       "Type": 2
     },
@@ -1879,8 +1965,8 @@
     "Phase": 2
   },
   {
-    "MinDamag": 365,
-    "MaxDamag": 548,
+    "MinDamage": 365,
+    "MaxDamage": 548,
     "AttackSpeed": 3500,
     "DPS": 130.42856,
     "ID": 32248,
@@ -1888,17 +1974,18 @@
     "ItemLevel": 141,
     "Quality": "EPIC",
     "InventoryType": "TWOHWEAPON",
-    "ItemStats": {
+    "Stats": {
       "Agility": 51,
       "Stamina": 57,
       "Hit": 30,
       "AttackPower": 100
     },
+    "Spells": [],
     "Phase": 3
   },
   {
-    "MinDamag": 396,
-    "MaxDamag": 595,
+    "MinDamage": 396,
+    "MaxDamage": 595,
     "AttackSpeed": 3800,
     "DPS": 130.39473,
     "ID": 32332,
@@ -1906,17 +1993,18 @@
     "ItemLevel": 141,
     "Quality": "EPIC",
     "InventoryType": "TWOHWEAPON",
-    "ItemStats": {
+    "Stats": {
       "Strength": 51,
       "Stamina": 45,
       "Crit": 38,
       "Haste": 50
     },
+    "Spells": [],
     "Phase": 3
   },
   {
-    "MinDamag": 386,
-    "MaxDamag": 579,
+    "MinDamage": 386,
+    "MaxDamage": 579,
     "AttackSpeed": 3700,
     "DPS": 130.4054,
     "ID": 32348,
@@ -1924,16 +2012,17 @@
     "ItemLevel": 141,
     "Quality": "EPIC",
     "InventoryType": "TWOHWEAPON",
-    "ItemStats": {
+    "Stats": {
       "Strength": 65,
       "Stamina": 63,
       "ArmorPenetration": 315
     },
+    "Spells": [],
     "Phase": 3
   },
   {
-    "MinDamag": 386,
-    "MaxDamag": 580,
+    "MinDamage": 386,
+    "MaxDamage": 580,
     "AttackSpeed": 3600,
     "DPS": 134.16666,
     "ID": 33663,
@@ -1941,7 +2030,7 @@
     "ItemLevel": 146,
     "Quality": "EPIC",
     "InventoryType": "TWOHWEAPON",
-    "ItemStats": {
+    "Stats": {
       "Strength": 46,
       "Stamina": 62,
       "Hit": 15,
@@ -1949,11 +2038,12 @@
       "Resilience": 33,
       "ArmorPenetration": 98
     },
+    "Spells": [],
     "Phase": 3
   },
   {
-    "MinDamag": 386,
-    "MaxDamag": 580,
+    "MinDamage": 386,
+    "MaxDamage": 580,
     "AttackSpeed": 3600,
     "DPS": 134.16666,
     "ID": 33670,
@@ -1961,7 +2051,7 @@
     "ItemLevel": 146,
     "Quality": "EPIC",
     "InventoryType": "TWOHWEAPON",
-    "ItemStats": {
+    "Stats": {
       "Stamina": 62,
       "Hit": 15,
       "Crit": 46,
@@ -1969,11 +2059,12 @@
       "AttackPower": 92,
       "ArmorPenetration": 98
     },
+    "Spells": [],
     "Phase": 3
   },
   {
-    "MinDamag": 386,
-    "MaxDamag": 580,
+    "MinDamage": 386,
+    "MaxDamage": 580,
     "AttackSpeed": 3600,
     "DPS": 134.16666,
     "ID": 33688,
@@ -1981,7 +2072,7 @@
     "ItemLevel": 146,
     "Quality": "EPIC",
     "InventoryType": "TWOHWEAPON",
-    "ItemStats": {
+    "Stats": {
       "Strength": 46,
       "Stamina": 62,
       "Hit": 15,
@@ -1989,11 +2080,12 @@
       "Resilience": 33,
       "ArmorPenetration": 98
     },
+    "Spells": [],
     "Phase": 3
   },
   {
-    "MinDamag": 236,
-    "MaxDamag": 354,
+    "MinDamage": 236,
+    "MaxDamage": 354,
     "AttackSpeed": 2200,
     "DPS": 134.09091,
     "ID": 33727,
@@ -2001,17 +2093,18 @@
     "ItemLevel": 146,
     "Quality": "EPIC",
     "InventoryType": "TWOHWEAPON",
-    "ItemStats": {
+    "Stats": {
       "Stamina": 62,
       "Crit": 47,
       "Resilience": 42,
       "AttackPower": 92
     },
+    "Spells": [],
     "Phase": 3
   },
   {
-    "MinDamag": 375,
-    "MaxDamag": 563,
+    "MinDamage": 375,
+    "MaxDamage": 563,
     "AttackSpeed": 3500,
     "DPS": 133.99998,
     "ID": 34891,
@@ -2019,16 +2112,17 @@
     "ItemLevel": 146,
     "Quality": "EPIC",
     "InventoryType": "TWOHWEAPON",
-    "ItemStats": {
+    "Stats": {
       "Crit": 55,
       "Haste": 53,
       "AttackPower": 108
     },
+    "Spells": [],
     "Phase": 5
   },
   {
-    "MinDamag": 395,
-    "MaxDamag": 593,
+    "MinDamage": 395,
+    "MaxDamage": 593,
     "AttackSpeed": 3600,
     "DPS": 137.22221,
     "ID": 29834,
@@ -2036,11 +2130,13 @@
     "ItemLevel": 150,
     "Quality": "EPIC",
     "InventoryType": "TWOHWEAPON",
+    "Stats": {},
+    "Spells": [],
     "Phase": 1
   },
   {
-    "MinDamag": 329,
-    "MaxDamag": 494,
+    "MinDamage": 329,
+    "MaxDamage": 494,
     "AttackSpeed": 3000,
     "DPS": 137.16666,
     "ID": 29881,
@@ -2048,11 +2144,13 @@
     "ItemLevel": 150,
     "Quality": "EPIC",
     "InventoryType": "TWOHWEAPON",
+    "Stats": {},
+    "Spells": [],
     "Phase": 1
   },
   {
-    "MinDamag": 386,
-    "MaxDamag": 580,
+    "MinDamage": 386,
+    "MaxDamage": 580,
     "AttackSpeed": 3500,
     "DPS": 137.99998,
     "ID": 30902,
@@ -2060,16 +2158,17 @@
     "ItemLevel": 151,
     "Quality": "EPIC",
     "InventoryType": "TWOHWEAPON",
-    "ItemStats": {
+    "Stats": {
       "Strength": 75,
       "Stamina": 49,
       "ArmorPenetration": 335
     },
+    "Spells": [],
     "Phase": 3
   },
   {
-    "MinDamag": 393,
-    "MaxDamag": 590,
+    "MinDamage": 393,
+    "MaxDamage": 590,
     "AttackSpeed": 3500,
     "DPS": 140.42856,
     "ID": 34183,
@@ -2077,19 +2176,20 @@
     "ItemLevel": 154,
     "Quality": "EPIC",
     "InventoryType": "TWOHWEAPON",
-    "ItemStats": {
+    "Stats": {
       "Agility": 52,
       "Haste": 53,
       "AttackPower": 120
     },
+    "Spells": [],
     "Socket1": {
       "Type": 3
     },
     "Phase": 5
   },
   {
-    "MinDamag": 404,
-    "MaxDamag": 606,
+    "MinDamage": 404,
+    "MaxDamage": 606,
     "AttackSpeed": 3600,
     "DPS": 140.27777,
     "ID": 34989,
@@ -2097,7 +2197,7 @@
     "ItemLevel": 154,
     "Quality": "EPIC",
     "InventoryType": "TWOHWEAPON",
-    "ItemStats": {
+    "Stats": {
       "Strength": 50,
       "Stamina": 66,
       "Hit": 19,
@@ -2105,11 +2205,12 @@
       "Resilience": 33,
       "ArmorPenetration": 98
     },
+    "Spells": [],
     "Phase": 5
   },
   {
-    "MinDamag": 404,
-    "MaxDamag": 606,
+    "MinDamage": 404,
+    "MaxDamage": 606,
     "AttackSpeed": 3600,
     "DPS": 140.27777,
     "ID": 34997,
@@ -2117,7 +2218,7 @@
     "ItemLevel": 154,
     "Quality": "EPIC",
     "InventoryType": "TWOHWEAPON",
-    "ItemStats": {
+    "Stats": {
       "Stamina": 66,
       "Hit": 19,
       "Crit": 50,
@@ -2125,11 +2226,12 @@
       "AttackPower": 100,
       "ArmorPenetration": 98
     },
+    "Spells": [],
     "Phase": 5
   },
   {
-    "MinDamag": 404,
-    "MaxDamag": 606,
+    "MinDamage": 404,
+    "MaxDamage": 606,
     "AttackSpeed": 3600,
     "DPS": 140.27777,
     "ID": 35015,
@@ -2137,7 +2239,7 @@
     "ItemLevel": 154,
     "Quality": "EPIC",
     "InventoryType": "TWOHWEAPON",
-    "ItemStats": {
+    "Stats": {
       "Strength": 50,
       "Stamina": 66,
       "Hit": 19,
@@ -2145,11 +2247,12 @@
       "Resilience": 33,
       "ArmorPenetration": 98
     },
+    "Spells": [],
     "Phase": 5
   },
   {
-    "MinDamag": 247,
-    "MaxDamag": 371,
+    "MinDamage": 247,
+    "MaxDamage": 371,
     "AttackSpeed": 2200,
     "DPS": 140.45454,
     "ID": 35064,
@@ -2157,17 +2260,18 @@
     "ItemLevel": 154,
     "Quality": "EPIC",
     "InventoryType": "TWOHWEAPON",
-    "ItemStats": {
+    "Stats": {
       "Stamina": 68,
       "Crit": 51,
       "Resilience": 42,
       "AttackPower": 102
     },
+    "Spells": [],
     "Phase": 5
   },
   {
-    "MinDamag": 381,
-    "MaxDamag": 466,
+    "MinDamage": 381,
+    "MaxDamage": 466,
     "AttackSpeed": 3000,
     "DPS": 154.49998,
     "ID": 32824,
@@ -2175,6 +2279,7 @@
     "ItemLevel": 155,
     "Quality": "LEGENDARY",
     "InventoryType": "TWOHWEAPON",
+    "Stats": {},
     "Spells": [
       {
         "ID": 18112,
@@ -2184,8 +2289,8 @@
     "Phase": 53
   },
   {
-    "MinDamag": 404,
-    "MaxDamag": 607,
+    "MinDamage": 404,
+    "MaxDamage": 607,
     "AttackSpeed": 3400,
     "DPS": 148.67647,
     "ID": 34247,
@@ -2193,12 +2298,13 @@
     "ItemLevel": 164,
     "Quality": "EPIC",
     "InventoryType": "TWOHWEAPON",
-    "ItemStats": {
+    "Stats": {
       "Stamina": 75,
       "Crit": 42,
       "Haste": 32,
       "AttackPower": 126
     },
+    "Spells": [],
     "Socket1": {
       "Type": 2
     },
@@ -2214,8 +2320,8 @@
     "Phase": 5
   },
   {
-    "MinDamag": 496,
-    "MaxDamag": 744,
+    "MinDamage": 496,
+    "MaxDamage": 744,
     "AttackSpeed": 3900,
     "DPS": 158.97435,
     "ID": 30316,
@@ -2223,7 +2329,7 @@
     "ItemLevel": 175,
     "Quality": "LEGENDARY",
     "InventoryType": "TWOHWEAPON",
-    "ItemStats": {
+    "Stats": {
       "Stamina": 75,
       "Crit": 50,
       "AttackPower": 150
