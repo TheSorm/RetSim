@@ -3,17 +3,17 @@ using System;
 using System.Collections.Generic;
 
 namespace RetSim
-{    
+{
     public class Attack
     {
         private Player Player { get; init; }
-        private Enemy Enemy {  get; init; }
+        private Enemy Enemy { get; init; }
         private DamageEffect Effect { get; init; }
 
         public AttackResult AttackResult { get; private set; }
         public DamageResult DamageResult { get; private set; }
 
-        public float BaseDamage { get; private set; }    
+        public float BaseDamage { get; private set; }
         public int Damage { get; private set; }
 
         public float Glancing { get; private set; }
@@ -63,11 +63,11 @@ namespace RetSim
 
             float mitigation = AttackResult == AttackResult.Hit ? GetMitigation(Player, Enemy, Effect.School) : 0; //TODO: Fix partial resist crits?
 
-            BaseDamage = Effect.CalculateDamage(Player, this); 
+            BaseDamage = Effect.CalculateDamage(Player, this);
 
             Damage = RNG.RollDamage(BaseDamage * mitigation);
 
-            Mitigation = (1 - mitigation) * 100f; 
+            Mitigation = (1 - mitigation) * 100f;
         }
 
         public static readonly Dictionary<DefenseType, Func<float, float, float, Tuple<AttackResult, DamageResult>>> AttackFormulas = new()
@@ -82,7 +82,7 @@ namespace RetSim
         public static bool CritCheck(float chance)
         {
             return RNG.RollRange(0, 10000) < Helpers.UpgradeFraction(chance);
-        }        
+        }
 
         public static Tuple<AttackResult, DamageResult> Auto(float miss, float dodge, float crit)
         {

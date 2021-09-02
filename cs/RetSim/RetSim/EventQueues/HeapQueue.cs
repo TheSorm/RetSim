@@ -56,7 +56,7 @@ namespace RetSim.EventQueues
 
         private readonly Dictionary<Event, Node> EventToNode = new();
 
-        private class Node 
+        private class Node
         {
             public Node(Event e)
             {
@@ -64,7 +64,7 @@ namespace RetSim.EventQueues
                 Left = this;
                 Data = e;
             }
-            
+
             public Event Data { get; }
             internal Node Child { get; set; }
             internal Node Left { get; set; }
@@ -74,7 +74,7 @@ namespace RetSim.EventQueues
             internal int Degree { get; set; }
         }
 
-       
+
         private Node minNode;
 
         public int Count { get; private set; }
@@ -230,7 +230,7 @@ namespace RetSim.EventQueues
                 int d = x.Degree;
                 Node next = x.Right;
 
-                while(true)
+                while (true)
                 {
                     Node y = array[d];
                     if (y == null)

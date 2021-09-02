@@ -39,14 +39,14 @@
         public new float HitChance => permanent.HitChance + Temporary.HitChance + (HitRating / Constants.Ratings.Hit);
         public float HitPenalty => (int)HitChance >= Constants.Stats.HitPenalty ? Constants.Stats.HitPenalty : HitChance;
         public float EffectiveHitChance => HitChance - HitPenalty;
-        public float EffectiveMissChance 
-        { 
-            get 
-            {  
+        public float EffectiveMissChance
+        {
+            get
+            {
                 float miss = Constants.Boss.MissChance - EffectiveHitChance;
 
                 return miss > 0 ? miss : 0;
-            } 
+            }
         }
 
         public new int HasteRating => permanent.HasteRating + Temporary.HasteRating;

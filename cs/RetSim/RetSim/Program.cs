@@ -1,5 +1,4 @@
 ﻿using RetSim.Items;
-using RetSim.Log;
 using RetSim.Loggers;
 using RetSim.Tactics;
 using System.Collections.Generic;
@@ -14,24 +13,39 @@ namespace RetSim
 
         static void Main(string[] args)
         {
-            Glossaries.Items.Initialize(LoadWeponData(), LoadArmorData());
+            Glossaries.Items.Initialize(LoadWeponData(), LoadArmorData(), LoadSetData(), LoadGemData());
+
+            Glossaries.Items.HeadsByID[29073].Socket1.SocketedGem = Glossaries.Items.GemsByID[24027];
+            Glossaries.Items.HeadsByID[29073].Socket2.SocketedGem = Glossaries.Items.GemsByID[32409];
+            Glossaries.Items.ShouldersByID[29075].Socket1.SocketedGem = Glossaries.Items.GemsByID[24058];
+            Glossaries.Items.ShouldersByID[29075].Socket2.SocketedGem = Glossaries.Items.GemsByID[24027];
+            Glossaries.Items.CloaksByID[24259].Socket1.SocketedGem = Glossaries.Items.GemsByID[24027];
+            Glossaries.Items.ChestsByID[29071].Socket1.SocketedGem = Glossaries.Items.GemsByID[24027];
+            Glossaries.Items.ChestsByID[29071].Socket2.SocketedGem = Glossaries.Items.GemsByID[24027];
+            Glossaries.Items.ChestsByID[29071].Socket3.SocketedGem = Glossaries.Items.GemsByID[24027];
+            Glossaries.Items.WristsByID[28795].Socket1.SocketedGem = Glossaries.Items.GemsByID[24054];
+            Glossaries.Items.WristsByID[28795].Socket2.SocketedGem = Glossaries.Items.GemsByID[24027];
+            Glossaries.Items.WaistsByID[28779].Socket1.SocketedGem = Glossaries.Items.GemsByID[24027];
+            Glossaries.Items.WaistsByID[28779].Socket2.SocketedGem = Glossaries.Items.GemsByID[24054];
+            Glossaries.Items.FeetsByID[28608].Socket1.SocketedGem = Glossaries.Items.GemsByID[24027];
+            Glossaries.Items.FeetsByID[28608].Socket2.SocketedGem = Glossaries.Items.GemsByID[24058];
 
             Equipment equipment = new()
             {
-                Head = Glossaries.Items.HeadsByID[32087],
-                Neck = Glossaries.Items.NecksByID[29119],
-                Shoulder = Glossaries.Items.ShouldersByID[33173],
+                Head = Glossaries.Items.HeadsByID[29073],
+                Neck = Glossaries.Items.NecksByID[29381],
+                Shoulder = Glossaries.Items.ShouldersByID[29075],
                 Cloak = Glossaries.Items.CloaksByID[24259],
-                Chest = Glossaries.Items.ChestsByID[23522],
-                Wrist = Glossaries.Items.WristsByID[23537],
+                Chest = Glossaries.Items.ChestsByID[29071],
+                Wrist = Glossaries.Items.WristsByID[28795],
                 Hand = Glossaries.Items.HandsByID[30644],
-                Waist = Glossaries.Items.WaistsByID[27985],
+                Waist = Glossaries.Items.WaistsByID[28779],
                 Legs = Glossaries.Items.LegsByID[31544],
-                Feet = Glossaries.Items.FeetsByID[25686],
+                Feet = Glossaries.Items.FeetsByID[28608],
                 Finger1 = Glossaries.Items.FingersByID[30834],
-                Finger2 = Glossaries.Items.FingersByID[29177],
-                Trinket1 = Glossaries.Items.TrinketsByID[23206],
-                Trinket2 = Glossaries.Items.TrinketsByID[28288],
+                Finger2 = Glossaries.Items.FingersByID[28757],
+                Trinket1 = Glossaries.Items.TrinketsByID[29383],
+                Trinket2 = Glossaries.Items.TrinketsByID[28830],
                 Relic = Glossaries.Items.RelicsByID[27484],
                 Weapon = Glossaries.Items.WeaponByID[28429],
             };
@@ -41,8 +55,6 @@ namespace RetSim
             fight.Run();
 
             fight.Output();
-
-
         }
 
         public static List<EquippableWeapon> LoadWeponData()
@@ -55,6 +67,17 @@ namespace RetSim
         {
             using WebClient wc = new();
             return JsonSerializer.Deserialize<List<EquippableArmor>>(wc.DownloadString("https://raw.githubusercontent.com/TheSorm/RetSim/main/data/armor.json"));
+        }
+        public static List<ItemSet> LoadSetData()
+        {
+            using WebClient wc = new();
+            return JsonSerializer.Deserialize<List<ItemSet>>(wc.DownloadString("https://raw.githubusercontent.com/TheSorm/RetSim/main/data/sets.json"));
+        }
+
+        public static List<Gem> LoadGemData()
+        {
+            using WebClient wc = new();
+            return JsonSerializer.Deserialize<List<Gem>>(wc.DownloadString("https://raw.githubusercontent.com/TheSorm/RetSim/main/data/gems.json"));
         }
     }
 }

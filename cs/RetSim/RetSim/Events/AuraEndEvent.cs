@@ -22,6 +22,6 @@
         public override string ToString()
         {
             return Aura.Name + " fades.";
-        }        
+        }
     }
 }

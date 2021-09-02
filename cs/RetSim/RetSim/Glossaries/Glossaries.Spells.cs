@@ -23,7 +23,7 @@ namespace RetSim
                 Name = "Crusader Strike",
                 ManaCost = 236,
                 Cooldown = 6000,
-                CastTime = 0,                
+                CastTime = 0,
                 GCD = new SpellGCD() { Duration = 1500, Category = Category.Physical },
             };
 

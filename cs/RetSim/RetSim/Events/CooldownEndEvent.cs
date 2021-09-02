@@ -1,7 +1,7 @@
 ﻿namespace RetSim.Events
 {
     public class CooldownEndEvent : Event
-    {        
+    {
         private const int BasePriority = 2;
 
         private Spell Spell { get; init; }

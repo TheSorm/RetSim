@@ -14,7 +14,7 @@
 
             Fight.Player.Cast(Glossaries.Spells.Melee, Fight);
 
-            Fight.Queue.Add(Fight.Player.NextAutoAttack);            
+            Fight.Queue.Add(Fight.Player.NextAutoAttack);
 
             return ProcMask.OnMeleeAutoAttack;
         }

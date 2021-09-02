@@ -56,7 +56,7 @@ namespace RetSim
 
             float result = 1f;
 
-            foreach (KeyValuePair<float, int> value in  Constants.Boss.ResistanceProbabilities)
+            foreach (KeyValuePair<float, int> value in Constants.Boss.ResistanceProbabilities)
             {
                 if (random <= value.Value)
                 {

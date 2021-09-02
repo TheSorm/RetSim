@@ -9,7 +9,7 @@ namespace RetSim.Items
         public int ItemLevel { get; init; }
         public string Quality { get; init; }
         public string InventoryType { get; init; }
-        public ItemStats ItemStats { get; init; }
+        public ItemStats Stats { get; init; }
         public Set Set { get; init; }
         public List<ItemSpell> Spells { get; init; }
         public Socket Socket1 { get; init; }
@@ -20,12 +20,32 @@ namespace RetSim.Items
 
         public bool IsSocketBonusActive()
         {
-            if(Socket1 == null || SocketBonus == null)
+            if (Socket1 == null || SocketBonus == null)
             {
                 return false;
             }
 
-            return Socket1.IsActive() && (Socket2 == null || Socket2.IsActive()) && (Socket3 == null || Socket3.IsActive()); 
+            return Socket1.IsActive() && (Socket2 == null || Socket2.IsActive()) && (Socket3 == null || Socket3.IsActive());
+        }
+
+        public List<Gem> GetGems()
+        {
+            List<Gem> gems = new();
+            if (Socket1 != null && Socket1.SocketedGem != null)
+            {
+                gems.Add(Socket1.SocketedGem);
+            }
+
+            if (Socket2 != null && Socket2.SocketedGem != null)
+            {
+                gems.Add(Socket2.SocketedGem);
+            }
+
+            if (Socket3 != null && Socket3.SocketedGem != null)
+            {
+                gems.Add(Socket3.SocketedGem);
+            }
+            return gems;
         }
     }
 

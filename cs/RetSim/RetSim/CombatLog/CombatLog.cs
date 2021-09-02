@@ -32,7 +32,7 @@ namespace RetSim.Log
 
             Duration = entry.Timestamp;
 
-            DPS = Duration == 0 ? Damage : (float) Damage / Duration * 1000;
+            DPS = Duration == 0 ? Damage : (float)Damage / Duration * 1000;
 
             if (DamageBreakdown.ContainsKey(entry.Source))
                 DamageBreakdown[entry.Source].Add(entry);

@@ -4,7 +4,7 @@
     {
         public string Message => FormatInput();
 
-        public int Timestamp { get; init; }        
+        public int Timestamp { get; init; }
         public int Mana { get; init; }
 
         protected abstract string FormatInput();

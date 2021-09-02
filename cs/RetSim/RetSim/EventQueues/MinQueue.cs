@@ -19,7 +19,7 @@ namespace RetSim.EventQueues
 
         public Event GetNext()
         {
-            return this[Count -1];
+            return this[Count - 1];
         }
 
         public Event RemoveNext()
@@ -31,13 +31,13 @@ namespace RetSim.EventQueues
 
         public void EnsureSorting()
         {
-            if(Count > 0)
-            { 
+            if (Count > 0)
+            {
                 Event min = this[0];
                 int minPos = 0;
                 for (int i = 1; i < Count; i++)
                 {
-                    if(min.CompareTo(this[i]) > 0)
+                    if (min.CompareTo(this[i]) > 0)
                     {
                         min = this[i];
                         minPos = i;

@@ -65,8 +65,8 @@ namespace RetSim
         {
             for (int i = 0; i < this[aura].Stacks; i++)
             {
-                foreach (AuraEffect effect in aura.Effects)                
-                    effect.Remove(aura, fight);                
+                foreach (AuraEffect effect in aura.Effects)
+                    effect.Remove(aura, fight);
             }
 
             this[aura].End = null;

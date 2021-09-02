@@ -1,9 +1,8 @@
-﻿using RetSim.Events;
-using RetSim.Tactics;
+﻿using RetSim.EventQueues;
+using RetSim.Events;
 using RetSim.Log;
-using System.Collections.Generic;
+using RetSim.Tactics;
 using static RetSim.Program;
-using RetSim.EventQueues;
 
 namespace RetSim
 {
@@ -36,6 +35,7 @@ namespace RetSim
         public CombatLog Run()
         {
             Player.Procs.Add(Glossaries.Procs.DragonspineTrophy);
+            //TODO add auras from player equipment
 
             Queue.AddRange(Tactic.PreFight(this));
 

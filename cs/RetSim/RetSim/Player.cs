@@ -19,7 +19,7 @@ namespace RetSim
         {
             Stats = new PlayerStats(this, race, equipment);
             Modifiers = new Modifiers();
-            Weapon = new Weapon(this, equipment.Weapon.MinDamag, equipment.Weapon.MaxDamag, equipment.Weapon.AttackSpeed);
+            Weapon = new Weapon(this, equipment.Weapon.MinDamage, equipment.Weapon.MaxDamage, equipment.Weapon.AttackSpeed);
 
             Spellbook = new Spellbook(this);
             Auras = new Auras(this);
