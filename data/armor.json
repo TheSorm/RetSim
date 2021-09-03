@@ -8,12 +8,12 @@
     "Stats": {
       "AttackPower": 64
     },
-    "Spells": [
-      {
-        "ID": 28777,
-        "Name": "Slayer\u0027s Crest"
-      }
-    ],
+    "OnUseSpell": {
+      "ID": 28777,
+      "Name": "Slayer\u0027s Crest"
+    },
+    "Auras": [],
+    "UniqueEquipped": true,
     "Phase": 1
   },
   {
@@ -28,7 +28,7 @@
       "Crit": 14,
       "AttackPower": 50
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -44,7 +44,7 @@
       "Crit": 14,
       "Hit": 10
     },
-    "Spells": [
+    "Auras": [
       {
         "ID": 43588,
         "Name": "Disarm Duration Reduction"
@@ -59,7 +59,7 @@
     "Quality": "EPIC",
     "InventoryType": "TRINKET",
     "Stats": {},
-    "Spells": [
+    "Auras": [
       {
         "ID": 29112,
         "Name": "Champion of the Dawn"
@@ -80,7 +80,7 @@
       "Crit": 14,
       "Defense": 15
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 1
     },
@@ -105,7 +105,7 @@
       "Crit": 21,
       "AttackPower": 42
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -120,7 +120,7 @@
       "Agility": 21,
       "Stamina": 23
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 2
     },
@@ -145,7 +145,7 @@
       "Intellect": 26,
       "ManaPer5": 6
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -160,7 +160,7 @@
       "Crit": 12,
       "AttackPower": 52
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 4
     },
@@ -185,7 +185,7 @@
       "AttackPower": 30,
       "ManaPer5": 6
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 2
     },
@@ -209,7 +209,7 @@
       "Stamina": 31,
       "Intellect": 15
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 2
     },
@@ -230,7 +230,7 @@
       "Hit": 15,
       "AttackPower": 42
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 2
     },
@@ -251,7 +251,7 @@
     "Stats": {
       "AttackPower": 54
     },
-    "Spells": [
+    "Auras": [
       {
         "ID": 33522,
         "Name": "Mana Restore 2"
@@ -268,7 +268,7 @@
     "Stats": {
       "AttackPower": 54
     },
-    "Spells": [
+    "Auras": [
       {
         "ID": 33522,
         "Name": "Mana Restore 2"
@@ -283,7 +283,7 @@
     "Quality": "RARE",
     "InventoryType": "RELIC",
     "Stats": {},
-    "Spells": [
+    "Auras": [
       {
         "ID": 33557,
         "Name": "Improved Seal of the Crusader"
@@ -298,7 +298,7 @@
     "Quality": "RARE",
     "InventoryType": "RELIC",
     "Stats": {},
-    "Spells": [
+    "Auras": [
       {
         "ID": 33557,
         "Name": "Improved Seal of the Crusader"
@@ -319,7 +319,7 @@
       "Intellect": 12,
       "ManaPer5": 3
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -336,7 +336,7 @@
       "Dodge": 8,
       "Hit": 8
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -350,7 +350,7 @@
       "Strength": 21,
       "Crit": 16
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 53
   },
   {
@@ -368,7 +368,7 @@
       "Spirit": 11,
       "Hit": 14
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -381,7 +381,7 @@
       "Agility": 20,
       "AttackPower": 40
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -398,7 +398,7 @@
       "Hit": 11,
       "AttackPower": 32
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -419,7 +419,7 @@
       "ID": 523,
       "Name": "Dreadnaught\u0027s Battlegear"
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -442,7 +442,7 @@
       "ID": 530,
       "Name": "Cryptstalker Armor"
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -462,7 +462,7 @@
       "ID": 524,
       "Name": "Bonescythe Armor"
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -476,7 +476,7 @@
       "Crit": 28,
       "AttackPower": 26
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -491,7 +491,7 @@
       "Stamina": 18,
       "AttackPower": 30
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -506,7 +506,7 @@
       "Stamina": 33,
       "Hit": 7
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 3
     },
@@ -533,7 +533,7 @@
       "Stamina": 21,
       "Intellect": 22
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 2
     },
@@ -558,7 +558,7 @@
       "Intellect": 14,
       "ManaPer5": 4
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 2
     },
@@ -582,7 +582,7 @@
       "Stamina": 22,
       "Defense": 18
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 3
     },
@@ -604,7 +604,7 @@
       "Crit": 21,
       "AttackPower": 44
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 3
     },
@@ -632,7 +632,7 @@
       "Hit": 16,
       "AttackPower": 40
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 2
     },
@@ -656,7 +656,7 @@
       "Stamina": 24,
       "AttackPower": 30
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -671,7 +671,7 @@
       "Stamina": 18,
       "Crit": 18
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -686,7 +686,7 @@
       "Stamina": 19,
       "Intellect": 24
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -702,7 +702,7 @@
       "Intellect": 18,
       "ManaPer5": 4
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -716,7 +716,7 @@
       "Stamina": 18,
       "AttackPower": 50
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -730,7 +730,7 @@
       "Stamina": 24,
       "AttackPower": 32
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -745,7 +745,7 @@
       "AttackPower": 100,
       "Crit": 28
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -760,7 +760,7 @@
       "Stamina": 48,
       "AttackPower": 62
     },
-    "Spells": [
+    "Auras": [
       {
         "ID": 30519,
         "Name": "Foreman\u0027s Reinforced Helmet"
@@ -781,7 +781,7 @@
       "Resilience": 11,
       "AttackPower": 34
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -797,7 +797,7 @@
       "Intellect": 15,
       "AttackPower": 44
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -813,7 +813,7 @@
       "Intellect": 19,
       "ManaPer5": 3
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 2
     },
@@ -838,7 +838,7 @@
       "Parry": 15,
       "AttackPower": 44
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -856,7 +856,7 @@
       "SpellDamage": 22,
       "SpellHealing": 22
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -873,7 +873,7 @@
       "SpellDamage": 18,
       "SpellHealing": 18
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 2
     },
@@ -900,7 +900,7 @@
       "Agility": 13,
       "Stamina": 13
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -915,7 +915,7 @@
       "Hit": 11,
       "AttackPower": 32
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -931,7 +931,7 @@
       "Stamina": 21,
       "Hit": 13
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -947,7 +947,7 @@
       "Hit": 14,
       "AttackPower": 28
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -963,7 +963,7 @@
       "Intellect": 12,
       "ManaPer5": 4
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -978,7 +978,7 @@
       "AttackPower": 46,
       "ManaPer5": 9
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -993,7 +993,7 @@
       "Agility": 18,
       "Hit": 12
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -1008,7 +1008,7 @@
       "Crit": 19,
       "AttackPower": 48
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -1025,7 +1025,7 @@
       "Intellect": 12,
       "Spirit": 11
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -1039,7 +1039,7 @@
       "Hit": 13,
       "AttackPower": 20
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -1053,7 +1053,7 @@
       "Agility": 16,
       "Stamina": 25
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -1069,7 +1069,7 @@
       "Stamina": 19,
       "Hit": 13
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 2
     },
@@ -1099,7 +1099,7 @@
       "SpellHealing": 35,
       "SpellDamage": 12
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 2
     },
@@ -1125,7 +1125,7 @@
       "Stamina": 24,
       "AttackPower": 34
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -1141,7 +1141,7 @@
       "Intellect": 15,
       "AttackPower": 44
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 2
     },
@@ -1169,7 +1169,7 @@
       "Hit": 20,
       "AttackPower": 60
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -1181,12 +1181,12 @@
     "Stats": {
       "AttackPower": 56
     },
-    "Spells": [
-      {
-        "ID": 33014,
-        "Name": "Consume Life"
-      }
-    ],
+    "OnUseSpell": {
+      "ID": 33014,
+      "Name": "Consume Life"
+    },
+    "Auras": [],
+    "UniqueEquipped": true,
     "Phase": 1
   },
   {
@@ -1203,7 +1203,7 @@
       "Resilience": 16,
       "AttackPower": 26
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -1219,7 +1219,7 @@
       "Crit": 19,
       "Resilience": 19
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -1236,7 +1236,7 @@
       "Crit": 12,
       "Resilience": 17
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -1255,7 +1255,7 @@
       "SpellHealing": 31,
       "SpellDamage": 11
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -1273,7 +1273,7 @@
       "Resilience": 13,
       "AttackPower": 20
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -1291,7 +1291,7 @@
       "Resilience": 13,
       "AttackPower": 22
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 3
     },
@@ -1313,7 +1313,7 @@
       "SpellHealing": 44,
       "SpellDamage": 15
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 2
     },
@@ -1336,7 +1336,7 @@
       "Resilience": 17,
       "AttackPower": 30
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 3
     },
@@ -1355,7 +1355,7 @@
       "Crit": 17,
       "Resilience": 25
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 3
     },
@@ -1374,7 +1374,7 @@
       "Crit": 12,
       "Resilience": 22
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 3
     },
@@ -1392,7 +1392,7 @@
       "Resilience": 16,
       "AttackPower": 32
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -1408,7 +1408,7 @@
       "Crit": 25,
       "Resilience": 11
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 1
     },
@@ -1431,7 +1431,7 @@
       "Resilience": 14,
       "AttackPower": 20
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 1
     },
@@ -1452,7 +1452,7 @@
       "SpellHealing": 37,
       "SpellDamage": 13
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 1
     },
@@ -1473,7 +1473,7 @@
       "Resilience": 12,
       "AttackPower": 20
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 1
     },
@@ -1496,7 +1496,7 @@
       "Crit": 22,
       "Resilience": 13
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 1
     },
@@ -1518,7 +1518,7 @@
       "Intellect": 15,
       "Crit": 18
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 1
     },
@@ -1539,7 +1539,7 @@
       "Defense": 23,
       "Crit": 18
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 3
     },
@@ -1566,7 +1566,7 @@
       "AttackPower": 60,
       "ManaPer5": 5
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 4
     },
@@ -1594,7 +1594,7 @@
       "Hit": 19,
       "AttackPower": 18
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 2
     },
@@ -1619,7 +1619,7 @@
       "Hit": 17,
       "AttackPower": 60
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -1636,7 +1636,7 @@
       "AttackPower": 50,
       "ManaPer5": 9
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -1652,7 +1652,7 @@
       "Stamina": 36,
       "Defense": 11
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 2
     },
@@ -1681,7 +1681,7 @@
       "AttackPower": 50,
       "ManaPer5": 7
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 4
     },
@@ -1707,7 +1707,7 @@
       "Stamina": 18,
       "Expertise": 20
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -1723,7 +1723,7 @@
       "Intellect": 20,
       "ManaPer5": 8
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -1739,7 +1739,7 @@
       "Crit": 20,
       "AttackPower": 60
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -1754,7 +1754,7 @@
       "Stamina": 33,
       "Crit": 36
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -1769,7 +1769,7 @@
       "SpellDamage": 22,
       "SpellHealing": 22
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -1783,7 +1783,7 @@
       "AttackPower": 40,
       "ManaPer5": 7
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -1797,7 +1797,7 @@
       "Agility": 30,
       "Stamina": 45
     },
-    "Spells": [
+    "Auras": [
       {
         "ID": 38297,
         "Name": "Increased Pet Attack Power"
@@ -1817,7 +1817,7 @@
       "Stamina": 27,
       "AttackPower": 68
     },
-    "Spells": [
+    "Auras": [
       {
         "ID": 23217,
         "Name": "Stealth Detection"
@@ -1832,7 +1832,7 @@
     "Quality": "EPIC",
     "InventoryType": "TRINKET",
     "Stats": {},
-    "Spells": [
+    "Auras": [
       {
         "ID": 39438,
         "Name": "Aura of the Crusade"
@@ -1851,7 +1851,8 @@
       "Agility": 19,
       "Stamina": 30
     },
-    "Spells": [],
+    "Auras": [],
+    "UniqueEquipped": true,
     "Phase": 1
   },
   {
@@ -1865,7 +1866,8 @@
       "Crit": 20,
       "AttackPower": 40
     },
-    "Spells": [],
+    "Auras": [],
+    "UniqueEquipped": true,
     "Phase": 1
   },
   {
@@ -1883,7 +1885,7 @@
       "ID": 562,
       "Name": "Adamantite Battlegear"
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 4
     },
@@ -1904,7 +1906,7 @@
       "ID": 562,
       "Name": "Adamantite Battlegear"
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 2
     },
@@ -1920,7 +1922,7 @@
     "Quality": "RARE",
     "InventoryType": "RELIC",
     "Stats": {},
-    "Spells": [
+    "Auras": [
       {
         "ID": 32403,
         "Name": "Increased Flash of Light Healing"
@@ -1940,7 +1942,7 @@
       "Stamina": 45,
       "AttackPower": 62
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -1958,7 +1960,7 @@
       "SpellHealing": 26,
       "SpellDamage": 9
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 2
     },
@@ -1983,7 +1985,7 @@
       "Intellect": 20,
       "ManaPer5": 8
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -1998,7 +2000,7 @@
       "Stamina": 19,
       "AttackPower": 40
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -2013,7 +2015,7 @@
       "Stamina": 34,
       "Crit": 16
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 4
     },
@@ -2039,7 +2041,7 @@
       "AttackPower": 46,
       "ManaPer5": 4
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 3
     },
@@ -2062,7 +2064,7 @@
       "Stamina": 19,
       "Resilience": 17
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -2078,7 +2080,7 @@
       "Crit": 23,
       "AttackPower": 20
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 2
     },
@@ -2099,7 +2101,7 @@
       "Crit": 15,
       "AttackPower": 30
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -2115,7 +2117,7 @@
       "Hit": 12,
       "AttackPower": 86
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -2132,7 +2134,7 @@
       "Hit": 15,
       "AttackPower": 86
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -2149,7 +2151,7 @@
       "Hit": 15,
       "Crit": 12
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -2164,7 +2166,7 @@
       "Stamina": 27,
       "Parry": 18
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 2
     },
@@ -2188,7 +2190,7 @@
       "Dodge": 23,
       "AttackPower": 42
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 2
     },
@@ -2210,7 +2212,7 @@
       "Intellect": 20,
       "Crit": 20
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -2226,7 +2228,7 @@
       "Intellect": 23,
       "AttackPower": 60
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -2241,7 +2243,7 @@
       "Hit": 13,
       "AttackPower": 20
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -2255,7 +2257,7 @@
       "Agility": 15,
       "Stamina": 15
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -2269,7 +2271,7 @@
       "Crit": 15,
       "AttackPower": 50
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -2284,7 +2286,7 @@
       "Crit": 27,
       "AttackPower": 40
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 2
     },
@@ -2307,7 +2309,7 @@
       "Strength": 28,
       "Stamina": 36
     },
-    "Spells": [
+    "Auras": [
       {
         "ID": 43588,
         "Name": "Disarm Duration Reduction"
@@ -2338,7 +2340,7 @@
       "AttackPower": 44,
       "ManaPer5": 9
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 2
     },
@@ -2365,7 +2367,7 @@
       "Stamina": 15,
       "Crit": 22
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -2379,7 +2381,7 @@
       "Crit": 23,
       "AttackPower": 52
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 2
     },
@@ -2398,7 +2400,7 @@
       "Strength": 26,
       "Agility": 25
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -2412,7 +2414,7 @@
       "Agility": 16,
       "Stamina": 18
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -2428,7 +2430,7 @@
       "Hit": 18,
       "AttackPower": 74
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -2444,7 +2446,7 @@
       "Crit": 25,
       "AttackPower": 50
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -2460,7 +2462,7 @@
       "Stamina": 25,
       "Hit": 17
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -2476,7 +2478,7 @@
       "Stamina": 25,
       "Hit": 17
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -2493,7 +2495,7 @@
       "AttackPower": 64,
       "ManaPer5": 12
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -2509,7 +2511,7 @@
       "Intellect": 23,
       "AttackPower": 50
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -2525,7 +2527,7 @@
       "Intellect": 18,
       "ManaPer5": 10
     },
-    "Spells": [
+    "Auras": [
       {
         "ID": 23990,
         "Name": "Item - Minor Run Speed"
@@ -2546,7 +2548,7 @@
       "Intellect": 25,
       "AttackPower": 76
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -2567,7 +2569,7 @@
       "ID": 616,
       "Name": "Netherscale Armor"
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 3
     },
@@ -2594,7 +2596,7 @@
       "SpellHealing": 486,
       "ManaPer5": 21
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 53
   },
   {
@@ -2613,7 +2615,7 @@
       "AttackPower": 880,
       "ManaPer5": 36
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 53
   },
   {
@@ -2631,7 +2633,7 @@
       "SpellDamage": 254,
       "SpellHealing": 254
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 53
   },
   {
@@ -2648,7 +2650,7 @@
       "Crit": 13,
       "Resilience": 14
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 2
     },
@@ -2677,7 +2679,7 @@
       "Crit": 12,
       "Resilience": 12
     },
-    "Spells": [
+    "Auras": [
       {
         "ID": 23300,
         "Name": "Seal of the Crusader Judgement Increase"
@@ -2699,7 +2701,7 @@
       "Crit": 13,
       "Resilience": 14
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 1
     },
@@ -2722,7 +2724,7 @@
       "Crit": 16,
       "Resilience": 16
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 53
   },
   {
@@ -2739,7 +2741,7 @@
       "Crit": 9,
       "Resilience": 10
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 2
     },
@@ -2760,7 +2762,7 @@
       "Stamina": 18,
       "AttackPower": 56
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 53
   },
   {
@@ -2775,7 +2777,7 @@
       "Stamina": 18,
       "AttackPower": 42
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 4
     },
@@ -2793,7 +2795,7 @@
       "Stamina": 28,
       "Crit": 19
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 3
     },
@@ -2817,7 +2819,7 @@
       "Intellect": 27,
       "AttackPower": 56
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 2
     },
@@ -2838,7 +2840,7 @@
     "Stats": {
       "Crit": 34
     },
-    "Spells": [
+    "Auras": [
       {
         "ID": 41260,
         "Name": "Aviana\u0027s Purpose"
@@ -2857,7 +2859,8 @@
       "Hit": 12,
       "AttackPower": 56
     },
-    "Spells": [],
+    "Auras": [],
+    "UniqueEquipped": true,
     "Phase": 1
   },
   {
@@ -2873,7 +2876,7 @@
       "Stamina": 12,
       "Hit": 8
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 2
     },
@@ -2903,7 +2906,7 @@
       "ID": 562,
       "Name": "Adamantite Battlegear"
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 4
     },
@@ -2931,7 +2934,7 @@
       "ID": 573,
       "Name": "Fel Skin"
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 3
     },
@@ -2953,7 +2956,7 @@
       "AttackPower": 52,
       "ManaPer5": 10
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -2967,7 +2970,7 @@
       "Agility": 17,
       "Stamina": 25
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -2982,7 +2985,7 @@
       "Stamina": 46,
       "AttackPower": 62
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -2999,7 +3002,7 @@
       "Defense": 16,
       "ManaPer5": 6
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -3013,7 +3016,7 @@
       "Hit": 10,
       "AttackPower": 50
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -3023,7 +3026,7 @@
     "Quality": "RARE",
     "InventoryType": "RELIC",
     "Stats": {},
-    "Spells": [
+    "Auras": [
       {
         "ID": 37763,
         "Name": "Increased Crusader Strike Damage"
@@ -3042,7 +3045,7 @@
       "Agility": 15,
       "Hit": 14
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -3058,7 +3061,7 @@
       "Crit": 21,
       "ManaPer5": 8
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -3071,7 +3074,8 @@
       "Agility": 25,
       "AttackPower": 34
     },
-    "Spells": [],
+    "Auras": [],
+    "UniqueEquipped": true,
     "Phase": 1
   },
   {
@@ -3086,7 +3090,7 @@
       "Crit": 30,
       "AttackPower": 80
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -3103,7 +3107,7 @@
       "AttackPower": 40,
       "ManaPer5": 7
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 2
     },
@@ -3131,7 +3135,7 @@
       "Hit": 20,
       "Crit": 31
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 4
     },
@@ -3157,7 +3161,8 @@
       "Stamina": 21,
       "Resilience": 13
     },
-    "Spells": [],
+    "Auras": [],
+    "UniqueEquipped": true,
     "Phase": 1
   },
   {
@@ -3171,7 +3176,7 @@
       "Stamina": 27,
       "Defense": 18
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -3185,7 +3190,7 @@
       "Crit": 18,
       "AttackPower": 34
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -3199,7 +3204,7 @@
       "Stamina": 27,
       "Defense": 18
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -3213,7 +3218,7 @@
       "Crit": 18,
       "AttackPower": 34
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -3229,7 +3234,7 @@
       "Stamina": 27,
       "Expertise": 22
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -3245,7 +3250,7 @@
       "Hit": 22,
       "Crit": 25
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -3259,7 +3264,7 @@
       "Agility": 15,
       "Hit": 10
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -3274,7 +3279,7 @@
       "Agility": 18,
       "Stamina": 21
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -3290,7 +3295,7 @@
       "Intellect": 20,
       "AttackPower": 48
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -3306,7 +3311,7 @@
       "Hit": 20,
       "AttackPower": 48
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -3322,7 +3327,7 @@
       "Stamina": 30,
       "Hit": 14
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -3336,7 +3341,8 @@
       "Hit": 10,
       "AttackPower": 50
     },
-    "Spells": [],
+    "Auras": [],
+    "UniqueEquipped": true,
     "Phase": 1
   },
   {
@@ -3352,7 +3358,7 @@
       "Hit": 12,
       "AttackPower": 90
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -3368,7 +3374,7 @@
       "Hit": 9,
       "AttackPower": 68
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -3383,7 +3389,7 @@
       "Agility": 14,
       "Stamina": 27
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -3398,7 +3404,7 @@
       "Agility": 10,
       "Stamina": 22
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -3414,7 +3420,7 @@
       "AttackPower": 90,
       "ManaPer5": 5
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -3430,7 +3436,7 @@
       "AttackPower": 68,
       "ManaPer5": 3
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -3445,7 +3451,7 @@
       "Agility": 26,
       "Stamina": 24
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -3460,7 +3466,7 @@
       "Stamina": 21,
       "Intellect": 18
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -3476,7 +3482,7 @@
       "SpellDamage": 18,
       "SpellHealing": 18
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -3490,7 +3496,7 @@
       "Hit": 10,
       "AttackPower": 50
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -3506,7 +3512,7 @@
       "Hit": 13,
       "Crit": 24
     },
-    "Spells": [
+    "Auras": [
       {
         "ID": 39841,
         "Name": "Spectrecles"
@@ -3540,7 +3546,7 @@
       "AttackPower": 60,
       "ManaPer5": 4
     },
-    "Spells": [
+    "Auras": [
       {
         "ID": 39841,
         "Name": "Spectrecles"
@@ -3573,7 +3579,7 @@
       "Hit": 13,
       "AttackPower": 60
     },
-    "Spells": [
+    "Auras": [
       {
         "ID": 39841,
         "Name": "Spectrecles"
@@ -3601,7 +3607,7 @@
       "Strength": 29,
       "Stamina": 18
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -3616,7 +3622,7 @@
       "Agility": 34,
       "Stamina": 24
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -3632,7 +3638,7 @@
       "Hit": 20,
       "AttackPower": 46
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -3648,7 +3654,7 @@
       "Hit": 16,
       "AttackPower": 48
     },
-    "Spells": [
+    "Auras": [
       {
         "ID": 17746,
         "Name": "Stealth 5"
@@ -3666,7 +3672,8 @@
       "Strength": 29,
       "Agility": 12
     },
-    "Spells": [],
+    "Auras": [],
+    "UniqueEquipped": true,
     "Phase": 1
   },
   {
@@ -3679,7 +3686,8 @@
       "Crit": 29,
       "AttackPower": 24
     },
-    "Spells": [],
+    "Auras": [],
+    "UniqueEquipped": true,
     "Phase": 1
   },
   {
@@ -3696,7 +3704,7 @@
       "Hit": 17,
       "Expertise": 18
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -3712,7 +3720,7 @@
       "Crit": 30,
       "AttackPower": 60
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -3729,7 +3737,7 @@
       "AttackPower": 60,
       "ManaPer5": 7
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -3745,7 +3753,7 @@
       "Stamina": 27,
       "Hit": 25
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -3761,7 +3769,7 @@
       "Intellect": 16,
       "ManaPer5": 7
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -3777,7 +3785,7 @@
       "Stamina": 22,
       "Defense": 13
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -3793,7 +3801,7 @@
       "Stamina": 31,
       "Defense": 23
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -3809,7 +3817,7 @@
       "Stamina": 33,
       "Defense": 24
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -3824,7 +3832,7 @@
       "Stamina": 22,
       "AttackPower": 46
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -3840,7 +3848,7 @@
       "Hit": 20,
       "AttackPower": 56
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -3855,7 +3863,7 @@
       "Stamina": 30,
       "AttackPower": 54
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -3872,7 +3880,7 @@
       "AttackPower": 36,
       "ManaPer5": 4
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -3889,7 +3897,7 @@
       "Hit": 14,
       "AttackPower": 44
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -3906,7 +3914,7 @@
       "AttackPower": 48,
       "ManaPer5": 6
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -3922,7 +3930,7 @@
       "Stamina": 27,
       "Intellect": 16
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -3938,7 +3946,7 @@
       "Stamina": 22,
       "Intellect": 21
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -3954,7 +3962,7 @@
       "Stamina": 36,
       "Intellect": 21
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -3968,7 +3976,7 @@
       "Hit": 22,
       "AttackPower": 50
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -3982,7 +3990,7 @@
       "Crit": 30,
       "AttackPower": 34
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -3997,7 +4005,7 @@
       "Stamina": 25,
       "AttackPower": 58
     },
-    "Spells": [
+    "Auras": [
       {
         "ID": 43588,
         "Name": "Disarm Duration Reduction"
@@ -4016,7 +4024,7 @@
       "Crit": 23,
       "AttackPower": 46
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -4031,7 +4039,7 @@
       "Hit": 18,
       "AttackPower": 42
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -4046,7 +4054,7 @@
       "Stamina": 22,
       "AttackPower": 48
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -4058,12 +4066,11 @@
     "Stats": {
       "AttackPower": 72
     },
-    "Spells": [
-      {
-        "ID": 35166,
-        "Name": "Lust for Battle"
-      }
-    ],
+    "OnUseSpell": {
+      "ID": 35166,
+      "Name": "Lust for Battle"
+    },
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -4073,7 +4080,7 @@
     "Quality": "EPIC",
     "InventoryType": "RELIC",
     "Stats": {},
-    "Spells": [
+    "Auras": [
       {
         "ID": 37742,
         "Name": "Increased Holy Shield Block"
@@ -4094,7 +4101,7 @@
       "Stamina": 25,
       "Defense": 15
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -4109,7 +4116,7 @@
       "Stamina": 36,
       "Crit": 23
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 2
     },
@@ -4137,7 +4144,7 @@
       "AttackPower": 64,
       "ManaPer5": 6
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 4
     },
@@ -4165,7 +4172,7 @@
       "Stamina": 24,
       "Intellect": 27
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 2
     },
@@ -4193,7 +4200,7 @@
       "Intellect": 27,
       "ManaPer5": 8
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 2
     },
@@ -4221,7 +4228,7 @@
       "Crit": 27,
       "AttackPower": 64
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 2
     },
@@ -4249,7 +4256,7 @@
       "Stamina": 36,
       "Defense": 24
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -4265,7 +4272,7 @@
       "Stamina": 34,
       "Defense": 23
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -4281,7 +4288,7 @@
       "Intellect": 21,
       "AttackPower": 54
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -4296,7 +4303,7 @@
       "Stamina": 33,
       "AttackPower": 34
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -4309,7 +4316,7 @@
       "Stamina": 31,
       "AttackPower": 60
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -4325,7 +4332,7 @@
       "Intellect": 32,
       "AttackPower": 48
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 2
     },
@@ -4350,7 +4357,7 @@
       "Hit": 16,
       "AttackPower": 64
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 3
     },
@@ -4375,7 +4382,7 @@
       "Stamina": 27,
       "Intellect": 20
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 3
     },
@@ -4399,12 +4406,11 @@
       "Stamina": 46,
       "Crit": 30
     },
-    "Spells": [
-      {
-        "ID": 43873,
-        "Name": "Headless Horseman Laugh"
-      }
-    ],
+    "OnUseSpell": {
+      "ID": 43873,
+      "Name": "Headless Horseman Laugh"
+    },
+    "Auras": [],
     "Socket1": {
       "Type": 2
     },
@@ -4429,7 +4435,7 @@
       "Stamina": 31,
       "AttackPower": 60
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 53
   },
   {
@@ -4442,7 +4448,7 @@
       "Stamina": 31,
       "AttackPower": 60
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 53
   },
   {
@@ -4459,7 +4465,7 @@
       "Haste": 20,
       "AttackPower": 76
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 2
     },
@@ -4483,7 +4489,7 @@
       "Stamina": 30,
       "ArmorPenetration": 140
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 2
     },
@@ -4508,7 +4514,7 @@
       "AttackPower": 58,
       "ArmorPenetration": 126
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 2
     },
@@ -4529,7 +4535,7 @@
       "Stamina": 22,
       "AttackPower": 48
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 53
   },
   {
@@ -4544,7 +4550,7 @@
       "Hit": 18,
       "AttackPower": 42
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 5
   },
   {
@@ -4556,12 +4562,11 @@
     "Stats": {
       "AttackPower": 72
     },
-    "Spells": [
-      {
-        "ID": 51955,
-        "Name": "Dire Drunkard"
-      }
-    ],
+    "OnUseSpell": {
+      "ID": 51955,
+      "Name": "Dire Drunkard"
+    },
+    "Auras": [],
     "Phase": 53
   },
   {
@@ -4575,12 +4580,11 @@
       "Hit": 23,
       "AttackPower": 84
     },
-    "Spells": [
-      {
-        "ID": 30249,
-        "Name": "Hyper Vision"
-      }
-    ],
+    "OnUseSpell": {
+      "ID": 30249,
+      "Name": "Hyper Vision"
+    },
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -4593,12 +4597,11 @@
     "Stats": {
       "AttackPower": 80
     },
-    "Spells": [
-      {
-        "ID": 51582,
-        "Name": "Rocket Boots Engaged"
-      }
-    ],
+    "OnUseSpell": {
+      "ID": 51582,
+      "Name": "Rocket Boots Engaged"
+    },
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -4617,7 +4620,7 @@
       "SpellDamage": 19,
       "SpellHealing": 19
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -4631,7 +4634,7 @@
       "Intellect": 30,
       "AttackPower": 96
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -4650,7 +4653,7 @@
       "ID": 573,
       "Name": "Fel Skin"
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 3
     },
@@ -4675,7 +4678,7 @@
       "ID": 573,
       "Name": "Fel Skin"
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 2
     },
@@ -4703,7 +4706,7 @@
       "ID": 575,
       "Name": "Felstalker Armor"
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 2
     },
@@ -4727,7 +4730,7 @@
       "Stamina": 18,
       "AttackPower": 38
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -4742,7 +4745,7 @@
       "Stamina": 48,
       "Defense": 30
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -4757,7 +4760,7 @@
       "Crit": 21,
       "AttackPower": 92
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -4772,7 +4775,7 @@
       "Stamina": 29,
       "Hit": 17
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -4787,7 +4790,7 @@
       "Stamina": 18,
       "Intellect": 20
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -4805,7 +4808,7 @@
       "ManaPer5": 6,
       "AttackPower": 66
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -4821,7 +4824,7 @@
       "Crit": 18,
       "AttackPower": 30
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -4836,7 +4839,7 @@
       "Stamina": 21,
       "Intellect": 25
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 2
     },
@@ -4865,7 +4868,7 @@
       "AttackPower": 26,
       "ManaPer5": 5
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -4875,7 +4878,7 @@
     "Quality": "RARE",
     "InventoryType": "RELIC",
     "Stats": {},
-    "Spells": [
+    "Auras": [
       {
         "ID": 34252,
         "Name": "Improved Consecration"
@@ -4895,7 +4898,7 @@
       "Agility": 19,
       "Stamina": 18
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -4911,7 +4914,7 @@
       "Hit": 15,
       "AttackPower": 48
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -4923,12 +4926,13 @@
     "Stats": {
       "Crit": 32
     },
-    "Spells": [
+    "Auras": [
       {
         "ID": 33648,
         "Name": "Rage of the Unraveller"
       }
     ],
+    "UniqueEquipped": true,
     "Phase": 1
   },
   {
@@ -4944,7 +4948,7 @@
       "Intellect": 20,
       "AttackPower": 40
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 2
     },
@@ -4972,7 +4976,7 @@
       "ManaPer5": 6,
       "AttackPower": 28
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -4987,7 +4991,7 @@
       "Crit": 32,
       "AttackPower": 84
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -5002,7 +5006,7 @@
       "Resilience": 17,
       "AttackPower": 36
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 3
     },
@@ -5024,7 +5028,7 @@
       "Crit": 14,
       "Resilience": 14
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 3
     },
@@ -5044,7 +5048,7 @@
       "Crit": 7,
       "Resilience": 8
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 3
     },
@@ -5063,7 +5067,7 @@
       "Crit": 14,
       "Resilience": 14
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 3
     },
@@ -5083,7 +5087,7 @@
       "Crit": 7,
       "Resilience": 8
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 3
     },
@@ -5105,7 +5109,7 @@
       "ID": 575,
       "Name": "Felstalker Armor"
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 2
     },
@@ -5133,7 +5137,7 @@
       "ID": 575,
       "Name": "Felstalker Armor"
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 4
     },
@@ -5154,7 +5158,7 @@
       "Hit": 24,
       "AttackPower": 50
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -5169,7 +5173,7 @@
       "Hit": 24,
       "AttackPower": 50
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -5187,7 +5191,7 @@
       "ID": 566,
       "Name": "Burning Rage"
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -5205,7 +5209,7 @@
       "ID": 566,
       "Name": "Burning Rage"
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -5223,7 +5227,7 @@
       "ID": 566,
       "Name": "Burning Rage"
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -5237,7 +5241,7 @@
       "ManaPer5": 10,
       "AttackPower": 50
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 2
     },
@@ -5258,12 +5262,11 @@
     "Stats": {
       "AttackPower": 68
     },
-    "Spells": [
-      {
-        "ID": 31038,
-        "Name": "Felsteel Boar"
-      }
-    ],
+    "OnUseSpell": {
+      "ID": 31038,
+      "Name": "Felsteel Boar"
+    },
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -5275,14 +5278,14 @@
     "Stats": {
       "AttackPower": 54
     },
-    "Spells": [
+    "OnUseSpell": {
+      "ID": 31047,
+      "Name": "Nightseye Panther"
+    },
+    "Auras": [
       {
         "ID": 17746,
         "Name": "Stealth 5"
-      },
-      {
-        "ID": 31047,
-        "Name": "Nightseye Panther"
       }
     ],
     "Phase": 1
@@ -5300,7 +5303,7 @@
       "Intellect": 15,
       "ManaPer5": 4
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -5316,7 +5319,7 @@
       "Hit": 17,
       "AttackPower": 64
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -5330,7 +5333,8 @@
       "Stamina": 18,
       "AttackPower": 38
     },
-    "Spells": [],
+    "Auras": [],
+    "UniqueEquipped": true,
     "Phase": 1
   },
   {
@@ -5345,7 +5349,7 @@
       "Agility": 32,
       "Stamina": 37
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -5361,7 +5365,7 @@
       "Defense": 11,
       "Block": 23
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -5378,7 +5382,7 @@
       "Hit": 17,
       "AttackPower": 70
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -5393,7 +5397,7 @@
       "Stamina": 30,
       "AttackPower": 50
     },
-    "Spells": [
+    "Auras": [
       {
         "ID": 17746,
         "Name": "Stealth 5"
@@ -5421,7 +5425,7 @@
       "ID": 637,
       "Name": "Moonglade Raiment"
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -5441,7 +5445,7 @@
       "ID": 650,
       "Name": "Beast Lord Armor"
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 2
     },
@@ -5470,7 +5474,7 @@
       "ID": 653,
       "Name": "Bold Armor"
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 2
     },
@@ -5492,7 +5496,7 @@
       "Intellect": 20,
       "AttackPower": 30
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 2
     },
@@ -5511,7 +5515,7 @@
     "Quality": "RARE",
     "InventoryType": "RELIC",
     "Stats": {},
-    "Spells": [
+    "Auras": [
       {
         "ID": 34258,
         "Name": "Justice"
@@ -5531,7 +5535,7 @@
       "Stamina": 27,
       "Crit": 11
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 2
     },
@@ -5559,7 +5563,7 @@
       "ManaPer5": 5,
       "AttackPower": 46
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -5573,7 +5577,7 @@
       "Agility": 19,
       "Stamina": 19
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -5591,7 +5595,7 @@
       "ID": 661,
       "Name": "Doomplate Battlegear"
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 3
     },
@@ -5620,7 +5624,7 @@
       "Crit": 16,
       "ManaPer5": 10
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -5640,7 +5644,7 @@
       "ID": 620,
       "Name": "Assassination Armor"
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -5655,7 +5659,7 @@
       "Stamina": 25,
       "AttackPower": 60
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 2
     },
@@ -5683,7 +5687,7 @@
       "AttackPower": 50,
       "ManaPer5": 6
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -5698,7 +5702,7 @@
       "Stamina": 37,
       "Defense": 25
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 2
     },
@@ -5727,7 +5731,7 @@
       "ID": 660,
       "Name": "Desolation Battlegear"
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 2
     },
@@ -5752,7 +5756,7 @@
       "ID": 659,
       "Name": "Wastewalker Armor"
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 2
     },
@@ -5774,7 +5778,7 @@
       "Crit": 18,
       "AttackPower": 58
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -5789,7 +5793,7 @@
       "Crit": 32,
       "AttackPower": 46
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 2
     },
@@ -5813,7 +5817,7 @@
       "Crit": 18,
       "AttackPower": 38
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -5827,7 +5831,7 @@
       "Stamina": 21,
       "Hit": 12
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -5843,7 +5847,7 @@
       "Defense": 18,
       "Block": 12
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 2
     },
@@ -5864,7 +5868,7 @@
       "Stamina": 18,
       "AttackPower": 40
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -5887,7 +5891,7 @@
       "ID": 637,
       "Name": "Moonglade Raiment"
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 2
     },
@@ -5910,7 +5914,8 @@
       "Agility": 12,
       "Stamina": 22
     },
-    "Spells": [],
+    "Auras": [],
+    "UniqueEquipped": true,
     "Phase": 1
   },
   {
@@ -5926,7 +5931,7 @@
       "Intellect": 20,
       "AttackPower": 44
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -5942,7 +5947,7 @@
       "Stamina": 22,
       "Intellect": 13
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 2
     },
@@ -5963,7 +5968,7 @@
       "Stamina": 16,
       "AttackPower": 50
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 2
     },
@@ -5987,7 +5992,8 @@
       "Crit": 21,
       "AttackPower": 24
     },
-    "Spells": [],
+    "Auras": [],
+    "UniqueEquipped": true,
     "Phase": 1
   },
   {
@@ -6001,7 +6007,7 @@
       "Intellect": 14,
       "Crit": 21
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -6016,7 +6022,7 @@
       "Crit": 20,
       "AttackPower": 38
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -6035,7 +6041,7 @@
       "ID": 661,
       "Name": "Doomplate Battlegear"
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 2
     },
@@ -6058,7 +6064,7 @@
       "AttackPower": 56,
       "ManaPer5": 7
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 2
     },
@@ -6089,7 +6095,7 @@
       "ID": 620,
       "Name": "Assassination Armor"
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 3
     },
@@ -6113,7 +6119,7 @@
       "Hit": 13,
       "AttackPower": 36
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -6133,7 +6139,7 @@
       "ID": 659,
       "Name": "Wastewalker Armor"
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 2
     },
@@ -6162,7 +6168,7 @@
       "ID": 650,
       "Name": "Beast Lord Armor"
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 3
     },
@@ -6190,7 +6196,7 @@
       "ID": 653,
       "Name": "Bold Armor"
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 3
     },
@@ -6211,7 +6217,7 @@
       "Stamina": 27,
       "Defense": 19
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 3
     },
@@ -6234,7 +6240,7 @@
       "AttackPower": 70,
       "ManaPer5": 3
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -6250,7 +6256,7 @@
       "Crit": 21,
       "AttackPower": 48
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -6266,7 +6272,7 @@
       "Crit": 21,
       "AttackPower": 52
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -6286,7 +6292,7 @@
       "ID": 659,
       "Name": "Wastewalker Armor"
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 2
     },
@@ -6311,7 +6317,7 @@
       "Intellect": 20,
       "Crit": 19
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -6327,7 +6333,7 @@
       "Defense": 20,
       "Parry": 15
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 2
     },
@@ -6349,7 +6355,7 @@
       "AttackPower": 48,
       "ManaPer5": 5
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -6365,7 +6371,7 @@
       "Crit": 19,
       "AttackPower": 64
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -6385,7 +6391,7 @@
       "ID": 661,
       "Name": "Doomplate Battlegear"
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -6408,7 +6414,7 @@
       "ID": 637,
       "Name": "Moonglade Raiment"
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -6429,7 +6435,7 @@
       "ID": 650,
       "Name": "Beast Lord Armor"
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -6445,7 +6451,7 @@
       "Hit": 17,
       "AttackPower": 36
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -6459,7 +6465,8 @@
       "Stamina": 24,
       "Hit": 15
     },
-    "Spells": [],
+    "Auras": [],
+    "UniqueEquipped": true,
     "Phase": 1
   },
   {
@@ -6475,7 +6482,7 @@
       "Hit": 16,
       "Crit": 26
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -6495,7 +6502,7 @@
       "ID": 620,
       "Name": "Assassination Armor"
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -6511,7 +6518,7 @@
       "Hit": 17,
       "AttackPower": 40
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -6526,7 +6533,8 @@
       "Hit": 13,
       "AttackPower": 30
     },
-    "Spells": [],
+    "Auras": [],
+    "UniqueEquipped": true,
     "Phase": 1
   },
   {
@@ -6547,7 +6555,7 @@
       "ID": 660,
       "Name": "Desolation Battlegear"
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -6563,7 +6571,7 @@
       "Hit": 15,
       "AttackPower": 58
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -6583,7 +6591,7 @@
       "ID": 653,
       "Name": "Bold Armor"
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -6598,7 +6606,7 @@
       "Stamina": 25,
       "Crit": 20
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 2
     },
@@ -6622,7 +6630,7 @@
       "Crit": 18,
       "AttackPower": 34
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 2
     },
@@ -6643,7 +6651,7 @@
       "Stamina": 18,
       "Defense": 12
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 3
     },
@@ -6664,7 +6672,7 @@
       "AttackPower": 36,
       "ManaPer5": 4
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 2
     },
@@ -6685,7 +6693,7 @@
       "Agility": 21,
       "Stamina": 22
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 2
     },
@@ -6706,7 +6714,7 @@
       "Dodge": 27,
       "AttackPower": 36
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 2
     },
@@ -6730,7 +6738,7 @@
       "Stamina": 37,
       "Defense": 33
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 2
     },
@@ -6756,7 +6764,7 @@
       "AttackPower": 34,
       "ManaPer5": 7
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 2
     },
@@ -6781,7 +6789,7 @@
       "Hit": 14,
       "AttackPower": 66
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 3
     },
@@ -6807,7 +6815,7 @@
       "ID": 660,
       "Name": "Desolation Battlegear"
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 3
     },
@@ -6835,7 +6843,7 @@
       "ID": 620,
       "Name": "Assassination Armor"
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 2
     },
@@ -6864,7 +6872,7 @@
       "ID": 653,
       "Name": "Bold Armor"
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 2
     },
@@ -6889,7 +6897,7 @@
       "Resilience": 31,
       "AttackPower": 52
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -6903,7 +6911,7 @@
       "Strength": 40,
       "Stamina": 28
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -6920,7 +6928,7 @@
       "Hit": 19,
       "AttackPower": 30
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -6936,7 +6944,7 @@
       "AttackPower": 56,
       "ManaPer5": 5
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 4
     },
@@ -6968,7 +6976,7 @@
       "ID": 659,
       "Name": "Wastewalker Armor"
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 4
     },
@@ -6992,7 +7000,7 @@
       "ID": 661,
       "Name": "Doomplate Battlegear"
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 2
     },
@@ -7022,7 +7030,7 @@
       "ID": 650,
       "Name": "Beast Lord Armor"
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 2
     },
@@ -7049,7 +7057,7 @@
       "Agility": 18,
       "Stamina": 19
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -7065,7 +7073,7 @@
       "Defense": 25,
       "Block": 23
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -7084,7 +7092,7 @@
       "ID": 659,
       "Name": "Wastewalker Armor"
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 3
     },
@@ -7116,7 +7124,7 @@
       "ID": 650,
       "Name": "Beast Lord Armor"
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 2
     },
@@ -7137,12 +7145,12 @@
     "Stats": {
       "AttackPower": 64
     },
-    "Spells": [
-      {
-        "ID": 33807,
-        "Name": "Haste"
-      }
-    ],
+    "OnUseSpell": {
+      "ID": 33807,
+      "Name": "Haste"
+    },
+    "Auras": [],
+    "UniqueEquipped": true,
     "Phase": 1
   },
   {
@@ -7152,7 +7160,7 @@
     "Quality": "RARE",
     "InventoryType": "RELIC",
     "Stats": {},
-    "Spells": [
+    "Auras": [
       {
         "ID": 34231,
         "Name": "Increased Holy Light Healing"
@@ -7173,7 +7181,7 @@
       "Crit": 21,
       "AttackPower": 48
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -7187,7 +7195,7 @@
       "Strength": 34,
       "Stamina": 30
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 3
     },
@@ -7210,7 +7218,8 @@
       "Crit": 20,
       "AttackPower": 40
     },
-    "Spells": [],
+    "Auras": [],
+    "UniqueEquipped": true,
     "Phase": 1
   },
   {
@@ -7225,7 +7234,7 @@
       "Stamina": 25,
       "Crit": 21
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -7240,7 +7249,7 @@
       "Stamina": 29,
       "Intellect": 28
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 2
     },
@@ -7267,7 +7276,7 @@
       "Crit": 19,
       "AttackPower": 40
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 2
     },
@@ -7290,7 +7299,7 @@
       "Stamina": 15,
       "AttackPower": 30
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -7306,7 +7315,7 @@
       "Intellect": 20,
       "AttackPower": 50
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -7323,7 +7332,7 @@
       "Hit": 14,
       "AttackPower": 56
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -7346,7 +7355,7 @@
       "ID": 637,
       "Name": "Moonglade Raiment"
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 4
     },
@@ -7375,7 +7384,7 @@
       "ID": 653,
       "Name": "Bold Armor"
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 4
     },
@@ -7394,7 +7403,7 @@
     "Quality": "EPIC",
     "InventoryType": "RELIC",
     "Stats": {},
-    "Spells": [
+    "Auras": [
       {
         "ID": 34139,
         "Name": "Libram of Justice"
@@ -7414,7 +7423,7 @@
       "Stamina": 19,
       "Crit": 21
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -7429,7 +7438,7 @@
       "Stamina": 29,
       "Crit": 18
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -7445,7 +7454,7 @@
       "Crit": 21,
       "AttackPower": 50
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -7461,7 +7470,7 @@
       "Defense": 18,
       "Block": 39
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -7476,7 +7485,7 @@
       "Stamina": 20,
       "AttackPower": 38
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 2
     },
@@ -7502,7 +7511,7 @@
       "ID": 660,
       "Name": "Desolation Battlegear"
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 3
     },
@@ -7533,7 +7542,7 @@
       "ID": 661,
       "Name": "Doomplate Battlegear"
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 2
     },
@@ -7564,7 +7573,7 @@
       "ID": 620,
       "Name": "Assassination Armor"
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 3
     },
@@ -7586,7 +7595,7 @@
       "Intellect": 17,
       "AttackPower": 44
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -7601,7 +7610,7 @@
       "Stamina": 22,
       "AttackPower": 42
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 2
     },
@@ -7625,7 +7634,7 @@
       "Hit": 17,
       "AttackPower": 42
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -7640,7 +7649,7 @@
       "Crit": 22,
       "AttackPower": 50
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -7657,7 +7666,7 @@
       "AttackPower": 52,
       "ManaPer5": 4
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 4
     },
@@ -7681,7 +7690,7 @@
       "Stamina": 31,
       "Hit": 16
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -7697,7 +7706,7 @@
       "Hit": 13,
       "AttackPower": 44
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 2
     },
@@ -7722,7 +7731,7 @@
       "Defense": 24,
       "Block": 20
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 2
     },
@@ -7745,7 +7754,7 @@
       "AttackPower": 46,
       "ManaPer5": 8
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -7755,7 +7764,7 @@
     "Quality": "EPIC",
     "InventoryType": "RELIC",
     "Stats": {},
-    "Spells": [
+    "Auras": [
       {
         "ID": 38320,
         "Name": "Increased Blessing of Light Healing"
@@ -7775,7 +7784,7 @@
       "Stamina": 48,
       "Defense": 34
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 2
     },
@@ -7801,7 +7810,7 @@
       "AttackPower": 80,
       "ManaPer5": 8
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -7817,7 +7826,7 @@
       "Hit": 22,
       "AttackPower": 90
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -7832,7 +7841,7 @@
       "Agility": 20,
       "Stamina": 28
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 2
     },
@@ -7857,7 +7866,7 @@
       "Crit": 16,
       "AttackPower": 58
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 3
     },
@@ -7879,7 +7888,7 @@
       "Defense": 27,
       "Dodge": 29
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 2
     },
@@ -7906,7 +7915,7 @@
       "Hit": 18,
       "AttackPower": 40
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -7924,7 +7933,7 @@
       "AttackPower": 48,
       "ManaPer5": 6
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -7939,7 +7948,7 @@
       "Crit": 24,
       "AttackPower": 82
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -7956,7 +7965,7 @@
       "AttackPower": 62,
       "ManaPer5": 9
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -7972,7 +7981,7 @@
       "Hit": 17,
       "AttackPower": 34
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -7986,7 +7995,7 @@
       "Stamina": 33,
       "AttackPower": 46
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -8007,7 +8016,7 @@
       "ID": 607,
       "Name": "Grand Marshal\u0027s Vindication"
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 2
     },
@@ -8040,7 +8049,7 @@
       "ID": 607,
       "Name": "Grand Marshal\u0027s Vindication"
     },
-    "Spells": [
+    "Auras": [
       {
         "ID": 23300,
         "Name": "Seal of the Crusader Judgement Increase"
@@ -8066,7 +8075,7 @@
       "ID": 607,
       "Name": "Grand Marshal\u0027s Vindication"
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 1
     },
@@ -8093,7 +8102,7 @@
       "ID": 607,
       "Name": "Grand Marshal\u0027s Vindication"
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -8114,7 +8123,7 @@
       "ID": 607,
       "Name": "Grand Marshal\u0027s Vindication"
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 2
     },
@@ -8134,7 +8143,7 @@
       "Stamina": 24,
       "Crit": 22
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -8150,7 +8159,7 @@
       "Hit": 24,
       "AttackPower": 100
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -8167,7 +8176,7 @@
       "AttackPower": 56,
       "ManaPer5": 8
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 2
     },
@@ -8195,7 +8204,7 @@
       "Hit": 28,
       "AttackPower": 64
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 2
     },
@@ -8219,7 +8228,7 @@
       "Stamina": 43,
       "Defense": 23
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 2
     },
@@ -8239,7 +8248,7 @@
       "Agility": 22,
       "Stamina": 22
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -8256,7 +8265,7 @@
       "Hit": 17,
       "AttackPower": 34
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 2
     },
@@ -8281,7 +8290,7 @@
       "Defense": 23,
       "Parry": 21
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 2
     },
@@ -8302,7 +8311,7 @@
       "Stamina": 37,
       "AttackPower": 58
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 2
     },
@@ -8327,7 +8336,7 @@
       "Crit": 21,
       "AttackPower": 58
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 3
     },
@@ -8357,7 +8366,7 @@
       "ID": 608,
       "Name": "High Warlord\u0027s Vindication"
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 2
     },
@@ -8390,7 +8399,7 @@
       "ID": 608,
       "Name": "High Warlord\u0027s Vindication"
     },
-    "Spells": [
+    "Auras": [
       {
         "ID": 23300,
         "Name": "Seal of the Crusader Judgement Increase"
@@ -8416,7 +8425,7 @@
       "ID": 608,
       "Name": "High Warlord\u0027s Vindication"
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 1
     },
@@ -8443,7 +8452,7 @@
       "ID": 608,
       "Name": "High Warlord\u0027s Vindication"
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -8464,7 +8473,7 @@
       "ID": 608,
       "Name": "High Warlord\u0027s Vindication"
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 2
     },
@@ -8485,7 +8494,7 @@
       "Stamina": 49,
       "AttackPower": 66
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -8499,7 +8508,7 @@
       "Stamina": 27,
       "AttackPower": 38
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -8514,7 +8523,7 @@
       "Hit": 26,
       "AttackPower": 92
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -8529,7 +8538,7 @@
       "Intellect": 25,
       "AttackPower": 50
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 2
     },
@@ -8556,7 +8565,7 @@
       "Intellect": 25,
       "AttackPower": 50
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 2
     },
@@ -8583,7 +8592,7 @@
       "Hit": 15,
       "AttackPower": 70
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -8598,7 +8607,7 @@
       "Hit": 15,
       "AttackPower": 70
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -8613,7 +8622,7 @@
       "Intellect": 15,
       "AttackPower": 70
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -8627,7 +8636,7 @@
       "Hit": 18,
       "AttackPower": 42
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -8641,7 +8650,7 @@
       "Dodge": 21,
       "AttackPower": 36
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -8656,7 +8665,7 @@
       "Crit": 30,
       "AttackPower": 66
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -8670,7 +8679,7 @@
       "Hit": 21,
       "AttackPower": 38
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -8691,7 +8700,7 @@
       "ID": 616,
       "Name": "Netherscale Armor"
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 4
     },
@@ -8719,7 +8728,7 @@
       "ID": 619,
       "Name": "Primal Intent"
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -8738,7 +8747,7 @@
       "ID": 619,
       "Name": "Primal Intent"
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -8753,7 +8762,7 @@
       "ManaPer5": 15,
       "AttackPower": 42
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -8769,7 +8778,7 @@
       "Expertise": 15,
       "AttackPower": 60
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -8784,7 +8793,7 @@
       "Agility": 28,
       "Stamina": 33
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -8799,7 +8808,7 @@
       "Stamina": 22,
       "Crit": 27
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -8812,7 +8821,7 @@
       "Crit": 17,
       "AttackPower": 54
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -8827,7 +8836,7 @@
       "Crit": 33,
       "AttackPower": 66
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -8842,7 +8851,7 @@
       "Agility": 32,
       "Hit": 24
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -8858,7 +8867,7 @@
       "Crit": 21,
       "AttackPower": 50
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -8874,7 +8883,7 @@
       "Hit": 15,
       "AttackPower": 44
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -8887,7 +8896,7 @@
       "Resilience": 24,
       "AttackPower": 46
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -8902,7 +8911,7 @@
       "Stamina": 22,
       "Crit": 20
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -8916,7 +8925,7 @@
       "Crit": 12,
       "AttackPower": 60
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -8930,12 +8939,11 @@
       "Agility": 15,
       "AttackPower": 52
     },
-    "Spells": [
-      {
-        "ID": 12438,
-        "Name": "Slow Fall"
-      }
-    ],
+    "OnUseSpell": {
+      "ID": 12438,
+      "Name": "Slow Fall"
+    },
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -8945,16 +8953,17 @@
     "Quality": "RARE",
     "InventoryType": "TRINKET",
     "Stats": {},
-    "Spells": [
-      {
-        "ID": 40724,
-        "Name": "Valor"
-      },
+    "OnUseSpell": {
+      "ID": 40724,
+      "Name": "Valor"
+    },
+    "Auras": [
       {
         "ID": 40723,
         "Name": "Weapon Damage"
       }
     ],
+    "UniqueEquipped": true,
     "Phase": 1
   },
   {
@@ -8969,7 +8978,7 @@
       "Stamina": 15,
       "Haste": 26
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -8984,7 +8993,7 @@
       "Agility": 17,
       "Stamina": 22
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 2
     },
@@ -9013,7 +9022,7 @@
       "ID": 566,
       "Name": "Burning Rage"
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 3
     },
@@ -9032,7 +9041,7 @@
     "Quality": "EPIC",
     "InventoryType": "RELIC",
     "Stats": {},
-    "Spells": [
+    "Auras": [
       {
         "ID": 43850,
         "Name": "Libram of Fortitude"
@@ -9047,7 +9056,7 @@
     "Quality": "EPIC",
     "InventoryType": "RELIC",
     "Stats": {},
-    "Spells": [
+    "Auras": [
       {
         "ID": 43854,
         "Name": "Libram of Vengeance"
@@ -9064,7 +9073,7 @@
     "Stats": {
       "Expertise": 44
     },
-    "Spells": [
+    "Auras": [
       {
         "ID": 45354,
         "Name": "Item - Sunwell Dungeon Melee Trinket"
@@ -9084,7 +9093,7 @@
       "Stamina": 33,
       "Haste": 21
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 3
     },
@@ -9107,7 +9116,7 @@
       "Stamina": 19,
       "AttackPower": 64
     },
-    "Spells": [
+    "Auras": [
       {
         "ID": 45482,
         "Name": "Sunwell Exalted Melee Neck"
@@ -9126,7 +9135,7 @@
       "Hit": 13,
       "Expertise": 18
     },
-    "Spells": [
+    "Auras": [
       {
         "ID": 45483,
         "Name": "Sunwell Exalted Tank Neck"
@@ -9148,7 +9157,7 @@
       "AttackPower": 32,
       "ArmorPenetration": 70
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 4
     },
@@ -9167,7 +9176,7 @@
       "Haste": 18,
       "AttackPower": 66
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 2
     },
@@ -9193,7 +9202,8 @@
       "Stamina": 35,
       "Expertise": 17
     },
-    "Spells": [],
+    "Auras": [],
+    "UniqueEquipped": true,
     "Phase": 5
   },
   {
@@ -9209,7 +9219,7 @@
       "Haste": 18,
       "AttackPower": 38
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 5
   },
   {
@@ -9221,7 +9231,8 @@
     "Stats": {
       "AttackPower": 40
     },
-    "Spells": [],
+    "Auras": [],
+    "UniqueEquipped": true,
     "Phase": 1
   },
   {
@@ -9236,7 +9247,7 @@
       "Stamina": 15,
       "Crit": 18
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 3
     },
@@ -9256,7 +9267,8 @@
       "Haste": 18,
       "AttackPower": 40
     },
-    "Spells": [],
+    "Auras": [],
+    "UniqueEquipped": true,
     "Phase": 5
   },
   {
@@ -9277,7 +9289,7 @@
       "ID": 752,
       "Name": "Crusader\u0027s Scaled Battlegear"
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 2
     },
@@ -9310,7 +9322,7 @@
       "ID": 752,
       "Name": "Crusader\u0027s Scaled Battlegear"
     },
-    "Spells": [
+    "Auras": [
       {
         "ID": 23300,
         "Name": "Seal of the Crusader Judgement Increase"
@@ -9336,7 +9348,7 @@
       "ID": 752,
       "Name": "Crusader\u0027s Scaled Battlegear"
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 1
     },
@@ -9363,7 +9375,7 @@
       "ID": 752,
       "Name": "Crusader\u0027s Scaled Battlegear"
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -9384,7 +9396,7 @@
       "ID": 752,
       "Name": "Crusader\u0027s Scaled Battlegear"
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 2
     },
@@ -9411,7 +9423,7 @@
       "ID": 752,
       "Name": "Crusader\u0027s Scaled Battlegear"
     },
-    "Spells": [
+    "Auras": [
       {
         "ID": 23300,
         "Name": "Seal of the Crusader Judgement Increase"
@@ -9430,7 +9442,8 @@
       "Stamina": 18,
       "Crit": 18
     },
-    "Spells": [],
+    "Auras": [],
+    "UniqueEquipped": true,
     "Phase": 1
   },
   {
@@ -9450,7 +9463,7 @@
       "ID": 626,
       "Name": "Justicar Battlegear"
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 2
     },
@@ -9482,7 +9495,7 @@
       "ID": 626,
       "Name": "Justicar Battlegear"
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -9502,7 +9515,7 @@
       "ID": 626,
       "Name": "Justicar Battlegear"
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 2
     },
@@ -9532,7 +9545,7 @@
       "ID": 626,
       "Name": "Justicar Battlegear"
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -9553,7 +9566,7 @@
       "ID": 626,
       "Name": "Justicar Battlegear"
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 3
     },
@@ -9576,7 +9589,7 @@
       "Hit": 24,
       "AttackPower": 52
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -9597,7 +9610,7 @@
       "ID": 616,
       "Name": "Netherscale Armor"
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 4
     },
@@ -9629,7 +9642,7 @@
       "ID": 619,
       "Name": "Primal Intent"
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -9643,7 +9656,7 @@
       "Crit": 30,
       "AttackPower": 60
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -9658,7 +9671,7 @@
       "Crit": 25,
       "AttackPower": 96
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 2
     },
@@ -9684,7 +9697,7 @@
       "Crit": 19,
       "AttackPower": 62
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -9699,7 +9712,7 @@
       "Hit": 16,
       "AttackPower": 76
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 2
     },
@@ -9726,7 +9739,7 @@
       "Hit": 13,
       "Crit": 22
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 3
     },
@@ -9750,7 +9763,7 @@
       "Stamina": 25,
       "Crit": 24
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 4
     },
@@ -9777,7 +9790,7 @@
       "ID": 583,
       "Name": "Gladiator\u0027s Vindication"
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 2
     },
@@ -9810,7 +9823,7 @@
       "ID": 583,
       "Name": "Gladiator\u0027s Vindication"
     },
-    "Spells": [
+    "Auras": [
       {
         "ID": 23300,
         "Name": "Seal of the Crusader Judgement Increase"
@@ -9836,7 +9849,7 @@
       "ID": 583,
       "Name": "Gladiator\u0027s Vindication"
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 1
     },
@@ -9863,7 +9876,7 @@
       "ID": 583,
       "Name": "Gladiator\u0027s Vindication"
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -9884,7 +9897,7 @@
       "ID": 583,
       "Name": "Gladiator\u0027s Vindication"
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 2
     },
@@ -9906,7 +9919,7 @@
       "Resilience": 19,
       "AttackPower": 38
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -9922,7 +9935,7 @@
       "Resilience": 19,
       "AttackPower": 38
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 53
   },
   {
@@ -9938,7 +9951,7 @@
       "Crit": 27,
       "Resilience": 27
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -9954,7 +9967,7 @@
       "Crit": 27,
       "Resilience": 27
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -9971,7 +9984,7 @@
       "Crit": 16,
       "Resilience": 16
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -9988,7 +10001,7 @@
       "Crit": 16,
       "Resilience": 16
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -10004,7 +10017,7 @@
       "Crit": 27,
       "Resilience": 27
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -10020,7 +10033,7 @@
       "Crit": 27,
       "Resilience": 27
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -10037,7 +10050,7 @@
       "Crit": 16,
       "Resilience": 16
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -10054,7 +10067,7 @@
       "Crit": 16,
       "Resilience": 16
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -10070,7 +10083,7 @@
       "Crit": 27,
       "Resilience": 27
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -10085,7 +10098,7 @@
       "Crit": 23,
       "AttackPower": 44
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -10099,7 +10112,7 @@
       "Stamina": 36,
       "AttackPower": 70
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -10114,7 +10127,7 @@
       "Agility": 43,
       "Stamina": 49
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -10129,7 +10142,7 @@
       "Crit": 26,
       "AttackPower": 72
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 4
     },
@@ -10153,7 +10166,7 @@
       "Crit": 24,
       "AttackPower": 56
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -10170,7 +10183,7 @@
       "AttackPower": 44,
       "ManaPer5": 8
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 4
     },
@@ -10194,7 +10207,7 @@
       "Stamina": 30,
       "Crit": 28
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 2
     },
@@ -10217,7 +10230,7 @@
       "Stamina": 27,
       "AttackPower": 54
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -10232,7 +10245,7 @@
       "Stamina": 16,
       "Crit": 24
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 4
     },
@@ -10257,7 +10270,7 @@
       "Crit": 42,
       "AttackPower": 84
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -10273,7 +10286,7 @@
       "Crit": 42,
       "AttackPower": 86
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -10288,7 +10301,7 @@
       "Stamina": 34,
       "Crit": 23
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 4
     },
@@ -10313,7 +10326,7 @@
       "Intellect": 27,
       "AttackPower": 48
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 2
     },
@@ -10337,7 +10350,7 @@
       "Crit": 25,
       "AttackPower": 72
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 4
     },
@@ -10358,7 +10371,7 @@
     "Stats": {
       "AttackPower": 40
     },
-    "Spells": [
+    "Auras": [
       {
         "ID": 34774,
         "Name": "Magtheridon Melee Trinket"
@@ -10379,7 +10392,7 @@
       "Hit": 23,
       "AttackPower": 62
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 5
   },
   {
@@ -10396,7 +10409,7 @@
       "Crit": 23,
       "AttackPower": 88
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 5
   },
   {
@@ -10412,7 +10425,7 @@
       "Hit": 18,
       "Crit": 30
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 2
     },
@@ -10436,12 +10449,11 @@
     "Stats": {
       "AttackPower": 84
     },
-    "Spells": [
-      {
-        "ID": 46782,
-        "Name": "Khorium Boar"
-      }
-    ],
+    "OnUseSpell": {
+      "ID": 46782,
+      "Name": "Khorium Boar"
+    },
+    "Auras": [],
     "Phase": 5
   },
   {
@@ -10453,14 +10465,14 @@
     "Stats": {
       "AttackPower": 80
     },
-    "Spells": [
+    "OnUseSpell": {
+      "ID": 46784,
+      "Name": "Shadowsong Panther"
+    },
+    "Auras": [
       {
         "ID": 17746,
         "Name": "Stealth 5"
-      },
-      {
-        "ID": 46784,
-        "Name": "Shadowsong Panther"
       }
     ],
     "Phase": 5
@@ -10478,7 +10490,7 @@
       "Crit": 17,
       "Resilience": 17
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 3
     },
@@ -10498,7 +10510,7 @@
       "Crit": 8,
       "Resilience": 9
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 3
     },
@@ -10518,12 +10530,11 @@
       "AttackPower": 68,
       "ManaPer5": 9
     },
-    "Spells": [
-      {
-        "ID": 34518,
-        "Name": "Nether Protection"
-      }
-    ],
+    "OnUseSpell": {
+      "ID": 34518,
+      "Name": "Nether Protection"
+    },
+    "Auras": [],
     "Socket1": {
       "Type": 2
     },
@@ -10551,12 +10562,11 @@
       "Hit": 23,
       "Crit": 37
     },
-    "Spells": [
-      {
-        "ID": 34511,
-        "Name": "Valor"
-      }
-    ],
+    "OnUseSpell": {
+      "ID": 34511,
+      "Name": "Valor"
+    },
+    "Auras": [],
     "Socket1": {
       "Type": 4
     },
@@ -10584,7 +10594,11 @@
       "Hit": 13,
       "Crit": 38
     },
-    "Spells": [
+    "OnUseSpell": {
+      "ID": 12883,
+      "Name": "Longsight"
+    },
+    "Auras": [
       {
         "ID": 30645,
         "Name": "Gas Cloud Tracking"
@@ -10592,10 +10606,6 @@
       {
         "ID": 40273,
         "Name": "Stealth Detection"
-      },
-      {
-        "ID": 12883,
-        "Name": "Longsight"
       }
     ],
     "Socket1": {
@@ -10622,7 +10632,11 @@
       "Crit": 38,
       "AttackPower": 96
     },
-    "Spells": [
+    "OnUseSpell": {
+      "ID": 12883,
+      "Name": "Longsight"
+    },
+    "Auras": [
       {
         "ID": 30645,
         "Name": "Gas Cloud Tracking"
@@ -10630,10 +10644,6 @@
       {
         "ID": 40273,
         "Name": "Stealth Detection"
-      },
-      {
-        "ID": 12883,
-        "Name": "Longsight"
       }
     ],
     "Socket1": {
@@ -10660,7 +10670,11 @@
       "Hit": 11,
       "AttackPower": 76
     },
-    "Spells": [
+    "OnUseSpell": {
+      "ID": 12883,
+      "Name": "Longsight"
+    },
+    "Auras": [
       {
         "ID": 30645,
         "Name": "Gas Cloud Tracking"
@@ -10668,10 +10682,6 @@
       {
         "ID": 40273,
         "Name": "Stealth Detection"
-      },
-      {
-        "ID": 12883,
-        "Name": "Longsight"
       }
     ],
     "Socket1": {
@@ -10696,7 +10706,7 @@
       "Stamina": 37,
       "AttackPower": 50
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 3
   },
   {
@@ -10712,7 +10722,7 @@
       "Expertise": 18,
       "AttackPower": 66
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 2
   },
   {
@@ -10727,7 +10737,7 @@
       "Stamina": 46,
       "Crit": 31
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 2
     },
@@ -10756,7 +10766,7 @@
       "AttackPower": 66,
       "ManaPer5": 4
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 4
     },
@@ -10780,7 +10790,7 @@
       "Stamina": 24,
       "AttackPower": 52
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 4
     },
@@ -10799,7 +10809,7 @@
       "Hit": 30,
       "Crit": 44
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 2
   },
   {
@@ -10815,7 +10825,7 @@
       "Intellect": 24,
       "AttackPower": 88
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 2
     },
@@ -10841,7 +10851,7 @@
       "Stamina": 24,
       "Crit": 23
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 2
   },
   {
@@ -10857,7 +10867,7 @@
       "Crit": 17,
       "AttackPower": 48
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 2
   },
   {
@@ -10873,7 +10883,7 @@
       "Hit": 14,
       "Crit": 24
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 4
     },
@@ -10898,7 +10908,7 @@
       "Crit": 32,
       "AttackPower": 66
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 2
   },
   {
@@ -10914,7 +10924,7 @@
       "Hit": 18,
       "AttackPower": 66
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 4
     },
@@ -10940,7 +10950,7 @@
       "Intellect": 13,
       "Hit": 14
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 2
   },
   {
@@ -10956,7 +10966,7 @@
       "Stamina": 38,
       "Intellect": 12
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 2
     },
@@ -10982,7 +10992,7 @@
       "Crit": 19,
       "AttackPower": 58
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 2
   },
   {
@@ -10999,7 +11009,7 @@
       "Crit": 17,
       "AttackPower": 66
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 4
     },
@@ -11023,7 +11033,7 @@
       "Hit": 19,
       "AttackPower": 50
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 2
   },
   {
@@ -11038,7 +11048,7 @@
       "Stamina": 21,
       "Crit": 29
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 2
     },
@@ -11064,7 +11074,7 @@
       "Crit": 14,
       "AttackPower": 88
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 4
     },
@@ -11093,7 +11103,7 @@
       "Expertise": 10,
       "AttackPower": 60
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 2
     },
@@ -11115,7 +11125,7 @@
       "Hit": 17,
       "Crit": 24
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 4
     },
@@ -11135,7 +11145,7 @@
       "Crit": 23,
       "AttackPower": 64
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 2
   },
   {
@@ -11150,7 +11160,7 @@
       "Stamina": 41,
       "AttackPower": 58
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 2
   },
   {
@@ -11164,7 +11174,7 @@
       "Agility": 21,
       "Stamina": 30
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 2
   },
   {
@@ -11174,7 +11184,7 @@
     "Quality": "EPIC",
     "InventoryType": "RELIC",
     "Stats": {},
-    "Spells": [
+    "Auras": [
       {
         "ID": 37739,
         "Name": "Reduced Holy Light Cost"
@@ -11195,7 +11205,7 @@
       "Intellect": 20,
       "Crit": 33
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 2
   },
   {
@@ -11210,7 +11220,7 @@
       "Stamina": 29,
       "Crit": 31
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 2
   },
   {
@@ -11226,7 +11236,7 @@
       "Crit": 33,
       "AttackPower": 64
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 2
   },
   {
@@ -11242,7 +11252,7 @@
       "Crit": 24,
       "AttackPower": 50
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 3
     },
@@ -11263,7 +11273,7 @@
       "Agility": 23,
       "Stamina": 22
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 2
   },
   {
@@ -11279,7 +11289,7 @@
       "Crit": 36,
       "AttackPower": 92
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 3
     },
@@ -11301,7 +11311,7 @@
       "Hit": 10,
       "Crit": 38
     },
-    "Spells": [
+    "Auras": [
       {
         "ID": 42083,
         "Name": "Fury of the Crashing Waves"
@@ -11318,12 +11328,11 @@
     "Stats": {
       "Defense": 42
     },
-    "Spells": [
-      {
-        "ID": 38351,
-        "Name": "Displacement"
-      }
-    ],
+    "OnUseSpell": {
+      "ID": 38351,
+      "Name": "Displacement"
+    },
+    "Auras": [],
     "Phase": 2
   },
   {
@@ -11337,7 +11346,7 @@
       "Resilience": 25,
       "AttackPower": 50
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 2
   },
   {
@@ -11352,7 +11361,7 @@
       "Resilience": 22,
       "AttackPower": 42
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 2
   },
   {
@@ -11367,7 +11376,7 @@
       "Resilience": 18,
       "AttackPower": 42
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 3
     },
@@ -11389,7 +11398,7 @@
       "Hit": 20,
       "AttackPower": 58
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 3
     },
@@ -11415,7 +11424,7 @@
       "AttackPower": 58,
       "ArmorPenetration": 77
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 4
     },
@@ -11434,7 +11443,7 @@
       "Crit": 35,
       "ArmorPenetration": 161
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 4
   },
   {
@@ -11450,7 +11459,7 @@
       "Hit": 22,
       "AttackPower": 60
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 4
     },
@@ -11476,7 +11485,7 @@
       "AttackPower": 56,
       "ArmorPenetration": 70
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 4
   },
   {
@@ -11490,7 +11499,7 @@
       "Hit": 22,
       "Expertise": 21
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 4
   },
   {
@@ -11504,7 +11513,7 @@
       "Haste": 25,
       "AttackPower": 50
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 4
   },
   {
@@ -11520,7 +11529,7 @@
       "Hit": 16,
       "AttackPower": 68
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 4
   },
   {
@@ -11535,7 +11544,7 @@
       "Stamina": 37,
       "Crit": 29
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 2
     },
@@ -11561,7 +11570,7 @@
       "Haste": 30,
       "AttackPower": 78
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 4
   },
   {
@@ -11577,7 +11586,7 @@
       "AttackPower": 92,
       "ArmorPenetration": 210
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 4
   },
   {
@@ -11593,7 +11602,7 @@
       "Hit": 14,
       "ArmorPenetration": 154
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 2
     },
@@ -11618,7 +11627,7 @@
       "AttackPower": 68,
       "ArmorPenetration": 126
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 2
   },
   {
@@ -11633,7 +11642,7 @@
       "Stamina": 43,
       "Hit": 38
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 2
     },
@@ -11655,7 +11664,7 @@
     "Quality": "EPIC",
     "InventoryType": "RELIC",
     "Stats": {},
-    "Spells": [
+    "Auras": [
       {
         "ID": 43741,
         "Name": "Light\u0027s Grace"
@@ -11670,7 +11679,7 @@
     "Quality": "EPIC",
     "InventoryType": "RELIC",
     "Stats": {},
-    "Spells": [
+    "Auras": [
       {
         "ID": 43745,
         "Name": "Crusader\u0027s Command"
@@ -11685,7 +11694,7 @@
     "Quality": "EPIC",
     "InventoryType": "RELIC",
     "Stats": {},
-    "Spells": [
+    "Auras": [
       {
         "ID": 43743,
         "Name": "Improved Seal of Righteousness"
@@ -11705,7 +11714,7 @@
       "Stamina": 37,
       "Hit": 25
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 2
     },
@@ -11729,7 +11738,7 @@
       "Stamina": 32,
       "ArmorPenetration": 150
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 4
   },
   {
@@ -11745,7 +11754,7 @@
       "Hit": 23,
       "ArmorPenetration": 154
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 4
   },
   {
@@ -11760,7 +11769,7 @@
       "Defense": 23,
       "Expertise": 22
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 4
   },
   {
@@ -11777,7 +11786,7 @@
       "AttackPower": 90,
       "ArmorPenetration": 175
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 4
   },
   {
@@ -11794,7 +11803,7 @@
       "Hit": 19,
       "AttackPower": 58
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 3
     },
@@ -11817,7 +11826,7 @@
       "AttackPower": 50,
       "ArmorPenetration": 105
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 4
   },
   {
@@ -11833,7 +11842,7 @@
       "Haste": 30,
       "AttackPower": 92
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 3
   },
   {
@@ -11849,7 +11858,7 @@
       "Haste": 25,
       "AttackPower": 68
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 3
   },
   {
@@ -11865,7 +11874,7 @@
       "Crit": 18,
       "AttackPower": 50
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 3
     },
@@ -11888,7 +11897,7 @@
       "Intellect": 13,
       "ArmorPenetration": 150
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 3
   },
   {
@@ -11904,7 +11913,7 @@
       "Stamina": 31,
       "Intellect": 10
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 3
     },
@@ -11926,7 +11935,7 @@
       "Stamina": 28,
       "Intellect": 19
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 2
     },
@@ -11951,7 +11960,7 @@
       "Stamina": 30,
       "Hit": 18
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 4
     },
@@ -11976,7 +11985,7 @@
       "Haste": 25,
       "AttackPower": 46
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 4
   },
   {
@@ -11993,7 +12002,7 @@
       "AttackPower": 66,
       "ArmorPenetration": 105
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 4
   },
   {
@@ -12008,7 +12017,7 @@
       "Stamina": 51,
       "Hit": 33
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 2
     },
@@ -12032,12 +12041,11 @@
     "Stats": {
       "AttackPower": 80
     },
-    "Spells": [
-      {
-        "ID": 32604,
-        "Name": "Slayer\u0027s Crest"
-      }
-    ],
+    "OnUseSpell": {
+      "ID": 32604,
+      "Name": "Slayer\u0027s Crest"
+    },
+    "Auras": [],
     "Phase": 53
   },
   {
@@ -12051,7 +12059,7 @@
       "Hit": 25,
       "AttackPower": 56
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -12072,7 +12080,7 @@
       "ID": 629,
       "Name": "Crystalforge Battlegear"
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 2
     },
@@ -12104,7 +12112,7 @@
       "ID": 629,
       "Name": "Crystalforge Battlegear"
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 2
   },
   {
@@ -12124,7 +12132,7 @@
       "ID": 629,
       "Name": "Crystalforge Battlegear"
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 2
     },
@@ -12154,7 +12162,7 @@
       "ID": 629,
       "Name": "Crystalforge Battlegear"
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 3
     },
@@ -12180,7 +12188,7 @@
       "ID": 629,
       "Name": "Crystalforge Battlegear"
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 3
     },
@@ -12206,7 +12214,7 @@
       "AttackPower": 72,
       "ArmorPenetration": 140
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 2
     },
@@ -12231,7 +12239,7 @@
       "Hit": 24,
       "AttackPower": 82
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 2
     },
@@ -12252,12 +12260,11 @@
     "Stats": {
       "AttackPower": 90
     },
-    "Spells": [
-      {
-        "ID": 43716,
-        "Name": "Call of the Berserker"
-      }
-    ],
+    "OnUseSpell": {
+      "ID": 43716,
+      "Name": "Call of the Berserker"
+    },
+    "Auras": [],
     "Phase": 4
   },
   {
@@ -12269,12 +12276,11 @@
     "Stats": {
       "AttackPower": 80
     },
-    "Spells": [
-      {
-        "ID": 44055,
-        "Name": "Tremendous Fortitude"
-      }
-    ],
+    "OnUseSpell": {
+      "ID": 44055,
+      "Name": "Tremendous Fortitude"
+    },
+    "Auras": [],
     "Phase": 4
   },
   {
@@ -12286,12 +12292,11 @@
     "Stats": {
       "AttackPower": 80
     },
-    "Spells": [
-      {
-        "ID": 44055,
-        "Name": "Tremendous Fortitude"
-      }
-    ],
+    "OnUseSpell": {
+      "ID": 44055,
+      "Name": "Tremendous Fortitude"
+    },
+    "Auras": [],
     "Phase": 4
   },
   {
@@ -12305,7 +12310,7 @@
       "Stamina": 43,
       "AttackPower": 60
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 3
   },
   {
@@ -12321,7 +12326,7 @@
       "Intellect": 22,
       "Spirit": 22
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 5
   },
   {
@@ -12335,7 +12340,7 @@
       "Stamina": 40,
       "AttackPower": 56
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 3
   },
   {
@@ -12356,7 +12361,7 @@
       "ID": 583,
       "Name": "Gladiator\u0027s Vindication"
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 2
     },
@@ -12389,7 +12394,7 @@
       "ID": 583,
       "Name": "Gladiator\u0027s Vindication"
     },
-    "Spells": [
+    "Auras": [
       {
         "ID": 23300,
         "Name": "Seal of the Crusader Judgement Increase"
@@ -12415,7 +12420,7 @@
       "ID": 583,
       "Name": "Gladiator\u0027s Vindication"
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 1
     },
@@ -12442,7 +12447,7 @@
       "ID": 583,
       "Name": "Gladiator\u0027s Vindication"
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 2
   },
   {
@@ -12463,7 +12468,7 @@
       "ID": 583,
       "Name": "Gladiator\u0027s Vindication"
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 2
     },
@@ -12485,7 +12490,7 @@
       "Crit": 31,
       "Resilience": 30
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 2
   },
   {
@@ -12502,7 +12507,7 @@
       "Crit": 18,
       "Resilience": 18
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 2
   },
   {
@@ -12518,7 +12523,7 @@
       "Crit": 31,
       "Resilience": 30
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 2
   },
   {
@@ -12535,7 +12540,7 @@
       "Crit": 18,
       "Resilience": 18
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 2
   },
   {
@@ -12545,7 +12550,7 @@
     "Quality": "EPIC",
     "InventoryType": "RELIC",
     "Stats": {},
-    "Spells": [
+    "Auras": [
       {
         "ID": 42368,
         "Name": "Merciless Libram of Justice"
@@ -12567,7 +12572,7 @@
       "AttackPower": 46,
       "ArmorPenetration": 112
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 4
   },
   {
@@ -12577,7 +12582,7 @@
     "Quality": "EPIC",
     "InventoryType": "RELIC",
     "Stats": {},
-    "Spells": [
+    "Auras": [
       {
         "ID": 43851,
         "Name": "Merciless Libram of Fortitude"
@@ -12592,7 +12597,7 @@
     "Quality": "EPIC",
     "InventoryType": "RELIC",
     "Stats": {},
-    "Spells": [
+    "Auras": [
       {
         "ID": 43855,
         "Name": "Merciless Libram of Vengeance"
@@ -12612,7 +12617,7 @@
       "Stamina": 28,
       "AttackPower": 68
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 2
   },
   {
@@ -12628,7 +12633,7 @@
       "Crit": 37,
       "AttackPower": 92
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 2
   },
   {
@@ -12643,7 +12648,7 @@
       "Crit": 28,
       "AttackPower": 56
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 2
   },
   {
@@ -12657,7 +12662,7 @@
       "Stamina": 26,
       "AttackPower": 70
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 2
   },
   {
@@ -12673,7 +12678,7 @@
       "Stamina": 42,
       "Hit": 30
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 2
   },
   {
@@ -12689,7 +12694,7 @@
       "Intellect": 25,
       "AttackPower": 66
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 4
     },
@@ -12714,7 +12719,7 @@
       "Expertise": 25,
       "AttackPower": 74
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 2
     },
@@ -12738,7 +12743,7 @@
       "Stamina": 28,
       "Crit": 19
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 3
     },
@@ -12760,7 +12765,7 @@
       "Crit": 28,
       "AttackPower": 58
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 3
     },
@@ -12782,7 +12787,7 @@
       "Intellect": 24,
       "AttackPower": 48
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 4
     },
@@ -12804,7 +12809,7 @@
       "Hit": 23,
       "Crit": 32
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 3
   },
   {
@@ -12820,7 +12825,7 @@
       "Crit": 19,
       "AttackPower": 76
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 2
     },
@@ -12846,7 +12851,7 @@
       "Hit": 15,
       "AttackPower": 58
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 2
     },
@@ -12870,7 +12875,7 @@
       "Hit": 34,
       "AttackPower": 98
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 3
   },
   {
@@ -12885,7 +12890,7 @@
       "Stamina": 38,
       "AttackPower": 78
     },
-    "Spells": [
+    "Auras": [
       {
         "ID": 27206,
         "Name": "Increased Pet Damage \u002B3%"
@@ -12910,7 +12915,7 @@
       "AttackPower": 102,
       "ArmorPenetration": 175
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 3
   },
   {
@@ -12927,7 +12932,7 @@
       "Crit": 20,
       "AttackPower": 100
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 2
     },
@@ -12954,7 +12959,7 @@
       "Stamina": 37,
       "Haste": 38
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 3
   },
   {
@@ -12970,7 +12975,7 @@
       "Crit": 23,
       "AttackPower": 76
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 3
   },
   {
@@ -12987,7 +12992,7 @@
       "Haste": 36,
       "AttackPower": 76
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 3
   },
   {
@@ -13004,7 +13009,7 @@
       "Haste": 37,
       "AttackPower": 76
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 3
   },
   {
@@ -13021,7 +13026,7 @@
       "Crit": 19,
       "AttackPower": 58
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 3
   },
   {
@@ -13037,7 +13042,7 @@
       "Hit": 35,
       "AttackPower": 86
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 2
     },
@@ -13060,7 +13065,7 @@
       "Crit": 27,
       "AttackPower": 72
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 3
   },
   {
@@ -13076,7 +13081,7 @@
       "Crit": 26,
       "AttackPower": 76
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 3
   },
   {
@@ -13092,7 +13097,7 @@
       "Haste": 37,
       "AttackPower": 76
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 3
   },
   {
@@ -13107,7 +13112,7 @@
       "Hit": 19,
       "AttackPower": 58
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 3
   },
   {
@@ -13123,7 +13128,7 @@
       "Hit": 15,
       "ArmorPenetration": 175
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 2
     },
@@ -13148,7 +13153,7 @@
       "Expertise": 21,
       "Block": 36
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 3
   },
   {
@@ -13164,7 +13169,7 @@
       "Crit": 24,
       "AttackPower": 72
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 3
   },
   {
@@ -13180,7 +13185,7 @@
       "Hit": 12,
       "AttackPower": 58
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 3
     },
@@ -13202,7 +13207,7 @@
       "Intellect": 18,
       "AttackPower": 116
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 3
   },
   {
@@ -13216,7 +13221,7 @@
       "Stamina": 28,
       "Crit": 30
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 3
   },
   {
@@ -13232,7 +13237,7 @@
       "Crit": 35,
       "ArmorPenetration": 350
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 3
   },
   {
@@ -13248,7 +13253,7 @@
       "Hit": 18,
       "Crit": 30
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 3
     },
@@ -13274,7 +13279,7 @@
       "Crit": 24,
       "AttackPower": 76
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 3
   },
   {
@@ -13290,7 +13295,7 @@
       "Haste": 37,
       "AttackPower": 76
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 3
   },
   {
@@ -13306,7 +13311,7 @@
       "Hit": 30,
       "Crit": 44
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 3
   },
   {
@@ -13322,7 +13327,7 @@
       "Crit": 17,
       "AttackPower": 76
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 2
     },
@@ -13341,7 +13346,7 @@
     "Quality": "EPIC",
     "InventoryType": "RELIC",
     "Stats": {},
-    "Spells": [
+    "Auras": [
       {
         "ID": 41042,
         "Name": "Judgement Block Value"
@@ -13362,7 +13367,7 @@
       "Hit": 34,
       "Crit": 42
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 1
     },
@@ -13388,7 +13393,7 @@
       "Crit": 20,
       "AttackPower": 100
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 2
     },
@@ -13413,7 +13418,7 @@
       "Crit": 33,
       "AttackPower": 94
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 3
   },
   {
@@ -13426,7 +13431,7 @@
       "Hit": 20,
       "AttackPower": 84
     },
-    "Spells": [
+    "Auras": [
       {
         "ID": 40475,
         "Name": "Black Temple Melee Trinket"
@@ -13448,7 +13453,7 @@
       "Crit": 26,
       "AttackPower": 76
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 3
   },
   {
@@ -13463,7 +13468,7 @@
       "Stamina": 32,
       "Haste": 27
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 3
   },
   {
@@ -13479,7 +13484,7 @@
       "Hit": 19,
       "Haste": 35
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 3
   },
   {
@@ -13496,7 +13501,7 @@
       "Haste": 27,
       "AttackPower": 56
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 3
   },
   {
@@ -13513,7 +13518,7 @@
       "Haste": 37,
       "AttackPower": 74
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 3
   },
   {
@@ -13529,7 +13534,7 @@
       "Haste": 27,
       "AttackPower": 50
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 3
   },
   {
@@ -13545,7 +13550,7 @@
       "Haste": 38,
       "AttackPower": 74
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 3
   },
   {
@@ -13559,7 +13564,7 @@
       "AttackPower": 70,
       "ArmorPenetration": 175
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 3
   },
   {
@@ -13575,7 +13580,7 @@
       "Stamina": 47,
       "Intellect": 14
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 3
   },
   {
@@ -13591,7 +13596,7 @@
       "Intellect": 21,
       "Haste": 32
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 3
   },
   {
@@ -13607,7 +13612,7 @@
       "Hit": 18,
       "Haste": 38
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 3
   },
   {
@@ -13622,7 +13627,7 @@
       "AttackPower": 58,
       "ArmorPenetration": 126
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 4
   },
   {
@@ -13638,7 +13643,7 @@
       "Crit": 21,
       "Resilience": 17
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 3
     },
@@ -13661,7 +13666,7 @@
       "Crit": 15,
       "Resilience": 19
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 3
     },
@@ -13680,7 +13685,7 @@
       "AttackPower": 44,
       "ArmorPenetration": 56
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 4
   },
   {
@@ -13695,7 +13700,7 @@
       "Resilience": 18,
       "AttackPower": 50
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 3
     },
@@ -13716,7 +13721,7 @@
       "AttackPower": 58,
       "ArmorPenetration": 126
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 5
   },
   {
@@ -13733,7 +13738,7 @@
       "Intellect": 23,
       "Haste": 20
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 2
     },
@@ -13756,7 +13761,7 @@
       "Intellect": 20,
       "Haste": 17
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 2
     },
@@ -13782,7 +13787,7 @@
       "Intellect": 19,
       "Haste": 13
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 3
     },
@@ -13805,7 +13810,7 @@
       "Haste": 25,
       "AttackPower": 102
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 3
     },
@@ -13825,7 +13830,7 @@
       "Hit": 15,
       "AttackPower": 104
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 3
     },
@@ -13851,7 +13856,7 @@
       "Crit": 16,
       "AttackPower": 78
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 3
     },
@@ -13873,7 +13878,7 @@
       "Hit": 34,
       "AttackPower": 102
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 2
     },
@@ -13895,7 +13900,7 @@
       "Hit": 30,
       "AttackPower": 104
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 3
     },
@@ -13920,7 +13925,7 @@
       "Hit": 23,
       "AttackPower": 78
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 3
     },
@@ -13942,7 +13947,7 @@
       "Dodge": 35,
       "Expertise": 23
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 2
     },
@@ -13964,7 +13969,7 @@
       "Hit": 23,
       "Expertise": 22
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 2
     },
@@ -13985,7 +13990,7 @@
       "Stamina": 64,
       "Haste": 51
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 2
     },
@@ -14007,7 +14012,7 @@
       "Hit": 25,
       "Haste": 43
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 3
     },
@@ -14031,7 +14036,7 @@
       "Stamina": 55,
       "Haste": 30
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 4
     },
@@ -14052,7 +14057,7 @@
       "Resilience": 19,
       "AttackPower": 58
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 5
   },
   {
@@ -14067,7 +14072,7 @@
       "Resilience": 19,
       "AttackPower": 58
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 4
     },
@@ -14087,12 +14092,11 @@
       "AttackPower": 84,
       "ManaPer5": 10
     },
-    "Spells": [
-      {
-        "ID": 34518,
-        "Name": "Nether Protection"
-      }
-    ],
+    "OnUseSpell": {
+      "ID": 34518,
+      "Name": "Nether Protection"
+    },
+    "Auras": [],
     "Socket1": {
       "Type": 2
     },
@@ -14120,12 +14124,11 @@
       "Hit": 25,
       "Crit": 41
     },
-    "Spells": [
-      {
-        "ID": 34511,
-        "Name": "Valor"
-      }
-    ],
+    "OnUseSpell": {
+      "ID": 34511,
+      "Name": "Valor"
+    },
+    "Auras": [],
     "Socket1": {
       "Type": 4
     },
@@ -14157,7 +14160,7 @@
       "ID": 680,
       "Name": "Lightbringer Battlegear"
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 3
     },
@@ -14183,7 +14186,7 @@
       "ID": 680,
       "Name": "Lightbringer Battlegear"
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 3
     },
@@ -14213,7 +14216,7 @@
       "ID": 680,
       "Name": "Lightbringer Battlegear"
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 2
     },
@@ -14243,7 +14246,7 @@
       "ID": 680,
       "Name": "Lightbringer Battlegear"
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 2
     },
@@ -14269,7 +14272,7 @@
       "ID": 680,
       "Name": "Lightbringer Battlegear"
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 3
     },
@@ -14297,7 +14300,7 @@
       "ID": 583,
       "Name": "Gladiator\u0027s Vindication"
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 2
     },
@@ -14330,7 +14333,7 @@
       "ID": 583,
       "Name": "Gladiator\u0027s Vindication"
     },
-    "Spells": [
+    "Auras": [
       {
         "ID": 44300,
         "Name": "Improved Crusader Strike"
@@ -14357,7 +14360,7 @@
       "ID": 583,
       "Name": "Gladiator\u0027s Vindication"
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 1
     },
@@ -14385,7 +14388,7 @@
       "ID": 583,
       "Name": "Gladiator\u0027s Vindication"
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 3
   },
   {
@@ -14406,7 +14409,7 @@
       "ID": 583,
       "Name": "Gladiator\u0027s Vindication"
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 2
     },
@@ -14428,7 +14431,7 @@
       "Crit": 35,
       "Resilience": 30
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 3
   },
   {
@@ -14444,7 +14447,7 @@
       "Crit": 35,
       "Resilience": 30
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 3
   },
   {
@@ -14454,7 +14457,7 @@
     "Quality": "EPIC",
     "InventoryType": "RELIC",
     "Stats": {},
-    "Spells": [
+    "Auras": [
       {
         "ID": 43726,
         "Name": "Vengeful Libram of Justice"
@@ -14476,7 +14479,7 @@
       "Crit": 27,
       "Resilience": 26
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 3
   },
   {
@@ -14493,7 +14496,7 @@
       "Crit": 27,
       "Resilience": 26
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 3
   },
   {
@@ -14503,7 +14506,7 @@
     "Quality": "EPIC",
     "InventoryType": "RELIC",
     "Stats": {},
-    "Spells": [
+    "Auras": [
       {
         "ID": 43852,
         "Name": "Vengeful Libram of Fortitude"
@@ -14518,7 +14521,7 @@
     "Quality": "EPIC",
     "InventoryType": "RELIC",
     "Stats": {},
-    "Spells": [
+    "Auras": [
       {
         "ID": 43856,
         "Name": "Vengeful Libram of Vengeance"
@@ -14544,7 +14547,7 @@
       "SpellHealing": 642,
       "ManaPer5": 28
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 53
   },
   {
@@ -14563,7 +14566,7 @@
       "AttackPower": 1164,
       "ManaPer5": 47
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 53
   },
   {
@@ -14581,7 +14584,7 @@
       "SpellDamage": 336,
       "SpellHealing": 336
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 53
   },
   {
@@ -14597,7 +14600,7 @@
       "Hit": 19,
       "Crit": 46
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 3
   },
   {
@@ -14613,7 +14616,7 @@
       "Crit": 46,
       "AttackPower": 106
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 4
     },
@@ -14639,7 +14642,7 @@
       "AttackPower": 108,
       "ManaPer5": 8
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 3
   },
   {
@@ -14656,12 +14659,11 @@
       "Crit": 38,
       "AttackPower": 108
     },
-    "Spells": [
-      {
-        "ID": 47524,
-        "Name": "Sense Demons"
-      }
-    ],
+    "OnUseSpell": {
+      "ID": 47524,
+      "Name": "Sense Demons"
+    },
+    "Auras": [],
     "Socket1": {
       "Type": 1
     },
@@ -14685,7 +14687,7 @@
       "AttackPower": 66,
       "ArmorPenetration": 126
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 3
   },
   {
@@ -14699,7 +14701,7 @@
       "Haste": 31,
       "AttackPower": 66
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 3
   },
   {
@@ -14713,7 +14715,7 @@
       "Stamina": 43,
       "AttackPower": 60
     },
-    "Spells": [
+    "Auras": [
       {
         "ID": 35080,
         "Name": "Band of the Eternal Champion"
@@ -14733,7 +14735,7 @@
       "Haste": 30,
       "AttackPower": 64
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 5
   },
   {
@@ -14747,7 +14749,7 @@
       "Defense": 25,
       "Expertise": 29
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 5
   },
   {
@@ -14762,7 +14764,7 @@
       "ArmorPenetration": 161,
       "AttackPower": 66
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 5
   },
   {
@@ -14777,7 +14779,7 @@
       "Dodge": 28,
       "Expertise": 28
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 5
   },
   {
@@ -14793,7 +14795,7 @@
       "Expertise": 22,
       "Block": 42
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 5
   },
   {
@@ -14805,7 +14807,7 @@
     "Stats": {
       "Haste": 54
     },
-    "Spells": [
+    "Auras": [
       {
         "ID": 45355,
         "Name": "Item - T7 Melee Trinket Base"
@@ -14822,12 +14824,11 @@
     "Stats": {
       "Expertise": 54
     },
-    "Spells": [
-      {
-        "ID": 45049,
-        "Name": "Tenacity"
-      }
-    ],
+    "OnUseSpell": {
+      "ID": 45049,
+      "Name": "Tenacity"
+    },
+    "Auras": [],
     "Phase": 5
   },
   {
@@ -14848,7 +14849,7 @@
       "ID": 680,
       "Name": "Lightbringer Battlegear"
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 3
     },
@@ -14875,7 +14876,7 @@
       "ID": 680,
       "Name": "Lightbringer Battlegear"
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 2
     },
@@ -14902,7 +14903,7 @@
       "ID": 680,
       "Name": "Lightbringer Battlegear"
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 2
     },
@@ -14924,7 +14925,7 @@
       "AttackPower": 52,
       "ArmorPenetration": 56
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 5
   },
   {
@@ -14939,7 +14940,7 @@
       "Resilience": 18,
       "AttackPower": 58
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 3
     },
@@ -14961,7 +14962,7 @@
       "Crit": 24,
       "Resilience": 17
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 3
     },
@@ -14984,7 +14985,7 @@
       "Crit": 18,
       "Resilience": 19
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 3
     },
@@ -15004,7 +15005,7 @@
       "Hit": 20,
       "AttackPower": 120
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 3
     },
@@ -15029,7 +15030,7 @@
       "Crit": 34,
       "Haste": 50
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 4
     },
@@ -15058,7 +15059,7 @@
       "AttackPower": 124,
       "ArmorPenetration": 224
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 2
     },
@@ -15086,7 +15087,7 @@
       "AttackPower": 90,
       "ArmorPenetration": 154
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 2
     },
@@ -15112,7 +15113,7 @@
       "Haste": 30,
       "AttackPower": 90
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 5
   },
   {
@@ -15129,7 +15130,7 @@
       "Intellect": 22,
       "ArmorPenetration": 196
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 2
     },
@@ -15157,7 +15158,7 @@
       "Crit": 41,
       "Haste": 32
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 2
     },
@@ -15186,7 +15187,7 @@
       "AttackPower": 104,
       "ArmorPenetration": 182
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 2
     },
@@ -15211,7 +15212,7 @@
       "Haste": 30,
       "AttackPower": 82
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 2
     },
@@ -15236,7 +15237,11 @@
       "Hit": 24,
       "AttackPower": 104
     },
-    "Spells": [
+    "OnUseSpell": {
+      "ID": 12883,
+      "Name": "Longsight"
+    },
+    "Auras": [
       {
         "ID": 30645,
         "Name": "Gas Cloud Tracking"
@@ -15244,10 +15249,6 @@
       {
         "ID": 40273,
         "Name": "Stealth Detection"
-      },
-      {
-        "ID": 12883,
-        "Name": "Longsight"
       }
     ],
     "Socket1": {
@@ -15274,7 +15275,11 @@
       "Hit": 26,
       "Crit": 51
     },
-    "Spells": [
+    "OnUseSpell": {
+      "ID": 12883,
+      "Name": "Longsight"
+    },
+    "Auras": [
       {
         "ID": 30645,
         "Name": "Gas Cloud Tracking"
@@ -15282,10 +15287,6 @@
       {
         "ID": 40273,
         "Name": "Stealth Detection"
-      },
-      {
-        "ID": 12883,
-        "Name": "Longsight"
       }
     ],
     "Socket1": {
@@ -15312,7 +15313,11 @@
       "Crit": 51,
       "AttackPower": 124
     },
-    "Spells": [
+    "OnUseSpell": {
+      "ID": 12883,
+      "Name": "Longsight"
+    },
+    "Auras": [
       {
         "ID": 30645,
         "Name": "Gas Cloud Tracking"
@@ -15320,10 +15325,6 @@
       {
         "ID": 40273,
         "Name": "Stealth Detection"
-      },
-      {
-        "ID": 12883,
-        "Name": "Longsight"
       }
     ],
     "Socket1": {
@@ -15349,7 +15350,7 @@
       "AttackPower": 58,
       "ArmorPenetration": 150
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 3
     },
@@ -15367,7 +15368,8 @@
       "Haste": 28,
       "AttackPower": 58
     },
-    "Spells": [],
+    "Auras": [],
+    "UniqueEquipped": true,
     "Phase": 5
   },
   {
@@ -15384,7 +15386,7 @@
       "Haste": 38,
       "AttackPower": 120
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 3
     },
@@ -15410,7 +15412,7 @@
       "AttackPower": 90,
       "ArmorPenetration": 154
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 2
     },
@@ -15436,7 +15438,7 @@
       "Haste": 44,
       "AttackPower": 104
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 2
     },
@@ -15462,7 +15464,7 @@
       "Haste": 34,
       "AttackPower": 76
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 3
     },
@@ -15484,7 +15486,7 @@
       "Crit": 41,
       "ArmorPenetration": 280
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 2
     },
@@ -15512,7 +15514,7 @@
       "Hit": 23,
       "Haste": 36
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 2
     },
@@ -15537,7 +15539,7 @@
       "Dodge": 50,
       "Expertise": 40
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 4
     },
@@ -15566,7 +15568,7 @@
       "Intellect": 25,
       "ArmorPenetration": 189
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 2
     },
@@ -15594,7 +15596,7 @@
       "Crit": 30,
       "Haste": 27
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 2
     },
@@ -15621,7 +15623,7 @@
       "Crit": 20,
       "ArmorPenetration": 105
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 2
     },
@@ -15646,7 +15648,7 @@
       "Dodge": 52,
       "Haste": 40
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 4
     },
@@ -15675,7 +15677,7 @@
       "AttackPower": 120,
       "ArmorPenetration": 210
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 4
     },
@@ -15701,7 +15703,7 @@
       "Intellect": 20,
       "Crit": 30
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 2
     },
@@ -15727,7 +15729,7 @@
       "Intellect": 20,
       "ArmorPenetration": 140
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 2
     },
@@ -15746,7 +15748,7 @@
     "Quality": "EPIC",
     "InventoryType": "RELIC",
     "Stats": {},
-    "Spells": [
+    "Auras": [
       {
         "ID": 46091,
         "Name": "Brutal Libram of Fortitude"
@@ -15761,7 +15763,7 @@
     "Quality": "EPIC",
     "InventoryType": "RELIC",
     "Stats": {},
-    "Spells": [
+    "Auras": [
       {
         "ID": 46092,
         "Name": "Brutal Libram of Justice"
@@ -15776,7 +15778,7 @@
     "Quality": "EPIC",
     "InventoryType": "RELIC",
     "Stats": {},
-    "Spells": [
+    "Auras": [
       {
         "ID": 46095,
         "Name": "Brutal Libram of Vengeance"
@@ -15803,7 +15805,7 @@
       "ID": 583,
       "Name": "Gladiator\u0027s Vindication"
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 2
     },
@@ -15836,7 +15838,7 @@
       "ID": 583,
       "Name": "Gladiator\u0027s Vindication"
     },
-    "Spells": [
+    "Auras": [
       {
         "ID": 44300,
         "Name": "Improved Crusader Strike"
@@ -15863,7 +15865,7 @@
       "ID": 583,
       "Name": "Gladiator\u0027s Vindication"
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 1
     },
@@ -15891,7 +15893,7 @@
       "ID": 583,
       "Name": "Gladiator\u0027s Vindication"
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 5
   },
   {
@@ -15912,7 +15914,7 @@
       "ID": 583,
       "Name": "Gladiator\u0027s Vindication"
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 2
     },
@@ -15934,7 +15936,7 @@
       "Crit": 40,
       "Resilience": 30
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 5
   },
   {
@@ -15951,7 +15953,7 @@
       "Crit": 31,
       "Resilience": 26
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 5
   },
   {
@@ -15967,7 +15969,7 @@
       "Crit": 40,
       "Resilience": 30
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 5
   },
   {
@@ -15984,7 +15986,7 @@
       "Crit": 31,
       "Resilience": 26
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 5
   },
   {
@@ -16000,7 +16002,7 @@
       "Haste": 32,
       "AttackPower": 72
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 3
     },
@@ -16020,7 +16022,7 @@
       "Haste": 34,
       "AttackPower": 126
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 1
     },
@@ -16047,7 +16049,7 @@
       "AttackPower": 126,
       "ArmorPenetration": 182
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 2
     },
@@ -16072,7 +16074,7 @@
       "Crit": 39,
       "ArmorPenetration": 161
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 2
     },
@@ -16099,7 +16101,7 @@
       "AttackPower": 80,
       "ArmorPenetration": 182
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 2
     },
@@ -16124,7 +16126,7 @@
       "Crit": 40,
       "ArmorPenetration": 231
     },
-    "Spells": [],
+    "Auras": [],
     "Socket1": {
       "Type": 1
     },

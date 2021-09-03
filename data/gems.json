@@ -9,7 +9,7 @@
       "SpellDamage": 5,
       "SpellHealing": 13
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -21,7 +21,7 @@
     "Stats": {
       "Strength": 6
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -34,7 +34,7 @@
       "SpellDamage": 7,
       "SpellHealing": 7
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -46,7 +46,7 @@
     "Stats": {
       "Agility": 6
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -59,7 +59,7 @@
       "Crit": 3,
       "Strength": 3
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -73,7 +73,7 @@
       "SpellDamage": 3,
       "SpellHealing": 7
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -86,7 +86,7 @@
       "Agility": 3,
       "Hit": 3
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -100,7 +100,7 @@
       "SpellDamage": 4,
       "SpellHealing": 4
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -112,7 +112,7 @@
     "Stats": {
       "SpellCrit": 3
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -125,7 +125,7 @@
       "Crit": 3,
       "Stamina": 4
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -138,7 +138,7 @@
       "Defense": 3,
       "Stamina": 4
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -151,7 +151,7 @@
       "Intellect": 3,
       "ManaPer5": 1
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -165,7 +165,7 @@
       "SpellHealing": 4,
       "Stamina": 4
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -179,7 +179,7 @@
       "SpellDamage": 3,
       "SpellHealing": 7
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -192,7 +192,7 @@
       "Agility": 3,
       "Stamina": 4
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -205,7 +205,7 @@
       "Stamina": 4,
       "Strength": 3
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -217,7 +217,7 @@
     "Stats": {
       "Intellect": 6
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -229,7 +229,7 @@
     "Stats": {
       "SpellCrit": 6
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -241,7 +241,7 @@
     "Stats": {
       "Defense": 6
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -253,7 +253,7 @@
     "Stats": {
       "Hit": 6
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -265,7 +265,7 @@
     "Stats": {
       "Stamina": 9
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -277,7 +277,7 @@
     "Stats": {
       "Spirit": 6
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -289,7 +289,7 @@
     "Stats": {
       "ManaPer5": 2
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -301,7 +301,7 @@
     "Stats": {
       "Strength": 8
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -313,7 +313,7 @@
     "Stats": {
       "Agility": 8
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -326,7 +326,7 @@
       "SpellDamage": 6,
       "SpellHealing": 18
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -339,7 +339,7 @@
       "SpellDamage": 9,
       "SpellHealing": 9
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -351,7 +351,7 @@
     "Stats": {
       "AttackPower": 16
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -363,7 +363,7 @@
     "Stats": {
       "Dodge": 8
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -375,7 +375,7 @@
     "Stats": {
       "Stamina": 12
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -387,7 +387,7 @@
     "Stats": {
       "Spirit": 8
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -399,7 +399,7 @@
     "Stats": {
       "Parry": 8
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -411,7 +411,7 @@
     "Stats": {
       "ManaPer5": 3
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -423,7 +423,7 @@
     "Stats": {
       "Intellect": 8
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -435,7 +435,7 @@
     "Stats": {
       "Crit": 8
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -447,7 +447,7 @@
     "Stats": {
       "SpellCrit": 8
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -459,7 +459,7 @@
     "Stats": {
       "Hit": 8
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -471,7 +471,7 @@
     "Stats": {
       "Defense": 8
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -483,7 +483,7 @@
     "Stats": {
       "Resilience": 8
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -496,7 +496,7 @@
       "Stamina": 6,
       "Strength": 4
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -509,7 +509,7 @@
       "Agility": 4,
       "Stamina": 6
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -523,7 +523,7 @@
       "SpellHealing": 5,
       "Stamina": 6
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -537,7 +537,7 @@
       "SpellDamage": 3,
       "SpellHealing": 9
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -550,7 +550,7 @@
       "Crit": 4,
       "Strength": 4
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -564,7 +564,7 @@
       "SpellDamage": 5,
       "SpellHealing": 5
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -578,7 +578,7 @@
       "SpellDamage": 3,
       "SpellHealing": 9
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -591,7 +591,7 @@
       "Agility": 4,
       "Hit": 4
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -604,7 +604,7 @@
       "Defense": 4,
       "Stamina": 6
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -617,7 +617,7 @@
       "Intellect": 4,
       "ManaPer5": 2
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -629,7 +629,7 @@
     "Stats": {
       "SpellCrit": 4
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -642,7 +642,7 @@
       "Crit": 4,
       "Stamina": 6
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -654,7 +654,7 @@
     "Stats": {
       "SpellCrit": 14
     },
-    "Spells": [
+    "Auras": [
       {
         "ID": 11818,
         "Name": "Spell Reflection"
@@ -674,7 +674,7 @@
     "Quality": "RARE",
     "Color": 7,
     "Stats": {},
-    "Spells": [
+    "Auras": [
       {
         "ID": 32837,
         "Name": "Spell Focus Trigger"
@@ -692,7 +692,7 @@
     "Stats": {
       "AttackPower": 24
     },
-    "Spells": [
+    "Auras": [
       {
         "ID": 23990,
         "Name": "Item - Minor Run Speed"
@@ -713,7 +713,7 @@
     "Stats": {
       "Crit": 12
     },
-    "Spells": [
+    "Auras": [
       {
         "ID": 32195,
         "Name": "Resist Snare/Root"
@@ -731,7 +731,7 @@
     "Stats": {
       "Stamina": 18
     },
-    "Spells": [
+    "Auras": [
       {
         "ID": 21351,
         "Name": "Increased Stun Resist 01"
@@ -752,7 +752,7 @@
       "SpellDamage": 9,
       "SpellHealing": 26
     },
-    "Spells": [
+    "Auras": [
       {
         "ID": 32842,
         "Name": "Decrease Threat"
@@ -770,7 +770,7 @@
     "Stats": {
       "Defense": 12
     },
-    "Spells": [
+    "Auras": [
       {
         "ID": 32844,
         "Name": "Lesser Heroism"
@@ -788,7 +788,7 @@
     "Quality": "RARE",
     "Color": 7,
     "Stats": {},
-    "Spells": [
+    "Auras": [
       {
         "ID": 26598,
         "Name": "Weapon Damage"
@@ -814,7 +814,7 @@
     "Stats": {
       "Intellect": 12
     },
-    "Spells": [
+    "Auras": [
       {
         "ID": 27521,
         "Name": "Mana Restore"
@@ -836,7 +836,7 @@
     "Stats": {
       "Resilience": 10
     },
-    "Spells": [],
+    "Auras": [],
     "UniqueEquipped": true,
     "Phase": 1
   },
@@ -850,7 +850,7 @@
       "SpellDamage": 8,
       "SpellHealing": 8
     },
-    "Spells": [],
+    "Auras": [],
     "UniqueEquipped": true,
     "Phase": 1
   },
@@ -864,7 +864,7 @@
       "SpellCrit": 4,
       "Stamina": 3
     },
-    "Spells": [],
+    "Auras": [],
     "UniqueEquipped": true,
     "Phase": 1
   },
@@ -878,7 +878,7 @@
       "Crit": 4,
       "Stamina": 3
     },
-    "Spells": [],
+    "Auras": [],
     "UniqueEquipped": true,
     "Phase": 1
   },
@@ -892,7 +892,7 @@
       "Crit": 4,
       "Stamina": 3
     },
-    "Spells": [],
+    "Auras": [],
     "UniqueEquipped": true,
     "Phase": 1
   },
@@ -906,7 +906,7 @@
       "SpellDamage": 8,
       "SpellHealing": 8
     },
-    "Spells": [],
+    "Auras": [],
     "UniqueEquipped": true,
     "Phase": 1
   },
@@ -920,7 +920,7 @@
       "SpellCrit": 4,
       "Stamina": 3
     },
-    "Spells": [],
+    "Auras": [],
     "UniqueEquipped": true,
     "Phase": 1
   },
@@ -934,7 +934,7 @@
       "SpellDamage": 12,
       "SpellHealing": 12
     },
-    "Spells": [],
+    "Auras": [],
     "UniqueEquipped": true,
     "Phase": 1
   },
@@ -947,7 +947,7 @@
     "Stats": {
       "Crit": 10
     },
-    "Spells": [],
+    "Auras": [],
     "UniqueEquipped": true,
     "Phase": 1
   },
@@ -960,7 +960,7 @@
     "Stats": {
       "SpellCrit": 10
     },
-    "Spells": [],
+    "Auras": [],
     "UniqueEquipped": true,
     "Phase": 1
   },
@@ -975,7 +975,7 @@
       "SpellDamage": 6,
       "SpellHealing": 6
     },
-    "Spells": [],
+    "Auras": [],
     "UniqueEquipped": true,
     "Phase": 1
   },
@@ -988,7 +988,7 @@
     "Stats": {
       "Crit": 6
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -1000,7 +1000,7 @@
     "Stats": {
       "AttackPower": 14
     },
-    "Spells": [],
+    "Auras": [],
     "UniqueEquipped": true,
     "Phase": 1
   },
@@ -1013,7 +1013,7 @@
     "Stats": {
       "AttackPower": 14
     },
-    "Spells": [],
+    "Auras": [],
     "UniqueEquipped": true,
     "Phase": 1
   },
@@ -1026,7 +1026,7 @@
     "Stats": {
       "AttackPower": 20
     },
-    "Spells": [],
+    "Auras": [],
     "UniqueEquipped": true,
     "Phase": 1
   },
@@ -1040,7 +1040,7 @@
       "AttackPower": 10,
       "Crit": 5
     },
-    "Spells": [],
+    "Auras": [],
     "UniqueEquipped": true,
     "Phase": 1
   },
@@ -1053,7 +1053,7 @@
     "Stats": {
       "Strength": 4
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -1065,7 +1065,7 @@
     "Stats": {
       "Agility": 4
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -1078,7 +1078,7 @@
       "SpellDamage": 3,
       "SpellHealing": 9
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -1091,7 +1091,7 @@
       "SpellDamage": 5,
       "SpellHealing": 5
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -1103,7 +1103,7 @@
     "Stats": {
       "AttackPower": 8
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -1115,7 +1115,7 @@
     "Stats": {
       "Stamina": 6
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 53
   },
   {
@@ -1127,7 +1127,7 @@
     "Stats": {
       "Spirit": 4
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 53
   },
   {
@@ -1139,7 +1139,7 @@
     "Stats": {
       "ManaPer5": 1
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 53
   },
   {
@@ -1151,7 +1151,7 @@
     "Stats": {
       "Intellect": 4
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 53
   },
   {
@@ -1163,7 +1163,7 @@
     "Stats": {
       "Crit": 4
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 53
   },
   {
@@ -1175,7 +1175,7 @@
     "Stats": {
       "Hit": 4
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 53
   },
   {
@@ -1187,7 +1187,7 @@
     "Stats": {
       "SpellCrit": 4
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 53
   },
   {
@@ -1199,7 +1199,7 @@
     "Stats": {
       "Defense": 4
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 53
   },
   {
@@ -1211,7 +1211,7 @@
     "Stats": {
       "AttackPower": 20
     },
-    "Spells": [
+    "Auras": [
       {
         "ID": 23990,
         "Name": "Item - Minor Run Speed"
@@ -1234,7 +1234,7 @@
       "SpellDamage": 12,
       "SpellHealing": 12
     },
-    "Spells": [
+    "Auras": [
       {
         "ID": 23990,
         "Name": "Item - Minor Run Speed"
@@ -1256,7 +1256,7 @@
     "Stats": {
       "AttackPower": 12
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -1269,7 +1269,7 @@
       "Stamina": 6,
       "Strength": 5
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -1283,7 +1283,7 @@
       "SpellDamage": 4,
       "SpellHealing": 11
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -1296,7 +1296,7 @@
       "SpellCrit": 5,
       "Stamina": 6
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -1309,7 +1309,7 @@
       "Agility": 5,
       "Stamina": 6
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -1322,7 +1322,7 @@
       "ManaPer5": 2,
       "Crit": 5
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -1336,7 +1336,7 @@
       "SpellDamage": 6,
       "SpellHealing": 6
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -1350,7 +1350,7 @@
       "SpellHealing": 11,
       "Stamina": 6
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -1363,7 +1363,7 @@
       "AttackPower": 10,
       "Hit": 4
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -1376,7 +1376,7 @@
       "Defense": 5,
       "Dodge": 4
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -1390,7 +1390,7 @@
       "SpellHealing": 6,
       "Stamina": 6
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -1403,7 +1403,7 @@
       "Agility": 5,
       "Hit": 4
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -1416,7 +1416,7 @@
       "Defense": 4,
       "Parry": 5
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -1429,7 +1429,7 @@
       "Hit": 4,
       "Strength": 5
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -1442,7 +1442,7 @@
       "ManaPer5": 2,
       "SpellCrit": 5
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -1455,7 +1455,7 @@
       "Dodge": 5,
       "Stamina": 6
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -1469,7 +1469,7 @@
       "SpellHealing": 6,
       "SpellHit": 5
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -1482,7 +1482,7 @@
       "Dodge": 5,
       "Crit": 6
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -1495,7 +1495,7 @@
       "Parry": 5,
       "Stamina": 6
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -1507,7 +1507,7 @@
     "Stats": {
       "Strength": 8
     },
-    "Spells": [],
+    "Auras": [],
     "UniqueEquipped": true,
     "Phase": 1
   },
@@ -1522,7 +1522,7 @@
       "SpellDamage": 3,
       "SpellHealing": 9
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -1535,7 +1535,7 @@
       "SpellDamage": 6,
       "SpellHealing": 6
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -1548,7 +1548,7 @@
       "AttackPower": 10,
       "Stamina": 6
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -1561,7 +1561,7 @@
       "Dodge": 5,
       "Hit": 4
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -1575,7 +1575,7 @@
       "SpellDamage": 4,
       "SpellHealing": 11
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -1588,7 +1588,7 @@
       "AttackPower": 8,
       "Crit": 5
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -1601,7 +1601,7 @@
       "Intellect": 5,
       "Stamina": 6
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -1614,7 +1614,7 @@
       "Crit": 4,
       "Strength": 5
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -1627,7 +1627,7 @@
       "Agility": 4,
       "Defense": 5
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -1640,7 +1640,7 @@
       "Intellect": 4,
       "Spirit": 5
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -1653,7 +1653,7 @@
       "Defense": 4,
       "Strength": 5
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -1667,7 +1667,7 @@
       "SpellDamage": 6,
       "SpellHealing": 6
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -1680,7 +1680,7 @@
       "Intellect": 5,
       "ManaPer5": 2
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -1693,7 +1693,7 @@
       "Defense": 5,
       "Stamina": 6
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -1706,7 +1706,7 @@
       "AttackPower": 8,
       "Resilience": 5
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -1719,7 +1719,7 @@
       "Resilience": 5,
       "Stamina": 6
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -1733,7 +1733,7 @@
       "SpellDamage": 4,
       "SpellHealing": 11
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -1746,7 +1746,7 @@
       "Defense": 5,
       "ManaPer5": 2
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -1758,7 +1758,7 @@
     "Stats": {
       "Strength": 8
     },
-    "Spells": [],
+    "Auras": [],
     "UniqueEquipped": true,
     "Phase": 1
   },
@@ -1773,7 +1773,7 @@
       "SpellDamage": 6,
       "SpellHealing": 6
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -1786,7 +1786,7 @@
       "Dodge": 5,
       "Resilience": 4
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -1799,7 +1799,7 @@
       "Crit": 5,
       "Stamina": 6
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -1813,7 +1813,7 @@
       "SpellDamage": 4,
       "SpellHealing": 11
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -1826,7 +1826,7 @@
       "Resilience": 4,
       "Strength": 5
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -1839,7 +1839,7 @@
       "SpellHit": 5,
       "Stamina": 6
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -1852,7 +1852,7 @@
       "ManaPer5": 2,
       "SpellHit": 5
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -1865,7 +1865,7 @@
       "Parry": 5,
       "Resilience": 4
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -1877,7 +1877,7 @@
     "Stats": {
       "SpellCrit": 5
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -1891,7 +1891,7 @@
       "SpellHealing": 6,
       "Stamina": 6
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -1905,7 +1905,7 @@
       "SpellHealing": 11,
       "Stamina": 6
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -1918,7 +1918,7 @@
       "AttackPower": 10,
       "Stamina": 6
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -1930,7 +1930,7 @@
     "Stats": {
       "SpellHit": 6
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -1942,7 +1942,7 @@
     "Stats": {
       "SpellHit": 8
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -1955,7 +1955,7 @@
       "AttackPower": 6,
       "Stamina": 4
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -1968,7 +1968,7 @@
       "AttackPower": 8,
       "Stamina": 6
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -1981,7 +1981,7 @@
       "ManaPer5": 1,
       "AttackPower": 6
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -1994,7 +1994,7 @@
       "ManaPer5": 2,
       "AttackPower": 8
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -2008,7 +2008,7 @@
       "SpellHealing": 4,
       "SpellHit": 3
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -2022,7 +2022,7 @@
       "SpellHealing": 5,
       "SpellHit": 4
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -2035,7 +2035,7 @@
       "AttackPower": 8,
       "Crit": 4
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -2048,7 +2048,7 @@
       "AttackPower": 6,
       "Crit": 3
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -2060,7 +2060,7 @@
     "Stats": {
       "Strength": 10
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 3
   },
   {
@@ -2072,7 +2072,7 @@
     "Stats": {
       "Agility": 10
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 3
   },
   {
@@ -2085,7 +2085,7 @@
       "SpellDamage": 8,
       "SpellHealing": 22
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 3
   },
   {
@@ -2098,7 +2098,7 @@
       "SpellDamage": 12,
       "SpellHealing": 12
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 3
   },
   {
@@ -2110,7 +2110,7 @@
     "Stats": {
       "AttackPower": 20
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 3
   },
   {
@@ -2122,7 +2122,7 @@
     "Stats": {
       "Dodge": 10
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 3
   },
   {
@@ -2134,7 +2134,7 @@
     "Stats": {
       "Parry": 10
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 3
   },
   {
@@ -2146,7 +2146,7 @@
     "Stats": {
       "Stamina": 15
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 3
   },
   {
@@ -2158,7 +2158,7 @@
     "Stats": {
       "Spirit": 10
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 3
   },
   {
@@ -2170,7 +2170,7 @@
     "Stats": {
       "ManaPer5": 4
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 3
   },
   {
@@ -2182,7 +2182,7 @@
     "Stats": {
       "Intellect": 10
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 3
   },
   {
@@ -2194,7 +2194,7 @@
     "Stats": {
       "Crit": 10
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 3
   },
   {
@@ -2206,7 +2206,7 @@
     "Stats": {
       "Hit": 10
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 3
   },
   {
@@ -2218,7 +2218,7 @@
     "Stats": {
       "SpellCrit": 10
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 3
   },
   {
@@ -2230,7 +2230,7 @@
     "Stats": {
       "Defense": 10
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 3
   },
   {
@@ -2242,7 +2242,7 @@
     "Stats": {
       "Resilience": 10
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 3
   },
   {
@@ -2254,7 +2254,7 @@
     "Stats": {
       "SpellHit": 10
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 3
   },
   {
@@ -2267,7 +2267,7 @@
       "Stamina": 7,
       "Strength": 5
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 3
   },
   {
@@ -2280,7 +2280,7 @@
       "Agility": 5,
       "Stamina": 7
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 3
   },
   {
@@ -2293,7 +2293,7 @@
       "AttackPower": 10,
       "Stamina": 7
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 3
   },
   {
@@ -2306,7 +2306,7 @@
       "ManaPer5": 2,
       "AttackPower": 10
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 3
   },
   {
@@ -2320,7 +2320,7 @@
       "SpellHealing": 6,
       "Stamina": 7
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 3
   },
   {
@@ -2334,7 +2334,7 @@
       "SpellDamage": 4,
       "SpellHealing": 11
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 3
   },
   {
@@ -2347,7 +2347,7 @@
       "Crit": 5,
       "Strength": 5
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 3
   },
   {
@@ -2361,7 +2361,7 @@
       "SpellDamage": 6,
       "SpellHealing": 6
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 3
   },
   {
@@ -2375,7 +2375,7 @@
       "SpellDamage": 4,
       "SpellHealing": 11
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 3
   },
   {
@@ -2388,7 +2388,7 @@
       "Agility": 5,
       "Hit": 5
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 3
   },
   {
@@ -2402,7 +2402,7 @@
       "SpellHealing": 6,
       "SpellHit": 5
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 3
   },
   {
@@ -2415,7 +2415,7 @@
       "AttackPower": 10,
       "Crit": 5
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 3
   },
   {
@@ -2428,7 +2428,7 @@
       "Defense": 5,
       "Stamina": 7
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 3
   },
   {
@@ -2440,7 +2440,7 @@
     "Stats": {
       "SpellCrit": 5
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 3
   },
   {
@@ -2453,7 +2453,7 @@
       "Intellect": 5,
       "ManaPer5": 2
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 3
   },
   {
@@ -2466,7 +2466,7 @@
       "Crit": 5,
       "Stamina": 7
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 3
   },
   {
@@ -2478,7 +2478,7 @@
     "Stats": {
       "Agility": 12
     },
-    "Spells": [
+    "Auras": [
       {
         "ID": 39957,
         "Name": "Increase Critical Damage 3%"
@@ -2498,7 +2498,7 @@
     "Quality": "RARE",
     "Color": 7,
     "Stats": {},
-    "Spells": [
+    "Auras": [
       {
         "ID": 39958,
         "Name": "Skyfire Swiftness"
@@ -2521,7 +2521,7 @@
       "AttackPower": 8,
       "Stamina": 6
     },
-    "Spells": [],
+    "Auras": [],
     "UniqueEquipped": true,
     "Phase": 53
   },
@@ -2535,7 +2535,7 @@
       "Intellect": 4,
       "Stamina": 6
     },
-    "Spells": [],
+    "Auras": [],
     "UniqueEquipped": true,
     "Phase": 53
   },
@@ -2550,7 +2550,7 @@
       "SpellDamage": 3,
       "SpellHealing": 9
     },
-    "Spells": [],
+    "Auras": [],
     "UniqueEquipped": true,
     "Phase": 53
   },
@@ -2564,7 +2564,7 @@
       "AttackPower": 8,
       "Crit": 4
     },
-    "Spells": [],
+    "Auras": [],
     "UniqueEquipped": true,
     "Phase": 53
   },
@@ -2579,7 +2579,7 @@
       "SpellDamage": 5,
       "SpellHealing": 5
     },
-    "Spells": [],
+    "Auras": [],
     "UniqueEquipped": true,
     "Phase": 53
   },
@@ -2593,7 +2593,7 @@
       "SpellCrit": 4,
       "Stamina": 4
     },
-    "Spells": [],
+    "Auras": [],
     "UniqueEquipped": true,
     "Phase": 53
   },
@@ -2606,7 +2606,7 @@
     "Stats": {
       "AttackPower": 24
     },
-    "Spells": [
+    "Auras": [
       {
         "ID": 40691,
         "Name": "Stun Resistance 5"
@@ -2625,7 +2625,7 @@
       "SpellDamage": 14,
       "SpellHealing": 14
     },
-    "Spells": [
+    "Auras": [
       {
         "ID": 40706,
         "Name": "Increased Stun Resist 05"
@@ -2645,7 +2645,7 @@
     "Stats": {
       "AttackPower": 20
     },
-    "Spells": [],
+    "Auras": [],
     "UniqueEquipped": true,
     "Phase": 53
   },
@@ -2660,7 +2660,7 @@
       "SpellDamage": 3,
       "SpellHealing": 7
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -2674,7 +2674,7 @@
       "SpellDamage": 3,
       "SpellHealing": 9
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -2686,7 +2686,7 @@
     "Stats": {
       "Agility": 8
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 53
   },
   {
@@ -2698,7 +2698,7 @@
     "Stats": {
       "AttackPower": 32
     },
-    "Spells": [],
+    "Auras": [],
     "UniqueEquipped": true,
     "Phase": 1
   },
@@ -2711,7 +2711,7 @@
     "Stats": {
       "Agility": 12
     },
-    "Spells": [],
+    "Auras": [],
     "UniqueEquipped": true,
     "Phase": 53
   },
@@ -2725,7 +2725,7 @@
       "SpellDamage": 14,
       "SpellHealing": 14
     },
-    "Spells": [],
+    "Auras": [],
     "UniqueEquipped": true,
     "Phase": 1
   },
@@ -2739,7 +2739,7 @@
       "SpellDamage": 9,
       "SpellHealing": 26
     },
-    "Spells": [],
+    "Auras": [],
     "UniqueEquipped": true,
     "Phase": 2
   },
@@ -2752,7 +2752,7 @@
     "Stats": {
       "Stamina": 18
     },
-    "Spells": [],
+    "Auras": [],
     "UniqueEquipped": true,
     "Phase": 53
   },
@@ -2769,7 +2769,7 @@
       "Stamina": 18,
       "Strength": 18
     },
-    "Spells": [],
+    "Auras": [],
     "UniqueEquipped": true,
     "Phase": 53
   },
@@ -2782,7 +2782,7 @@
     "Stats": {
       "Resilience": 12
     },
-    "Spells": [],
+    "Auras": [],
     "UniqueEquipped": true,
     "Phase": 53
   },
@@ -2795,7 +2795,7 @@
     "Stats": {
       "SpellCrit": 12
     },
-    "Spells": [],
+    "Auras": [],
     "UniqueEquipped": true,
     "Phase": 53
   },
@@ -2808,7 +2808,7 @@
     "Stats": {
       "SpellHit": 12
     },
-    "Spells": [],
+    "Auras": [],
     "UniqueEquipped": true,
     "Phase": 53
   },
@@ -2821,7 +2821,7 @@
     "Stats": {
       "Hit": 12
     },
-    "Spells": [],
+    "Auras": [],
     "UniqueEquipped": true,
     "Phase": 53
   },
@@ -2834,7 +2834,7 @@
     "Stats": {
       "Crit": 12
     },
-    "Spells": [],
+    "Auras": [],
     "UniqueEquipped": true,
     "Phase": 53
   },
@@ -2847,7 +2847,7 @@
     "Stats": {
       "Defense": 12
     },
-    "Spells": [],
+    "Auras": [],
     "UniqueEquipped": true,
     "Phase": 53
   },
@@ -2861,7 +2861,7 @@
       "Resilience": 4,
       "Stamina": 6
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -2873,7 +2873,7 @@
     "Stats": {
       "SpellCrit": 12
     },
-    "Spells": [
+    "Auras": [
       {
         "ID": 44797,
         "Name": "Increase Critical Damage 3%"
@@ -2893,7 +2893,7 @@
     "Stats": {
       "Stamina": 15
     },
-    "Spells": [],
+    "Auras": [],
     "UniqueEquipped": true,
     "Phase": 53
   },
@@ -2904,7 +2904,7 @@
     "Quality": "RARE",
     "Color": 3,
     "Stats": {},
-    "Spells": [
+    "Auras": [
       {
         "ID": 45335,
         "Name": "Heavy Tonk Armor"
@@ -2921,7 +2921,7 @@
     "Stats": {
       "Stamina": 15
     },
-    "Spells": [],
+    "Auras": [],
     "UniqueEquipped": true,
     "Phase": 1
   },
@@ -2934,7 +2934,7 @@
     "Stats": {
       "SpellHaste": 8
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -2948,7 +2948,7 @@
       "SpellHaste": 4,
       "SpellHealing": 5
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -2961,7 +2961,7 @@
       "SpellHaste": 4,
       "Stamina": 6
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -2973,7 +2973,7 @@
     "Stats": {
       "AttackPower": 20
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 5
   },
   {
@@ -2986,7 +2986,7 @@
       "SpellDamage": 12,
       "SpellHealing": 12
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 5
   },
   {
@@ -2999,7 +2999,7 @@
       "SpellDamage": 8,
       "SpellHealing": 22
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 3
   },
   {
@@ -3011,7 +3011,7 @@
     "Stats": {
       "Defense": 12
     },
-    "Spells": [
+    "Auras": [
       {
         "ID": 46596,
         "Name": "Eternal Shield"
@@ -3033,7 +3033,7 @@
       "SpellDamage": 14,
       "SpellHealing": 14
     },
-    "Spells": [
+    "Auras": [
       {
         "ID": 46600,
         "Name": "Ember Skyfire Intellect"
@@ -3054,7 +3054,7 @@
       "Dodge": 4,
       "Stamina": 6
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -3067,7 +3067,7 @@
       "Resilience": 5,
       "Stamina": 7
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 3
   },
   {
@@ -3080,7 +3080,7 @@
       "SpellHaste": 5,
       "Stamina": 7
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 3
   },
   {
@@ -3094,7 +3094,7 @@
       "SpellHaste": 5,
       "SpellHealing": 6
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 3
   },
   {
@@ -3106,7 +3106,7 @@
     "Stats": {
       "SpellHaste": 10
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 3
   },
   {
@@ -3120,7 +3120,7 @@
       "SpellDamage": 4,
       "SpellHealing": 11
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 3
   },
   {
@@ -3132,7 +3132,7 @@
     "Stats": {
       "AttackPower": 20
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -3144,7 +3144,7 @@
     "Stats": {
       "SpellCrit": 10
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -3157,7 +3157,7 @@
       "AttackPower": 10,
       "Crit": 5
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -3171,7 +3171,7 @@
       "SpellDamage": 6,
       "SpellHealing": 6
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -3184,7 +3184,7 @@
       "SpellDamage": 12,
       "SpellHealing": 12
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   },
   {
@@ -3196,7 +3196,7 @@
     "Stats": {
       "Crit": 10
     },
-    "Spells": [],
+    "Auras": [],
     "Phase": 1
   }
 ]
