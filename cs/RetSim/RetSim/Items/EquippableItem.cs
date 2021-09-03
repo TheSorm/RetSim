@@ -11,11 +11,13 @@ namespace RetSim.Items
         public string InventoryType { get; init; }
         public ItemStats Stats { get; init; }
         public Set Set { get; init; }
-        public List<ItemSpell> Spells { get; init; }
+        public ItemSpell OnUseSpell { get; set; }
+        public List<ItemAuras> Auras { get; init; }
         public Socket Socket1 { get; init; }
         public Socket Socket2 { get; init; }
         public Socket Socket3 { get; init; }
         public ItemStats SocketBonus { get; init; }
+        public bool UniqueEquipped { get; set; }
         public int Phase { get; init; }
 
         public bool IsSocketBonusActive()
@@ -114,6 +116,12 @@ namespace RetSim.Items
     {
         public string Stat { get; init; }
         public int Value { get; init; }
+    }
+
+    public record ItemAuras
+    {
+        public int ID { get; init; }
+        public string Name { get; init; }
     }
 
     public record ItemSpell

@@ -10,7 +10,7 @@ namespace RetSim.Items
         public string Quality { get; init; }
         public GemColor Color { get; init; }
         public ItemStats Stats { get; init; }
-        public List<ItemSpell> Spells { get; init; }
+        public List<ItemAuras> Auras { get; init; }
         public Dictionary<GemColor, int> Requirments { get; set; }
         public SpecialGemRequirment SpecialRequirment { get; set; }
         public bool UniqueEquipped { get; set; }

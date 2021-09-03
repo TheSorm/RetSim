@@ -110,12 +110,12 @@ namespace RetSim
 
             foreach (var setCount in SetCounts)
             {
-                foreach (var setEffect in Glossaries.Items.SetsByID[setCount.Key].SetEffects)
+                foreach (var setAura in Glossaries.Items.SetsByID[setCount.Key].SetAuras)
                 {
-                    if (setCount.Value >= setEffect.RequiredCount)
+                    if (setCount.Value >= setAura.RequiredCount)
                     {
-                        if (Glossaries.Auras.ByID.ContainsKey(setEffect.ID))
-                            auras.Add(Glossaries.Auras.ByID[setEffect.ID]);
+                        if (Glossaries.Auras.ByID.ContainsKey(setAura.ID))
+                            auras.Add(Glossaries.Auras.ByID[setAura.ID]);
                     }
 
                 }
@@ -125,31 +125,31 @@ namespace RetSim
         }
         private static void GenerateAuraListOf(EquippableItem item, List<Aura> auras, Dictionary<GemColor, int> gemCount)
         {
-            foreach (var itemSpell in item.Spells)
+            foreach (var itemAura in item.Auras)
             {
-                if (Glossaries.Auras.ByID.ContainsKey(itemSpell.ID))
-                    auras.Add(Glossaries.Auras.ByID[itemSpell.ID]);
+                if (Glossaries.Auras.ByID.ContainsKey(itemAura.ID))
+                    auras.Add(Glossaries.Auras.ByID[itemAura.ID]);
             }
 
             if (item.Socket1 != null && item.Socket1.SocketedGem != null && item.Socket1.IsGemActive(gemCount[GemColor.Red], gemCount[GemColor.Blue], gemCount[GemColor.Yellow]))
             {
-                foreach (var gem1Spell in item.Socket1.SocketedGem.Spells)
-                    if (Glossaries.Auras.ByID.ContainsKey(gem1Spell.ID))
-                        auras.Add(Glossaries.Auras.ByID[gem1Spell.ID]);
+                foreach (var gem1Aura in item.Socket1.SocketedGem.Auras)
+                    if (Glossaries.Auras.ByID.ContainsKey(gem1Aura.ID))
+                        auras.Add(Glossaries.Auras.ByID[gem1Aura.ID]);
             }
 
             if (item.Socket2 != null && item.Socket2.SocketedGem != null && item.Socket2.IsGemActive(gemCount[GemColor.Red], gemCount[GemColor.Blue], gemCount[GemColor.Yellow]))
             {
-                foreach (var gem2Spell in item.Socket2.SocketedGem.Spells)
-                    if (Glossaries.Auras.ByID.ContainsKey(gem2Spell.ID))
-                        auras.Add(Glossaries.Auras.ByID[gem2Spell.ID]);
+                foreach (var gem2Aura in item.Socket2.SocketedGem.Auras)
+                    if (Glossaries.Auras.ByID.ContainsKey(gem2Aura.ID))
+                        auras.Add(Glossaries.Auras.ByID[gem2Aura.ID]);
             }
 
             if (item.Socket3 != null && item.Socket3.SocketedGem != null && item.Socket3.IsGemActive(gemCount[GemColor.Red], gemCount[GemColor.Blue], gemCount[GemColor.Yellow]))
             {
-                foreach (var gem3Spell in item.Socket3.SocketedGem.Spells)
-                    if (Glossaries.Auras.ByID.ContainsKey(gem3Spell.ID))
-                        auras.Add(Glossaries.Auras.ByID[gem3Spell.ID]);
+                foreach (var gem3Aura in item.Socket3.SocketedGem.Auras)
+                    if (Glossaries.Auras.ByID.ContainsKey(gem3Aura.ID))
+                        auras.Add(Glossaries.Auras.ByID[gem3Aura.ID]);
             }
         }
 
