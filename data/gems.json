@@ -1,18 +1,5 @@
 [
   {
-    "ID": 23094,
-    "Name": "Teardrop Blood Garnet",
-    "ItemLevel": 60,
-    "Quality": "UNCOMMON",
-    "Color": 1,
-    "Stats": {
-      "SpellDamage": 5,
-      "SpellHealing": 13
-    },
-    "Auras": [],
-    "Phase": 1
-  },
-  {
     "ID": 23095,
     "Name": "Bold Blood Garnet",
     "ItemLevel": 60,
@@ -20,31 +7,6 @@
     "Color": 1,
     "Stats": {
       "Strength": 6
-    },
-    "Auras": [],
-    "Phase": 1
-  },
-  {
-    "ID": 23096,
-    "Name": "Runed Blood Garnet",
-    "ItemLevel": 60,
-    "Quality": "UNCOMMON",
-    "Color": 1,
-    "Stats": {
-      "SpellDamage": 7,
-      "SpellHealing": 7
-    },
-    "Auras": [],
-    "Phase": 1
-  },
-  {
-    "ID": 23097,
-    "Name": "Delicate Blood Garnet",
-    "ItemLevel": 60,
-    "Quality": "UNCOMMON",
-    "Color": 1,
-    "Stats": {
-      "Agility": 6
     },
     "Auras": [],
     "Phase": 1
@@ -63,20 +25,6 @@
     "Phase": 1
   },
   {
-    "ID": 23099,
-    "Name": "Luminous Flame Spessarite",
-    "ItemLevel": 60,
-    "Quality": "UNCOMMON",
-    "Color": 6,
-    "Stats": {
-      "Intellect": 3,
-      "SpellDamage": 3,
-      "SpellHealing": 7
-    },
-    "Auras": [],
-    "Phase": 1
-  },
-  {
     "ID": 23100,
     "Name": "Glinting Flame Spessarite",
     "ItemLevel": 60,
@@ -85,112 +33,6 @@
     "Stats": {
       "Agility": 3,
       "Hit": 3
-    },
-    "Auras": [],
-    "Phase": 1
-  },
-  {
-    "ID": 23101,
-    "Name": "Potent Flame Spessarite",
-    "ItemLevel": 60,
-    "Quality": "UNCOMMON",
-    "Color": 6,
-    "Stats": {
-      "SpellCrit": 3,
-      "SpellDamage": 4,
-      "SpellHealing": 4
-    },
-    "Auras": [],
-    "Phase": 1
-  },
-  {
-    "ID": 23103,
-    "Name": "Radiant Deep Peridot",
-    "ItemLevel": 60,
-    "Quality": "UNCOMMON",
-    "Color": 5,
-    "Stats": {
-      "SpellCrit": 3
-    },
-    "Auras": [],
-    "Phase": 1
-  },
-  {
-    "ID": 23104,
-    "Name": "Jagged Deep Peridot",
-    "ItemLevel": 60,
-    "Quality": "UNCOMMON",
-    "Color": 5,
-    "Stats": {
-      "Crit": 3,
-      "Stamina": 4
-    },
-    "Auras": [],
-    "Phase": 1
-  },
-  {
-    "ID": 23105,
-    "Name": "Enduring Deep Peridot",
-    "ItemLevel": 60,
-    "Quality": "UNCOMMON",
-    "Color": 5,
-    "Stats": {
-      "Defense": 3,
-      "Stamina": 4
-    },
-    "Auras": [],
-    "Phase": 1
-  },
-  {
-    "ID": 23106,
-    "Name": "Dazzling Deep Peridot",
-    "ItemLevel": 60,
-    "Quality": "UNCOMMON",
-    "Color": 5,
-    "Stats": {
-      "Intellect": 3,
-      "ManaPer5": 1
-    },
-    "Auras": [],
-    "Phase": 1
-  },
-  {
-    "ID": 23108,
-    "Name": "Glowing Shadow Draenite",
-    "ItemLevel": 60,
-    "Quality": "UNCOMMON",
-    "Color": 4,
-    "Stats": {
-      "SpellDamage": 4,
-      "SpellHealing": 4,
-      "Stamina": 4
-    },
-    "Auras": [],
-    "Phase": 1
-  },
-  {
-    "ID": 23109,
-    "Name": "Royal Shadow Draenite",
-    "ItemLevel": 60,
-    "Quality": "UNCOMMON",
-    "Color": 4,
-    "Stats": {
-      "ManaPer5": 1,
-      "SpellDamage": 3,
-      "SpellHealing": 7
-    },
-    "Auras": [],
-    "Phase": 1
-  },
-  {
-    "ID": 23110,
-    "Name": "Shifting Shadow Draenite",
-    "ItemLevel": 60,
-    "Quality": "UNCOMMON",
-    "Color": 4,
-    "Stats": {
-      "Agility": 3,
-      "Stamina": 4
     },
     "Auras": [],
     "Phase": 1
@@ -209,42 +51,6 @@
     "Phase": 1
   },
   {
-    "ID": 23113,
-    "Name": "Brilliant Golden Draenite",
-    "ItemLevel": 60,
-    "Quality": "UNCOMMON",
-    "Color": 3,
-    "Stats": {
-      "Intellect": 6
-    },
-    "Auras": [],
-    "Phase": 1
-  },
-  {
-    "ID": 23114,
-    "Name": "Gleaming Golden Draenite",
-    "ItemLevel": 60,
-    "Quality": "UNCOMMON",
-    "Color": 3,
-    "Stats": {
-      "SpellCrit": 6
-    },
-    "Auras": [],
-    "Phase": 1
-  },
-  {
-    "ID": 23115,
-    "Name": "Thick Golden Draenite",
-    "ItemLevel": 60,
-    "Quality": "UNCOMMON",
-    "Color": 3,
-    "Stats": {
-      "Defense": 6
-    },
-    "Auras": [],
-    "Phase": 1
-  },
-  {
     "ID": 23116,
     "Name": "Rigid Golden Draenite",
     "ItemLevel": 60,
@@ -252,42 +58,6 @@
     "Color": 3,
     "Stats": {
       "Hit": 6
-    },
-    "Auras": [],
-    "Phase": 1
-  },
-  {
-    "ID": 23118,
-    "Name": "Solid Azure Moonstone",
-    "ItemLevel": 60,
-    "Quality": "UNCOMMON",
-    "Color": 2,
-    "Stats": {
-      "Stamina": 9
-    },
-    "Auras": [],
-    "Phase": 1
-  },
-  {
-    "ID": 23119,
-    "Name": "Sparkling Azure Moonstone",
-    "ItemLevel": 60,
-    "Quality": "UNCOMMON",
-    "Color": 2,
-    "Stats": {
-      "Spirit": 6
-    },
-    "Auras": [],
-    "Phase": 1
-  },
-  {
-    "ID": 23121,
-    "Name": "Lustrous Azure Moonstone",
-    "ItemLevel": 60,
-    "Quality": "UNCOMMON",
-    "Color": 2,
-    "Stats": {
-      "ManaPer5": 2
     },
     "Auras": [],
     "Phase": 1
@@ -305,44 +75,6 @@
     "Phase": 1
   },
   {
-    "ID": 24028,
-    "Name": "Delicate Living Ruby",
-    "ItemLevel": 70,
-    "Quality": "RARE",
-    "Color": 1,
-    "Stats": {
-      "Agility": 8
-    },
-    "Auras": [],
-    "Phase": 1
-  },
-  {
-    "ID": 24029,
-    "Name": "Teardrop Living Ruby",
-    "ItemLevel": 70,
-    "Quality": "RARE",
-    "Color": 1,
-    "Stats": {
-      "SpellDamage": 6,
-      "SpellHealing": 18
-    },
-    "Auras": [],
-    "Phase": 1
-  },
-  {
-    "ID": 24030,
-    "Name": "Runed Living Ruby",
-    "ItemLevel": 70,
-    "Quality": "RARE",
-    "Color": 1,
-    "Stats": {
-      "SpellDamage": 9,
-      "SpellHealing": 9
-    },
-    "Auras": [],
-    "Phase": 1
-  },
-  {
     "ID": 24031,
     "Name": "Bright Living Ruby",
     "ItemLevel": 70,
@@ -355,102 +87,6 @@
     "Phase": 1
   },
   {
-    "ID": 24032,
-    "Name": "Subtle Living Ruby",
-    "ItemLevel": 70,
-    "Quality": "RARE",
-    "Color": 1,
-    "Stats": {
-      "Dodge": 8
-    },
-    "Auras": [],
-    "Phase": 1
-  },
-  {
-    "ID": 24033,
-    "Name": "Solid Star of Elune",
-    "ItemLevel": 70,
-    "Quality": "RARE",
-    "Color": 2,
-    "Stats": {
-      "Stamina": 12
-    },
-    "Auras": [],
-    "Phase": 1
-  },
-  {
-    "ID": 24035,
-    "Name": "Sparkling Star of Elune",
-    "ItemLevel": 70,
-    "Quality": "RARE",
-    "Color": 2,
-    "Stats": {
-      "Spirit": 8
-    },
-    "Auras": [],
-    "Phase": 1
-  },
-  {
-    "ID": 24036,
-    "Name": "Flashing Living Ruby",
-    "ItemLevel": 70,
-    "Quality": "RARE",
-    "Color": 1,
-    "Stats": {
-      "Parry": 8
-    },
-    "Auras": [],
-    "Phase": 1
-  },
-  {
-    "ID": 24037,
-    "Name": "Lustrous Star of Elune",
-    "ItemLevel": 70,
-    "Quality": "RARE",
-    "Color": 2,
-    "Stats": {
-      "ManaPer5": 3
-    },
-    "Auras": [],
-    "Phase": 1
-  },
-  {
-    "ID": 24047,
-    "Name": "Brilliant Dawnstone",
-    "ItemLevel": 70,
-    "Quality": "RARE",
-    "Color": 3,
-    "Stats": {
-      "Intellect": 8
-    },
-    "Auras": [],
-    "Phase": 1
-  },
-  {
-    "ID": 24048,
-    "Name": "Smooth Dawnstone",
-    "ItemLevel": 70,
-    "Quality": "RARE",
-    "Color": 3,
-    "Stats": {
-      "Crit": 8
-    },
-    "Auras": [],
-    "Phase": 1
-  },
-  {
-    "ID": 24050,
-    "Name": "Gleaming Dawnstone",
-    "ItemLevel": 70,
-    "Quality": "RARE",
-    "Color": 3,
-    "Stats": {
-      "SpellCrit": 8
-    },
-    "Auras": [],
-    "Phase": 1
-  },
-  {
     "ID": 24051,
     "Name": "Rigid Dawnstone",
     "ItemLevel": 70,
@@ -458,30 +94,6 @@
     "Color": 3,
     "Stats": {
       "Hit": 8
-    },
-    "Auras": [],
-    "Phase": 1
-  },
-  {
-    "ID": 24052,
-    "Name": "Thick Dawnstone",
-    "ItemLevel": 70,
-    "Quality": "RARE",
-    "Color": 3,
-    "Stats": {
-      "Defense": 8
-    },
-    "Auras": [],
-    "Phase": 1
-  },
-  {
-    "ID": 24053,
-    "Name": "Mystic Dawnstone",
-    "ItemLevel": 70,
-    "Quality": "RARE",
-    "Color": 3,
-    "Stats": {
-      "Resilience": 8
     },
     "Auras": [],
     "Phase": 1
@@ -500,47 +112,6 @@
     "Phase": 1
   },
   {
-    "ID": 24055,
-    "Name": "Shifting Nightseye",
-    "ItemLevel": 70,
-    "Quality": "RARE",
-    "Color": 4,
-    "Stats": {
-      "Agility": 4,
-      "Stamina": 6
-    },
-    "Auras": [],
-    "Phase": 1
-  },
-  {
-    "ID": 24056,
-    "Name": "Glowing Nightseye",
-    "ItemLevel": 70,
-    "Quality": "RARE",
-    "Color": 4,
-    "Stats": {
-      "SpellDamage": 5,
-      "SpellHealing": 5,
-      "Stamina": 6
-    },
-    "Auras": [],
-    "Phase": 1
-  },
-  {
-    "ID": 24057,
-    "Name": "Royal Nightseye",
-    "ItemLevel": 70,
-    "Quality": "RARE",
-    "Color": 4,
-    "Stats": {
-      "ManaPer5": 2,
-      "SpellDamage": 3,
-      "SpellHealing": 9
-    },
-    "Auras": [],
-    "Phase": 1
-  },
-  {
     "ID": 24058,
     "Name": "Inscribed Noble Topaz",
     "ItemLevel": 70,
@@ -554,34 +125,6 @@
     "Phase": 1
   },
   {
-    "ID": 24059,
-    "Name": "Potent Noble Topaz",
-    "ItemLevel": 70,
-    "Quality": "RARE",
-    "Color": 6,
-    "Stats": {
-      "SpellCrit": 4,
-      "SpellDamage": 5,
-      "SpellHealing": 5
-    },
-    "Auras": [],
-    "Phase": 1
-  },
-  {
-    "ID": 24060,
-    "Name": "Luminous Noble Topaz",
-    "ItemLevel": 70,
-    "Quality": "RARE",
-    "Color": 6,
-    "Stats": {
-      "Intellect": 4,
-      "SpellDamage": 3,
-      "SpellHealing": 9
-    },
-    "Auras": [],
-    "Phase": 1
-  },
-  {
     "ID": 24061,
     "Name": "Glinting Noble Topaz",
     "ItemLevel": 70,
@@ -590,57 +133,6 @@
     "Stats": {
       "Agility": 4,
       "Hit": 4
-    },
-    "Auras": [],
-    "Phase": 1
-  },
-  {
-    "ID": 24062,
-    "Name": "Enduring Talasite",
-    "ItemLevel": 70,
-    "Quality": "RARE",
-    "Color": 5,
-    "Stats": {
-      "Defense": 4,
-      "Stamina": 6
-    },
-    "Auras": [],
-    "Phase": 1
-  },
-  {
-    "ID": 24065,
-    "Name": "Dazzling Talasite",
-    "ItemLevel": 70,
-    "Quality": "RARE",
-    "Color": 5,
-    "Stats": {
-      "Intellect": 4,
-      "ManaPer5": 2
-    },
-    "Auras": [],
-    "Phase": 1
-  },
-  {
-    "ID": 24066,
-    "Name": "Radiant Talasite",
-    "ItemLevel": 70,
-    "Quality": "RARE",
-    "Color": 5,
-    "Stats": {
-      "SpellCrit": 4
-    },
-    "Auras": [],
-    "Phase": 1
-  },
-  {
-    "ID": 24067,
-    "Name": "Jagged Talasite",
-    "ItemLevel": 70,
-    "Quality": "RARE",
-    "Color": 5,
-    "Stats": {
-      "Crit": 4,
-      "Stamina": 6
     },
     "Auras": [],
     "Phase": 1
@@ -828,170 +320,6 @@
     "Phase": 1
   },
   {
-    "ID": 27679,
-    "Name": "Sublime Mystic Dawnstone",
-    "ItemLevel": 60,
-    "Quality": "EPIC",
-    "Color": 3,
-    "Stats": {
-      "Resilience": 10
-    },
-    "Auras": [],
-    "UniqueEquipped": true,
-    "Phase": 1
-  },
-  {
-    "ID": 27777,
-    "Name": "Stark Blood Garnet",
-    "ItemLevel": 60,
-    "Quality": "RARE",
-    "Color": 1,
-    "Stats": {
-      "SpellDamage": 8,
-      "SpellHealing": 8
-    },
-    "Auras": [],
-    "UniqueEquipped": true,
-    "Phase": 1
-  },
-  {
-    "ID": 27785,
-    "Name": "Notched Deep Peridot",
-    "ItemLevel": 60,
-    "Quality": "RARE",
-    "Color": 5,
-    "Stats": {
-      "SpellCrit": 4,
-      "Stamina": 3
-    },
-    "Auras": [],
-    "UniqueEquipped": true,
-    "Phase": 1
-  },
-  {
-    "ID": 27786,
-    "Name": "Barbed Deep Peridot",
-    "ItemLevel": 60,
-    "Quality": "RARE",
-    "Color": 5,
-    "Stats": {
-      "Crit": 4,
-      "Stamina": 3
-    },
-    "Auras": [],
-    "UniqueEquipped": true,
-    "Phase": 1
-  },
-  {
-    "ID": 27809,
-    "Name": "Barbed Deep Peridot",
-    "ItemLevel": 60,
-    "Quality": "RARE",
-    "Color": 5,
-    "Stats": {
-      "Crit": 4,
-      "Stamina": 3
-    },
-    "Auras": [],
-    "UniqueEquipped": true,
-    "Phase": 1
-  },
-  {
-    "ID": 27812,
-    "Name": "Stark Blood Garnet",
-    "ItemLevel": 60,
-    "Quality": "RARE",
-    "Color": 1,
-    "Stats": {
-      "SpellDamage": 8,
-      "SpellHealing": 8
-    },
-    "Auras": [],
-    "UniqueEquipped": true,
-    "Phase": 1
-  },
-  {
-    "ID": 27820,
-    "Name": "Notched Deep Peridot",
-    "ItemLevel": 60,
-    "Quality": "RARE",
-    "Color": 5,
-    "Stats": {
-      "SpellCrit": 4,
-      "Stamina": 3
-    },
-    "Auras": [],
-    "UniqueEquipped": true,
-    "Phase": 1
-  },
-  {
-    "ID": 28118,
-    "Name": "Runed Ornate Ruby",
-    "ItemLevel": 60,
-    "Quality": "EPIC",
-    "Color": 1,
-    "Stats": {
-      "SpellDamage": 12,
-      "SpellHealing": 12
-    },
-    "Auras": [],
-    "UniqueEquipped": true,
-    "Phase": 1
-  },
-  {
-    "ID": 28119,
-    "Name": "Smooth Ornate Dawnstone",
-    "ItemLevel": 60,
-    "Quality": "EPIC",
-    "Color": 3,
-    "Stats": {
-      "Crit": 10
-    },
-    "Auras": [],
-    "UniqueEquipped": true,
-    "Phase": 1
-  },
-  {
-    "ID": 28120,
-    "Name": "Gleaming Ornate Dawnstone",
-    "ItemLevel": 60,
-    "Quality": "EPIC",
-    "Color": 3,
-    "Stats": {
-      "SpellCrit": 10
-    },
-    "Auras": [],
-    "UniqueEquipped": true,
-    "Phase": 1
-  },
-  {
-    "ID": 28123,
-    "Name": "Potent Ornate Topaz",
-    "ItemLevel": 60,
-    "Quality": "EPIC",
-    "Color": 6,
-    "Stats": {
-      "SpellCrit": 5,
-      "SpellDamage": 6,
-      "SpellHealing": 6
-    },
-    "Auras": [],
-    "UniqueEquipped": true,
-    "Phase": 1
-  },
-  {
-    "ID": 28290,
-    "Name": "Smooth Golden Draenite",
-    "ItemLevel": 60,
-    "Quality": "UNCOMMON",
-    "Color": 3,
-    "Stats": {
-      "Crit": 6
-    },
-    "Auras": [],
-    "Phase": 1
-  },
-  {
     "ID": 28360,
     "Name": "Mighty Blood Garnet",
     "ItemLevel": 60,
@@ -1057,44 +385,6 @@
     "Phase": 1
   },
   {
-    "ID": 28459,
-    "Name": "Delicate Tourmaline",
-    "ItemLevel": 55,
-    "Quality": "COMMON",
-    "Color": 1,
-    "Stats": {
-      "Agility": 4
-    },
-    "Auras": [],
-    "Phase": 1
-  },
-  {
-    "ID": 28460,
-    "Name": "Teardrop Tourmaline",
-    "ItemLevel": 55,
-    "Quality": "COMMON",
-    "Color": 1,
-    "Stats": {
-      "SpellDamage": 3,
-      "SpellHealing": 9
-    },
-    "Auras": [],
-    "Phase": 1
-  },
-  {
-    "ID": 28461,
-    "Name": "Runed Tourmaline",
-    "ItemLevel": 55,
-    "Quality": "COMMON",
-    "Color": 1,
-    "Stats": {
-      "SpellDamage": 5,
-      "SpellHealing": 5
-    },
-    "Auras": [],
-    "Phase": 1
-  },
-  {
     "ID": 28462,
     "Name": "Bright Tourmaline",
     "ItemLevel": 55,
@@ -1107,66 +397,6 @@
     "Phase": 1
   },
   {
-    "ID": 28463,
-    "Name": "Solid Zircon",
-    "ItemLevel": 55,
-    "Quality": "COMMON",
-    "Color": 2,
-    "Stats": {
-      "Stamina": 6
-    },
-    "Auras": [],
-    "Phase": 53
-  },
-  {
-    "ID": 28464,
-    "Name": "Sparkling Zircon",
-    "ItemLevel": 55,
-    "Quality": "COMMON",
-    "Color": 2,
-    "Stats": {
-      "Spirit": 4
-    },
-    "Auras": [],
-    "Phase": 53
-  },
-  {
-    "ID": 28465,
-    "Name": "Lustrous Zircon",
-    "ItemLevel": 55,
-    "Quality": "COMMON",
-    "Color": 2,
-    "Stats": {
-      "ManaPer5": 1
-    },
-    "Auras": [],
-    "Phase": 53
-  },
-  {
-    "ID": 28466,
-    "Name": "Brilliant Amber",
-    "ItemLevel": 55,
-    "Quality": "COMMON",
-    "Color": 3,
-    "Stats": {
-      "Intellect": 4
-    },
-    "Auras": [],
-    "Phase": 53
-  },
-  {
-    "ID": 28467,
-    "Name": "Smooth Amber",
-    "ItemLevel": 55,
-    "Quality": "COMMON",
-    "Color": 3,
-    "Stats": {
-      "Crit": 4
-    },
-    "Auras": [],
-    "Phase": 53
-  },
-  {
     "ID": 28468,
     "Name": "Rigid Amber",
     "ItemLevel": 55,
@@ -1174,30 +404,6 @@
     "Color": 3,
     "Stats": {
       "Hit": 4
-    },
-    "Auras": [],
-    "Phase": 53
-  },
-  {
-    "ID": 28469,
-    "Name": "Gleaming Amber",
-    "ItemLevel": 55,
-    "Quality": "COMMON",
-    "Color": 3,
-    "Stats": {
-      "SpellCrit": 4
-    },
-    "Auras": [],
-    "Phase": 53
-  },
-  {
-    "ID": 28470,
-    "Name": "Thick Amber",
-    "ItemLevel": 55,
-    "Quality": "COMMON",
-    "Color": 3,
-    "Stats": {
-      "Defense": 4
     },
     "Auras": [],
     "Phase": 53
@@ -1273,87 +479,6 @@
     "Phase": 1
   },
   {
-    "ID": 30547,
-    "Name": "Luminous Fire Opal",
-    "ItemLevel": 70,
-    "Quality": "EPIC",
-    "Color": 6,
-    "Stats": {
-      "Intellect": 4,
-      "SpellDamage": 4,
-      "SpellHealing": 11
-    },
-    "Auras": [],
-    "Phase": 1
-  },
-  {
-    "ID": 30548,
-    "Name": "Polished Chrysoprase",
-    "ItemLevel": 70,
-    "Quality": "EPIC",
-    "Color": 5,
-    "Stats": {
-      "SpellCrit": 5,
-      "Stamina": 6
-    },
-    "Auras": [],
-    "Phase": 1
-  },
-  {
-    "ID": 30549,
-    "Name": "Shifting Tanzanite",
-    "ItemLevel": 70,
-    "Quality": "EPIC",
-    "Color": 4,
-    "Stats": {
-      "Agility": 5,
-      "Stamina": 6
-    },
-    "Auras": [],
-    "Phase": 1
-  },
-  {
-    "ID": 30550,
-    "Name": "Sundered Chrysoprase",
-    "ItemLevel": 70,
-    "Quality": "EPIC",
-    "Color": 5,
-    "Stats": {
-      "ManaPer5": 2,
-      "Crit": 5
-    },
-    "Auras": [],
-    "Phase": 1
-  },
-  {
-    "ID": 30551,
-    "Name": "Infused Fire Opal",
-    "ItemLevel": 70,
-    "Quality": "EPIC",
-    "Color": 6,
-    "Stats": {
-      "Intellect": 4,
-      "SpellDamage": 6,
-      "SpellHealing": 6
-    },
-    "Auras": [],
-    "Phase": 1
-  },
-  {
-    "ID": 30552,
-    "Name": "Blessed Tanzanite",
-    "ItemLevel": 70,
-    "Quality": "EPIC",
-    "Color": 4,
-    "Stats": {
-      "SpellDamage": 4,
-      "SpellHealing": 11,
-      "Stamina": 6
-    },
-    "Auras": [],
-    "Phase": 1
-  },
-  {
     "ID": 30553,
     "Name": "Pristine Fire Opal",
     "ItemLevel": 70,
@@ -1362,33 +487,6 @@
     "Stats": {
       "AttackPower": 10,
       "Hit": 4
-    },
-    "Auras": [],
-    "Phase": 1
-  },
-  {
-    "ID": 30554,
-    "Name": "Stalwart Fire Opal",
-    "ItemLevel": 70,
-    "Quality": "EPIC",
-    "Color": 6,
-    "Stats": {
-      "Defense": 5,
-      "Dodge": 4
-    },
-    "Auras": [],
-    "Phase": 1
-  },
-  {
-    "ID": 30555,
-    "Name": "Glowing Tanzanite",
-    "ItemLevel": 70,
-    "Quality": "EPIC",
-    "Color": 4,
-    "Stats": {
-      "SpellDamage": 6,
-      "SpellHealing": 6,
-      "Stamina": 6
     },
     "Auras": [],
     "Phase": 1
@@ -1407,19 +505,6 @@
     "Phase": 1
   },
   {
-    "ID": 30558,
-    "Name": "Glimmering Fire Opal",
-    "ItemLevel": 70,
-    "Quality": "EPIC",
-    "Color": 6,
-    "Stats": {
-      "Defense": 4,
-      "Parry": 5
-    },
-    "Auras": [],
-    "Phase": 1
-  },
-  {
     "ID": 30559,
     "Name": "Etched Fire Opal",
     "ItemLevel": 70,
@@ -1428,72 +513,6 @@
     "Stats": {
       "Hit": 4,
       "Strength": 5
-    },
-    "Auras": [],
-    "Phase": 1
-  },
-  {
-    "ID": 30560,
-    "Name": "Rune Covered Chrysoprase",
-    "ItemLevel": 70,
-    "Quality": "EPIC",
-    "Color": 5,
-    "Stats": {
-      "ManaPer5": 2,
-      "SpellCrit": 5
-    },
-    "Auras": [],
-    "Phase": 1
-  },
-  {
-    "ID": 30563,
-    "Name": "Regal Tanzanite",
-    "ItemLevel": 70,
-    "Quality": "EPIC",
-    "Color": 4,
-    "Stats": {
-      "Dodge": 5,
-      "Stamina": 6
-    },
-    "Auras": [],
-    "Phase": 1
-  },
-  {
-    "ID": 30564,
-    "Name": "Shining Fire Opal",
-    "ItemLevel": 70,
-    "Quality": "EPIC",
-    "Color": 6,
-    "Stats": {
-      "SpellDamage": 6,
-      "SpellHealing": 6,
-      "SpellHit": 5
-    },
-    "Auras": [],
-    "Phase": 1
-  },
-  {
-    "ID": 30565,
-    "Name": "Assassin\u0027s Fire Opal",
-    "ItemLevel": 70,
-    "Quality": "EPIC",
-    "Color": 6,
-    "Stats": {
-      "Dodge": 5,
-      "Crit": 6
-    },
-    "Auras": [],
-    "Phase": 1
-  },
-  {
-    "ID": 30566,
-    "Name": "Defender\u0027s Tanzanite",
-    "ItemLevel": 70,
-    "Quality": "EPIC",
-    "Color": 4,
-    "Stats": {
-      "Parry": 5,
-      "Stamina": 6
     },
     "Auras": [],
     "Phase": 1
@@ -1509,33 +528,6 @@
     },
     "Auras": [],
     "UniqueEquipped": true,
-    "Phase": 1
-  },
-  {
-    "ID": 30572,
-    "Name": "Imperial Tanzanite",
-    "ItemLevel": 70,
-    "Quality": "EPIC",
-    "Color": 4,
-    "Stats": {
-      "Spirit": 5,
-      "SpellDamage": 3,
-      "SpellHealing": 9
-    },
-    "Auras": [],
-    "Phase": 1
-  },
-  {
-    "ID": 30573,
-    "Name": "Mysterious Fire Opal",
-    "ItemLevel": 70,
-    "Quality": "EPIC",
-    "Color": 6,
-    "Stats": {
-      "SpellDamage": 6,
-      "SpellHealing": 6
-    },
-    "Auras": [],
     "Phase": 1
   },
   {
@@ -1565,20 +557,6 @@
     "Phase": 1
   },
   {
-    "ID": 30581,
-    "Name": "Durable Fire Opal",
-    "ItemLevel": 70,
-    "Quality": "EPIC",
-    "Color": 6,
-    "Stats": {
-      "Resilience": 4,
-      "SpellDamage": 4,
-      "SpellHealing": 11
-    },
-    "Auras": [],
-    "Phase": 1
-  },
-  {
     "ID": 30582,
     "Name": "Deadly Fire Opal",
     "ItemLevel": 70,
@@ -1587,19 +565,6 @@
     "Stats": {
       "AttackPower": 8,
       "Crit": 5
-    },
-    "Auras": [],
-    "Phase": 1
-  },
-  {
-    "ID": 30583,
-    "Name": "Timeless Chrysoprase",
-    "ItemLevel": 70,
-    "Quality": "EPIC",
-    "Color": 5,
-    "Stats": {
-      "Intellect": 5,
-      "Stamina": 6
     },
     "Auras": [],
     "Phase": 1
@@ -1618,32 +583,6 @@
     "Phase": 1
   },
   {
-    "ID": 30585,
-    "Name": "Glistening Fire Opal",
-    "ItemLevel": 70,
-    "Quality": "EPIC",
-    "Color": 6,
-    "Stats": {
-      "Agility": 4,
-      "Defense": 5
-    },
-    "Auras": [],
-    "Phase": 1
-  },
-  {
-    "ID": 30586,
-    "Name": "Seer\u0027s Chrysoprase",
-    "ItemLevel": 70,
-    "Quality": "EPIC",
-    "Color": 5,
-    "Stats": {
-      "Intellect": 4,
-      "Spirit": 5
-    },
-    "Auras": [],
-    "Phase": 1
-  },
-  {
     "ID": 30587,
     "Name": "Champion\u0027s Fire Opal",
     "ItemLevel": 70,
@@ -1652,46 +591,6 @@
     "Stats": {
       "Defense": 4,
       "Strength": 5
-    },
-    "Auras": [],
-    "Phase": 1
-  },
-  {
-    "ID": 30588,
-    "Name": "Potent Fire Opal",
-    "ItemLevel": 70,
-    "Quality": "EPIC",
-    "Color": 6,
-    "Stats": {
-      "SpellCrit": 4,
-      "SpellDamage": 6,
-      "SpellHealing": 6
-    },
-    "Auras": [],
-    "Phase": 1
-  },
-  {
-    "ID": 30589,
-    "Name": "Dazzling Chrysoprase",
-    "ItemLevel": 70,
-    "Quality": "EPIC",
-    "Color": 5,
-    "Stats": {
-      "Intellect": 5,
-      "ManaPer5": 2
-    },
-    "Auras": [],
-    "Phase": 1
-  },
-  {
-    "ID": 30590,
-    "Name": "Enduring Chrysoprase",
-    "ItemLevel": 70,
-    "Quality": "EPIC",
-    "Color": 5,
-    "Stats": {
-      "Defense": 5,
-      "Stamina": 6
     },
     "Auras": [],
     "Phase": 1
@@ -1710,46 +609,6 @@
     "Phase": 1
   },
   {
-    "ID": 30592,
-    "Name": "Steady Chrysoprase",
-    "ItemLevel": 70,
-    "Quality": "EPIC",
-    "Color": 5,
-    "Stats": {
-      "Resilience": 5,
-      "Stamina": 6
-    },
-    "Auras": [],
-    "Phase": 1
-  },
-  {
-    "ID": 30593,
-    "Name": "Iridescent Fire Opal",
-    "ItemLevel": 70,
-    "Quality": "EPIC",
-    "Color": 6,
-    "Stats": {
-      "SpellCrit": 4,
-      "SpellDamage": 4,
-      "SpellHealing": 11
-    },
-    "Auras": [],
-    "Phase": 1
-  },
-  {
-    "ID": 30594,
-    "Name": "Effulgent Chrysoprase",
-    "ItemLevel": 70,
-    "Quality": "EPIC",
-    "Color": 5,
-    "Stats": {
-      "Defense": 5,
-      "ManaPer5": 2
-    },
-    "Auras": [],
-    "Phase": 1
-  },
-  {
     "ID": 30598,
     "Name": "Don Amancio\u0027s Heart",
     "ItemLevel": 60,
@@ -1760,60 +619,6 @@
     },
     "Auras": [],
     "UniqueEquipped": true,
-    "Phase": 1
-  },
-  {
-    "ID": 30600,
-    "Name": "Fluorescent Tanzanite",
-    "ItemLevel": 70,
-    "Quality": "EPIC",
-    "Color": 4,
-    "Stats": {
-      "Spirit": 4,
-      "SpellDamage": 6,
-      "SpellHealing": 6
-    },
-    "Auras": [],
-    "Phase": 1
-  },
-  {
-    "ID": 30601,
-    "Name": "Beaming Fire Opal",
-    "ItemLevel": 70,
-    "Quality": "EPIC",
-    "Color": 6,
-    "Stats": {
-      "Dodge": 5,
-      "Resilience": 4
-    },
-    "Auras": [],
-    "Phase": 1
-  },
-  {
-    "ID": 30602,
-    "Name": "Jagged Chrysoprase",
-    "ItemLevel": 70,
-    "Quality": "EPIC",
-    "Color": 5,
-    "Stats": {
-      "Crit": 5,
-      "Stamina": 6
-    },
-    "Auras": [],
-    "Phase": 1
-  },
-  {
-    "ID": 30603,
-    "Name": "Royal Tanzanite",
-    "ItemLevel": 70,
-    "Quality": "EPIC",
-    "Color": 4,
-    "Stats": {
-      "ManaPer5": 2,
-      "SpellDamage": 4,
-      "SpellHealing": 11
-    },
-    "Auras": [],
     "Phase": 1
   },
   {
@@ -1830,85 +635,6 @@
     "Phase": 1
   },
   {
-    "ID": 30605,
-    "Name": "Vivid Chrysoprase",
-    "ItemLevel": 70,
-    "Quality": "EPIC",
-    "Color": 5,
-    "Stats": {
-      "SpellHit": 5,
-      "Stamina": 6
-    },
-    "Auras": [],
-    "Phase": 1
-  },
-  {
-    "ID": 30606,
-    "Name": "Lambent Chrysoprase",
-    "ItemLevel": 70,
-    "Quality": "EPIC",
-    "Color": 5,
-    "Stats": {
-      "ManaPer5": 2,
-      "SpellHit": 5
-    },
-    "Auras": [],
-    "Phase": 1
-  },
-  {
-    "ID": 30607,
-    "Name": "Splendid Fire Opal",
-    "ItemLevel": 70,
-    "Quality": "EPIC",
-    "Color": 6,
-    "Stats": {
-      "Parry": 5,
-      "Resilience": 4
-    },
-    "Auras": [],
-    "Phase": 1
-  },
-  {
-    "ID": 30608,
-    "Name": "Radiant Chrysoprase",
-    "ItemLevel": 70,
-    "Quality": "EPIC",
-    "Color": 5,
-    "Stats": {
-      "SpellCrit": 5
-    },
-    "Auras": [],
-    "Phase": 1
-  },
-  {
-    "ID": 31116,
-    "Name": "Infused Amethyst",
-    "ItemLevel": 70,
-    "Quality": "EPIC",
-    "Color": 4,
-    "Stats": {
-      "SpellDamage": 6,
-      "SpellHealing": 6,
-      "Stamina": 6
-    },
-    "Auras": [],
-    "Phase": 1
-  },
-  {
-    "ID": 31117,
-    "Name": "Soothing Amethyst",
-    "ItemLevel": 70,
-    "Quality": "EPIC",
-    "Color": 4,
-    "Stats": {
-      "SpellDamage": 4,
-      "SpellHealing": 11,
-      "Stamina": 6
-    },
-    "Auras": [],
-    "Phase": 1
-  },
-  {
     "ID": 31118,
     "Name": "Pulsing Amethyst",
     "ItemLevel": 70,
@@ -1917,30 +643,6 @@
     "Stats": {
       "AttackPower": 10,
       "Stamina": 6
-    },
-    "Auras": [],
-    "Phase": 1
-  },
-  {
-    "ID": 31860,
-    "Name": "Great Golden Draenite",
-    "ItemLevel": 60,
-    "Quality": "UNCOMMON",
-    "Color": 3,
-    "Stats": {
-      "SpellHit": 6
-    },
-    "Auras": [],
-    "Phase": 1
-  },
-  {
-    "ID": 31861,
-    "Name": "Great Dawnstone",
-    "ItemLevel": 70,
-    "Quality": "RARE",
-    "Color": 3,
-    "Stats": {
-      "SpellHit": 8
     },
     "Auras": [],
     "Phase": 1
@@ -1998,34 +700,6 @@
     "Phase": 1
   },
   {
-    "ID": 31866,
-    "Name": "Veiled Flame Spessarite",
-    "ItemLevel": 60,
-    "Quality": "UNCOMMON",
-    "Color": 6,
-    "Stats": {
-      "SpellDamage": 4,
-      "SpellHealing": 4,
-      "SpellHit": 3
-    },
-    "Auras": [],
-    "Phase": 1
-  },
-  {
-    "ID": 31867,
-    "Name": "Veiled Noble Topaz",
-    "ItemLevel": 70,
-    "Quality": "RARE",
-    "Color": 6,
-    "Stats": {
-      "SpellDamage": 5,
-      "SpellHealing": 5,
-      "SpellHit": 4
-    },
-    "Auras": [],
-    "Phase": 1
-  },
-  {
     "ID": 31868,
     "Name": "Wicked Noble Topaz",
     "ItemLevel": 70,
@@ -2064,44 +738,6 @@
     "Phase": 3
   },
   {
-    "ID": 32194,
-    "Name": "Delicate Crimson Spinel",
-    "ItemLevel": 100,
-    "Quality": "EPIC",
-    "Color": 1,
-    "Stats": {
-      "Agility": 10
-    },
-    "Auras": [],
-    "Phase": 3
-  },
-  {
-    "ID": 32195,
-    "Name": "Teardrop Crimson Spinel",
-    "ItemLevel": 100,
-    "Quality": "EPIC",
-    "Color": 1,
-    "Stats": {
-      "SpellDamage": 8,
-      "SpellHealing": 22
-    },
-    "Auras": [],
-    "Phase": 3
-  },
-  {
-    "ID": 32196,
-    "Name": "Runed Crimson Spinel",
-    "ItemLevel": 100,
-    "Quality": "EPIC",
-    "Color": 1,
-    "Stats": {
-      "SpellDamage": 12,
-      "SpellHealing": 12
-    },
-    "Auras": [],
-    "Phase": 3
-  },
-  {
     "ID": 32197,
     "Name": "Bright Crimson Spinel",
     "ItemLevel": 100,
@@ -2109,90 +745,6 @@
     "Color": 1,
     "Stats": {
       "AttackPower": 20
-    },
-    "Auras": [],
-    "Phase": 3
-  },
-  {
-    "ID": 32198,
-    "Name": "Subtle Crimson Spinel",
-    "ItemLevel": 100,
-    "Quality": "EPIC",
-    "Color": 1,
-    "Stats": {
-      "Dodge": 10
-    },
-    "Auras": [],
-    "Phase": 3
-  },
-  {
-    "ID": 32199,
-    "Name": "Flashing Crimson Spinel",
-    "ItemLevel": 100,
-    "Quality": "EPIC",
-    "Color": 1,
-    "Stats": {
-      "Parry": 10
-    },
-    "Auras": [],
-    "Phase": 3
-  },
-  {
-    "ID": 32200,
-    "Name": "Solid Empyrean Sapphire",
-    "ItemLevel": 100,
-    "Quality": "EPIC",
-    "Color": 2,
-    "Stats": {
-      "Stamina": 15
-    },
-    "Auras": [],
-    "Phase": 3
-  },
-  {
-    "ID": 32201,
-    "Name": "Sparkling Empyrean Sapphire",
-    "ItemLevel": 100,
-    "Quality": "EPIC",
-    "Color": 2,
-    "Stats": {
-      "Spirit": 10
-    },
-    "Auras": [],
-    "Phase": 3
-  },
-  {
-    "ID": 32202,
-    "Name": "Lustrous Empyrean Sapphire",
-    "ItemLevel": 100,
-    "Quality": "EPIC",
-    "Color": 2,
-    "Stats": {
-      "ManaPer5": 4
-    },
-    "Auras": [],
-    "Phase": 3
-  },
-  {
-    "ID": 32204,
-    "Name": "Brilliant Lionseye",
-    "ItemLevel": 100,
-    "Quality": "EPIC",
-    "Color": 3,
-    "Stats": {
-      "Intellect": 10
-    },
-    "Auras": [],
-    "Phase": 3
-  },
-  {
-    "ID": 32205,
-    "Name": "Smooth Lionseye",
-    "ItemLevel": 100,
-    "Quality": "EPIC",
-    "Color": 3,
-    "Stats": {
-      "Crit": 10
     },
     "Auras": [],
     "Phase": 3
@@ -2210,54 +762,6 @@
     "Phase": 3
   },
   {
-    "ID": 32207,
-    "Name": "Gleaming Lionseye",
-    "ItemLevel": 100,
-    "Quality": "EPIC",
-    "Color": 3,
-    "Stats": {
-      "SpellCrit": 10
-    },
-    "Auras": [],
-    "Phase": 3
-  },
-  {
-    "ID": 32208,
-    "Name": "Thick Lionseye",
-    "ItemLevel": 100,
-    "Quality": "EPIC",
-    "Color": 3,
-    "Stats": {
-      "Defense": 10
-    },
-    "Auras": [],
-    "Phase": 3
-  },
-  {
-    "ID": 32209,
-    "Name": "Mystic Lionseye",
-    "ItemLevel": 100,
-    "Quality": "EPIC",
-    "Color": 3,
-    "Stats": {
-      "Resilience": 10
-    },
-    "Auras": [],
-    "Phase": 3
-  },
-  {
-    "ID": 32210,
-    "Name": "Great Lionseye",
-    "ItemLevel": 100,
-    "Quality": "EPIC",
-    "Color": 3,
-    "Stats": {
-      "SpellHit": 10
-    },
-    "Auras": [],
-    "Phase": 3
-  },
-  {
     "ID": 32211,
     "Name": "Sovereign Shadowsong Amethyst",
     "ItemLevel": 100,
@@ -2266,19 +770,6 @@
     "Stats": {
       "Stamina": 7,
       "Strength": 5
-    },
-    "Auras": [],
-    "Phase": 3
-  },
-  {
-    "ID": 32212,
-    "Name": "Shifting Shadowsong Amethyst",
-    "ItemLevel": 100,
-    "Quality": "EPIC",
-    "Color": 4,
-    "Stats": {
-      "Agility": 5,
-      "Stamina": 7
     },
     "Auras": [],
     "Phase": 3
@@ -2310,34 +801,6 @@
     "Phase": 3
   },
   {
-    "ID": 32215,
-    "Name": "Glowing Shadowsong Amethyst",
-    "ItemLevel": 100,
-    "Quality": "EPIC",
-    "Color": 4,
-    "Stats": {
-      "SpellDamage": 6,
-      "SpellHealing": 6,
-      "Stamina": 7
-    },
-    "Auras": [],
-    "Phase": 3
-  },
-  {
-    "ID": 32216,
-    "Name": "Royal Shadowsong Amethyst",
-    "ItemLevel": 100,
-    "Quality": "EPIC",
-    "Color": 4,
-    "Stats": {
-      "ManaPer5": 2,
-      "SpellDamage": 4,
-      "SpellHealing": 11
-    },
-    "Auras": [],
-    "Phase": 3
-  },
-  {
     "ID": 32217,
     "Name": "Inscribed Pyrestone",
     "ItemLevel": 100,
@@ -2346,34 +809,6 @@
     "Stats": {
       "Crit": 5,
       "Strength": 5
-    },
-    "Auras": [],
-    "Phase": 3
-  },
-  {
-    "ID": 32218,
-    "Name": "Potent Pyrestone",
-    "ItemLevel": 100,
-    "Quality": "EPIC",
-    "Color": 6,
-    "Stats": {
-      "SpellCrit": 5,
-      "SpellDamage": 6,
-      "SpellHealing": 6
-    },
-    "Auras": [],
-    "Phase": 3
-  },
-  {
-    "ID": 32219,
-    "Name": "Luminous Pyrestone",
-    "ItemLevel": 100,
-    "Quality": "EPIC",
-    "Color": 6,
-    "Stats": {
-      "Intellect": 5,
-      "SpellDamage": 4,
-      "SpellHealing": 11
     },
     "Auras": [],
     "Phase": 3
@@ -2392,20 +827,6 @@
     "Phase": 3
   },
   {
-    "ID": 32221,
-    "Name": "Veiled Pyrestone",
-    "ItemLevel": 100,
-    "Quality": "EPIC",
-    "Color": 6,
-    "Stats": {
-      "SpellDamage": 6,
-      "SpellHealing": 6,
-      "SpellHit": 5
-    },
-    "Auras": [],
-    "Phase": 3
-  },
-  {
     "ID": 32222,
     "Name": "Wicked Pyrestone",
     "ItemLevel": 100,
@@ -2414,57 +835,6 @@
     "Stats": {
       "AttackPower": 10,
       "Crit": 5
-    },
-    "Auras": [],
-    "Phase": 3
-  },
-  {
-    "ID": 32223,
-    "Name": "Enduring Seaspray Emerald",
-    "ItemLevel": 100,
-    "Quality": "EPIC",
-    "Color": 5,
-    "Stats": {
-      "Defense": 5,
-      "Stamina": 7
-    },
-    "Auras": [],
-    "Phase": 3
-  },
-  {
-    "ID": 32224,
-    "Name": "Radiant Seaspray Emerald",
-    "ItemLevel": 100,
-    "Quality": "EPIC",
-    "Color": 5,
-    "Stats": {
-      "SpellCrit": 5
-    },
-    "Auras": [],
-    "Phase": 3
-  },
-  {
-    "ID": 32225,
-    "Name": "Dazzling Seaspray Emerald",
-    "ItemLevel": 100,
-    "Quality": "EPIC",
-    "Color": 5,
-    "Stats": {
-      "Intellect": 5,
-      "ManaPer5": 2
-    },
-    "Auras": [],
-    "Phase": 3
-  },
-  {
-    "ID": 32226,
-    "Name": "Jagged Seaspray Emerald",
-    "ItemLevel": 100,
-    "Quality": "EPIC",
-    "Color": 5,
-    "Stats": {
-      "Crit": 5,
-      "Stamina": 7
     },
     "Auras": [],
     "Phase": 3
@@ -2526,35 +896,6 @@
     "Phase": 53
   },
   {
-    "ID": 32635,
-    "Name": "Unstable Peridot",
-    "ItemLevel": 70,
-    "Quality": "RARE",
-    "Color": 6,
-    "Stats": {
-      "Intellect": 4,
-      "Stamina": 6
-    },
-    "Auras": [],
-    "UniqueEquipped": true,
-    "Phase": 53
-  },
-  {
-    "ID": 32636,
-    "Name": "Unstable Sapphire",
-    "ItemLevel": 70,
-    "Quality": "RARE",
-    "Color": 6,
-    "Stats": {
-      "Spirit": 4,
-      "SpellDamage": 3,
-      "SpellHealing": 9
-    },
-    "Auras": [],
-    "UniqueEquipped": true,
-    "Phase": 53
-  },
-  {
     "ID": 32637,
     "Name": "Unstable Citrine",
     "ItemLevel": 70,
@@ -2563,35 +904,6 @@
     "Stats": {
       "AttackPower": 8,
       "Crit": 4
-    },
-    "Auras": [],
-    "UniqueEquipped": true,
-    "Phase": 53
-  },
-  {
-    "ID": 32638,
-    "Name": "Unstable Topaz",
-    "ItemLevel": 70,
-    "Quality": "RARE",
-    "Color": 6,
-    "Stats": {
-      "Intellect": 4,
-      "SpellDamage": 5,
-      "SpellHealing": 5
-    },
-    "Auras": [],
-    "UniqueEquipped": true,
-    "Phase": 53
-  },
-  {
-    "ID": 32639,
-    "Name": "Unstable Talasite",
-    "ItemLevel": 70,
-    "Quality": "RARE",
-    "Color": 5,
-    "Stats": {
-      "SpellCrit": 4,
-      "Stamina": 4
     },
     "Auras": [],
     "UniqueEquipped": true,
@@ -2650,46 +962,6 @@
     "Phase": 53
   },
   {
-    "ID": 32833,
-    "Name": "Purified Jaggal Pearl",
-    "ItemLevel": 60,
-    "Quality": "UNCOMMON",
-    "Color": 4,
-    "Stats": {
-      "Spirit": 3,
-      "SpellDamage": 3,
-      "SpellHealing": 7
-    },
-    "Auras": [],
-    "Phase": 1
-  },
-  {
-    "ID": 32836,
-    "Name": "Purified Shadow Pearl",
-    "ItemLevel": 60,
-    "Quality": "RARE",
-    "Color": 4,
-    "Stats": {
-      "Spirit": 4,
-      "SpellDamage": 3,
-      "SpellHealing": 9
-    },
-    "Auras": [],
-    "Phase": 1
-  },
-  {
-    "ID": 33060,
-    "Name": "Soulbound Test Gem",
-    "ItemLevel": 70,
-    "Quality": "RARE",
-    "Color": 9,
-    "Stats": {
-      "Agility": 8
-    },
-    "Auras": [],
-    "Phase": 53
-  },
-  {
     "ID": 33131,
     "Name": "Crimson Sun",
     "ItemLevel": 130,
@@ -2701,60 +973,6 @@
     "Auras": [],
     "UniqueEquipped": true,
     "Phase": 1
-  },
-  {
-    "ID": 33132,
-    "Name": "Delicate Fire Ruby",
-    "ItemLevel": 130,
-    "Quality": "EPIC",
-    "Color": 1,
-    "Stats": {
-      "Agility": 12
-    },
-    "Auras": [],
-    "UniqueEquipped": true,
-    "Phase": 53
-  },
-  {
-    "ID": 33133,
-    "Name": "Don Julio\u0027s Heart",
-    "ItemLevel": 130,
-    "Quality": "EPIC",
-    "Color": 1,
-    "Stats": {
-      "SpellDamage": 14,
-      "SpellHealing": 14
-    },
-    "Auras": [],
-    "UniqueEquipped": true,
-    "Phase": 1
-  },
-  {
-    "ID": 33134,
-    "Name": "Kailee\u0027s Rose",
-    "ItemLevel": 130,
-    "Quality": "EPIC",
-    "Color": 1,
-    "Stats": {
-      "SpellDamage": 9,
-      "SpellHealing": 26
-    },
-    "Auras": [],
-    "UniqueEquipped": true,
-    "Phase": 2
-  },
-  {
-    "ID": 33135,
-    "Name": "Falling Star",
-    "ItemLevel": 130,
-    "Quality": "EPIC",
-    "Color": 2,
-    "Stats": {
-      "Stamina": 18
-    },
-    "Auras": [],
-    "UniqueEquipped": true,
-    "Phase": 53
   },
   {
     "ID": 33137,
@@ -2774,45 +992,6 @@
     "Phase": 53
   },
   {
-    "ID": 33138,
-    "Name": "Mystic Bladestone",
-    "ItemLevel": 130,
-    "Quality": "EPIC",
-    "Color": 3,
-    "Stats": {
-      "Resilience": 12
-    },
-    "Auras": [],
-    "UniqueEquipped": true,
-    "Phase": 53
-  },
-  {
-    "ID": 33140,
-    "Name": "Blood of Amber",
-    "ItemLevel": 130,
-    "Quality": "EPIC",
-    "Color": 3,
-    "Stats": {
-      "SpellCrit": 12
-    },
-    "Auras": [],
-    "UniqueEquipped": true,
-    "Phase": 53
-  },
-  {
-    "ID": 33141,
-    "Name": "Great Bladestone",
-    "ItemLevel": 130,
-    "Quality": "EPIC",
-    "Color": 3,
-    "Stats": {
-      "SpellHit": 12
-    },
-    "Auras": [],
-    "UniqueEquipped": true,
-    "Phase": 53
-  },
-  {
     "ID": 33142,
     "Name": "Rigid Bladestone",
     "ItemLevel": 130,
@@ -2824,45 +1003,6 @@
     "Auras": [],
     "UniqueEquipped": true,
     "Phase": 53
-  },
-  {
-    "ID": 33143,
-    "Name": "Stone of Blades",
-    "ItemLevel": 130,
-    "Quality": "EPIC",
-    "Color": 3,
-    "Stats": {
-      "Crit": 12
-    },
-    "Auras": [],
-    "UniqueEquipped": true,
-    "Phase": 53
-  },
-  {
-    "ID": 33144,
-    "Name": "Facet of Eternity",
-    "ItemLevel": 130,
-    "Quality": "EPIC",
-    "Color": 3,
-    "Stats": {
-      "Defense": 12
-    },
-    "Auras": [],
-    "UniqueEquipped": true,
-    "Phase": 53
-  },
-  {
-    "ID": 33782,
-    "Name": "Steady Talasite",
-    "ItemLevel": 70,
-    "Quality": "RARE",
-    "Color": 5,
-    "Stats": {
-      "Resilience": 4,
-      "Stamina": 6
-    },
-    "Auras": [],
-    "Phase": 1
   },
   {
     "ID": 34220,
@@ -2885,86 +1025,6 @@
     "Phase": 1
   },
   {
-    "ID": 34256,
-    "Name": "Charmed Amani Jewel",
-    "ItemLevel": 70,
-    "Quality": "EPIC",
-    "Color": 2,
-    "Stats": {
-      "Stamina": 15
-    },
-    "Auras": [],
-    "UniqueEquipped": true,
-    "Phase": 53
-  },
-  {
-    "ID": 34627,
-    "Name": "Heavy Tonk Armor",
-    "ItemLevel": 70,
-    "Quality": "RARE",
-    "Color": 3,
-    "Stats": {},
-    "Auras": [
-      {
-        "ID": 45335,
-        "Name": "Heavy Tonk Armor"
-      }
-    ],
-    "Phase": 53
-  },
-  {
-    "ID": 34831,
-    "Name": "Eye of the Sea",
-    "ItemLevel": 70,
-    "Quality": "RARE",
-    "Color": 2,
-    "Stats": {
-      "Stamina": 15
-    },
-    "Auras": [],
-    "UniqueEquipped": true,
-    "Phase": 1
-  },
-  {
-    "ID": 35315,
-    "Name": "Quick Dawnstone",
-    "ItemLevel": 70,
-    "Quality": "RARE",
-    "Color": 3,
-    "Stats": {
-      "SpellHaste": 8
-    },
-    "Auras": [],
-    "Phase": 1
-  },
-  {
-    "ID": 35316,
-    "Name": "Reckless Noble Topaz",
-    "ItemLevel": 70,
-    "Quality": "RARE",
-    "Color": 6,
-    "Stats": {
-      "SpellDamage": 5,
-      "SpellHaste": 4,
-      "SpellHealing": 5
-    },
-    "Auras": [],
-    "Phase": 1
-  },
-  {
-    "ID": 35318,
-    "Name": "Forceful Talasite",
-    "ItemLevel": 70,
-    "Quality": "RARE",
-    "Color": 5,
-    "Stats": {
-      "SpellHaste": 4,
-      "Stamina": 6
-    },
-    "Auras": [],
-    "Phase": 1
-  },
-  {
     "ID": 35487,
     "Name": "Bright Crimson Spinel",
     "ItemLevel": 100,
@@ -2975,32 +1035,6 @@
     },
     "Auras": [],
     "Phase": 5
-  },
-  {
-    "ID": 35488,
-    "Name": "Runed Crimson Spinel",
-    "ItemLevel": 100,
-    "Quality": "EPIC",
-    "Color": 1,
-    "Stats": {
-      "SpellDamage": 12,
-      "SpellHealing": 12
-    },
-    "Auras": [],
-    "Phase": 5
-  },
-  {
-    "ID": 35489,
-    "Name": "Teardrop Crimson Spinel",
-    "ItemLevel": 100,
-    "Quality": "EPIC",
-    "Color": 1,
-    "Stats": {
-      "SpellDamage": 8,
-      "SpellHealing": 22
-    },
-    "Auras": [],
-    "Phase": 3
   },
   {
     "ID": 35501,
@@ -3045,85 +1079,6 @@
     "Phase": 5
   },
   {
-    "ID": 35707,
-    "Name": "Regal Nightseye",
-    "ItemLevel": 70,
-    "Quality": "RARE",
-    "Color": 4,
-    "Stats": {
-      "Dodge": 4,
-      "Stamina": 6
-    },
-    "Auras": [],
-    "Phase": 1
-  },
-  {
-    "ID": 35758,
-    "Name": "Steady Seaspray Emerald",
-    "ItemLevel": 70,
-    "Quality": "EPIC",
-    "Color": 5,
-    "Stats": {
-      "Resilience": 5,
-      "Stamina": 7
-    },
-    "Auras": [],
-    "Phase": 3
-  },
-  {
-    "ID": 35759,
-    "Name": "Forceful Seaspray Emerald",
-    "ItemLevel": 70,
-    "Quality": "EPIC",
-    "Color": 5,
-    "Stats": {
-      "SpellHaste": 5,
-      "Stamina": 7
-    },
-    "Auras": [],
-    "Phase": 3
-  },
-  {
-    "ID": 35760,
-    "Name": "Reckless Pyrestone",
-    "ItemLevel": 100,
-    "Quality": "EPIC",
-    "Color": 6,
-    "Stats": {
-      "SpellDamage": 6,
-      "SpellHaste": 5,
-      "SpellHealing": 6
-    },
-    "Auras": [],
-    "Phase": 3
-  },
-  {
-    "ID": 35761,
-    "Name": "Quick Lionseye",
-    "ItemLevel": 100,
-    "Quality": "EPIC",
-    "Color": 3,
-    "Stats": {
-      "SpellHaste": 10
-    },
-    "Auras": [],
-    "Phase": 3
-  },
-  {
-    "ID": 37503,
-    "Name": "Purified Shadowsong Amethyst",
-    "ItemLevel": 100,
-    "Quality": "EPIC",
-    "Color": 4,
-    "Stats": {
-      "Spirit": 5,
-      "SpellDamage": 4,
-      "SpellHealing": 11
-    },
-    "Auras": [],
-    "Phase": 3
-  },
-  {
     "ID": 38545,
     "Name": "Bold Ornate Ruby",
     "ItemLevel": 60,
@@ -3131,18 +1086,6 @@
     "Color": 1,
     "Stats": {
       "AttackPower": 20
-    },
-    "Auras": [],
-    "Phase": 1
-  },
-  {
-    "ID": 38546,
-    "Name": "Gleaming Ornate Dawnstone",
-    "ItemLevel": 60,
-    "Quality": "EPIC",
-    "Color": 3,
-    "Stats": {
-      "SpellCrit": 10
     },
     "Auras": [],
     "Phase": 1
@@ -3156,45 +1099,6 @@
     "Stats": {
       "AttackPower": 10,
       "Crit": 5
-    },
-    "Auras": [],
-    "Phase": 1
-  },
-  {
-    "ID": 38548,
-    "Name": "Potent Ornate Topaz",
-    "ItemLevel": 60,
-    "Quality": "EPIC",
-    "Color": 6,
-    "Stats": {
-      "SpellCrit": 5,
-      "SpellDamage": 6,
-      "SpellHealing": 6
-    },
-    "Auras": [],
-    "Phase": 1
-  },
-  {
-    "ID": 38549,
-    "Name": "Runed Ornate Ruby",
-    "ItemLevel": 60,
-    "Quality": "EPIC",
-    "Color": 1,
-    "Stats": {
-      "SpellDamage": 12,
-      "SpellHealing": 12
-    },
-    "Auras": [],
-    "Phase": 1
-  },
-  {
-    "ID": 38550,
-    "Name": "Smooth Ornate Dawnstone",
-    "ItemLevel": 60,
-    "Quality": "EPIC",
-    "Color": 3,
-    "Stats": {
-      "Crit": 10
     },
     "Auras": [],
     "Phase": 1
