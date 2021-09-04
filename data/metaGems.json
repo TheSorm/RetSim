@@ -4,7 +4,7 @@
       "ID": 11818,
       "Name": "Spell Reflection"
     },
-    "Requirements": {
+    "GemRequirements": {
       "Red": 2,
       "Blue": 2,
       "Yellow": 2
@@ -24,7 +24,7 @@
       "ID": 32837,
       "Name": "Spell Focus Trigger"
     },
-    "Requirements": {
+    "GemRequirements": {
       "Type": 5
     },
     "ID": 25893,
@@ -40,7 +40,7 @@
       "ID": 23990,
       "Name": "Item - Minor Run Speed"
     },
-    "Requirements": {
+    "GemRequirements": {
       "Red": 1,
       "Blue": 0,
       "Yellow": 2
@@ -60,7 +60,7 @@
       "ID": 32195,
       "Name": "Resist Snare/Root"
     },
-    "Requirements": {
+    "GemRequirements": {
       "Type": 3
     },
     "ID": 25895,
@@ -78,7 +78,7 @@
       "ID": 21351,
       "Name": "Increased Stun Resist 01"
     },
-    "Requirements": {
+    "GemRequirements": {
       "Red": 0,
       "Blue": 3,
       "Yellow": 0
@@ -98,7 +98,7 @@
       "ID": 32842,
       "Name": "Decrease Threat"
     },
-    "Requirements": {
+    "GemRequirements": {
       "Type": 2
     },
     "ID": 25897,
@@ -117,7 +117,7 @@
       "ID": 32844,
       "Name": "Lesser Heroism"
     },
-    "Requirements": {
+    "GemRequirements": {
       "Red": 0,
       "Blue": 5,
       "Yellow": 0
@@ -137,7 +137,7 @@
       "ID": 26598,
       "Name": "Weapon Damage"
     },
-    "Requirements": {
+    "GemRequirements": {
       "Red": 2,
       "Blue": 2,
       "Yellow": 2
@@ -155,7 +155,7 @@
       "ID": 27521,
       "Name": "Mana Restore"
     },
-    "Requirements": {
+    "GemRequirements": {
       "Red": 2,
       "Blue": 2,
       "Yellow": 2
@@ -175,7 +175,7 @@
       "ID": 23990,
       "Name": "Item - Minor Run Speed"
     },
-    "Requirements": {
+    "GemRequirements": {
       "Red": 1,
       "Blue": 0,
       "Yellow": 2
@@ -196,7 +196,7 @@
       "ID": 23990,
       "Name": "Item - Minor Run Speed"
     },
-    "Requirements": {
+    "GemRequirements": {
       "Red": 1,
       "Blue": 0,
       "Yellow": 2
@@ -218,7 +218,7 @@
       "ID": 39957,
       "Name": "Increase Critical Damage 3%"
     },
-    "Requirements": {
+    "GemRequirements": {
       "Red": 2,
       "Blue": 2,
       "Yellow": 2
@@ -238,7 +238,7 @@
       "ID": 39958,
       "Name": "Skyfire Swiftness"
     },
-    "Requirements": {
+    "GemRequirements": {
       "Red": 2,
       "Blue": 2,
       "Yellow": 2
@@ -256,7 +256,7 @@
       "ID": 40691,
       "Name": "Stun Resistance 5"
     },
-    "Requirements": {
+    "GemRequirements": {
       "Type": 5
     },
     "ID": 32640,
@@ -274,7 +274,7 @@
       "ID": 40706,
       "Name": "Increased Stun Resist 05"
     },
-    "Requirements": {
+    "GemRequirements": {
       "Red": 0,
       "Blue": 0,
       "Yellow": 3
@@ -295,7 +295,7 @@
       "ID": 44797,
       "Name": "Increase Critical Damage 3%"
     },
-    "Requirements": {
+    "GemRequirements": {
       "Red": 0,
       "Blue": 2,
       "Yellow": 0
@@ -315,7 +315,7 @@
       "ID": 46596,
       "Name": "Eternal Shield"
     },
-    "Requirements": {
+    "GemRequirements": {
       "Red": 0,
       "Blue": 2,
       "Yellow": 1
@@ -335,7 +335,7 @@
       "ID": 46600,
       "Name": "Ember Skyfire Intellect"
     },
-    "Requirements": {
+    "GemRequirements": {
       "Red": 3,
       "Blue": 0,
       "Yellow": 0
