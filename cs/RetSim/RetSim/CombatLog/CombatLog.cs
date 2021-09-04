@@ -10,7 +10,7 @@ namespace RetSim.Log
 
         public Dictionary<string, List<DamageEntry>> DamageBreakdown { get; init; }
 
-        public List<string> Log { get; init; }
+        public List<LogEntry> Log { get; init; }
 
         public CombatLog()
         {
@@ -18,7 +18,7 @@ namespace RetSim.Log
             DPS = 0f;
 
             DamageBreakdown = new Dictionary<string, List<DamageEntry>>();
-            Log = new List<string>();
+            Log = new List<LogEntry>();
         }
 
         public void Add(LogEntry entry)
@@ -45,7 +45,7 @@ namespace RetSim.Log
 
         private void AddToLog(LogEntry entry)
         {
-            Log.Add(entry.ToString());
+            Log.Add(entry);
         }
     }
 }

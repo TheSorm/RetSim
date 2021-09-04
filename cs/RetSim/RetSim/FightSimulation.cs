@@ -75,8 +75,8 @@ namespace RetSim
             Logger.Log($"\nExpected duration: {Duration}");
             Logger.Log($"Real duration: {Timestamp}\n");
 
-            foreach (string s in CombatLog.Log)
-                Logger.Log(s);
+            foreach (LogEntry entry in CombatLog.Log)
+                Logger.Log(entry.ToString());
 
             Logger.Log($"\nTotal DPS: {CombatLog.DPS.Rounded()}");
             Logger.Log($"Total Damage: {CombatLog.Damage}");
