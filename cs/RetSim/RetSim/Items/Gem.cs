@@ -7,7 +7,7 @@ namespace RetSim.Items
     {
         public GemRequirements Requirements { get; init; }
         public ItemAura Aura { get; init; }
-        
+
         public MetaGem()
         {
             Color = GemColor.Meta;
@@ -30,10 +30,10 @@ namespace RetSim.Items
 
         //TODO: Add "Nickname"
 
-        public int ItemLevel { get; init; } //TODO: Remove?
-        public string Quality { get; init; } //TODO: Remove or convert to enum?
+        public int ItemLevel { get; init; }
+        public string Quality { get; init; }
         public GemColor Color { get; init; }
-        public ItemStats Stats { get; init; }             
+        public ItemStats Stats { get; init; }
         public bool UniqueEquipped { get; set; }
         public int Phase { get; set; }
     }
@@ -64,10 +64,10 @@ namespace RetSim.Items
 
     public class GemRequirements
     {
-        private int? Red { get; init; }
-        private int? Blue { get; init; }
-        private int? Yellow { get; init; }
-        private RequirementType Type { get; init; }
+        public int Red { get; init; }
+        public int Blue { get; init; }
+        public int Yellow { get; init; }
+        public RequirementType Type { get; init; }
 
         private Func<GemRequirements, int, int, int, bool> Check { get; init; }
 
