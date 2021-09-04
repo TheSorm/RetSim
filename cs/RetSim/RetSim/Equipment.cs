@@ -212,11 +212,9 @@ namespace RetSim
 
             if (item.Socket1 != null && item.Socket1.IsMetaGemActive(gems[GemColor.Red], gems[GemColor.Blue], gems[GemColor.Yellow]))
             {
-                foreach (var aura in (item.Socket1.SocketedGem as MetaGem).Auras)
-                {
-                    if (Glossaries.Auras.ByID.ContainsKey(aura.ID))
-                        auras.Add(Glossaries.Auras.ByID[aura.ID]);
-                }
+                if (Glossaries.Auras.ByID.ContainsKey((item.Socket1.SocketedGem as MetaGem).Aura.ID))
+                    auras.Add(Glossaries.Auras.ByID[(item.Socket1.SocketedGem as MetaGem).Aura.ID]);
+                
             }
         }
 

@@ -1,0 +1,354 @@
+[
+  {
+    "Aura": {
+      "ID": 11818,
+      "Name": "Spell Reflection"
+    },
+    "Requirements": {
+      "Red": 2,
+      "Blue": 2,
+      "Yellow": 2
+    },
+    "ID": 25890,
+    "Name": "Destructive Skyfire Diamond",
+    "ItemLevel": 70,
+    "Quality": "RARE",
+    "Color": 1,
+    "Stats": {
+      "SpellCrit": 14
+    },
+    "Phase": 1
+  },
+  {
+    "Aura": {
+      "ID": 32837,
+      "Name": "Spell Focus Trigger"
+    },
+    "Requirements": {
+      "Type": 5
+    },
+    "ID": 25893,
+    "Name": "Mystical Skyfire Diamond",
+    "ItemLevel": 70,
+    "Quality": "RARE",
+    "Color": 1,
+    "Stats": {},
+    "Phase": 1
+  },
+  {
+    "Aura": {
+      "ID": 23990,
+      "Name": "Item - Minor Run Speed"
+    },
+    "Requirements": {
+      "Red": 1,
+      "Blue": 0,
+      "Yellow": 2
+    },
+    "ID": 25894,
+    "Name": "Swift Skyfire Diamond",
+    "ItemLevel": 70,
+    "Quality": "RARE",
+    "Color": 1,
+    "Stats": {
+      "AttackPower": 24
+    },
+    "Phase": 1
+  },
+  {
+    "Aura": {
+      "ID": 32195,
+      "Name": "Resist Snare/Root"
+    },
+    "Requirements": {
+      "Type": 3
+    },
+    "ID": 25895,
+    "Name": "Enigmatic Skyfire Diamond",
+    "ItemLevel": 70,
+    "Quality": "RARE",
+    "Color": 1,
+    "Stats": {
+      "Crit": 12
+    },
+    "Phase": 1
+  },
+  {
+    "Aura": {
+      "ID": 21351,
+      "Name": "Increased Stun Resist 01"
+    },
+    "Requirements": {
+      "Red": 0,
+      "Blue": 3,
+      "Yellow": 0
+    },
+    "ID": 25896,
+    "Name": "Powerful Earthstorm Diamond",
+    "ItemLevel": 70,
+    "Quality": "RARE",
+    "Color": 1,
+    "Stats": {
+      "Stamina": 18
+    },
+    "Phase": 1
+  },
+  {
+    "Aura": {
+      "ID": 32842,
+      "Name": "Decrease Threat"
+    },
+    "Requirements": {
+      "Type": 2
+    },
+    "ID": 25897,
+    "Name": "Bracing Earthstorm Diamond",
+    "ItemLevel": 70,
+    "Quality": "RARE",
+    "Color": 1,
+    "Stats": {
+      "SpellDamage": 9,
+      "SpellHealing": 26
+    },
+    "Phase": 1
+  },
+  {
+    "Aura": {
+      "ID": 32844,
+      "Name": "Lesser Heroism"
+    },
+    "Requirements": {
+      "Red": 0,
+      "Blue": 5,
+      "Yellow": 0
+    },
+    "ID": 25898,
+    "Name": "Tenacious Earthstorm Diamond",
+    "ItemLevel": 70,
+    "Quality": "RARE",
+    "Color": 1,
+    "Stats": {
+      "Defense": 12
+    },
+    "Phase": 1
+  },
+  {
+    "Aura": {
+      "ID": 26598,
+      "Name": "Weapon Damage"
+    },
+    "Requirements": {
+      "Red": 2,
+      "Blue": 2,
+      "Yellow": 2
+    },
+    "ID": 25899,
+    "Name": "Brutal Earthstorm Diamond",
+    "ItemLevel": 70,
+    "Quality": "RARE",
+    "Color": 1,
+    "Stats": {},
+    "Phase": 1
+  },
+  {
+    "Aura": {
+      "ID": 27521,
+      "Name": "Mana Restore"
+    },
+    "Requirements": {
+      "Red": 2,
+      "Blue": 2,
+      "Yellow": 2
+    },
+    "ID": 25901,
+    "Name": "Insightful Earthstorm Diamond",
+    "ItemLevel": 70,
+    "Quality": "RARE",
+    "Color": 1,
+    "Stats": {
+      "Intellect": 12
+    },
+    "Phase": 1
+  },
+  {
+    "Aura": {
+      "ID": 23990,
+      "Name": "Item - Minor Run Speed"
+    },
+    "Requirements": {
+      "Red": 1,
+      "Blue": 0,
+      "Yellow": 2
+    },
+    "ID": 28556,
+    "Name": "Swift Windfire Diamond",
+    "ItemLevel": 70,
+    "Quality": "RARE",
+    "Color": 1,
+    "Stats": {
+      "AttackPower": 20
+    },
+    "UniqueEquipped": true,
+    "Phase": 1
+  },
+  {
+    "Aura": {
+      "ID": 23990,
+      "Name": "Item - Minor Run Speed"
+    },
+    "Requirements": {
+      "Red": 1,
+      "Blue": 0,
+      "Yellow": 2
+    },
+    "ID": 28557,
+    "Name": "Swift Starfire Diamond",
+    "ItemLevel": 70,
+    "Quality": "RARE",
+    "Color": 1,
+    "Stats": {
+      "SpellDamage": 12,
+      "SpellHealing": 12
+    },
+    "UniqueEquipped": true,
+    "Phase": 1
+  },
+  {
+    "Aura": {
+      "ID": 39957,
+      "Name": "Increase Critical Damage 3%"
+    },
+    "Requirements": {
+      "Red": 2,
+      "Blue": 2,
+      "Yellow": 2
+    },
+    "ID": 32409,
+    "Name": "Relentless Earthstorm Diamond",
+    "ItemLevel": 70,
+    "Quality": "RARE",
+    "Color": 1,
+    "Stats": {
+      "Agility": 12
+    },
+    "Phase": 1
+  },
+  {
+    "Aura": {
+      "ID": 39958,
+      "Name": "Skyfire Swiftness"
+    },
+    "Requirements": {
+      "Red": 2,
+      "Blue": 2,
+      "Yellow": 2
+    },
+    "ID": 32410,
+    "Name": "Thundering Skyfire Diamond",
+    "ItemLevel": 70,
+    "Quality": "RARE",
+    "Color": 1,
+    "Stats": {},
+    "Phase": 1
+  },
+  {
+    "Aura": {
+      "ID": 40691,
+      "Name": "Stun Resistance 5"
+    },
+    "Requirements": {
+      "Type": 5
+    },
+    "ID": 32640,
+    "Name": "Potent Unstable Diamond",
+    "ItemLevel": 70,
+    "Quality": "RARE",
+    "Color": 1,
+    "Stats": {
+      "AttackPower": 24
+    },
+    "Phase": 53
+  },
+  {
+    "Aura": {
+      "ID": 40706,
+      "Name": "Increased Stun Resist 05"
+    },
+    "Requirements": {
+      "Red": 0,
+      "Blue": 0,
+      "Yellow": 3
+    },
+    "ID": 32641,
+    "Name": "Imbued Unstable Diamond",
+    "ItemLevel": 70,
+    "Quality": "RARE",
+    "Color": 1,
+    "Stats": {
+      "SpellDamage": 14,
+      "SpellHealing": 14
+    },
+    "Phase": 53
+  },
+  {
+    "Aura": {
+      "ID": 44797,
+      "Name": "Increase Critical Damage 3%"
+    },
+    "Requirements": {
+      "Red": 0,
+      "Blue": 2,
+      "Yellow": 0
+    },
+    "ID": 34220,
+    "Name": "Chaotic Skyfire Diamond",
+    "ItemLevel": 70,
+    "Quality": "RARE",
+    "Color": 1,
+    "Stats": {
+      "SpellCrit": 12
+    },
+    "Phase": 1
+  },
+  {
+    "Aura": {
+      "ID": 46596,
+      "Name": "Eternal Shield"
+    },
+    "Requirements": {
+      "Red": 0,
+      "Blue": 2,
+      "Yellow": 1
+    },
+    "ID": 35501,
+    "Name": "Eternal Earthstorm Diamond",
+    "ItemLevel": 70,
+    "Quality": "RARE",
+    "Color": 1,
+    "Stats": {
+      "Defense": 12
+    },
+    "Phase": 5
+  },
+  {
+    "Aura": {
+      "ID": 46600,
+      "Name": "Ember Skyfire Intellect"
+    },
+    "Requirements": {
+      "Red": 3,
+      "Blue": 0,
+      "Yellow": 0
+    },
+    "ID": 35503,
+    "Name": "Ember Skyfire Diamond",
+    "ItemLevel": 70,
+    "Quality": "RARE",
+    "Color": 1,
+    "Stats": {
+      "SpellDamage": 14,
+      "SpellHealing": 14
+    },
+    "Phase": 5
+  }
+]

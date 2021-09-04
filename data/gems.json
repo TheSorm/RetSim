@@ -4,11 +4,10 @@
     "Name": "Bold Blood Garnet",
     "ItemLevel": 60,
     "Quality": "UNCOMMON",
-    "Color": 1,
+    "Color": 2,
     "Stats": {
       "Strength": 6
     },
-    "Auras": [],
     "Phase": 1
   },
   {
@@ -16,12 +15,11 @@
     "Name": "Inscribed Flame Spessarite",
     "ItemLevel": 60,
     "Quality": "UNCOMMON",
-    "Color": 6,
+    "Color": 10,
     "Stats": {
       "Crit": 3,
       "Strength": 3
     },
-    "Auras": [],
     "Phase": 1
   },
   {
@@ -29,12 +27,11 @@
     "Name": "Glinting Flame Spessarite",
     "ItemLevel": 60,
     "Quality": "UNCOMMON",
-    "Color": 6,
+    "Color": 10,
     "Stats": {
       "Agility": 3,
       "Hit": 3
     },
-    "Auras": [],
     "Phase": 1
   },
   {
@@ -42,12 +39,11 @@
     "Name": "Sovereign Shadow Draenite",
     "ItemLevel": 60,
     "Quality": "UNCOMMON",
-    "Color": 4,
+    "Color": 6,
     "Stats": {
       "Stamina": 4,
       "Strength": 3
     },
-    "Auras": [],
     "Phase": 1
   },
   {
@@ -55,11 +51,10 @@
     "Name": "Rigid Golden Draenite",
     "ItemLevel": 60,
     "Quality": "UNCOMMON",
-    "Color": 3,
+    "Color": 8,
     "Stats": {
       "Hit": 6
     },
-    "Auras": [],
     "Phase": 1
   },
   {
@@ -67,11 +62,10 @@
     "Name": "Bold Living Ruby",
     "ItemLevel": 70,
     "Quality": "RARE",
-    "Color": 1,
+    "Color": 2,
     "Stats": {
       "Strength": 8
     },
-    "Auras": [],
     "Phase": 1
   },
   {
@@ -79,11 +73,10 @@
     "Name": "Bright Living Ruby",
     "ItemLevel": 70,
     "Quality": "RARE",
-    "Color": 1,
+    "Color": 2,
     "Stats": {
       "AttackPower": 16
     },
-    "Auras": [],
     "Phase": 1
   },
   {
@@ -91,11 +84,10 @@
     "Name": "Rigid Dawnstone",
     "ItemLevel": 70,
     "Quality": "RARE",
-    "Color": 3,
+    "Color": 8,
     "Stats": {
       "Hit": 8
     },
-    "Auras": [],
     "Phase": 1
   },
   {
@@ -103,12 +95,11 @@
     "Name": "Sovereign Nightseye",
     "ItemLevel": 70,
     "Quality": "RARE",
-    "Color": 4,
+    "Color": 6,
     "Stats": {
       "Stamina": 6,
       "Strength": 4
     },
-    "Auras": [],
     "Phase": 1
   },
   {
@@ -116,12 +107,11 @@
     "Name": "Inscribed Noble Topaz",
     "ItemLevel": 70,
     "Quality": "RARE",
-    "Color": 6,
+    "Color": 10,
     "Stats": {
       "Crit": 4,
       "Strength": 4
     },
-    "Auras": [],
     "Phase": 1
   },
   {
@@ -129,193 +119,10 @@
     "Name": "Glinting Noble Topaz",
     "ItemLevel": 70,
     "Quality": "RARE",
-    "Color": 6,
+    "Color": 10,
     "Stats": {
       "Agility": 4,
       "Hit": 4
-    },
-    "Auras": [],
-    "Phase": 1
-  },
-  {
-    "ID": 25890,
-    "Name": "Destructive Skyfire Diamond",
-    "ItemLevel": 70,
-    "Quality": "RARE",
-    "Color": 7,
-    "Stats": {
-      "SpellCrit": 14
-    },
-    "Auras": [
-      {
-        "ID": 11818,
-        "Name": "Spell Reflection"
-      }
-    ],
-    "Requirments": {
-      "Red": 2,
-      "Blue": 2,
-      "Yellow": 2
-    },
-    "Phase": 1
-  },
-  {
-    "ID": 25893,
-    "Name": "Mystical Skyfire Diamond",
-    "ItemLevel": 70,
-    "Quality": "RARE",
-    "Color": 7,
-    "Stats": {},
-    "Auras": [
-      {
-        "ID": 32837,
-        "Name": "Spell Focus Trigger"
-      }
-    ],
-    "SpecialRequirment": 4,
-    "Phase": 1
-  },
-  {
-    "ID": 25894,
-    "Name": "Swift Skyfire Diamond",
-    "ItemLevel": 70,
-    "Quality": "RARE",
-    "Color": 7,
-    "Stats": {
-      "AttackPower": 24
-    },
-    "Auras": [
-      {
-        "ID": 23990,
-        "Name": "Item - Minor Run Speed"
-      }
-    ],
-    "Requirments": {
-      "Yellow": 2,
-      "Red": 1
-    },
-    "Phase": 1
-  },
-  {
-    "ID": 25895,
-    "Name": "Enigmatic Skyfire Diamond",
-    "ItemLevel": 70,
-    "Quality": "RARE",
-    "Color": 7,
-    "Stats": {
-      "Crit": 12
-    },
-    "Auras": [
-      {
-        "ID": 32195,
-        "Name": "Resist Snare/Root"
-      }
-    ],
-    "SpecialRequirment": 2,
-    "Phase": 1
-  },
-  {
-    "ID": 25896,
-    "Name": "Powerful Earthstorm Diamond",
-    "ItemLevel": 70,
-    "Quality": "RARE",
-    "Color": 7,
-    "Stats": {
-      "Stamina": 18
-    },
-    "Auras": [
-      {
-        "ID": 21351,
-        "Name": "Increased Stun Resist 01"
-      }
-    ],
-    "Requirments": {
-      "Blue": 3
-    },
-    "Phase": 1
-  },
-  {
-    "ID": 25897,
-    "Name": "Bracing Earthstorm Diamond",
-    "ItemLevel": 70,
-    "Quality": "RARE",
-    "Color": 7,
-    "Stats": {
-      "SpellDamage": 9,
-      "SpellHealing": 26
-    },
-    "Auras": [
-      {
-        "ID": 32842,
-        "Name": "Decrease Threat"
-      }
-    ],
-    "SpecialRequirment": 1,
-    "Phase": 1
-  },
-  {
-    "ID": 25898,
-    "Name": "Tenacious Earthstorm Diamond",
-    "ItemLevel": 70,
-    "Quality": "RARE",
-    "Color": 7,
-    "Stats": {
-      "Defense": 12
-    },
-    "Auras": [
-      {
-        "ID": 32844,
-        "Name": "Lesser Heroism"
-      }
-    ],
-    "Requirments": {
-      "Blue": 5
-    },
-    "Phase": 1
-  },
-  {
-    "ID": 25899,
-    "Name": "Brutal Earthstorm Diamond",
-    "ItemLevel": 70,
-    "Quality": "RARE",
-    "Color": 7,
-    "Stats": {},
-    "Auras": [
-      {
-        "ID": 26598,
-        "Name": "Weapon Damage"
-      },
-      {
-        "ID": 37982,
-        "Name": "Earth Stun"
-      }
-    ],
-    "Requirments": {
-      "Red": 2,
-      "Yellow": 2,
-      "Blue": 2
-    },
-    "Phase": 1
-  },
-  {
-    "ID": 25901,
-    "Name": "Insightful Earthstorm Diamond",
-    "ItemLevel": 70,
-    "Quality": "RARE",
-    "Color": 7,
-    "Stats": {
-      "Intellect": 12
-    },
-    "Auras": [
-      {
-        "ID": 27521,
-        "Name": "Mana Restore"
-      }
-    ],
-    "Requirments": {
-      "Red": 2,
-      "Yellow": 2,
-      "Blue": 2
     },
     "Phase": 1
   },
@@ -324,11 +131,10 @@
     "Name": "Mighty Blood Garnet",
     "ItemLevel": 60,
     "Quality": "RARE",
-    "Color": 1,
+    "Color": 2,
     "Stats": {
       "AttackPower": 14
     },
-    "Auras": [],
     "UniqueEquipped": true,
     "Phase": 1
   },
@@ -337,11 +143,10 @@
     "Name": "Mighty Blood Garnet",
     "ItemLevel": 60,
     "Quality": "RARE",
-    "Color": 1,
+    "Color": 2,
     "Stats": {
       "AttackPower": 14
     },
-    "Auras": [],
     "UniqueEquipped": true,
     "Phase": 1
   },
@@ -350,11 +155,10 @@
     "Name": "Bold Ornate Ruby",
     "ItemLevel": 60,
     "Quality": "EPIC",
-    "Color": 1,
+    "Color": 2,
     "Stats": {
       "AttackPower": 20
     },
-    "Auras": [],
     "UniqueEquipped": true,
     "Phase": 1
   },
@@ -363,12 +167,11 @@
     "Name": "Inscribed Ornate Topaz",
     "ItemLevel": 60,
     "Quality": "EPIC",
-    "Color": 6,
+    "Color": 10,
     "Stats": {
       "AttackPower": 10,
       "Crit": 5
     },
-    "Auras": [],
     "UniqueEquipped": true,
     "Phase": 1
   },
@@ -377,11 +180,10 @@
     "Name": "Bold Tourmaline",
     "ItemLevel": 55,
     "Quality": "COMMON",
-    "Color": 1,
+    "Color": 2,
     "Stats": {
       "Strength": 4
     },
-    "Auras": [],
     "Phase": 1
   },
   {
@@ -389,11 +191,10 @@
     "Name": "Bright Tourmaline",
     "ItemLevel": 55,
     "Quality": "COMMON",
-    "Color": 1,
+    "Color": 2,
     "Stats": {
       "AttackPower": 8
     },
-    "Auras": [],
     "Phase": 1
   },
   {
@@ -401,68 +202,21 @@
     "Name": "Rigid Amber",
     "ItemLevel": 55,
     "Quality": "COMMON",
-    "Color": 3,
+    "Color": 8,
     "Stats": {
       "Hit": 4
     },
-    "Auras": [],
     "Phase": 53
-  },
-  {
-    "ID": 28556,
-    "Name": "Swift Windfire Diamond",
-    "ItemLevel": 70,
-    "Quality": "RARE",
-    "Color": 7,
-    "Stats": {
-      "AttackPower": 20
-    },
-    "Auras": [
-      {
-        "ID": 23990,
-        "Name": "Item - Minor Run Speed"
-      }
-    ],
-    "Requirments": {
-      "Yellow": 2,
-      "Red": 1
-    },
-    "UniqueEquipped": true,
-    "Phase": 1
-  },
-  {
-    "ID": 28557,
-    "Name": "Swift Starfire Diamond",
-    "ItemLevel": 70,
-    "Quality": "RARE",
-    "Color": 7,
-    "Stats": {
-      "SpellDamage": 12,
-      "SpellHealing": 12
-    },
-    "Auras": [
-      {
-        "ID": 23990,
-        "Name": "Item - Minor Run Speed"
-      }
-    ],
-    "Requirments": {
-      "Yellow": 2,
-      "Red": 1
-    },
-    "UniqueEquipped": true,
-    "Phase": 1
   },
   {
     "ID": 28595,
     "Name": "Bright Blood Garnet",
     "ItemLevel": 60,
     "Quality": "UNCOMMON",
-    "Color": 1,
+    "Color": 2,
     "Stats": {
       "AttackPower": 12
     },
-    "Auras": [],
     "Phase": 1
   },
   {
@@ -470,12 +224,11 @@
     "Name": "Sovereign Tanzanite",
     "ItemLevel": 70,
     "Quality": "EPIC",
-    "Color": 4,
+    "Color": 6,
     "Stats": {
       "Stamina": 6,
       "Strength": 5
     },
-    "Auras": [],
     "Phase": 1
   },
   {
@@ -483,12 +236,11 @@
     "Name": "Pristine Fire Opal",
     "ItemLevel": 70,
     "Quality": "EPIC",
-    "Color": 6,
+    "Color": 10,
     "Stats": {
       "AttackPower": 10,
       "Hit": 4
     },
-    "Auras": [],
     "Phase": 1
   },
   {
@@ -496,12 +248,11 @@
     "Name": "Glinting Fire Opal",
     "ItemLevel": 70,
     "Quality": "EPIC",
-    "Color": 6,
+    "Color": 10,
     "Stats": {
       "Agility": 5,
       "Hit": 4
     },
-    "Auras": [],
     "Phase": 1
   },
   {
@@ -509,12 +260,11 @@
     "Name": "Etched Fire Opal",
     "ItemLevel": 70,
     "Quality": "EPIC",
-    "Color": 6,
+    "Color": 10,
     "Stats": {
       "Hit": 4,
       "Strength": 5
     },
-    "Auras": [],
     "Phase": 1
   },
   {
@@ -522,11 +272,10 @@
     "Name": "Don Rodrigo\u0027s Heart",
     "ItemLevel": 60,
     "Quality": "RARE",
-    "Color": 1,
+    "Color": 2,
     "Stats": {
       "Strength": 8
     },
-    "Auras": [],
     "UniqueEquipped": true,
     "Phase": 1
   },
@@ -535,12 +284,11 @@
     "Name": "Brutal Tanzanite",
     "ItemLevel": 70,
     "Quality": "EPIC",
-    "Color": 4,
+    "Color": 6,
     "Stats": {
       "AttackPower": 10,
       "Stamina": 6
     },
-    "Auras": [],
     "Phase": 1
   },
   {
@@ -548,12 +296,11 @@
     "Name": "Nimble Fire Opal",
     "ItemLevel": 70,
     "Quality": "EPIC",
-    "Color": 6,
+    "Color": 10,
     "Stats": {
       "Dodge": 5,
       "Hit": 4
     },
-    "Auras": [],
     "Phase": 1
   },
   {
@@ -561,12 +308,11 @@
     "Name": "Deadly Fire Opal",
     "ItemLevel": 70,
     "Quality": "EPIC",
-    "Color": 6,
+    "Color": 10,
     "Stats": {
       "AttackPower": 8,
       "Crit": 5
     },
-    "Auras": [],
     "Phase": 1
   },
   {
@@ -574,12 +320,11 @@
     "Name": "Enscribed Fire Opal",
     "ItemLevel": 70,
     "Quality": "EPIC",
-    "Color": 6,
+    "Color": 10,
     "Stats": {
       "Crit": 4,
       "Strength": 5
     },
-    "Auras": [],
     "Phase": 1
   },
   {
@@ -587,12 +332,11 @@
     "Name": "Champion\u0027s Fire Opal",
     "ItemLevel": 70,
     "Quality": "EPIC",
-    "Color": 6,
+    "Color": 10,
     "Stats": {
       "Defense": 4,
       "Strength": 5
     },
-    "Auras": [],
     "Phase": 1
   },
   {
@@ -600,12 +344,11 @@
     "Name": "Empowered Fire Opal",
     "ItemLevel": 70,
     "Quality": "EPIC",
-    "Color": 6,
+    "Color": 10,
     "Stats": {
       "AttackPower": 8,
       "Resilience": 5
     },
-    "Auras": [],
     "Phase": 1
   },
   {
@@ -613,11 +356,10 @@
     "Name": "Don Amancio\u0027s Heart",
     "ItemLevel": 60,
     "Quality": "RARE",
-    "Color": 1,
+    "Color": 2,
     "Stats": {
       "Strength": 8
     },
-    "Auras": [],
     "UniqueEquipped": true,
     "Phase": 1
   },
@@ -626,12 +368,11 @@
     "Name": "Resplendent Fire Opal",
     "ItemLevel": 70,
     "Quality": "EPIC",
-    "Color": 6,
+    "Color": 10,
     "Stats": {
       "Resilience": 4,
       "Strength": 5
     },
-    "Auras": [],
     "Phase": 1
   },
   {
@@ -639,12 +380,11 @@
     "Name": "Pulsing Amethyst",
     "ItemLevel": 70,
     "Quality": "EPIC",
-    "Color": 4,
+    "Color": 6,
     "Stats": {
       "AttackPower": 10,
       "Stamina": 6
     },
-    "Auras": [],
     "Phase": 1
   },
   {
@@ -652,12 +392,11 @@
     "Name": "Balanced Shadow Draenite",
     "ItemLevel": 60,
     "Quality": "UNCOMMON",
-    "Color": 4,
+    "Color": 6,
     "Stats": {
       "AttackPower": 6,
       "Stamina": 4
     },
-    "Auras": [],
     "Phase": 1
   },
   {
@@ -665,12 +404,11 @@
     "Name": "Balanced Nightseye",
     "ItemLevel": 70,
     "Quality": "RARE",
-    "Color": 4,
+    "Color": 6,
     "Stats": {
       "AttackPower": 8,
       "Stamina": 6
     },
-    "Auras": [],
     "Phase": 1
   },
   {
@@ -678,12 +416,11 @@
     "Name": "Infused Shadow Draenite",
     "ItemLevel": 60,
     "Quality": "UNCOMMON",
-    "Color": 4,
+    "Color": 6,
     "Stats": {
       "ManaPer5": 1,
       "AttackPower": 6
     },
-    "Auras": [],
     "Phase": 1
   },
   {
@@ -691,12 +428,11 @@
     "Name": "Infused Nightseye",
     "ItemLevel": 70,
     "Quality": "RARE",
-    "Color": 4,
+    "Color": 6,
     "Stats": {
       "ManaPer5": 2,
       "AttackPower": 8
     },
-    "Auras": [],
     "Phase": 1
   },
   {
@@ -704,12 +440,11 @@
     "Name": "Wicked Noble Topaz",
     "ItemLevel": 70,
     "Quality": "RARE",
-    "Color": 6,
+    "Color": 10,
     "Stats": {
       "AttackPower": 8,
       "Crit": 4
     },
-    "Auras": [],
     "Phase": 1
   },
   {
@@ -717,12 +452,11 @@
     "Name": "Wicked Flame Spessarite",
     "ItemLevel": 60,
     "Quality": "UNCOMMON",
-    "Color": 6,
+    "Color": 10,
     "Stats": {
       "AttackPower": 6,
       "Crit": 3
     },
-    "Auras": [],
     "Phase": 1
   },
   {
@@ -730,11 +464,10 @@
     "Name": "Bold Crimson Spinel",
     "ItemLevel": 100,
     "Quality": "EPIC",
-    "Color": 1,
+    "Color": 2,
     "Stats": {
       "Strength": 10
     },
-    "Auras": [],
     "Phase": 3
   },
   {
@@ -742,11 +475,10 @@
     "Name": "Bright Crimson Spinel",
     "ItemLevel": 100,
     "Quality": "EPIC",
-    "Color": 1,
+    "Color": 2,
     "Stats": {
       "AttackPower": 20
     },
-    "Auras": [],
     "Phase": 3
   },
   {
@@ -754,11 +486,10 @@
     "Name": "Rigid Lionseye",
     "ItemLevel": 100,
     "Quality": "EPIC",
-    "Color": 3,
+    "Color": 8,
     "Stats": {
       "Hit": 10
     },
-    "Auras": [],
     "Phase": 3
   },
   {
@@ -766,12 +497,11 @@
     "Name": "Sovereign Shadowsong Amethyst",
     "ItemLevel": 100,
     "Quality": "EPIC",
-    "Color": 4,
+    "Color": 6,
     "Stats": {
       "Stamina": 7,
       "Strength": 5
     },
-    "Auras": [],
     "Phase": 3
   },
   {
@@ -779,12 +509,11 @@
     "Name": "Balanced Shadowsong Amethyst",
     "ItemLevel": 100,
     "Quality": "EPIC",
-    "Color": 4,
+    "Color": 6,
     "Stats": {
       "AttackPower": 10,
       "Stamina": 7
     },
-    "Auras": [],
     "Phase": 3
   },
   {
@@ -792,12 +521,11 @@
     "Name": "Infused Shadowsong Amethyst",
     "ItemLevel": 100,
     "Quality": "EPIC",
-    "Color": 4,
+    "Color": 6,
     "Stats": {
       "ManaPer5": 2,
       "AttackPower": 10
     },
-    "Auras": [],
     "Phase": 3
   },
   {
@@ -805,12 +533,11 @@
     "Name": "Inscribed Pyrestone",
     "ItemLevel": 100,
     "Quality": "EPIC",
-    "Color": 6,
+    "Color": 10,
     "Stats": {
       "Crit": 5,
       "Strength": 5
     },
-    "Auras": [],
     "Phase": 3
   },
   {
@@ -818,12 +545,11 @@
     "Name": "Glinting Pyrestone",
     "ItemLevel": 100,
     "Quality": "EPIC",
-    "Color": 6,
+    "Color": 10,
     "Stats": {
       "Agility": 5,
       "Hit": 5
     },
-    "Auras": [],
     "Phase": 3
   },
   {
@@ -831,67 +557,23 @@
     "Name": "Wicked Pyrestone",
     "ItemLevel": 100,
     "Quality": "EPIC",
-    "Color": 6,
+    "Color": 10,
     "Stats": {
       "AttackPower": 10,
       "Crit": 5
     },
-    "Auras": [],
     "Phase": 3
-  },
-  {
-    "ID": 32409,
-    "Name": "Relentless Earthstorm Diamond",
-    "ItemLevel": 70,
-    "Quality": "RARE",
-    "Color": 7,
-    "Stats": {
-      "Agility": 12
-    },
-    "Auras": [
-      {
-        "ID": 39957,
-        "Name": "Increase Critical Damage 3%"
-      }
-    ],
-    "Requirments": {
-      "Red": 2,
-      "Yellow": 2,
-      "Blue": 2
-    },
-    "Phase": 1
-  },
-  {
-    "ID": 32410,
-    "Name": "Thundering Skyfire Diamond",
-    "ItemLevel": 70,
-    "Quality": "RARE",
-    "Color": 7,
-    "Stats": {},
-    "Auras": [
-      {
-        "ID": 39958,
-        "Name": "Skyfire Swiftness"
-      }
-    ],
-    "Requirments": {
-      "Red": 2,
-      "Blue": 2,
-      "Yellow": 2
-    },
-    "Phase": 1
   },
   {
     "ID": 32634,
     "Name": "Unstable Amethyst",
     "ItemLevel": 70,
     "Quality": "RARE",
-    "Color": 6,
+    "Color": 10,
     "Stats": {
       "AttackPower": 8,
       "Stamina": 6
     },
-    "Auras": [],
     "UniqueEquipped": true,
     "Phase": 53
   },
@@ -900,52 +582,12 @@
     "Name": "Unstable Citrine",
     "ItemLevel": 70,
     "Quality": "RARE",
-    "Color": 6,
+    "Color": 10,
     "Stats": {
       "AttackPower": 8,
       "Crit": 4
     },
-    "Auras": [],
     "UniqueEquipped": true,
-    "Phase": 53
-  },
-  {
-    "ID": 32640,
-    "Name": "Potent Unstable Diamond",
-    "ItemLevel": 70,
-    "Quality": "RARE",
-    "Color": 7,
-    "Stats": {
-      "AttackPower": 24
-    },
-    "Auras": [
-      {
-        "ID": 40691,
-        "Name": "Stun Resistance 5"
-      }
-    ],
-    "SpecialRequirment": 4,
-    "Phase": 53
-  },
-  {
-    "ID": 32641,
-    "Name": "Imbued Unstable Diamond",
-    "ItemLevel": 70,
-    "Quality": "RARE",
-    "Color": 7,
-    "Stats": {
-      "SpellDamage": 14,
-      "SpellHealing": 14
-    },
-    "Auras": [
-      {
-        "ID": 40706,
-        "Name": "Increased Stun Resist 05"
-      }
-    ],
-    "Requirments": {
-      "Yellow": 3
-    },
     "Phase": 53
   },
   {
@@ -953,11 +595,10 @@
     "Name": "Radiant Spencerite",
     "ItemLevel": 70,
     "Quality": "EPIC",
-    "Color": 5,
+    "Color": 12,
     "Stats": {
       "AttackPower": 20
     },
-    "Auras": [],
     "UniqueEquipped": true,
     "Phase": 53
   },
@@ -966,11 +607,10 @@
     "Name": "Crimson Sun",
     "ItemLevel": 130,
     "Quality": "EPIC",
-    "Color": 1,
+    "Color": 2,
     "Stats": {
       "AttackPower": 32
     },
-    "Auras": [],
     "UniqueEquipped": true,
     "Phase": 1
   },
@@ -979,7 +619,7 @@
     "Name": "Sparkling Falling Star",
     "ItemLevel": 130,
     "Quality": "EPIC",
-    "Color": 2,
+    "Color": 4,
     "Stats": {
       "Agility": 18,
       "Intellect": 18,
@@ -987,7 +627,6 @@
       "Stamina": 18,
       "Strength": 18
     },
-    "Auras": [],
     "UniqueEquipped": true,
     "Phase": 53
   },
@@ -996,85 +635,21 @@
     "Name": "Rigid Bladestone",
     "ItemLevel": 130,
     "Quality": "EPIC",
-    "Color": 3,
+    "Color": 8,
     "Stats": {
       "Hit": 12
     },
-    "Auras": [],
     "UniqueEquipped": true,
     "Phase": 53
-  },
-  {
-    "ID": 34220,
-    "Name": "Chaotic Skyfire Diamond",
-    "ItemLevel": 70,
-    "Quality": "RARE",
-    "Color": 7,
-    "Stats": {
-      "SpellCrit": 12
-    },
-    "Auras": [
-      {
-        "ID": 44797,
-        "Name": "Increase Critical Damage 3%"
-      }
-    ],
-    "Requirments": {
-      "Blue": 2
-    },
-    "Phase": 1
   },
   {
     "ID": 35487,
     "Name": "Bright Crimson Spinel",
     "ItemLevel": 100,
     "Quality": "EPIC",
-    "Color": 1,
+    "Color": 2,
     "Stats": {
       "AttackPower": 20
-    },
-    "Auras": [],
-    "Phase": 5
-  },
-  {
-    "ID": 35501,
-    "Name": "Eternal Earthstorm Diamond",
-    "ItemLevel": 70,
-    "Quality": "RARE",
-    "Color": 7,
-    "Stats": {
-      "Defense": 12
-    },
-    "Auras": [
-      {
-        "ID": 46596,
-        "Name": "Eternal Shield"
-      }
-    ],
-    "Requirments": {
-      "Blue": 2,
-      "Yellow": 1
-    },
-    "Phase": 5
-  },
-  {
-    "ID": 35503,
-    "Name": "Ember Skyfire Diamond",
-    "ItemLevel": 70,
-    "Quality": "RARE",
-    "Color": 7,
-    "Stats": {
-      "SpellDamage": 14,
-      "SpellHealing": 14
-    },
-    "Auras": [
-      {
-        "ID": 46600,
-        "Name": "Ember Skyfire Intellect"
-      }
-    ],
-    "Requirments": {
-      "Red": 3
     },
     "Phase": 5
   },
@@ -1083,11 +658,10 @@
     "Name": "Bold Ornate Ruby",
     "ItemLevel": 60,
     "Quality": "EPIC",
-    "Color": 1,
+    "Color": 2,
     "Stats": {
       "AttackPower": 20
     },
-    "Auras": [],
     "Phase": 1
   },
   {
@@ -1095,12 +669,11 @@
     "Name": "Inscribed Ornate Topaz",
     "ItemLevel": 60,
     "Quality": "EPIC",
-    "Color": 6,
+    "Color": 10,
     "Stats": {
       "AttackPower": 10,
       "Crit": 5
     },
-    "Auras": [],
     "Phase": 1
   }
 ]

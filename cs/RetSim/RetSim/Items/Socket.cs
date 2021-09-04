@@ -7,11 +7,6 @@ namespace RetSim.Items
         public SocketColor Color { get; init; }
         public Gem SocketedGem { get; set; }
 
-        public Socket(SocketColor type)
-        {
-            Color = type;
-        }
-
         public bool IsActive()
         {
             if (SocketedGem == null)

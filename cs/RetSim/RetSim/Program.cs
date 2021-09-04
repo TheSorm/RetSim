@@ -14,10 +14,10 @@ namespace RetSim
 
         static void Main(string[] args)
         {
-            Glossaries.Items.Initialize(LoadWeponData(), LoadArmorData(), LoadSetData(), LoadGemData());
+            Glossaries.Items.Initialize(LoadWeponData(), LoadArmorData(), LoadSetData(), LoadGemData(), LoadMetaGemData());
 
-            Glossaries.Items.HeadsByID[29073].Socket1.SocketedGem = Glossaries.Items.GemsByID[24027];
-            Glossaries.Items.HeadsByID[29073].Socket2.SocketedGem = Glossaries.Items.GemsByID[32409];
+            Glossaries.Items.HeadsByID[29073].Socket1.SocketedGem = Glossaries.Items.MetaGemsByID[32409];
+            Glossaries.Items.HeadsByID[29073].Socket2.SocketedGem = Glossaries.Items.GemsByID[24027];
             Glossaries.Items.ShouldersByID[29075].Socket1.SocketedGem = Glossaries.Items.GemsByID[24058];
             Glossaries.Items.ShouldersByID[29075].Socket2.SocketedGem = Glossaries.Items.GemsByID[24027];
             Glossaries.Items.CloaksByID[24259].Socket1.SocketedGem = Glossaries.Items.GemsByID[24027];
@@ -86,6 +86,11 @@ namespace RetSim
         {
             using WebClient wc = new();
             return JsonSerializer.Deserialize<List<Gem>>(wc.DownloadString("https://raw.githubusercontent.com/TheSorm/RetSim/main/data/gems.json"));
+        }
+        public static List<MetaGem> LoadMetaGemData()
+        {
+            using WebClient wc = new();
+            return JsonSerializer.Deserialize<List<MetaGem>>(wc.DownloadString("https://raw.githubusercontent.com/TheSorm/RetSim/main/data/metaGems.json"));
         }
     }
 }
