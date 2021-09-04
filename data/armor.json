@@ -82,13 +82,13 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 1
+      "Color": 1
     },
     "Socket2": {
-      "Type": 1
+      "Color": 1
     },
     "Socket3": {
-      "Type": 1
+      "Color": 1
     },
     "Phase": 1
   },
@@ -122,13 +122,13 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 2
+      "Color": 2
     },
     "Socket2": {
-      "Type": 2
+      "Color": 2
     },
     "Socket3": {
-      "Type": 4
+      "Color": 4
     },
     "Phase": 1
   },
@@ -162,10 +162,10 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 4
+      "Color": 4
     },
     "Socket2": {
-      "Type": 3
+      "Color": 8
     },
     "SocketBonus": {
       "Hit": 3
@@ -187,10 +187,10 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 2
+      "Color": 2
     },
     "Socket2": {
-      "Type": 4
+      "Color": 4
     },
     "SocketBonus": {
       "Intellect": 3
@@ -211,10 +211,10 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 2
+      "Color": 2
     },
     "Socket2": {
-      "Type": 3
+      "Color": 8
     },
     "Phase": 1
   },
@@ -232,10 +232,10 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 2
+      "Color": 2
     },
     "Socket2": {
-      "Type": 3
+      "Color": 8
     },
     "SocketBonus": {
       "Stamina": 4
@@ -508,13 +508,13 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 3
+      "Color": 4
     },
     "Socket2": {
-      "Type": 3
+      "Color": 8
     },
     "Socket3": {
-      "Type": 4
+      "Color": 8
     },
     "SocketBonus": {
       "Hit": 4
@@ -535,10 +535,10 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 2
+      "Color": 2
     },
     "Socket2": {
-      "Type": 2
+      "Color": 2
     },
     "SocketBonus": {
       "SpellCrit": 3
@@ -560,10 +560,10 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 2
+      "Color": 2
     },
     "Socket2": {
-      "Type": 3
+      "Color": 8
     },
     "SocketBonus": {
       "Crit": 4
@@ -584,10 +584,10 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 3
+      "Color": 4
     },
     "Socket2": {
-      "Type": 4
+      "Color": 8
     },
     "Phase": 1
   },
@@ -606,13 +606,13 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 3
+      "Color": 2
     },
     "Socket2": {
-      "Type": 4
+      "Color": 4
     },
     "Socket3": {
-      "Type": 2
+      "Color": 8
     },
     "SocketBonus": {
       "Agility": 4
@@ -634,13 +634,13 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 2
+      "Color": 2
     },
     "Socket2": {
-      "Type": 2
+      "Color": 2
     },
     "Socket3": {
-      "Type": 4
+      "Color": 4
     },
     "Phase": 1
   },
@@ -815,10 +815,10 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 2
+      "Color": 2
     },
     "Socket2": {
-      "Type": 4
+      "Color": 4
     },
     "SocketBonus": {
       "Hit": 3
@@ -875,13 +875,13 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 2
+      "Color": 2
     },
     "Socket2": {
-      "Type": 2
+      "Color": 2
     },
     "Socket3": {
-      "Type": 3
+      "Color": 8
     },
     "SocketBonus": {
       "ManaPer5": 2
@@ -1071,13 +1071,13 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 2
+      "Color": 2
     },
     "Socket2": {
-      "Type": 3
+      "Color": 4
     },
     "Socket3": {
-      "Type": 4
+      "Color": 8
     },
     "SocketBonus": {
       "ManaPer5": 2
@@ -1101,13 +1101,13 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 2
+      "Color": 2
     },
     "Socket2": {
-      "Type": 4
+      "Color": 4
     },
     "Socket3": {
-      "Type": 4
+      "Color": 4
     },
     "SocketBonus": {
       "ManaPer5": 2
@@ -1143,13 +1143,13 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 2
+      "Color": 2
     },
     "Socket2": {
-      "Type": 2
+      "Color": 2
     },
     "Socket3": {
-      "Type": 3
+      "Color": 8
     },
     "SocketBonus": {
       "ManaPer5": 2
@@ -1293,7 +1293,7 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 3
+      "Color": 8
     },
     "Phase": 1
   },
@@ -1315,10 +1315,10 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 2
+      "Color": 2
     },
     "Socket2": {
-      "Type": 3
+      "Color": 8
     },
     "Phase": 1
   },
@@ -1338,7 +1338,7 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 3
+      "Color": 8
     },
     "Phase": 1
   },
@@ -1357,7 +1357,7 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 3
+      "Color": 8
     },
     "Phase": 1
   },
@@ -1376,7 +1376,7 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 3
+      "Color": 8
     },
     "Phase": 1
   },
@@ -1410,7 +1410,7 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 1
+      "Color": 1
     },
     "SocketBonus": {
       "Strength": 3
@@ -1433,7 +1433,7 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 1
+      "Color": 1
     },
     "Phase": 1
   },
@@ -1454,7 +1454,7 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 1
+      "Color": 1
     },
     "Phase": 1
   },
@@ -1475,7 +1475,7 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 1
+      "Color": 1
     },
     "SocketBonus": {
       "Agility": 3
@@ -1498,7 +1498,7 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 1
+      "Color": 1
     },
     "SocketBonus": {
       "Crit": 3
@@ -1520,7 +1520,7 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 1
+      "Color": 1
     },
     "SocketBonus": {
       "Strength": 3
@@ -1541,13 +1541,13 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 3
+      "Color": 8
     },
     "Socket2": {
-      "Type": 3
+      "Color": 8
     },
     "Socket3": {
-      "Type": 3
+      "Color": 8
     },
     "SocketBonus": {
       "Stamina": 6
@@ -1568,13 +1568,13 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 4
+      "Color": 4
     },
     "Socket2": {
-      "Type": 4
+      "Color": 4
     },
     "Socket3": {
-      "Type": 4
+      "Color": 4
     },
     "SocketBonus": {
       "Crit": 4
@@ -1596,13 +1596,13 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 2
+      "Color": 2
     },
     "Socket2": {
-      "Type": 2
+      "Color": 2
     },
     "Socket3": {
-      "Type": 3
+      "Color": 8
     },
     "Phase": 1
   },
@@ -1654,13 +1654,13 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 2
+      "Color": 2
     },
     "Socket2": {
-      "Type": 3
+      "Color": 4
     },
     "Socket3": {
-      "Type": 4
+      "Color": 8
     },
     "SocketBonus": {
       "Crit": 4
@@ -1683,13 +1683,13 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 4
+      "Color": 4
     },
     "Socket2": {
-      "Type": 3
+      "Color": 4
     },
     "Socket3": {
-      "Type": 4
+      "Color": 8
     },
     "SocketBonus": {
       "Crit": 4
@@ -1887,7 +1887,7 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 4
+      "Color": 4
     },
     "Phase": 1
   },
@@ -1908,10 +1908,10 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 2
+      "Color": 2
     },
     "Socket2": {
-      "Type": 4
+      "Color": 4
     },
     "Phase": 1
   },
@@ -1962,10 +1962,10 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 2
+      "Color": 2
     },
     "Socket2": {
-      "Type": 3
+      "Color": 8
     },
     "SocketBonus": {
       "Intellect": 3
@@ -2017,13 +2017,13 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 4
+      "Color": 4
     },
     "Socket2": {
-      "Type": 3
+      "Color": 8
     },
     "Socket3": {
-      "Type": 3
+      "Color": 8
     },
     "Phase": 1
   },
@@ -2043,13 +2043,13 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 3
+      "Color": 2
     },
     "Socket2": {
-      "Type": 2
+      "Color": 4
     },
     "Socket3": {
-      "Type": 4
+      "Color": 8
     },
     "Phase": 1
   },
@@ -2082,10 +2082,10 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 2
+      "Color": 2
     },
     "Socket2": {
-      "Type": 2
+      "Color": 2
     },
     "Phase": 1
   },
@@ -2168,10 +2168,10 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 2
+      "Color": 2
     },
     "Socket2": {
-      "Type": 3
+      "Color": 8
     },
     "SocketBonus": {
       "Crit": 3
@@ -2192,10 +2192,10 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 2
+      "Color": 2
     },
     "Socket2": {
-      "Type": 4
+      "Color": 4
     },
     "Phase": 1
   },
@@ -2288,10 +2288,10 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 2
+      "Color": 2
     },
     "Socket2": {
-      "Type": 4
+      "Color": 4
     },
     "SocketBonus": {
       "Hit": 3
@@ -2316,10 +2316,10 @@
       }
     ],
     "Socket1": {
-      "Type": 2
+      "Color": 2
     },
     "Socket2": {
-      "Type": 4
+      "Color": 4
     },
     "SocketBonus": {
       "Crit": 3
@@ -2342,13 +2342,13 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 2
+      "Color": 2
     },
     "Socket2": {
-      "Type": 4
+      "Color": 4
     },
     "Socket3": {
-      "Type": 3
+      "Color": 8
     },
     "SocketBonus": {
       "Stamina": 6
@@ -2383,7 +2383,7 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 2
+      "Color": 2
     },
     "SocketBonus": {
       "Hit": 2
@@ -2571,7 +2571,7 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 3
+      "Color": 8
     },
     "SocketBonus": {
       "ManaPer5": 5
@@ -2652,13 +2652,13 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 2
+      "Color": 2
     },
     "Socket2": {
-      "Type": 2
+      "Color": 2
     },
     "Socket3": {
-      "Type": 3
+      "Color": 8
     },
     "SocketBonus": {
       "Crit": 4
@@ -2703,10 +2703,10 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 1
+      "Color": 1
     },
     "Socket2": {
-      "Type": 2
+      "Color": 2
     },
     "Phase": 53
   },
@@ -2743,10 +2743,10 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 2
+      "Color": 2
     },
     "Socket2": {
-      "Type": 3
+      "Color": 8
     },
     "Phase": 53
   },
@@ -2779,7 +2779,7 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 4
+      "Color": 4
     },
     "Phase": 3
   },
@@ -2797,10 +2797,10 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 3
+      "Color": 4
     },
     "Socket2": {
-      "Type": 4
+      "Color": 8
     },
     "SocketBonus": {
       "Strength": 3
@@ -2821,10 +2821,10 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 2
+      "Color": 2
     },
     "Socket2": {
-      "Type": 2
+      "Color": 2
     },
     "SocketBonus": {
       "Intellect": 3
@@ -2878,13 +2878,13 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 2
+      "Color": 2
     },
     "Socket2": {
-      "Type": 4
+      "Color": 4
     },
     "Socket3": {
-      "Type": 3
+      "Color": 8
     },
     "SocketBonus": {
       "Agility": 4
@@ -2908,13 +2908,13 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 4
+      "Color": 2
     },
     "Socket2": {
-      "Type": 4
+      "Color": 4
     },
     "Socket3": {
-      "Type": 2
+      "Color": 4
     },
     "Phase": 1
   },
@@ -2936,10 +2936,10 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 3
+      "Color": 2
     },
     "Socket2": {
-      "Type": 2
+      "Color": 8
     },
     "Phase": 1
   },
@@ -3109,13 +3109,13 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 2
+      "Color": 2
     },
     "Socket2": {
-      "Type": 3
+      "Color": 4
     },
     "Socket3": {
-      "Type": 4
+      "Color": 8
     },
     "SocketBonus": {
       "ManaPer5": 7
@@ -3137,13 +3137,13 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 4
+      "Color": 4
     },
     "Socket2": {
-      "Type": 3
+      "Color": 8
     },
     "Socket3": {
-      "Type": 3
+      "Color": 8
     },
     "SocketBonus": {
       "Crit": 4
@@ -3519,13 +3519,13 @@
       }
     ],
     "Socket1": {
-      "Type": 4
+      "Color": 4
     },
     "Socket2": {
-      "Type": 3
+      "Color": 8
     },
     "Socket3": {
-      "Type": 3
+      "Color": 8
     },
     "SocketBonus": {
       "Strength": 4
@@ -3553,13 +3553,13 @@
       }
     ],
     "Socket1": {
-      "Type": 4
+      "Color": 4
     },
     "Socket2": {
-      "Type": 4
+      "Color": 4
     },
     "Socket3": {
-      "Type": 4
+      "Color": 4
     },
     "SocketBonus": {
       "ManaPer5": 4
@@ -3586,13 +3586,13 @@
       }
     ],
     "Socket1": {
-      "Type": 2
+      "Color": 2
     },
     "Socket2": {
-      "Type": 4
+      "Color": 4
     },
     "Socket3": {
-      "Type": 3
+      "Color": 8
     },
     "Phase": 1
   },
@@ -4118,13 +4118,13 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 2
+      "Color": 2
     },
     "Socket2": {
-      "Type": 2
+      "Color": 2
     },
     "Socket3": {
-      "Type": 4
+      "Color": 4
     },
     "SocketBonus": {
       "Hit": 4
@@ -4146,13 +4146,13 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 4
+      "Color": 4
     },
     "Socket2": {
-      "Type": 4
+      "Color": 4
     },
     "Socket3": {
-      "Type": 3
+      "Color": 8
     },
     "SocketBonus": {
       "ManaPer5": 6
@@ -4174,13 +4174,13 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 2
+      "Color": 2
     },
     "Socket2": {
-      "Type": 4
+      "Color": 4
     },
     "Socket3": {
-      "Type": 4
+      "Color": 4
     },
     "SocketBonus": {
       "Strength": 4
@@ -4202,13 +4202,13 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 2
+      "Color": 2
     },
     "Socket2": {
-      "Type": 4
+      "Color": 4
     },
     "Socket3": {
-      "Type": 4
+      "Color": 4
     },
     "SocketBonus": {
       "Strength": 4
@@ -4230,13 +4230,13 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 2
+      "Color": 2
     },
     "Socket2": {
-      "Type": 2
+      "Color": 2
     },
     "Socket3": {
-      "Type": 4
+      "Color": 4
     },
     "SocketBonus": {
       "Hit": 4
@@ -4334,10 +4334,10 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 2
+      "Color": 1
     },
     "Socket2": {
-      "Type": 1
+      "Color": 2
     },
     "SocketBonus": {
       "ManaPer5": 2
@@ -4359,10 +4359,10 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 3
+      "Color": 1
     },
     "Socket2": {
-      "Type": 1
+      "Color": 8
     },
     "SocketBonus": {
       "Agility": 4
@@ -4384,10 +4384,10 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 3
+      "Color": 1
     },
     "Socket2": {
-      "Type": 1
+      "Color": 8
     },
     "SocketBonus": {
       "Strength": 4
@@ -4412,13 +4412,13 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 2
+      "Color": 2
     },
     "Socket2": {
-      "Type": 3
+      "Color": 4
     },
     "Socket3": {
-      "Type": 4
+      "Color": 8
     },
     "SocketBonus": {
       "Strength": 4
@@ -4467,13 +4467,13 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 2
+      "Color": 2
     },
     "Socket2": {
-      "Type": 3
+      "Color": 8
     },
     "Socket3": {
-      "Type": 3
+      "Color": 8
     },
     "Phase": 5
   },
@@ -4491,10 +4491,10 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 2
+      "Color": 2
     },
     "Socket2": {
-      "Type": 4
+      "Color": 4
     },
     "SocketBonus": {
       "Strength": 3
@@ -4516,7 +4516,7 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 2
+      "Color": 2
     },
     "SocketBonus": {
       "Stamina": 3
@@ -4655,10 +4655,10 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 3
+      "Color": 2
     },
     "Socket2": {
-      "Type": 2
+      "Color": 8
     },
     "Phase": 1
   },
@@ -4680,13 +4680,13 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 2
+      "Color": 2
     },
     "Socket2": {
-      "Type": 3
+      "Color": 8
     },
     "Socket3": {
-      "Type": 3
+      "Color": 8
     },
     "Phase": 1
   },
@@ -4708,10 +4708,10 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 2
+      "Color": 2
     },
     "Socket2": {
-      "Type": 4
+      "Color": 4
     },
     "SocketBonus": {
       "Stamina": 4
@@ -4841,13 +4841,13 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 2
+      "Color": 2
     },
     "Socket2": {
-      "Type": 3
+      "Color": 4
     },
     "Socket3": {
-      "Type": 4
+      "Color": 8
     },
     "SocketBonus": {
       "ManaPer5": 2
@@ -4950,13 +4950,13 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 2
+      "Color": 2
     },
     "Socket2": {
-      "Type": 3
+      "Color": 4
     },
     "Socket3": {
-      "Type": 4
+      "Color": 8
     },
     "SocketBonus": {
       "ManaPer5": 2
@@ -5008,7 +5008,7 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 3
+      "Color": 8
     },
     "SocketBonus": {
       "Hit": 2
@@ -5030,7 +5030,7 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 3
+      "Color": 8
     },
     "Phase": 1
   },
@@ -5050,7 +5050,7 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 3
+      "Color": 8
     },
     "Phase": 1
   },
@@ -5069,7 +5069,7 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 3
+      "Color": 8
     },
     "Phase": 1
   },
@@ -5089,7 +5089,7 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 3
+      "Color": 8
     },
     "Phase": 1
   },
@@ -5111,13 +5111,13 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 2
+      "Color": 2
     },
     "Socket2": {
-      "Type": 2
+      "Color": 2
     },
     "Socket3": {
-      "Type": 4
+      "Color": 4
     },
     "Phase": 1
   },
@@ -5139,7 +5139,7 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 4
+      "Color": 4
     },
     "SocketBonus": {
       "Stamina": 3
@@ -5243,10 +5243,10 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 2
+      "Color": 2
     },
     "Socket2": {
-      "Type": 4
+      "Color": 4
     },
     "SocketBonus": {
       "ManaPer5": 0
@@ -5447,10 +5447,10 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 2
+      "Color": 2
     },
     "Socket2": {
-      "Type": 4
+      "Color": 4
     },
     "SocketBonus": {
       "Hit": 3
@@ -5476,10 +5476,10 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 2
+      "Color": 2
     },
     "Socket2": {
-      "Type": 3
+      "Color": 8
     },
     "Phase": 1
   },
@@ -5498,10 +5498,10 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 2
+      "Color": 2
     },
     "Socket2": {
-      "Type": 2
+      "Color": 2
     },
     "SocketBonus": {
       "Intellect": 3
@@ -5537,13 +5537,13 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 2
+      "Color": 2
     },
     "Socket2": {
-      "Type": 3
+      "Color": 4
     },
     "Socket3": {
-      "Type": 4
+      "Color": 8
     },
     "SocketBonus": {
       "Stamina": 6
@@ -5597,13 +5597,13 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 3
+      "Color": 4
     },
     "Socket2": {
-      "Type": 3
+      "Color": 8
     },
     "Socket3": {
-      "Type": 4
+      "Color": 8
     },
     "SocketBonus": {
       "Hit": 3
@@ -5661,13 +5661,13 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 2
+      "Color": 2
     },
     "Socket2": {
-      "Type": 3
+      "Color": 4
     },
     "Socket3": {
-      "Type": 4
+      "Color": 8
     },
     "SocketBonus": {
       "Agility": 4
@@ -5704,13 +5704,13 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 2
+      "Color": 2
     },
     "Socket2": {
-      "Type": 3
+      "Color": 4
     },
     "Socket3": {
-      "Type": 4
+      "Color": 8
     },
     "Phase": 1
   },
@@ -5733,10 +5733,10 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 2
+      "Color": 2
     },
     "Socket2": {
-      "Type": 2
+      "Color": 2
     },
     "Phase": 1
   },
@@ -5758,10 +5758,10 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 2
+      "Color": 2
     },
     "Socket2": {
-      "Type": 3
+      "Color": 8
     },
     "Phase": 1
   },
@@ -5795,13 +5795,13 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 2
+      "Color": 2
     },
     "Socket2": {
-      "Type": 2
+      "Color": 2
     },
     "Socket3": {
-      "Type": 4
+      "Color": 4
     },
     "Phase": 1
   },
@@ -5849,10 +5849,10 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 2
+      "Color": 2
     },
     "Socket2": {
-      "Type": 3
+      "Color": 8
     },
     "Phase": 1
   },
@@ -5893,10 +5893,10 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 2
+      "Color": 2
     },
     "Socket2": {
-      "Type": 2
+      "Color": 2
     },
     "SocketBonus": {
       "Intellect": 3
@@ -5949,10 +5949,10 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 2
+      "Color": 2
     },
     "Socket2": {
-      "Type": 3
+      "Color": 8
     },
     "Phase": 1
   },
@@ -5970,10 +5970,10 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 2
+      "Color": 2
     },
     "Socket2": {
-      "Type": 4
+      "Color": 4
     },
     "SocketBonus": {
       "Agility": 3
@@ -6043,10 +6043,10 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 2
+      "Color": 2
     },
     "Socket2": {
-      "Type": 2
+      "Color": 2
     },
     "Phase": 1
   },
@@ -6066,13 +6066,13 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 2
+      "Color": 2
     },
     "Socket2": {
-      "Type": 2
+      "Color": 2
     },
     "Socket3": {
-      "Type": 4
+      "Color": 4
     },
     "SocketBonus": {
       "Intellect": 4
@@ -6097,10 +6097,10 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 3
+      "Color": 8
     },
     "Socket2": {
-      "Type": 3
+      "Color": 8
     },
     "SocketBonus": {
       "Stamina": 4
@@ -6141,10 +6141,10 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 2
+      "Color": 2
     },
     "Socket2": {
-      "Type": 4
+      "Color": 4
     },
     "SocketBonus": {
       "Crit": 3
@@ -6170,10 +6170,10 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 3
+      "Color": 2
     },
     "Socket2": {
-      "Type": 2
+      "Color": 8
     },
     "SocketBonus": {
       "Stamina": 4
@@ -6198,10 +6198,10 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 3
+      "Color": 4
     },
     "Socket2": {
-      "Type": 4
+      "Color": 8
     },
     "Phase": 1
   },
@@ -6219,10 +6219,10 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 3
+      "Color": 4
     },
     "Socket2": {
-      "Type": 4
+      "Color": 8
     },
     "Phase": 1
   },
@@ -6294,13 +6294,13 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 2
+      "Color": 2
     },
     "Socket2": {
-      "Type": 2
+      "Color": 2
     },
     "Socket3": {
-      "Type": 4
+      "Color": 4
     },
     "Phase": 1
   },
@@ -6335,10 +6335,10 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 2
+      "Color": 2
     },
     "Socket2": {
-      "Type": 4
+      "Color": 4
     },
     "Phase": 1
   },
@@ -6608,10 +6608,10 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 2
+      "Color": 2
     },
     "Socket2": {
-      "Type": 4
+      "Color": 4
     },
     "SocketBonus": {
       "Agility": 3
@@ -6632,10 +6632,10 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 2
+      "Color": 2
     },
     "Socket2": {
-      "Type": 3
+      "Color": 8
     },
     "Phase": 1
   },
@@ -6653,7 +6653,7 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 3
+      "Color": 8
     },
     "SocketBonus": {
       "Stamina": 3
@@ -6674,7 +6674,7 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 2
+      "Color": 2
     },
     "SocketBonus": {
       "ManaPer5": 4
@@ -6695,10 +6695,10 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 2
+      "Color": 2
     },
     "Socket2": {
-      "Type": 4
+      "Color": 4
     },
     "Phase": 1
   },
@@ -6716,10 +6716,10 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 2
+      "Color": 2
     },
     "Socket2": {
-      "Type": 4
+      "Color": 4
     },
     "SocketBonus": {
       "Stamina": 4
@@ -6740,10 +6740,10 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 2
+      "Color": 1
     },
     "Socket2": {
-      "Type": 1
+      "Color": 2
     },
     "SocketBonus": {
       "Strength": 4
@@ -6766,10 +6766,10 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 2
+      "Color": 1
     },
     "Socket2": {
-      "Type": 1
+      "Color": 2
     },
     "SocketBonus": {
       "Agility": 4
@@ -6791,10 +6791,10 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 3
+      "Color": 1
     },
     "Socket2": {
-      "Type": 1
+      "Color": 8
     },
     "Phase": 1
   },
@@ -6817,10 +6817,10 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 3
+      "Color": 1
     },
     "Socket2": {
-      "Type": 1
+      "Color": 8
     },
     "SocketBonus": {
       "Hit": 4
@@ -6845,13 +6845,13 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 2
+      "Color": 2
     },
     "Socket2": {
-      "Type": 2
+      "Color": 2
     },
     "Socket3": {
-      "Type": 4
+      "Color": 4
     },
     "Phase": 1
   },
@@ -6874,13 +6874,13 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 2
+      "Color": 2
     },
     "Socket2": {
-      "Type": 2
+      "Color": 2
     },
     "Socket3": {
-      "Type": 4
+      "Color": 4
     },
     "Phase": 1
   },
@@ -6946,13 +6946,13 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 4
+      "Color": 4
     },
     "Socket2": {
-      "Type": 4
+      "Color": 4
     },
     "Socket3": {
-      "Type": 3
+      "Color": 8
     },
     "SocketBonus": {
       "ManaPer5": 5
@@ -6978,10 +6978,10 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 4
+      "Color": 1
     },
     "Socket2": {
-      "Type": 1
+      "Color": 4
     },
     "Phase": 1
   },
@@ -7002,10 +7002,10 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 2
+      "Color": 1
     },
     "Socket2": {
-      "Type": 1
+      "Color": 2
     },
     "SocketBonus": {
       "Hit": 4
@@ -7032,13 +7032,13 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 2
+      "Color": 2
     },
     "Socket2": {
-      "Type": 2
+      "Color": 2
     },
     "Socket3": {
-      "Type": 4
+      "Color": 4
     },
     "SocketBonus": {
       "Agility": 4
@@ -7094,13 +7094,13 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 3
+      "Color": 8
     },
     "Socket2": {
-      "Type": 3
+      "Color": 8
     },
     "Socket3": {
-      "Type": 3
+      "Color": 8
     },
     "SocketBonus": {
       "Agility": 4
@@ -7126,10 +7126,10 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 2
+      "Color": 1
     },
     "Socket2": {
-      "Type": 1
+      "Color": 2
     },
     "SocketBonus": {
       "ManaPer5": 2
@@ -7197,10 +7197,10 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 3
+      "Color": 8
     },
     "Socket2": {
-      "Type": 3
+      "Color": 8
     },
     "SocketBonus": {
       "Strength": 3
@@ -7251,13 +7251,13 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 2
+      "Color": 2
     },
     "Socket2": {
-      "Type": 2
+      "Color": 2
     },
     "Socket3": {
-      "Type": 4
+      "Color": 4
     },
     "SocketBonus": {
       "ManaPer5": 2
@@ -7278,10 +7278,10 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 2
+      "Color": 2
     },
     "Socket2": {
-      "Type": 3
+      "Color": 8
     },
     "SocketBonus": {
       "Hit": 3
@@ -7357,10 +7357,10 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 4
+      "Color": 1
     },
     "Socket2": {
-      "Type": 1
+      "Color": 4
     },
     "SocketBonus": {
       "Spirit": 4
@@ -7386,10 +7386,10 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 4
+      "Color": 1
     },
     "Socket2": {
-      "Type": 1
+      "Color": 4
     },
     "SocketBonus": {
       "Strength": 4
@@ -7487,10 +7487,10 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 2
+      "Color": 2
     },
     "Socket2": {
-      "Type": 4
+      "Color": 4
     },
     "Phase": 1
   },
@@ -7513,13 +7513,13 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 3
+      "Color": 2
     },
     "Socket2": {
-      "Type": 3
+      "Color": 8
     },
     "Socket3": {
-      "Type": 2
+      "Color": 8
     },
     "SocketBonus": {
       "Crit": 4
@@ -7544,13 +7544,13 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 2
+      "Color": 2
     },
     "Socket2": {
-      "Type": 2
+      "Color": 2
     },
     "Socket3": {
-      "Type": 4
+      "Color": 4
     },
     "SocketBonus": {
       "Crit": 4
@@ -7575,10 +7575,10 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 3
+      "Color": 1
     },
     "Socket2": {
-      "Type": 1
+      "Color": 8
     },
     "Phase": 1
   },
@@ -7612,10 +7612,10 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 2
+      "Color": 2
     },
     "Socket2": {
-      "Type": 4
+      "Color": 4
     },
     "SocketBonus": {
       "Crit": 3
@@ -7668,10 +7668,10 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 4
+      "Color": 2
     },
     "Socket2": {
-      "Type": 2
+      "Color": 4
     },
     "SocketBonus": {
       "Agility": 3
@@ -7708,10 +7708,10 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 2
+      "Color": 2
     },
     "Socket2": {
-      "Type": 3
+      "Color": 8
     },
     "SocketBonus": {
       "Hit": 3
@@ -7733,10 +7733,10 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 2
+      "Color": 2
     },
     "Socket2": {
-      "Type": 3
+      "Color": 8
     },
     "Phase": 1
   },
@@ -7786,13 +7786,13 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 2
+      "Color": 2
     },
     "Socket2": {
-      "Type": 3
+      "Color": 4
     },
     "Socket3": {
-      "Type": 4
+      "Color": 8
     },
     "Phase": 1
   },
@@ -7843,10 +7843,10 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 2
+      "Color": 2
     },
     "Socket2": {
-      "Type": 3
+      "Color": 8
     },
     "SocketBonus": {
       "Strength": 3
@@ -7868,10 +7868,10 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 3
+      "Color": 4
     },
     "Socket2": {
-      "Type": 4
+      "Color": 8
     },
     "Phase": 1
   },
@@ -7890,13 +7890,13 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 2
+      "Color": 2
     },
     "Socket2": {
-      "Type": 3
+      "Color": 8
     },
     "Socket3": {
-      "Type": 3
+      "Color": 8
     },
     "SocketBonus": {
       "Stamina": 6
@@ -8018,13 +8018,13 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 2
+      "Color": 2
     },
     "Socket2": {
-      "Type": 2
+      "Color": 2
     },
     "Socket3": {
-      "Type": 3
+      "Color": 8
     },
     "SocketBonus": {
       "Crit": 4
@@ -8077,10 +8077,10 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 1
+      "Color": 1
     },
     "Socket2": {
-      "Type": 2
+      "Color": 2
     },
     "Phase": 1
   },
@@ -8125,10 +8125,10 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 2
+      "Color": 2
     },
     "Socket2": {
-      "Type": 3
+      "Color": 8
     },
     "Phase": 1
   },
@@ -8178,13 +8178,13 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 2
+      "Color": 2
     },
     "Socket2": {
-      "Type": 3
+      "Color": 4
     },
     "Socket3": {
-      "Type": 4
+      "Color": 8
     },
     "SocketBonus": {
       "Stamina": 6
@@ -8206,13 +8206,13 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 2
+      "Color": 2
     },
     "Socket2": {
-      "Type": 2
+      "Color": 2
     },
     "Socket3": {
-      "Type": 4
+      "Color": 4
     },
     "Phase": 1
   },
@@ -8230,10 +8230,10 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 2
+      "Color": 2
     },
     "Socket2": {
-      "Type": 3
+      "Color": 8
     },
     "Phase": 1
   },
@@ -8267,10 +8267,10 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 2
+      "Color": 2
     },
     "Socket2": {
-      "Type": 4
+      "Color": 4
     },
     "SocketBonus": {
       "Agility": 3
@@ -8292,10 +8292,10 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 2
+      "Color": 2
     },
     "Socket2": {
-      "Type": 4
+      "Color": 4
     },
     "Phase": 1
   },
@@ -8313,10 +8313,10 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 2
+      "Color": 2
     },
     "Socket2": {
-      "Type": 2
+      "Color": 2
     },
     "SocketBonus": {
       "Agility": 3
@@ -8338,10 +8338,10 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 3
+      "Color": 8
     },
     "Socket2": {
-      "Type": 3
+      "Color": 8
     },
     "SocketBonus": {
       "Hit": 3
@@ -8368,13 +8368,13 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 2
+      "Color": 2
     },
     "Socket2": {
-      "Type": 2
+      "Color": 2
     },
     "Socket3": {
-      "Type": 3
+      "Color": 8
     },
     "SocketBonus": {
       "Crit": 4
@@ -8427,10 +8427,10 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 1
+      "Color": 1
     },
     "Socket2": {
-      "Type": 2
+      "Color": 2
     },
     "Phase": 1
   },
@@ -8475,10 +8475,10 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 2
+      "Color": 2
     },
     "Socket2": {
-      "Type": 3
+      "Color": 8
     },
     "Phase": 1
   },
@@ -8540,13 +8540,13 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 2
+      "Color": 2
     },
     "Socket2": {
-      "Type": 3
+      "Color": 4
     },
     "Socket3": {
-      "Type": 4
+      "Color": 8
     },
     "SocketBonus": {
       "Crit": 4
@@ -8567,13 +8567,13 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 2
+      "Color": 2
     },
     "Socket2": {
-      "Type": 3
+      "Color": 4
     },
     "Socket3": {
-      "Type": 4
+      "Color": 8
     },
     "SocketBonus": {
       "Crit": 4
@@ -8702,10 +8702,10 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 4
+      "Color": 4
     },
     "Socket2": {
-      "Type": 3
+      "Color": 8
     },
     "SocketBonus": {
       "Agility": 3
@@ -8995,10 +8995,10 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 2
+      "Color": 2
     },
     "Socket2": {
-      "Type": 4
+      "Color": 4
     },
     "SocketBonus": {
       "Agility": 3
@@ -9024,10 +9024,10 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 3
+      "Color": 8
     },
     "Socket2": {
-      "Type": 3
+      "Color": 8
     },
     "SocketBonus": {
       "Crit": 3
@@ -9095,10 +9095,10 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 3
+      "Color": 4
     },
     "Socket2": {
-      "Type": 4
+      "Color": 8
     },
     "SocketBonus": {
       "Strength": 3
@@ -9159,7 +9159,7 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 4
+      "Color": 4
     },
     "Phase": 5
   },
@@ -9178,13 +9178,13 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 2
+      "Color": 2
     },
     "Socket2": {
-      "Type": 3
+      "Color": 4
     },
     "Socket3": {
-      "Type": 4
+      "Color": 8
     },
     "SocketBonus": {
       "Haste": 4
@@ -9249,7 +9249,7 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 3
+      "Color": 8
     },
     "SocketBonus": {
       "Strength": 2
@@ -9291,13 +9291,13 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 2
+      "Color": 2
     },
     "Socket2": {
-      "Type": 2
+      "Color": 2
     },
     "Socket3": {
-      "Type": 3
+      "Color": 8
     },
     "SocketBonus": {
       "Crit": 4
@@ -9350,10 +9350,10 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 1
+      "Color": 1
     },
     "Socket2": {
-      "Type": 2
+      "Color": 2
     },
     "Phase": 1
   },
@@ -9398,10 +9398,10 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 2
+      "Color": 2
     },
     "Socket2": {
-      "Type": 3
+      "Color": 8
     },
     "Phase": 1
   },
@@ -9465,13 +9465,13 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 2
+      "Color": 2
     },
     "Socket2": {
-      "Type": 2
+      "Color": 2
     },
     "Socket3": {
-      "Type": 4
+      "Color": 4
     },
     "SocketBonus": {
       "Stamina": 6
@@ -9517,10 +9517,10 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 2
+      "Color": 1
     },
     "Socket2": {
-      "Type": 1
+      "Color": 2
     },
     "SocketBonus": {
       "Hit": 4
@@ -9568,10 +9568,10 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 3
+      "Color": 2
     },
     "Socket2": {
-      "Type": 2
+      "Color": 8
     },
     "SocketBonus": {
       "Hit": 3
@@ -9612,13 +9612,13 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 4
+      "Color": 4
     },
     "Socket2": {
-      "Type": 3
+      "Color": 4
     },
     "Socket3": {
-      "Type": 4
+      "Color": 8
     },
     "SocketBonus": {
       "Agility": 4
@@ -9673,13 +9673,13 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 2
+      "Color": 2
     },
     "Socket2": {
-      "Type": 3
+      "Color": 8
     },
     "Socket3": {
-      "Type": 3
+      "Color": 8
     },
     "SocketBonus": {
       "Crit": 4
@@ -9714,13 +9714,13 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 2
+      "Color": 2
     },
     "Socket2": {
-      "Type": 2
+      "Color": 2
     },
     "Socket3": {
-      "Type": 2
+      "Color": 2
     },
     "SocketBonus": {
       "Agility": 4
@@ -9741,10 +9741,10 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 3
+      "Color": 8
     },
     "Socket2": {
-      "Type": 3
+      "Color": 8
     },
     "SocketBonus": {
       "Strength": 3
@@ -9765,7 +9765,7 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 4
+      "Color": 4
     },
     "SocketBonus": {
       "Crit": 2
@@ -9792,13 +9792,13 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 2
+      "Color": 2
     },
     "Socket2": {
-      "Type": 2
+      "Color": 2
     },
     "Socket3": {
-      "Type": 3
+      "Color": 8
     },
     "SocketBonus": {
       "Crit": 4
@@ -9851,10 +9851,10 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 1
+      "Color": 1
     },
     "Socket2": {
-      "Type": 2
+      "Color": 2
     },
     "Phase": 1
   },
@@ -9899,10 +9899,10 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 2
+      "Color": 2
     },
     "Socket2": {
-      "Type": 3
+      "Color": 8
     },
     "Phase": 1
   },
@@ -10144,10 +10144,10 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 4
+      "Color": 4
     },
     "Socket2": {
-      "Type": 4
+      "Color": 4
     },
     "SocketBonus": {
       "Crit": 3
@@ -10185,10 +10185,10 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 4
+      "Color": 2
     },
     "Socket2": {
-      "Type": 2
+      "Color": 4
     },
     "SocketBonus": {
       "Stamina": 4
@@ -10209,10 +10209,10 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 2
+      "Color": 2
     },
     "Socket2": {
-      "Type": 4
+      "Color": 4
     },
     "SocketBonus": {
       "Crit": 3
@@ -10247,10 +10247,10 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 4
+      "Color": 2
     },
     "Socket2": {
-      "Type": 2
+      "Color": 4
     },
     "SocketBonus": {
       "Strength": 3
@@ -10303,10 +10303,10 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 4
+      "Color": 4
     },
     "Socket2": {
-      "Type": 3
+      "Color": 8
     },
     "SocketBonus": {
       "Strength": 3
@@ -10328,10 +10328,10 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 2
+      "Color": 2
     },
     "Socket2": {
-      "Type": 2
+      "Color": 2
     },
     "SocketBonus": {
       "Intellect": 3
@@ -10352,10 +10352,10 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 4
+      "Color": 4
     },
     "Socket2": {
-      "Type": 3
+      "Color": 8
     },
     "SocketBonus": {
       "Crit": 3
@@ -10427,13 +10427,13 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 2
+      "Color": 2
     },
     "Socket2": {
-      "Type": 3
+      "Color": 4
     },
     "Socket3": {
-      "Type": 4
+      "Color": 8
     },
     "SocketBonus": {
       "Strength": 4
@@ -10492,7 +10492,7 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 3
+      "Color": 8
     },
     "Phase": 2
   },
@@ -10512,7 +10512,7 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 3
+      "Color": 8
     },
     "Phase": 2
   },
@@ -10536,13 +10536,13 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 2
+      "Color": 2
     },
     "Socket2": {
-      "Type": 3
+      "Color": 4
     },
     "Socket3": {
-      "Type": 4
+      "Color": 8
     },
     "SocketBonus": {
       "ManaPer5": 9
@@ -10568,13 +10568,13 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 4
+      "Color": 4
     },
     "Socket2": {
-      "Type": 3
+      "Color": 8
     },
     "Socket3": {
-      "Type": 3
+      "Color": 8
     },
     "SocketBonus": {
       "Crit": 4
@@ -10609,10 +10609,10 @@
       }
     ],
     "Socket1": {
-      "Type": 1
+      "Color": 1
     },
     "Socket2": {
-      "Type": 4
+      "Color": 4
     },
     "SocketBonus": {
       "Crit": 4
@@ -10647,10 +10647,10 @@
       }
     ],
     "Socket1": {
-      "Type": 1
+      "Color": 1
     },
     "Socket2": {
-      "Type": 4
+      "Color": 4
     },
     "SocketBonus": {
       "Agility": 4
@@ -10685,10 +10685,10 @@
       }
     ],
     "Socket1": {
-      "Type": 1
+      "Color": 1
     },
     "Socket2": {
-      "Type": 4
+      "Color": 4
     },
     "SocketBonus": {
       "Agility": 4
@@ -10739,13 +10739,13 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 2
+      "Color": 2
     },
     "Socket2": {
-      "Type": 3
+      "Color": 4
     },
     "Socket3": {
-      "Type": 4
+      "Color": 8
     },
     "SocketBonus": {
       "Strength": 4
@@ -10768,10 +10768,10 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 4
+      "Color": 4
     },
     "Socket2": {
-      "Type": 4
+      "Color": 4
     },
     "SocketBonus": {
       "ManaPer5": 4
@@ -10792,7 +10792,7 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 4
+      "Color": 4
     },
     "Phase": 2
   },
@@ -10827,13 +10827,13 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 2
+      "Color": 2
     },
     "Socket2": {
-      "Type": 3
+      "Color": 4
     },
     "Socket3": {
-      "Type": 4
+      "Color": 8
     },
     "SocketBonus": {
       "Agility": 4
@@ -10885,10 +10885,10 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 4
+      "Color": 4
     },
     "Socket2": {
-      "Type": 3
+      "Color": 8
     },
     "SocketBonus": {
       "Crit": 3
@@ -10926,10 +10926,10 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 4
+      "Color": 4
     },
     "Socket2": {
-      "Type": 4
+      "Color": 4
     },
     "SocketBonus": {
       "Agility": 3
@@ -10968,10 +10968,10 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 2
+      "Color": 2
     },
     "Socket2": {
-      "Type": 2
+      "Color": 2
     },
     "SocketBonus": {
       "Stamina": 4
@@ -11011,10 +11011,10 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 4
+      "Color": 4
     },
     "Socket2": {
-      "Type": 3
+      "Color": 8
     },
     "SocketBonus": {
       "Agility": 3
@@ -11050,10 +11050,10 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 2
+      "Color": 2
     },
     "Socket2": {
-      "Type": 4
+      "Color": 4
     },
     "SocketBonus": {
       "Crit": 3
@@ -11076,13 +11076,13 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 4
+      "Color": 2
     },
     "Socket2": {
-      "Type": 2
+      "Color": 4
     },
     "Socket3": {
-      "Type": 3
+      "Color": 8
     },
     "SocketBonus": {
       "Agility": 4
@@ -11105,7 +11105,7 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 2
+      "Color": 2
     },
     "SocketBonus": {
       "Agility": 2
@@ -11127,7 +11127,7 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 4
+      "Color": 4
     },
     "SocketBonus": {
       "Strength": 2
@@ -11254,7 +11254,7 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 3
+      "Color": 8
     },
     "SocketBonus": {
       "Stamina": 3
@@ -11291,13 +11291,13 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 3
+      "Color": 4
     },
     "Socket2": {
-      "Type": 3
+      "Color": 8
     },
     "Socket3": {
-      "Type": 4
+      "Color": 8
     },
     "Phase": 2
   },
@@ -11378,7 +11378,7 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 3
+      "Color": 8
     },
     "SocketBonus": {
       "Stamina": 3
@@ -11400,10 +11400,10 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 3
+      "Color": 2
     },
     "Socket2": {
-      "Type": 2
+      "Color": 8
     },
     "SocketBonus": {
       "Stamina": 4
@@ -11426,7 +11426,7 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 4
+      "Color": 4
     },
     "Phase": 4
   },
@@ -11461,10 +11461,10 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 4
+      "Color": 2
     },
     "Socket2": {
-      "Type": 2
+      "Color": 4
     },
     "SocketBonus": {
       "Hit": 3
@@ -11546,10 +11546,10 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 2
+      "Color": 2
     },
     "Socket2": {
-      "Type": 4
+      "Color": 4
     },
     "SocketBonus": {
       "Crit": 2
@@ -11604,10 +11604,10 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 2
+      "Color": 2
     },
     "Socket2": {
-      "Type": 4
+      "Color": 4
     },
     "SocketBonus": {
       "Hit": 3
@@ -11644,13 +11644,13 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 2
+      "Color": 2
     },
     "Socket2": {
-      "Type": 3
+      "Color": 4
     },
     "Socket3": {
-      "Type": 4
+      "Color": 8
     },
     "SocketBonus": {
       "Strength": 4
@@ -11716,10 +11716,10 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 2
+      "Color": 2
     },
     "Socket2": {
-      "Type": 3
+      "Color": 8
     },
     "SocketBonus": {
       "Strength": 3
@@ -11805,10 +11805,10 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 3
+      "Color": 2
     },
     "Socket2": {
-      "Type": 2
+      "Color": 8
     },
     "Phase": 4
   },
@@ -11876,7 +11876,7 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 3
+      "Color": 8
     },
     "SocketBonus": {
       "Crit": 2
@@ -11915,7 +11915,7 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 3
+      "Color": 8
     },
     "SocketBonus": {
       "Strength": 2
@@ -11937,10 +11937,10 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 2
+      "Color": 2
     },
     "Socket2": {
-      "Type": 3
+      "Color": 8
     },
     "SocketBonus": {
       "Strength": 3
@@ -11962,10 +11962,10 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 4
+      "Color": 2
     },
     "Socket2": {
-      "Type": 2
+      "Color": 4
     },
     "SocketBonus": {
       "Strength": 3
@@ -12019,13 +12019,13 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 2
+      "Color": 2
     },
     "Socket2": {
-      "Type": 3
+      "Color": 4
     },
     "Socket3": {
-      "Type": 4
+      "Color": 8
     },
     "SocketBonus": {
       "Stamina": 6
@@ -12082,13 +12082,13 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 2
+      "Color": 2
     },
     "Socket2": {
-      "Type": 3
+      "Color": 8
     },
     "Socket3": {
-      "Type": 3
+      "Color": 8
     },
     "SocketBonus": {
       "Strength": 4
@@ -12134,10 +12134,10 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 2
+      "Color": 1
     },
     "Socket2": {
-      "Type": 1
+      "Color": 2
     },
     "SocketBonus": {
       "Agility": 4
@@ -12164,7 +12164,7 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 3
+      "Color": 8
     },
     "SocketBonus": {
       "Strength": 2
@@ -12190,10 +12190,10 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 3
+      "Color": 8
     },
     "Socket2": {
-      "Type": 3
+      "Color": 8
     },
     "SocketBonus": {
       "Stamina": 4
@@ -12216,13 +12216,13 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 2
+      "Color": 2
     },
     "Socket2": {
-      "Type": 3
+      "Color": 4
     },
     "Socket3": {
-      "Type": 4
+      "Color": 8
     },
     "Phase": 4
   },
@@ -12241,13 +12241,13 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 2
+      "Color": 2
     },
     "Socket2": {
-      "Type": 3
+      "Color": 4
     },
     "Socket3": {
-      "Type": 4
+      "Color": 8
     },
     "Phase": 4
   },
@@ -12363,13 +12363,13 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 2
+      "Color": 2
     },
     "Socket2": {
-      "Type": 2
+      "Color": 2
     },
     "Socket3": {
-      "Type": 3
+      "Color": 8
     },
     "SocketBonus": {
       "Crit": 4
@@ -12422,10 +12422,10 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 1
+      "Color": 1
     },
     "Socket2": {
-      "Type": 2
+      "Color": 2
     },
     "Phase": 2
   },
@@ -12470,10 +12470,10 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 2
+      "Color": 2
     },
     "Socket2": {
-      "Type": 3
+      "Color": 8
     },
     "Phase": 2
   },
@@ -12696,10 +12696,10 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 4
+      "Color": 2
     },
     "Socket2": {
-      "Type": 2
+      "Color": 4
     },
     "SocketBonus": {
       "Agility": 3
@@ -12721,10 +12721,10 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 2
+      "Color": 2
     },
     "Socket2": {
-      "Type": 4
+      "Color": 4
     },
     "SocketBonus": {
       "Agility": 3
@@ -12745,7 +12745,7 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 3
+      "Color": 8
     },
     "SocketBonus": {
       "Stamina": 3
@@ -12767,7 +12767,7 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 3
+      "Color": 8
     },
     "SocketBonus": {
       "Stamina": 3
@@ -12789,7 +12789,7 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 4
+      "Color": 4
     },
     "SocketBonus": {
       "Crit": 2
@@ -12827,10 +12827,10 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 2
+      "Color": 2
     },
     "Socket2": {
-      "Type": 3
+      "Color": 8
     },
     "SocketBonus": {
       "Stamina": 4
@@ -12853,10 +12853,10 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 2
+      "Color": 2
     },
     "Socket2": {
-      "Type": 3
+      "Color": 8
     },
     "SocketBonus": {
       "Agility": 3
@@ -12934,13 +12934,13 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 2
+      "Color": 2
     },
     "Socket2": {
-      "Type": 3
+      "Color": 4
     },
     "Socket3": {
-      "Type": 4
+      "Color": 8
     },
     "SocketBonus": {
       "Crit": 4
@@ -13044,13 +13044,13 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 2
+      "Color": 2
     },
     "Socket2": {
-      "Type": 3
+      "Color": 4
     },
     "Socket3": {
-      "Type": 4
+      "Color": 8
     },
     "Phase": 3
   },
@@ -13130,10 +13130,10 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 2
+      "Color": 2
     },
     "Socket2": {
-      "Type": 2
+      "Color": 2
     },
     "SocketBonus": {
       "Stamina": 4
@@ -13187,7 +13187,7 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 3
+      "Color": 8
     },
     "SocketBonus": {
       "Agility": 2
@@ -13255,10 +13255,10 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 3
+      "Color": 8
     },
     "Socket2": {
-      "Type": 3
+      "Color": 8
     },
     "SocketBonus": {
       "Strength": 3
@@ -13329,10 +13329,10 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 2
+      "Color": 2
     },
     "Socket2": {
-      "Type": 3
+      "Color": 8
     },
     "SocketBonus": {
       "Crit": 3
@@ -13369,10 +13369,10 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 1
+      "Color": 1
     },
     "Socket2": {
-      "Type": 3
+      "Color": 8
     },
     "SocketBonus": {
       "Stamina": 6
@@ -13395,10 +13395,10 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 2
+      "Color": 1
     },
     "Socket2": {
-      "Type": 1
+      "Color": 2
     },
     "SocketBonus": {
       "ManaPer5": 2
@@ -13645,7 +13645,7 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 3
+      "Color": 8
     },
     "SocketBonus": {
       "Strength": 2
@@ -13668,7 +13668,7 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 3
+      "Color": 8
     },
     "Phase": 3
   },
@@ -13702,7 +13702,7 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 3
+      "Color": 8
     },
     "SocketBonus": {
       "Stamina": 3
@@ -13740,7 +13740,7 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 2
+      "Color": 2
     },
     "SocketBonus": {
       "Stamina": 3
@@ -13763,10 +13763,10 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 2
+      "Color": 2
     },
     "Socket2": {
-      "Type": 3
+      "Color": 8
     },
     "SocketBonus": {
       "Stamina": 4
@@ -13789,7 +13789,7 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 3
+      "Color": 8
     },
     "SocketBonus": {
       "Agility": 2
@@ -13812,7 +13812,7 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 3
+      "Color": 8
     },
     "Phase": 5
   },
@@ -13832,10 +13832,10 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 3
+      "Color": 4
     },
     "Socket2": {
-      "Type": 4
+      "Color": 8
     },
     "SocketBonus": {
       "Agility": 3
@@ -13858,7 +13858,7 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 3
+      "Color": 8
     },
     "SocketBonus": {
       "Agility": 2
@@ -13880,7 +13880,7 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 2
+      "Color": 2
     },
     "SocketBonus": {
       "Stamina": 3
@@ -13902,10 +13902,10 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 3
+      "Color": 4
     },
     "Socket2": {
-      "Type": 4
+      "Color": 8
     },
     "SocketBonus": {
       "Hit": 3
@@ -13927,7 +13927,7 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 3
+      "Color": 8
     },
     "SocketBonus": {
       "Agility": 2
@@ -13949,10 +13949,10 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 2
+      "Color": 2
     },
     "Socket2": {
-      "Type": 4
+      "Color": 4
     },
     "Phase": 3
   },
@@ -13971,7 +13971,7 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 2
+      "Color": 2
     },
     "SocketBonus": {
       "Stamina": 3
@@ -13992,7 +13992,7 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 2
+      "Color": 2
     },
     "SocketBonus": {
       "Stamina": 3
@@ -14014,10 +14014,10 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 3
+      "Color": 4
     },
     "Socket2": {
-      "Type": 4
+      "Color": 8
     },
     "SocketBonus": {
       "Strength": 3
@@ -14038,7 +14038,7 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 4
+      "Color": 4
     },
     "SocketBonus": {
       "Strength": 2
@@ -14074,7 +14074,7 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 4
+      "Color": 4
     },
     "Phase": 5
   },
@@ -14098,13 +14098,13 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 2
+      "Color": 2
     },
     "Socket2": {
-      "Type": 3
+      "Color": 4
     },
     "Socket3": {
-      "Type": 4
+      "Color": 8
     },
     "SocketBonus": {
       "ManaPer5": 0
@@ -14130,13 +14130,13 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 4
+      "Color": 4
     },
     "Socket2": {
-      "Type": 3
+      "Color": 8
     },
     "Socket3": {
-      "Type": 3
+      "Color": 8
     },
     "SocketBonus": {
       "Crit": 4
@@ -14162,7 +14162,7 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 3
+      "Color": 8
     },
     "SocketBonus": {
       "Hit": 2
@@ -14188,10 +14188,10 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 3
+      "Color": 1
     },
     "Socket2": {
-      "Type": 1
+      "Color": 8
     },
     "SocketBonus": {
       "Hit": 4
@@ -14218,13 +14218,13 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 2
+      "Color": 2
     },
     "Socket2": {
-      "Type": 3
+      "Color": 4
     },
     "Socket3": {
-      "Type": 4
+      "Color": 8
     },
     "Phase": 3
   },
@@ -14248,7 +14248,7 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 2
+      "Color": 2
     },
     "SocketBonus": {
       "Hit": 2
@@ -14274,10 +14274,10 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 3
+      "Color": 8
     },
     "Socket2": {
-      "Type": 3
+      "Color": 8
     },
     "Phase": 3
   },
@@ -14302,13 +14302,13 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 2
+      "Color": 2
     },
     "Socket2": {
-      "Type": 2
+      "Color": 2
     },
     "Socket3": {
-      "Type": 3
+      "Color": 8
     },
     "SocketBonus": {
       "Crit": 4
@@ -14362,10 +14362,10 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 1
+      "Color": 1
     },
     "Socket2": {
-      "Type": 2
+      "Color": 2
     },
     "Phase": 3
   },
@@ -14411,10 +14411,10 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 2
+      "Color": 2
     },
     "Socket2": {
-      "Type": 3
+      "Color": 8
     },
     "Phase": 3
   },
@@ -14618,13 +14618,13 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 4
+      "Color": 2
     },
     "Socket2": {
-      "Type": 2
+      "Color": 4
     },
     "Socket3": {
-      "Type": 3
+      "Color": 8
     },
     "Phase": 3
   },
@@ -14665,10 +14665,10 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 1
+      "Color": 1
     },
     "Socket2": {
-      "Type": 3
+      "Color": 8
     },
     "SocketBonus": {
       "Stamina": 6
@@ -14851,7 +14851,7 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 3
+      "Color": 8
     },
     "SocketBonus": {
       "Stamina": 3
@@ -14878,7 +14878,7 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 2
+      "Color": 2
     },
     "SocketBonus": {
       "Crit": 2
@@ -14905,7 +14905,7 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 2
+      "Color": 2
     },
     "SocketBonus": {
       "Crit": 2
@@ -14942,7 +14942,7 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 3
+      "Color": 8
     },
     "SocketBonus": {
       "Stamina": 3
@@ -14964,7 +14964,7 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 3
+      "Color": 8
     },
     "SocketBonus": {
       "Strength": 2
@@ -14987,7 +14987,7 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 3
+      "Color": 8
     },
     "Phase": 5
   },
@@ -15007,13 +15007,13 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 3
+      "Color": 4
     },
     "Socket2": {
-      "Type": 4
+      "Color": 4
     },
     "Socket3": {
-      "Type": 4
+      "Color": 8
     },
     "Phase": 5
   },
@@ -15032,13 +15032,13 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 4
+      "Color": 2
     },
     "Socket2": {
-      "Type": 2
+      "Color": 4
     },
     "Socket3": {
-      "Type": 3
+      "Color": 8
     },
     "SocketBonus": {
       "Strength": 4
@@ -15061,13 +15061,13 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 2
+      "Color": 2
     },
     "Socket2": {
-      "Type": 2
+      "Color": 2
     },
     "Socket3": {
-      "Type": 2
+      "Color": 2
     },
     "SocketBonus": {
       "Agility": 4
@@ -15089,10 +15089,10 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 2
+      "Color": 2
     },
     "Socket2": {
-      "Type": 2
+      "Color": 2
     },
     "SocketBonus": {
       "Agility": 3
@@ -15132,13 +15132,13 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 2
+      "Color": 2
     },
     "Socket2": {
-      "Type": 3
+      "Color": 4
     },
     "Socket3": {
-      "Type": 4
+      "Color": 8
     },
     "SocketBonus": {
       "Agility": 4
@@ -15160,13 +15160,13 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 2
+      "Color": 2
     },
     "Socket2": {
-      "Type": 3
+      "Color": 8
     },
     "Socket3": {
-      "Type": 3
+      "Color": 8
     },
     "SocketBonus": {
       "Strength": 4
@@ -15189,13 +15189,13 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 2
+      "Color": 2
     },
     "Socket2": {
-      "Type": 3
+      "Color": 4
     },
     "Socket3": {
-      "Type": 4
+      "Color": 8
     },
     "Phase": 5
   },
@@ -15214,10 +15214,10 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 2
+      "Color": 2
     },
     "Socket2": {
-      "Type": 4
+      "Color": 4
     },
     "SocketBonus": {
       "Agility": 3
@@ -15252,10 +15252,10 @@
       }
     ],
     "Socket1": {
-      "Type": 1
+      "Color": 1
     },
     "Socket2": {
-      "Type": 4
+      "Color": 4
     },
     "SocketBonus": {
       "Agility": 4
@@ -15290,10 +15290,10 @@
       }
     ],
     "Socket1": {
-      "Type": 1
+      "Color": 1
     },
     "Socket2": {
-      "Type": 4
+      "Color": 4
     },
     "SocketBonus": {
       "Crit": 4
@@ -15328,10 +15328,10 @@
       }
     ],
     "Socket1": {
-      "Type": 1
+      "Color": 1
     },
     "Socket2": {
-      "Type": 4
+      "Color": 4
     },
     "SocketBonus": {
       "Agility": 4
@@ -15352,7 +15352,7 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 3
+      "Color": 8
     },
     "Phase": 5
   },
@@ -15388,13 +15388,13 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 3
+      "Color": 2
     },
     "Socket2": {
-      "Type": 2
+      "Color": 2
     },
     "Socket3": {
-      "Type": 2
+      "Color": 8
     },
     "Phase": 5
   },
@@ -15414,10 +15414,10 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 2
+      "Color": 2
     },
     "Socket2": {
-      "Type": 2
+      "Color": 2
     },
     "SocketBonus": {
       "Crit": 3
@@ -15440,13 +15440,13 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 2
+      "Color": 2
     },
     "Socket2": {
-      "Type": 2
+      "Color": 2
     },
     "Socket3": {
-      "Type": 2
+      "Color": 2
     },
     "Phase": 5
   },
@@ -15466,10 +15466,10 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 3
+      "Color": 8
     },
     "Socket2": {
-      "Type": 3
+      "Color": 8
     },
     "Phase": 5
   },
@@ -15488,13 +15488,13 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 2
+      "Color": 2
     },
     "Socket2": {
-      "Type": 2
+      "Color": 2
     },
     "Socket3": {
-      "Type": 2
+      "Color": 2
     },
     "SocketBonus": {
       "Crit": 4
@@ -15516,10 +15516,10 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 2
+      "Color": 2
     },
     "Socket2": {
-      "Type": 3
+      "Color": 8
     },
     "SocketBonus": {
       "Strength": 3
@@ -15541,13 +15541,13 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 4
+      "Color": 2
     },
     "Socket2": {
-      "Type": 4
+      "Color": 4
     },
     "Socket3": {
-      "Type": 2
+      "Color": 4
     },
     "SocketBonus": {
       "Stamina": 6
@@ -15570,13 +15570,13 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 2
+      "Color": 2
     },
     "Socket2": {
-      "Type": 2
+      "Color": 2
     },
     "Socket3": {
-      "Type": 4
+      "Color": 4
     },
     "SocketBonus": {
       "Agility": 4
@@ -15598,10 +15598,10 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 2
+      "Color": 2
     },
     "Socket2": {
-      "Type": 3
+      "Color": 8
     },
     "SocketBonus": {
       "Strength": 3
@@ -15625,10 +15625,10 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 2
+      "Color": 2
     },
     "Socket2": {
-      "Type": 4
+      "Color": 4
     },
     "SocketBonus": {
       "Agility": 3
@@ -15650,13 +15650,13 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 4
+      "Color": 2
     },
     "Socket2": {
-      "Type": 4
+      "Color": 4
     },
     "Socket3": {
-      "Type": 2
+      "Color": 4
     },
     "SocketBonus": {
       "Stamina": 6
@@ -15679,13 +15679,13 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 4
+      "Color": 2
     },
     "Socket2": {
-      "Type": 3
+      "Color": 4
     },
     "Socket3": {
-      "Type": 2
+      "Color": 8
     },
     "Phase": 5
   },
@@ -15705,10 +15705,10 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 2
+      "Color": 1
     },
     "Socket2": {
-      "Type": 1
+      "Color": 2
     },
     "SocketBonus": {
       "Stamina": 6
@@ -15731,10 +15731,10 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 2
+      "Color": 2
     },
     "Socket2": {
-      "Type": 4
+      "Color": 4
     },
     "SocketBonus": {
       "Agility": 3
@@ -15807,13 +15807,13 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 2
+      "Color": 2
     },
     "Socket2": {
-      "Type": 2
+      "Color": 2
     },
     "Socket3": {
-      "Type": 3
+      "Color": 8
     },
     "SocketBonus": {
       "Crit": 4
@@ -15867,10 +15867,10 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 1
+      "Color": 1
     },
     "Socket2": {
-      "Type": 2
+      "Color": 2
     },
     "Phase": 5
   },
@@ -15916,10 +15916,10 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 2
+      "Color": 2
     },
     "Socket2": {
-      "Type": 3
+      "Color": 8
     },
     "Phase": 5
   },
@@ -16004,7 +16004,7 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 3
+      "Color": 8
     },
     "Phase": 5
   },
@@ -16024,10 +16024,10 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 1
+      "Color": 1
     },
     "Socket2": {
-      "Type": 2
+      "Color": 2
     },
     "SocketBonus": {
       "Hit": 4
@@ -16051,10 +16051,10 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 2
+      "Color": 1
     },
     "Socket2": {
-      "Type": 1
+      "Color": 2
     },
     "SocketBonus": {
       "Agility": 4
@@ -16076,10 +16076,10 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 2
+      "Color": 2
     },
     "Socket2": {
-      "Type": 4
+      "Color": 4
     },
     "SocketBonus": {
       "Strength": 3
@@ -16103,10 +16103,10 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 2
+      "Color": 2
     },
     "Socket2": {
-      "Type": 3
+      "Color": 8
     },
     "SocketBonus": {
       "Agility": 3
@@ -16128,10 +16128,10 @@
     },
     "Auras": [],
     "Socket1": {
-      "Type": 1
+      "Color": 1
     },
     "Socket2": {
-      "Type": 2
+      "Color": 2
     },
     "SocketBonus": {
       "Crit": 4
