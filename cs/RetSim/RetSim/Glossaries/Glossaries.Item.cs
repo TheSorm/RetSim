@@ -24,9 +24,10 @@ namespace RetSim
             public static readonly Dictionary<int, EquippableArmor> RelicsByID = new();
             public static readonly Dictionary<int, ItemSet> SetsByID = new();
             public static readonly Dictionary<int, Gem> GemsByID = new();
+            public static readonly Dictionary<int, MetaGem> MetaGemsByID = new();
 
 
-            public static void Initialize(List<EquippableWeapon> weapons, List<EquippableArmor> armorPieces, List<ItemSet> sets, List<Gem> gems)
+            public static void Initialize(List<EquippableWeapon> weapons, List<EquippableArmor> armorPieces, List<ItemSet> sets, List<Gem> gems, List<MetaGem> metaGems)
             {
                 foreach (var weapon in weapons)
                 {
@@ -89,6 +90,11 @@ namespace RetSim
                 foreach (var gem in gems)
                 {
                     GemsByID.Add(gem.ID, gem);
+                }
+
+                foreach (var metaGem in metaGems)
+                {
+                    MetaGemsByID.Add(metaGem.ID, metaGem);
                 }
             }
         }

@@ -6,7 +6,7 @@ namespace RetSim.Items
     public record MetaGem : Gem
     {
         public GemRequirements Requirements { get; init; }
-        public List<ItemAura> Auras { get; init; }
+        public ItemAura Aura { get; init; }
         
         public MetaGem()
         {
@@ -40,7 +40,7 @@ namespace RetSim.Items
 
     public enum RequirementType
     {
-        Standard = 1,
+        Standard = 0,
         MoreRedThanBlue = 2,
         MoreRedThanYellow = 3,
         MoreBlueThanRed = 4,
