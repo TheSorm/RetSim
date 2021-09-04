@@ -4,6 +4,26 @@ using System.Collections.Generic;
 
 namespace RetSim
 {
+
+    public class Slot
+    {
+        private EquippableArmor[] parent;
+
+        int index;
+
+        public Slot(int ind, EquippableArmor[] array)
+        {
+            index = ind;
+            parent = array;
+        }
+
+        public static implicit operator EquippableArmor(Slot slot)
+        {
+            return slot.parent[slot.index];
+        }
+    }
+
+
     public record Equipment
     {
         public Stats Stats => CalculateStats();
@@ -18,11 +38,7 @@ namespace RetSim
 
         private EquippableArmor[] AllEquipment { get; init; } = new EquippableArmor[Constants.EquipmentSlots.Total];
 
-        public EquippableArmor Head 
-        { 
-            get => AllEquipment[Constants.EquipmentSlots.Head];
-            set => AllEquipment[Constants.EquipmentSlots.Head] = value;
-        }
+        public EquippableArmor Head;
 
         public EquippableArmor Neck
         {
@@ -103,6 +119,9 @@ namespace RetSim
 
         private Stats CalculateStats()
         {
+            Head = new Slot(Constants.EquipmentSlots.Neck, AllEquipment);
+
+
             var gemCount = GetGemCount();
 
             return new()

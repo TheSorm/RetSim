@@ -4,12 +4,12 @@ namespace RetSim.Items
 {
     public class Socket
     {
-        public SocketColor Type { get; init; } //TODO: Rename to Color
+        public SocketColor Color { get; init; }
         public Gem SocketedGem { get; set; }
 
         public Socket(SocketColor type)
         {
-            Type = type;
+            Color = type;
         }
 
         public bool IsActive()
@@ -18,7 +18,7 @@ namespace RetSim.Items
                 return false;
 
             else
-                return (SocketedGem.Color & (GemColor)Type) != 0;
+                return (SocketedGem.Color & (GemColor)Color) != 0;
         }
 
         public bool IsGemActive(int red, int blue, int yellow)

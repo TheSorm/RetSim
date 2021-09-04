@@ -7,6 +7,8 @@ namespace RetSim.Items
     {
         //TODO: Move requirements here so ordinary gems don't have a bunch of useless data
 
+        public GemRequirements Requirements { get; init; } //TODO: Add
+
         public override bool IsActive(int red, int blue, int yellow)
         {
             if (Requirements == null || Color != GemColor.Meta)
@@ -23,17 +25,12 @@ namespace RetSim.Items
         public string Name { get; init; }
 
         //TODO: Add "Nickname"
-        
-        //Normal stat gems (str, str + stam, str + crit, crit, hit, etc etc) - 6 str / 8 / 10
-        //JC epic gems
-        //Dungeon drop gems - 8
 
         public int ItemLevel { get; init; } //TODO: Remove?
         public string Quality { get; init; } //TODO: Remove or convert to enum?
         public GemColor Color { get; init; }
         public ItemStats Stats { get; init; }
-        public List<ItemAuras> Auras { get; init; }
-        public GemRequirements Requirements { get; init; } //TODO: Add
+        public List<ItemAuras> Auras { get; init; }        
         public bool UniqueEquipped { get; set; }
         public int Phase { get; set; }
 
