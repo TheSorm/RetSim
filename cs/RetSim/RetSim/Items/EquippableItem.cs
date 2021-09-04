@@ -12,7 +12,7 @@ namespace RetSim.Items
         public ItemStats Stats { get; init; }
         public Set Set { get; init; }
         public ItemSpell OnUseSpell { get; set; }
-        public List<ItemAuras> Auras { get; init; }
+        public List<ItemAura> Auras { get; init; }
 
         public Socket[] Sockets = new Socket[3];
         public Socket Socket1 { get => Sockets[0]; init => Sockets[0] = value; }
@@ -50,21 +50,14 @@ namespace RetSim.Items
 
         public List<Gem> GetGems()
         {
-            List<Gem> gems = new();
-            if (Socket1 != null && Socket1.SocketedGem != null)
+            var gems = new List<Gem>();
+
+            foreach (Socket socket in Sockets)
             {
-                gems.Add(Socket1.SocketedGem);
+                if (socket != null && socket.SocketedGem != null)
+                    gems.Add(socket.SocketedGem);
             }
 
-            if (Socket2 != null && Socket2.SocketedGem != null)
-            {
-                gems.Add(Socket2.SocketedGem);
-            }
-
-            if (Socket3 != null && Socket3.SocketedGem != null)
-            {
-                gems.Add(Socket3.SocketedGem);
-            }
             return gems;
         }
     }
@@ -108,25 +101,19 @@ namespace RetSim.Items
             get
             {
                 if (ContainsKey(key))
-                {
                     return base[key];
-                }
+
                 else
-                {
                     return 0;
-                }
             }
 
             set
             {
                 if (ContainsKey(key))
-                {
                     base[key] = value;
-                }
+               
                 else
-                {
                     Add(key, value);
-                }
             }
         }
     }
@@ -137,7 +124,7 @@ namespace RetSim.Items
         public int Value { get; init; }
     }
 
-    public record ItemAuras
+    public record ItemAura
     {
         public int ID { get; init; }
         public string Name { get; init; }

@@ -5,14 +5,18 @@ namespace RetSim.Items
 {
     public record MetaGem : Gem
     {
-        //TODO: Move requirements here so ordinary gems don't have a bunch of useless data
-
-        public GemRequirements Requirements { get; init; } //TODO: Add
-
-        public override bool IsActive(int red, int blue, int yellow)
+        public GemRequirements Requirements { get; init; }
+        public List<ItemAura> Auras { get; init; }
+        
+        public MetaGem()
         {
-            if (Requirements == null || Color != GemColor.Meta)
-                return true;
+            Color = GemColor.Meta;
+        }
+
+        public bool IsActive(int red, int blue, int yellow)
+        {
+            if (Requirements == null)
+                return false;
 
             else
                 return Requirements.IsActive(red, blue, yellow);
@@ -29,15 +33,9 @@ namespace RetSim.Items
         public int ItemLevel { get; init; } //TODO: Remove?
         public string Quality { get; init; } //TODO: Remove or convert to enum?
         public GemColor Color { get; init; }
-        public ItemStats Stats { get; init; }
-        public List<ItemAuras> Auras { get; init; }        
+        public ItemStats Stats { get; init; }             
         public bool UniqueEquipped { get; set; }
         public int Phase { get; set; }
-
-        public virtual bool IsActive(int red, int blue, int yellow)
-        {
-            return true;
-        }
     }
 
     public enum RequirementType
@@ -75,7 +73,7 @@ namespace RetSim.Items
 
         public GemRequirements()
         {
-            Check = TypeToFunc[Type];
+            Check = GetRequirementCheck[Type];
         }
 
         public bool IsActive(int red, int blue, int yellow)
@@ -91,7 +89,7 @@ namespace RetSim.Items
         private static bool MoreBlueThanYellow(GemRequirements requirement, int red, int blue, int yellow) => blue > yellow;
         private static bool MoreBlueThanRed(GemRequirements requirement, int red, int blue, int yellow) => blue > red;
 
-        private static readonly Dictionary<RequirementType, Func<GemRequirements, int, int, int, bool>> TypeToFunc = new()
+        private static readonly Dictionary<RequirementType, Func<GemRequirements, int, int, int, bool>> GetRequirementCheck = new()
         {
             { RequirementType.Standard, Standard },
             { RequirementType.MoreRedThanBlue, MoreRedThanBlue },
