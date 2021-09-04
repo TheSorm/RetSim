@@ -1,4 +1,6 @@
-﻿namespace RetSim.SpellEffects
+﻿using RetSim.Log;
+
+namespace RetSim.SpellEffects
 {
     public abstract class DamageEffect : SpellEffect
     {
@@ -22,6 +24,39 @@
         {
             return (GetBaseDamage(player) + attack.SpellPowerBonus) * attack.SchoolModifier * attack.SpellModifier * attack.DamageModifier;
         }
-    }
 
+        public override ProcMask Resolve(FightSimulation fight)
+        {
+            ProcMask mask = OnCast;
+
+            var attack = new Attack(fight.Player, fight.Enemy, this);
+
+            if (attack.AttackResult == AttackResult.Hit)
+            {
+                mask |= OnHit;
+
+                if (attack.DamageResult == DamageResult.Crit)
+                    mask |= OnCrit;
+
+                attack.ResolveDamage();
+            }
+
+            var entry = new DamageEntry()
+            {
+                Timestamp = fight.Timestamp,
+                Mana = fight.Player.Stats.Mana,
+                Source = Spell.Name,
+                AttackResult = attack.AttackResult,
+                Damage = attack.Damage,
+                School = School,
+                Crit = attack.DamageResult == DamageResult.Crit,
+                Glancing = attack.Glancing,
+                Mitigation = attack.Mitigation
+            };
+
+            fight.CombatLog.Add(entry);
+
+            return mask;
+        }
+    }
 }
