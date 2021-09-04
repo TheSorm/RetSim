@@ -100,6 +100,28 @@ namespace RetSim
 
             public const string MillisecondFormatter = "{0:00:00:000}";
         }
+
+        public static class EquipmentSlots
+        {
+            public const int Head = 0;
+            public const int Neck = 1;
+            public const int Shoulders = 2;
+            public const int Back = 3;
+            public const int Chest = 4;
+            public const int Wrists = 5;
+            public const int Hands = 6;
+            public const int Waist = 7;
+            public const int Legs = 8;
+            public const int Feet = 9;
+            public const int Finger1 = 10;
+            public const int Finger2 = 11;
+            public const int Trinket1 = 12;
+            public const int Trinket2 = 13;
+            public const int Relic = 14;
+            public const int Weapon = 15;
+
+            public const int Total = 16;
+        }
     }
 
     public enum Armor

@@ -1,6 +1,7 @@
 ﻿using RetSim.Items;
 using RetSim.Loggers;
 using RetSim.Tactics;
+using System;
 using System.Collections.Generic;
 using System.Net;
 using System.Text.Json;
@@ -34,11 +35,11 @@ namespace RetSim
             {
                 Head = Glossaries.Items.HeadsByID[29073],
                 Neck = Glossaries.Items.NecksByID[29381],
-                Shoulder = Glossaries.Items.ShouldersByID[29075],
-                Cloak = Glossaries.Items.CloaksByID[24259],
+                Shoulders = Glossaries.Items.ShouldersByID[29075],
+                Back = Glossaries.Items.CloaksByID[24259],
                 Chest = Glossaries.Items.ChestsByID[29071],
-                Wrist = Glossaries.Items.WristsByID[28795],
-                Hand = Glossaries.Items.HandsByID[30644],
+                Wrists = Glossaries.Items.WristsByID[28795],
+                Hands = Glossaries.Items.HandsByID[30644],
                 Waist = Glossaries.Items.WaistsByID[28779],
                 Legs = Glossaries.Items.LegsByID[31544],
                 Feet = Glossaries.Items.FeetsByID[28608],
@@ -55,6 +56,13 @@ namespace RetSim
             fight.Run();
 
             fight.Output();
+
+
+            GemColor gem = GemColor.Blue;
+
+            SocketColor socket = SocketColor.Yellow;
+
+            Logger.Log(((gem & (GemColor)socket) != 0).ToString());
         }
 
         public static List<EquippableWeapon> LoadWeponData()

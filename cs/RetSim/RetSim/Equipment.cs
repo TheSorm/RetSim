@@ -1,32 +1,110 @@
 ﻿using RetSim.Items;
+using System;
 using System.Collections.Generic;
 
 namespace RetSim
 {
     public record Equipment
     {
-        public Stats Stats { get => CalculateStats(); }
-        public List<Aura> Auras { get => GenerateAuraList(); }
-        public EquippableArmor Head { get; init; }
-        public EquippableArmor Neck { get; init; }
-        public EquippableArmor Shoulder { get; init; }
-        public EquippableArmor Cloak { get; init; }
-        public EquippableArmor Chest { get; init; }
-        public EquippableArmor Wrist { get; init; }
-        public EquippableArmor Hand { get; init; }
-        public EquippableArmor Waist { get; init; }
-        public EquippableArmor Legs { get; init; }
-        public EquippableArmor Feet { get; init; }
-        public EquippableArmor Finger1 { get; init; }
-        public EquippableArmor Finger2 { get; init; }
-        public EquippableArmor Trinket1 { get; init; }
-        public EquippableArmor Trinket2 { get; init; }
-        public EquippableArmor Relic { get; init; }
+        public Stats Stats => CalculateStats();
+        public List<Aura> Auras => GenerateAuraList();
+
+        public Dictionary<GemColor, int> GemTotals = new()
+        {
+            { GemColor.Red, 0 },
+            { GemColor.Blue, 0 },
+            { GemColor.Yellow, 0 }
+        };
+
+        private EquippableArmor[] AllEquipment { get; init; } = new EquippableArmor[Constants.EquipmentSlots.Total];
+
+        public EquippableArmor Head 
+        { 
+            get => AllEquipment[Constants.EquipmentSlots.Head];
+            set => AllEquipment[Constants.EquipmentSlots.Head] = value;
+        }
+
+        public EquippableArmor Neck
+        {
+            get => AllEquipment[Constants.EquipmentSlots.Neck];
+            set => AllEquipment[Constants.EquipmentSlots.Neck] = value;
+        }
+        public EquippableArmor Shoulders
+        {
+            get => AllEquipment[Constants.EquipmentSlots.Shoulders];
+            set => AllEquipment[Constants.EquipmentSlots.Shoulders] = value;
+        }
+
+        public EquippableArmor Back
+        {
+            get => AllEquipment[Constants.EquipmentSlots.Back];
+            set => AllEquipment[Constants.EquipmentSlots.Back] = value;
+        }
+        public EquippableArmor Chest
+
+        {
+            get => AllEquipment[Constants.EquipmentSlots.Chest];
+            set => AllEquipment[Constants.EquipmentSlots.Chest] = value;
+        }
+        public EquippableArmor Wrists
+        {
+            get => AllEquipment[Constants.EquipmentSlots.Wrists];
+            set => AllEquipment[Constants.EquipmentSlots.Wrists] = value;
+        }
+        public EquippableArmor Hands
+        {
+            get => AllEquipment[Constants.EquipmentSlots.Hands];
+            set => AllEquipment[Constants.EquipmentSlots.Hands] = value;
+        }
+
+        public EquippableArmor Waist
+        {
+            get => AllEquipment[Constants.EquipmentSlots.Waist];
+            set => AllEquipment[Constants.EquipmentSlots.Waist] = value;
+        }
+        public EquippableArmor Legs
+        {
+            get => AllEquipment[Constants.EquipmentSlots.Legs];
+            set => AllEquipment[Constants.EquipmentSlots.Legs] = value;
+        }
+        public EquippableArmor Feet
+        {
+            get => AllEquipment[Constants.EquipmentSlots.Feet];
+            set => AllEquipment[Constants.EquipmentSlots.Feet] = value;
+        }
+
+        public EquippableArmor Finger1
+        {
+            get => AllEquipment[Constants.EquipmentSlots.Finger1];
+            set => AllEquipment[Constants.EquipmentSlots.Finger1] = value;
+        }
+        public EquippableArmor Finger2
+        {
+            get => AllEquipment[Constants.EquipmentSlots.Finger2];
+            set => AllEquipment[Constants.EquipmentSlots.Finger2] = value;
+        }
+        public EquippableArmor Trinket1
+        {
+            get => AllEquipment[Constants.EquipmentSlots.Trinket1];
+            set => AllEquipment[Constants.EquipmentSlots.Trinket1] = value;
+        }
+        public EquippableArmor Trinket2
+        {
+            get => AllEquipment[Constants.EquipmentSlots.Trinket2];
+            set => AllEquipment[Constants.EquipmentSlots.Trinket2] = value;
+        }
+        public EquippableArmor Relic
+        {
+            get => AllEquipment[Constants.EquipmentSlots.Relic];
+            set => AllEquipment[Constants.EquipmentSlots.Relic] = value;
+        }
+
         public EquippableWeapon Weapon { get; init; }
 
         private Stats CalculateStats()
         {
             var gemCount = GetGemCount();
+
             return new()
             {
                 Stamina = CalculateStat(ItemStatNames.Stamina, gemCount),
@@ -56,18 +134,35 @@ namespace RetSim
 
         private int CalculateStat(ItemStatNames name, Dictionary<GemColor, int> gemCount)
         {
-            return CalculateStatOfPiece(Head, name, gemCount) + CalculateStatOfPiece(Neck, name, gemCount) + CalculateStatOfPiece(Shoulder, name, gemCount) + CalculateStatOfPiece(Cloak, name, gemCount) + CalculateStatOfPiece(Chest, name, gemCount)
-                + CalculateStatOfPiece(Wrist, name, gemCount) + CalculateStatOfPiece(Hand, name, gemCount) + CalculateStatOfPiece(Waist, name, gemCount) + CalculateStatOfPiece(Legs, name, gemCount) + CalculateStatOfPiece(Feet, name, gemCount)
-                + CalculateStatOfPiece(Finger1, name, gemCount) + CalculateStatOfPiece(Finger2, name, gemCount) + CalculateStatOfPiece(Trinket1, name, gemCount) + CalculateStatOfPiece(Trinket2, name, gemCount) + CalculateStatOfPiece(Relic, name, gemCount)
-                + CalculateStatOfPiece(Weapon, name, gemCount);
+            int total = CalculateStatOfPiece(Weapon, name, gemCount);
+
+            foreach (EquippableItem item in AllEquipment)
+                total += CalculateStatOfPiece(item, name, gemCount);
+
+            return total;
         }
 
         private static int CalculateStatOfPiece(EquippableItem item, ItemStatNames name, Dictionary<GemColor, int> gemCount)
         {
-            return item.Stats[name] + (item.IsSocketBonusActive() ? item.SocketBonus[name] : 0) +
-                (item.Socket1 != null && item.Socket1.SocketedGem != null && item.Socket1.IsGemActive(gemCount[GemColor.Red], gemCount[GemColor.Blue], gemCount[GemColor.Yellow]) ? item.Socket1.SocketedGem.Stats[name] : 0) +
-                (item.Socket2 != null && item.Socket2.SocketedGem != null && item.Socket2.IsGemActive(gemCount[GemColor.Red], gemCount[GemColor.Blue], gemCount[GemColor.Yellow]) ? item.Socket2.SocketedGem.Stats[name] : 0) +
-                (item.Socket3 != null && item.Socket3.SocketedGem != null && item.Socket3.IsGemActive(gemCount[GemColor.Red], gemCount[GemColor.Blue], gemCount[GemColor.Yellow]) ? item.Socket3.SocketedGem.Stats[name] : 0);
+            int passive = item.Stats[name];
+            int bonus = item.IsSocketBonusActive() ? item.SocketBonus[name] : 0;
+            int sockets = 0;
+
+            foreach (Socket socket in item.Sockets)
+            {
+                if (socket != null && socket.SocketedGem != null)
+                {
+                    if (socket.SocketedGem.Color == GemColor.Meta)
+                    {
+                        if (!socket.IsGemActive(gemCount[GemColor.Red], gemCount[GemColor.Blue], gemCount[GemColor.Yellow]))
+                            break;
+                    }
+                    
+                    sockets += socket.SocketedGem.Stats[name];
+                }
+            }
+
+            return passive + bonus + sockets;
         }
 
         private List<Aura> GenerateAuraList()
@@ -77,11 +172,11 @@ namespace RetSim
             List<Aura> auras = new();
             GenerateAuraListOf(Head, auras, gemCount);
             GenerateAuraListOf(Neck, auras, gemCount);
-            GenerateAuraListOf(Shoulder, auras, gemCount);
-            GenerateAuraListOf(Cloak, auras, gemCount);
+            GenerateAuraListOf(Shoulders, auras, gemCount);
+            GenerateAuraListOf(Back, auras, gemCount);
             GenerateAuraListOf(Chest, auras, gemCount);
-            GenerateAuraListOf(Wrist, auras, gemCount);
-            GenerateAuraListOf(Hand, auras, gemCount);
+            GenerateAuraListOf(Wrists, auras, gemCount);
+            GenerateAuraListOf(Hands, auras, gemCount);
             GenerateAuraListOf(Waist, auras, gemCount);
             GenerateAuraListOf(Legs, auras, gemCount);
             GenerateAuraListOf(Finger1, auras, gemCount);
@@ -94,11 +189,11 @@ namespace RetSim
             Dictionary<int, int> SetCounts = new();
             if (Head.Set != null) if (SetCounts.ContainsKey(Head.Set.ID)) SetCounts[Head.Set.ID]++; else SetCounts.Add(Head.Set.ID, 1);
             if (Neck.Set != null) if (SetCounts.ContainsKey(Neck.Set.ID)) SetCounts[Neck.Set.ID]++; else SetCounts.Add(Neck.Set.ID, 1);
-            if (Shoulder.Set != null) if (SetCounts.ContainsKey(Shoulder.Set.ID)) SetCounts[Shoulder.Set.ID]++; else SetCounts.Add(Shoulder.Set.ID, 1);
-            if (Cloak.Set != null) if (SetCounts.ContainsKey(Cloak.Set.ID)) SetCounts[Cloak.Set.ID]++; else SetCounts.Add(Cloak.Set.ID, 1);
+            if (Shoulders.Set != null) if (SetCounts.ContainsKey(Shoulders.Set.ID)) SetCounts[Shoulders.Set.ID]++; else SetCounts.Add(Shoulders.Set.ID, 1);
+            if (Back.Set != null) if (SetCounts.ContainsKey(Back.Set.ID)) SetCounts[Back.Set.ID]++; else SetCounts.Add(Back.Set.ID, 1);
             if (Chest.Set != null) if (SetCounts.ContainsKey(Chest.Set.ID)) SetCounts[Chest.Set.ID]++; else SetCounts.Add(Chest.Set.ID, 1);
-            if (Wrist.Set != null) if (SetCounts.ContainsKey(Wrist.Set.ID)) SetCounts[Wrist.Set.ID]++; else SetCounts.Add(Wrist.Set.ID, 1);
-            if (Hand.Set != null) if (SetCounts.ContainsKey(Hand.Set.ID)) SetCounts[Hand.Set.ID]++; else SetCounts.Add(Hand.Set.ID, 1);
+            if (Wrists.Set != null) if (SetCounts.ContainsKey(Wrists.Set.ID)) SetCounts[Wrists.Set.ID]++; else SetCounts.Add(Wrists.Set.ID, 1);
+            if (Hands.Set != null) if (SetCounts.ContainsKey(Hands.Set.ID)) SetCounts[Hands.Set.ID]++; else SetCounts.Add(Hands.Set.ID, 1);
             if (Waist.Set != null) if (SetCounts.ContainsKey(Waist.Set.ID)) SetCounts[Waist.Set.ID]++; else SetCounts.Add(Waist.Set.ID, 1);
             if (Legs.Set != null) if (SetCounts.ContainsKey(Legs.Set.ID)) SetCounts[Legs.Set.ID]++; else SetCounts.Add(Legs.Set.ID, 1);
             if (Finger1.Set != null) if (SetCounts.ContainsKey(Finger1.Set.ID)) SetCounts[Finger1.Set.ID]++; else SetCounts.Add(Finger1.Set.ID, 1);
@@ -125,18 +220,22 @@ namespace RetSim
         }
         private static void GenerateAuraListOf(EquippableItem item, List<Aura> auras, Dictionary<GemColor, int> gemCount)
         {
-            foreach (var itemAura in item.Auras)
+            foreach (var aura in item.Auras)
             {
-                if (Glossaries.Auras.ByID.ContainsKey(itemAura.ID))
-                    auras.Add(Glossaries.Auras.ByID[itemAura.ID]);
+                if (Glossaries.Auras.ByID.ContainsKey(aura.ID))
+                    auras.Add(Glossaries.Auras.ByID[aura.ID]);
             }
 
             if (item.Socket1 != null && item.Socket1.SocketedGem != null && item.Socket1.IsGemActive(gemCount[GemColor.Red], gemCount[GemColor.Blue], gemCount[GemColor.Yellow]))
             {
                 foreach (var gem1Aura in item.Socket1.SocketedGem.Auras)
+                {
                     if (Glossaries.Auras.ByID.ContainsKey(gem1Aura.ID))
                         auras.Add(Glossaries.Auras.ByID[gem1Aura.ID]);
+                }
             }
+
+            //TODO: Make Meta Gem only appear on socket 1
 
             if (item.Socket2 != null && item.Socket2.SocketedGem != null && item.Socket2.IsGemActive(gemCount[GemColor.Red], gemCount[GemColor.Blue], gemCount[GemColor.Yellow]))
             {
@@ -155,18 +254,20 @@ namespace RetSim
 
         private Dictionary<GemColor, int> GetGemCount()
         {
-            Dictionary<GemColor, int> gemCount = new();
-            gemCount.Add(GemColor.Red, 0);
-            gemCount.Add(GemColor.Blue, 0);
-            gemCount.Add(GemColor.Yellow, 0);
+            Dictionary<GemColor, int> totals = new()
+            {
+                { GemColor.Red, 0 },
+                { GemColor.Blue, 0 },
+                { GemColor.Yellow, 0 }
+            };
 
             List<Gem> gems = Head.GetGems();
             gems.AddRange(Neck.GetGems());
-            gems.AddRange(Shoulder.GetGems());
-            gems.AddRange(Cloak.GetGems());
+            gems.AddRange(Shoulders.GetGems());
+            gems.AddRange(Back.GetGems());
             gems.AddRange(Chest.GetGems());
-            gems.AddRange(Wrist.GetGems());
-            gems.AddRange(Hand.GetGems());
+            gems.AddRange(Wrists.GetGems());
+            gems.AddRange(Hands.GetGems());
             gems.AddRange(Waist.GetGems());
             gems.AddRange(Legs.GetGems());
             gems.AddRange(Finger1.GetGems());
@@ -178,41 +279,14 @@ namespace RetSim
 
             foreach (var gem in gems)
             {
-                switch (gem.Color)
+                foreach (GemColor color in totals.Keys)
                 {
-                    case GemColor.Red:
-                        gemCount[GemColor.Red]++;
-                        break;
-                    case GemColor.Blue:
-                        gemCount[GemColor.Blue]++;
-                        break;
-                    case GemColor.Yellow:
-                        gemCount[GemColor.Yellow]++;
-                        break;
-                    case GemColor.Purple:
-                        gemCount[GemColor.Red]++;
-                        gemCount[GemColor.Blue]++;
-                        break;
-                    case GemColor.Green:
-                        gemCount[GemColor.Yellow]++;
-                        gemCount[GemColor.Blue]++;
-                        break;
-                    case GemColor.Orange:
-                        gemCount[GemColor.Red]++;
-                        gemCount[GemColor.Yellow]++;
-                        break;
-                    case GemColor.Meta:
-                        break;
-                    case GemColor.Prismatic:
-                        gemCount[GemColor.Red]++;
-                        gemCount[GemColor.Blue]++;
-                        gemCount[GemColor.Yellow]++;
-                        break;
-                    default:
-                        break;
+                    if (Convert.ToBoolean(gem.Color & color))
+                        totals[color]++;
                 }
             }
-            return gemCount;
+
+            return totals;
         }
 
     }

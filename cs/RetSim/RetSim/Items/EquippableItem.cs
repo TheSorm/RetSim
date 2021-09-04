@@ -13,21 +13,39 @@ namespace RetSim.Items
         public Set Set { get; init; }
         public ItemSpell OnUseSpell { get; set; }
         public List<ItemAuras> Auras { get; init; }
-        public Socket Socket1 { get; init; }
-        public Socket Socket2 { get; init; }
-        public Socket Socket3 { get; init; }
+
+        public Socket[] Sockets = new Socket[3];
+        public Socket Socket1 { get => Sockets[0]; init => Sockets[0] = value; }
+        public Socket Socket2 { get => Sockets[1]; init => Sockets[1] = value; }
+        public Socket Socket3 { get => Sockets[2]; init => Sockets[2] = value; }
         public ItemStats SocketBonus { get; init; }
         public bool UniqueEquipped { get; set; }
         public int Phase { get; init; }
 
         public bool IsSocketBonusActive()
         {
-            if (Socket1 == null || SocketBonus == null)
-            {
-                return false;
-            }
+            bool result = true;
 
-            return Socket1.IsActive() && (Socket2 == null || Socket2.IsActive()) && (Socket3 == null || Socket3.IsActive());
+            if (SocketBonus == null)
+                return false;
+
+            else
+            {
+                foreach (Socket socket in Sockets)
+                {
+                    if (socket == null)
+                        continue;
+
+                    else if (!socket.IsActive())
+                    {
+                        result = false;
+                        break;
+                    }
+
+                }
+
+                return result;
+            }            
         }
 
         public List<Gem> GetGems()
@@ -98,6 +116,7 @@ namespace RetSim.Items
                     return 0;
                 }
             }
+
             set
             {
                 if (ContainsKey(key))
