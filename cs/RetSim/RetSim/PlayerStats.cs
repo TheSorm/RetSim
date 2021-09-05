@@ -4,7 +4,7 @@
     {
         private readonly Player player;
 
-        public Stats Temporary { get; init; }
+        public Stats Temporary { get; set; }
         private readonly Stats permanent;
 
         public PlayerStats(Player parent, Race race, Equipment equipment)
@@ -50,7 +50,7 @@
         }
 
         public new int HasteRating => permanent.HasteRating + Temporary.HasteRating;
-        public new float Haste => (Constants.Misc.One + (HasteRating / (Constants.Ratings.Haste * Constants.Misc.OneHundred))) * player.Modifiers.AttackSpeed;
+        public new float Haste => (Constants.Numbers.One + (HasteRating / (Constants.Ratings.Haste * Constants.Numbers.OneHundred))) * player.Modifiers.AttackSpeed;
 
         public new int ExpertiseRating => permanent.ExpertiseRating + Temporary.ExpertiseRating;
         public new int Expertise => permanent.Expertise + Temporary.Expertise + (int)(ExpertiseRating / Constants.Ratings.Expertise);
@@ -84,11 +84,11 @@
             {
                 float miss = Constants.Boss.SpellMissChance - SpellHit;
 
-                return miss > Constants.Boss.MininumSpellMissChance ? Constants.Boss.MininumSpellMissChance : Constants.Misc.Zero;
+                return miss > Constants.Boss.MininumSpellMissChance ? Constants.Boss.MininumSpellMissChance : Constants.Numbers.Zero;
             }
         }
 
         public new int SpellHasteRating => permanent.SpellHasteRating + Temporary.SpellHasteRating;
-        public new float SpellHaste => (Constants.Misc.One + (SpellHasteRating / (Constants.Ratings.SpellHaste * Constants.Misc.OneHundred))) * player.Modifiers.CastSpeed;
+        public new float SpellHaste => (Constants.Numbers.One + (SpellHasteRating / (Constants.Ratings.SpellHaste * Constants.Numbers.OneHundred))) * player.Modifiers.CastSpeed;
     }
 }

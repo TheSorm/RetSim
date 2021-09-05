@@ -11,7 +11,7 @@ namespace RetSim
         /// <returns>The fractional component of the input number, expressed as an integer of up to 2 digits, i.e. 0-99.</returns>
         public static int GetFraction(float input)
         {
-            return (int)((decimal)input % Constants.Misc.One * Constants.Misc.OneHundred);
+            return (int)((decimal)input % Constants.Numbers.One * Constants.Numbers.OneHundred);
         }
 
         /// <summary>
@@ -21,7 +21,7 @@ namespace RetSim
         /// <returns>The truncated integer representation of the processed fraction.</returns>
         public static int UpgradeFraction(float fraction)
         {
-            float mult = fraction * Constants.Misc.OneHundred;
+            float mult = fraction * Constants.Numbers.OneHundred;
 
             return (int)mult + (int)(GetFraction(mult) / 100f);
         }
@@ -36,7 +36,7 @@ namespace RetSim
         {
             float chance = player.Weapon.BaseSpeed * ppm / 600;
 
-            return chance < Constants.Misc.Zero ? Constants.Misc.Zero : chance > Constants.Misc.OneHundred ? Constants.Misc.OneHundred : chance;
+            return chance < Constants.Numbers.Zero ? Constants.Numbers.Zero : chance > Constants.Numbers.OneHundred ? Constants.Numbers.OneHundred : chance;
         }
     }
 

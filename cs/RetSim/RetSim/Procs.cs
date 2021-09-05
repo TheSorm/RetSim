@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace RetSim
 {
-    public class Procs : List<Proc>
+    public class Procs : Dictionary<Proc, ProcCooldownEndEvent>
     {
         private readonly Player player;
 
@@ -12,18 +12,19 @@ namespace RetSim
             player = parent;
         }
 
-        //public new void Add(Proc proc)
-        //{
-        //    if (!Contains(proc))
-        //        base.Add(proc);
-        //}
+        public new void Add(Proc proc, ProcCooldownEndEvent cooldown = null)
+        {
+            if (!ContainsKey(proc))
+                base.Add(proc, null);
+        }
 
         public void CheckProcs(ProcMask mask, FightSimulation fight)
         {
-            foreach (var proc in this)
+            foreach (var proc in this.Keys)
             {
-                if (!player.Spellbook.IsOnCooldown(proc.Spell) && (proc.ProcMask & mask) != ProcMask.None && RollProc(proc, player))
+                if (!IsOnCooldown(proc) && (proc.ProcMask & mask) != ProcMask.None && RollProc(proc, player))
                 {
+                    fight.Queue.Add(new ProcCooldownEndEvent(proc, fight, fight.Timestamp + proc.Cooldown));
                     fight.Queue.Add(new CastEvent(proc.Spell, fight, fight.Timestamp)); //TODO: Increase Prio of those cast events
                     //Program.Logger.Log($"{proc.Name} procced");
                 }
@@ -37,6 +38,21 @@ namespace RetSim
 
             else
                 return RNG.Roll100(Helpers.PPMToChance(proc.PPM, player));
+        }
+
+        public void StartCooldown(Proc proc, ProcCooldownEndEvent cooldown)
+        {
+            this[proc] = cooldown;
+        }
+
+        public void EndCooldown(Proc proc)
+        {
+            this[proc] = null;
+        }
+
+        public bool IsOnCooldown(Proc proc)
+        {
+            return this[proc] != null;
         }
     }
 }

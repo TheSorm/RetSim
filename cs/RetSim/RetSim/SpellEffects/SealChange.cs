@@ -17,6 +17,7 @@
                 {
                     if (other.Persist == 0)
                         fight.Player.Auras[other].End.Timestamp = fight.Timestamp;
+
                     else
                         fight.Player.Auras[other].End.Timestamp = fight.Timestamp + other.Persist;
                 }

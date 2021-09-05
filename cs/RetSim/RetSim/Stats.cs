@@ -115,5 +115,46 @@
                 SpellHasteRating = a.SpellHasteRating + b.SpellHasteRating
             };
         }
+
+        public static Stats operator -(Stats a, Stats b)
+        {
+            return new Stats
+            {
+                Stamina = a.Stamina - b.Stamina,
+
+                Intellect = a.Intellect - b.Intellect,
+                ManaPer5 = a.ManaPer5 - b.ManaPer5,
+
+                Strength = a.Strength - b.Strength,
+                AttackPower = a.AttackPower - b.AttackPower,
+
+                Agility = a.Agility - b.Agility,
+                CritChance = a.CritChance - b.CritChance,
+                CritRating = a.CritRating - b.CritRating,
+
+                HitChance = a.HitChance - b.HitChance,
+                HitRating = a.HitRating - b.HitRating,
+
+                Haste = a.Haste - b.Haste,
+                HasteRating = a.HasteRating - b.HasteRating,
+
+                Expertise = a.Expertise - b.Expertise,
+                ExpertiseRating = a.ExpertiseRating - b.ExpertiseRating,
+
+                ArmorPenetration = a.ArmorPenetration - b.ArmorPenetration,
+                WeaponDamage = a.WeaponDamage - b.WeaponDamage,
+
+                SpellPower = a.SpellPower - b.SpellPower,
+
+                SpellCrit = a.SpellCrit - b.SpellCrit,
+                SpellCritRating = a.SpellCritRating - b.SpellCritRating,
+
+                SpellHit = a.SpellHit - b.SpellHit,
+                SpellHitRating = a.SpellHitRating - b.SpellHitRating,
+
+                SpellHaste = a.SpellHaste - b.SpellHaste,
+                SpellHasteRating = a.SpellHasteRating - b.SpellHasteRating
+            };
+        }
     }
 }

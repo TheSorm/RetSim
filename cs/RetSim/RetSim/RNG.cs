@@ -9,7 +9,7 @@ namespace RetSim
 
         private static bool Roll(int input, int limit)
         {
-            if (input <= Constants.Misc.Zero)
+            if (input <= Constants.Numbers.Zero)
                 return false;
 
             else if (input >= limit)
@@ -21,7 +21,7 @@ namespace RetSim
 
         public static bool Roll100(int input)
         {
-            return Roll(input, Constants.Misc.OneHundred);
+            return Roll(input, Constants.Numbers.OneHundred);
         }
 
         public static bool Roll100(float input)
@@ -40,7 +40,7 @@ namespace RetSim
         {
             int fraction = Helpers.GetFraction(damage);
 
-            int random = Roll100(fraction) ? Constants.Misc.One : Constants.Misc.Zero;
+            int random = Roll100(fraction) ? Constants.Numbers.One : Constants.Numbers.Zero;
 
             return (int)damage + random;
         }

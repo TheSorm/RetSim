@@ -1,4 +1,6 @@
 ﻿using RetSim.Events;
+using RetSim.Log;
+using RetSim.SpellEffects;
 using System.Collections.Generic;
 
 namespace RetSim
@@ -31,23 +33,29 @@ namespace RetSim
                 return this[aura].End.Timestamp - time;
         }
 
-        public void Apply(Aura aura, FightSimulation fight)
+        public void Apply(Aura aura, FightSimulation fight, int extraDuration = 0, bool log = true)
         {
             if (this[aura].Active)
             {
                 if (this[aura].Stacks < aura.MaxStacks)
                     ApplyEffects(aura, fight);
 
-                this[aura].End.Timestamp = fight.Timestamp + aura.Duration;
+                this[aura].End.Timestamp = fight.Timestamp + aura.Duration + extraDuration;
+
+                if (log)
+                    Log(aura, fight, AuraChangeType.Refresh);
             }
 
             else
             {
                 ApplyEffects(aura, fight);
 
-                this[aura].End = new AuraEndEvent(aura, fight, fight.Timestamp + aura.Duration);
+                this[aura].End = new AuraEndEvent(aura, fight, fight.Timestamp + aura.Duration + extraDuration);
 
                 fight.Queue.Add(this[aura].End);
+
+                if (log)
+                    Log(aura, fight, AuraChangeType.Gain);
             }
         }
 
@@ -61,7 +69,7 @@ namespace RetSim
             this[aura].Stacks++;
         }
 
-        public void Cancel(Aura aura, FightSimulation fight)
+        public void Cancel(Aura aura, FightSimulation fight, bool log = true)
         {
             for (int i = 0; i < this[aura].Stacks; i++)
             {
@@ -71,6 +79,22 @@ namespace RetSim
 
             this[aura].End = null;
             this[aura].Stacks = 0;
+
+            if (log)
+                Log(aura, fight, AuraChangeType.Fade);
+        }
+
+        private void Log(Aura aura, FightSimulation fight, AuraChangeType type)
+        {
+            var entry =  new AuraEntry()
+            {
+                Timestamp = fight.Timestamp,
+                Mana = fight.Player.Stats.Mana,
+                Source = aura.Name,
+                Type = type
+            };
+
+            fight.CombatLog.Add(entry);
         }
     }
 
