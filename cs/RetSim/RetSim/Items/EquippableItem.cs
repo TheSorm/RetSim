@@ -45,7 +45,7 @@ namespace RetSim.Items
                 }
 
                 return result;
-            }            
+            }
         }
 
         public List<Gem> GetGems()
@@ -111,7 +111,7 @@ namespace RetSim.Items
             {
                 if (ContainsKey(key))
                     base[key] = value;
-               
+
                 else
                     Add(key, value);
             }

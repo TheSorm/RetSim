@@ -24,7 +24,6 @@ namespace RetSim.Items
             else
             {
                 var gem = SocketedGem as MetaGem;
-
                 return gem.IsActive(red, blue, yellow);
             }
         }

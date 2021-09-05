@@ -15,8 +15,8 @@ namespace RetSim
 
         #region Equipment
 
-        public EquippableArmor Head 
-        { 
+        public EquippableArmor Head
+        {
             get => (EquippableArmor)AllEquipment[Constants.EquipmentSlots.Head];
             set => AllEquipment[Constants.EquipmentSlots.Head] = value;
         }
@@ -159,9 +159,9 @@ namespace RetSim
                     if (socket.SocketedGem.Color == GemColor.Meta)
                     {
                         if (!socket.IsMetaGemActive(gems[GemColor.Red], gems[GemColor.Blue], gems[GemColor.Yellow]))
-                            break;
+                            continue;
                     }
-                    
+
                     sockets += socket.SocketedGem.Stats[name];
                 }
             }
@@ -214,7 +214,7 @@ namespace RetSim
             {
                 if (Glossaries.Auras.ByID.ContainsKey((item.Socket1.SocketedGem as MetaGem).Aura.ID))
                     auras.Add(Glossaries.Auras.ByID[(item.Socket1.SocketedGem as MetaGem).Aura.ID]);
-                
+
             }
         }
 
@@ -228,7 +228,7 @@ namespace RetSim
             };
 
             var gems = new List<Gem>();
-            
+
             foreach (EquippableItem item in equipment.AllEquipment)
             {
                 gems.AddRange(item.GetGems());

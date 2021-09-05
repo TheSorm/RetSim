@@ -17,18 +17,19 @@ namespace RetSim
 
             Glossaries.Items.HeadsByID[29073].Socket1.SocketedGem = Glossaries.Items.MetaGemsByID[32409];
             Glossaries.Items.HeadsByID[29073].Socket2.SocketedGem = Glossaries.Items.GemsByID[24027];
-            Glossaries.Items.ShouldersByID[29075].Socket1.SocketedGem = Glossaries.Items.GemsByID[24058];
-            Glossaries.Items.ShouldersByID[29075].Socket2.SocketedGem = Glossaries.Items.GemsByID[24027];
+            Glossaries.Items.ShouldersByID[29075].Socket1.SocketedGem = Glossaries.Items.GemsByID[24027];
+            Glossaries.Items.ShouldersByID[29075].Socket2.SocketedGem = Glossaries.Items.GemsByID[24058];
             Glossaries.Items.CloaksByID[24259].Socket1.SocketedGem = Glossaries.Items.GemsByID[24027];
             Glossaries.Items.ChestsByID[29071].Socket1.SocketedGem = Glossaries.Items.GemsByID[24027];
             Glossaries.Items.ChestsByID[29071].Socket2.SocketedGem = Glossaries.Items.GemsByID[24027];
             Glossaries.Items.ChestsByID[29071].Socket3.SocketedGem = Glossaries.Items.GemsByID[24027];
-            Glossaries.Items.WristsByID[28795].Socket1.SocketedGem = Glossaries.Items.GemsByID[24054];
-            Glossaries.Items.WristsByID[28795].Socket2.SocketedGem = Glossaries.Items.GemsByID[24027];
+            Glossaries.Items.WristsByID[28795].Socket1.SocketedGem = Glossaries.Items.GemsByID[24027];
+            Glossaries.Items.WristsByID[28795].Socket2.SocketedGem = Glossaries.Items.GemsByID[24054];
             Glossaries.Items.WaistsByID[28779].Socket1.SocketedGem = Glossaries.Items.GemsByID[24027];
             Glossaries.Items.WaistsByID[28779].Socket2.SocketedGem = Glossaries.Items.GemsByID[24054];
             Glossaries.Items.FeetsByID[28608].Socket1.SocketedGem = Glossaries.Items.GemsByID[24027];
             Glossaries.Items.FeetsByID[28608].Socket2.SocketedGem = Glossaries.Items.GemsByID[24058];
+
 
             Equipment equipment = new()
             {
