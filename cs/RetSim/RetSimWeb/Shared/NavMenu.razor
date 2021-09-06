@@ -1,12 +1,10 @@
-﻿<MudNavMenu Class="d-flex flex-column" Style="height:100%">
+﻿<MudNavMenu Class="d-flex flex-column">
 	<MudNavLink Href="/gear" Icon="@Icons.Filled.Shield">Gear</MudNavLink>
 	<MudNavLink Href="/settings" Icon="@Icons.Filled.Settings">Settings</MudNavLink>
 	<MudNavLink Href="/statistics" Icon="@Icons.Filled.BarChart">Statistics</MudNavLink>
-	<MudSpacer />
 	<StatFrame />
-	<MudSpacer />
-	<MudContainer Fixed="true" Class="d-flex flex-column">
-		<MudPaper Style="height:125px;"></MudPaper>
+	<MudContainer Fixed="true" Class="d-flex flex-column mb-4">
+		<MudPaper Style="height:80px;"></MudPaper>
 		<MudButton Disabled="@_processing" OnClick="ProcessSomething" Variant="Variant.Filled" Color="Color.Primary">
 			@if (_processing)
 			{

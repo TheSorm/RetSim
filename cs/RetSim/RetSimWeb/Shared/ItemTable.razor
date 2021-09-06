@@ -1,0 +1,109 @@
+﻿<MudTable Height="695px" FixedHeader="true" Dense="true" Striped="@true" SortLabel="Sort By" Items="@Items" Hover="true" Breakpoint="Breakpoint.Sm">
+	<HeaderContent>
+		<MudTh style="padding-inline-end: 0px;padding-inline-start: 0px;"></MudTh>
+        <MudTh style="padding-inline-end: 0px;padding-inline-start: 0px;"><MudTableSortLabel SortBy="new Func<EquippableArmor, object>(x=>x.Name)">Name</MudTableSortLabel></MudTh>
+		<MudTh style="padding-inline-end: 0px;padding-inline-start: 0px;"><MudTableSortLabel SortBy="new Func<EquippableArmor, object>(x=>x.ItemLevel)">Level</MudTableSortLabel></MudTh>	
+		<MudTh style="padding-inline-end: 0px;padding-inline-start: 0px;"></MudTh>
+		<MudTh style="padding-inline-end: 0px;padding-inline-start: 0px;"><MudTableSortLabel SortBy="new Func<EquippableArmor, object>(x=>x.Stats[ItemStatNames.Strength])">Str</MudTableSortLabel></MudTh>		
+		<MudTh style="padding-inline-end: 0px;padding-inline-start: 0px;"><MudTableSortLabel SortBy="new Func<EquippableArmor, object>(x=>x.Stats[ItemStatNames.AttackPower])">AP</MudTableSortLabel></MudTh>		
+		<MudTh style="padding-inline-end: 0px;padding-inline-start: 0px;"><MudTableSortLabel SortBy="new Func<EquippableArmor, object>(x=>x.Stats[ItemStatNames.Agility])">Agi</MudTableSortLabel></MudTh>		
+		<MudTh style="padding-inline-end: 0px;padding-inline-start: 0px;"><MudTableSortLabel SortBy="new Func<EquippableArmor, object>(x=>x.Stats[ItemStatNames.Crit])">Crit</MudTableSortLabel></MudTh>		
+		<MudTh style="padding-inline-end: 0px;padding-inline-start: 0px;"><MudTableSortLabel SortBy="new Func<EquippableArmor, object>(x=>x.Stats[ItemStatNames.Hit])">Hit</MudTableSortLabel></MudTh>		
+		<MudTh style="padding-inline-end: 0px;padding-inline-start: 0px;"><MudTableSortLabel SortBy="new Func<EquippableArmor, object>(x=>x.Stats[ItemStatNames.Haste])">Haste</MudTableSortLabel></MudTh>		
+		<MudTh style="padding-inline-end: 0px;padding-inline-start: 0px;"><MudTableSortLabel SortBy="new Func<EquippableArmor, object>(x=>x.Stats[ItemStatNames.Expertise])">Exp</MudTableSortLabel></MudTh>		
+		<MudTh style="padding-inline-end: 0px;padding-inline-start: 0px;"><MudTableSortLabel SortBy="new Func<EquippableArmor, object>(x=>x.Stats[ItemStatNames.ArmorPenetration])">APen</MudTableSortLabel></MudTh>		
+		<MudTh style="padding-inline-end: 0px;padding-inline-start: 0px;"><MudTableSortLabel SortBy="new Func<EquippableArmor, object>(x=>x.Stats[ItemStatNames.Stamina])">Sta</MudTableSortLabel></MudTh>		
+		<MudTh style="padding-inline-end: 0px;padding-inline-start: 0px;"><MudTableSortLabel SortBy="new Func<EquippableArmor, object>(x=>x.Stats[ItemStatNames.Intellect])">Int</MudTableSortLabel></MudTh>		
+		<MudTh style="padding-inline-end: 0px;padding-inline-start: 0px;"><MudTableSortLabel SortBy="new Func<EquippableArmor, object>(x=>x.Stats[ItemStatNames.ManaPer5])">MP5</MudTableSortLabel></MudTh>	
+		<MudTh style="padding-inline-end: 0px;padding-inline-start: 0px;"><MudTableSortLabel SortBy="new Func<EquippableArmor, object>(x=>x.Stats[ItemStatNames.SpellDamage])">SP</MudTableSortLabel></MudTh>	
+		<MudTh style="padding-inline-end: 0px;padding-inline-start: 0px;"><MudTableSortLabel SortBy="new Func<EquippableArmor, object>(x=>x.Stats[ItemStatNames.SpellCrit])">SCrit</MudTableSortLabel></MudTh>	
+		<MudTh style="padding-inline-end: 0px;padding-inline-start: 0px;"><MudTableSortLabel SortBy="new Func<EquippableArmor, object>(x=>x.Stats[ItemStatNames.SpellHit])">SHit</MudTableSortLabel></MudTh>	
+		<MudTh style="padding-inline-end: 0px;padding-inline-start: 0px;"><MudTableSortLabel SortBy="new Func<EquippableArmor, object>(x=>x.Stats[ItemStatNames.SpellHaste])">SHaste</MudTableSortLabel></MudTh>
+		<MudTh style="padding-inline-end: 0px;padding-inline-start: 0px;"><MudTableSortLabel SortBy="new Func<EquippableArmor, object>(x=>0)">DPS</MudTableSortLabel></MudTh>
+    </HeaderContent>
+    <RowTemplate>
+		<MudTd>
+			<MudRadioGroup Class="my-n4 mr-n12" @bind-SelectedOption="SelectedItemID">
+			    <MudRadio Option=@context.ID Size="Size.Small" Color="Color.Primary"></MudRadio>
+			</MudRadioGroup>
+		</MudTd>
+        <MudTd style="padding-inline-end: 0px;padding-inline-start: 0px;" DataLabel="Name"><a href="https://tbc.wowhead.com/item=@context.ID">@context.Name</a></MudTd>
+        <MudTd style="padding-inline-end: 0px;padding-inline-start: 0px;" DataLabel="Level">@context.ItemLevel</MudTd>
+		<MudTd style="padding-inline-end: 0px;padding-inline-start: 0px;" DataLabel="Socket"> 
+			<MudButton Style="min-width:0" Class="pa-1" Disabled="@(context.Socket1==null)" OnClick="@(e => ToggleOverlay(true))" Variant="Variant.Text"><img style="display:@(context.Socket1==null? "none" : "");width:13px;height:13px;" src="@GetSocketImage(@context.Socket1)" alt=""></MudButton>
+			<MudButton Style="min-width:0" Class="pa-1" Disabled="@(context.Socket2==null)" OnClick="@(e => ToggleOverlay(true))" Variant="Variant.Text"><img style="display:@(context.Socket2==null? "none" : "");width:13px;height:13px;" src="@GetSocketImage(@context.Socket2)" ></MudButton>
+			<MudButton Style="min-width:0" Class="pa-1" Disabled="@(context.Socket2==null)" OnClick="@(e => ToggleOverlay(true))" Variant="Variant.Text"><img style="display:@(context.Socket3==null? "none" : "");width:13px;height:13px;" src="@GetSocketImage(@context.Socket3)" ></MudButton>
+		</MudTd>
+		<MudTd style="padding-inline-end: 0px;padding-inline-start: 0px;" DataLabel="Str">@Format(@context.Stats[ItemStatNames.Strength])</MudTd>
+		<MudTd style="padding-inline-end: 0px;padding-inline-start: 0px;" DataLabel="AP">@Format(@context.Stats[ItemStatNames.AttackPower])</MudTd>
+		<MudTd style="padding-inline-end: 0px;padding-inline-start: 0px;" DataLabel="Agi">@Format(@context.Stats[ItemStatNames.Agility])</MudTd>
+		<MudTd style="padding-inline-end: 0px;padding-inline-start: 0px;" DataLabel="Crit">@Format(@context.Stats[ItemStatNames.Crit])</MudTd>
+		<MudTd style="padding-inline-end: 0px;padding-inline-start: 0px;" DataLabel="Hit">@Format(@context.Stats[ItemStatNames.Hit])</MudTd>
+		<MudTd style="padding-inline-end: 0px;padding-inline-start: 0px;" DataLabel="Haste">@Format(@context.Stats[ItemStatNames.Haste])</MudTd>
+		<MudTd style="padding-inline-end: 0px;padding-inline-start: 0px;" DataLabel="Exp">@Format(@context.Stats[ItemStatNames.Expertise])</MudTd>
+		<MudTd style="padding-inline-end: 0px;padding-inline-start: 0px;" DataLabel="APen">@Format(@context.Stats[ItemStatNames.ArmorPenetration])</MudTd>
+		<MudTd style="padding-inline-end: 0px;padding-inline-start: 0px;" DataLabel="Sta">@Format(@context.Stats[ItemStatNames.Stamina])</MudTd>
+		<MudTd style="padding-inline-end: 0px;padding-inline-start: 0px;" DataLabel="Int">@Format(@context.Stats[ItemStatNames.Intellect])</MudTd>
+		<MudTd style="padding-inline-end: 0px;padding-inline-start: 0px;" DataLabel="MP5">@Format(@context.Stats[ItemStatNames.ManaPer5])</MudTd>
+		<MudTd style="padding-inline-end: 0px;padding-inline-start: 0px;" DataLabel="SP">@Format(@context.Stats[ItemStatNames.SpellDamage])</MudTd>
+		<MudTd style="padding-inline-end: 0px;padding-inline-start: 0px;" DataLabel="SCrit">@Format(@context.Stats[ItemStatNames.SpellCrit])</MudTd>
+		<MudTd style="padding-inline-end: 0px;padding-inline-start: 0px;" DataLabel="SHit">@Format(@context.Stats[ItemStatNames.SpellHit])</MudTd>
+		<MudTd style="padding-inline-end: 0px;padding-inline-start: 0px;" DataLabel="SHaste">@Format(@context.Stats[ItemStatNames.SpellHaste])</MudTd>
+		<MudTd style="padding-inline-end: 0px;padding-inline-start: 0px;" DataLabel="DPS">0</MudTd>
+
+	</RowTemplate>
+</MudTable>
+<MudContainer Fixed="true" Class="d-flex justify-end mb-4 py-4">
+    <MudButton Variant="Variant.Filled" Color="Color.Primary">Sim Gear DPS</MudButton>
+</MudContainer>
+
+<MudOverlay Visible="isVisible" DarkBackground="true" Absolute="true">
+	<MudButton Variant="Variant.Filled" Color="Color.Primary"  OnClick="@(e => ToggleOverlay(false))">Hide Overlay</MudButton>
+</MudOverlay>
+
+@code {
+    @using RetSim.Items;
+
+    public int SelectedItemID { get; set; }
+
+    [Parameter]
+    public IEnumerable<EquippableArmor> Items { get; set; }
+	
+	private bool isVisible;
+
+    public void ToggleOverlay(bool value)
+    {
+        isVisible = value;
+    }
+
+	public string Format(int value)
+	{
+		return value == 0? "" : value.ToString();
+	}
+
+	public string GetSocketImage(Socket socket)
+	{
+		if(socket != null)
+		{
+			if(socket.SocketedGem != null)
+			{
+				return  @"https://wow.zamimg.com/images/wow/icons/large/inv_jewelcrafting_livingruby_03.jpg";
+			}
+			switch (socket.Color)
+			{
+				case SocketColor.Meta:
+					return  @"https://wow.zamimg.com/images/icons/socket-meta.gif";
+				case SocketColor.Red:
+					return  @"https://wow.zamimg.com/images/icons/socket-red.gif";
+				case SocketColor.Blue:
+					return  @"https://wow.zamimg.com/images/icons/socket-blue.gif";
+				case SocketColor.Yellow:
+					return  @"https://wow.zamimg.com/images/icons/socket-yellow.gif";
+				default:
+					break;
+			}
+
+		}
+		return "";
+	}
+}
