@@ -1,6 +1,6 @@
 [
   {
-    "Aura": {
+    "Spell": {
       "ID": 11818,
       "Name": "Spell Reflection"
     },
@@ -20,7 +20,7 @@
     "Phase": 1
   },
   {
-    "Aura": {
+    "Spell": {
       "ID": 32837,
       "Name": "Spell Focus Trigger"
     },
@@ -36,7 +36,7 @@
     "Phase": 1
   },
   {
-    "Aura": {
+    "Spell": {
       "ID": 23990,
       "Name": "Item - Minor Run Speed"
     },
@@ -56,7 +56,7 @@
     "Phase": 1
   },
   {
-    "Aura": {
+    "Spell": {
       "ID": 32195,
       "Name": "Resist Snare/Root"
     },
@@ -74,7 +74,7 @@
     "Phase": 1
   },
   {
-    "Aura": {
+    "Spell": {
       "ID": 21351,
       "Name": "Increased Stun Resist 01"
     },
@@ -94,7 +94,7 @@
     "Phase": 1
   },
   {
-    "Aura": {
+    "Spell": {
       "ID": 32842,
       "Name": "Decrease Threat"
     },
@@ -113,7 +113,7 @@
     "Phase": 1
   },
   {
-    "Aura": {
+    "Spell": {
       "ID": 32844,
       "Name": "Lesser Heroism"
     },
@@ -133,7 +133,7 @@
     "Phase": 1
   },
   {
-    "Aura": {
+    "Spell": {
       "ID": 26598,
       "Name": "Weapon Damage"
     },
@@ -151,7 +151,7 @@
     "Phase": 1
   },
   {
-    "Aura": {
+    "Spell": {
       "ID": 27521,
       "Name": "Mana Restore"
     },
@@ -171,7 +171,7 @@
     "Phase": 1
   },
   {
-    "Aura": {
+    "Spell": {
       "ID": 23990,
       "Name": "Item - Minor Run Speed"
     },
@@ -192,7 +192,7 @@
     "Phase": 1
   },
   {
-    "Aura": {
+    "Spell": {
       "ID": 23990,
       "Name": "Item - Minor Run Speed"
     },
@@ -214,7 +214,7 @@
     "Phase": 1
   },
   {
-    "Aura": {
+    "Spell": {
       "ID": 39957,
       "Name": "Increase Critical Damage 3%"
     },
@@ -234,7 +234,7 @@
     "Phase": 1
   },
   {
-    "Aura": {
+    "Spell": {
       "ID": 39958,
       "Name": "Skyfire Swiftness"
     },
@@ -252,7 +252,7 @@
     "Phase": 1
   },
   {
-    "Aura": {
+    "Spell": {
       "ID": 40691,
       "Name": "Stun Resistance 5"
     },
@@ -270,7 +270,7 @@
     "Phase": 53
   },
   {
-    "Aura": {
+    "Spell": {
       "ID": 40706,
       "Name": "Increased Stun Resist 05"
     },
@@ -291,7 +291,7 @@
     "Phase": 53
   },
   {
-    "Aura": {
+    "Spell": {
       "ID": 44797,
       "Name": "Increase Critical Damage 3%"
     },
@@ -311,7 +311,7 @@
     "Phase": 1
   },
   {
-    "Aura": {
+    "Spell": {
       "ID": 46596,
       "Name": "Eternal Shield"
     },
@@ -331,7 +331,7 @@
     "Phase": 5
   },
   {
-    "Aura": {
+    "Spell": {
       "ID": 46600,
       "Name": "Ember Skyfire Intellect"
     },
