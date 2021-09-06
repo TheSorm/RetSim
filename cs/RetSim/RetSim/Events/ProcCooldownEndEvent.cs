@@ -22,7 +22,7 @@
 
         public override string ToString()
         {
-            return $"Cooldown of {Proc.Name} ends";
+            return $"Cooldown of {Proc.Spell.Name} ends";
         }
     }
 }

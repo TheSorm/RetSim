@@ -7,17 +7,18 @@ namespace RetSim
     {
         public int ID { get; init; }
         public string Name { get; init; }
-        public int ManaCost { get; init; }
-        public int Cooldown { get; init; }
-        public int CastTime { get; init; }
-        public SpellGCD GCD { get; init; }
-        public List<SpellEffect> Effects { get; set; }
+        public int ManaCost { get; init; } = 0;
+        public int Cooldown { get; init; } = 0;
+        public int CastTime { get; init; } = 0;
+        public SpellGCD GCD { get; init; } = null;
+        public List<SpellEffect> Effects { get; set; } = null;
+        public Aura Aura { get; set; } = null;
     }
 
     public record SpellGCD
     {
-        public int Duration { get; init; }
-        public Category Category { get; init; }
+        public int Duration { get; init; } = Constants.Numbers.DefaultGCD;
+        public Category Category { get; init; } = Category.None;
     }
 
     public enum Category
@@ -42,7 +43,7 @@ namespace RetSim
     public enum DefenseType
     {
         None = 0,
-        Auto = 1,
+        White = 1,
         Special = 2,
         Ranged = 3,
         Magic = 4

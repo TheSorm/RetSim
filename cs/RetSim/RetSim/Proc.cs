@@ -4,13 +4,11 @@ namespace RetSim
 {
     public record Proc
     {
-        public int ID { get; init; }
-        public string Name { get; init; }
-        public ProcMask ProcMask { get; init; }
         public Spell Spell { get; set; }
-        public int Chance { get; init; }
-        public float PPM { get; init; }
-        public int Cooldown { get; init; } 
+        public ProcMask ProcMask { get; init; }
+        public int Chance { get; init; } = 100;
+        public float PPM { get; init; } = 0f;
+        public int Cooldown { get; init; } = 0;
     }
 
     [Flags]

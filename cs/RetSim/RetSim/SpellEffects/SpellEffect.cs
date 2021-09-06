@@ -2,8 +2,7 @@
 {
     public abstract class SpellEffect
     {
-
-        public Spell Spell { get; init; }
+        public Spell Parent { get; set; }
         public float MinEffect { get; init; }
         public float MaxEffect { get; init; }
 

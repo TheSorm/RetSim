@@ -156,12 +156,9 @@ namespace RetSim
             {
                 if (socket != null && socket.SocketedGem != null)
                 {
-                    if (socket.SocketedGem.Color == GemColor.Meta)
-                    {
-                        if (!socket.IsMetaGemActive(gems[GemColor.Red], gems[GemColor.Blue], gems[GemColor.Yellow]))
+                    if (socket.IsMetaGem() is MetaGem meta && !meta.IsActive(gems[GemColor.Red], gems[GemColor.Blue], gems[GemColor.Yellow]))
                             continue;
-                    }
-
+                    
                     sockets += socket.SocketedGem.Stats[name];
                 }
             }
@@ -189,7 +186,7 @@ namespace RetSim
 
             foreach (var set in sets)
             {
-                foreach (var aura in Glossaries.Items.SetsByID[set.Key].SetAuras)
+                foreach (var aura in Glossaries.Items.Sets[set.Key].SetAuras)
                 {
                     if (set.Value >= aura.RequiredCount)
                     {
@@ -210,10 +207,10 @@ namespace RetSim
                     auras.Add(Glossaries.Auras.ByID[aura.ID]);
             }
 
-            if (item.Socket1 != null && item.Socket1.IsMetaGemActive(gems[GemColor.Red], gems[GemColor.Blue], gems[GemColor.Yellow]))
+            if (item.Socket1 != null && item.Socket1.IsMetaGem() is MetaGem meta && meta.IsActive(gems[GemColor.Red], gems[GemColor.Blue], gems[GemColor.Yellow]))
             {
-                if (Glossaries.Auras.ByID.ContainsKey((item.Socket1.SocketedGem as MetaGem).Aura.ID))
-                    auras.Add(Glossaries.Auras.ByID[(item.Socket1.SocketedGem as MetaGem).Aura.ID]);
+                if (Glossaries.Auras.ByID.ContainsKey(meta.Aura.ID))
+                    auras.Add(Glossaries.Auras.ByID[(meta.Aura.ID)]);
 
             }
         }

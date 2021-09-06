@@ -1,8 +1,6 @@
-﻿using RetSim.SpellEffects;
-
-namespace RetSim.Log
+﻿namespace RetSim.Log
 {
-    class AuraEntry : LogEntry
+    public class AuraEntry : LogEntry
     {
         public string Source { get; init; }
         public AuraChangeType Type {  get; init; }

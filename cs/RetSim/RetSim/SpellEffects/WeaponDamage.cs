@@ -2,11 +2,11 @@
 {
     public class WeaponDamage : DamageEffect
     {
-        public float Percentage { get; init; }
+        public float Percentage { get; init; } = 1f;
 
         public override float GetBaseDamage(Player player)
         {
-            return GetWeaponDamage(player) * Percentage + player.Modifiers.Bonuses[Spell];
+            return GetWeaponDamage(player) * Percentage + player.Modifiers.Bonuses[Parent];
         }
 
         protected float GetWeaponDamage(Player player)

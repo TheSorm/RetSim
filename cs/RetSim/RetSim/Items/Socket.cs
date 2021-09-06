@@ -16,16 +16,13 @@ namespace RetSim.Items
                 return (SocketedGem.Color & (GemColor)Color) != 0;
         }
 
-        public bool IsMetaGemActive(int red, int blue, int yellow)
+        public MetaGem IsMetaGem()
         {
-            if (SocketedGem == null || SocketedGem.Color != GemColor.Meta)
-                return false;
+            if (SocketedGem.Color != GemColor.Meta)
+                return null;
 
             else
-            {
-                var gem = SocketedGem as MetaGem;
-                return gem.IsActive(red, blue, yellow);
-            }
+                return SocketedGem as MetaGem;
         }
     }
 

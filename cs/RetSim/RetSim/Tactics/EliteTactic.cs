@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using static RetSim.Glossaries;
+using static RetSim.Glossaries.Auras;
 
 namespace RetSim.Tactics
 {
@@ -27,10 +28,10 @@ namespace RetSim.Tactics
             var gcd = fight.Player.GCD.GetDuration(start);
             var cs = fight.Player.Spellbook.IsOnCooldown(Spells.CrusaderStrike) ? fight.Player.Spellbook[Spells.CrusaderStrike].Timestamp - start : 0;
 
-            if (gcd == 0 && !fight.Player.Auras[Glossaries.Auras.SealOfCommand].Active && swing - gcd > 1510 && end > start + gcd)
+            if (gcd == 0 && !fight.Player.Auras[SealOfCommand].Active && swing - gcd > 1510 && end > start + gcd)
                 return new CastEvent(Spells.SealOfCommand, fight, start + gcd);
 
-            if (gcd == 0 && fight.Player.Auras[Glossaries.Auras.SealOfCommand].Active && end > fight.Player.TimeOfNextSwing() - 390)
+            if (gcd == 0 && fight.Player.Auras[SealOfCommand].Active && end > fight.Player.TimeOfNextSwing() - 390)
                 return new CastEvent(Spells.SealOfBlood, fight, Math.Max(fight.Player.TimeOfNextSwing() - 390, start));
 
 

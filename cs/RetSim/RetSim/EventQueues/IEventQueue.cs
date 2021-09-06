@@ -1,5 +1,4 @@
-﻿
-using RetSim.Events;
+﻿using RetSim.Events;
 using System.Collections.Generic;
 
 namespace RetSim.EventQueues

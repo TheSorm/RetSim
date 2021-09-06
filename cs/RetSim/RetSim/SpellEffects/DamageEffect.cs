@@ -44,7 +44,7 @@ namespace RetSim.SpellEffects
             {
                 Timestamp = fight.Timestamp,
                 Mana = fight.Player.Stats.Mana,
-                Source = Spell.Name,
+                Source = Parent.Name,
                 AttackResult = attack.AttackResult,
                 Damage = attack.Damage,
                 School = School,

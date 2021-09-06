@@ -4,8 +4,8 @@ namespace RetSim.Events
 {
     public abstract class Event : IComparable<Event>
     {
-        private int _TimeStemp;
-        public int Timestamp { get { return _TimeStemp; } set { UpdateTimeStemp(value); } }
+        private int timestamp;
+        public int Timestamp { get { return timestamp; } set { UpdateTimestamp(value); } }
         public int Priority { get; init; }
 
         protected FightSimulation Fight { get; init; }
@@ -14,7 +14,7 @@ namespace RetSim.Events
         {
             Fight = fight;
 
-            _TimeStemp = timestamp;
+            this.timestamp = timestamp;
             Priority = priority;
         }
 
@@ -22,13 +22,13 @@ namespace RetSim.Events
 
         public void SetTimeStemp(int value)
         {
-            _TimeStemp = value;
+            timestamp = value;
         }
 
-        private void UpdateTimeStemp(int value)
+        private void UpdateTimestamp(int value)
         {
             Fight.Queue.UpdateRemove(this);
-            _TimeStemp = value;
+            timestamp = value;
             Fight.Queue.UpdateAdd(this);
         }
 

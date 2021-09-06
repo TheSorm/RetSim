@@ -45,14 +45,20 @@ namespace RetSim
         {
             ProcMask mask = ProcMask.None;
 
-            foreach (SpellEffect effect in spell.Effects)
-                mask |= effect.Resolve(fight);
-
             if (spell.Cooldown > 0)
                 fight.Queue.Add(new CooldownEndEvent(spell, fight, fight.Timestamp + spell.Cooldown));
 
-            if (spell.GCD.Category != Category.None && spell.GCD.Duration > 0)
+            if (spell.GCD != null)
                 fight.Queue.Add(new GCDEndEvent(fight, fight.Timestamp + spell.GCD.Duration));
+
+            if (spell.Aura != null)
+                fight.Player.Auras.Apply(spell.Aura, fight);
+
+            if (spell.Effects != null)
+            {
+                foreach (SpellEffect effect in spell.Effects)
+                    mask |= effect.Resolve(fight);
+            }
 
             return mask;
         }

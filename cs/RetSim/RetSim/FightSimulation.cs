@@ -34,7 +34,7 @@ namespace RetSim
 
         public CombatLog Run()
         {
-            Player.Procs.Add(Glossaries.Procs.DragonspineTrophy);
+            Player.Cast(Glossaries.Spells.DragonspineTrophy, this);
             Player.Cast(Glossaries.Spells.WindfuryTotem, this);
             //TODO add auras from player equipment
 

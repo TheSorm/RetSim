@@ -4,6 +4,7 @@ using RetSim.Tactics;
 using System.Collections.Generic;
 using System.Net;
 using System.Text.Json;
+using static RetSim.Glossaries.Items;
 
 namespace RetSim
 {
@@ -13,42 +14,46 @@ namespace RetSim
 
         static void Main(string[] args)
         {
-            Glossaries.Items.Initialize(LoadWeponData(), LoadArmorData(), LoadSetData(), LoadGemData(), LoadMetaGemData());
+            Initialize(LoadWeponData(), LoadArmorData(), LoadSetData(), LoadGemData(), LoadMetaGemData());
 
-            Glossaries.Items.HeadsByID[29073].Socket1.SocketedGem = Glossaries.Items.MetaGemsByID[32409];
-            Glossaries.Items.HeadsByID[29073].Socket2.SocketedGem = Glossaries.Items.GemsByID[24027];
-            Glossaries.Items.ShouldersByID[29075].Socket1.SocketedGem = Glossaries.Items.GemsByID[24027];
-            Glossaries.Items.ShouldersByID[29075].Socket2.SocketedGem = Glossaries.Items.GemsByID[24058];
-            Glossaries.Items.CloaksByID[24259].Socket1.SocketedGem = Glossaries.Items.GemsByID[24027];
-            Glossaries.Items.ChestsByID[29071].Socket1.SocketedGem = Glossaries.Items.GemsByID[24027];
-            Glossaries.Items.ChestsByID[29071].Socket2.SocketedGem = Glossaries.Items.GemsByID[24027];
-            Glossaries.Items.ChestsByID[29071].Socket3.SocketedGem = Glossaries.Items.GemsByID[24027];
-            Glossaries.Items.WristsByID[28795].Socket1.SocketedGem = Glossaries.Items.GemsByID[24027];
-            Glossaries.Items.WristsByID[28795].Socket2.SocketedGem = Glossaries.Items.GemsByID[24054];
-            Glossaries.Items.WaistsByID[28779].Socket1.SocketedGem = Glossaries.Items.GemsByID[24027];
-            Glossaries.Items.WaistsByID[28779].Socket2.SocketedGem = Glossaries.Items.GemsByID[24054];
-            Glossaries.Items.FeetsByID[28608].Socket1.SocketedGem = Glossaries.Items.GemsByID[24027];
-            Glossaries.Items.FeetsByID[28608].Socket2.SocketedGem = Glossaries.Items.GemsByID[24058];
+            Gem strength = Gems[24027];
+            Gem crit = Gems[24058];
+            Gem stamina = Gems[24054];
+
+            Heads[29073].Socket1.SocketedGem = MetaGems[32409];
+            Heads[29073].Socket2.SocketedGem = strength;
+            Shoulders[29075].Socket1.SocketedGem = strength;
+            Shoulders[29075].Socket2.SocketedGem = crit;
+            Cloaks[24259].Socket1.SocketedGem = strength;
+            Chests[29071].Socket1.SocketedGem = strength;
+            Chests[29071].Socket2.SocketedGem = strength;
+            Chests[29071].Socket3.SocketedGem = strength;
+            Wrists[28795].Socket1.SocketedGem = strength;
+            Wrists[28795].Socket2.SocketedGem = stamina;
+            Waists[28779].Socket1.SocketedGem = strength;
+            Waists[28779].Socket2.SocketedGem = stamina;
+            Feet[28608].Socket1.SocketedGem = strength;
+            Feet[28608].Socket2.SocketedGem = crit;
 
 
             Equipment equipment = new()
             {
-                Head = Glossaries.Items.HeadsByID[29073],
-                Neck = Glossaries.Items.NecksByID[29381],
-                Shoulders = Glossaries.Items.ShouldersByID[29075],
-                Back = Glossaries.Items.CloaksByID[24259],
-                Chest = Glossaries.Items.ChestsByID[29071],
-                Wrists = Glossaries.Items.WristsByID[28795],
-                Hands = Glossaries.Items.HandsByID[30644],
-                Waist = Glossaries.Items.WaistsByID[28779],
-                Legs = Glossaries.Items.LegsByID[31544],
-                Feet = Glossaries.Items.FeetsByID[28608],
-                Finger1 = Glossaries.Items.FingersByID[30834],
-                Finger2 = Glossaries.Items.FingersByID[28757],
-                Trinket1 = Glossaries.Items.TrinketsByID[29383],
-                Trinket2 = Glossaries.Items.TrinketsByID[28830],
-                Relic = Glossaries.Items.RelicsByID[27484],
-                Weapon = Glossaries.Items.WeaponByID[28429],
+                Head = Heads[29073],
+                Neck = Necks[29381],
+                Shoulders = Shoulders[29075],
+                Back = Cloaks[24259],
+                Chest = Chests[29071],
+                Wrists = Wrists[28795],
+                Hands = Hands[30644],
+                Waist = Waists[28779],
+                Legs = Legs[31544],
+                Feet = Feet[28608],
+                Finger1 = Fingers[30834],
+                Finger2 = Fingers[28757],
+                Trinket1 = Trinkets[29383],
+                Trinket2 = Trinkets[28830],
+                Relic = Relics[27484],
+                Weapon = Weapons[28429],
             };
 
             FightSimulation fight = new(new Player(Races.Human, equipment), new Enemy(Armor.Warrior), new EliteTactic(), 35000, 40000);

@@ -19,12 +19,12 @@ namespace RetSim
         public float Glancing { get; private set; }
         public float Mitigation { get; private set; }
 
-        public float SpellPowerBonus => Effect.Coefficient == 0 ? 0 : Effect.Coefficient * (Player.Stats.SpellPower + Player.Modifiers.Bonuses[Effect.Spell]);
+        public float SpellPowerBonus => Effect.Coefficient == 0 ? 0 : Effect.Coefficient * (Player.Stats.SpellPower + Player.Modifiers.Bonuses[Effect.Parent]);
         public float SchoolModifier => Player.Modifiers.Schools.GetValue(Effect.School);
-        public float SpellModifier => Player.Modifiers.Spells.GetValue(Effect.Spell);
+        public float SpellModifier => Player.Modifiers.Spells.GetValue(Effect.Parent);
         public float DamageModifier { get; private set; }
 
-        public float JotCBonus => Effect.HolyCoefficient == 0 ? SpellPowerBonus : Effect.HolyCoefficient * (Player.Stats.SpellPower + Player.Modifiers.Bonuses[Effect.Spell]);
+        public float JotCBonus => Effect.HolyCoefficient == 0 ? SpellPowerBonus : Effect.HolyCoefficient * (Player.Stats.SpellPower + Player.Modifiers.Bonuses[Effect.Parent]);
 
         public Attack(Player player, Enemy enemy, DamageEffect effect)
         {
@@ -72,7 +72,7 @@ namespace RetSim
 
         public static readonly Dictionary<DefenseType, Func<float, float, float, Tuple<AttackResult, DamageResult>>> AttackFormulas = new()
         {
-            { DefenseType.Auto, Auto },
+            { DefenseType.White, Auto },
             { DefenseType.Special, Special },
             { DefenseType.Ranged, Ranged },
             { DefenseType.Magic, Ranged },
@@ -194,7 +194,7 @@ namespace RetSim
         {
             return category switch
             {
-                DefenseType.Auto or DefenseType.Special => player.Stats.EffectiveDodgeChance,
+                DefenseType.White or DefenseType.Special => player.Stats.EffectiveDodgeChance,
                 _ => 0f,
             };
         }

@@ -1,4 +1,4 @@
-﻿namespace RetSim
+﻿namespace RetSim.AuraEffects
 {
     public abstract class AuraEffect
     {

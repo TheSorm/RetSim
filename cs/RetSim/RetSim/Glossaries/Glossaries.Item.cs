@@ -1,5 +1,4 @@
-﻿
-using RetSim.Items;
+﻿using RetSim.Items;
 using System.Collections.Generic;
 
 namespace RetSim
@@ -8,30 +7,29 @@ namespace RetSim
     {
         public static class Items
         {
-            public static readonly Dictionary<int, EquippableWeapon> WeaponByID = new();
-            public static readonly Dictionary<int, EquippableArmor> HeadsByID = new();
-            public static readonly Dictionary<int, EquippableArmor> NecksByID = new();
-            public static readonly Dictionary<int, EquippableArmor> ShouldersByID = new();
-            public static readonly Dictionary<int, EquippableArmor> CloaksByID = new();
-            public static readonly Dictionary<int, EquippableArmor> ChestsByID = new();
-            public static readonly Dictionary<int, EquippableArmor> WristsByID = new();
-            public static readonly Dictionary<int, EquippableArmor> HandsByID = new();
-            public static readonly Dictionary<int, EquippableArmor> WaistsByID = new();
-            public static readonly Dictionary<int, EquippableArmor> LegsByID = new();
-            public static readonly Dictionary<int, EquippableArmor> FeetsByID = new();
-            public static readonly Dictionary<int, EquippableArmor> FingersByID = new();
-            public static readonly Dictionary<int, EquippableArmor> TrinketsByID = new();
-            public static readonly Dictionary<int, EquippableArmor> RelicsByID = new();
-            public static readonly Dictionary<int, ItemSet> SetsByID = new();
-            public static readonly Dictionary<int, Gem> GemsByID = new();
-            public static readonly Dictionary<int, MetaGem> MetaGemsByID = new();
-
+            public static readonly Dictionary<int, EquippableWeapon> Weapons = new();
+            public static readonly Dictionary<int, EquippableArmor> Heads = new();
+            public static readonly Dictionary<int, EquippableArmor> Necks = new();
+            public static readonly Dictionary<int, EquippableArmor> Shoulders = new();
+            public static readonly Dictionary<int, EquippableArmor> Cloaks = new();
+            public static readonly Dictionary<int, EquippableArmor> Chests = new();
+            public static readonly Dictionary<int, EquippableArmor> Wrists = new();
+            public static readonly Dictionary<int, EquippableArmor> Hands = new();
+            public static readonly Dictionary<int, EquippableArmor> Waists = new();
+            public static readonly Dictionary<int, EquippableArmor> Legs = new();
+            public static readonly Dictionary<int, EquippableArmor> Feet = new();
+            public static readonly Dictionary<int, EquippableArmor> Fingers = new();
+            public static readonly Dictionary<int, EquippableArmor> Trinkets = new();
+            public static readonly Dictionary<int, EquippableArmor> Relics = new();
+            public static readonly Dictionary<int, ItemSet> Sets = new();
+            public static readonly Dictionary<int, Gem> Gems = new();
+            public static readonly Dictionary<int, MetaGem> MetaGems = new();
 
             public static void Initialize(List<EquippableWeapon> weapons, List<EquippableArmor> armorPieces, List<ItemSet> sets, List<Gem> gems, List<MetaGem> metaGems)
             {
                 foreach (var weapon in weapons)
                 {
-                    WeaponByID.Add(weapon.ID, weapon);
+                    Weapons.Add(weapon.ID, weapon);
                 }
 
                 foreach (var armor in armorPieces)
@@ -39,43 +37,43 @@ namespace RetSim
                     switch (armor.InventoryType)
                     {
                         case "HEAD":
-                            HeadsByID.Add(armor.ID, armor);
+                            Heads.Add(armor.ID, armor);
                             break;
                         case "NECK":
-                            NecksByID.Add(armor.ID, armor);
+                            Necks.Add(armor.ID, armor);
                             break;
                         case "SHOULDER":
-                            ShouldersByID.Add(armor.ID, armor);
+                            Shoulders.Add(armor.ID, armor);
                             break;
                         case "CLOAK":
-                            CloaksByID.Add(armor.ID, armor);
+                            Cloaks.Add(armor.ID, armor);
                             break;
                         case "CHEST":
-                            ChestsByID.Add(armor.ID, armor);
+                            Chests.Add(armor.ID, armor);
                             break;
                         case "WRIST":
-                            WristsByID.Add(armor.ID, armor);
+                            Wrists.Add(armor.ID, armor);
                             break;
                         case "HAND":
-                            HandsByID.Add(armor.ID, armor);
+                            Hands.Add(armor.ID, armor);
                             break;
                         case "WAIST":
-                            WaistsByID.Add(armor.ID, armor);
+                            Waists.Add(armor.ID, armor);
                             break;
                         case "LEGS":
-                            LegsByID.Add(armor.ID, armor);
+                            Legs.Add(armor.ID, armor);
                             break;
                         case "FEET":
-                            FeetsByID.Add(armor.ID, armor);
+                            Feet.Add(armor.ID, armor);
                             break;
                         case "FINGER":
-                            FingersByID.Add(armor.ID, armor);
+                            Fingers.Add(armor.ID, armor);
                             break;
                         case "TRINKET":
-                            TrinketsByID.Add(armor.ID, armor);
+                            Trinkets.Add(armor.ID, armor);
                             break;
                         case "RELIC":
-                            RelicsByID.Add(armor.ID, armor);
+                            Relics.Add(armor.ID, armor);
                             break;
                         default:
                             break;
@@ -84,17 +82,17 @@ namespace RetSim
 
                 foreach (var set in sets)
                 {
-                    SetsByID.Add(set.ID, set);
+                    Sets.Add(set.ID, set);
                 }
 
                 foreach (var gem in gems)
                 {
-                    GemsByID.Add(gem.ID, gem);
+                    Gems.Add(gem.ID, gem);
                 }
 
                 foreach (var metaGem in metaGems)
                 {
-                    MetaGemsByID.Add(metaGem.ID, metaGem);
+                    MetaGems.Add(metaGem.ID, metaGem);
                 }
             }
         }

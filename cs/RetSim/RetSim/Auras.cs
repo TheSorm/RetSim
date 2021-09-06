@@ -1,6 +1,6 @@
-﻿using RetSim.Events;
+﻿using RetSim.AuraEffects;
+using RetSim.Events;
 using RetSim.Log;
-using RetSim.SpellEffects;
 using System.Collections.Generic;
 
 namespace RetSim
@@ -61,9 +61,14 @@ namespace RetSim
 
         private void ApplyEffects(Aura aura, FightSimulation fight)
         {
-            foreach (AuraEffect effect in aura.Effects)
+            aura.OnApply(fight);
+
+            if (aura.Effects != null)
             {
-                effect.Apply(aura, fight);
+                foreach (AuraEffect effect in aura.Effects)
+                {
+                    effect.Apply(aura, fight);
+                }
             }
 
             this[aura].Stacks++;
@@ -86,11 +91,11 @@ namespace RetSim
 
         private void Log(Aura aura, FightSimulation fight, AuraChangeType type)
         {
-            var entry =  new AuraEntry()
+            var entry = new AuraEntry()
             {
                 Timestamp = fight.Timestamp,
                 Mana = fight.Player.Stats.Mana,
-                Source = aura.Name,
+                Source = aura.Parent.Name,
                 Type = type
             };
 
@@ -100,7 +105,7 @@ namespace RetSim
 
     public class AuraState
     {
-        public bool Active { get => Stacks > 0; }
+        public bool Active => Stacks > 0;
         public AuraEndEvent End { get; set; }
         public int Stacks { get; set; }
 
@@ -109,5 +114,12 @@ namespace RetSim
             End = null;
             Stacks = 0;
         }
+    }
+
+    public enum AuraChangeType
+    {
+        Gain = 1,
+        Fade = 2,
+        Refresh = 3
     }
 }
