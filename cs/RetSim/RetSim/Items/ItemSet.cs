@@ -6,10 +6,10 @@ namespace RetSim.Items
     {
         public int ID { get; init; }
         public string Name { get; init; }
-        public List<SetAura> SetAuras { get; init; }
+        public List<SetSpell> SetSpells { get; init; }
     }
 
-    public record SetAura
+    public record SetSpell
     {
         public string Name { get; init; }
         public int ID { get; init; }

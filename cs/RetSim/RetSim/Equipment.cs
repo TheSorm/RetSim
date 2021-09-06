@@ -192,7 +192,7 @@ namespace RetSim
 
             foreach (var set in sets)
             {
-                foreach (var aura in Glossaries.Items.Sets[set.Key].SetAuras)
+                foreach (var aura in Glossaries.Items.Sets[set.Key].SetSpells)
                 {
                     if (set.Value >= aura.RequiredCount)
                     {
@@ -207,7 +207,7 @@ namespace RetSim
         }
         private static void AddItemAuras(EquippableItem item, Dictionary<GemColor, int> gems, List<Aura> auras)
         {
-            foreach (ItemAura aura in item.Auras)
+            foreach (ItemSpell aura in item.Spells)
             {
                 if (Glossaries.Auras.ByID.ContainsKey(aura.ID))
                     auras.Add(Glossaries.Auras.ByID[aura.ID]);
@@ -215,8 +215,8 @@ namespace RetSim
 
             if (item.Socket1 != null && item.Socket1.IsMetaGem() is MetaGem meta && meta.IsActive(gems[GemColor.Red], gems[GemColor.Blue], gems[GemColor.Yellow]))
             {
-                if (Glossaries.Auras.ByID.ContainsKey(meta.Aura.ID))
-                    auras.Add(Glossaries.Auras.ByID[(meta.Aura.ID)]);
+                if (Glossaries.Auras.ByID.ContainsKey(meta.Spell.ID))
+                    auras.Add(Glossaries.Auras.ByID[(meta.Spell.ID)]);
 
             }
         }

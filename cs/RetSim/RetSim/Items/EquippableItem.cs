@@ -13,7 +13,7 @@ namespace RetSim.Items
         public ItemStats Stats { get; init; }
         public Set Set { get; init; }
         public ItemSpell OnUseSpell { get; set; }
-        public List<ItemAura> Auras { get; init; }
+        public List<ItemSpell> Spells { get; init; }
 
         public Socket[] Sockets = new Socket[3];
         public Socket Socket1 { get => Sockets[0]; init => Sockets[0] = value; }
@@ -147,12 +147,6 @@ namespace RetSim.Items
     {
         public string Stat { get; init; }
         public int Value { get; init; }
-    }
-
-    public record ItemAura
-    {
-        public int ID { get; init; }
-        public string Name { get; init; }
     }
 
     public record ItemSpell

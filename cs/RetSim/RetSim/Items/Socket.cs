@@ -16,7 +16,7 @@ namespace RetSim.Items
 
             set
             {
-                if (Color != SocketColor.Meta || value.Color != GemColor.Meta)
+                if (Color != SocketColor.Meta || value.Color == GemColor.Meta)
                     socketedGem = value;
             }
         }

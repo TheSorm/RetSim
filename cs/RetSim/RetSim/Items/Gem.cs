@@ -6,7 +6,7 @@ namespace RetSim.Items
     public record MetaGem : Gem
     {
         public GemRequirements Requirements { get; init; }
-        public ItemAura Aura { get; init; }
+        public ItemSpell Spell { get; init; }
 
         public MetaGem()
         {
