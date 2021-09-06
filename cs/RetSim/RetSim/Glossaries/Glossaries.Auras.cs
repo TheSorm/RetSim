@@ -60,10 +60,10 @@ namespace RetSim
             static Auras()
             {
                 SealOfCommand.Effects = new List<AuraEffect>()
-                    { new GainProc(Procs.SealOfCommand) };
+                    { new GainProc(Procs.SealOfCommand), new GainSeal() };
 
                 SealOfBlood.Effects = new List<AuraEffect>()
-                    { new GainProc(Procs.SealOfBlood) };
+                    { new GainProc(Procs.SealOfBlood), new GainSeal() };
 
                 WindfuryTotem.Effects = new List<AuraEffect>()
                     { new GainProc(Procs.WindfuryAttack) };
@@ -73,12 +73,15 @@ namespace RetSim
 
                 SealOfCommand.ExclusiveWith = new List<Seal>()
                 { SealOfBlood, SealOfTheCrusader };
+                SealOfCommand.Judgement = Spells.JudgementOfCommand;
 
                 SealOfBlood.ExclusiveWith = new List<Seal>()
                 { SealOfCommand, SealOfTheCrusader };
+                SealOfBlood.Judgement = Spells.JudgementOfBlood;
 
                 SealOfTheCrusader.ExclusiveWith = new List<Seal>()
                 { SealOfCommand, SealOfBlood };
+                SealOfTheCrusader.Judgement = Spells.JudgementOfCommand;
 
                 ByID = new()
                 {

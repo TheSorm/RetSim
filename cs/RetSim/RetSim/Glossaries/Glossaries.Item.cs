@@ -7,6 +7,7 @@ namespace RetSim
     {
         public static class Items
         {
+            public static readonly Dictionary<int, EquippableItem> AllItems = new();
             public static readonly Dictionary<int, EquippableWeapon> Weapons = new();
             public static readonly Dictionary<int, EquippableArmor> Heads = new();
             public static readonly Dictionary<int, EquippableArmor> Necks = new();
@@ -30,10 +31,13 @@ namespace RetSim
                 foreach (var weapon in weapons)
                 {
                     Weapons.Add(weapon.ID, weapon);
+                    AllItems.Add(weapon.ID, weapon);
                 }
 
                 foreach (var armor in armorPieces)
                 {
+                    AllItems.Add(armor.ID, armor);
+
                     switch (armor.InventoryType)
                     {
                         case "HEAD":

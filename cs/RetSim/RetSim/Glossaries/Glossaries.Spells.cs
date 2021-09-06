@@ -49,6 +49,16 @@ namespace RetSim
                 }
             };
 
+            public static readonly Spell Judgement = new()
+            {
+                ID = 20271,
+                Name = "Judgement",
+                ManaCost = 148,
+                Cooldown = 10000,
+
+                Effects = new List<SpellEffect> { new JudgementEffect() }
+            };
+
             public static readonly Spell SealOfCommand = new()
             {
                 ID = 27170,
@@ -78,6 +88,27 @@ namespace RetSim
                 }
             };
 
+            public static readonly Judgement JudgementOfCommand = new()
+            {
+                ID = 27171,
+                Name = "Judgement of Command",
+
+                Effects = new List<SpellEffect>
+                {
+                    new DamageEffect
+                    {
+                        School =  School.Holy,
+                        DefenseCategory = DefenseType.Ranged,
+                        CritCategory = Category.Physical,
+                        OnHit = ProcMask.OnSpecialAttack,
+                        OnCrit = ProcMask.OnAnyCrit | ProcMask.OnMeleeCrit,
+                        Coefficient = 0.429f,
+                        MinEffect = 228,
+                        MaxEffect = 252
+                    }
+                }
+            };
+
             public static readonly Spell SealOfBlood = new()
             {
                 ID = 31892,
@@ -100,6 +131,27 @@ namespace RetSim
                         CritCategory = Category.Physical,
                         OnCrit = ProcMask.OnAnyCrit,
                         Percentage = 0.35f
+                    }
+                }
+            };
+            
+            public static readonly Judgement JudgementOfBlood = new()
+            {
+                ID = 31898,
+                Name = "Judgement of Blood",
+
+                Effects = new List<SpellEffect>
+                {
+                    new DamageEffect
+                    {
+                        School =  School.Holy,
+                        DefenseCategory = DefenseType.Ranged,
+                        CritCategory = Category.Physical,
+                        OnHit = ProcMask.OnSpecialAttack,
+                        OnCrit = ProcMask.OnAnyCrit | ProcMask.OnMeleeCrit,
+                        Coefficient = 0.429f,
+                        MinEffect = 331.6f,
+                        MaxEffect = 361.6f
                     }
                 }
             };
@@ -183,10 +235,13 @@ namespace RetSim
             {
                 { Melee.ID, Melee },
                 { CrusaderStrike.ID, CrusaderStrike },
+                { Judgement.ID, Judgement },
                 { SealOfCommandProc.ID, SealOfCommandProc },
                 { SealOfCommand.ID, SealOfCommand },
+                { JudgementOfCommand.ID, JudgementOfCommand },
                 { SealOfBloodProc.ID, SealOfBloodProc },
                 { SealOfBlood.ID, SealOfBlood },
+                { JudgementOfBlood.ID, JudgementOfBlood },
                 { SealOfTheCrusader.ID, SealOfTheCrusader },
                 { WindfuryProc.ID, WindfuryProc },
                 { WindfuryAttack.ID, WindfuryAttack },

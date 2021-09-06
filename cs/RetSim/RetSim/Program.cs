@@ -20,39 +20,23 @@ namespace RetSim
             Gem crit = Gems[24058];
             Gem stamina = Gems[24054];
 
-            Heads[29073].Socket1.SocketedGem = MetaGems[32409];
-            Heads[29073].Socket2.SocketedGem = strength;
-            Shoulders[29075].Socket1.SocketedGem = strength;
-            Shoulders[29075].Socket2.SocketedGem = crit;
-            Cloaks[24259].Socket1.SocketedGem = strength;
-            Chests[29071].Socket1.SocketedGem = strength;
-            Chests[29071].Socket2.SocketedGem = strength;
-            Chests[29071].Socket3.SocketedGem = strength;
-            Wrists[28795].Socket1.SocketedGem = strength;
-            Wrists[28795].Socket2.SocketedGem = stamina;
-            Waists[28779].Socket1.SocketedGem = strength;
-            Waists[28779].Socket2.SocketedGem = stamina;
-            Feet[28608].Socket1.SocketedGem = strength;
-            Feet[28608].Socket2.SocketedGem = crit;
-
-
             Equipment equipment = new()
             {
-                Head = Heads[29073],
-                Neck = Necks[29381],
-                Shoulders = Shoulders[29075],
-                Back = Cloaks[24259],
-                Chest = Chests[29071],
-                Wrists = Wrists[28795],
-                Hands = Hands[30644],
-                Waist = Waists[28779],
-                Legs = Legs[31544],
-                Feet = Feet[28608],
-                Finger1 = Fingers[30834],
-                Finger2 = Fingers[28757],
-                Trinket1 = Trinkets[29383],
-                Trinket2 = Trinkets[28830],
-                Relic = Relics[27484],
+                Head = EquippableArmor.Get(29073, new Gem[] { MetaGems[32409], strength }),
+                Neck = EquippableArmor.Get(29381, null),
+                Shoulders = EquippableArmor.Get(29075, new Gem[] { strength, crit }),
+                Back = EquippableArmor.Get(24259, new Gem[] { strength }),
+                Chest = EquippableArmor.Get(29071, new Gem[] { strength, strength, strength }),
+                Wrists = EquippableArmor.Get(28795, new Gem[] { strength, stamina }),
+                Hands = EquippableArmor.Get(30644, null),
+                Waist = EquippableArmor.Get(28779, new Gem[] { strength, stamina }),
+                Legs = EquippableArmor.Get(31544, null),
+                Feet = EquippableArmor.Get(28608, new Gem[] { strength, crit }),
+                Finger1 = EquippableArmor.Get(30834, null),
+                Finger2 = EquippableArmor.Get(28757, null),
+                Trinket1 = EquippableArmor.Get(29383, null),
+                //Trinket2 = EquippableArmor.Get(28830, null),
+                Relic = EquippableArmor.Get(27484, null),
                 Weapon = Weapons[28429],
             };
 
@@ -61,6 +45,8 @@ namespace RetSim
             fight.Run();
 
             fight.Output();
+
+            equipment.Log(Logger);
 
         }
 

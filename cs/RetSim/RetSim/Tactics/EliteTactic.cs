@@ -29,7 +29,12 @@ namespace RetSim.Tactics
             var cs = fight.Player.Spellbook.IsOnCooldown(Spells.CrusaderStrike) ? fight.Player.Spellbook[Spells.CrusaderStrike].Timestamp - start : 0;
 
             if (gcd == 0 && !fight.Player.Auras[SealOfCommand].Active && swing - gcd > 1510 && end > start + gcd)
+            {
+                if (fight.Player.Auras.CurrentSeal == SealOfBlood && !fight.Player.Spellbook.IsOnCooldown(Spells.Judgement))
+                    fight.Player.Cast(Spells.Judgement, fight);
+
                 return new CastEvent(Spells.SealOfCommand, fight, start + gcd);
+            }
 
             if (gcd == 0 && fight.Player.Auras[SealOfCommand].Active && end > fight.Player.TimeOfNextSwing() - 390)
                 return new CastEvent(Spells.SealOfBlood, fight, Math.Max(fight.Player.TimeOfNextSwing() - 390, start));

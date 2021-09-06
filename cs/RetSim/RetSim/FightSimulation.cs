@@ -34,9 +34,13 @@ namespace RetSim
 
         public CombatLog Run()
         {
-            Player.Cast(Glossaries.Spells.DragonspineTrophy, this);
             Player.Cast(Glossaries.Spells.WindfuryTotem, this);
             //TODO add auras from player equipment
+
+            foreach (Aura aura in Player.Equipment.Auras)
+            {
+                Player.Cast(Glossaries.Spells.ByID[aura.Parent.ID], this);
+            }
 
             Queue.AddRange(Tactic.PreFight(this));
 

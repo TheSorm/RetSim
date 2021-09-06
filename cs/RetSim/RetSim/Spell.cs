@@ -15,6 +15,11 @@ namespace RetSim
         public Aura Aura { get; set; } = null;
     }
 
+    public record Judgement : Spell
+    {
+
+    }
+
     public record SpellGCD
     {
         public int Duration { get; init; } = Constants.Numbers.DefaultGCD;

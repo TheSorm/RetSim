@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace RetSim.Items
 {
@@ -21,6 +22,25 @@ namespace RetSim.Items
         public ItemStats SocketBonus { get; init; }
         public bool UniqueEquipped { get; set; }
         public int Phase { get; init; }
+
+        public static EquippableItem Get(int id, Gem[] gems)
+        {
+            var item = Glossaries.Items.AllItems[id];
+
+            if (gems != null)
+            {
+                for (int i = 0; i < Math.Min(item.Sockets.Length, gems.Length); i++)
+                {
+                    if (item.Sockets[i] != null && gems[i] != null)
+                        item.Sockets[i].SocketedGem = gems[i];
+
+                    else
+                        break;
+                }
+            }
+
+            return item;
+        }
 
         public bool IsSocketBonusActive()
         {
@@ -59,6 +79,11 @@ namespace RetSim.Items
             }
 
             return gems;
+        }
+
+        public override string ToString()
+        {
+            return $"Item ID: {ID} - Name: {Name}";
         }
     }
 

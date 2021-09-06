@@ -9,6 +9,8 @@ namespace RetSim
     {
         private readonly Player player;
 
+        public Seal CurrentSeal = null;
+
         public Auras(Player parent)
         {
             player = parent;
@@ -61,8 +63,6 @@ namespace RetSim
 
         private void ApplyEffects(Aura aura, FightSimulation fight)
         {
-            aura.OnApply(fight);
-
             if (aura.Effects != null)
             {
                 foreach (AuraEffect effect in aura.Effects)
@@ -76,17 +76,20 @@ namespace RetSim
 
         public void Cancel(Aura aura, FightSimulation fight, bool log = true)
         {
-            for (int i = 0; i < this[aura].Stacks; i++)
+            if (this[aura].Active)
             {
-                foreach (AuraEffect effect in aura.Effects)
-                    effect.Remove(aura, fight);
+                for (int i = 0; i < this[aura].Stacks; i++)
+                {
+                    foreach (AuraEffect effect in aura.Effects)
+                        effect.Remove(aura, fight);
+                }
+
+                this[aura].End = null;
+                this[aura].Stacks = 0;
+
+                if (log)
+                    Log(aura, fight, AuraChangeType.Fade);
             }
-
-            this[aura].End = null;
-            this[aura].Stacks = 0;
-
-            if (log)
-                Log(aura, fight, AuraChangeType.Fade);
         }
 
         private void Log(Aura aura, FightSimulation fight, AuraChangeType type)

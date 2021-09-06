@@ -6,5 +6,10 @@
         public int MaxDamage { get; init; }
         public int AttackSpeed { get; init; }
         public float DPS { get; init; }
+
+        public override string ToString()
+        {
+            return base.ToString();
+        }
     }
 }

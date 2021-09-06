@@ -11,95 +11,95 @@ namespace RetSim
 
         public Dictionary<GemColor, int> GemTotals { get; private set; }
 
-        private EquippableItem[] AllEquipment { get; init; } = new EquippableItem[Constants.EquipmentSlots.Total];
+        private EquippableItem[] PlayerEquipment { get; init; } = new EquippableItem[Constants.EquipmentSlots.Total];
 
         #region Equipment
 
         public EquippableArmor Head
         {
-            get => (EquippableArmor)AllEquipment[Constants.EquipmentSlots.Head];
-            set => AllEquipment[Constants.EquipmentSlots.Head] = value;
+            get => (EquippableArmor)PlayerEquipment[Constants.EquipmentSlots.Head];
+            set => PlayerEquipment[Constants.EquipmentSlots.Head] = value;
         }
 
         public EquippableArmor Neck
         {
-            get => (EquippableArmor)AllEquipment[Constants.EquipmentSlots.Neck];
-            set => AllEquipment[Constants.EquipmentSlots.Neck] = value;
+            get => (EquippableArmor)PlayerEquipment[Constants.EquipmentSlots.Neck];
+            set => PlayerEquipment[Constants.EquipmentSlots.Neck] = value;
         }
         public EquippableArmor Shoulders
         {
-            get => (EquippableArmor)AllEquipment[Constants.EquipmentSlots.Shoulders];
-            set => AllEquipment[Constants.EquipmentSlots.Shoulders] = value;
+            get => (EquippableArmor)PlayerEquipment[Constants.EquipmentSlots.Shoulders];
+            set => PlayerEquipment[Constants.EquipmentSlots.Shoulders] = value;
         }
 
         public EquippableArmor Back
         {
-            get => (EquippableArmor)AllEquipment[Constants.EquipmentSlots.Back];
-            set => AllEquipment[Constants.EquipmentSlots.Back] = value;
+            get => (EquippableArmor)PlayerEquipment[Constants.EquipmentSlots.Back];
+            set => PlayerEquipment[Constants.EquipmentSlots.Back] = value;
         }
         public EquippableArmor Chest
 
         {
-            get => (EquippableArmor)AllEquipment[Constants.EquipmentSlots.Chest];
-            set => AllEquipment[Constants.EquipmentSlots.Chest] = value;
+            get => (EquippableArmor)PlayerEquipment[Constants.EquipmentSlots.Chest];
+            set => PlayerEquipment[Constants.EquipmentSlots.Chest] = value;
         }
         public EquippableArmor Wrists
         {
-            get => (EquippableArmor)AllEquipment[Constants.EquipmentSlots.Wrists];
-            set => AllEquipment[Constants.EquipmentSlots.Wrists] = value;
+            get => (EquippableArmor)PlayerEquipment[Constants.EquipmentSlots.Wrists];
+            set => PlayerEquipment[Constants.EquipmentSlots.Wrists] = value;
         }
         public EquippableArmor Hands
         {
-            get => (EquippableArmor)AllEquipment[Constants.EquipmentSlots.Hands];
-            set => AllEquipment[Constants.EquipmentSlots.Hands] = value;
+            get => (EquippableArmor)PlayerEquipment[Constants.EquipmentSlots.Hands];
+            set => PlayerEquipment[Constants.EquipmentSlots.Hands] = value;
         }
 
         public EquippableArmor Waist
         {
-            get => (EquippableArmor)AllEquipment[Constants.EquipmentSlots.Waist];
-            set => AllEquipment[Constants.EquipmentSlots.Waist] = value;
+            get => (EquippableArmor)PlayerEquipment[Constants.EquipmentSlots.Waist];
+            set => PlayerEquipment[Constants.EquipmentSlots.Waist] = value;
         }
         public EquippableArmor Legs
         {
-            get => (EquippableArmor)AllEquipment[Constants.EquipmentSlots.Legs];
-            set => AllEquipment[Constants.EquipmentSlots.Legs] = value;
+            get => (EquippableArmor)PlayerEquipment[Constants.EquipmentSlots.Legs];
+            set => PlayerEquipment[Constants.EquipmentSlots.Legs] = value;
         }
         public EquippableArmor Feet
         {
-            get => (EquippableArmor)AllEquipment[Constants.EquipmentSlots.Feet];
-            set => AllEquipment[Constants.EquipmentSlots.Feet] = value;
+            get => (EquippableArmor)PlayerEquipment[Constants.EquipmentSlots.Feet];
+            set => PlayerEquipment[Constants.EquipmentSlots.Feet] = value;
         }
 
         public EquippableArmor Finger1
         {
-            get => (EquippableArmor)AllEquipment[Constants.EquipmentSlots.Finger1];
-            set => AllEquipment[Constants.EquipmentSlots.Finger1] = value;
+            get => (EquippableArmor)PlayerEquipment[Constants.EquipmentSlots.Finger1];
+            set => PlayerEquipment[Constants.EquipmentSlots.Finger1] = value;
         }
         public EquippableArmor Finger2
         {
-            get => (EquippableArmor)AllEquipment[Constants.EquipmentSlots.Finger2];
-            set => AllEquipment[Constants.EquipmentSlots.Finger2] = value;
+            get => (EquippableArmor)PlayerEquipment[Constants.EquipmentSlots.Finger2];
+            set => PlayerEquipment[Constants.EquipmentSlots.Finger2] = value;
         }
         public EquippableArmor Trinket1
         {
-            get => (EquippableArmor)AllEquipment[Constants.EquipmentSlots.Trinket1];
-            set => AllEquipment[Constants.EquipmentSlots.Trinket1] = value;
+            get => (EquippableArmor)PlayerEquipment[Constants.EquipmentSlots.Trinket1];
+            set => PlayerEquipment[Constants.EquipmentSlots.Trinket1] = value;
         }
         public EquippableArmor Trinket2
         {
-            get => (EquippableArmor)AllEquipment[Constants.EquipmentSlots.Trinket2];
-            set => AllEquipment[Constants.EquipmentSlots.Trinket2] = value;
+            get => (EquippableArmor)PlayerEquipment[Constants.EquipmentSlots.Trinket2];
+            set => PlayerEquipment[Constants.EquipmentSlots.Trinket2] = value;
         }
         public EquippableArmor Relic
         {
-            get => (EquippableArmor)AllEquipment[Constants.EquipmentSlots.Relic];
-            set => AllEquipment[Constants.EquipmentSlots.Relic] = value;
+            get => (EquippableArmor)PlayerEquipment[Constants.EquipmentSlots.Relic];
+            set => PlayerEquipment[Constants.EquipmentSlots.Relic] = value;
         }
 
         public EquippableWeapon Weapon
         {
-            get => (EquippableWeapon)AllEquipment[Constants.EquipmentSlots.Weapon];
-            set => AllEquipment[Constants.EquipmentSlots.Weapon] = value;
+            get => (EquippableWeapon)PlayerEquipment[Constants.EquipmentSlots.Weapon];
+            set => PlayerEquipment[Constants.EquipmentSlots.Weapon] = value;
         }
 
         #endregion
@@ -140,8 +140,11 @@ namespace RetSim
         {
             int total = 0;
 
-            foreach (EquippableItem item in equipment.AllEquipment)
-                total += CalculateStatOfPiece(name, item, gems);
+            foreach (EquippableItem item in equipment.PlayerEquipment)
+            {
+                if (item != null)
+                    total += CalculateStatOfPiece(name, item, gems);
+            }
 
             return total;
         }
@@ -171,16 +174,19 @@ namespace RetSim
             var auras = new List<Aura>();
             var sets = new Dictionary<int, int>();
 
-            foreach (EquippableItem item in equipment.AllEquipment)
+            foreach (EquippableItem item in equipment.PlayerEquipment)
             {
-                AddItemAuras(item, equipment.GemTotals, auras);
-
-                if (item.Set != null)
+                if (item != null)
                 {
-                    if (sets.ContainsKey(item.Set.ID))
-                        sets[item.Set.ID]++;
-                    else
-                        sets.Add(item.Set.ID, 1);
+                    AddItemAuras(item, equipment.GemTotals, auras);
+
+                    if (item.Set != null)
+                    {
+                        if (sets.ContainsKey(item.Set.ID))
+                            sets[item.Set.ID]++;
+                        else
+                            sets.Add(item.Set.ID, 1);
+                    }
                 }
             }
 
@@ -226,9 +232,10 @@ namespace RetSim
 
             var gems = new List<Gem>();
 
-            foreach (EquippableItem item in equipment.AllEquipment)
+            foreach (EquippableItem item in equipment.PlayerEquipment)
             {
-                gems.AddRange(item.GetGems());
+                if (item != null)
+                    gems.AddRange(item.GetGems());
             }
 
             foreach (var gem in gems)
@@ -243,5 +250,11 @@ namespace RetSim
             return totals;
         }
 
+        public void Log(Loggers.AbstractLogger logger)
+        {
+            foreach (EquippableItem e in PlayerEquipment)
+                if (e != null)
+                    logger.Log(e.ToString() + "\n");
+        }
     }
 }

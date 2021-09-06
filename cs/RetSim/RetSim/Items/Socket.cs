@@ -5,7 +5,21 @@ namespace RetSim.Items
     public class Socket
     {
         public SocketColor Color { get; init; }
-        public Gem SocketedGem { get; set; }
+
+        private Gem socketedGem;
+        public Gem SocketedGem
+        {
+            get
+            {
+                return socketedGem;
+            }
+
+            set
+            {
+                if (Color != SocketColor.Meta || value.Color != GemColor.Meta)
+                    socketedGem = value;
+            }
+        }
 
         public bool IsActive()
         {
@@ -18,7 +32,7 @@ namespace RetSim.Items
 
         public MetaGem IsMetaGem()
         {
-            if (SocketedGem.Color != GemColor.Meta)
+            if (SocketedGem == null || SocketedGem.Color != GemColor.Meta)
                 return null;
 
             else

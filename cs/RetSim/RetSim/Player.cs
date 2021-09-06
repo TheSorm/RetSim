@@ -6,7 +6,10 @@ namespace RetSim
     {
         public PlayerStats Stats { get; init; }
         public Modifiers Modifiers { get; init; }
+
+        public Equipment Equipment { get; init; }
         public Weapon Weapon { get; init; }
+        public Race Race { get; init; }
 
         public Spellbook Spellbook { get; init; }
         public Auras Auras { get; init; }
@@ -17,6 +20,8 @@ namespace RetSim
 
         public Player(Race race, Equipment equipment)
         {
+            Equipment = equipment;
+            Race = race;
             Stats = new PlayerStats(this, race, equipment);
             Modifiers = new Modifiers();
             Weapon = new Weapon(this, equipment.Weapon.MinDamage, equipment.Weapon.MaxDamage, equipment.Weapon.AttackSpeed);
