@@ -1,0 +1,14 @@
+﻿<MudListItem Class="py-0">
+	<MudContainer Class="d-flex justify-space-between px-1">
+	<MudText Typo="Typo.caption">@StatName</MudText>
+	<MudText Typo="Typo.caption">@ChildContent</MudText>
+	</MudContainer >
+</MudListItem>
+
+@code {
+    [Parameter]
+    public string StatName { get; set; } = "";
+
+	[Parameter]
+    public RenderFragment ChildContent { get; set; }
+}
