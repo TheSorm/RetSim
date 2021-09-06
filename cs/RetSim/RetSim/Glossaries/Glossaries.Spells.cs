@@ -206,9 +206,7 @@ namespace RetSim
             public static readonly Spell DragonspineTrophyProc = new()
             {
                 ID = 34775,
-                Name = "Dragonspine Trophy"               
-
-                //TODO: Impelement DST fully
+                Name = "Dragonspine Trophy"
             };
 
             private static void AssignChildren(Spell spell)

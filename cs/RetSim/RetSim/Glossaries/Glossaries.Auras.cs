@@ -88,7 +88,8 @@ namespace RetSim
                     { Spells.SealOfBlood.ID, SealOfBlood },
                     { Spells.WindfuryTotem.ID, WindfuryTotem },
                     { Spells.WindfuryAttack.ID, WindfuryAttack },
-                    { Spells.DragonspineTrophy.ID, DragonspineTrophy }
+                    { Spells.DragonspineTrophy.ID, DragonspineTrophy },
+                    { Spells.DragonspineTrophyProc.ID, DragonspineTrophyProc }
                 };
             }
         }

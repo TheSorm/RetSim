@@ -6,16 +6,15 @@
         {
             if (fight.Player.Auras.CurrentSeal != null)
             {
-                var judgement = fight.Player.Auras.CurrentSeal.Judgement;
-                fight.Player.Auras.CurrentSeal = null;
+                var seal = fight.Player.Auras.CurrentSeal;
 
-                foreach (var seal in Glossaries.Auras.Seals)
-                    fight.Player.Auras.Cancel(seal, fight);
+                fight.Player.Auras.Cancel(seal, fight);
 
-                fight.Player.Cast(judgement, fight);
+                return fight.Player.Cast(seal.Judgement, fight);
             }
 
-            return ProcMask.None;
+            else
+                return ProcMask.None;
         }
     }
 }

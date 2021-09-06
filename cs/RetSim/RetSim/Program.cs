@@ -35,7 +35,7 @@ namespace RetSim
                 Finger1 = EquippableArmor.Get(30834, null),
                 Finger2 = EquippableArmor.Get(28757, null),
                 Trinket1 = EquippableArmor.Get(29383, null),
-                //Trinket2 = EquippableArmor.Get(28830, null),
+                Trinket2 = EquippableArmor.Get(28830, null),
                 Relic = EquippableArmor.Get(27484, null),
                 Weapon = Weapons[28429],
             };
