@@ -42,7 +42,8 @@ namespace RetSim
                 if (this[aura].Stacks < aura.MaxStacks)
                     ApplyEffects(aura, fight);
 
-                this[aura].End.Timestamp = fight.Timestamp + aura.Duration + extraDuration;
+                if (aura.Duration > 0)
+                    this[aura].End.Timestamp = fight.Timestamp + aura.Duration + extraDuration;
 
                 if (log)
                     Log(aura, fight, AuraChangeType.Refresh);
@@ -52,9 +53,12 @@ namespace RetSim
             {
                 ApplyEffects(aura, fight);
 
-                this[aura].End = new AuraEndEvent(aura, fight, fight.Timestamp + aura.Duration + extraDuration);
+                if (aura.Duration > 0)
+                {
+                    this[aura].End = new AuraEndEvent(aura, fight, fight.Timestamp + aura.Duration + extraDuration);
 
-                fight.Queue.Add(this[aura].End);
+                    fight.Queue.Add(this[aura].End);
+                }
 
                 if (log)
                     Log(aura, fight, AuraChangeType.Gain);
@@ -92,7 +96,7 @@ namespace RetSim
             }
         }
 
-        private void Log(Aura aura, FightSimulation fight, AuraChangeType type)
+        private static void Log(Aura aura, FightSimulation fight, AuraChangeType type)
         {
             var entry = new AuraEntry()
             {

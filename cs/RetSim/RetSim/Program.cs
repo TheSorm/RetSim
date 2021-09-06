@@ -46,7 +46,11 @@ namespace RetSim
 
             fight.Output();
 
-            equipment.Log(Logger);
+            foreach (EquippableItem item in equipment.PlayerEquipment)
+            {
+                if (item != null)
+                    Logger.Log($"\n{item}");
+            }
 
         }
 

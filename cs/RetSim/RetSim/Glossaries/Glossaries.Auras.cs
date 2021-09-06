@@ -22,12 +22,11 @@ namespace RetSim
 
             public static readonly Aura WindfuryTotem = new()
             {
-                Duration = 200000
             };
 
             public static readonly Aura WindfuryAttack = new()
             {
-                Duration = 8,
+                Duration = 10,
                 Effects = new List<AuraEffect>
                 {
                     new GainStats() { Stats = new Stats() { AttackPower = 445 } }
@@ -36,7 +35,6 @@ namespace RetSim
 
             public static readonly Aura DragonspineTrophy = new()
             {
-                Duration = 200000,
             };
 
             public static readonly Aura DragonspineTrophyProc = new()

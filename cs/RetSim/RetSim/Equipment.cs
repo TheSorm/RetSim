@@ -11,7 +11,7 @@ namespace RetSim
 
         public Dictionary<GemColor, int> GemTotals { get; private set; }
 
-        private EquippableItem[] PlayerEquipment { get; init; } = new EquippableItem[Constants.EquipmentSlots.Total];
+        public EquippableItem[] PlayerEquipment { get; init; } = new EquippableItem[Constants.EquipmentSlots.Total];
 
         #region Equipment
 
@@ -248,13 +248,6 @@ namespace RetSim
             }
 
             return totals;
-        }
-
-        public void Log(Loggers.AbstractLogger logger)
-        {
-            foreach (EquippableItem e in PlayerEquipment)
-                if (e != null)
-                    logger.Log(e.ToString() + "\n");
         }
     }
 }

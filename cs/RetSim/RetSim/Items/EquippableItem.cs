@@ -83,7 +83,7 @@ namespace RetSim.Items
 
         public override string ToString()
         {
-            return $"Item ID: {ID} - Name: {Name}";
+            return $"{InventoryType}: ({ID}) - {Name}";
         }
     }
 

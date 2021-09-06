@@ -6,7 +6,7 @@ namespace RetSim
     public class Aura
     {
         public Spell Parent { get; set; }
-        public virtual int Duration { get; init; }
+        public virtual int Duration { get; init; } = 0;
         public int MaxStacks { get; init; } = 1;
         public List<AuraEffect> Effects { get; set; } = null;
     }
