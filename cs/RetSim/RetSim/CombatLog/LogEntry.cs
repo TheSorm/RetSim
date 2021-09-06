@@ -11,7 +11,7 @@
 
         public override string ToString()
         {
-            return $"{string.Format(Constants.Misc.MillisecondFormatter, Timestamp)} - {Message}";
+            return $"{string.Format(Constants.Numbers.MillisecondFormatter, Timestamp)} - {Message}";
         }
     }
 }

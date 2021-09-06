@@ -13,7 +13,7 @@
 
         public override ProcMask Resolve(FightSimulation fight)
         {
-            fight.Player.Auras.Apply(Aura, fight);
+            ApplyAura(fight);
 
             Program.Logger.Log($"Player gains {Aura.Name}.");
 
@@ -23,5 +23,17 @@
             else
                 return ProcMask.None;
         }
+
+        protected virtual void ApplyAura(FightSimulation fight)
+        {
+            fight.Player.Auras.Apply(Aura, fight);
+        }
+    }
+
+    public enum AuraChangeType
+    {
+        Gain = 1,
+        Fade = 2,
+        Refresh = 3
     }
 }

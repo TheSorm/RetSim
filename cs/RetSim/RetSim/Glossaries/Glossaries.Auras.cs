@@ -38,6 +38,26 @@ namespace RetSim
                 { }
             };
 
+            public static readonly Aura WindfuryTotem = new()
+            {
+                ID = 25580,
+                Name = "Windfury Totem",
+                Duration = 200000, //TODO: Add auras without duration
+                MaxStacks = 1,                
+                Effects = new List<AuraEffect>()
+                { }
+            };
+
+            public static readonly Aura WindfuryAttack = new()
+            {
+                ID = 25584,
+                Name = "Windfury Attack",
+                Duration = 8,
+                MaxStacks = 1,
+                Effects = new List<AuraEffect>()
+                { }
+            };
+
             public static readonly Aura DragonspineTrophy = new()
             {
                 ID = 34775,
@@ -53,6 +73,8 @@ namespace RetSim
                 { SealOfTheCrusader.ID, SealOfTheCrusader },
                 { SealOfCommand.ID, SealOfCommand },
                 { SealOfBlood.ID, SealOfBlood },
+                { WindfuryTotem.ID, WindfuryTotem },
+                { WindfuryAttack.ID, WindfuryAttack },
                 { DragonspineTrophy.ID, DragonspineTrophy }
             };
 
@@ -67,8 +89,15 @@ namespace RetSim
             {
                 SealOfCommand.Effects = new List<AuraEffect>()
                     { new GainProc(Procs.SealOfCommand) };
+
                 SealOfBlood.Effects = new List<AuraEffect>()
                     { new GainProc(Procs.SealOfBlood) };
+
+                WindfuryTotem.Effects = new List<AuraEffect>()
+                    { new GainProc(Procs.WindfuryAttack) };
+
+                WindfuryAttack.Effects = new List<AuraEffect>()
+                    { new GainStats() { Stats = new Stats() { AttackPower = 445 } } };
 
                 SealOfCommand.ExclusiveWith = new List<Seal>()
                 { SealOfBlood, SealOfTheCrusader };

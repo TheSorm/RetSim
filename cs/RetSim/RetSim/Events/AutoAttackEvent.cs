@@ -12,11 +12,9 @@
         {
             Fight.Player.NextAutoAttack = new AutoAttackEvent(Fight, Timestamp + Fight.Player.Weapon.EffectiveSpeed);
 
-            Fight.Player.Cast(Glossaries.Spells.Melee, Fight);
-
             Fight.Queue.Add(Fight.Player.NextAutoAttack);
 
-            return ProcMask.OnMeleeAutoAttack;
+            return Fight.Player.Cast(Glossaries.Spells.Melee, Fight); 
         }
 
         public override string ToString()

@@ -10,18 +10,22 @@ namespace RetSim
         public Spell Spell { get; set; }
         public int Chance { get; init; }
         public float PPM { get; init; }
-        // public int Cooldown { get; init; } TODO: Cooldown on spell instead of proc?
+        public int Cooldown { get; init; } 
     }
 
     [Flags]
     public enum ProcMask
     {
         None = 0,
-        OnMeleeAutoAttack = 1,
-        OnMeleeSpecialAttack = 2,
-        OnCrit = 4,
-        OnMeleeCrit = 8,
-        OnSpellCastSuccess = 16
+        OnAutoAttack = 1,
+        OnWindfury = 2,
+        OnSpecialAttack = 4,
+        OnSealOfCommand = 8,
+        OnMeleeCrit = 16,
+        OnAnyCrit = 32,        
+        OnSpellCastSuccess = 64,
+        OnBasicAttack = OnAutoAttack + OnWindfury + OnSealOfCommand,
+        OnAnyAttack = OnBasicAttack + OnSpecialAttack
         // TODO: Update and enhance
     }
 }

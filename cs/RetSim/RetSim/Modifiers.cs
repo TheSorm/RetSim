@@ -13,6 +13,7 @@ namespace RetSim
 
         public float AttackSpeed { get; set; } = 1f;
         public float CastSpeed { get; set; } = 1f;
+        public float WeaponDamage { get; set; } = 1f;
     }
 
     public abstract class FailsafeDictionary<Key, Value> : Dictionary<Key, Value>

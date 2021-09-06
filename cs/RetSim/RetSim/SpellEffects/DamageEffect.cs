@@ -4,7 +4,6 @@ namespace RetSim.SpellEffects
 {
     public abstract class DamageEffect : SpellEffect
     {
-        public Spell Spell { get; init; }
         public School School { get; init; } = School.Physical;
         public float Coefficient { get; init; } = 0;
         public float HolyCoefficient { get; init; } = 0;

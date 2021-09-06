@@ -42,7 +42,7 @@ namespace RetSim
                 ID = 20424,
                 Name = "Seal of Command",
                 ManaCost = 0,
-                Cooldown = 1 * 1000,
+                Cooldown = 0,
                 CastTime = 0,
                 GCD = new SpellGCD() { Duration = 0, Category = Category.None },
             };
@@ -79,12 +79,42 @@ namespace RetSim
                 { }
             };
 
+            public static readonly Spell WindfuryTotem = new()
+            {
+                ID = 25580,
+                Name = "Windfury Totem",
+                ManaCost = 0,
+                Cooldown = 0,
+                CastTime = 0,
+                GCD = new SpellGCD() { Duration = 0, Category = Category.None },
+            };
+
+            public static readonly Spell WindfuryAttack = new()
+            {
+                ID = 25584,
+                Name = "Windfury Attack",
+                ManaCost = 0,
+                Cooldown = 0,
+                CastTime = 0,
+                GCD = new SpellGCD() { Duration = 0, Category = Category.None },
+            };
+
+            public static readonly Spell WindfuryProc = new()
+            {
+                ID = 2,
+                Name = "Melee (Windfury)",
+                ManaCost = 0,
+                Cooldown = 0,
+                CastTime = 0,
+                GCD = new SpellGCD() { Duration = 0, Category = Category.None },
+            };
+
             public static readonly Spell DragonspineTrophy = new()
             {
                 ID = 34775,
                 Name = "Dragonspine Trophy",
                 ManaCost = 0,
-                Cooldown = 20 * 1000,
+                Cooldown = 0,
                 CastTime = 0,
                 GCD = new SpellGCD() { Duration = 0, Category = Category.None },
             };
@@ -98,6 +128,9 @@ namespace RetSim
                 { SealOfBlood.ID, SealOfBlood },
                 { SealOfBloodProc.ID, SealOfBloodProc },
                 { SealOfTheCrusader.ID, SealOfTheCrusader },
+                { WindfuryTotem.ID, WindfuryTotem },
+                { WindfuryAttack.ID, WindfuryAttack },
+                { WindfuryProc.ID, WindfuryProc },
                 { DragonspineTrophy.ID, DragonspineTrophy }
             };
             static Spells()
@@ -112,8 +145,8 @@ namespace RetSim
                         CritCategory = Category.Physical,
                         Normalized = false,
                         OnCast = ProcMask.None,
-                        OnHit = ProcMask.OnMeleeAutoAttack,
-                        OnCrit = ProcMask.OnCrit | ProcMask.OnMeleeCrit,
+                        OnHit = ProcMask.OnAutoAttack,
+                        OnCrit = ProcMask.OnAnyCrit | ProcMask.OnMeleeCrit,
                         Percentage = 1f,
                         Coefficient = 0,
                         HolyCoefficient = 0
@@ -130,8 +163,8 @@ namespace RetSim
                         CritCategory = Category.Physical,
                         Normalized = true,
                         OnCast = ProcMask.None,
-                        OnHit = ProcMask.OnMeleeSpecialAttack,
-                        OnCrit = ProcMask.OnCrit | ProcMask.OnMeleeCrit,
+                        OnHit = ProcMask.OnSpecialAttack,
+                        OnCrit = ProcMask.OnAnyCrit | ProcMask.OnMeleeCrit,
                         Percentage = 1.1f,
                         Coefficient = 0,
                         HolyCoefficient = 0
@@ -151,8 +184,8 @@ namespace RetSim
                         CritCategory = Category.Physical,
                         Normalized = false,
                         OnCast = ProcMask.None,
-                        OnHit = ProcMask.OnMeleeAutoAttack | ProcMask.OnMeleeSpecialAttack,
-                        OnCrit = ProcMask.OnCrit | ProcMask.OnMeleeCrit,
+                        OnHit = ProcMask.OnSpecialAttack | ProcMask.OnSealOfCommand,
+                        OnCrit = ProcMask.OnAnyCrit | ProcMask.OnMeleeCrit,
                         Percentage = 0.7f,
                         Coefficient = 0.2f,
                         HolyCoefficient = 0.29f
@@ -173,10 +206,40 @@ namespace RetSim
                         Normalized = false,
                         OnCast = ProcMask.None,
                         OnHit = ProcMask.None,
-                        OnCrit = ProcMask.OnCrit,
+                        OnCrit = ProcMask.OnAnyCrit,
                         Percentage = 0.35f,
                         Coefficient = 0,
                         HolyCoefficient = 0
+                    }
+                };
+
+                WindfuryTotem.Effects = new List<SpellEffect>()
+                {
+                    { new GainAura(Auras.WindfuryTotem, false) }
+                };
+
+                WindfuryAttack.Effects = new List<SpellEffect>()
+                {
+                     { new GainVariableDurationAura(Auras.WindfuryAttack, false, 0, 9) },
+                    { new ExtraAttacks(WindfuryProc, 1) { Spell = WindfuryAttack } }
+                   
+                };
+
+                WindfuryProc.Effects = new List<SpellEffect>()
+                {
+                    new WeaponDamage()
+                    {
+                        Spell = WindfuryProc,
+                        School =  School.Physical,
+                        DefenseCategory = DefenseType.Auto,
+                        CritCategory = Category.Physical,
+                        Normalized = false,
+                        OnCast = ProcMask.None,
+                        OnHit = ProcMask.OnWindfury,
+                        OnCrit = ProcMask.OnAnyCrit | ProcMask.OnMeleeCrit,
+                        Percentage = 0.7f,
+                        Coefficient = 0.2f,
+                        HolyCoefficient = 0.29f
                     }
                 };
 

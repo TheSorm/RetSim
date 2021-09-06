@@ -13,5 +13,4 @@
         Crit = 1,
         Glancing = 2
     }
-
 }

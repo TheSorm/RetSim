@@ -90,8 +90,9 @@ namespace RetSim
 
         }
 
-        public static class Misc
+        public static class Numbers
         {
+            public const int DefaultGCD = 1500;
             public const int SecondsPerMin = 60;
             public const int MillisecondsPerSec = 1000;
             public const int OneHundred = 100;

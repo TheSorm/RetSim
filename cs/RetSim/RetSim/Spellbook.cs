@@ -20,6 +20,7 @@ namespace RetSim
         {
             base.Add(spell, null);
         }
+
         public void StartCooldown(Spell spell, CooldownEndEvent cooldown)
         {
             this[spell] = cooldown;
@@ -40,7 +41,7 @@ namespace RetSim
             return spell.ManaCost <= player.Stats.Mana;
         }
 
-        public ProcMask Use(Spell spell, FightSimulation fight)
+        public static ProcMask Use(Spell spell, FightSimulation fight)
         {
             ProcMask mask = ProcMask.None;
 

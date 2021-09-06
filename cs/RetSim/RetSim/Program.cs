@@ -57,12 +57,6 @@ namespace RetSim
 
             fight.Output();
 
-
-            //GemColor gem = GemColor.Blue;
-
-            //SocketColor socket = SocketColor.Yellow;
-
-            //Logger.Log(((gem & (GemColor)socket) != 0).ToString());
         }
 
         public static List<EquippableWeapon> LoadWeponData()
