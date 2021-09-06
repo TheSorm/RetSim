@@ -41,10 +41,10 @@ namespace RetSim
             float dodge = GetDodgeChance(Player, Effect.DefenseCategory);
             float crit = GetCritChance(Player, Effect.CritCategory);
 
-            var result = AttackFormulas[Effect.DefenseCategory].Invoke(miss, dodge, crit);
+            var result = GetAttackResult(Effect.DefenseCategory, miss, dodge, crit);
 
-            AttackResult = result.Item1;
-            DamageResult = result.Item2;
+            AttackResult = result.Attack;
+            DamageResult = result.Damage;
 
             DamageModifier = GetDamageModifier(Player, DamageResult, Effect.CritCategory);
 
@@ -70,21 +70,23 @@ namespace RetSim
             Mitigation = (1 - mitigation) * 100f;
         }
 
-        public static readonly Dictionary<DefenseType, Func<float, float, float, Tuple<AttackResult, DamageResult>>> AttackFormulas = new()
+        public static (AttackResult Attack, DamageResult Damage) GetAttackResult(DefenseType defense, float miss, float dodge, float crit)
         {
-            { DefenseType.White, Auto },
-            { DefenseType.Special, Special },
-            { DefenseType.Ranged, Ranged },
-            { DefenseType.Magic, Ranged },
-            { DefenseType.None, None }
-        };
+            return defense switch
+            {
+                DefenseType.White => White(miss, dodge, crit),
+                DefenseType.Special => Special(miss, dodge, crit),
+                DefenseType.None => None(crit),
+                _ => Ranged(miss, crit)
+            };
+        }
 
         public static bool CritCheck(float chance)
         {
             return RNG.RollRange(0, 10000) < Helpers.UpgradeFraction(chance);
         }
 
-        public static Tuple<AttackResult, DamageResult> Auto(float miss, float dodge, float crit)
+        public static (AttackResult, DamageResult) White(float miss, float dodge, float crit)
         {
             AttackResult attack = AttackResult.Hit;
             DamageResult damage = DamageResult.None;
@@ -108,10 +110,10 @@ namespace RetSim
             else if (random < c)
                 damage = DamageResult.Crit;
 
-            return Tuple.Create(attack, damage);
+            return (attack, damage);
         }
 
-        public static Tuple<AttackResult, DamageResult> Special(float miss, float dodge, float crit)
+        public static (AttackResult, DamageResult) Special(float miss, float dodge, float crit)
         {
             AttackResult attack = AttackResult.Hit;
             DamageResult damage = DamageResult.None;
@@ -130,10 +132,10 @@ namespace RetSim
             else if (CritCheck(crit))
                 damage = DamageResult.Crit;
 
-            return Tuple.Create(attack, damage);
+            return (attack, damage);
         }
 
-        public static Tuple<AttackResult, DamageResult> Ranged(float miss, float dodge, float crit)
+        public static (AttackResult, DamageResult) Ranged(float miss, float crit)
         {
             int random = RNG.RollRange(0, 10000);
 
@@ -142,12 +144,12 @@ namespace RetSim
             AttackResult attack = (random < m) ? AttackResult.Miss : AttackResult.Hit;
             DamageResult damage = attack == AttackResult.Hit && CritCheck(crit) ? DamageResult.Crit : DamageResult.None;
 
-            return Tuple.Create(attack, damage);
+            return (attack, damage);
         }
 
-        public static Tuple<AttackResult, DamageResult> None(float miss, float dodge, float crit)
+        public static (AttackResult, DamageResult) None(float crit)
         {
-            return Tuple.Create(AttackResult.Hit, CritCheck(crit) ? DamageResult.Crit : DamageResult.None);
+            return (AttackResult.Hit, CritCheck(crit) ? DamageResult.Crit : DamageResult.None);
         }
 
         public static float GetDamageModifier(Player player, DamageResult result, Category category)
