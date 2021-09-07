@@ -8,12 +8,12 @@ namespace RetSim.Items
         public int ID { get; init; }
         public string Name { get; init; }
         public int ItemLevel { get; init; }
-        public string Quality { get; init; }
-        public string InventoryType { get; init; }
+        public Quality Quality { get; init; }
+        public Slot Slot { get; init; }
         public ItemStats Stats { get; init; }
         public Set Set { get; init; }
-        public ItemSpell OnUseSpell { get; set; }
-        public List<ItemSpell> Spells { get; init; }
+        public ItemSpell OnUse { get; set; }
+        public ItemSpell OnEquip { get; init; }
 
         public Socket[] Sockets = new Socket[3];
         public Socket Socket1 { get => Sockets[0]; init => Sockets[0] = value; }
@@ -23,9 +23,9 @@ namespace RetSim.Items
         public bool UniqueEquipped { get; set; }
         public int Phase { get; init; }
 
-        public static EquippableItem Get(int id, Gem[] gems)
+        public static EquippableItem GetItemWithGems(int id, Gem[] gems)
         {
-            var item = Glossaries.Items.AllItems[id];
+            var item = Data.Items.AllItems[id];
 
             if (gems != null)
             {
@@ -44,13 +44,13 @@ namespace RetSim.Items
 
         public bool IsSocketBonusActive()
         {
-            bool result = true;
-
             if (SocketBonus == null)
                 return false;
 
             else
             {
+                bool result = true;
+
                 foreach (Socket socket in Sockets)
                 {
                     if (socket == null)
@@ -83,7 +83,7 @@ namespace RetSim.Items
 
         public override string ToString()
         {
-            return $"{InventoryType}: ({ID}) - {Name}";
+            return $"{Slot}: ({ID}) - {Name}";
         }
     }
 
@@ -93,35 +93,9 @@ namespace RetSim.Items
         public string Name { get; init; }
     }
 
-    public enum ItemStatNames
+    public class ItemStats : Dictionary<StatName, int>
     {
-        Strength = 0,
-        AttackPower = 1,
-        Agility = 2,
-        Crit = 3,
-        Hit = 4,
-        Haste = 5,
-        Expertise = 6,
-        ArmorPenetration = 7,
-        SpellDamage = 8,
-        SpellHealing = 9,
-        SpellCrit = 10,
-        SpellHit = 11,
-        SpellHaste = 12,
-        Intellect = 13,
-        Spirit = 14,
-        ManaPer5 = 15,
-        Stamina = 16,
-        Defense = 17,
-        Dodge = 18,
-        Parry = 19,
-        Block = 20,
-        Resilience = 21,
-    }
-
-    public class ItemStats : Dictionary<ItemStatNames, int>
-    {
-        public new int this[ItemStatNames key]
+        public new int this[StatName key]
         {
             get
             {
@@ -145,7 +119,7 @@ namespace RetSim.Items
 
     public record SocketBonus
     {
-        public string Stat { get; init; }
+        public StatName Stat { get; init; }
         public int Value { get; init; }
     }
 
@@ -153,5 +127,34 @@ namespace RetSim.Items
     {
         public int ID { get; init; }
         public string Name { get; init; }
+    }
+    
+    public enum Quality
+    {
+        Poor = 0,
+        Common = 1,
+        Uncommon = 2,
+        Rare = 3,
+        Epic = 4,
+        Legendary = 5,
+        Artifact = 6
+    }
+
+    public enum Slot
+    {
+        Head = 0,
+        Neck = 1,
+        Shoulders = 2,
+        Back = 3,
+        Chest = 4,
+        Wrists = 5,
+        Hands = 6,
+        Waist = 7,
+        Legs = 8,
+        Feet = 9,
+        Finger = 10,
+        Trinket = 11,
+        Relic = 12,
+        Weapon = 13
     }
 }

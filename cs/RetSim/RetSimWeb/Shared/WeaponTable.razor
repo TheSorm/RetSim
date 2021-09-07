@@ -6,21 +6,21 @@
 		<MudTh style="padding-inline-end: 0px;padding-inline-start: 0px;"><MudTableSortLabel SortBy="new Func<EquippableWeapon, object>(x=>x.MinDamage)">Min</MudTableSortLabel></MudTh>		
         <MudTh style="padding-inline-end: 0px;padding-inline-start: 0px;"><MudTableSortLabel SortBy="new Func<EquippableWeapon, object>(x=>x.MaxDamage)">Max</MudTableSortLabel></MudTh>		
         <MudTh style="padding-inline-end: 0px;padding-inline-start: 0px;"><MudTableSortLabel SortBy="new Func<EquippableWeapon, object>(x=>x.AttackSpeed)">Speed</MudTableSortLabel></MudTh>
-        <MudTh style="padding-inline-end: 0px;padding-inline-start: 0px;"><MudTableSortLabel SortBy="new Func<EquippableWeapon, object>(x=>x.Stats[ItemStatNames.Strength])">Str</MudTableSortLabel></MudTh>		
-		<MudTh style="padding-inline-end: 0px;padding-inline-start: 0px;"><MudTableSortLabel SortBy="new Func<EquippableWeapon, object>(x=>x.Stats[ItemStatNames.AttackPower])">AP</MudTableSortLabel></MudTh>		
-		<MudTh style="padding-inline-end: 0px;padding-inline-start: 0px;"><MudTableSortLabel SortBy="new Func<EquippableWeapon, object>(x=>x.Stats[ItemStatNames.Agility])">Agi</MudTableSortLabel></MudTh>		
-		<MudTh style="padding-inline-end: 0px;padding-inline-start: 0px;"><MudTableSortLabel SortBy="new Func<EquippableWeapon, object>(x=>x.Stats[ItemStatNames.Crit])">Crit</MudTableSortLabel></MudTh>		
-		<MudTh style="padding-inline-end: 0px;padding-inline-start: 0px;"><MudTableSortLabel SortBy="new Func<EquippableWeapon, object>(x=>x.Stats[ItemStatNames.Hit])">Hit</MudTableSortLabel></MudTh>		
-		<MudTh style="padding-inline-end: 0px;padding-inline-start: 0px;"><MudTableSortLabel SortBy="new Func<EquippableWeapon, object>(x=>x.Stats[ItemStatNames.Haste])">Haste</MudTableSortLabel></MudTh>		
-		<MudTh style="padding-inline-end: 0px;padding-inline-start: 0px;"><MudTableSortLabel SortBy="new Func<EquippableWeapon, object>(x=>x.Stats[ItemStatNames.Expertise])">Exp</MudTableSortLabel></MudTh>		
-		<MudTh style="padding-inline-end: 0px;padding-inline-start: 0px;"><MudTableSortLabel SortBy="new Func<EquippableWeapon, object>(x=>x.Stats[ItemStatNames.ArmorPenetration])">APen</MudTableSortLabel></MudTh>		
-		<MudTh style="padding-inline-end: 0px;padding-inline-start: 0px;"><MudTableSortLabel SortBy="new Func<EquippableWeapon, object>(x=>x.Stats[ItemStatNames.Stamina])">Sta</MudTableSortLabel></MudTh>		
-		<MudTh style="padding-inline-end: 0px;padding-inline-start: 0px;"><MudTableSortLabel SortBy="new Func<EquippableWeapon, object>(x=>x.Stats[ItemStatNames.Intellect])">Int</MudTableSortLabel></MudTh>		
-		<MudTh style="padding-inline-end: 0px;padding-inline-start: 0px;"><MudTableSortLabel SortBy="new Func<EquippableWeapon, object>(x=>x.Stats[ItemStatNames.ManaPer5])">MP5</MudTableSortLabel></MudTh>	
-		<MudTh style="padding-inline-end: 0px;padding-inline-start: 0px;"><MudTableSortLabel SortBy="new Func<EquippableWeapon, object>(x=>x.Stats[ItemStatNames.SpellDamage])">SP</MudTableSortLabel></MudTh>	
-		<MudTh style="padding-inline-end: 0px;padding-inline-start: 0px;"><MudTableSortLabel SortBy="new Func<EquippableWeapon, object>(x=>x.Stats[ItemStatNames.SpellCrit])">SCrit</MudTableSortLabel></MudTh>	
-		<MudTh style="padding-inline-end: 0px;padding-inline-start: 0px;"><MudTableSortLabel SortBy="new Func<EquippableWeapon, object>(x=>x.Stats[ItemStatNames.SpellHit])">SHit</MudTableSortLabel></MudTh>	
-		<MudTh style="padding-inline-end: 0px;padding-inline-start: 0px;"><MudTableSortLabel SortBy="new Func<EquippableWeapon, object>(x=>x.Stats[ItemStatNames.SpellHaste])">SHaste</MudTableSortLabel></MudTh>
+        <MudTh style="padding-inline-end: 0px;padding-inline-start: 0px;"><MudTableSortLabel SortBy="new Func<EquippableWeapon, object>(x=>x.Stats[StatName.Strength])">Str</MudTableSortLabel></MudTh>		
+		<MudTh style="padding-inline-end: 0px;padding-inline-start: 0px;"><MudTableSortLabel SortBy="new Func<EquippableWeapon, object>(x=>x.Stats[StatName.AttackPower])">AP</MudTableSortLabel></MudTh>		
+		<MudTh style="padding-inline-end: 0px;padding-inline-start: 0px;"><MudTableSortLabel SortBy="new Func<EquippableWeapon, object>(x=>x.Stats[StatName.Agility])">Agi</MudTableSortLabel></MudTh>		
+		<MudTh style="padding-inline-end: 0px;padding-inline-start: 0px;"><MudTableSortLabel SortBy="new Func<EquippableWeapon, object>(x=>x.Stats[StatName.CritRating])">Crit</MudTableSortLabel></MudTh>		
+		<MudTh style="padding-inline-end: 0px;padding-inline-start: 0px;"><MudTableSortLabel SortBy="new Func<EquippableWeapon, object>(x=>x.Stats[StatName.HitRating])">Hit</MudTableSortLabel></MudTh>		
+		<MudTh style="padding-inline-end: 0px;padding-inline-start: 0px;"><MudTableSortLabel SortBy="new Func<EquippableWeapon, object>(x=>x.Stats[StatName.HasteRating])">Haste</MudTableSortLabel></MudTh>		
+		<MudTh style="padding-inline-end: 0px;padding-inline-start: 0px;"><MudTableSortLabel SortBy="new Func<EquippableWeapon, object>(x=>x.Stats[StatName.ExpertiseRating])">Exp</MudTableSortLabel></MudTh>		
+		<MudTh style="padding-inline-end: 0px;padding-inline-start: 0px;"><MudTableSortLabel SortBy="new Func<EquippableWeapon, object>(x=>x.Stats[StatName.ArmorPenetration])">APen</MudTableSortLabel></MudTh>		
+		<MudTh style="padding-inline-end: 0px;padding-inline-start: 0px;"><MudTableSortLabel SortBy="new Func<EquippableWeapon, object>(x=>x.Stats[StatName.Stamina])">Sta</MudTableSortLabel></MudTh>		
+		<MudTh style="padding-inline-end: 0px;padding-inline-start: 0px;"><MudTableSortLabel SortBy="new Func<EquippableWeapon, object>(x=>x.Stats[StatName.Intellect])">Int</MudTableSortLabel></MudTh>		
+		<MudTh style="padding-inline-end: 0px;padding-inline-start: 0px;"><MudTableSortLabel SortBy="new Func<EquippableWeapon, object>(x=>x.Stats[StatName.ManaPer5])">MP5</MudTableSortLabel></MudTh>	
+		<MudTh style="padding-inline-end: 0px;padding-inline-start: 0px;"><MudTableSortLabel SortBy="new Func<EquippableWeapon, object>(x=>x.Stats[StatName.SpellPower])">SP</MudTableSortLabel></MudTh>	
+		<MudTh style="padding-inline-end: 0px;padding-inline-start: 0px;"><MudTableSortLabel SortBy="new Func<EquippableWeapon, object>(x=>x.Stats[StatName.SpellCritRating])">SCrit</MudTableSortLabel></MudTh>	
+		<MudTh style="padding-inline-end: 0px;padding-inline-start: 0px;"><MudTableSortLabel SortBy="new Func<EquippableWeapon, object>(x=>x.Stats[StatName.SpellHitRating])">SHit</MudTableSortLabel></MudTh>	
+		<MudTh style="padding-inline-end: 0px;padding-inline-start: 0px;"><MudTableSortLabel SortBy="new Func<EquippableWeapon, object>(x=>x.Stats[StatName.SpellHasteRating])">SHaste</MudTableSortLabel></MudTh>
 		<MudTh style="padding-inline-end: 0px;padding-inline-start: 0px;"><MudTableSortLabel SortBy="new Func<EquippableWeapon, object>(x=>0)">DPS</MudTableSortLabel></MudTh>
     </HeaderContent>
     <RowTemplate>
@@ -34,29 +34,31 @@
 		<MudTd style="padding-inline-end: 0px;padding-inline-start: 0px;" DataLabel="Min">@Format(@context.MinDamage)</MudTd>
 		<MudTd style="padding-inline-end: 0px;padding-inline-start: 0px;" DataLabel="Max">@Format(@context.MaxDamage)</MudTd>
 		<MudTd style="padding-inline-end: 0px;padding-inline-start: 0px;" DataLabel="Speed">@FormatSpeed(@context.AttackSpeed)</MudTd>
-		<MudTd style="padding-inline-end: 0px;padding-inline-start: 0px;" DataLabel="Str">@Format(@context.Stats[ItemStatNames.Strength])</MudTd>
-		<MudTd style="padding-inline-end: 0px;padding-inline-start: 0px;" DataLabel="AP">@Format(@context.Stats[ItemStatNames.AttackPower])</MudTd>
-		<MudTd style="padding-inline-end: 0px;padding-inline-start: 0px;" DataLabel="Agi">@Format(@context.Stats[ItemStatNames.Agility])</MudTd>
-		<MudTd style="padding-inline-end: 0px;padding-inline-start: 0px;" DataLabel="Crit">@Format(@context.Stats[ItemStatNames.Crit])</MudTd>
-		<MudTd style="padding-inline-end: 0px;padding-inline-start: 0px;" DataLabel="Hit">@Format(@context.Stats[ItemStatNames.Hit])</MudTd>
-		<MudTd style="padding-inline-end: 0px;padding-inline-start: 0px;" DataLabel="Haste">@Format(@context.Stats[ItemStatNames.Haste])</MudTd>
-		<MudTd style="padding-inline-end: 0px;padding-inline-start: 0px;" DataLabel="Exp">@Format(@context.Stats[ItemStatNames.Expertise])</MudTd>
-		<MudTd style="padding-inline-end: 0px;padding-inline-start: 0px;" DataLabel="APen">@Format(@context.Stats[ItemStatNames.ArmorPenetration])</MudTd>
-		<MudTd style="padding-inline-end: 0px;padding-inline-start: 0px;" DataLabel="Sta">@Format(@context.Stats[ItemStatNames.Stamina])</MudTd>
-		<MudTd style="padding-inline-end: 0px;padding-inline-start: 0px;" DataLabel="Int">@Format(@context.Stats[ItemStatNames.Intellect])</MudTd>
-		<MudTd style="padding-inline-end: 0px;padding-inline-start: 0px;" DataLabel="MP5">@Format(@context.Stats[ItemStatNames.ManaPer5])</MudTd>
-		<MudTd style="padding-inline-end: 0px;padding-inline-start: 0px;" DataLabel="SP">@Format(@context.Stats[ItemStatNames.SpellDamage])</MudTd>
-		<MudTd style="padding-inline-end: 0px;padding-inline-start: 0px;" DataLabel="SCrit">@Format(@context.Stats[ItemStatNames.SpellCrit])</MudTd>
-		<MudTd style="padding-inline-end: 0px;padding-inline-start: 0px;" DataLabel="SHit">@Format(@context.Stats[ItemStatNames.SpellHit])</MudTd>
-		<MudTd style="padding-inline-end: 0px;padding-inline-start: 0px;" DataLabel="SHaste">@Format(@context.Stats[ItemStatNames.SpellHaste])</MudTd>
+		<MudTd style="padding-inline-end: 0px;padding-inline-start: 0px;" DataLabel="Str">@Format(@context.Stats[StatName.Strength])</MudTd>
+		<MudTd style="padding-inline-end: 0px;padding-inline-start: 0px;" DataLabel="AP">@Format(@context.Stats[StatName.AttackPower])</MudTd>
+		<MudTd style="padding-inline-end: 0px;padding-inline-start: 0px;" DataLabel="Agi">@Format(@context.Stats[StatName.Agility])</MudTd>
+		<MudTd style="padding-inline-end: 0px;padding-inline-start: 0px;" DataLabel="Crit">@Format(@context.Stats[StatName.CritRating])</MudTd>
+		<MudTd style="padding-inline-end: 0px;padding-inline-start: 0px;" DataLabel="Hit">@Format(@context.Stats[StatName.HitRating])</MudTd>
+		<MudTd style="padding-inline-end: 0px;padding-inline-start: 0px;" DataLabel="Haste">@Format(@context.Stats[StatName.HasteRating])</MudTd>
+		<MudTd style="padding-inline-end: 0px;padding-inline-start: 0px;" DataLabel="Exp">@Format(@context.Stats[StatName.ExpertiseRating])</MudTd>
+		<MudTd style="padding-inline-end: 0px;padding-inline-start: 0px;" DataLabel="APen">@Format(@context.Stats[StatName.ArmorPenetration])</MudTd>
+		<MudTd style="padding-inline-end: 0px;padding-inline-start: 0px;" DataLabel="Sta">@Format(@context.Stats[StatName.Stamina])</MudTd>
+		<MudTd style="padding-inline-end: 0px;padding-inline-start: 0px;" DataLabel="Int">@Format(@context.Stats[StatName.Intellect])</MudTd>
+		<MudTd style="padding-inline-end: 0px;padding-inline-start: 0px;" DataLabel="MP5">@Format(@context.Stats[StatName.ManaPer5])</MudTd>
+		<MudTd style="padding-inline-end: 0px;padding-inline-start: 0px;" DataLabel="SP">@Format(@context.Stats[StatName.SpellPower])</MudTd>
+		<MudTd style="padding-inline-end: 0px;padding-inline-start: 0px;" DataLabel="SCrit">@Format(@context.Stats[StatName.SpellCritRating])</MudTd>
+		<MudTd style="padding-inline-end: 0px;padding-inline-start: 0px;" DataLabel="SHit">@Format(@context.Stats[StatName.SpellHitRating])</MudTd>
+		<MudTd style="padding-inline-end: 0px;padding-inline-start: 0px;" DataLabel="SHaste">@Format(@context.Stats[StatName.SpellHasteRating])</MudTd>
 		<MudTd style="padding-inline-end: 0px;padding-inline-start: 0px;" DataLabel="DPS">0</MudTd>
 	</RowTemplate>
 </MudTable>
 <MudContainer Fixed="true" Class="d-flex justify-end mb-4 py-4">
     <MudButton Variant="Variant.Filled" Color="Color.Primary">Sim Gear DPS</MudButton>
 </MudContainer>
+
 @code {
 @using RetSim.Items;
+@using RetSim
 
 public int SelectedWeaponID { get; set; }
 

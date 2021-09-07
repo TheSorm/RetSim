@@ -27,7 +27,7 @@ else
 
     async Task LoadItemData()
     {
-        RetSim.Glossaries.Items.Initialize(await LoadWeponData(), await  LoadArmorData(), await LoadSetData(), await LoadGemData(), await LoadMetaGemData());
+        RetSim.Data.Items.Initialize(await LoadWeponData(), await  LoadArmorData(), await LoadSetData(), await LoadGemData(), await LoadMetaGemData());
     }
 
     public Task<List<EquippableWeapon>> LoadWeponData()
@@ -35,10 +35,11 @@ else
         return httpClient.GetFromJsonAsync<List<EquippableWeapon>>("https://raw.githubusercontent.com/TheSorm/RetSim/main/data/weapons.json");
     }
 
-    public Task<List<EquippableArmor>> LoadArmorData()
+    public Task<List<EquippableItem>> LoadArmorData()
     {
-        return httpClient.GetFromJsonAsync<List<EquippableArmor>>("https://raw.githubusercontent.com/TheSorm/RetSim/main/data/armor.json");
+        return httpClient.GetFromJsonAsync<List<EquippableItem>>("https://raw.githubusercontent.com/TheSorm/RetSim/main/data/armor.json");
     }
+
     public Task<List<ItemSet>> LoadSetData()
     {
         return httpClient.GetFromJsonAsync<List<ItemSet>>("https://raw.githubusercontent.com/TheSorm/RetSim/main/data/sets.json");
@@ -48,6 +49,7 @@ else
     {
         return httpClient.GetFromJsonAsync<List<Gem>>("https://raw.githubusercontent.com/TheSorm/RetSim/main/data/gems.json");
     }
+
     public Task<List<MetaGem>> LoadMetaGemData()
     {
         return httpClient.GetFromJsonAsync<List<MetaGem>>("https://raw.githubusercontent.com/TheSorm/RetSim/main/data/metaGems.json");

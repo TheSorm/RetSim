@@ -3,9 +3,25 @@ using System.Collections.Generic;
 
 namespace RetSim.Items
 {
+    public record Gem
+    {
+        public int ID { get; init; }
+        public string Name { get; init; }
+
+        //TODO: Add "Nickname"
+
+        public int ItemLevel { get; init; }
+        public Quality Quality { get; init; }
+        public GemColor Color { get; init; }
+        public ItemStats Stats { get; init; }
+        public bool UniqueEquipped { get; set; }
+        public int Phase { get; set; }
+    }
+
+
     public record MetaGem : Gem
     {
-        public GemRequirements Requirements { get; init; }
+        public MetaRequirements Requirements { get; init; }
         public ItemSpell Spell { get; init; }
 
         public MetaGem()
@@ -23,30 +39,43 @@ namespace RetSim.Items
         }
     }
 
-    public record Gem
+    public class MetaRequirements
     {
-        public int ID { get; init; }
-        public string Name { get; init; }
+        public int Red { get; init; }
+        public int Blue { get; init; }
+        public int Yellow { get; init; }
+        public MetaRequirementType Type { get; init; }
 
-        //TODO: Add "Nickname"
+        private Func<MetaRequirements, int, int, int, bool> Check { get; init; }
 
-        public int ItemLevel { get; init; }
-        public string Quality { get; init; }
-        public GemColor Color { get; init; }
-        public ItemStats Stats { get; init; }
-        public bool UniqueEquipped { get; set; }
-        public int Phase { get; set; }
-    }
+        public MetaRequirements()
+        {
+            Check = GetRequirementCheck[Type];
+        }
 
-    public enum RequirementType
-    {
-        Standard = 0,
-        MoreRedThanBlue = 2,
-        MoreRedThanYellow = 3,
-        MoreBlueThanRed = 4,
-        MoreBlueThanYellow = 5,
-        MoreYellowThanRed = 6,
-        MoreYellowThanBlue = 7,
+        public bool IsActive(int red, int blue, int yellow)
+        {
+            return Check.Invoke(this, red, blue, yellow);
+        }
+
+        private static bool Standard(MetaRequirements requirement, int red, int blue, int yellow) => red >= requirement.Red && blue >= requirement.Blue && yellow >= requirement.Yellow;
+        private static bool MoreRedThanBlue(MetaRequirements requirement, int red, int blue, int yellow) => red > blue;
+        private static bool MoreRedThanYellow(MetaRequirements requirement, int red, int blue, int yellow) => red > yellow;
+        private static bool MoreYellowThanRed(MetaRequirements requirement, int red, int blue, int yellow) => yellow > red;
+        private static bool MoreYellowThanBlue(MetaRequirements requirement, int red, int blue, int yellow) => yellow > red;
+        private static bool MoreBlueThanYellow(MetaRequirements requirement, int red, int blue, int yellow) => blue > yellow;
+        private static bool MoreBlueThanRed(MetaRequirements requirement, int red, int blue, int yellow) => blue > red;
+
+        private static readonly Dictionary<MetaRequirementType, Func<MetaRequirements, int, int, int, bool>> GetRequirementCheck = new()
+        {
+            { MetaRequirementType.Standard, Standard },
+            { MetaRequirementType.MoreRedThanBlue, MoreRedThanBlue },
+            { MetaRequirementType.MoreRedThanYellow, MoreRedThanYellow },
+            { MetaRequirementType.MoreBlueThanRed, MoreBlueThanRed },
+            { MetaRequirementType.MoreBlueThanYellow, MoreBlueThanYellow },
+            { MetaRequirementType.MoreYellowThanRed, MoreYellowThanRed },
+            { MetaRequirementType.MoreYellowThanBlue, MoreYellowThanBlue }
+        };
     }
 
     [Flags]
@@ -61,43 +90,14 @@ namespace RetSim.Items
         Green = Blue + Yellow,
         Prismatic = Red + Blue + Yellow
     }
-
-    public class GemRequirements
+    public enum MetaRequirementType
     {
-        public int Red { get; init; }
-        public int Blue { get; init; }
-        public int Yellow { get; init; }
-        public RequirementType Type { get; init; }
-
-        private Func<GemRequirements, int, int, int, bool> Check { get; init; }
-
-        public GemRequirements()
-        {
-            Check = GetRequirementCheck[Type];
-        }
-
-        public bool IsActive(int red, int blue, int yellow)
-        {
-            return Check.Invoke(this, red, blue, yellow);
-        }
-
-        private static bool Standard(GemRequirements requirement, int red, int blue, int yellow) => red >= requirement.Red && blue >= requirement.Blue && yellow >= requirement.Yellow;
-        private static bool MoreRedThanBlue(GemRequirements requirement, int red, int blue, int yellow) => red > blue;
-        private static bool MoreRedThanYellow(GemRequirements requirement, int red, int blue, int yellow) => red > yellow;
-        private static bool MoreYellowThanRed(GemRequirements requirement, int red, int blue, int yellow) => yellow > red;
-        private static bool MoreYellowThanBlue(GemRequirements requirement, int red, int blue, int yellow) => yellow > red;
-        private static bool MoreBlueThanYellow(GemRequirements requirement, int red, int blue, int yellow) => blue > yellow;
-        private static bool MoreBlueThanRed(GemRequirements requirement, int red, int blue, int yellow) => blue > red;
-
-        private static readonly Dictionary<RequirementType, Func<GemRequirements, int, int, int, bool>> GetRequirementCheck = new()
-        {
-            { RequirementType.Standard, Standard },
-            { RequirementType.MoreRedThanBlue, MoreRedThanBlue },
-            { RequirementType.MoreRedThanYellow, MoreRedThanYellow },
-            { RequirementType.MoreBlueThanRed, MoreBlueThanRed },
-            { RequirementType.MoreBlueThanYellow, MoreBlueThanYellow },
-            { RequirementType.MoreYellowThanRed, MoreYellowThanRed },
-            { RequirementType.MoreYellowThanBlue, MoreYellowThanBlue }
-        };
+        Standard = 0,
+        MoreRedThanBlue = 2,
+        MoreRedThanYellow = 3,
+        MoreBlueThanRed = 4,
+        MoreBlueThanYellow = 5,
+        MoreYellowThanRed = 6,
+        MoreYellowThanBlue = 7,
     }
 }
