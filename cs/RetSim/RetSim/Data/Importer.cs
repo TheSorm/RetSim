@@ -1,5 +1,6 @@
 ﻿using RetSim.Items;
 using System.Collections.Generic;
+using System.IO;
 using System.Net;
 using System.Text.Json;
 using static RetSim.Data.Items;
@@ -41,33 +42,36 @@ namespace RetSim.Data
 
         public static (List<EquippableWeapon> Weapons, List<EquippableItem> Armor, List<ItemSet> Sets, List<Gem> Gems, List<MetaGem> MetaGems) LoadData()
         {
-            using WebClient client = new();
-
-            return (LoadWeaponData(client), LoadArmorData(client), LoadSetData(client), LoadGemData(client), LoadMetaGemData(client));
+            return (LoadWeaponData(), LoadArmorData(), LoadSetData(), LoadGemData(), LoadMetaGemData());
 
         }
 
-        public static List<EquippableWeapon> LoadWeaponData(WebClient client)
+        public static List<EquippableWeapon> LoadWeaponData()
         {
-            return JsonSerializer.Deserialize<List<EquippableWeapon>>(client.DownloadString("https://raw.githubusercontent.com/TheSorm/RetSim/main/data/weapons.json"));
+            using StreamReader r = new("..\\..\\..\\..\\RetSimWeb\\wwwroot\\data\\weapons.json");
+            return JsonSerializer.Deserialize<List<EquippableWeapon>>(r.ReadToEnd());
         }
 
-        public static List<EquippableItem> LoadArmorData(WebClient client)
+        public static List<EquippableItem> LoadArmorData()
         {
-            return JsonSerializer.Deserialize<List<EquippableItem>>(client.DownloadString("https://raw.githubusercontent.com/TheSorm/RetSim/main/data/armor.json"));
+            using StreamReader r = new("..\\..\\..\\..\\RetSimWeb\\wwwroot\\data\\armor.json");
+            return JsonSerializer.Deserialize<List<EquippableItem>>(r.ReadToEnd());
         }
-        public static List<ItemSet> LoadSetData(WebClient client)
+        public static List<ItemSet> LoadSetData()
         {
-            return JsonSerializer.Deserialize<List<ItemSet>>(client.DownloadString("https://raw.githubusercontent.com/TheSorm/RetSim/main/data/sets.json"));
+            using StreamReader r = new("..\\..\\..\\..\\RetSimWeb\\wwwroot\\data\\sets.json");
+            return JsonSerializer.Deserialize<List<ItemSet>>(r.ReadToEnd());
         }
 
-        public static List<Gem> LoadGemData(WebClient client)
+        public static List<Gem> LoadGemData()
         {
-            return JsonSerializer.Deserialize<List<Gem>>(client.DownloadString("https://raw.githubusercontent.com/TheSorm/RetSim/main/data/gems.json"));
+            using StreamReader r = new("..\\..\\..\\..\\RetSimWeb\\wwwroot\\data\\gems.json");
+            return JsonSerializer.Deserialize<List<Gem>>(r.ReadToEnd());
         }
-        public static List<MetaGem> LoadMetaGemData(WebClient client)
+        public static List<MetaGem> LoadMetaGemData()
         {
-            return JsonSerializer.Deserialize<List<MetaGem>>(client.DownloadString("https://raw.githubusercontent.com/TheSorm/RetSim/main/data/metaGems.json"));
+            using StreamReader r = new("..\\..\\..\\..\\RetSimWeb\\wwwroot\\data\\metaGems.json");
+            return JsonSerializer.Deserialize<List<MetaGem>>(r.ReadToEnd());
         }
     }
 }

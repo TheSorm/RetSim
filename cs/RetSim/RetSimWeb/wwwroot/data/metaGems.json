@@ -1,9 +1,5 @@
 [
   {
-    "Spell": {
-      "ID": 11818,
-      "Name": "Spell Reflection"
-    },
     "Requirements": {
       "Red": 2,
       "Blue": 2,
@@ -12,27 +8,11 @@
     "ID": 25890,
     "Name": "Destructive Skyfire Diamond",
     "ItemLevel": 70,
-    "Quality": "RARE",
+    "Quality": 3,
     "Color": 1,
     "Stats": {
       "SpellCrit": 14
     },
-    "Phase": 1
-  },
-  {
-    "Spell": {
-      "ID": 32837,
-      "Name": "Spell Focus Trigger"
-    },
-    "Requirements": {
-      "Type": 5
-    },
-    "ID": 25893,
-    "Name": "Mystical Skyfire Diamond",
-    "ItemLevel": 70,
-    "Quality": "RARE",
-    "Color": 1,
-    "Stats": {},
     "Phase": 1
   },
   {
@@ -42,13 +22,12 @@
     },
     "Requirements": {
       "Red": 1,
-      "Blue": 0,
       "Yellow": 2
     },
     "ID": 25894,
     "Name": "Swift Skyfire Diamond",
     "ItemLevel": 70,
-    "Quality": "RARE",
+    "Quality": 3,
     "Color": 1,
     "Stats": {
       "AttackPower": 24
@@ -56,37 +35,27 @@
     "Phase": 1
   },
   {
-    "Spell": {
-      "ID": 32195,
-      "Name": "Resist Snare/Root"
-    },
     "Requirements": {
       "Type": 3
     },
     "ID": 25895,
     "Name": "Enigmatic Skyfire Diamond",
     "ItemLevel": 70,
-    "Quality": "RARE",
+    "Quality": 3,
     "Color": 1,
     "Stats": {
-      "Crit": 12
+      "CritRating": 12
     },
     "Phase": 1
   },
   {
-    "Spell": {
-      "ID": 21351,
-      "Name": "Increased Stun Resist 01"
-    },
     "Requirements": {
-      "Red": 0,
-      "Blue": 3,
-      "Yellow": 0
+      "Blue": 3
     },
     "ID": 25896,
     "Name": "Powerful Earthstorm Diamond",
     "ItemLevel": 70,
-    "Quality": "RARE",
+    "Quality": 3,
     "Color": 1,
     "Stats": {
       "Stamina": 18
@@ -94,38 +63,28 @@
     "Phase": 1
   },
   {
-    "Spell": {
-      "ID": 32842,
-      "Name": "Decrease Threat"
-    },
     "Requirements": {
       "Type": 2
     },
     "ID": 25897,
     "Name": "Bracing Earthstorm Diamond",
     "ItemLevel": 70,
-    "Quality": "RARE",
+    "Quality": 3,
     "Color": 1,
     "Stats": {
-      "SpellDamage": 9,
-      "SpellHealing": 26
+      "SpellPower": 9,
+      "HealingPower": 26
     },
     "Phase": 1
   },
   {
-    "Spell": {
-      "ID": 32844,
-      "Name": "Lesser Heroism"
-    },
     "Requirements": {
-      "Red": 0,
-      "Blue": 5,
-      "Yellow": 0
+      "Blue": 5
     },
     "ID": 25898,
     "Name": "Tenacious Earthstorm Diamond",
     "ItemLevel": 70,
-    "Quality": "RARE",
+    "Quality": 3,
     "Color": 1,
     "Stats": {
       "Defense": 12
@@ -145,7 +104,7 @@
     "ID": 25899,
     "Name": "Brutal Earthstorm Diamond",
     "ItemLevel": 70,
-    "Quality": "RARE",
+    "Quality": 3,
     "Color": 1,
     "Stats": {},
     "Phase": 1
@@ -163,7 +122,7 @@
     "ID": 25901,
     "Name": "Insightful Earthstorm Diamond",
     "ItemLevel": 70,
-    "Quality": "RARE",
+    "Quality": 3,
     "Color": 1,
     "Stats": {
       "Intellect": 12
@@ -177,13 +136,12 @@
     },
     "Requirements": {
       "Red": 1,
-      "Blue": 0,
       "Yellow": 2
     },
     "ID": 28556,
     "Name": "Swift Windfire Diamond",
     "ItemLevel": 70,
-    "Quality": "RARE",
+    "Quality": 3,
     "Color": 1,
     "Stats": {
       "AttackPower": 20
@@ -198,17 +156,16 @@
     },
     "Requirements": {
       "Red": 1,
-      "Blue": 0,
       "Yellow": 2
     },
     "ID": 28557,
     "Name": "Swift Starfire Diamond",
     "ItemLevel": 70,
-    "Quality": "RARE",
+    "Quality": 3,
     "Color": 1,
     "Stats": {
-      "SpellDamage": 12,
-      "SpellHealing": 12
+      "SpellPower": 12,
+      "HealingPower": 12
     },
     "UniqueEquipped": true,
     "Phase": 1
@@ -226,7 +183,7 @@
     "ID": 32409,
     "Name": "Relentless Earthstorm Diamond",
     "ItemLevel": 70,
-    "Quality": "RARE",
+    "Quality": 3,
     "Color": 1,
     "Stats": {
       "Agility": 12
@@ -246,23 +203,19 @@
     "ID": 32410,
     "Name": "Thundering Skyfire Diamond",
     "ItemLevel": 70,
-    "Quality": "RARE",
+    "Quality": 3,
     "Color": 1,
     "Stats": {},
     "Phase": 1
   },
   {
-    "Spell": {
-      "ID": 40691,
-      "Name": "Stun Resistance 5"
-    },
     "Requirements": {
       "Type": 5
     },
     "ID": 32640,
     "Name": "Potent Unstable Diamond",
     "ItemLevel": 70,
-    "Quality": "RARE",
+    "Quality": 3,
     "Color": 1,
     "Stats": {
       "AttackPower": 24
@@ -270,23 +223,17 @@
     "Phase": 53
   },
   {
-    "Spell": {
-      "ID": 40706,
-      "Name": "Increased Stun Resist 05"
-    },
     "Requirements": {
-      "Red": 0,
-      "Blue": 0,
       "Yellow": 3
     },
     "ID": 32641,
     "Name": "Imbued Unstable Diamond",
     "ItemLevel": 70,
-    "Quality": "RARE",
+    "Quality": 3,
     "Color": 1,
     "Stats": {
-      "SpellDamage": 14,
-      "SpellHealing": 14
+      "SpellPower": 14,
+      "HealingPower": 14
     },
     "Phase": 53
   },
@@ -296,14 +243,12 @@
       "Name": "Increase Critical Damage 3%"
     },
     "Requirements": {
-      "Red": 0,
-      "Blue": 2,
-      "Yellow": 0
+      "Blue": 2
     },
     "ID": 34220,
     "Name": "Chaotic Skyfire Diamond",
     "ItemLevel": 70,
-    "Quality": "RARE",
+    "Quality": 3,
     "Color": 1,
     "Stats": {
       "SpellCrit": 12
@@ -311,19 +256,14 @@
     "Phase": 1
   },
   {
-    "Spell": {
-      "ID": 46596,
-      "Name": "Eternal Shield"
-    },
     "Requirements": {
-      "Red": 0,
       "Blue": 2,
       "Yellow": 1
     },
     "ID": 35501,
     "Name": "Eternal Earthstorm Diamond",
     "ItemLevel": 70,
-    "Quality": "RARE",
+    "Quality": 3,
     "Color": 1,
     "Stats": {
       "Defense": 12
@@ -336,18 +276,16 @@
       "Name": "Ember Skyfire Intellect"
     },
     "Requirements": {
-      "Red": 3,
-      "Blue": 0,
-      "Yellow": 0
+      "Red": 3
     },
     "ID": 35503,
     "Name": "Ember Skyfire Diamond",
     "ItemLevel": 70,
-    "Quality": "RARE",
+    "Quality": 3,
     "Color": 1,
     "Stats": {
-      "SpellDamage": 14,
-      "SpellHealing": 14
+      "SpellPower": 14,
+      "HealingPower": 14
     },
     "Phase": 5
   }

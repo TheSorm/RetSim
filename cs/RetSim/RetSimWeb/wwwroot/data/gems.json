@@ -3,7 +3,7 @@
     "ID": 23095,
     "Name": "Bold Blood Garnet",
     "ItemLevel": 60,
-    "Quality": "UNCOMMON",
+    "Quality": 2,
     "Color": 2,
     "Stats": {
       "Strength": 6
@@ -14,10 +14,10 @@
     "ID": 23098,
     "Name": "Inscribed Flame Spessarite",
     "ItemLevel": 60,
-    "Quality": "UNCOMMON",
+    "Quality": 2,
     "Color": 10,
     "Stats": {
-      "Crit": 3,
+      "CritRating": 3,
       "Strength": 3
     },
     "Phase": 1
@@ -26,11 +26,11 @@
     "ID": 23100,
     "Name": "Glinting Flame Spessarite",
     "ItemLevel": 60,
-    "Quality": "UNCOMMON",
+    "Quality": 2,
     "Color": 10,
     "Stats": {
       "Agility": 3,
-      "Hit": 3
+      "HitRating": 3
     },
     "Phase": 1
   },
@@ -38,7 +38,7 @@
     "ID": 23111,
     "Name": "Sovereign Shadow Draenite",
     "ItemLevel": 60,
-    "Quality": "UNCOMMON",
+    "Quality": 2,
     "Color": 6,
     "Stats": {
       "Stamina": 4,
@@ -50,10 +50,10 @@
     "ID": 23116,
     "Name": "Rigid Golden Draenite",
     "ItemLevel": 60,
-    "Quality": "UNCOMMON",
+    "Quality": 2,
     "Color": 8,
     "Stats": {
-      "Hit": 6
+      "HitRating": 6
     },
     "Phase": 1
   },
@@ -61,7 +61,7 @@
     "ID": 24027,
     "Name": "Bold Living Ruby",
     "ItemLevel": 70,
-    "Quality": "RARE",
+    "Quality": 3,
     "Color": 2,
     "Stats": {
       "Strength": 8
@@ -72,7 +72,7 @@
     "ID": 24031,
     "Name": "Bright Living Ruby",
     "ItemLevel": 70,
-    "Quality": "RARE",
+    "Quality": 3,
     "Color": 2,
     "Stats": {
       "AttackPower": 16
@@ -83,10 +83,10 @@
     "ID": 24051,
     "Name": "Rigid Dawnstone",
     "ItemLevel": 70,
-    "Quality": "RARE",
+    "Quality": 3,
     "Color": 8,
     "Stats": {
-      "Hit": 8
+      "HitRating": 8
     },
     "Phase": 1
   },
@@ -94,7 +94,7 @@
     "ID": 24054,
     "Name": "Sovereign Nightseye",
     "ItemLevel": 70,
-    "Quality": "RARE",
+    "Quality": 3,
     "Color": 6,
     "Stats": {
       "Stamina": 6,
@@ -106,10 +106,10 @@
     "ID": 24058,
     "Name": "Inscribed Noble Topaz",
     "ItemLevel": 70,
-    "Quality": "RARE",
+    "Quality": 3,
     "Color": 10,
     "Stats": {
-      "Crit": 4,
+      "CritRating": 4,
       "Strength": 4
     },
     "Phase": 1
@@ -118,11 +118,11 @@
     "ID": 24061,
     "Name": "Glinting Noble Topaz",
     "ItemLevel": 70,
-    "Quality": "RARE",
+    "Quality": 3,
     "Color": 10,
     "Stats": {
       "Agility": 4,
-      "Hit": 4
+      "HitRating": 4
     },
     "Phase": 1
   },
@@ -130,7 +130,7 @@
     "ID": 28360,
     "Name": "Mighty Blood Garnet",
     "ItemLevel": 60,
-    "Quality": "RARE",
+    "Quality": 3,
     "Color": 2,
     "Stats": {
       "AttackPower": 14
@@ -142,7 +142,7 @@
     "ID": 28361,
     "Name": "Mighty Blood Garnet",
     "ItemLevel": 60,
-    "Quality": "RARE",
+    "Quality": 3,
     "Color": 2,
     "Stats": {
       "AttackPower": 14
@@ -154,7 +154,7 @@
     "ID": 28362,
     "Name": "Bold Ornate Ruby",
     "ItemLevel": 60,
-    "Quality": "EPIC",
+    "Quality": 4,
     "Color": 2,
     "Stats": {
       "AttackPower": 20
@@ -166,11 +166,11 @@
     "ID": 28363,
     "Name": "Inscribed Ornate Topaz",
     "ItemLevel": 60,
-    "Quality": "EPIC",
+    "Quality": 4,
     "Color": 10,
     "Stats": {
       "AttackPower": 10,
-      "Crit": 5
+      "CritRating": 5
     },
     "UniqueEquipped": true,
     "Phase": 1
@@ -179,7 +179,7 @@
     "ID": 28458,
     "Name": "Bold Tourmaline",
     "ItemLevel": 55,
-    "Quality": "COMMON",
+    "Quality": 1,
     "Color": 2,
     "Stats": {
       "Strength": 4
@@ -190,7 +190,7 @@
     "ID": 28462,
     "Name": "Bright Tourmaline",
     "ItemLevel": 55,
-    "Quality": "COMMON",
+    "Quality": 1,
     "Color": 2,
     "Stats": {
       "AttackPower": 8
@@ -201,10 +201,10 @@
     "ID": 28468,
     "Name": "Rigid Amber",
     "ItemLevel": 55,
-    "Quality": "COMMON",
+    "Quality": 1,
     "Color": 8,
     "Stats": {
-      "Hit": 4
+      "HitRating": 4
     },
     "Phase": 53
   },
@@ -212,7 +212,7 @@
     "ID": 28595,
     "Name": "Bright Blood Garnet",
     "ItemLevel": 60,
-    "Quality": "UNCOMMON",
+    "Quality": 2,
     "Color": 2,
     "Stats": {
       "AttackPower": 12
@@ -223,7 +223,7 @@
     "ID": 30546,
     "Name": "Sovereign Tanzanite",
     "ItemLevel": 70,
-    "Quality": "EPIC",
+    "Quality": 4,
     "Color": 6,
     "Stats": {
       "Stamina": 6,
@@ -235,11 +235,11 @@
     "ID": 30553,
     "Name": "Pristine Fire Opal",
     "ItemLevel": 70,
-    "Quality": "EPIC",
+    "Quality": 4,
     "Color": 10,
     "Stats": {
       "AttackPower": 10,
-      "Hit": 4
+      "HitRating": 4
     },
     "Phase": 1
   },
@@ -247,11 +247,11 @@
     "ID": 30556,
     "Name": "Glinting Fire Opal",
     "ItemLevel": 70,
-    "Quality": "EPIC",
+    "Quality": 4,
     "Color": 10,
     "Stats": {
       "Agility": 5,
-      "Hit": 4
+      "HitRating": 4
     },
     "Phase": 1
   },
@@ -259,10 +259,10 @@
     "ID": 30559,
     "Name": "Etched Fire Opal",
     "ItemLevel": 70,
-    "Quality": "EPIC",
+    "Quality": 4,
     "Color": 10,
     "Stats": {
-      "Hit": 4,
+      "HitRating": 4,
       "Strength": 5
     },
     "Phase": 1
@@ -271,7 +271,7 @@
     "ID": 30571,
     "Name": "Don Rodrigo\u0027s Heart",
     "ItemLevel": 60,
-    "Quality": "RARE",
+    "Quality": 3,
     "Color": 2,
     "Stats": {
       "Strength": 8
@@ -283,7 +283,7 @@
     "ID": 30574,
     "Name": "Brutal Tanzanite",
     "ItemLevel": 70,
-    "Quality": "EPIC",
+    "Quality": 4,
     "Color": 6,
     "Stats": {
       "AttackPower": 10,
@@ -295,11 +295,11 @@
     "ID": 30575,
     "Name": "Nimble Fire Opal",
     "ItemLevel": 70,
-    "Quality": "EPIC",
+    "Quality": 4,
     "Color": 10,
     "Stats": {
       "Dodge": 5,
-      "Hit": 4
+      "HitRating": 4
     },
     "Phase": 1
   },
@@ -307,11 +307,11 @@
     "ID": 30582,
     "Name": "Deadly Fire Opal",
     "ItemLevel": 70,
-    "Quality": "EPIC",
+    "Quality": 4,
     "Color": 10,
     "Stats": {
       "AttackPower": 8,
-      "Crit": 5
+      "CritRating": 5
     },
     "Phase": 1
   },
@@ -319,10 +319,10 @@
     "ID": 30584,
     "Name": "Enscribed Fire Opal",
     "ItemLevel": 70,
-    "Quality": "EPIC",
+    "Quality": 4,
     "Color": 10,
     "Stats": {
-      "Crit": 4,
+      "CritRating": 4,
       "Strength": 5
     },
     "Phase": 1
@@ -331,7 +331,7 @@
     "ID": 30587,
     "Name": "Champion\u0027s Fire Opal",
     "ItemLevel": 70,
-    "Quality": "EPIC",
+    "Quality": 4,
     "Color": 10,
     "Stats": {
       "Defense": 4,
@@ -343,7 +343,7 @@
     "ID": 30591,
     "Name": "Empowered Fire Opal",
     "ItemLevel": 70,
-    "Quality": "EPIC",
+    "Quality": 4,
     "Color": 10,
     "Stats": {
       "AttackPower": 8,
@@ -355,7 +355,7 @@
     "ID": 30598,
     "Name": "Don Amancio\u0027s Heart",
     "ItemLevel": 60,
-    "Quality": "RARE",
+    "Quality": 3,
     "Color": 2,
     "Stats": {
       "Strength": 8
@@ -367,7 +367,7 @@
     "ID": 30604,
     "Name": "Resplendent Fire Opal",
     "ItemLevel": 70,
-    "Quality": "EPIC",
+    "Quality": 4,
     "Color": 10,
     "Stats": {
       "Resilience": 4,
@@ -379,7 +379,7 @@
     "ID": 31118,
     "Name": "Pulsing Amethyst",
     "ItemLevel": 70,
-    "Quality": "EPIC",
+    "Quality": 4,
     "Color": 6,
     "Stats": {
       "AttackPower": 10,
@@ -391,7 +391,7 @@
     "ID": 31862,
     "Name": "Balanced Shadow Draenite",
     "ItemLevel": 60,
-    "Quality": "UNCOMMON",
+    "Quality": 2,
     "Color": 6,
     "Stats": {
       "AttackPower": 6,
@@ -403,7 +403,7 @@
     "ID": 31863,
     "Name": "Balanced Nightseye",
     "ItemLevel": 70,
-    "Quality": "RARE",
+    "Quality": 3,
     "Color": 6,
     "Stats": {
       "AttackPower": 8,
@@ -415,7 +415,7 @@
     "ID": 31864,
     "Name": "Infused Shadow Draenite",
     "ItemLevel": 60,
-    "Quality": "UNCOMMON",
+    "Quality": 2,
     "Color": 6,
     "Stats": {
       "ManaPer5": 1,
@@ -427,7 +427,7 @@
     "ID": 31865,
     "Name": "Infused Nightseye",
     "ItemLevel": 70,
-    "Quality": "RARE",
+    "Quality": 3,
     "Color": 6,
     "Stats": {
       "ManaPer5": 2,
@@ -439,11 +439,11 @@
     "ID": 31868,
     "Name": "Wicked Noble Topaz",
     "ItemLevel": 70,
-    "Quality": "RARE",
+    "Quality": 3,
     "Color": 10,
     "Stats": {
       "AttackPower": 8,
-      "Crit": 4
+      "CritRating": 4
     },
     "Phase": 1
   },
@@ -451,11 +451,11 @@
     "ID": 31869,
     "Name": "Wicked Flame Spessarite",
     "ItemLevel": 60,
-    "Quality": "UNCOMMON",
+    "Quality": 2,
     "Color": 10,
     "Stats": {
       "AttackPower": 6,
-      "Crit": 3
+      "CritRating": 3
     },
     "Phase": 1
   },
@@ -463,7 +463,7 @@
     "ID": 32193,
     "Name": "Bold Crimson Spinel",
     "ItemLevel": 100,
-    "Quality": "EPIC",
+    "Quality": 4,
     "Color": 2,
     "Stats": {
       "Strength": 10
@@ -474,7 +474,7 @@
     "ID": 32197,
     "Name": "Bright Crimson Spinel",
     "ItemLevel": 100,
-    "Quality": "EPIC",
+    "Quality": 4,
     "Color": 2,
     "Stats": {
       "AttackPower": 20
@@ -485,10 +485,10 @@
     "ID": 32206,
     "Name": "Rigid Lionseye",
     "ItemLevel": 100,
-    "Quality": "EPIC",
+    "Quality": 4,
     "Color": 8,
     "Stats": {
-      "Hit": 10
+      "HitRating": 10
     },
     "Phase": 3
   },
@@ -496,7 +496,7 @@
     "ID": 32211,
     "Name": "Sovereign Shadowsong Amethyst",
     "ItemLevel": 100,
-    "Quality": "EPIC",
+    "Quality": 4,
     "Color": 6,
     "Stats": {
       "Stamina": 7,
@@ -508,7 +508,7 @@
     "ID": 32213,
     "Name": "Balanced Shadowsong Amethyst",
     "ItemLevel": 100,
-    "Quality": "EPIC",
+    "Quality": 4,
     "Color": 6,
     "Stats": {
       "AttackPower": 10,
@@ -520,7 +520,7 @@
     "ID": 32214,
     "Name": "Infused Shadowsong Amethyst",
     "ItemLevel": 100,
-    "Quality": "EPIC",
+    "Quality": 4,
     "Color": 6,
     "Stats": {
       "ManaPer5": 2,
@@ -532,10 +532,10 @@
     "ID": 32217,
     "Name": "Inscribed Pyrestone",
     "ItemLevel": 100,
-    "Quality": "EPIC",
+    "Quality": 4,
     "Color": 10,
     "Stats": {
-      "Crit": 5,
+      "CritRating": 5,
       "Strength": 5
     },
     "Phase": 3
@@ -544,11 +544,11 @@
     "ID": 32220,
     "Name": "Glinting Pyrestone",
     "ItemLevel": 100,
-    "Quality": "EPIC",
+    "Quality": 4,
     "Color": 10,
     "Stats": {
       "Agility": 5,
-      "Hit": 5
+      "HitRating": 5
     },
     "Phase": 3
   },
@@ -556,11 +556,11 @@
     "ID": 32222,
     "Name": "Wicked Pyrestone",
     "ItemLevel": 100,
-    "Quality": "EPIC",
+    "Quality": 4,
     "Color": 10,
     "Stats": {
       "AttackPower": 10,
-      "Crit": 5
+      "CritRating": 5
     },
     "Phase": 3
   },
@@ -568,7 +568,7 @@
     "ID": 32634,
     "Name": "Unstable Amethyst",
     "ItemLevel": 70,
-    "Quality": "RARE",
+    "Quality": 3,
     "Color": 10,
     "Stats": {
       "AttackPower": 8,
@@ -581,11 +581,11 @@
     "ID": 32637,
     "Name": "Unstable Citrine",
     "ItemLevel": 70,
-    "Quality": "RARE",
+    "Quality": 3,
     "Color": 10,
     "Stats": {
       "AttackPower": 8,
-      "Crit": 4
+      "CritRating": 4
     },
     "UniqueEquipped": true,
     "Phase": 53
@@ -594,7 +594,7 @@
     "ID": 32735,
     "Name": "Radiant Spencerite",
     "ItemLevel": 70,
-    "Quality": "EPIC",
+    "Quality": 4,
     "Color": 12,
     "Stats": {
       "AttackPower": 20
@@ -606,7 +606,7 @@
     "ID": 33131,
     "Name": "Crimson Sun",
     "ItemLevel": 130,
-    "Quality": "EPIC",
+    "Quality": 4,
     "Color": 2,
     "Stats": {
       "AttackPower": 32
@@ -618,7 +618,7 @@
     "ID": 33137,
     "Name": "Sparkling Falling Star",
     "ItemLevel": 130,
-    "Quality": "EPIC",
+    "Quality": 4,
     "Color": 4,
     "Stats": {
       "Agility": 18,
@@ -634,10 +634,10 @@
     "ID": 33142,
     "Name": "Rigid Bladestone",
     "ItemLevel": 130,
-    "Quality": "EPIC",
+    "Quality": 4,
     "Color": 8,
     "Stats": {
-      "Hit": 12
+      "HitRating": 12
     },
     "UniqueEquipped": true,
     "Phase": 53
@@ -646,7 +646,7 @@
     "ID": 35487,
     "Name": "Bright Crimson Spinel",
     "ItemLevel": 100,
-    "Quality": "EPIC",
+    "Quality": 4,
     "Color": 2,
     "Stats": {
       "AttackPower": 20
@@ -657,7 +657,7 @@
     "ID": 38545,
     "Name": "Bold Ornate Ruby",
     "ItemLevel": 60,
-    "Quality": "EPIC",
+    "Quality": 4,
     "Color": 2,
     "Stats": {
       "AttackPower": 20
@@ -668,11 +668,11 @@
     "ID": 38547,
     "Name": "Inscribed Ornate Topaz",
     "ItemLevel": 60,
-    "Quality": "EPIC",
+    "Quality": 4,
     "Color": 10,
     "Stats": {
       "AttackPower": 10,
-      "Crit": 5
+      "CritRating": 5
     },
     "Phase": 1
   }

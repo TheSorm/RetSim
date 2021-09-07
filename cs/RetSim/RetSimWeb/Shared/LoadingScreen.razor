@@ -32,26 +32,26 @@ else
 
     public Task<List<EquippableWeapon>> LoadWeponData()
     {
-        return httpClient.GetFromJsonAsync<List<EquippableWeapon>>("https://raw.githubusercontent.com/TheSorm/RetSim/main/data/weapons.json");
+        return httpClient.GetFromJsonAsync<List<EquippableWeapon>>("/data/weapons.json");
     }
 
     public Task<List<EquippableItem>> LoadArmorData()
     {
-        return httpClient.GetFromJsonAsync<List<EquippableItem>>("https://raw.githubusercontent.com/TheSorm/RetSim/main/data/armor.json");
+        return httpClient.GetFromJsonAsync<List<EquippableItem>>("/data/armor.json");
     }
 
     public Task<List<ItemSet>> LoadSetData()
     {
-        return httpClient.GetFromJsonAsync<List<ItemSet>>("https://raw.githubusercontent.com/TheSorm/RetSim/main/data/sets.json");
+        return httpClient.GetFromJsonAsync<List<ItemSet>>("/data/sets.json");
     }
 
     public Task<List<Gem>> LoadGemData()
     {
-        return httpClient.GetFromJsonAsync<List<Gem>>("https://raw.githubusercontent.com/TheSorm/RetSim/main/data/gems.json");
+        return httpClient.GetFromJsonAsync<List<Gem>>("/data/gems.json");
     }
 
     public Task<List<MetaGem>> LoadMetaGemData()
     {
-        return httpClient.GetFromJsonAsync<List<MetaGem>>("https://raw.githubusercontent.com/TheSorm/RetSim/main/data/metaGems.json");
+        return httpClient.GetFromJsonAsync<List<MetaGem>>("/data/metaGems.json");
     }
 }

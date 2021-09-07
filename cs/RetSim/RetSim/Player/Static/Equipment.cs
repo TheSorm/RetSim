@@ -206,7 +206,7 @@ namespace RetSim
         }
         private static void AddItemAuras(EquippableItem item, Dictionary<GemColor, int> gems, List<Spell> spells)
         {
-            if (Data.Spells.ByID.ContainsKey(item.OnEquip.ID))
+            if (item.OnEquip != null && Data.Spells.ByID.ContainsKey(item.OnEquip.ID))
                     spells.Add(Data.Spells.ByID[item.OnEquip.ID]);
 
             if (item.Socket1 != null && item.Socket1.IsMetaGem() is MetaGem meta && meta.IsActive(gems[GemColor.Red], gems[GemColor.Blue], gems[GemColor.Yellow]))

@@ -7,14 +7,13 @@
     "ID": 24461,
     "Name": "Hatebringer",
     "ItemLevel": 94,
-    "Quality": "RARE",
-    "InventoryType": "TWOHWEAPON",
+    "Quality": 3,
+    "Slot": -1,
     "Stats": {
       "Strength": 25,
       "Stamina": 21,
-      "Crit": 22
+      "CritRating": 22
     },
-    "Spells": [],
     "Socket1": {
       "Color": 2
     },
@@ -34,14 +33,13 @@
     "ID": 25537,
     "Name": "Hewing Axe of the Marsh",
     "ItemLevel": 94,
-    "Quality": "RARE",
-    "InventoryType": "TWOHWEAPON",
+    "Quality": 3,
+    "Slot": -1,
     "Stats": {
       "Strength": 29,
       "Agility": 28,
       "Stamina": 42
     },
-    "Spells": [],
     "Phase": 1
   },
   {
@@ -52,13 +50,12 @@
     "ID": 25603,
     "Name": "Lantresor\u0027s Warblade",
     "ItemLevel": 97,
-    "Quality": "RARE",
-    "InventoryType": "TWOHWEAPON",
+    "Quality": 3,
+    "Slot": -1,
     "Stats": {
       "Strength": 42,
       "Agility": 27
     },
-    "Spells": [],
     "Phase": 1
   },
   {
@@ -69,13 +66,12 @@
     "ID": 25608,
     "Name": "Lantresor\u0027s Warblade",
     "ItemLevel": 97,
-    "Quality": "RARE",
-    "InventoryType": "TWOHWEAPON",
+    "Quality": 3,
+    "Slot": -1,
     "Stats": {
       "Strength": 42,
       "Agility": 27
     },
-    "Spells": [],
     "Phase": 1
   },
   {
@@ -86,14 +82,13 @@
     "ID": 25944,
     "Name": "Shaarde the Greater",
     "ItemLevel": 97,
-    "Quality": "RARE",
-    "InventoryType": "TWOHWEAPON",
+    "Quality": 3,
+    "Slot": -1,
     "Stats": {
       "Strength": 34,
       "Stamina": 33,
-      "Crit": 29
+      "CritRating": 29
     },
-    "Spells": [],
     "Phase": 1
   },
   {
@@ -104,19 +99,13 @@
     "ID": 29171,
     "Name": "Earthwarden",
     "ItemLevel": 100,
-    "Quality": "EPIC",
-    "InventoryType": "TWOHWEAPON",
+    "Quality": 4,
+    "Slot": -1,
     "Stats": {
       "Stamina": 39,
       "Defense": 27,
       "Expertise": 24
     },
-    "Spells": [
-      {
-        "ID": 44909,
-        "Name": "Attack Power - Feral (\u002B0712)"
-      }
-    ],
     "Phase": 1
   },
   {
@@ -127,13 +116,12 @@
     "ID": 30086,
     "Name": "Stoneforged Claymore",
     "ItemLevel": 100,
-    "Quality": "RARE",
-    "InventoryType": "TWOHWEAPON",
+    "Quality": 3,
+    "Slot": -1,
     "Stats": {
       "Strength": 40,
       "Agility": 35
     },
-    "Spells": [],
     "Phase": 1
   },
   {
@@ -144,13 +132,12 @@
     "ID": 30088,
     "Name": "Skyforged Great Axe",
     "ItemLevel": 100,
-    "Quality": "RARE",
-    "InventoryType": "TWOHWEAPON",
+    "Quality": 3,
+    "Slot": -1,
     "Stats": {
-      "Crit": 35,
+      "CritRating": 35,
       "AttackPower": 80
     },
-    "Spells": [],
     "Phase": 1
   },
   {
@@ -161,13 +148,12 @@
     "ID": 30093,
     "Name": "Great Earthforged Hammer",
     "ItemLevel": 100,
-    "Quality": "RARE",
-    "InventoryType": "TWOHWEAPON",
+    "Quality": 3,
+    "Slot": -1,
     "Stats": {
       "Stamina": 60,
       "AttackPower": 70
     },
-    "Spells": [],
     "Phase": 1
   },
   {
@@ -178,14 +164,13 @@
     "ID": 30830,
     "Name": "Trident of the Outcast Tribe",
     "ItemLevel": 100,
-    "Quality": "EPIC",
-    "InventoryType": "TWOHWEAPON",
+    "Quality": 4,
+    "Slot": -1,
     "Stats": {
       "Strength": 37,
       "Stamina": 54,
-      "Hit": 36
+      "HitRating": 36
     },
-    "Spells": [],
     "Phase": 1
   },
   {
@@ -196,15 +181,13 @@
     "ID": 31318,
     "Name": "Singing Crystal Axe",
     "ItemLevel": 100,
-    "Quality": "EPIC",
-    "InventoryType": "TWOHWEAPON",
+    "Quality": 4,
+    "Slot": -1,
     "Stats": {},
-    "Spells": [
-      {
-        "ID": 38282,
-        "Name": "The Blade\u0027s Song"
-      }
-    ],
+    "OnEquip": {
+      "ID": 38282,
+      "Name": "The Blade\u0027s Song"
+    },
     "Phase": 1
   },
   {
@@ -215,47 +198,18 @@
     "ID": 31322,
     "Name": "The Hammer of Destiny",
     "ItemLevel": 100,
-    "Quality": "EPIC",
-    "InventoryType": "TWOHWEAPON",
+    "Quality": 4,
+    "Slot": -1,
     "Stats": {
       "Strength": 32,
       "Stamina": 30,
       "Intellect": 29
     },
-    "Spells": [
-      {
-        "ID": 38284,
-        "Name": "Destiny Fulfilled"
-      }
-    ],
-    "Phase": 1
-  },
-  {
-    "MinDamage": 270,
-    "MaxDamage": 406,
-    "AttackSpeed": 3200,
-    "DPS": 105.625,
-    "ID": 35674,
-    "Name": "Test Druid  Weapon",
-    "ItemLevel": 100,
-    "Quality": "EPIC",
-    "InventoryType": "TWOHWEAPON",
-    "Stats": {
-      "Stamina": 39,
-      "Defense": 27,
-      "Expertise": 24
+    "OnEquip": {
+      "ID": 38284,
+      "Name": "Destiny Fulfilled"
     },
-    "Spells": [
-      {
-        "ID": 46756,
-        "Name": "Test Alternate Form"
-      },
-      {
-        "ID": 44909,
-        "Name": "Attack Power - Feral (\u002B0712)"
-      }
-    ],
-    "Phase": 53
+    "Phase": 1
   },
   {
     "MinDamage": 221,
@@ -265,14 +219,13 @@
     "ID": 25762,
     "Name": "Honed Voidaxe",
     "ItemLevel": 103,
-    "Quality": "RARE",
-    "InventoryType": "TWOHWEAPON",
+    "Quality": 3,
+    "Slot": -1,
     "Stats": {
       "Strength": 31,
       "Agility": 30,
       "Stamina": 45
     },
-    "Spells": [],
     "Phase": 1
   },
   {
@@ -283,18 +236,16 @@
     "ID": 23541,
     "Name": "Khorium Champion",
     "ItemLevel": 105,
-    "Quality": "EPIC",
-    "InventoryType": "TWOHWEAPON",
+    "Quality": 4,
+    "Slot": -1,
     "Stats": {
       "Strength": 50,
-      "Hit": 37
+      "HitRating": 37
     },
-    "Spells": [
-      {
-        "ID": 16916,
-        "Name": "Strength of the Champion"
-      }
-    ],
+    "OnEquip": {
+      "ID": 16916,
+      "Name": "Strength of the Champion"
+    },
     "Phase": 1
   },
   {
@@ -305,13 +256,12 @@
     "ID": 23543,
     "Name": "Felsteel Reaper",
     "ItemLevel": 105,
-    "Quality": "EPIC",
-    "InventoryType": "TWOHWEAPON",
+    "Quality": 4,
+    "Slot": -1,
     "Stats": {
-      "Crit": 30,
+      "CritRating": 30,
       "AttackPower": 112
     },
-    "Spells": [],
     "Phase": 1
   },
   {
@@ -322,14 +272,13 @@
     "ID": 23546,
     "Name": "Fel Hardened Maul",
     "ItemLevel": 105,
-    "Quality": "EPIC",
-    "InventoryType": "TWOHWEAPON",
+    "Quality": 4,
+    "Slot": -1,
     "Stats": {
       "Strength": 50,
       "Stamina": 46,
-      "Crit": 21
+      "CritRating": 21
     },
-    "Spells": [],
     "Phase": 1
   },
   {
@@ -340,42 +289,13 @@
     "ID": 29356,
     "Name": "Quantum Blade",
     "ItemLevel": 105,
-    "Quality": "EPIC",
-    "InventoryType": "TWOHWEAPON",
+    "Quality": 4,
+    "Slot": -1,
     "Stats": {
       "Stamina": 31,
-      "Crit": 30,
+      "CritRating": 30,
       "AttackPower": 102
     },
-    "Spells": [],
-    "Phase": 1
-  },
-  {
-    "MinDamage": 313,
-    "MaxDamage": 470,
-    "AttackSpeed": 3600,
-    "DPS": 108.74999,
-    "ID": 29833,
-    "Name": "Warrior 105 Test 2H Axe",
-    "ItemLevel": 105,
-    "Quality": "EPIC",
-    "InventoryType": "TWOHWEAPON",
-    "Stats": {},
-    "Spells": [],
-    "Phase": 1
-  },
-  {
-    "MinDamage": 260,
-    "MaxDamage": 391,
-    "AttackSpeed": 3000,
-    "DPS": 108.49999,
-    "ID": 29880,
-    "Name": "Paladin 105 Test 2H Axe",
-    "ItemLevel": 105,
-    "Quality": "EPIC",
-    "InventoryType": "TWOHWEAPON",
-    "Stats": {},
-    "Spells": [],
     "Phase": 1
   },
   {
@@ -386,16 +306,15 @@
     "ID": 32181,
     "Name": "Chancellor\u0027s Bonegrinder",
     "ItemLevel": 105,
-    "Quality": "EPIC",
-    "InventoryType": "TWOHWEAPON",
+    "Quality": 4,
+    "Slot": -1,
     "Stats": {
       "Strength": 31,
       "Stamina": 46,
-      "Hit": 20,
-      "Crit": 31,
+      "HitRating": 20,
+      "CritRating": 31,
       "Resilience": 21
     },
-    "Spells": [],
     "Phase": 53
   },
   {
@@ -406,16 +325,15 @@
     "ID": 32182,
     "Name": "Chancellor\u0027s Decapitator",
     "ItemLevel": 105,
-    "Quality": "EPIC",
-    "InventoryType": "TWOHWEAPON",
+    "Quality": 4,
+    "Slot": -1,
     "Stats": {
       "Stamina": 46,
-      "Hit": 20,
-      "Crit": 31,
+      "HitRating": 20,
+      "CritRating": 31,
       "Resilience": 21,
       "AttackPower": 62
     },
-    "Spells": [],
     "Phase": 53
   },
   {
@@ -426,21 +344,15 @@
     "ID": 32183,
     "Name": "Chancellor\u0027s Maul",
     "ItemLevel": 105,
-    "Quality": "EPIC",
-    "InventoryType": "TWOHWEAPON",
+    "Quality": 4,
+    "Slot": -1,
     "Stats": {
       "Strength": 31,
       "Stamina": 46,
-      "Hit": 20,
-      "Crit": 31,
+      "HitRating": 20,
+      "CritRating": 31,
       "Resilience": 21
     },
-    "Spells": [
-      {
-        "ID": 44910,
-        "Name": "Attack Power - Feral (\u002B0754)"
-      }
-    ],
     "Phase": 53
   },
   {
@@ -451,16 +363,15 @@
     "ID": 32184,
     "Name": "Chancellor\u0027s Painsaw",
     "ItemLevel": 105,
-    "Quality": "EPIC",
-    "InventoryType": "TWOHWEAPON",
+    "Quality": 4,
+    "Slot": -1,
     "Stats": {
       "Stamina": 46,
-      "Hit": 20,
-      "Crit": 31,
+      "HitRating": 20,
+      "CritRating": 31,
       "Resilience": 21,
       "AttackPower": 62
     },
-    "Spells": [],
     "Phase": 53
   },
   {
@@ -471,16 +382,15 @@
     "ID": 32186,
     "Name": "Chancellor\u0027s Warblade",
     "ItemLevel": 105,
-    "Quality": "EPIC",
-    "InventoryType": "TWOHWEAPON",
+    "Quality": 4,
+    "Slot": -1,
     "Stats": {
       "Strength": 31,
       "Stamina": 46,
-      "Hit": 20,
-      "Crit": 31,
+      "HitRating": 20,
+      "CritRating": 31,
       "Resilience": 21
     },
-    "Spells": [],
     "Phase": 53
   },
   {
@@ -491,12 +401,11 @@
     "ID": 32421,
     "Name": "Tom\u0027s Axe A",
     "ItemLevel": 105,
-    "Quality": "EPIC",
-    "InventoryType": "TWOHWEAPON",
+    "Quality": 4,
+    "Slot": -1,
     "Stats": {
       "AttackPower": 110
     },
-    "Spells": [],
     "Phase": 53
   },
   {
@@ -507,16 +416,15 @@
     "ID": 32854,
     "Name": "Hammer of Righteous Might",
     "ItemLevel": 105,
-    "Quality": "EPIC",
-    "InventoryType": "TWOHWEAPON",
+    "Quality": 4,
+    "Slot": -1,
     "Stats": {
       "Stamina": 55,
       "Intellect": 37,
-      "SpellDamage": 168,
-      "SpellHealing": 168,
+      "SpellPower": 168,
+      "HealingPower": 168,
       "ManaPer5": 15
     },
-    "Spells": [],
     "Phase": 1
   },
   {
@@ -527,18 +435,12 @@
     "ID": 28428,
     "Name": "Lionheart Blade",
     "ItemLevel": 107,
-    "Quality": "EPIC",
-    "InventoryType": "TWOHWEAPON",
+    "Quality": 4,
+    "Slot": -1,
     "Stats": {
       "Strength": 47,
       "Agility": 42
     },
-    "Spells": [
-      {
-        "ID": 34514,
-        "Name": "Fear Resistance 5"
-      }
-    ],
     "Phase": 1
   },
   {
@@ -549,13 +451,12 @@
     "ID": 28434,
     "Name": "Lunar Crescent",
     "ItemLevel": 107,
-    "Quality": "EPIC",
-    "InventoryType": "TWOHWEAPON",
+    "Quality": 4,
+    "Slot": -1,
     "Stats": {
-      "Crit": 47,
+      "CritRating": 47,
       "AttackPower": 96
     },
-    "Spells": [],
     "Phase": 1
   },
   {
@@ -566,14 +467,13 @@
     "ID": 28440,
     "Name": "Thunder",
     "ItemLevel": 107,
-    "Quality": "EPIC",
-    "InventoryType": "TWOHWEAPON",
+    "Quality": 4,
+    "Slot": -1,
     "Stats": {
       "Strength": 37,
       "Agility": 37,
       "Stamina": 55
     },
-    "Spells": [],
     "Phase": 1
   },
   {
@@ -584,16 +484,15 @@
     "ID": 30009,
     "Name": "The Burning Crusader",
     "ItemLevel": 109,
-    "Quality": "RARE",
-    "InventoryType": "TWOHWEAPON",
+    "Quality": 3,
+    "Slot": -1,
     "Stats": {
       "Strength": 27,
       "Agility": 27,
       "Stamina": 27,
-      "Hit": 26,
+      "HitRating": 26,
       "Expertise": 17
     },
-    "Spells": [],
     "Phase": 1
   },
   {
@@ -604,13 +503,12 @@
     "ID": 31010,
     "Name": "Slayer\u0027s Axe",
     "ItemLevel": 109,
-    "Quality": "RARE",
-    "InventoryType": "TWOHWEAPON",
+    "Quality": 3,
+    "Slot": -1,
     "Stats": {
       "Strength": 51,
-      "Crit": 21
+      "CritRating": 21
     },
-    "Spells": [],
     "Phase": 1
   },
   {
@@ -621,16 +519,15 @@
     "ID": 31062,
     "Name": "Torn-heart Axe of Battle",
     "ItemLevel": 109,
-    "Quality": "RARE",
-    "InventoryType": "TWOHWEAPON",
+    "Quality": 3,
+    "Slot": -1,
     "Stats": {
       "Strength": 30,
       "Stamina": 27,
       "Intellect": 30,
       "SpellCrit": 17,
-      "Crit": 17
+      "CritRating": 17
     },
-    "Spells": [],
     "Phase": 1
   },
   {
@@ -641,13 +538,12 @@
     "ID": 32829,
     "Name": "Windcharger\u0027s Lance",
     "ItemLevel": 109,
-    "Quality": "RARE",
-    "InventoryType": "TWOHWEAPON",
+    "Quality": 3,
+    "Slot": -1,
     "Stats": {
       "Stamina": 60,
       "AttackPower": 80
     },
-    "Spells": [],
     "Phase": 3
   },
   {
@@ -658,14 +554,13 @@
     "ID": 27524,
     "Name": "Firemaul of Destruction",
     "ItemLevel": 112,
-    "Quality": "RARE",
-    "InventoryType": "TWOHWEAPON",
+    "Quality": 3,
+    "Slot": -1,
     "Stats": {
       "Strength": 31,
       "Stamina": 50,
       "Resilience": 40
     },
-    "Spells": [],
     "Phase": 1
   },
   {
@@ -676,14 +571,13 @@
     "ID": 31291,
     "Name": "Crystalforged War Axe",
     "ItemLevel": 112,
-    "Quality": "RARE",
-    "InventoryType": "TWOHWEAPON",
+    "Quality": 3,
+    "Slot": -1,
     "Stats": {
       "Stamina": 50,
-      "Crit": 27,
+      "CritRating": 27,
       "AttackPower": 80
     },
-    "Spells": [],
     "Phase": 1
   },
   {
@@ -694,14 +588,13 @@
     "ID": 27769,
     "Name": "Endbringer",
     "ItemLevel": 115,
-    "Quality": "RARE",
-    "InventoryType": "TWOHWEAPON",
+    "Quality": 3,
+    "Slot": -1,
     "Stats": {
       "Strength": 29,
       "Stamina": 28,
-      "Crit": 45
+      "CritRating": 45
     },
-    "Spells": [],
     "Phase": 1
   },
   {
@@ -712,14 +605,13 @@
     "ID": 27829,
     "Name": "Axe of the Nexus-Kings",
     "ItemLevel": 115,
-    "Quality": "RARE",
-    "InventoryType": "TWOHWEAPON",
+    "Quality": 3,
+    "Slot": -1,
     "Stats": {
       "Stamina": 33,
-      "Crit": 35,
+      "CritRating": 35,
       "AttackPower": 72
     },
-    "Spells": [],
     "Phase": 1
   },
   {
@@ -730,15 +622,14 @@
     "ID": 27840,
     "Name": "Scepter of Sha\u0027tar",
     "ItemLevel": 115,
-    "Quality": "RARE",
-    "InventoryType": "TWOHWEAPON",
+    "Quality": 3,
+    "Slot": -1,
     "Stats": {
       "Strength": 31,
       "Stamina": 28,
       "Intellect": 26,
-      "Crit": 30
+      "CritRating": 30
     },
-    "Spells": [],
     "Phase": 1
   },
   {
@@ -749,15 +640,14 @@
     "ID": 27903,
     "Name": "Sonic Spear",
     "ItemLevel": 115,
-    "Quality": "RARE",
-    "InventoryType": "TWOHWEAPON",
+    "Quality": 3,
+    "Slot": -1,
     "Stats": {
       "Agility": 35,
       "Stamina": 30,
-      "Hit": 24,
+      "HitRating": 24,
       "AttackPower": 62
     },
-    "Spells": [],
     "Phase": 1
   },
   {
@@ -768,14 +658,13 @@
     "ID": 27986,
     "Name": "Crow Wing Reaper",
     "ItemLevel": 115,
-    "Quality": "RARE",
-    "InventoryType": "TWOHWEAPON",
+    "Quality": 3,
+    "Slot": -1,
     "Stats": {
       "Strength": 28,
       "Agility": 17,
       "Stamina": 33
     },
-    "Spells": [],
     "Socket1": {
       "Color": 2
     },
@@ -798,14 +687,13 @@
     "ID": 28222,
     "Name": "Reaver of the Infinites",
     "ItemLevel": 115,
-    "Quality": "RARE",
-    "InventoryType": "TWOHWEAPON",
+    "Quality": 3,
+    "Slot": -1,
     "Stats": {
       "Stamina": 22,
       "Resilience": 27,
       "AttackPower": 50
     },
-    "Spells": [],
     "Socket1": {
       "Color": 2
     },
@@ -825,14 +713,13 @@
     "ID": 28253,
     "Name": "Plasma Rat\u0027s Hyper-Scythe",
     "ItemLevel": 115,
-    "Quality": "RARE",
-    "InventoryType": "TWOHWEAPON",
+    "Quality": 3,
+    "Slot": -1,
     "Stats": {
       "Strength": 42,
       "Stamina": 45,
-      "Crit": 26
+      "CritRating": 26
     },
-    "Spells": [],
     "Phase": 1
   },
   {
@@ -843,16 +730,15 @@
     "ID": 28293,
     "Name": "High Warlord\u0027s Claymore",
     "ItemLevel": 115,
-    "Quality": "RARE",
-    "InventoryType": "TWOHWEAPON",
+    "Quality": 3,
+    "Slot": -1,
     "Stats": {
       "Strength": 28,
       "Stamina": 42,
-      "Hit": 18,
-      "Crit": 28,
+      "HitRating": 18,
+      "CritRating": 28,
       "Resilience": 19
     },
-    "Spells": [],
     "Phase": 1
   },
   {
@@ -863,18 +749,16 @@
     "ID": 28367,
     "Name": "Greatsword of Forlorn Visions",
     "ItemLevel": 115,
-    "Quality": "RARE",
-    "InventoryType": "TWOHWEAPON",
+    "Quality": 3,
+    "Slot": -1,
     "Stats": {
       "Strength": 26,
       "Stamina": 28
     },
-    "Spells": [
-      {
-        "ID": 34199,
-        "Name": "Armor Buff"
-      }
-    ],
+    "OnEquip": {
+      "ID": 34199,
+      "Name": "Armor Buff"
+    },
     "Phase": 1
   },
   {
@@ -885,15 +769,14 @@
     "ID": 28393,
     "Name": "Warmaul of Infused Light",
     "ItemLevel": 115,
-    "Quality": "RARE",
-    "InventoryType": "TWOHWEAPON",
+    "Quality": 3,
+    "Slot": -1,
     "Stats": {
       "Strength": 20,
       "Stamina": 30,
       "Intellect": 28,
-      "Crit": 21
+      "CritRating": 21
     },
-    "Spells": [],
     "Socket1": {
       "Color": 2
     },
@@ -913,17 +796,15 @@
     "ID": 28573,
     "Name": "Despair",
     "ItemLevel": 115,
-    "Quality": "EPIC",
-    "InventoryType": "TWOHWEAPON",
+    "Quality": 4,
+    "Slot": -1,
     "Stats": {
       "Strength": 52
     },
-    "Spells": [
-      {
-        "ID": 34580,
-        "Name": "Impale"
-      }
-    ],
+    "OnEquip": {
+      "ID": 34580,
+      "Name": "Impale"
+    },
     "Phase": 1
   },
   {
@@ -934,15 +815,14 @@
     "ID": 28587,
     "Name": "Legacy",
     "ItemLevel": 115,
-    "Quality": "EPIC",
-    "InventoryType": "TWOHWEAPON",
+    "Quality": 4,
+    "Slot": -1,
     "Stats": {
       "Agility": 40,
       "Stamina": 46,
       "AttackPower": 80,
       "ManaPer5": 8
     },
-    "Spells": [],
     "Phase": 1
   },
   {
@@ -953,16 +833,15 @@
     "ID": 28917,
     "Name": "High Warlord\u0027s Bonegrinder",
     "ItemLevel": 115,
-    "Quality": "RARE",
-    "InventoryType": "TWOHWEAPON",
+    "Quality": 3,
+    "Slot": -1,
     "Stats": {
       "Strength": 28,
       "Stamina": 42,
-      "Hit": 18,
-      "Crit": 28,
+      "HitRating": 18,
+      "CritRating": 28,
       "Resilience": 19
     },
-    "Spells": [],
     "Phase": 1
   },
   {
@@ -973,16 +852,15 @@
     "ID": 28918,
     "Name": "High Warlord\u0027s Decapitator",
     "ItemLevel": 115,
-    "Quality": "RARE",
-    "InventoryType": "TWOHWEAPON",
+    "Quality": 3,
+    "Slot": -1,
     "Stats": {
       "Stamina": 42,
-      "Hit": 18,
-      "Crit": 28,
+      "HitRating": 18,
+      "CritRating": 28,
       "Resilience": 19,
       "AttackPower": 56
     },
-    "Spells": [],
     "Phase": 1
   },
   {
@@ -993,21 +871,15 @@
     "ID": 28919,
     "Name": "High Warlord\u0027s Maul",
     "ItemLevel": 115,
-    "Quality": "RARE",
-    "InventoryType": "TWOHWEAPON",
+    "Quality": 3,
+    "Slot": -1,
     "Stats": {
       "Strength": 28,
       "Stamina": 42,
-      "Hit": 18,
-      "Crit": 28,
+      "HitRating": 18,
+      "CritRating": 28,
       "Resilience": 19
     },
-    "Spells": [
-      {
-        "ID": 44908,
-        "Name": "Attack Power - Feral (\u002B0539)"
-      }
-    ],
     "Phase": 1
   },
   {
@@ -1018,16 +890,15 @@
     "ID": 28923,
     "Name": "High Warlord\u0027s Painsaw",
     "ItemLevel": 115,
-    "Quality": "RARE",
-    "InventoryType": "TWOHWEAPON",
+    "Quality": 3,
+    "Slot": -1,
     "Stats": {
       "Stamina": 42,
-      "Hit": 18,
-      "Crit": 28,
+      "HitRating": 18,
+      "CritRating": 28,
       "Resilience": 19,
       "AttackPower": 56
     },
-    "Spells": [],
     "Phase": 1
   },
   {
@@ -1038,16 +909,15 @@
     "ID": 28942,
     "Name": "Grand Marshal\u0027s Bonegrinder",
     "ItemLevel": 115,
-    "Quality": "RARE",
-    "InventoryType": "TWOHWEAPON",
+    "Quality": 3,
+    "Slot": -1,
     "Stats": {
       "Strength": 28,
       "Stamina": 42,
-      "Hit": 18,
-      "Crit": 28,
+      "HitRating": 18,
+      "CritRating": 28,
       "Resilience": 19
     },
-    "Spells": [],
     "Phase": 1
   },
   {
@@ -1058,16 +928,15 @@
     "ID": 28943,
     "Name": "Grand Marshal\u0027s Warblade",
     "ItemLevel": 115,
-    "Quality": "RARE",
-    "InventoryType": "TWOHWEAPON",
+    "Quality": 3,
+    "Slot": -1,
     "Stats": {
       "Strength": 28,
       "Stamina": 42,
-      "Hit": 18,
-      "Crit": 28,
+      "HitRating": 18,
+      "CritRating": 28,
       "Resilience": 19
     },
-    "Spells": [],
     "Phase": 1
   },
   {
@@ -1078,16 +947,15 @@
     "ID": 28945,
     "Name": "Grand Marshal\u0027s Decapitator",
     "ItemLevel": 115,
-    "Quality": "RARE",
-    "InventoryType": "TWOHWEAPON",
+    "Quality": 3,
+    "Slot": -1,
     "Stats": {
       "Stamina": 42,
-      "Hit": 18,
-      "Crit": 28,
+      "HitRating": 18,
+      "CritRating": 28,
       "Resilience": 19,
       "AttackPower": 56
     },
-    "Spells": [],
     "Phase": 1
   },
   {
@@ -1098,21 +966,15 @@
     "ID": 28948,
     "Name": "Grand Marshal\u0027s Maul",
     "ItemLevel": 115,
-    "Quality": "RARE",
-    "InventoryType": "TWOHWEAPON",
+    "Quality": 3,
+    "Slot": -1,
     "Stats": {
       "Strength": 28,
       "Stamina": 42,
-      "Hit": 18,
-      "Crit": 28,
+      "HitRating": 18,
+      "CritRating": 28,
       "Resilience": 19
     },
-    "Spells": [
-      {
-        "ID": 44908,
-        "Name": "Attack Power - Feral (\u002B0539)"
-      }
-    ],
     "Phase": 1
   },
   {
@@ -1123,16 +985,15 @@
     "ID": 28949,
     "Name": "Grand Marshal\u0027s Painsaw",
     "ItemLevel": 115,
-    "Quality": "RARE",
-    "InventoryType": "TWOHWEAPON",
+    "Quality": 3,
+    "Slot": -1,
     "Stats": {
       "Stamina": 42,
-      "Hit": 18,
-      "Crit": 28,
+      "HitRating": 18,
+      "CritRating": 28,
       "Resilience": 19,
       "AttackPower": 56
     },
-    "Spells": [],
     "Phase": 1
   },
   {
@@ -1143,13 +1004,12 @@
     "ID": 29137,
     "Name": "Hellscream\u0027s Will",
     "ItemLevel": 115,
-    "Quality": "RARE",
-    "InventoryType": "TWOHWEAPON",
+    "Quality": 3,
+    "Slot": -1,
     "Stats": {
-      "Hit": 42,
+      "HitRating": 42,
       "AttackPower": 84
     },
-    "Spells": [],
     "Phase": 1
   },
   {
@@ -1160,13 +1020,12 @@
     "ID": 29138,
     "Name": "Arechron\u0027s Gift",
     "ItemLevel": 115,
-    "Quality": "RARE",
-    "InventoryType": "TWOHWEAPON",
+    "Quality": 3,
+    "Slot": -1,
     "Stats": {
-      "Hit": 42,
+      "HitRating": 42,
       "AttackPower": 84
     },
-    "Spells": [],
     "Phase": 1
   },
   {
@@ -1177,14 +1036,13 @@
     "ID": 29166,
     "Name": "Hellforged Halberd",
     "ItemLevel": 115,
-    "Quality": "RARE",
-    "InventoryType": "TWOHWEAPON",
+    "Quality": 3,
+    "Slot": -1,
     "Stats": {
       "Agility": 26,
-      "Hit": 19,
+      "HitRating": 19,
       "AttackPower": 92
     },
-    "Spells": [],
     "Phase": 1
   },
   {
@@ -1195,14 +1053,13 @@
     "ID": 29167,
     "Name": "Blackened Spear",
     "ItemLevel": 115,
-    "Quality": "RARE",
-    "InventoryType": "TWOHWEAPON",
+    "Quality": 3,
+    "Slot": -1,
     "Stats": {
       "Agility": 26,
-      "Hit": 19,
+      "HitRating": 19,
       "AttackPower": 92
     },
-    "Spells": [],
     "Phase": 1
   },
   {
@@ -1213,13 +1070,12 @@
     "ID": 29329,
     "Name": "Terokk\u0027s Quill",
     "ItemLevel": 115,
-    "Quality": "RARE",
-    "InventoryType": "TWOHWEAPON",
+    "Quality": 3,
+    "Slot": -1,
     "Stats": {
       "Agility": 54,
       "Stamina": 33
     },
-    "Spells": [],
     "Phase": 1
   },
   {
@@ -1230,18 +1086,16 @@
     "ID": 30789,
     "Name": "Illidari-Bane Claymore",
     "ItemLevel": 115,
-    "Quality": "RARE",
-    "InventoryType": "TWOHWEAPON",
+    "Quality": 3,
+    "Slot": -1,
     "Stats": {
       "Stamina": 34,
-      "Crit": 37
+      "CritRating": 37
     },
-    "Spells": [
-      {
-        "ID": 37652,
-        "Name": "Demon Slaying 150"
-      }
-    ],
+    "OnEquip": {
+      "ID": 37652,
+      "Name": "Demon Slaying 150"
+    },
     "Phase": 1
   },
   {
@@ -1252,15 +1106,14 @@
     "ID": 31299,
     "Name": "The Oathkeeper",
     "ItemLevel": 115,
-    "Quality": "RARE",
-    "InventoryType": "TWOHWEAPON",
+    "Quality": 3,
+    "Slot": -1,
     "Stats": {
       "Strength": 35,
       "Stamina": 24,
       "Intellect": 32,
-      "Hit": 26
+      "HitRating": 26
     },
-    "Spells": [],
     "Phase": 1
   },
   {
@@ -1271,14 +1124,13 @@
     "ID": 32663,
     "Name": "Apexis Cleaver",
     "ItemLevel": 115,
-    "Quality": "RARE",
-    "InventoryType": "TWOHWEAPON",
+    "Quality": 3,
+    "Slot": -1,
     "Stats": {
       "Strength": 46,
       "Stamina": 39,
-      "Crit": 19
+      "CritRating": 19
     },
-    "Spells": [],
     "Phase": 3
   },
   {
@@ -1289,10 +1141,9 @@
     "ID": 32951,
     "Name": "Unusually Slow Two-Hander",
     "ItemLevel": 115,
-    "Quality": "RARE",
-    "InventoryType": "TWOHWEAPON",
+    "Quality": 3,
+    "Slot": -1,
     "Stats": {},
-    "Spells": [],
     "Phase": 53
   },
   {
@@ -1303,15 +1154,14 @@
     "ID": 34673,
     "Name": "Legionfoe",
     "ItemLevel": 115,
-    "Quality": "RARE",
-    "InventoryType": "TWOHWEAPON",
+    "Quality": 3,
+    "Slot": -1,
     "Stats": {
       "Strength": 31,
       "Stamina": 45,
-      "Crit": 26,
+      "CritRating": 26,
       "Expertise": 19
     },
-    "Spells": [],
     "Phase": 5
   },
   {
@@ -1322,14 +1172,13 @@
     "ID": 34794,
     "Name": "Axe of Shattered Dreams",
     "ItemLevel": 115,
-    "Quality": "RARE",
-    "InventoryType": "TWOHWEAPON",
+    "Quality": 3,
+    "Slot": -1,
     "Stats": {
       "Stamina": 48,
       "AttackPower": 70,
       "ArmorPenetration": 224
     },
-    "Spells": [],
     "Phase": 5
   },
   {
@@ -1340,13 +1189,12 @@
     "ID": 30722,
     "Name": "Ethereum Nexus-Reaver",
     "ItemLevel": 120,
-    "Quality": "EPIC",
-    "InventoryType": "TWOHWEAPON",
+    "Quality": 4,
+    "Slot": -1,
     "Stats": {
       "Strength": 50,
-      "Crit": 30
+      "CritRating": 30
     },
-    "Spells": [],
     "Socket1": {
       "Color": 2
     },
@@ -1369,16 +1217,15 @@
     "ID": 24550,
     "Name": "Gladiator\u0027s Greatsword",
     "ItemLevel": 123,
-    "Quality": "EPIC",
-    "InventoryType": "TWOHWEAPON",
+    "Quality": 4,
+    "Slot": -1,
     "Stats": {
       "Strength": 32,
       "Stamina": 48,
-      "Hit": 20,
-      "Crit": 35,
+      "HitRating": 20,
+      "CritRating": 35,
       "Resilience": 28
     },
-    "Spells": [],
     "Phase": 1
   },
   {
@@ -1389,16 +1236,15 @@
     "ID": 28298,
     "Name": "Gladiator\u0027s Decapitator",
     "ItemLevel": 123,
-    "Quality": "EPIC",
-    "InventoryType": "TWOHWEAPON",
+    "Quality": 4,
+    "Slot": -1,
     "Stats": {
       "Stamina": 48,
-      "Hit": 20,
-      "Crit": 35,
+      "HitRating": 20,
+      "CritRating": 35,
       "Resilience": 28,
       "AttackPower": 64
     },
-    "Spells": [],
     "Phase": 1
   },
   {
@@ -1409,16 +1255,15 @@
     "ID": 28299,
     "Name": "Gladiator\u0027s Bonegrinder",
     "ItemLevel": 123,
-    "Quality": "EPIC",
-    "InventoryType": "TWOHWEAPON",
+    "Quality": 4,
+    "Slot": -1,
     "Stats": {
       "Strength": 32,
       "Stamina": 48,
-      "Hit": 20,
-      "Crit": 35,
+      "HitRating": 20,
+      "CritRating": 35,
       "Resilience": 28
     },
-    "Spells": [],
     "Phase": 1
   },
   {
@@ -1429,15 +1274,14 @@
     "ID": 28300,
     "Name": "Gladiator\u0027s Painsaw",
     "ItemLevel": 123,
-    "Quality": "EPIC",
-    "InventoryType": "TWOHWEAPON",
+    "Quality": 4,
+    "Slot": -1,
     "Stats": {
       "Stamina": 48,
-      "Crit": 35,
+      "CritRating": 35,
       "Resilience": 36,
       "AttackPower": 70
     },
-    "Spells": [],
     "Phase": 1
   },
   {
@@ -1448,22 +1292,16 @@
     "ID": 28429,
     "Name": "Lionheart Champion",
     "ItemLevel": 123,
-    "Quality": "EPIC",
-    "InventoryType": "TWOHWEAPON",
+    "Quality": 4,
+    "Slot": -1,
     "Stats": {
       "Strength": 49,
       "Agility": 44
     },
-    "Spells": [
-      {
-        "ID": 34514,
-        "Name": "Fear Resistance 5"
-      },
-      {
-        "ID": 34513,
-        "Name": "Lionheart"
-      }
-    ],
+    "OnEquip": {
+      "ID": 34513,
+      "Name": "Lionheart"
+    },
     "Phase": 1
   },
   {
@@ -1474,13 +1312,12 @@
     "ID": 28435,
     "Name": "Mooncleaver",
     "ItemLevel": 123,
-    "Quality": "EPIC",
-    "InventoryType": "TWOHWEAPON",
+    "Quality": 4,
+    "Slot": -1,
     "Stats": {
-      "Crit": 52,
+      "CritRating": 52,
       "AttackPower": 106
     },
-    "Spells": [],
     "Phase": 1
   },
   {
@@ -1491,19 +1328,13 @@
     "ID": 28441,
     "Name": "Deep Thunder",
     "ItemLevel": 123,
-    "Quality": "EPIC",
-    "InventoryType": "TWOHWEAPON",
+    "Quality": 4,
+    "Slot": -1,
     "Stats": {
       "Strength": 37,
       "Agility": 37,
       "Stamina": 55
     },
-    "Spells": [
-      {
-        "ID": 34510,
-        "Name": "Stun"
-      }
-    ],
     "Phase": 1
   },
   {
@@ -1514,21 +1345,15 @@
     "ID": 28476,
     "Name": "Gladiator\u0027s Maul",
     "ItemLevel": 123,
-    "Quality": "EPIC",
-    "InventoryType": "TWOHWEAPON",
+    "Quality": 4,
+    "Slot": -1,
     "Stats": {
       "Strength": 32,
       "Stamina": 48,
-      "Hit": 20,
-      "Crit": 35,
+      "HitRating": 20,
+      "CritRating": 35,
       "Resilience": 28
     },
-    "Spells": [
-      {
-        "ID": 44912,
-        "Name": "Attack Power - Feral (\u002B0894)"
-      }
-    ],
     "Phase": 1
   },
   {
@@ -1539,14 +1364,13 @@
     "ID": 28773,
     "Name": "Gorehowl",
     "ItemLevel": 125,
-    "Quality": "EPIC",
-    "InventoryType": "TWOHWEAPON",
+    "Quality": 4,
+    "Slot": -1,
     "Stats": {
       "Strength": 49,
       "Agility": 43,
       "Stamina": 51
     },
-    "Spells": [],
     "Phase": 1
   },
   {
@@ -1557,15 +1381,13 @@
     "ID": 28774,
     "Name": "Glaive of the Pit",
     "ItemLevel": 125,
-    "Quality": "EPIC",
-    "InventoryType": "TWOHWEAPON",
+    "Quality": 4,
+    "Slot": -1,
     "Stats": {},
-    "Spells": [
-      {
-        "ID": 34696,
-        "Name": "Drain Life"
-      }
-    ],
+    "OnEquip": {
+      "ID": 34696,
+      "Name": "Drain Life"
+    },
     "Socket1": {
       "Color": 2
     },
@@ -1576,7 +1398,7 @@
       "Color": 2
     },
     "SocketBonus": {
-      "Crit": 4
+      "CritRating": 4
     },
     "Phase": 1
   },
@@ -1588,13 +1410,12 @@
     "ID": 28794,
     "Name": "Axe of the Gronn Lords",
     "ItemLevel": 125,
-    "Quality": "EPIC",
-    "InventoryType": "TWOHWEAPON",
+    "Quality": 4,
+    "Slot": -1,
     "Stats": {
       "Stamina": 66,
       "AttackPower": 124
     },
-    "Spells": [],
     "Phase": 1
   },
   {
@@ -1605,14 +1426,13 @@
     "ID": 28800,
     "Name": "Hammer of the Naaru",
     "ItemLevel": 125,
-    "Quality": "EPIC",
-    "InventoryType": "TWOHWEAPON",
+    "Quality": 4,
+    "Slot": -1,
     "Stats": {
       "Strength": 44,
       "Stamina": 41,
       "Intellect": 37
     },
-    "Spells": [],
     "Socket1": {
       "Color": 2
     },
@@ -1628,66 +1448,6 @@
     "Phase": 1
   },
   {
-    "MinDamage": 374,
-    "MaxDamage": 561,
-    "AttackSpeed": 3800,
-    "DPS": 123.026306,
-    "ID": 27974,
-    "Name": "TEST 130 Epic Paladin DPS Sword2H Slow",
-    "ItemLevel": 130,
-    "Quality": "EPIC",
-    "InventoryType": "TWOHWEAPON",
-    "Stats": {
-      "ManaPer5": 11
-    },
-    "Spells": [],
-    "Phase": 1
-  },
-  {
-    "MinDamage": 196,
-    "MaxDamage": 295,
-    "AttackSpeed": 2000,
-    "DPS": 122.75,
-    "ID": 27975,
-    "Name": "TEST 130 Epic Paladin DPS Sword2H Fast",
-    "ItemLevel": 130,
-    "Quality": "EPIC",
-    "InventoryType": "TWOHWEAPON",
-    "Stats": {
-      "ManaPer5": 11
-    },
-    "Spells": [],
-    "Phase": 1
-  },
-  {
-    "MinDamage": 374,
-    "MaxDamage": 561,
-    "AttackSpeed": 3800,
-    "DPS": 123.026306,
-    "ID": 28021,
-    "Name": "TEST 130 Epic Ret Paladin DPS Sword2H Slow",
-    "ItemLevel": 130,
-    "Quality": "EPIC",
-    "InventoryType": "TWOHWEAPON",
-    "Stats": {},
-    "Spells": [],
-    "Phase": 1
-  },
-  {
-    "MinDamage": 196,
-    "MaxDamage": 295,
-    "AttackSpeed": 2000,
-    "DPS": 122.75,
-    "ID": 28022,
-    "Name": "TEST 130 Epic Ret Paladin DPS Sword2H Fast",
-    "ItemLevel": 130,
-    "Quality": "EPIC",
-    "InventoryType": "TWOHWEAPON",
-    "Stats": {},
-    "Spells": [],
-    "Phase": 1
-  },
-  {
     "MinDamage": 354,
     "MaxDamage": 532,
     "AttackSpeed": 3600,
@@ -1695,12 +1455,11 @@
     "ID": 32422,
     "Name": "Tom\u0027s Axe B",
     "ItemLevel": 130,
-    "Quality": "EPIC",
-    "InventoryType": "TWOHWEAPON",
+    "Quality": 4,
+    "Slot": -1,
     "Stats": {
       "AttackPower": 110
     },
-    "Spells": [],
     "Phase": 53
   },
   {
@@ -1711,14 +1470,13 @@
     "ID": 33492,
     "Name": "Trollbane",
     "ItemLevel": 132,
-    "Quality": "EPIC",
-    "InventoryType": "TWOHWEAPON",
+    "Quality": 4,
+    "Slot": -1,
     "Stats": {
       "Agility": 39,
       "Stamina": 58,
       "AttackPower": 94
     },
-    "Spells": [],
     "Socket1": {
       "Color": 2
     },
@@ -1735,18 +1493,16 @@
     "ID": 30090,
     "Name": "World Breaker",
     "ItemLevel": 134,
-    "Quality": "EPIC",
-    "InventoryType": "TWOHWEAPON",
+    "Quality": 4,
+    "Slot": -1,
     "Stats": {
       "Strength": 50,
       "Stamina": 51
     },
-    "Spells": [
-      {
-        "ID": 36111,
-        "Name": "World Breaker"
-      }
-    ],
+    "OnEquip": {
+      "ID": 36111,
+      "Name": "World Breaker"
+    },
     "Phase": 2
   },
   {
@@ -1757,22 +1513,16 @@
     "ID": 28430,
     "Name": "Lionheart Executioner",
     "ItemLevel": 136,
-    "Quality": "EPIC",
-    "InventoryType": "TWOHWEAPON",
+    "Quality": 4,
+    "Slot": -1,
     "Stats": {
       "Strength": 52,
       "Agility": 44
     },
-    "Spells": [
-      {
-        "ID": 34515,
-        "Name": "Fear Resistance 8"
-      },
-      {
-        "ID": 34513,
-        "Name": "Lionheart"
-      }
-    ],
+    "OnEquip": {
+      "ID": 34513,
+      "Name": "Lionheart"
+    },
     "Phase": 1
   },
   {
@@ -1783,13 +1533,12 @@
     "ID": 28436,
     "Name": "Bloodmoon",
     "ItemLevel": 136,
-    "Quality": "EPIC",
-    "InventoryType": "TWOHWEAPON",
+    "Quality": 4,
+    "Slot": -1,
     "Stats": {
-      "Crit": 56,
+      "CritRating": 56,
       "AttackPower": 112
     },
-    "Spells": [],
     "Phase": 1
   },
   {
@@ -1800,19 +1549,13 @@
     "ID": 28442,
     "Name": "Stormherald",
     "ItemLevel": 136,
-    "Quality": "EPIC",
-    "InventoryType": "TWOHWEAPON",
+    "Quality": 4,
+    "Slot": -1,
     "Stats": {
       "Strength": 42,
       "Agility": 42,
       "Stamina": 61
     },
-    "Spells": [
-      {
-        "ID": 34510,
-        "Name": "Stun"
-      }
-    ],
     "Phase": 1
   },
   {
@@ -1823,16 +1566,15 @@
     "ID": 31959,
     "Name": "Merciless Gladiator\u0027s Bonegrinder",
     "ItemLevel": 136,
-    "Quality": "EPIC",
-    "InventoryType": "TWOHWEAPON",
+    "Quality": 4,
+    "Slot": -1,
     "Stats": {
       "Strength": 42,
       "Stamina": 55,
-      "Hit": 18,
-      "Crit": 42,
+      "HitRating": 18,
+      "CritRating": 42,
       "Resilience": 33
     },
-    "Spells": [],
     "Phase": 2
   },
   {
@@ -1843,16 +1585,15 @@
     "ID": 31966,
     "Name": "Merciless Gladiator\u0027s Decapitator",
     "ItemLevel": 136,
-    "Quality": "EPIC",
-    "InventoryType": "TWOHWEAPON",
+    "Quality": 4,
+    "Slot": -1,
     "Stats": {
       "Stamina": 55,
-      "Hit": 18,
-      "Crit": 42,
+      "HitRating": 18,
+      "CritRating": 42,
       "Resilience": 33,
       "AttackPower": 84
     },
-    "Spells": [],
     "Phase": 2
   },
   {
@@ -1863,16 +1604,15 @@
     "ID": 31984,
     "Name": "Merciless Gladiator\u0027s Greatsword",
     "ItemLevel": 136,
-    "Quality": "EPIC",
-    "InventoryType": "TWOHWEAPON",
+    "Quality": 4,
+    "Slot": -1,
     "Stats": {
       "Strength": 42,
       "Stamina": 55,
-      "Hit": 18,
-      "Crit": 42,
+      "HitRating": 18,
+      "CritRating": 42,
       "Resilience": 33
     },
-    "Spells": [],
     "Phase": 2
   },
   {
@@ -1883,21 +1623,15 @@
     "ID": 32014,
     "Name": "Merciless Gladiator\u0027s Maul",
     "ItemLevel": 136,
-    "Quality": "EPIC",
-    "InventoryType": "TWOHWEAPON",
+    "Quality": 4,
+    "Slot": -1,
     "Stats": {
       "Strength": 42,
       "Stamina": 55,
-      "Hit": 18,
-      "Crit": 42,
+      "HitRating": 18,
+      "CritRating": 42,
       "Resilience": 33
     },
-    "Spells": [
-      {
-        "ID": 44915,
-        "Name": "Attack Power - Feral (\u002B1010)"
-      }
-    ],
     "Phase": 2
   },
   {
@@ -1908,15 +1642,14 @@
     "ID": 32025,
     "Name": "Merciless Gladiator\u0027s Painsaw",
     "ItemLevel": 136,
-    "Quality": "EPIC",
-    "InventoryType": "TWOHWEAPON",
+    "Quality": 4,
+    "Slot": -1,
     "Stats": {
       "Stamina": 55,
-      "Crit": 42,
+      "CritRating": 42,
       "Resilience": 42,
       "AttackPower": 82
     },
-    "Spells": [],
     "Phase": 2
   },
   {
@@ -1927,14 +1660,13 @@
     "ID": 33478,
     "Name": "Jin\u0027rohk, The Great Apocalypse",
     "ItemLevel": 138,
-    "Quality": "EPIC",
-    "InventoryType": "TWOHWEAPON",
+    "Quality": 4,
+    "Slot": -1,
     "Stats": {
       "Stamina": 49,
       "Haste": 45,
       "AttackPower": 120
     },
-    "Spells": [],
     "Phase": 4
   },
   {
@@ -1945,14 +1677,13 @@
     "ID": 29993,
     "Name": "Twinblade of the Phoenix",
     "ItemLevel": 141,
-    "Quality": "EPIC",
-    "InventoryType": "TWOHWEAPON",
+    "Quality": 4,
+    "Slot": -1,
     "Stats": {
       "Stamina": 53,
-      "Crit": 37,
+      "CritRating": 37,
       "AttackPower": 110
     },
-    "Spells": [],
     "Socket1": {
       "Color": 2
     },
@@ -1972,15 +1703,14 @@
     "ID": 32248,
     "Name": "Halberd of Desolation",
     "ItemLevel": 141,
-    "Quality": "EPIC",
-    "InventoryType": "TWOHWEAPON",
+    "Quality": 4,
+    "Slot": -1,
     "Stats": {
       "Agility": 51,
       "Stamina": 57,
-      "Hit": 30,
+      "HitRating": 30,
       "AttackPower": 100
     },
-    "Spells": [],
     "Phase": 3
   },
   {
@@ -1991,15 +1721,14 @@
     "ID": 32332,
     "Name": "Torch of the Damned",
     "ItemLevel": 141,
-    "Quality": "EPIC",
-    "InventoryType": "TWOHWEAPON",
+    "Quality": 4,
+    "Slot": -1,
     "Stats": {
       "Strength": 51,
       "Stamina": 45,
-      "Crit": 38,
+      "CritRating": 38,
       "Haste": 50
     },
-    "Spells": [],
     "Phase": 3
   },
   {
@@ -2010,14 +1739,13 @@
     "ID": 32348,
     "Name": "Soul Cleaver",
     "ItemLevel": 141,
-    "Quality": "EPIC",
-    "InventoryType": "TWOHWEAPON",
+    "Quality": 4,
+    "Slot": -1,
     "Stats": {
       "Strength": 65,
       "Stamina": 63,
       "ArmorPenetration": 315
     },
-    "Spells": [],
     "Phase": 3
   },
   {
@@ -2028,17 +1756,16 @@
     "ID": 33663,
     "Name": "Vengeful Gladiator\u0027s Bonegrinder",
     "ItemLevel": 146,
-    "Quality": "EPIC",
-    "InventoryType": "TWOHWEAPON",
+    "Quality": 4,
+    "Slot": -1,
     "Stats": {
       "Strength": 46,
       "Stamina": 62,
-      "Hit": 15,
-      "Crit": 46,
+      "HitRating": 15,
+      "CritRating": 46,
       "Resilience": 33,
       "ArmorPenetration": 98
     },
-    "Spells": [],
     "Phase": 3
   },
   {
@@ -2049,17 +1776,16 @@
     "ID": 33670,
     "Name": "Vengeful Gladiator\u0027s Decapitator",
     "ItemLevel": 146,
-    "Quality": "EPIC",
-    "InventoryType": "TWOHWEAPON",
+    "Quality": 4,
+    "Slot": -1,
     "Stats": {
       "Stamina": 62,
-      "Hit": 15,
-      "Crit": 46,
+      "HitRating": 15,
+      "CritRating": 46,
       "Resilience": 33,
       "AttackPower": 92,
       "ArmorPenetration": 98
     },
-    "Spells": [],
     "Phase": 3
   },
   {
@@ -2070,17 +1796,16 @@
     "ID": 33688,
     "Name": "Vengeful Gladiator\u0027s Greatsword",
     "ItemLevel": 146,
-    "Quality": "EPIC",
-    "InventoryType": "TWOHWEAPON",
+    "Quality": 4,
+    "Slot": -1,
     "Stats": {
       "Strength": 46,
       "Stamina": 62,
-      "Hit": 15,
-      "Crit": 46,
+      "HitRating": 15,
+      "CritRating": 46,
       "Resilience": 33,
       "ArmorPenetration": 98
     },
-    "Spells": [],
     "Phase": 3
   },
   {
@@ -2091,15 +1816,14 @@
     "ID": 33727,
     "Name": "Vengeful Gladiator\u0027s Painsaw",
     "ItemLevel": 146,
-    "Quality": "EPIC",
-    "InventoryType": "TWOHWEAPON",
+    "Quality": 4,
+    "Slot": -1,
     "Stats": {
       "Stamina": 62,
-      "Crit": 47,
+      "CritRating": 47,
       "Resilience": 42,
       "AttackPower": 92
     },
-    "Spells": [],
     "Phase": 3
   },
   {
@@ -2110,43 +1834,14 @@
     "ID": 34891,
     "Name": "The Blade of Harbingers",
     "ItemLevel": 146,
-    "Quality": "EPIC",
-    "InventoryType": "TWOHWEAPON",
+    "Quality": 4,
+    "Slot": -1,
     "Stats": {
-      "Crit": 55,
+      "CritRating": 55,
       "Haste": 53,
       "AttackPower": 108
     },
-    "Spells": [],
     "Phase": 5
-  },
-  {
-    "MinDamage": 395,
-    "MaxDamage": 593,
-    "AttackSpeed": 3600,
-    "DPS": 137.22221,
-    "ID": 29834,
-    "Name": "Warrior 150 Test 2H Axe",
-    "ItemLevel": 150,
-    "Quality": "EPIC",
-    "InventoryType": "TWOHWEAPON",
-    "Stats": {},
-    "Spells": [],
-    "Phase": 1
-  },
-  {
-    "MinDamage": 329,
-    "MaxDamage": 494,
-    "AttackSpeed": 3000,
-    "DPS": 137.16666,
-    "ID": 29881,
-    "Name": "Paladin 150 Test 2H Axe",
-    "ItemLevel": 150,
-    "Quality": "EPIC",
-    "InventoryType": "TWOHWEAPON",
-    "Stats": {},
-    "Spells": [],
-    "Phase": 1
   },
   {
     "MinDamage": 386,
@@ -2156,14 +1851,13 @@
     "ID": 30902,
     "Name": "Cataclysm\u0027s Edge",
     "ItemLevel": 151,
-    "Quality": "EPIC",
-    "InventoryType": "TWOHWEAPON",
+    "Quality": 4,
+    "Slot": -1,
     "Stats": {
       "Strength": 75,
       "Stamina": 49,
       "ArmorPenetration": 335
     },
-    "Spells": [],
     "Phase": 3
   },
   {
@@ -2174,14 +1868,13 @@
     "ID": 34183,
     "Name": "Shivering Felspine",
     "ItemLevel": 154,
-    "Quality": "EPIC",
-    "InventoryType": "TWOHWEAPON",
+    "Quality": 4,
+    "Slot": -1,
     "Stats": {
       "Agility": 52,
       "Haste": 53,
       "AttackPower": 120
     },
-    "Spells": [],
     "Socket1": {
       "Color": 8
     },
@@ -2195,17 +1888,16 @@
     "ID": 34989,
     "Name": "Brutal Gladiator\u0027s Bonegrinder",
     "ItemLevel": 154,
-    "Quality": "EPIC",
-    "InventoryType": "TWOHWEAPON",
+    "Quality": 4,
+    "Slot": -1,
     "Stats": {
       "Strength": 50,
       "Stamina": 66,
-      "Hit": 19,
-      "Crit": 50,
+      "HitRating": 19,
+      "CritRating": 50,
       "Resilience": 33,
       "ArmorPenetration": 98
     },
-    "Spells": [],
     "Phase": 5
   },
   {
@@ -2216,17 +1908,16 @@
     "ID": 34997,
     "Name": "Brutal Gladiator\u0027s Decapitator",
     "ItemLevel": 154,
-    "Quality": "EPIC",
-    "InventoryType": "TWOHWEAPON",
+    "Quality": 4,
+    "Slot": -1,
     "Stats": {
       "Stamina": 66,
-      "Hit": 19,
-      "Crit": 50,
+      "HitRating": 19,
+      "CritRating": 50,
       "Resilience": 33,
       "AttackPower": 100,
       "ArmorPenetration": 98
     },
-    "Spells": [],
     "Phase": 5
   },
   {
@@ -2237,17 +1928,16 @@
     "ID": 35015,
     "Name": "Brutal Gladiator\u0027s Greatsword",
     "ItemLevel": 154,
-    "Quality": "EPIC",
-    "InventoryType": "TWOHWEAPON",
+    "Quality": 4,
+    "Slot": -1,
     "Stats": {
       "Strength": 50,
       "Stamina": 66,
-      "Hit": 19,
-      "Crit": 50,
+      "HitRating": 19,
+      "CritRating": 50,
       "Resilience": 33,
       "ArmorPenetration": 98
     },
-    "Spells": [],
     "Phase": 5
   },
   {
@@ -2258,15 +1948,14 @@
     "ID": 35064,
     "Name": "Brutal Gladiator\u0027s Painsaw",
     "ItemLevel": 154,
-    "Quality": "EPIC",
-    "InventoryType": "TWOHWEAPON",
+    "Quality": 4,
+    "Slot": -1,
     "Stats": {
       "Stamina": 68,
-      "Crit": 51,
+      "CritRating": 51,
       "Resilience": 42,
       "AttackPower": 102
     },
-    "Spells": [],
     "Phase": 5
   },
   {
@@ -2277,15 +1966,13 @@
     "ID": 32824,
     "Name": "Trashbringer",
     "ItemLevel": 155,
-    "Quality": "LEGENDARY",
-    "InventoryType": "TWOHWEAPON",
+    "Quality": 5,
+    "Slot": -1,
     "Stats": {},
-    "Spells": [
-      {
-        "ID": 18112,
-        "Name": "Firebolt"
-      }
-    ],
+    "OnEquip": {
+      "ID": 18112,
+      "Name": "Firebolt"
+    },
     "Phase": 53
   },
   {
@@ -2296,15 +1983,14 @@
     "ID": 34247,
     "Name": "Apolyon, the Soul-Render",
     "ItemLevel": 164,
-    "Quality": "EPIC",
-    "InventoryType": "TWOHWEAPON",
+    "Quality": 4,
+    "Slot": -1,
     "Stats": {
       "Stamina": 75,
-      "Crit": 42,
+      "CritRating": 42,
       "Haste": 32,
       "AttackPower": 126
     },
-    "Spells": [],
     "Socket1": {
       "Color": 2
     },
@@ -2327,19 +2013,17 @@
     "ID": 30316,
     "Name": "Devastation",
     "ItemLevel": 175,
-    "Quality": "LEGENDARY",
-    "InventoryType": "TWOHWEAPON",
+    "Quality": 5,
+    "Slot": -1,
     "Stats": {
       "Stamina": 75,
-      "Crit": 50,
+      "CritRating": 50,
       "AttackPower": 150
     },
-    "Spells": [
-      {
-        "ID": 36479,
-        "Name": "Speed Infusion"
-      }
-    ],
+    "OnEquip": {
+      "ID": 36479,
+      "Name": "Speed Infusion"
+    },
     "Phase": 53
   }
 ]
