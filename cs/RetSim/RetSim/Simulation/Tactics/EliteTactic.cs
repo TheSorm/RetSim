@@ -1,7 +1,7 @@
-﻿using RetSim.Events;
+﻿using RetSim.Data;
+using RetSim.Events;
 using System;
 using System.Collections.Generic;
-using RetSim.Data;
 using static RetSim.Data.Auras;
 
 namespace RetSim.Tactics

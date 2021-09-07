@@ -1,7 +1,6 @@
 ﻿using RetSim.Items;
 using System.Collections.Generic;
 using System.IO;
-using System.Net;
 using System.Text.Json;
 using static RetSim.Data.Items;
 
@@ -37,7 +36,7 @@ namespace RetSim.Data
                 Trinket2 = EquippableItem.GetItemWithGems(28830, null),
                 Relic = EquippableItem.GetItemWithGems(27484, null),
                 Weapon = Weapons[28429],
-            };            
+            };
         }
 
         public static (List<EquippableWeapon> Weapons, List<EquippableItem> Armor, List<ItemSet> Sets, List<Gem> Gems, List<MetaGem> MetaGems) LoadData()

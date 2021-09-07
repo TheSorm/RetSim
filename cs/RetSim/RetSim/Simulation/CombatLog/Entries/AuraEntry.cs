@@ -3,7 +3,7 @@
     public class AuraEntry : LogEntry
     {
         public string Source { get; init; }
-        public AuraChangeType Type {  get; init; }
+        public AuraChangeType Type { get; init; }
 
         protected override string FormatInput()
         {

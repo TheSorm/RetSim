@@ -11,7 +11,7 @@ namespace RetSim
         static void Main(string[] args)
         {
             var equipment = Data.Importer.GetEquipment();
-            
+
             FightSimulation fight = new(new Player(Races.Human, equipment), new Enemy(Armor.Warrior), new EliteTactic(), 35000, 40000);
 
             fight.Run();

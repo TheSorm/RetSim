@@ -23,8 +23,8 @@ namespace RetSim.SpellEffects
                     Mana = fight.Player.Stats.Mana,
                     Source = Parent.Name,
                     Number = Number
-                });;
-            
+                }); ;
+
             return fight.Player.Cast(Proc, fight);
         }
     }

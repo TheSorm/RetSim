@@ -12,10 +12,10 @@ namespace RetSim
         public int CastTime { get; init; } = 0;
         public SpellGCD GCD { get; init; } = null;
         public Aura Aura { get; set; } = null;
-        public List<SpellEffect> Effects { get; set; } = null;        
+        public List<SpellEffect> Effects { get; set; } = null;
     }
 
-    public record Judgement : Spell {}
+    public record Judgement : Spell { }
 
     public record SpellGCD
     {

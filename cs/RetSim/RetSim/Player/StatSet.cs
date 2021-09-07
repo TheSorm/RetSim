@@ -5,10 +5,10 @@
         public int Stamina { get; init; }
         public int Health { get; init; }
         public int Armor { get; init; }
-        public int Resilience {  get; init; }
+        public int Resilience { get; init; }
 
         public int Intellect { get; init; }
-        public int Mana {  get; init;}
+        public int Mana { get; init; }
         public int ManaPer5 { get; init; }
 
         public int Strength { get; init; }

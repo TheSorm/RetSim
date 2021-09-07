@@ -128,7 +128,7 @@ namespace RetSim.Items
         public int ID { get; init; }
         public string Name { get; init; }
     }
-    
+
     public enum Quality
     {
         Poor = 0,
