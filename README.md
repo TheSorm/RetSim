@@ -14,6 +14,7 @@ A WoW TBC Classic Retribution Paladin Simulator
     * Create CastEvents for every tick (but this "sounds wrong")
 * Gear 
   * Enchants
+* Talents
 * Spell, Aura, Proc Data 
 * Proc
   * ProcCooldownEvent - Implemented
