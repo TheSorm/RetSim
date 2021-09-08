@@ -74,6 +74,14 @@ namespace RetSim.Data
             Effects = new List<AuraEffect>() { new ModDamageSchool() { Percentage = 5, Schools = new List<School> { School.Physical, School.Holy, } } }
         };
 
+        public static readonly Aura Fanaticism = new()
+        {
+            Effects = new List<AuraEffect>
+            {
+                new ModSpellCritChance() { Percentage = 15 } 
+            }
+        };
+
         public static readonly Aura Precision = new()
         {
             Effects = new List<AuraEffect>
@@ -85,6 +93,11 @@ namespace RetSim.Data
         public static readonly Aura DivineStrength = new()
         {
             Effects = new List<AuraEffect>() { new ModStat() { Percentage = 10, Strength = true } }
+        };
+
+        public static readonly Aura DivineIntellect = new()
+        {
+            Effects = new List<AuraEffect>() { new ModStat() { Percentage = 10, Intellect = true } }
         };
     }
 }

@@ -16,17 +16,19 @@ namespace RetSim
         {
             var equipment = Data.Importer.GetEquipment();
 
-            var talents = new List<Talent> { ImprovedSealOfTheCrusader, Conviction, Crusade, TwoHandedWeaponSpecialization, SanctityAura, ImprovedSanctityAura, Vengeance, SanctifiedSeals, Precision, DivineStrength };
-            var buffs = new List<Spell> { WindfuryTotem, GreaterBlessingOfMight, GreaterBlessingOfKings, BattleShout };
+            var talents = new List<Talent> { ImprovedSealOfTheCrusader, Conviction, Crusade, TwoHandedWeaponSpecialization, SanctityAura, ImprovedSanctityAura, Vengeance, Fanaticism, SanctifiedSeals, Precision, DivineStrength };
+            var buffs = new List<Spell> { WindfuryTotem, GreaterBlessingOfMight, GreaterBlessingOfKings, BattleShout, StrengthOfEarthTotem, GraceOfAirTotem, ManaSpringTotem, UnleashedRage,
+                                            GiftOfTheWild, PrayerOfFortitude, PrayerOfSpirit, ArcaneBrilliance, InspiringPresence };
 
             RunOnce(equipment, talents, buffs);
+            //RunMany(equipment, talents, buffs);
             
 
-            foreach (EquippableItem item in equipment.PlayerEquipment)
-            {
-                if (item != null)
-                    Logger.Log($"\n{item}");
-            }
+            //foreach (EquippableItem item in equipment.PlayerEquipment)
+            //{
+            //    if (item != null)
+            //        Logger.Log($"\n{item}");
+            //}
         }
 
         static void RunOnce(Equipment equipment, List<Talent> talents, List<Spell> buffs)

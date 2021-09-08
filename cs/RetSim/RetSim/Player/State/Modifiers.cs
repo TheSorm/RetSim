@@ -7,6 +7,7 @@ namespace RetSim
     {
         public SchoolModifiers Schools { get; init; } = new SchoolModifiers();
         public SpellModifiers Spells { get; init; } = new SpellModifiers();
+        public SpellCritModifiers SpellCrit { get; init; } = new SpellCritModifiers();
         public SpellBonuses Bonuses { get; init; } = new SpellBonuses();
 
         public StatModifiers Stats { get; init; } = new StatModifiers();
@@ -46,6 +47,18 @@ namespace RetSim
     public class SpellModifiers : FailsafeDictionary<Spell, float>
     {
         public SpellModifiers()
+        {
+            Default = 1f;
+
+            foreach (Spell spell in Data.Spells.ByID.Values)
+            {
+                Add(spell, Default);
+            }
+        }
+    }
+    public class SpellCritModifiers : FailsafeDictionary<Spell, float>
+    {
+        public SpellCritModifiers()
         {
             Default = 1f;
 

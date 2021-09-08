@@ -58,7 +58,11 @@
             Name = "Sanctified Seals"
         };
 
-        //TODO: Fanaticism
+        public static readonly Talent Fanaticism = new()
+        {
+            ID = 31883,
+            Name = "Fanaticism"
+        };
 
         public static readonly Talent Precision = new()
         {
@@ -70,6 +74,12 @@
         {
             ID = 20266,
             Name = "Divine Strength"
+        };
+
+        public static readonly Talent DivineIntellect = new()
+        {
+            ID = 20261,
+            Name = "Divine Intellect"
         };
     }
 }

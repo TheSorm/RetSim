@@ -40,8 +40,7 @@ namespace RetSim.Data
                 new ModDamageSpell() 
                 { 
                     Percentage = 6,
-                    Spells = new List<Spell> { Spells.Melee, Spells.WindfuryProc, Spells.SealOfCommandProc, Spells.JudgementOfCommand, Spells.SealOfBloodProc, Spells.JudgementOfBlood 
-                    }
+                    Spells = new List<Spell> { Spells.Melee, Spells.WindfuryProc, Spells.SealOfCommandProc, Spells.JudgementOfCommand, Spells.SealOfBloodProc, Spells.JudgementOfBlood }
                 }
             };
 
@@ -55,6 +54,16 @@ namespace RetSim.Data
             //        Schools = new List<School> { School.Typeless, School.Physical, School.Holy, School.Fire, School.Nature, School.Frost, School.Shadow, School.Arcane } 
             //    } 
             //};
+
+
+            Fanaticism.Effects = new List<AuraEffect>()
+            {
+                new ModSpellCritChance()
+                {
+                    Percentage = 15,
+                    Spells = new List<Spell> { Spells.JudgementOfCommand, Spells.JudgementOfBlood }
+                }
+            };
 
             WindfuryTotem.Effects = new List<AuraEffect>()
                     { new GainProc(Procs.WindfuryAttack) };
@@ -89,6 +98,17 @@ namespace RetSim.Data
                 { Spells.BattleShout.ID, BattleShout },
                 { Spells.TrueshotAura.ID, TrueshotAura },
                 { Spells.FerociousInspiration.ID, FerociousInspiration },
+                { Spells.StrengthOfEarthTotem.ID, StrengthOfEarthTotem },
+                { Spells.GraceOfAirTotem.ID, GraceOfAirTotem },
+                { Spells.ManaSpringTotem.ID, ManaSpringTotem },
+                { Spells.UnleashedRage.ID, UnleashedRage },
+                { Spells.GiftOfTheWild.ID, MarkOfTheWild },
+                { Spells.LeaderOfThePack.ID, LeaderOfThePack },
+                { Spells.PrayerOfFortitude.ID, PrayerOfFortitude },
+                { Spells.PrayerOfSpirit.ID, PrayerOfSpirit },
+                { Spells.ArcaneBrilliance.ID, ArcaneBrilliance },
+                { Spells.HeroicPresence.ID, HeroicPresence },
+                { Spells.InspiringPresence.ID, InspiringPresence },
 
                 { Spells.ImprovedSealOfTheCrusader.ID, ImprovedSealOfTheCrusader },
                 { Spells.Conviction.ID, Conviction },
@@ -99,8 +119,10 @@ namespace RetSim.Data
                 { Spells.SanctifiedSeals.ID, SanctifiedSeals },
                 { Spells.Vengeance.ID, Vengeance },
                 { Spells.VengeanceProc.ID, VengeanceProc },
+                { Spells.Fanaticism.ID, Fanaticism },
                 { Spells.Precision.ID, Precision },
                 { Spells.DivineStrength.ID, DivineStrength },
+                { Spells.DivineIntellect.ID, DivineIntellect },
 
                 { Spells.DragonspineTrophy.ID, DragonspineTrophy },
                 { Spells.DragonspineTrophyProc.ID, DragonspineTrophyProc }
