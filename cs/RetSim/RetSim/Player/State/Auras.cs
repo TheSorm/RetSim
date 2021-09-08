@@ -39,13 +39,18 @@ namespace RetSim
         {
             if (this[aura].Active)
             {
-                if (this[aura].Stacks < aura.MaxStacks)
-                    ApplyEffects(aura, fight);
-
                 if (aura.Duration > 0)
                     this[aura].End.Timestamp = fight.Timestamp + aura.Duration + extraDuration;
 
-                if (log)
+                if (this[aura].Stacks < aura.MaxStacks)
+                {
+                    ApplyEffects(aura, fight);
+
+                    if (log)
+                        Log(aura, fight, AuraChangeType.Gain);
+                }                
+
+                else if (log)
                     Log(aura, fight, AuraChangeType.Refresh);
             }
 
@@ -67,6 +72,8 @@ namespace RetSim
 
         private void ApplyEffects(Aura aura, FightSimulation fight)
         {
+            this[aura].Stacks++;
+
             if (aura.Effects != null)
             {
                 foreach (AuraEffect effect in aura.Effects)
@@ -74,22 +81,21 @@ namespace RetSim
                     effect.Apply(aura, fight);
                 }
             }
-
-            this[aura].Stacks++;
         }
 
         public void Cancel(Aura aura, FightSimulation fight, bool log = true)
         {
             if (this[aura].Active)
             {
-                for (int i = 0; i < this[aura].Stacks; i++)
+                while (this[aura].Stacks > 0)
                 {
                     foreach (AuraEffect effect in aura.Effects)
                         effect.Remove(aura, fight);
+
+                    this[aura].Stacks--;
                 }
 
                 this[aura].End = null;
-                this[aura].Stacks = 0;
 
                 if (log)
                     Log(aura, fight, AuraChangeType.Fade);
@@ -103,6 +109,7 @@ namespace RetSim
                 Timestamp = fight.Timestamp,
                 Mana = fight.Player.Stats.Mana,
                 Source = aura.Parent.Name,
+                Stacks = fight.Player.Auras[aura].Stacks,
                 Type = type
             };
 

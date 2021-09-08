@@ -166,6 +166,18 @@ namespace RetSim.Data
             //TODO: Give this shit an effect
         };
 
+        public static readonly Spell Vengeance = new()
+        {
+            ID = 20059,
+            Name = "Vengeance"
+        };
+
+        public static readonly Spell VengeanceProc = new()
+        {
+            ID = 20055,
+            Name = "Vengeance"
+        };
+
         public static readonly Spell WindfuryTotem = new()
         {
             ID = 25580,
@@ -240,6 +252,8 @@ namespace RetSim.Data
             { SealOfBlood.ID, SealOfBlood },
             { JudgementOfBlood.ID, JudgementOfBlood },
             { SealOfTheCrusader.ID, SealOfTheCrusader },
+            { Vengeance.ID, Vengeance },
+            { VengeanceProc.ID, VengeanceProc },
             { WindfuryProc.ID, WindfuryProc },
             { WindfuryAttack.ID, WindfuryAttack },
             { WindfuryTotem.ID, WindfuryTotem },

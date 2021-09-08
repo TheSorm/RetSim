@@ -16,6 +16,11 @@ namespace RetSim.Data
             ProcMask = ProcMask.OnBasicAttack
         };
 
+        public static readonly Proc Vengeance = new()
+        {
+            ProcMask = ProcMask.OnAnyCrit,
+        };
+
         public static readonly Proc WindfuryAttack = new()
         {
             ProcMask = ProcMask.OnAutoAttack,
@@ -35,14 +40,16 @@ namespace RetSim.Data
         {
             SealOfCommand.Spell = Spells.SealOfCommandProc;
             SealOfBlood.Spell = Spells.SealOfBloodProc;
+            Vengeance.Spell = Spells.VengeanceProc;
             WindfuryAttack.Spell = Spells.WindfuryAttack;
             DragonspineTrophy.Spell = Spells.DragonspineTrophyProc;
 
             ByID = new()
             {
-                { Spells.SealOfCommandProc.ID, SealOfCommand },
+                { Spells.SealOfCommand.ID, SealOfCommand },
                 { Spells.SealOfBlood.ID, SealOfBlood },
-                { Spells.WindfuryAttack.ID, WindfuryAttack },
+                { Spells.Vengeance.ID, Vengeance },
+                { Spells.WindfuryTotem.ID, WindfuryAttack },
                 { Spells.DragonspineTrophy.ID, DragonspineTrophy },
             };
         }

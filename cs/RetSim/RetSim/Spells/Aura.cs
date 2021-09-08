@@ -9,6 +9,11 @@ namespace RetSim
         public virtual int Duration { get; init; } = 0;
         public int MaxStacks { get; init; } = 1;
         public List<AuraEffect> Effects { get; set; } = null;
+
+        public override string ToString()
+        {
+            return Parent.Name;
+        }
     }
 
     public class Seal : Aura

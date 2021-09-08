@@ -22,7 +22,8 @@ namespace RetSim
         OnMeleeCrit = 16,
         OnAnyCrit = 32,
         OnSpellCastSuccess = 64,
-        OnBasicAttack = OnAutoAttack + OnWindfury + OnSealOfCommand,
+        OnWhiteAttack = OnAutoAttack + OnWindfury,
+        OnBasicAttack = OnWhiteAttack + OnSealOfCommand,
         OnAnyAttack = OnBasicAttack + OnSpecialAttack
         // TODO: Update and enhance
     }

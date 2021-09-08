@@ -18,6 +18,16 @@ namespace RetSim.Data
         {
         };
 
+        public static readonly Aura Vengeance = new()
+        {
+        };
+
+        public static readonly Aura VengeanceProc = new()
+        {
+            Duration = 30000,
+            MaxStacks = 3            
+        };
+
         public static readonly Aura WindfuryTotem = new()
         {
         };
@@ -61,6 +71,12 @@ namespace RetSim.Data
             SealOfBlood.Effects = new List<AuraEffect>()
                     { new GainProc(Procs.SealOfBlood), new GainSeal() };
 
+            Vengeance.Effects = new List<AuraEffect>()
+                     { new GainProc(Procs.Vengeance) };
+
+            VengeanceProc.Effects = new List<AuraEffect>()
+                    { new ModDamage() { Schools = new List<School> { School.Holy, School.Physical }, Percentage = 5 } };
+
             WindfuryTotem.Effects = new List<AuraEffect>()
                     { new GainProc(Procs.WindfuryAttack) };
 
@@ -84,6 +100,8 @@ namespace RetSim.Data
                 { Spells.SealOfTheCrusader.ID, SealOfTheCrusader },
                 { Spells.SealOfCommand.ID, SealOfCommand },
                 { Spells.SealOfBlood.ID, SealOfBlood },
+                { Spells.Vengeance.ID, Vengeance },
+                { Spells.VengeanceProc.ID, VengeanceProc },
                 { Spells.WindfuryTotem.ID, WindfuryTotem },
                 { Spells.WindfuryAttack.ID, WindfuryAttack },
                 { Spells.DragonspineTrophy.ID, DragonspineTrophy },

@@ -35,6 +35,7 @@ namespace RetSim
         public CombatLog Run()
         {
             Player.Cast(Data.Spells.WindfuryTotem, this);
+            Player.Cast(Data.Spells.Vengeance, this);
             //TODO add auras from player equipment
 
             foreach (Spell spell in Player.Equipment.Spells)
@@ -58,16 +59,20 @@ namespace RetSim
                     Player.CheckForProcs(mask, this);
 
                     Logger.Log(Timestamp + ": Event: " + curent.ToString());
-
+                    
                     if (!Queue.IsEmpty())
                     {
                         Queue.EnsureSorting();
                         nextTimestamp = Queue.GetNext().Timestamp;
-                        if (Timestamp == nextTimestamp) continue;
+                        
+                        if (Timestamp == nextTimestamp) 
+                            continue;
                     }
                 }
 
                 Queue.Add(Tactic.GetActionBetween(Timestamp, nextTimestamp, this));
+
+                Timestamp = nextTimestamp; //TODO: Fix this hacky solution
             }
 
             return CombatLog;
