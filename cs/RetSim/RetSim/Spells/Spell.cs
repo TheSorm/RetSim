@@ -17,6 +17,8 @@ namespace RetSim
 
     public record Judgement : Spell { }
 
+    public record Talent : Spell { }
+
     public record SpellGCD
     {
         public int Duration { get; init; } = Constants.Numbers.DefaultGCD;

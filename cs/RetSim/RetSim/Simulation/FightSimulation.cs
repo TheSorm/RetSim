@@ -2,6 +2,7 @@
 using RetSim.Events;
 using RetSim.Log;
 using RetSim.Tactics;
+using System.Collections.Generic;
 using static RetSim.Program;
 
 namespace RetSim
@@ -11,6 +12,7 @@ namespace RetSim
         public readonly Player Player;
         public readonly Enemy Enemy;
         public readonly Tactic Tactic;
+        public readonly List<Spell> Buffs;
 
         public readonly CombatLog CombatLog;
         public readonly IEventQueue Queue;
@@ -18,11 +20,12 @@ namespace RetSim
 
         public readonly int Duration;
 
-        public FightSimulation(Player player, Enemy enemy, Tactic tactic, int minDuration, int maxDuration)
+        public FightSimulation(Player player, Enemy enemy, Tactic tactic, List<Spell> buffs, int minDuration, int maxDuration)
         {
             Player = player;
             Enemy = enemy;
             Tactic = tactic;
+            Buffs = buffs;
 
             CombatLog = new CombatLog();
             Queue = new MinQueue();
@@ -34,13 +37,19 @@ namespace RetSim
 
         public CombatLog Run()
         {
-            Player.Cast(Data.Spells.WindfuryTotem, this);
-            Player.Cast(Data.Spells.Vengeance, this);
-            //TODO add auras from player equipment
-
             foreach (Spell spell in Player.Equipment.Spells)
             {
                 Player.Cast(spell, this);
+            }
+
+            foreach (Talent talent in Player.Talents)
+            {
+                Player.Cast(talent, this);
+            }
+
+            foreach (Spell buff in Buffs)
+            {
+                Player.Cast(buff, this);
             }
 
             Queue.AddRange(Tactic.PreFight(this));
@@ -58,7 +67,7 @@ namespace RetSim
                     ProcMask mask = curent.Execute();
                     Player.CheckForProcs(mask, this);
 
-                    Logger.Log(Timestamp + ": Event: " + curent.ToString());
+                    //Logger.Log(Timestamp + ": Event: " + curent.ToString());
                     
                     if (!Queue.IsEmpty())
                     {

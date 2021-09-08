@@ -17,6 +17,7 @@ namespace RetSim.Tactics
             return new List<Event>()
             {
                 new CastEvent(Spells.SealOfCommand, fight, 0),
+                new CastEvent(Spells.AvengingWrath, fight, 1495),
                 new CastEvent(Spells.SealOfBlood, fight, 1500),
                 new AutoAttackEvent(fight, 1500)
             };
@@ -27,6 +28,9 @@ namespace RetSim.Tactics
             var swing = fight.Player.TimeOfNextSwing() - start;
             var gcd = fight.Player.GCD.GetDuration(start);
             var cs = fight.Player.Spellbook.IsOnCooldown(Spells.CrusaderStrike) ? fight.Player.Spellbook[Spells.CrusaderStrike].Timestamp - start : 0;
+
+            if (!fight.Player.Spellbook.IsOnCooldown(Spells.AvengingWrath) && start > 1500)
+                fight.Player.Cast(Spells.AvengingWrath, fight);
 
             if (gcd == 0 && !fight.Player.Auras[SealOfCommand].Active && swing - gcd > 1510 && end > start + gcd)
             {

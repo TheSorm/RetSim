@@ -1,11 +1,9 @@
 ﻿using RetSim.SpellEffects;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace RetSim.Data
 {
-
-    public static class Spells
+    public static partial class Spells
     {
         public static readonly Spell Melee = new()
         {
@@ -166,18 +164,6 @@ namespace RetSim.Data
             //TODO: Give this shit an effect
         };
 
-        public static readonly Spell Vengeance = new()
-        {
-            ID = 20059,
-            Name = "Vengeance"
-        };
-
-        public static readonly Spell VengeanceProc = new()
-        {
-            ID = 20055,
-            Name = "Vengeance"
-        };
-
         public static readonly Spell WindfuryTotem = new()
         {
             ID = 25580,
@@ -208,6 +194,14 @@ namespace RetSim.Data
                 }
         };
 
+        public static readonly Spell AvengingWrath = new()
+        {
+            ID = 31884,
+            Name = "Avenging Wrath",
+            ManaCost = 236,
+            Cooldown = 180000            
+        };
+
         public static readonly Spell DragonspineTrophy = new()
         {
             ID = 34774,
@@ -219,60 +213,5 @@ namespace RetSim.Data
             ID = 34775,
             Name = "Dragonspine Trophy"
         };
-
-        private static void AssignChildren(Spell spell)
-        {
-            if (spell.Aura != null)
-                spell.Aura.Parent = spell;
-
-            if (spell.Effects != null)
-            {
-                foreach (SpellEffect effect in spell.Effects)
-                {
-                    effect.Parent = spell;
-                }
-            }
-        }
-
-        private static void AssignAura(Spell spell)
-        {
-            if (Auras.ByID.ContainsKey(spell.ID))
-                spell.Aura = Auras.ByID[spell.ID];
-        }
-
-        public static readonly Dictionary<int, Spell> ByID = new()
-        {
-            { Melee.ID, Melee },
-            { CrusaderStrike.ID, CrusaderStrike },
-            { Judgement.ID, Judgement },
-            { SealOfCommandProc.ID, SealOfCommandProc },
-            { SealOfCommand.ID, SealOfCommand },
-            { JudgementOfCommand.ID, JudgementOfCommand },
-            { SealOfBloodProc.ID, SealOfBloodProc },
-            { SealOfBlood.ID, SealOfBlood },
-            { JudgementOfBlood.ID, JudgementOfBlood },
-            { SealOfTheCrusader.ID, SealOfTheCrusader },
-            { Vengeance.ID, Vengeance },
-            { VengeanceProc.ID, VengeanceProc },
-            { WindfuryProc.ID, WindfuryProc },
-            { WindfuryAttack.ID, WindfuryAttack },
-            { WindfuryTotem.ID, WindfuryTotem },
-            { DragonspineTrophyProc.ID, DragonspineTrophyProc },
-            { DragonspineTrophy.ID, DragonspineTrophy }
-        };
-
-        static Spells()
-        {
-            ByID.OrderBy(key => key.Key);
-
-            WindfuryAttack.Effects = new List<SpellEffect> { new ExtraAttacks(WindfuryProc, 1) };
-
-            foreach (Spell spell in ByID.Values)
-            {
-                AssignAura(spell);
-                AssignChildren(spell);
-            }
-        }
     }
-
 }

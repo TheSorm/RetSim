@@ -1,4 +1,5 @@
 ﻿using RetSim.Events;
+using System.Collections.Generic;
 
 namespace RetSim
 {
@@ -16,9 +17,12 @@ namespace RetSim
         public Procs Procs { get; init; }
         public GCD GCD { get; init; }
 
+        public List<Talent> Talents { get; init; }
+        
+
         public AutoAttackEvent NextAutoAttack { get; set; }
 
-        public Player(Race race, Equipment equipment)
+        public Player(Race race, Equipment equipment, List<Talent> talents)
         {
             Equipment = equipment;
             Race = race;
@@ -30,6 +34,8 @@ namespace RetSim
             Auras = new Auras(this);
             Procs = new Procs(this);
             GCD = new GCD();
+
+            Talents = talents;
         }
 
         public ProcMask Cast(Spell spell, FightSimulation fight)

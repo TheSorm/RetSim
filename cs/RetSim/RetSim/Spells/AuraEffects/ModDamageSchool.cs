@@ -1,22 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace RetSim.AuraEffects
 {
-    class ModDamage : AuraEffect
+    class ModDamageSchool : Modify
     {
         public List<School> Schools { get; init; }
-        public int Percentage { get; init; }
-
-        private int CurrentMod = 100;
-        private float PreviousMod;
-        private float RelativeDifference;
 
         public override void Apply(Aura aura, FightSimulation fight)
         {
-            PreviousMod = CurrentMod;
-            CurrentMod += Percentage;            
-            RelativeDifference = CurrentMod / PreviousMod;
+            base.Apply(aura, fight);
 
             foreach (School school in Schools)
             {
@@ -31,9 +23,7 @@ namespace RetSim.AuraEffects
                 fight.Player.Modifiers.Schools[school] /= RelativeDifference;
             }
 
-            CurrentMod = (int)PreviousMod;
-            PreviousMod -= Percentage;
-            RelativeDifference = CurrentMod / PreviousMod;
+            base.Remove(aura, fight);
         }
     }
 }
