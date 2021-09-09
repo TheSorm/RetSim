@@ -53,6 +53,7 @@ namespace RetSim.Data
 
                 { DragonspineTrophyProc.ID, DragonspineTrophyProc },
                 { DragonspineTrophy.ID, DragonspineTrophy },
+                { BloodlustBrooch.ID, BloodlustBrooch },
                 { Lionheart.ID, Lionheart },
                 { LionheartProc.ID, LionheartProc },
                 { LibramOfAvengement.ID, LibramOfAvengement },

@@ -33,5 +33,11 @@ namespace RetSim.Data
             Duration = 5000,
             Effects = new() { new GainStats() { Stats = new() { CritRating = 53 } } }
         };
+
+        public static readonly Aura BloodlustBrooch = new()
+        {
+            Duration = 20000,
+            Effects = new() { new GainStats() { Stats = new() { AttackPower = 278 } } }
+        };
     }
 }

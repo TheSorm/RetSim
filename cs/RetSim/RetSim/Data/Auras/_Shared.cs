@@ -96,6 +96,7 @@ namespace RetSim.Data
 
                 { Spells.DragonspineTrophy.ID, DragonspineTrophy },
                 { Spells.DragonspineTrophyProc.ID, DragonspineTrophyProc },
+                { Spells.BloodlustBrooch.ID, BloodlustBrooch },
                 { Spells.Lionheart.ID, Lionheart },
                 { Spells.LionheartProc.ID, LionheartProc },
                 { Spells.LibramOfAvengement.ID, LibramOfAvengement },

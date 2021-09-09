@@ -8,19 +8,36 @@ namespace RetSim.Tactics
 {
     public class EliteTactic : Tactic
     {
+        Spell trinket1 = null;
+        Spell trinket2 = null;
+
         public EliteTactic()
         {
         }
 
         public override List<Event> PreFight(FightSimulation fight)
         {
-            return new List<Event>()
+            var onStart = new List<Event>()
             {
                 new CastEvent(Spells.SealOfCommand, fight, 0),
                 new CastEvent(Spells.AvengingWrath, fight, 1495),
                 new CastEvent(Spells.SealOfBlood, fight, 1500),
                 new AutoAttackEvent(fight, 1501)
             };
+
+            if (fight.Player.Equipment.Trinket1.OnUse != null)
+                trinket1 = Spells.ByID[fight.Player.Equipment.Trinket1.OnUse.ID];
+
+            if (fight.Player.Equipment.Trinket2.OnUse != null)
+                trinket2 = Spells.ByID[fight.Player.Equipment.Trinket2.OnUse.ID];
+
+            if (trinket1 != null)
+                onStart.Add(new CastEvent(trinket1, fight, 1495));
+
+            else if (trinket2 != null)
+                onStart.Add(new CastEvent(trinket2, fight, 1495));
+
+            return onStart;
         }
 
         public override Event GetActionBetween(int start, int end, FightSimulation fight)
@@ -31,6 +48,12 @@ namespace RetSim.Tactics
 
             if (!fight.Player.Spellbook.IsOnCooldown(Spells.AvengingWrath) && start > 1500)
                 return new CastEvent(Spells.AvengingWrath, fight, fight.Timestamp);
+
+            if (trinket1 != null && !fight.Player.Spellbook.IsOnCooldown(trinket1) && start > 21495)
+                return new CastEvent(trinket1, fight, fight.Timestamp);
+
+            if (trinket2 != null && !fight.Player.Spellbook.IsOnCooldown(trinket2) && start > 21495)
+                return new CastEvent(trinket2, fight, fight.Timestamp);
 
             if (gcd == 0 && !fight.Player.Auras[SealOfCommand].Active && swing - gcd > 1510 && end > start + gcd)
             {

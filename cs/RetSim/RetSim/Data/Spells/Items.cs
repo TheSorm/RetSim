@@ -38,5 +38,12 @@
             ID = 34260,
             Name = "Justice"
         };
+
+        public static readonly Spell BloodlustBrooch = new()
+        {
+            ID = 35166,
+            Name = "Lust for Battle",
+            Cooldown = 120000
+        };
     }
 }
