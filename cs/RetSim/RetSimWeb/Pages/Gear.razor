@@ -1,84 +1,49 @@
 ﻿@page "/gear"
 
-<MudTabs Elevation="2" Rounded="true" Centered="true" PanelClass="pa-2">
-    <MudTabPanel Text="Weapon" Style="min-width:90px">
-        <MudContainer Class="mt-2 px-4" MaxWidth="MaxWidth.False">
-            <WeaponTable Weapons="RetSim.Data.Items.Weapons.Values" />
-        </MudContainer>
+<MudTabs Elevation="2" Rounded="true" Centered="true" Class="full-height" PanelClass="full-height pa-2">
+    <MudTabPanel Text="Heads" Style="min-width:90px">
+        <ItemTabContent Items="RetSim.Data.Items.Heads.Values"/>
     </MudTabPanel>
-    <MudTabPanel Text="Head" Style="min-width:90px">
-        <MudContainer Class="mt-2 px-4" MaxWidth="MaxWidth.False">
-            <ItemTable Items="RetSim.Data.Items.Heads.Values" />
-        </MudContainer>
-    </MudTabPanel>
-    <MudTabPanel Text="Neck" Style="min-width:90px">
-        <MudContainer Class="mt-2 px-4" MaxWidth="MaxWidth.False">
-            <ItemTable Items="RetSim.Data.Items.Necks.Values" />
-        </MudContainer>
+    <MudTabPanel Text="Necks" Style="min-width:90px">
+        <ItemTabContent Items="RetSim.Data.Items.Necks.Values"/>
     </MudTabPanel>
     <MudTabPanel Text="Shoulders" Style="min-width:90px">
-        <MudContainer Class="mt-2 px-4" MaxWidth="MaxWidth.False">
-            <ItemTable Items="RetSim.Data.Items.Shoulders.Values" />
-        </MudContainer>
+        <ItemTabContent Items="RetSim.Data.Items.Shoulders.Values"/>
     </MudTabPanel>
-    <MudTabPanel Text="Back" Style="min-width:90px">
-        <MudContainer Class="mt-2 px-4" MaxWidth="MaxWidth.False">
-            <ItemTable Items="RetSim.Data.Items.Cloaks.Values" />
-        </MudContainer>
+    <MudTabPanel Text="Cloaks" Style="min-width:90px">
+        <ItemTabContent Items="RetSim.Data.Items.Cloaks.Values"/>
     </MudTabPanel>
-    <MudTabPanel Text="Chest" Style="min-width:90px">
-        <MudContainer Class="mt-2 px-4" MaxWidth="MaxWidth.False">
-            <ItemTable Items="RetSim.Data.Items.Chests.Values" />
-        </MudContainer>
+    <MudTabPanel Text="Chests" Style="min-width:90px">
+        <ItemTabContent Items="RetSim.Data.Items.Chests.Values"/>
     </MudTabPanel>
     <MudTabPanel Text="Wrists" Style="min-width:90px">
-        <MudContainer Class="mt-2 px-4" MaxWidth="MaxWidth.False">
-            <ItemTable Items="RetSim.Data.Items.Wrists.Values" />
-        </MudContainer>
+        <ItemTabContent Items="RetSim.Data.Items.Wrists.Values"/>
     </MudTabPanel>
     <MudTabPanel Text="Hands" Style="min-width:90px">
-        <MudContainer Class="mt-2 px-4" MaxWidth="MaxWidth.False">
-            <ItemTable Items="RetSim.Data.Items.Hands.Values" />
-        </MudContainer>
+        <ItemTabContent Items="RetSim.Data.Items.Hands.Values"/>
     </MudTabPanel>
-    <MudTabPanel Text="Waist" Style="min-width:90px">
-        <MudContainer Class="mt-2 px-4" MaxWidth="MaxWidth.False">
-            <ItemTable Items="RetSim.Data.Items.Waists.Values" />
-        </MudContainer>
+    <MudTabPanel Text="Waists" Style="min-width:90px">
+        <ItemTabContent Items="RetSim.Data.Items.Waists.Values"/>
     </MudTabPanel>
     <MudTabPanel Text="Legs" Style="min-width:90px">
-        <MudContainer Class="mt-2 px-4" MaxWidth="MaxWidth.False">
-            <ItemTable Items="RetSim.Data.Items.Legs.Values" />
-        </MudContainer>
+        <ItemTabContent Items="RetSim.Data.Items.Legs.Values"/>
     </MudTabPanel>
-    <MudTabPanel Text="Legs" Style="min-width:90px">
-        <MudContainer Class="mt-2 px-4" MaxWidth="MaxWidth.False">
-            <ItemTable Items="RetSim.Data.Items.Legs.Values" />
-        </MudContainer>
+    <MudTabPanel Text="Feet" Style="min-width:90px">
+        <ItemTabContent Items="RetSim.Data.Items.Feet.Values"/>
     </MudTabPanel>
-    <MudTabPanel Text="Finger 1" Style="min-width:90px">
-        <MudContainer Class="mt-2 px-4" MaxWidth="MaxWidth.False">
-            <ItemTable Items="RetSim.Data.Items.Fingers.Values" />
-        </MudContainer>
+    <MudTabPanel Text="Fingers 1" Style="min-width:90px">
+        <ItemTabContent Items="RetSim.Data.Items.Fingers.Values"/>
     </MudTabPanel>
-    <MudTabPanel Text="Finger 2" Style="min-width:90px">
-        <MudContainer Class="mt-2 px-4" MaxWidth="MaxWidth.False">
-            <ItemTable Items="RetSim.Data.Items.Fingers.Values" />
-        </MudContainer>
+    <MudTabPanel Text="Fingers 2" Style="min-width:90px">
+        <ItemTabContent Items="RetSim.Data.Items.Fingers.Values"/>
     </MudTabPanel>
-    <MudTabPanel Text="Trinket 1" Style="min-width:90px">
-        <MudContainer Class="mt-2 px-4" MaxWidth="MaxWidth.False">
-            <ItemTable Items="RetSim.Data.Items.Trinkets.Values" />
-        </MudContainer>
+    <MudTabPanel Text="Trinkets 1" Style="min-width:90px">
+        <ItemTabContent Items="RetSim.Data.Items.Trinkets.Values"/>
     </MudTabPanel>
-    <MudTabPanel Text="Trinket 2" Style="min-width:90px">
-        <MudContainer Class="mt-2 px-4" MaxWidth="MaxWidth.False">
-            <ItemTable Items="RetSim.Data.Items.Trinkets.Values" />
-        </MudContainer>
+    <MudTabPanel Text="Trinkets 2" Style="min-width:90px">
+        <ItemTabContent Items="RetSim.Data.Items.Trinkets.Values"/>
     </MudTabPanel>
-    <MudTabPanel Text="Relic" Style="min-width:90px">
-        <MudContainer Class="mt-2 px-4" MaxWidth="MaxWidth.False">
-            <ItemTable Items="RetSim.Data.Items.Relics.Values" />
-        </MudContainer>
+    <MudTabPanel Text="Relics" Style="min-width:90px">
+        <ItemTabContent Items="RetSim.Data.Items.Relics.Values"/>
     </MudTabPanel>
 </MudTabs>

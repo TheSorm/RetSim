@@ -1,76 +1,66 @@
-﻿<MudTable Height="695px" FixedHeader="true" Dense="true" Striped="@true" SortLabel="Sort By" Items="@Items" Hover="true" Breakpoint="Breakpoint.Sm">
-	<HeaderContent>
-		<MudTh style="padding-inline-end: 0px;padding-inline-start: 0px;"></MudTh>
-        <MudTh style="padding-inline-end: 0px;padding-inline-start: 0px;"><MudTableSortLabel SortBy="new Func<EquippableItem, object>(x=>x.Name)">Name</MudTableSortLabel></MudTh>
-		<MudTh style="padding-inline-end: 0px;padding-inline-start: 0px;"><MudTableSortLabel SortBy="new Func<EquippableItem, object>(x=>x.ItemLevel)">Level</MudTableSortLabel></MudTh>	
-		<MudTh style="padding-inline-end: 0px;padding-inline-start: 0px;"></MudTh>
-		<MudTh style="padding-inline-end: 0px;padding-inline-start: 0px;"><MudTableSortLabel SortBy="new Func<EquippableItem, object>(x=>x.Stats[StatName.Strength])">Str</MudTableSortLabel></MudTh>		
-		<MudTh style="padding-inline-end: 0px;padding-inline-start: 0px;"><MudTableSortLabel SortBy="new Func<EquippableItem, object>(x=>x.Stats[StatName.AttackPower])">AP</MudTableSortLabel></MudTh>		
-		<MudTh style="padding-inline-end: 0px;padding-inline-start: 0px;"><MudTableSortLabel SortBy="new Func<EquippableItem, object>(x=>x.Stats[StatName.Agility])">Agi</MudTableSortLabel></MudTh>		
-		<MudTh style="padding-inline-end: 0px;padding-inline-start: 0px;"><MudTableSortLabel SortBy="new Func<EquippableItem, object>(x=>x.Stats[StatName.CritRating])">Crit</MudTableSortLabel></MudTh>		
-		<MudTh style="padding-inline-end: 0px;padding-inline-start: 0px;"><MudTableSortLabel SortBy="new Func<EquippableItem, object>(x=>x.Stats[StatName.HitRating])">Hit</MudTableSortLabel></MudTh>		
-		<MudTh style="padding-inline-end: 0px;padding-inline-start: 0px;"><MudTableSortLabel SortBy="new Func<EquippableItem, object>(x=>x.Stats[StatName.HasteRating])">Haste</MudTableSortLabel></MudTh>		
-		<MudTh style="padding-inline-end: 0px;padding-inline-start: 0px;"><MudTableSortLabel SortBy="new Func<EquippableItem, object>(x=>x.Stats[StatName.ExpertiseRating])">Exp</MudTableSortLabel></MudTh>		
-		<MudTh style="padding-inline-end: 0px;padding-inline-start: 0px;"><MudTableSortLabel SortBy="new Func<EquippableItem, object>(x=>x.Stats[StatName.ArmorPenetration])">APen</MudTableSortLabel></MudTh>		
-		<MudTh style="padding-inline-end: 0px;padding-inline-start: 0px;"><MudTableSortLabel SortBy="new Func<EquippableItem, object>(x=>x.Stats[StatName.Stamina])">Sta</MudTableSortLabel></MudTh>		
-		<MudTh style="padding-inline-end: 0px;padding-inline-start: 0px;"><MudTableSortLabel SortBy="new Func<EquippableItem, object>(x=>x.Stats[StatName.Intellect])">Int</MudTableSortLabel></MudTh>		
-		<MudTh style="padding-inline-end: 0px;padding-inline-start: 0px;"><MudTableSortLabel SortBy="new Func<EquippableItem, object>(x=>x.Stats[StatName.ManaPer5])">MP5</MudTableSortLabel></MudTh>	
-		<MudTh style="padding-inline-end: 0px;padding-inline-start: 0px;"><MudTableSortLabel SortBy="new Func<EquippableItem, object>(x=>x.Stats[StatName.SpellPower])">SP</MudTableSortLabel></MudTh>	
-		<MudTh style="padding-inline-end: 0px;padding-inline-start: 0px;"><MudTableSortLabel SortBy="new Func<EquippableItem, object>(x=>x.Stats[StatName.SpellCritRating])">SCrit</MudTableSortLabel></MudTh>	
-		<MudTh style="padding-inline-end: 0px;padding-inline-start: 0px;"><MudTableSortLabel SortBy="new Func<EquippableItem, object>(x=>x.Stats[StatName.SpellHitRating])">SHit</MudTableSortLabel></MudTh>	
-		<MudTh style="padding-inline-end: 0px;padding-inline-start: 0px;"><MudTableSortLabel SortBy="new Func<EquippableItem, object>(x=>x.Stats[StatName.SpellHasteRating])">SHaste</MudTableSortLabel></MudTh>
-		<MudTh style="padding-inline-end: 0px;padding-inline-start: 0px;"><MudTableSortLabel SortBy="new Func<EquippableItem, object>(x=>0)">DPS</MudTableSortLabel></MudTh>
+﻿@using RetSim
+@using RetSim.Items
+<MudTable Class="full-height" Height="100%" CustomHeader="true" RowClassFunc=@RowClass @bind-SelectedItem="SelectedItem" AllowUnsorted="false" Dense="true" Striped="@true" SortLabel="Sort By" Items="@Items" Hover="true" Breakpoint="Breakpoint.Sm">	
+<HeaderContent>
+        <MudTh Class="py-0 pl-3 pr-0" Style="background-color: var(--mud-palette-surface);position:sticky;z-index:2;top:0;"><MudTableSortLabel SortBy="new Func<EquippableItem, object>(x=>x.Name)">Name</MudTableSortLabel></MudTh>
+		<MudTh Class="py-0 pl-3 pr-0" Style="background-color: var(--mud-palette-surface);position:sticky;z-index:2;top:0;"><MudTableSortLabel SortBy="new Func<EquippableItem, object>(x=>x.ItemLevel)">Level</MudTableSortLabel></MudTh>	
+		<MudTh Class="py-0 pl-3 pr-0" Style="background-color: var(--mud-palette-surface);position:sticky;z-index:2;top:0;"></MudTh>
+		<MudTh Class="py-0 pl-3 pr-0" Style="background-color: var(--mud-palette-surface);position:sticky;z-index:2;top:0;"><MudTableSortLabel SortBy="new Func<EquippableItem, object>(x=>x.Stats[StatName.Strength])">Str</MudTableSortLabel></MudTh>		
+		<MudTh Class="py-0 pl-3 pr-0" Style="background-color: var(--mud-palette-surface);position:sticky;z-index:2;top:0;"><MudTableSortLabel SortBy="new Func<EquippableItem, object>(x=>x.Stats[StatName.AttackPower])">AP</MudTableSortLabel></MudTh>		
+		<MudTh Class="py-0 pl-3 pr-0" Style="background-color: var(--mud-palette-surface);position:sticky;z-index:2;top:0;"><MudTableSortLabel SortBy="new Func<EquippableItem, object>(x=>x.Stats[StatName.Agility])">Agi</MudTableSortLabel></MudTh>		
+		<MudTh Class="py-0 pl-3 pr-0" Style="background-color: var(--mud-palette-surface);position:sticky;z-index:2;top:0;"><MudTableSortLabel SortBy="new Func<EquippableItem, object>(x=>x.Stats[StatName.CritRating])">Crit</MudTableSortLabel></MudTh>		
+		<MudTh Class="py-0 pl-3 pr-0" Style="background-color: var(--mud-palette-surface);position:sticky;z-index:2;top:0;"><MudTableSortLabel SortBy="new Func<EquippableItem, object>(x=>x.Stats[StatName.HitRating])">Hit</MudTableSortLabel></MudTh>		
+		<MudTh Class="py-0 pl-3 pr-0" Style="background-color: var(--mud-palette-surface);position:sticky;z-index:2;top:0;"><MudTableSortLabel SortBy="new Func<EquippableItem, object>(x=>x.Stats[StatName.HasteRating])">Haste</MudTableSortLabel></MudTh>		
+		<MudTh Class="py-0 pl-3 pr-0" Style="background-color: var(--mud-palette-surface);position:sticky;z-index:2;top:0;"><MudTableSortLabel SortBy="new Func<EquippableItem, object>(x=>x.Stats[StatName.ExpertiseRating])">Exp</MudTableSortLabel></MudTh>		
+		<MudTh Class="py-0 pl-3 pr-0" Style="background-color: var(--mud-palette-surface);position:sticky;z-index:2;top:0;"><MudTableSortLabel SortBy="new Func<EquippableItem, object>(x=>x.Stats[StatName.ArmorPenetration])">APen</MudTableSortLabel></MudTh>		
+		<MudTh Class="py-0 pl-3 pr-0" Style="background-color: var(--mud-palette-surface);position:sticky;z-index:2;top:0;"><MudTableSortLabel SortBy="new Func<EquippableItem, object>(x=>x.Stats[StatName.Stamina])">Sta</MudTableSortLabel></MudTh>		
+		<MudTh Class="py-0 pl-3 pr-0" Style="background-color: var(--mud-palette-surface);position:sticky;z-index:2;top:0;"><MudTableSortLabel SortBy="new Func<EquippableItem, object>(x=>x.Stats[StatName.Intellect])">Int</MudTableSortLabel></MudTh>		
+		<MudTh Class="py-0 pl-3 pr-0" Style="background-color: var(--mud-palette-surface);position:sticky;z-index:2;top:0;"><MudTableSortLabel SortBy="new Func<EquippableItem, object>(x=>x.Stats[StatName.ManaPer5])">MP5</MudTableSortLabel></MudTh>	
+		<MudTh Class="py-0 pl-3 pr-0" Style="background-color: var(--mud-palette-surface);position:sticky;z-index:2;top:0;"><MudTableSortLabel SortBy="new Func<EquippableItem, object>(x=>x.Stats[StatName.SpellPower])">SP</MudTableSortLabel></MudTh>	
+		<MudTh Class="py-0 pl-3 pr-0" Style="background-color: var(--mud-palette-surface);position:sticky;z-index:2;top:0;"><MudTableSortLabel SortBy="new Func<EquippableItem, object>(x=>x.Stats[StatName.SpellCritRating])">SCrit</MudTableSortLabel></MudTh>	
+		<MudTh Class="py-0 pl-3 pr-0" Style="background-color: var(--mud-palette-surface);position:sticky;z-index:2;top:0;"><MudTableSortLabel SortBy="new Func<EquippableItem, object>(x=>x.Stats[StatName.SpellHitRating])">SHit</MudTableSortLabel></MudTh>	
+		<MudTh Class="py-0 pl-3 pr-0" Style="background-color: var(--mud-palette-surface);position:sticky;z-index:2;top:0;"><MudTableSortLabel SortBy="new Func<EquippableItem, object>(x=>x.Stats[StatName.SpellHasteRating])">SHaste</MudTableSortLabel></MudTh>
+		<MudTh Class="py-0 pl-3 pr-0" Style="background-color: var(--mud-palette-surface);position:sticky;z-index:2;top:0;"><MudTableSortLabel SortBy="new Func<EquippableItem, object>(x=>0)">DPS</MudTableSortLabel></MudTh>
     </HeaderContent>
     <RowTemplate>
-		<MudTd>
-			<MudRadioGroup Class="my-n4 mr-n12" @bind-SelectedOption="SelectedItemID">
-			    <MudRadio Option=@context.ID Size="Size.Small" Color="Color.Primary"></MudRadio>
-			</MudRadioGroup>
+        <MudTd Class="py-0 pl-3 pr-0" DataLabel="Name"><a onclick="return false;" href="https://tbc.wowhead.com/item=@context.ID">@context.Name</a></MudTd>
+        <MudTd Class="py-0 pl-3 pr-0" DataLabel="Level">@context.ItemLevel</MudTd>
+		<MudTd Class="py-0 pl-3 pr-0" DataLabel="Socket"> 
+			<MudButton Style="min-width:0" Class="pa-1" Disabled="@(context.Socket1==null)" OnClick="@(e => ToggleOverlay(true))" Variant="Variant.Text"><img style="display:@(context.Socket1==null? "none" : "");width:16px;height:16px;" src="@GetSocketImage(@context.Socket1)" alt=""></MudButton><MudButton Style="min-width:0" Class="pa-1" Disabled="@(context.Socket2==null)" OnClick="@(e => ToggleOverlay(true))" Variant="Variant.Text"><img style="display:@(context.Socket2==null? "none" : "");width:16px;height:16px;" src="@GetSocketImage(@context.Socket2)" ></MudButton><MudButton Style="min-width:0" Class="pa-1" Disabled="@(context.Socket3==null)" OnClick="@(e => ToggleOverlay(true))" Variant="Variant.Text"><img style="display:@(context.Socket3==null? "none" : "");width:16px;height:16px;" src="@GetSocketImage(@context.Socket3)" ></MudButton>
 		</MudTd>
-        <MudTd style="padding-inline-end: 0px;padding-inline-start: 0px;" DataLabel="Name"><a href="https://tbc.wowhead.com/item=@context.ID">@context.Name</a></MudTd>
-        <MudTd style="padding-inline-end: 0px;padding-inline-start: 0px;" DataLabel="Level">@context.ItemLevel</MudTd>
-		<MudTd style="padding-inline-end: 0px;padding-inline-start: 0px;" DataLabel="Socket"> 
-			<MudButton Style="min-width:0" Class="pa-1" Disabled="@(context.Socket1==null)" OnClick="@(e => ToggleOverlay(true))" Variant="Variant.Text"><img style="display:@(context.Socket1==null? "none" : "");width:13px;height:13px;" src="@GetSocketImage(@context.Socket1)" alt=""></MudButton>
-			<MudButton Style="min-width:0" Class="pa-1" Disabled="@(context.Socket2==null)" OnClick="@(e => ToggleOverlay(true))" Variant="Variant.Text"><img style="display:@(context.Socket2==null? "none" : "");width:13px;height:13px;" src="@GetSocketImage(@context.Socket2)" ></MudButton>
-			<MudButton Style="min-width:0" Class="pa-1" Disabled="@(context.Socket2==null)" OnClick="@(e => ToggleOverlay(true))" Variant="Variant.Text"><img style="display:@(context.Socket3==null? "none" : "");width:13px;height:13px;" src="@GetSocketImage(@context.Socket3)" ></MudButton>
-		</MudTd>
-		<MudTd style="padding-inline-end: 0px;padding-inline-start: 0px;" DataLabel="Str">@Format(@context.Stats[StatName.Strength])</MudTd>
-		<MudTd style="padding-inline-end: 0px;padding-inline-start: 0px;" DataLabel="AP">@Format(@context.Stats[StatName.AttackPower])</MudTd>
-		<MudTd style="padding-inline-end: 0px;padding-inline-start: 0px;" DataLabel="Agi">@Format(@context.Stats[StatName.Agility])</MudTd>
-		<MudTd style="padding-inline-end: 0px;padding-inline-start: 0px;" DataLabel="Crit">@Format(@context.Stats[StatName.CritRating])</MudTd>
-		<MudTd style="padding-inline-end: 0px;padding-inline-start: 0px;" DataLabel="Hit">@Format(@context.Stats[StatName.HitRating])</MudTd>
-		<MudTd style="padding-inline-end: 0px;padding-inline-start: 0px;" DataLabel="Haste">@Format(@context.Stats[StatName.HasteRating])</MudTd>
-		<MudTd style="padding-inline-end: 0px;padding-inline-start: 0px;" DataLabel="Exp">@Format(@context.Stats[StatName.ExpertiseRating])</MudTd>
-		<MudTd style="padding-inline-end: 0px;padding-inline-start: 0px;" DataLabel="APen">@Format(@context.Stats[StatName.ArmorPenetration])</MudTd>
-		<MudTd style="padding-inline-end: 0px;padding-inline-start: 0px;" DataLabel="Sta">@Format(@context.Stats[StatName.Stamina])</MudTd>
-		<MudTd style="padding-inline-end: 0px;padding-inline-start: 0px;" DataLabel="Int">@Format(@context.Stats[StatName.Intellect])</MudTd>
-		<MudTd style="padding-inline-end: 0px;padding-inline-start: 0px;" DataLabel="MP5">@Format(@context.Stats[StatName.ManaPer5])</MudTd>
-		<MudTd style="padding-inline-end: 0px;padding-inline-start: 0px;" DataLabel="SP">@Format(@context.Stats[StatName.SpellPower])</MudTd>
-		<MudTd style="padding-inline-end: 0px;padding-inline-start: 0px;" DataLabel="SCrit">@Format(@context.Stats[StatName.SpellCritRating])</MudTd>
-		<MudTd style="padding-inline-end: 0px;padding-inline-start: 0px;" DataLabel="SHit">@Format(@context.Stats[StatName.SpellHitRating])</MudTd>
-		<MudTd style="padding-inline-end: 0px;padding-inline-start: 0px;" DataLabel="SHaste">@Format(@context.Stats[StatName.SpellHasteRating])</MudTd>
-		<MudTd style="padding-inline-end: 0px;padding-inline-start: 0px;" DataLabel="DPS">0</MudTd>
+		<MudTd Class="py-0 pl-3 pr-0" DataLabel="Str">@Format(@context.Stats[StatName.Strength])</MudTd>
+		<MudTd Class="py-0 pl-3 pr-0" DataLabel="AP">@Format(@context.Stats[StatName.AttackPower])</MudTd>
+		<MudTd Class="py-0 pl-3 pr-0" DataLabel="Agi">@Format(@context.Stats[StatName.Agility])</MudTd>
+		<MudTd Class="py-0 pl-3 pr-0" DataLabel="Crit">@Format(@context.Stats[StatName.CritRating])</MudTd>
+		<MudTd Class="py-0 pl-3 pr-0" DataLabel="Hit">@Format(@context.Stats[StatName.HitRating])</MudTd>
+		<MudTd Class="py-0 pl-3 pr-0" DataLabel="Haste">@Format(@context.Stats[StatName.HasteRating])</MudTd>
+		<MudTd Class="py-0 pl-3 pr-0" DataLabel="Exp">@Format(@context.Stats[StatName.ExpertiseRating])</MudTd>
+		<MudTd Class="py-0 pl-3 pr-0" DataLabel="APen">@Format(@context.Stats[StatName.ArmorPenetration])</MudTd>
+		<MudTd Class="py-0 pl-3 pr-0" DataLabel="Sta">@Format(@context.Stats[StatName.Stamina])</MudTd>
+		<MudTd Class="py-0 pl-3 pr-0" DataLabel="Int">@Format(@context.Stats[StatName.Intellect])</MudTd>
+		<MudTd Class="py-0 pl-3 pr-0" DataLabel="MP5">@Format(@context.Stats[StatName.ManaPer5])</MudTd>
+		<MudTd Class="py-0 pl-3 pr-0" DataLabel="SP">@Format(@context.Stats[StatName.SpellPower])</MudTd>
+		<MudTd Class="py-0 pl-3 pr-0" DataLabel="SCrit">@Format(@context.Stats[StatName.SpellCritRating])</MudTd>
+		<MudTd Class="py-0 pl-3 pr-0" DataLabel="SHit">@Format(@context.Stats[StatName.SpellHitRating])</MudTd>
+		<MudTd Class="py-0 pl-3 pr-0" DataLabel="SHaste">@Format(@context.Stats[StatName.SpellHasteRating])</MudTd>
+		<MudTd Class="py-0 pl-3 pr-0" DataLabel="DPS">0</MudTd>
 
 	</RowTemplate>
 </MudTable>
-<MudContainer Fixed="true" Class="d-flex justify-end mb-4 py-4">
-    <MudButton Variant="Variant.Filled" Color="Color.Primary">Sim Gear DPS</MudButton>
-</MudContainer>
 
 <MudOverlay Visible="isVisible" DarkBackground="true" Absolute="true">
 	<MudButton Variant="Variant.Filled" Color="Color.Primary"  OnClick="@(e => ToggleOverlay(false))">Hide Overlay</MudButton>
 </MudOverlay>
 
 @code {
-	@using RetSim
-    @using RetSim.Items;
-
-    public int SelectedItemID { get; set; }
+	public static EquippableItem SelectedItem { get; set; }
 
     [Parameter]
     public IEnumerable<EquippableItem> Items { get; set; }
 	
 	private bool isVisible;
+
+	Func<EquippableItem, int, string> RowClass = (item, rowNumber) => item == SelectedItem? "mud-info" : "";
 
     public void ToggleOverlay(bool value)
     {
