@@ -85,7 +85,6 @@ namespace RetSim.Items
         {
             var gems = GetGems();
 
-            string gems1 = $" {gems.Count}  ";
             string gems2 = "";
 
             if (gems.Count > 0)
@@ -100,7 +99,7 @@ namespace RetSim.Items
                 }
             }
 
-            return $"║ {Slot, -9} ║ {ID, -5} ║ {Name, -25} ║ {gems1} ║ {gems2, -59} ║";
+            return $"║ {Slot, -9} ║ {ID, -5} ║ {Name, -25} ║ {gems.Count}    ║ {gems2, -59} ║";
         }
     }
 
