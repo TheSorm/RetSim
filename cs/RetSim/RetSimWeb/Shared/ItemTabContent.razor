@@ -1,0 +1,14 @@
+﻿@using RetSim.Items
+<MudContainer MaxWidth="MaxWidth.False" Class="d-flex flex-column justify-space-between full-height mt-2 px-4">
+    <MudContainer MaxWidth="MaxWidth.False" Style="min-height:500px" Class="flex-grow-1 flex-shrink-1">
+        <ItemTable Items=@Items />
+    </MudContainer>
+    <MudContainer MaxWidth="MaxWidth.False" Class="d-flex justify-end mb-4 py-4">
+        <MudButton Variant="Variant.Filled" Color="Color.Primary">Sim Gear DPS</MudButton>
+    </MudContainer>
+</MudContainer>
+@code {
+    [Parameter]
+    public IEnumerable<EquippableItem> Items { get; set; }
+
+}

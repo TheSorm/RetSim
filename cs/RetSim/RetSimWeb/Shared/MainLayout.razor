@@ -4,7 +4,7 @@
 <MudDialogProvider />
 <MudSnackbarProvider />
 
-<MudLayout>
+<MudLayout Class="full-height">
     <MudAppBar Elevation="1">
         <MudIconButton Icon="@Icons.Material.Filled.Menu" Color="Color.Inherit" Edge="Edge.Start" OnClick="@((e) => DrawerToggle())" />
         <MudText Typo="Typo.h5" Class="ml-3">RetSim</MudText>
@@ -14,10 +14,30 @@
     <MudDrawer @bind-Open="_drawerOpen" ClipMode="DrawerClipMode.Always" Elevation="2" Width="320px">
         <NavMenu/>
     </MudDrawer>
-    <MudMainContent>
+    <MudMainContent Class="calculated-height">
         @Body
     </MudMainContent>
 </MudLayout>
+
+<style>
+    html {
+        height: 100%;
+    }
+    body {
+        height: 100%;
+    }
+    #app {
+        height: 100%;
+    }
+    .full-height {
+        height: 100%;
+    }
+    .calculated-height {
+        height: -webkit-calc(100% - var(--mud-appbar-min-height));
+        height:    -moz-calc(100% - var(--mud-appbar-min-height));
+        height:         calc(100% - var(--mud-appbar-min-height));
+    }​
+</style>
 
 @code {
     bool _drawerOpen = true;
