@@ -10,8 +10,8 @@
 
         public override void Apply(Aura aura, FightSimulation fight)
         {
-            PreviousMod = CurrentMod;
-            CurrentMod += Percentage;
+            CurrentMod = 100 + (Percentage * fight.Player.Auras[aura].Stacks);
+            PreviousMod = CurrentMod - Percentage;            
             RelativeDifference = CurrentMod / PreviousMod;
         }
 

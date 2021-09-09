@@ -27,7 +27,7 @@ namespace RetSim.Data
             {
                 new ModDamageCreature()
                 {
-                    Percentage = 5,
+                    Percentage = 3,
                     Types = new List<CreatureType> { CreatureType.Humanoid, CreatureType.Demon, CreatureType.Undead, CreatureType.Elemental },
                     Schools = new List<School> { School.Typeless, School.Physical, School.Holy, School.Fire, School.Nature, School.Frost, School.Shadow, School.Arcane }
                 }
