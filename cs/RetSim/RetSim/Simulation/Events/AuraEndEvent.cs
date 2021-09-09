@@ -6,7 +6,6 @@
 
         private Aura Aura { get; init; }
 
-
         public AuraEndEvent(Aura aura, FightSimulation fight, int timestamp, int priority = 0) : base(fight, timestamp, priority + BasePriority)
         {
             Aura = aura;

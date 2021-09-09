@@ -1,6 +1,6 @@
 ﻿namespace RetSim.AuraEffects
 {
-    class ModStat : Modify
+    class ModStat : ModifyPercent
     {
         public bool All = false;
         public bool Strength = false;

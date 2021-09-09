@@ -7,29 +7,29 @@ namespace RetSim.Data
     {
         public static readonly Aura ImprovedSealOfTheCrusader = new()
         {
-            Effects = new List<AuraEffect>
+            Effects = new()
             {
-                new GainStats() { Stats = new StatSet() { CritChance = 3, SpellCrit = 3 } }
+                new GainStats() { Stats = new() { CritChance = 3, SpellCrit = 3 } }
             }
         };
 
         public static readonly Aura Conviction = new()
         {
-            Effects = new List<AuraEffect>
+            Effects = new()
             {
-                new GainStats() { Stats = new StatSet() { CritChance = 5 } }
+                new GainStats() { Stats = new() { CritChance = 5 } }
             }
         };
 
         public static readonly Aura Crusade = new()
         {
-            Effects = new List<AuraEffect>()
+            Effects = new()
             {
                 new ModDamageCreature()
                 {
                     Percentage = 3,
-                    Types = new List<CreatureType> { CreatureType.Humanoid, CreatureType.Demon, CreatureType.Undead, CreatureType.Elemental },
-                    Schools = new List<School> { School.Typeless, School.Physical, School.Holy, School.Fire, School.Nature, School.Frost, School.Shadow, School.Arcane }
+                    Types = new() { CreatureType.Humanoid, CreatureType.Demon, CreatureType.Undead, CreatureType.Elemental },
+                    Schools = Spells.AllSchools
                 }
             }
         };
@@ -40,26 +40,19 @@ namespace RetSim.Data
 
         public static readonly Aura SanctityAura = new()
         {
-            Effects = new List<AuraEffect>() { new ModDamageSchool() { Percentage = 10, Schools = new List<School> { School.Holy } } }
+            Effects = new() { new ModDamageSchool() { Percentage = 10, Schools = new() { School.Holy } } }
         };
 
         public static readonly Aura ImprovedSanctityAura = new()
         {
-            Effects = new List<AuraEffect>()
-            {
-                new ModDamageSchool()
-                {
-                    Percentage = 2,
-                    Schools = new List<School> { School.Typeless, School.Physical, School.Holy, School.Fire, School.Nature, School.Frost, School.Shadow, School.Arcane }
-                }
-            }
+            Effects = new() { new ModDamageSchool() { Percentage = 2, Schools = Spells.AllSchools } }
         };
 
         public static readonly Aura SanctifiedSeals = new()
         {
-            Effects = new List<AuraEffect>
+            Effects = new()
             {
-                new GainStats() { Stats = new StatSet() { CritChance = 3, SpellCrit = 3 } }
+                new GainStats() { Stats = new() { CritChance = 3, SpellCrit = 3 } }
             }
         };
 
@@ -71,33 +64,33 @@ namespace RetSim.Data
         {
             Duration = 30000,
             MaxStacks = 3,
-            Effects = new List<AuraEffect>() { new ModDamageSchool() { Percentage = 5, Schools = new List<School> { School.Physical, School.Holy, } } }
+            Effects = new() { new ModDamageSchool() { Percentage = 5, Schools = new() { School.Physical, School.Holy } } }
         };
 
         public static readonly Aura Fanaticism = new()
         {
-            Effects = new List<AuraEffect>
+            Effects = new()
             {
-                new ModSpellCritChance() { Percentage = 15 } 
+                new ModSpellCritChance() { Amount = 15 } 
             }
         };
 
         public static readonly Aura Precision = new()
         {
-            Effects = new List<AuraEffect>
+            Effects = new()
             {
-                new GainStats() { Stats = new StatSet() { HitChance = 3, SpellHit = 3 } }
+                new GainStats() { Stats = new() { HitChance = 3, SpellHit = 3 } }
             }
         };
 
         public static readonly Aura DivineStrength = new()
         {
-            Effects = new List<AuraEffect>() { new ModStat() { Percentage = 10, Strength = true } }
+            Effects = new() { new ModStat() { Percentage = 10, Strength = true } }
         };
 
         public static readonly Aura DivineIntellect = new()
         {
-            Effects = new List<AuraEffect>() { new ModStat() { Percentage = 10, Intellect = true } }
+            Effects = new() { new ModStat() { Percentage = 10, Intellect = true } }
         };
     }
 }

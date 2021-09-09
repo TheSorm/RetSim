@@ -7,6 +7,7 @@ namespace RetSim
         private Player Player { get; init; }
         private Enemy Enemy { get; init; }
         private DamageEffect Effect { get; init; }
+        private SpellState State { get; init; }
 
         public AttackResult AttackResult { get; private set; }
         public DamageResult DamageResult { get; private set; }
@@ -17,18 +18,18 @@ namespace RetSim
         public float Glancing { get; private set; }
         public float Mitigation { get; private set; }
 
-        public float SpellPowerBonus => Effect.Coefficient == 0 ? 0 : Effect.Coefficient * (Player.Stats.SpellPower + Player.Modifiers.Bonuses[Effect.Parent]);
+        public float SpellPowerBonus => Effect.Coefficient * (Player.Stats.SpellPower + State.BonusSpellPower);
         public float SchoolModifier => Player.Modifiers.Schools.GetValue(Effect.School);
-        public float SpellModifier => Player.Modifiers.Spells.GetValue(Effect.Parent);
         public float DamageModifier { get; private set; }
 
-        public float JotCBonus => Effect.HolyCoefficient == 0 ? SpellPowerBonus : Effect.HolyCoefficient * (Player.Stats.SpellPower + Player.Modifiers.Bonuses[Effect.Parent]);
+        public float JotCBonus => Effect.HolyCoefficient == 0 ? SpellPowerBonus : Effect.HolyCoefficient * (Player.Stats.SpellPower + State.BonusSpellPower);
 
-        public Attack(Player player, Enemy enemy, DamageEffect effect)
+        public Attack(Player player, Enemy enemy, DamageEffect effect, SpellState state)
         {
             Player = player;
             Enemy = enemy;
             Effect = effect;
+            State = state;
 
             ResolveAttack();
         }
@@ -37,7 +38,7 @@ namespace RetSim
         {
             float miss = GetMissChance(Player, Effect.DefenseCategory);
             float dodge = GetDodgeChance(Player, Effect.DefenseCategory);
-            float crit = GetCritChance(Player, Effect.CritCategory);
+            float crit = GetCritChance(Player, Effect.CritCategory) + State.BonusCritChance;
 
             var result = GetAttackResult(Effect.DefenseCategory, miss, dodge, crit);
 
@@ -61,7 +62,7 @@ namespace RetSim
 
             float mitigation = AttackResult == AttackResult.Hit ? GetMitigation(Player, Enemy, Effect.School) : 0; //TODO: Fix partial resist crits?
 
-            BaseDamage = Effect.CalculateDamage(Player, this);
+            BaseDamage = Effect.CalculateDamage(Player, this, State);
 
             Damage = RNG.RollDamage(BaseDamage * mitigation);
 

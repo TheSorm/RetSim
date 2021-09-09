@@ -1,4 +1,5 @@
 ﻿using RetSim.Events;
+using RetSim.SpellEffects;
 using System.Collections.Generic;
 
 namespace RetSim
@@ -24,13 +25,15 @@ namespace RetSim
 
         public Player(Race race, Equipment equipment, List<Talent> talents)
         {
+            Spellbook = new Spellbook();
+
             Equipment = equipment;
             Race = race;
             Stats = new Stats(this, race, equipment);
             Modifiers = new Modifiers();
             Weapon = new Weapon(this, equipment.Weapon.MinDamage, equipment.Weapon.MaxDamage, equipment.Weapon.AttackSpeed);
 
-            Spellbook = new Spellbook(this);
+            
             Auras = new Auras(this);
             Procs = new Procs(this);
             GCD = new GCD();
@@ -38,9 +41,28 @@ namespace RetSim
             Talents = talents;
         }
 
-        public ProcMask Cast(Spell spell, FightSimulation fight)
+        public static ProcMask Cast(Spell spell, FightSimulation fight)
         {
-            return Spellbook.Use(spell, fight);
+            ProcMask mask = ProcMask.None;
+
+            SpellState state = fight.Player.Spellbook[spell.ID];
+
+            if (spell.Cooldown > 0)
+                fight.Queue.Add(new CooldownEndEvent(state, fight, fight.Timestamp + state.EffectiveCooldown));
+
+            if (spell.GCD != null)
+                fight.Queue.Add(new GCDEndEvent(fight, fight.Timestamp + spell.GCD.Duration));
+
+            if (spell.Aura != null)
+                fight.Player.Auras.Apply(spell.Aura, fight);
+
+            if (spell.Effects != null)
+            {
+                foreach (SpellEffect effect in spell.Effects)
+                    mask |= effect.Resolve(fight, state);
+            }
+
+            return mask;
         }
 
         public void CheckForProcs(ProcMask mask, FightSimulation fight)
@@ -56,6 +78,11 @@ namespace RetSim
         public int TimeOfNextSwing()
         {
             return NextAutoAttack != null ? NextAutoAttack.Timestamp : -1;
+        }
+
+        public bool SufficientMana(SpellState state)
+        {
+            return state.EffectiveManaCost <= Stats.Mana;
         }
     }
 }

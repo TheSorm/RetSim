@@ -4,25 +4,25 @@
     {
         private const int BasePriority = 2;
 
-        private Spell Spell { get; init; }
+        private SpellState State { get; init; }
 
-        public CooldownEndEvent(Spell spell, FightSimulation fight, int timestamp, int priority = 0) : base(fight, timestamp, priority + BasePriority)
+        public CooldownEndEvent(SpellState state, FightSimulation fight, int timestamp, int priority = 0) : base(fight, timestamp, priority + BasePriority)
         {
-            Spell = spell;
+            State = state;
 
-            Fight.Player.Spellbook.StartCooldown(spell, this);
+            Spellbook.StartCooldown(state, this);
         }
 
         public override ProcMask Execute(object arguments = null)
         {
-            Fight.Player.Spellbook.EndCooldown(Spell);
+            Spellbook.EndCooldown(State);
 
             return ProcMask.None;
         }
 
         public override string ToString()
         {
-            return $"Cooldown of {Spell.Name} ends";
+            return $"Cooldown of {State.Spell.Name} ends";
         }
     }
 }

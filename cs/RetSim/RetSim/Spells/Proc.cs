@@ -6,7 +6,8 @@ namespace RetSim
     {
         public Spell Spell { get; set; }
         public ProcMask ProcMask { get; init; }
-        public int Chance { get; init; } = 100;
+        public bool GuaranteedProc { get; init; } = false;
+        public int Chance { get; init; } = 0;
         public float PPM { get; init; } = 0f;
         public int Cooldown { get; init; } = 0;
     }
@@ -15,16 +16,19 @@ namespace RetSim
     public enum ProcMask
     {
         None = 0,
-        OnAutoAttack = 1,
-        OnWindfury = 2,
-        OnSpecialAttack = 4,
+        OnCrit = 1,
+        OnAutoAttack = 2,
+        OnExtraAttack = 4,
+        OnWhiteAttack = OnAutoAttack + OnExtraAttack,
         OnSealOfCommand = 8,
-        OnMeleeCrit = 16,
-        OnAnyCrit = 32,
-        OnSpellCastSuccess = 64,
-        OnWhiteAttack = OnAutoAttack + OnWindfury,
         OnBasicAttack = OnWhiteAttack + OnSealOfCommand,
-        OnAnyAttack = OnBasicAttack + OnSpecialAttack
+        OnSpecialAttack = 16,
+        OnMeleeAttack = OnBasicAttack + OnSpecialAttack,
+        OnMeleeCrit = 32,
+        OnRangedAttack = 64,
+        OnJudgement = 128,
+        OnAnyAttack = OnMeleeAttack + OnRangedAttack,
+        OnSpellCastSuccess = 256
         // TODO: Update and enhance
     }
 }

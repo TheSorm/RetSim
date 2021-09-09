@@ -6,19 +6,21 @@ namespace RetSim.Data
     {
         public static readonly Proc SealOfCommand = new()
         {
-            ProcMask = ProcMask.OnAutoAttack | ProcMask.OnWindfury,
+            ProcMask = ProcMask.OnWhiteAttack,
             PPM = 7,
             Cooldown = 1000
         };
 
         public static readonly Proc SealOfBlood = new()
         {
-            ProcMask = ProcMask.OnBasicAttack
+            ProcMask = ProcMask.OnBasicAttack,
+            GuaranteedProc = true
         };
 
         public static readonly Proc Vengeance = new()
         {
-            ProcMask = ProcMask.OnAnyCrit,
+            ProcMask = ProcMask.OnCrit,
+            GuaranteedProc = true
         };
 
         public static readonly Proc WindfuryAttack = new()
@@ -34,6 +36,19 @@ namespace RetSim.Data
             Cooldown = 20000
         };
 
+        public static readonly Proc Lionheart = new()
+        {
+            ProcMask = ProcMask.OnMeleeAttack,
+            PPM = 1,
+            Cooldown = 1000
+        };
+
+        public static readonly Proc LibramOfAvengement = new()
+        {
+            ProcMask = ProcMask.OnJudgement,
+            GuaranteedProc = true
+        };
+
         public static readonly Dictionary<int, Proc> ByID;
 
         static Procs()
@@ -43,6 +58,8 @@ namespace RetSim.Data
             Vengeance.Spell = Spells.VengeanceProc;
             WindfuryAttack.Spell = Spells.WindfuryAttack;
             DragonspineTrophy.Spell = Spells.DragonspineTrophyProc;
+            Lionheart.Spell = Spells.LionheartProc;
+            LibramOfAvengement.Spell = Spells.LibramOfAvengementProc;
 
             ByID = new()
             {
@@ -51,6 +68,8 @@ namespace RetSim.Data
                 { Spells.Vengeance.ID, Vengeance },
                 { Spells.WindfuryTotem.ID, WindfuryAttack },
                 { Spells.DragonspineTrophy.ID, DragonspineTrophy },
+                { Spells.Lionheart.ID, Lionheart },
+                { Spells.LibramOfAvengement.ID, LibramOfAvengement }
             };
         }
     }
