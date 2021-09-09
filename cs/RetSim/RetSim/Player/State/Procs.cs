@@ -35,7 +35,10 @@ namespace RetSim
 
         private static bool RollProc(Proc proc, Player player)
         {
-            if (proc.PPM == 0f)
+            if (proc.GuaranteedProc)
+                return true;
+
+            else if (proc.PPM == 0f)
                 return RNG.Roll100(proc.Chance);
 
             else

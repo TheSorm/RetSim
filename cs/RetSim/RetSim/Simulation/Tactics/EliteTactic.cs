@@ -19,7 +19,7 @@ namespace RetSim.Tactics
                 new CastEvent(Spells.SealOfCommand, fight, 0),
                 new CastEvent(Spells.AvengingWrath, fight, 1495),
                 new CastEvent(Spells.SealOfBlood, fight, 1500),
-                new AutoAttackEvent(fight, 1500)
+                new AutoAttackEvent(fight, 1501)
             };
         }
 
@@ -27,15 +27,15 @@ namespace RetSim.Tactics
         {
             var swing = fight.Player.TimeOfNextSwing() - start;
             var gcd = fight.Player.GCD.GetDuration(start);
-            var cs = fight.Player.Spellbook.IsOnCooldown(Spells.CrusaderStrike) ? fight.Player.Spellbook[Spells.CrusaderStrike].Timestamp - start : 0;
+            var cs = fight.Player.Spellbook.IsOnCooldown(Spells.CrusaderStrike) ? fight.Player.Spellbook[Spells.CrusaderStrike.ID].CooldownEnd.Timestamp - start : 0;
 
             if (!fight.Player.Spellbook.IsOnCooldown(Spells.AvengingWrath) && start > 1500)
-                fight.Player.Cast(Spells.AvengingWrath, fight);
+                return new CastEvent(Spells.AvengingWrath, fight, fight.Timestamp);
 
             if (gcd == 0 && !fight.Player.Auras[SealOfCommand].Active && swing - gcd > 1510 && end > start + gcd)
             {
                 if (fight.Player.Auras.CurrentSeal == SealOfBlood && !fight.Player.Spellbook.IsOnCooldown(Spells.Judgement))
-                    fight.Player.Cast(Spells.Judgement, fight);
+                    return new CastEvent(Spells.Judgement, fight, fight.Timestamp);
 
                 return new CastEvent(Spells.SealOfCommand, fight, start + gcd);
             }
@@ -54,7 +54,11 @@ namespace RetSim.Tactics
             //        return new CastEvent(start + 0, player, Spells.CrusaderStrike);
             //}
 
-            return null;
+            //if (!fight.Player.GCD.Active && !fight.Player.Spellbook.IsOnCooldown(Spells.CrusaderStrike))
+            //    return new CastEvent(Spells.CrusaderStrike, fight, fight.Timestamp);
+
+            else
+                return null;
         }
     }
 }

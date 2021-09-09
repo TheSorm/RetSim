@@ -7,9 +7,9 @@ namespace RetSim.Data
     {
         public static readonly Aura GreaterBlessingOfMight = new()
         {
-            Effects = new List<AuraEffect>
+            Effects = new()
             {
-                new GainStats() { Stats = new StatSet() { AttackPower = 220 } }
+                new GainStats() { Stats = new() { AttackPower = 220 } }
             }
         };
 
@@ -23,25 +23,25 @@ namespace RetSim.Data
 
         public static readonly Aura GreaterBlessingOfWisdom = new()
         {
-            Effects = new List<AuraEffect>
+            Effects = new()
             {
-                new GainStats() { Stats = new StatSet() { ManaPer5 = 41 } }
+                new GainStats() { Stats = new() { ManaPer5 = 41 } }
             }
         };
 
         public static readonly Aura BattleShout = new()
         {
-            Effects = new List<AuraEffect>
+            Effects = new()
             {
-                new GainStats() { Stats = new StatSet() { AttackPower = 306 } }
+                new GainStats() { Stats = new() { AttackPower = 306 } }
             }
         };
 
         public static readonly Aura TrueshotAura = new()
         {
-            Effects = new List<AuraEffect>
+            Effects = new()
             {
-                new GainStats() { Stats = new StatSet() { AttackPower = 125 } }
+                new GainStats() { Stats = new() { AttackPower = 125 } }
             }
         };
 
@@ -52,32 +52,32 @@ namespace RetSim.Data
                 new ModDamageSchool()
                 {
                     Percentage = 3,
-                    Schools = new List<School> { School.Typeless, School.Physical, School.Holy, School.Fire, School.Nature, School.Frost, School.Shadow, School.Arcane }
+                    Schools = Spells.AllSchools
                 }
             }
         };
 
         public static readonly Aura StrengthOfEarthTotem = new()
         {
-            Effects = new List<AuraEffect>
+            Effects = new()
             {
-                new GainStats() { Stats = new StatSet() { Strength = 86 } }
+                new GainStats() { Stats = new() { Strength = 86 } }
             }
         };
 
         public static readonly Aura GraceOfAirTotem = new()
         {
-            Effects = new List<AuraEffect>
+            Effects = new()
             {
-                new GainStats() { Stats = new StatSet() { Agility = 77 } }
+                new GainStats() { Stats = new() { Agility = 77 } }
             }
         };
 
         public static readonly Aura ManaSpringTotem = new()
         {
-            Effects = new List<AuraEffect>
+            Effects = new()
             {
-                new GainStats() { Stats = new StatSet() { ManaPer5 = 50 } }
+                new GainStats() { Stats = new() { ManaPer5 = 50 } }
             }
         };
 
@@ -91,59 +91,57 @@ namespace RetSim.Data
 
         public static readonly Aura MarkOfTheWild = new()
         {
-            Effects = new List<AuraEffect>
+            Effects = new()
             {
-                new GainStats() { Stats = new StatSet() { Armor = 340, Strength = 14, Agility = 14, Intellect = 14, Stamina = 14 } }
+                new GainStats() { Stats = new() { Armor = 340, Strength = 14, Agility = 14, Intellect = 14, Stamina = 14 } }
             }
         };
 
         public static readonly Aura LeaderOfThePack = new()
         {
-            Effects = new List<AuraEffect>
+            Effects = new()
             {
-                new GainStats() { Stats = new StatSet() { CritChance = 5 } }
+                new GainStats() { Stats = new() { CritChance = 5 } }
             }
         };
 
         public static readonly Aura PrayerOfFortitude = new()
         {
-            Effects = new List<AuraEffect>
+            Effects = new()
             {
-                new GainStats() { Stats = new StatSet() { Stamina = 79 } }
+                new GainStats() { Stats = new() { Stamina = 79 } }
             }
         };
 
         public static readonly Aura PrayerOfSpirit = new()
         {
-            Effects = new List<AuraEffect>
+            Effects = new()
             {
-                new GainStats() { Stats = new StatSet() { SpellPower = 20 } }
-                //Spirit = 79
-                //TODO: wat do about this
+                new GainStats() { Stats = new() { SpellPower = 20 } }
             }
         };
 
         public static readonly Aura ArcaneBrilliance = new()
         {
-            Effects = new List<AuraEffect>
+            Effects = new()
             {
-                new GainStats() { Stats = new StatSet() { Intellect = 40 } }
+                new GainStats() { Stats = new() { Intellect = 40 } }
             }
         };
 
         public static readonly Aura HeroicPresence = new()
         {
-            Effects = new List<AuraEffect>
+            Effects = new()
             {
-                new GainStats() { Stats = new StatSet() { HitChance = 1 } }
+                new GainStats() { Stats = new() { HitChance = 1 } }
             }
         };
 
         public static readonly Aura InspiringPresence = new()
         {
-            Effects = new List<AuraEffect>
+            Effects = new()
             {
-                new GainStats() { Stats = new StatSet() { SpellHit = 1 } }
+                new GainStats() { Stats = new() { SpellHit = 1 } }
             }
         };
     }

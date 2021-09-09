@@ -8,7 +8,7 @@
     "Name": "Hatebringer",
     "ItemLevel": 94,
     "Quality": 3,
-    "Slot": -1,
+    "Slot": 13,
     "Stats": {
       "Strength": 25,
       "Stamina": 21,
@@ -34,7 +34,7 @@
     "Name": "Hewing Axe of the Marsh",
     "ItemLevel": 94,
     "Quality": 3,
-    "Slot": -1,
+    "Slot": 13,
     "Stats": {
       "Strength": 29,
       "Agility": 28,
@@ -51,7 +51,7 @@
     "Name": "Lantresor\u0027s Warblade",
     "ItemLevel": 97,
     "Quality": 3,
-    "Slot": -1,
+    "Slot": 13,
     "Stats": {
       "Strength": 42,
       "Agility": 27
@@ -67,7 +67,7 @@
     "Name": "Lantresor\u0027s Warblade",
     "ItemLevel": 97,
     "Quality": 3,
-    "Slot": -1,
+    "Slot": 13,
     "Stats": {
       "Strength": 42,
       "Agility": 27
@@ -83,7 +83,7 @@
     "Name": "Shaarde the Greater",
     "ItemLevel": 97,
     "Quality": 3,
-    "Slot": -1,
+    "Slot": 13,
     "Stats": {
       "Strength": 34,
       "Stamina": 33,
@@ -100,7 +100,7 @@
     "Name": "Earthwarden",
     "ItemLevel": 100,
     "Quality": 4,
-    "Slot": -1,
+    "Slot": 13,
     "Stats": {
       "Stamina": 39,
       "Defense": 27,
@@ -117,7 +117,7 @@
     "Name": "Stoneforged Claymore",
     "ItemLevel": 100,
     "Quality": 3,
-    "Slot": -1,
+    "Slot": 13,
     "Stats": {
       "Strength": 40,
       "Agility": 35
@@ -133,7 +133,7 @@
     "Name": "Skyforged Great Axe",
     "ItemLevel": 100,
     "Quality": 3,
-    "Slot": -1,
+    "Slot": 13,
     "Stats": {
       "CritRating": 35,
       "AttackPower": 80
@@ -149,7 +149,7 @@
     "Name": "Great Earthforged Hammer",
     "ItemLevel": 100,
     "Quality": 3,
-    "Slot": -1,
+    "Slot": 13,
     "Stats": {
       "Stamina": 60,
       "AttackPower": 70
@@ -165,7 +165,7 @@
     "Name": "Trident of the Outcast Tribe",
     "ItemLevel": 100,
     "Quality": 4,
-    "Slot": -1,
+    "Slot": 13,
     "Stats": {
       "Strength": 37,
       "Stamina": 54,
@@ -182,7 +182,7 @@
     "Name": "Singing Crystal Axe",
     "ItemLevel": 100,
     "Quality": 4,
-    "Slot": -1,
+    "Slot": 13,
     "Stats": {},
     "OnEquip": {
       "ID": 38282,
@@ -199,7 +199,7 @@
     "Name": "The Hammer of Destiny",
     "ItemLevel": 100,
     "Quality": 4,
-    "Slot": -1,
+    "Slot": 13,
     "Stats": {
       "Strength": 32,
       "Stamina": 30,
@@ -220,7 +220,7 @@
     "Name": "Honed Voidaxe",
     "ItemLevel": 103,
     "Quality": 3,
-    "Slot": -1,
+    "Slot": 13,
     "Stats": {
       "Strength": 31,
       "Agility": 30,
@@ -237,7 +237,7 @@
     "Name": "Khorium Champion",
     "ItemLevel": 105,
     "Quality": 4,
-    "Slot": -1,
+    "Slot": 13,
     "Stats": {
       "Strength": 50,
       "HitRating": 37
@@ -257,7 +257,7 @@
     "Name": "Felsteel Reaper",
     "ItemLevel": 105,
     "Quality": 4,
-    "Slot": -1,
+    "Slot": 13,
     "Stats": {
       "CritRating": 30,
       "AttackPower": 112
@@ -273,7 +273,7 @@
     "Name": "Fel Hardened Maul",
     "ItemLevel": 105,
     "Quality": 4,
-    "Slot": -1,
+    "Slot": 13,
     "Stats": {
       "Strength": 50,
       "Stamina": 46,
@@ -290,7 +290,7 @@
     "Name": "Quantum Blade",
     "ItemLevel": 105,
     "Quality": 4,
-    "Slot": -1,
+    "Slot": 13,
     "Stats": {
       "Stamina": 31,
       "CritRating": 30,
@@ -307,7 +307,7 @@
     "Name": "Chancellor\u0027s Bonegrinder",
     "ItemLevel": 105,
     "Quality": 4,
-    "Slot": -1,
+    "Slot": 13,
     "Stats": {
       "Strength": 31,
       "Stamina": 46,
@@ -326,7 +326,7 @@
     "Name": "Chancellor\u0027s Decapitator",
     "ItemLevel": 105,
     "Quality": 4,
-    "Slot": -1,
+    "Slot": 13,
     "Stats": {
       "Stamina": 46,
       "HitRating": 20,
@@ -345,7 +345,7 @@
     "Name": "Chancellor\u0027s Maul",
     "ItemLevel": 105,
     "Quality": 4,
-    "Slot": -1,
+    "Slot": 13,
     "Stats": {
       "Strength": 31,
       "Stamina": 46,
@@ -364,7 +364,7 @@
     "Name": "Chancellor\u0027s Painsaw",
     "ItemLevel": 105,
     "Quality": 4,
-    "Slot": -1,
+    "Slot": 13,
     "Stats": {
       "Stamina": 46,
       "HitRating": 20,
@@ -383,7 +383,7 @@
     "Name": "Chancellor\u0027s Warblade",
     "ItemLevel": 105,
     "Quality": 4,
-    "Slot": -1,
+    "Slot": 13,
     "Stats": {
       "Strength": 31,
       "Stamina": 46,
@@ -402,7 +402,7 @@
     "Name": "Tom\u0027s Axe A",
     "ItemLevel": 105,
     "Quality": 4,
-    "Slot": -1,
+    "Slot": 13,
     "Stats": {
       "AttackPower": 110
     },
@@ -417,7 +417,7 @@
     "Name": "Hammer of Righteous Might",
     "ItemLevel": 105,
     "Quality": 4,
-    "Slot": -1,
+    "Slot": 13,
     "Stats": {
       "Stamina": 55,
       "Intellect": 37,
@@ -436,7 +436,7 @@
     "Name": "Lionheart Blade",
     "ItemLevel": 107,
     "Quality": 4,
-    "Slot": -1,
+    "Slot": 13,
     "Stats": {
       "Strength": 47,
       "Agility": 42
@@ -452,7 +452,7 @@
     "Name": "Lunar Crescent",
     "ItemLevel": 107,
     "Quality": 4,
-    "Slot": -1,
+    "Slot": 13,
     "Stats": {
       "CritRating": 47,
       "AttackPower": 96
@@ -468,7 +468,7 @@
     "Name": "Thunder",
     "ItemLevel": 107,
     "Quality": 4,
-    "Slot": -1,
+    "Slot": 13,
     "Stats": {
       "Strength": 37,
       "Agility": 37,
@@ -485,7 +485,7 @@
     "Name": "The Burning Crusader",
     "ItemLevel": 109,
     "Quality": 3,
-    "Slot": -1,
+    "Slot": 13,
     "Stats": {
       "Strength": 27,
       "Agility": 27,
@@ -504,7 +504,7 @@
     "Name": "Slayer\u0027s Axe",
     "ItemLevel": 109,
     "Quality": 3,
-    "Slot": -1,
+    "Slot": 13,
     "Stats": {
       "Strength": 51,
       "CritRating": 21
@@ -520,7 +520,7 @@
     "Name": "Torn-heart Axe of Battle",
     "ItemLevel": 109,
     "Quality": 3,
-    "Slot": -1,
+    "Slot": 13,
     "Stats": {
       "Strength": 30,
       "Stamina": 27,
@@ -539,7 +539,7 @@
     "Name": "Windcharger\u0027s Lance",
     "ItemLevel": 109,
     "Quality": 3,
-    "Slot": -1,
+    "Slot": 13,
     "Stats": {
       "Stamina": 60,
       "AttackPower": 80
@@ -555,7 +555,7 @@
     "Name": "Firemaul of Destruction",
     "ItemLevel": 112,
     "Quality": 3,
-    "Slot": -1,
+    "Slot": 13,
     "Stats": {
       "Strength": 31,
       "Stamina": 50,
@@ -572,7 +572,7 @@
     "Name": "Crystalforged War Axe",
     "ItemLevel": 112,
     "Quality": 3,
-    "Slot": -1,
+    "Slot": 13,
     "Stats": {
       "Stamina": 50,
       "CritRating": 27,
@@ -589,7 +589,7 @@
     "Name": "Endbringer",
     "ItemLevel": 115,
     "Quality": 3,
-    "Slot": -1,
+    "Slot": 13,
     "Stats": {
       "Strength": 29,
       "Stamina": 28,
@@ -606,7 +606,7 @@
     "Name": "Axe of the Nexus-Kings",
     "ItemLevel": 115,
     "Quality": 3,
-    "Slot": -1,
+    "Slot": 13,
     "Stats": {
       "Stamina": 33,
       "CritRating": 35,
@@ -623,7 +623,7 @@
     "Name": "Scepter of Sha\u0027tar",
     "ItemLevel": 115,
     "Quality": 3,
-    "Slot": -1,
+    "Slot": 13,
     "Stats": {
       "Strength": 31,
       "Stamina": 28,
@@ -641,7 +641,7 @@
     "Name": "Sonic Spear",
     "ItemLevel": 115,
     "Quality": 3,
-    "Slot": -1,
+    "Slot": 13,
     "Stats": {
       "Agility": 35,
       "Stamina": 30,
@@ -659,7 +659,7 @@
     "Name": "Crow Wing Reaper",
     "ItemLevel": 115,
     "Quality": 3,
-    "Slot": -1,
+    "Slot": 13,
     "Stats": {
       "Strength": 28,
       "Agility": 17,
@@ -688,7 +688,7 @@
     "Name": "Reaver of the Infinites",
     "ItemLevel": 115,
     "Quality": 3,
-    "Slot": -1,
+    "Slot": 13,
     "Stats": {
       "Stamina": 22,
       "Resilience": 27,
@@ -714,7 +714,7 @@
     "Name": "Plasma Rat\u0027s Hyper-Scythe",
     "ItemLevel": 115,
     "Quality": 3,
-    "Slot": -1,
+    "Slot": 13,
     "Stats": {
       "Strength": 42,
       "Stamina": 45,
@@ -731,7 +731,7 @@
     "Name": "High Warlord\u0027s Claymore",
     "ItemLevel": 115,
     "Quality": 3,
-    "Slot": -1,
+    "Slot": 13,
     "Stats": {
       "Strength": 28,
       "Stamina": 42,
@@ -750,7 +750,7 @@
     "Name": "Greatsword of Forlorn Visions",
     "ItemLevel": 115,
     "Quality": 3,
-    "Slot": -1,
+    "Slot": 13,
     "Stats": {
       "Strength": 26,
       "Stamina": 28
@@ -770,7 +770,7 @@
     "Name": "Warmaul of Infused Light",
     "ItemLevel": 115,
     "Quality": 3,
-    "Slot": -1,
+    "Slot": 13,
     "Stats": {
       "Strength": 20,
       "Stamina": 30,
@@ -797,7 +797,7 @@
     "Name": "Despair",
     "ItemLevel": 115,
     "Quality": 4,
-    "Slot": -1,
+    "Slot": 13,
     "Stats": {
       "Strength": 52
     },
@@ -816,7 +816,7 @@
     "Name": "Legacy",
     "ItemLevel": 115,
     "Quality": 4,
-    "Slot": -1,
+    "Slot": 13,
     "Stats": {
       "Agility": 40,
       "Stamina": 46,
@@ -834,7 +834,7 @@
     "Name": "High Warlord\u0027s Bonegrinder",
     "ItemLevel": 115,
     "Quality": 3,
-    "Slot": -1,
+    "Slot": 13,
     "Stats": {
       "Strength": 28,
       "Stamina": 42,
@@ -853,7 +853,7 @@
     "Name": "High Warlord\u0027s Decapitator",
     "ItemLevel": 115,
     "Quality": 3,
-    "Slot": -1,
+    "Slot": 13,
     "Stats": {
       "Stamina": 42,
       "HitRating": 18,
@@ -872,7 +872,7 @@
     "Name": "High Warlord\u0027s Maul",
     "ItemLevel": 115,
     "Quality": 3,
-    "Slot": -1,
+    "Slot": 13,
     "Stats": {
       "Strength": 28,
       "Stamina": 42,
@@ -891,7 +891,7 @@
     "Name": "High Warlord\u0027s Painsaw",
     "ItemLevel": 115,
     "Quality": 3,
-    "Slot": -1,
+    "Slot": 13,
     "Stats": {
       "Stamina": 42,
       "HitRating": 18,
@@ -910,7 +910,7 @@
     "Name": "Grand Marshal\u0027s Bonegrinder",
     "ItemLevel": 115,
     "Quality": 3,
-    "Slot": -1,
+    "Slot": 13,
     "Stats": {
       "Strength": 28,
       "Stamina": 42,
@@ -929,7 +929,7 @@
     "Name": "Grand Marshal\u0027s Warblade",
     "ItemLevel": 115,
     "Quality": 3,
-    "Slot": -1,
+    "Slot": 13,
     "Stats": {
       "Strength": 28,
       "Stamina": 42,
@@ -948,7 +948,7 @@
     "Name": "Grand Marshal\u0027s Decapitator",
     "ItemLevel": 115,
     "Quality": 3,
-    "Slot": -1,
+    "Slot": 13,
     "Stats": {
       "Stamina": 42,
       "HitRating": 18,
@@ -967,7 +967,7 @@
     "Name": "Grand Marshal\u0027s Maul",
     "ItemLevel": 115,
     "Quality": 3,
-    "Slot": -1,
+    "Slot": 13,
     "Stats": {
       "Strength": 28,
       "Stamina": 42,
@@ -986,7 +986,7 @@
     "Name": "Grand Marshal\u0027s Painsaw",
     "ItemLevel": 115,
     "Quality": 3,
-    "Slot": -1,
+    "Slot": 13,
     "Stats": {
       "Stamina": 42,
       "HitRating": 18,
@@ -1005,7 +1005,7 @@
     "Name": "Hellscream\u0027s Will",
     "ItemLevel": 115,
     "Quality": 3,
-    "Slot": -1,
+    "Slot": 13,
     "Stats": {
       "HitRating": 42,
       "AttackPower": 84
@@ -1021,7 +1021,7 @@
     "Name": "Arechron\u0027s Gift",
     "ItemLevel": 115,
     "Quality": 3,
-    "Slot": -1,
+    "Slot": 13,
     "Stats": {
       "HitRating": 42,
       "AttackPower": 84
@@ -1037,7 +1037,7 @@
     "Name": "Hellforged Halberd",
     "ItemLevel": 115,
     "Quality": 3,
-    "Slot": -1,
+    "Slot": 13,
     "Stats": {
       "Agility": 26,
       "HitRating": 19,
@@ -1054,7 +1054,7 @@
     "Name": "Blackened Spear",
     "ItemLevel": 115,
     "Quality": 3,
-    "Slot": -1,
+    "Slot": 13,
     "Stats": {
       "Agility": 26,
       "HitRating": 19,
@@ -1071,7 +1071,7 @@
     "Name": "Terokk\u0027s Quill",
     "ItemLevel": 115,
     "Quality": 3,
-    "Slot": -1,
+    "Slot": 13,
     "Stats": {
       "Agility": 54,
       "Stamina": 33
@@ -1087,7 +1087,7 @@
     "Name": "Illidari-Bane Claymore",
     "ItemLevel": 115,
     "Quality": 3,
-    "Slot": -1,
+    "Slot": 13,
     "Stats": {
       "Stamina": 34,
       "CritRating": 37
@@ -1107,7 +1107,7 @@
     "Name": "The Oathkeeper",
     "ItemLevel": 115,
     "Quality": 3,
-    "Slot": -1,
+    "Slot": 13,
     "Stats": {
       "Strength": 35,
       "Stamina": 24,
@@ -1125,7 +1125,7 @@
     "Name": "Apexis Cleaver",
     "ItemLevel": 115,
     "Quality": 3,
-    "Slot": -1,
+    "Slot": 13,
     "Stats": {
       "Strength": 46,
       "Stamina": 39,
@@ -1142,7 +1142,7 @@
     "Name": "Unusually Slow Two-Hander",
     "ItemLevel": 115,
     "Quality": 3,
-    "Slot": -1,
+    "Slot": 13,
     "Stats": {},
     "Phase": 53
   },
@@ -1155,7 +1155,7 @@
     "Name": "Legionfoe",
     "ItemLevel": 115,
     "Quality": 3,
-    "Slot": -1,
+    "Slot": 13,
     "Stats": {
       "Strength": 31,
       "Stamina": 45,
@@ -1173,7 +1173,7 @@
     "Name": "Axe of Shattered Dreams",
     "ItemLevel": 115,
     "Quality": 3,
-    "Slot": -1,
+    "Slot": 13,
     "Stats": {
       "Stamina": 48,
       "AttackPower": 70,
@@ -1190,7 +1190,7 @@
     "Name": "Ethereum Nexus-Reaver",
     "ItemLevel": 120,
     "Quality": 4,
-    "Slot": -1,
+    "Slot": 13,
     "Stats": {
       "Strength": 50,
       "CritRating": 30
@@ -1218,7 +1218,7 @@
     "Name": "Gladiator\u0027s Greatsword",
     "ItemLevel": 123,
     "Quality": 4,
-    "Slot": -1,
+    "Slot": 13,
     "Stats": {
       "Strength": 32,
       "Stamina": 48,
@@ -1237,7 +1237,7 @@
     "Name": "Gladiator\u0027s Decapitator",
     "ItemLevel": 123,
     "Quality": 4,
-    "Slot": -1,
+    "Slot": 13,
     "Stats": {
       "Stamina": 48,
       "HitRating": 20,
@@ -1256,7 +1256,7 @@
     "Name": "Gladiator\u0027s Bonegrinder",
     "ItemLevel": 123,
     "Quality": 4,
-    "Slot": -1,
+    "Slot": 13,
     "Stats": {
       "Strength": 32,
       "Stamina": 48,
@@ -1275,7 +1275,7 @@
     "Name": "Gladiator\u0027s Painsaw",
     "ItemLevel": 123,
     "Quality": 4,
-    "Slot": -1,
+    "Slot": 13,
     "Stats": {
       "Stamina": 48,
       "CritRating": 35,
@@ -1293,7 +1293,7 @@
     "Name": "Lionheart Champion",
     "ItemLevel": 123,
     "Quality": 4,
-    "Slot": -1,
+    "Slot": 13,
     "Stats": {
       "Strength": 49,
       "Agility": 44
@@ -1313,7 +1313,7 @@
     "Name": "Mooncleaver",
     "ItemLevel": 123,
     "Quality": 4,
-    "Slot": -1,
+    "Slot": 13,
     "Stats": {
       "CritRating": 52,
       "AttackPower": 106
@@ -1329,7 +1329,7 @@
     "Name": "Deep Thunder",
     "ItemLevel": 123,
     "Quality": 4,
-    "Slot": -1,
+    "Slot": 13,
     "Stats": {
       "Strength": 37,
       "Agility": 37,
@@ -1346,7 +1346,7 @@
     "Name": "Gladiator\u0027s Maul",
     "ItemLevel": 123,
     "Quality": 4,
-    "Slot": -1,
+    "Slot": 13,
     "Stats": {
       "Strength": 32,
       "Stamina": 48,
@@ -1365,7 +1365,7 @@
     "Name": "Gorehowl",
     "ItemLevel": 125,
     "Quality": 4,
-    "Slot": -1,
+    "Slot": 13,
     "Stats": {
       "Strength": 49,
       "Agility": 43,
@@ -1382,7 +1382,7 @@
     "Name": "Glaive of the Pit",
     "ItemLevel": 125,
     "Quality": 4,
-    "Slot": -1,
+    "Slot": 13,
     "Stats": {},
     "OnEquip": {
       "ID": 34696,
@@ -1411,7 +1411,7 @@
     "Name": "Axe of the Gronn Lords",
     "ItemLevel": 125,
     "Quality": 4,
-    "Slot": -1,
+    "Slot": 13,
     "Stats": {
       "Stamina": 66,
       "AttackPower": 124
@@ -1427,7 +1427,7 @@
     "Name": "Hammer of the Naaru",
     "ItemLevel": 125,
     "Quality": 4,
-    "Slot": -1,
+    "Slot": 13,
     "Stats": {
       "Strength": 44,
       "Stamina": 41,
@@ -1456,7 +1456,7 @@
     "Name": "Tom\u0027s Axe B",
     "ItemLevel": 130,
     "Quality": 4,
-    "Slot": -1,
+    "Slot": 13,
     "Stats": {
       "AttackPower": 110
     },
@@ -1471,7 +1471,7 @@
     "Name": "Trollbane",
     "ItemLevel": 132,
     "Quality": 4,
-    "Slot": -1,
+    "Slot": 13,
     "Stats": {
       "Agility": 39,
       "Stamina": 58,
@@ -1494,7 +1494,7 @@
     "Name": "World Breaker",
     "ItemLevel": 134,
     "Quality": 4,
-    "Slot": -1,
+    "Slot": 13,
     "Stats": {
       "Strength": 50,
       "Stamina": 51
@@ -1514,7 +1514,7 @@
     "Name": "Lionheart Executioner",
     "ItemLevel": 136,
     "Quality": 4,
-    "Slot": -1,
+    "Slot": 13,
     "Stats": {
       "Strength": 52,
       "Agility": 44
@@ -1534,7 +1534,7 @@
     "Name": "Bloodmoon",
     "ItemLevel": 136,
     "Quality": 4,
-    "Slot": -1,
+    "Slot": 13,
     "Stats": {
       "CritRating": 56,
       "AttackPower": 112
@@ -1550,7 +1550,7 @@
     "Name": "Stormherald",
     "ItemLevel": 136,
     "Quality": 4,
-    "Slot": -1,
+    "Slot": 13,
     "Stats": {
       "Strength": 42,
       "Agility": 42,
@@ -1567,7 +1567,7 @@
     "Name": "Merciless Gladiator\u0027s Bonegrinder",
     "ItemLevel": 136,
     "Quality": 4,
-    "Slot": -1,
+    "Slot": 13,
     "Stats": {
       "Strength": 42,
       "Stamina": 55,
@@ -1586,7 +1586,7 @@
     "Name": "Merciless Gladiator\u0027s Decapitator",
     "ItemLevel": 136,
     "Quality": 4,
-    "Slot": -1,
+    "Slot": 13,
     "Stats": {
       "Stamina": 55,
       "HitRating": 18,
@@ -1605,7 +1605,7 @@
     "Name": "Merciless Gladiator\u0027s Greatsword",
     "ItemLevel": 136,
     "Quality": 4,
-    "Slot": -1,
+    "Slot": 13,
     "Stats": {
       "Strength": 42,
       "Stamina": 55,
@@ -1624,7 +1624,7 @@
     "Name": "Merciless Gladiator\u0027s Maul",
     "ItemLevel": 136,
     "Quality": 4,
-    "Slot": -1,
+    "Slot": 13,
     "Stats": {
       "Strength": 42,
       "Stamina": 55,
@@ -1643,7 +1643,7 @@
     "Name": "Merciless Gladiator\u0027s Painsaw",
     "ItemLevel": 136,
     "Quality": 4,
-    "Slot": -1,
+    "Slot": 13,
     "Stats": {
       "Stamina": 55,
       "CritRating": 42,
@@ -1661,7 +1661,7 @@
     "Name": "Jin\u0027rohk, The Great Apocalypse",
     "ItemLevel": 138,
     "Quality": 4,
-    "Slot": -1,
+    "Slot": 13,
     "Stats": {
       "Stamina": 49,
       "Haste": 45,
@@ -1678,7 +1678,7 @@
     "Name": "Twinblade of the Phoenix",
     "ItemLevel": 141,
     "Quality": 4,
-    "Slot": -1,
+    "Slot": 13,
     "Stats": {
       "Stamina": 53,
       "CritRating": 37,
@@ -1704,7 +1704,7 @@
     "Name": "Halberd of Desolation",
     "ItemLevel": 141,
     "Quality": 4,
-    "Slot": -1,
+    "Slot": 13,
     "Stats": {
       "Agility": 51,
       "Stamina": 57,
@@ -1722,7 +1722,7 @@
     "Name": "Torch of the Damned",
     "ItemLevel": 141,
     "Quality": 4,
-    "Slot": -1,
+    "Slot": 13,
     "Stats": {
       "Strength": 51,
       "Stamina": 45,
@@ -1740,7 +1740,7 @@
     "Name": "Soul Cleaver",
     "ItemLevel": 141,
     "Quality": 4,
-    "Slot": -1,
+    "Slot": 13,
     "Stats": {
       "Strength": 65,
       "Stamina": 63,
@@ -1757,7 +1757,7 @@
     "Name": "Vengeful Gladiator\u0027s Bonegrinder",
     "ItemLevel": 146,
     "Quality": 4,
-    "Slot": -1,
+    "Slot": 13,
     "Stats": {
       "Strength": 46,
       "Stamina": 62,
@@ -1777,7 +1777,7 @@
     "Name": "Vengeful Gladiator\u0027s Decapitator",
     "ItemLevel": 146,
     "Quality": 4,
-    "Slot": -1,
+    "Slot": 13,
     "Stats": {
       "Stamina": 62,
       "HitRating": 15,
@@ -1797,7 +1797,7 @@
     "Name": "Vengeful Gladiator\u0027s Greatsword",
     "ItemLevel": 146,
     "Quality": 4,
-    "Slot": -1,
+    "Slot": 13,
     "Stats": {
       "Strength": 46,
       "Stamina": 62,
@@ -1817,7 +1817,7 @@
     "Name": "Vengeful Gladiator\u0027s Painsaw",
     "ItemLevel": 146,
     "Quality": 4,
-    "Slot": -1,
+    "Slot": 13,
     "Stats": {
       "Stamina": 62,
       "CritRating": 47,
@@ -1835,7 +1835,7 @@
     "Name": "The Blade of Harbingers",
     "ItemLevel": 146,
     "Quality": 4,
-    "Slot": -1,
+    "Slot": 13,
     "Stats": {
       "CritRating": 55,
       "Haste": 53,
@@ -1852,7 +1852,7 @@
     "Name": "Cataclysm\u0027s Edge",
     "ItemLevel": 151,
     "Quality": 4,
-    "Slot": -1,
+    "Slot": 13,
     "Stats": {
       "Strength": 75,
       "Stamina": 49,
@@ -1869,7 +1869,7 @@
     "Name": "Shivering Felspine",
     "ItemLevel": 154,
     "Quality": 4,
-    "Slot": -1,
+    "Slot": 13,
     "Stats": {
       "Agility": 52,
       "Haste": 53,
@@ -1889,7 +1889,7 @@
     "Name": "Brutal Gladiator\u0027s Bonegrinder",
     "ItemLevel": 154,
     "Quality": 4,
-    "Slot": -1,
+    "Slot": 13,
     "Stats": {
       "Strength": 50,
       "Stamina": 66,
@@ -1909,7 +1909,7 @@
     "Name": "Brutal Gladiator\u0027s Decapitator",
     "ItemLevel": 154,
     "Quality": 4,
-    "Slot": -1,
+    "Slot": 13,
     "Stats": {
       "Stamina": 66,
       "HitRating": 19,
@@ -1929,7 +1929,7 @@
     "Name": "Brutal Gladiator\u0027s Greatsword",
     "ItemLevel": 154,
     "Quality": 4,
-    "Slot": -1,
+    "Slot": 13,
     "Stats": {
       "Strength": 50,
       "Stamina": 66,
@@ -1949,7 +1949,7 @@
     "Name": "Brutal Gladiator\u0027s Painsaw",
     "ItemLevel": 154,
     "Quality": 4,
-    "Slot": -1,
+    "Slot": 13,
     "Stats": {
       "Stamina": 68,
       "CritRating": 51,
@@ -1967,7 +1967,7 @@
     "Name": "Trashbringer",
     "ItemLevel": 155,
     "Quality": 5,
-    "Slot": -1,
+    "Slot": 13,
     "Stats": {},
     "OnEquip": {
       "ID": 18112,
@@ -1984,7 +1984,7 @@
     "Name": "Apolyon, the Soul-Render",
     "ItemLevel": 164,
     "Quality": 4,
-    "Slot": -1,
+    "Slot": 13,
     "Stats": {
       "Stamina": 75,
       "CritRating": 42,
@@ -2014,7 +2014,7 @@
     "Name": "Devastation",
     "ItemLevel": 175,
     "Quality": 5,
-    "Slot": -1,
+    "Slot": 13,
     "Stats": {
       "Stamina": 75,
       "CritRating": 50,

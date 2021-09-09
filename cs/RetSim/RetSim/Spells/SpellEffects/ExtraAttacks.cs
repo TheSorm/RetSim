@@ -1,4 +1,5 @@
-﻿using RetSim.Log;
+﻿using RetSim.Events;
+using RetSim.Log;
 
 namespace RetSim.SpellEffects
 {
@@ -13,19 +14,22 @@ namespace RetSim.SpellEffects
             Number = number;
         }
 
-        public override ProcMask Resolve(FightSimulation fight)
+        public override ProcMask Resolve(FightSimulation fight, SpellState state)
         {
+            fight.CombatLog.Add(new ExtraAttacksEntry()
+            {
+                Timestamp = fight.Timestamp,
+                Mana = fight.Player.Stats.Mana,
+                Source = Parent.Name,
+                Number = Number
+            });
+
             for (int i = 0; i < Number; i++)
+            {
+                fight.Queue.Add(new CastEvent(Proc, fight, fight.Timestamp));
+            }
 
-                fight.CombatLog.Add(new ExtraAttacksEntry()
-                {
-                    Timestamp = fight.Timestamp,
-                    Mana = fight.Player.Stats.Mana,
-                    Source = Parent.Name,
-                    Number = Number
-                }); ;
-
-            return fight.Player.Cast(Proc, fight);
+            return ProcMask.None;
         }
     }
 }

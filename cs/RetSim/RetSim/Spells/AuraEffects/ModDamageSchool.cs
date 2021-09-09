@@ -2,7 +2,7 @@
 
 namespace RetSim.AuraEffects
 {
-    class ModDamageSchool : Modify
+    class ModDamageSchool : ModifyPercent
     {
         public List<School> Schools { get; init; }
 

@@ -4,9 +4,9 @@
     {
         public float Percentage { get; init; } = 1f;
 
-        public override float GetBaseDamage(Player player)
+        public override float GetBaseDamage(Player player, SpellState state)
         {
-            return GetWeaponDamage(player) * Percentage + player.Modifiers.Bonuses[Parent];
+            return GetWeaponDamage(player) * Percentage * state.EffectBonusPercent + state.EffectBonus;
         }
 
         protected float GetWeaponDamage(Player player)

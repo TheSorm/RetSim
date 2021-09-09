@@ -14,21 +14,21 @@ namespace RetSim.SpellEffects
         public ProcMask OnHit { get; init; } = ProcMask.None;
         public ProcMask OnCrit { get; init; } = ProcMask.None;
 
-        public virtual float GetBaseDamage(Player player)
+        public virtual float GetBaseDamage(Player player, SpellState state)
         {
-            return RNG.RollRange(MinEffect, MaxEffect);
+            return RNG.RollRange(MinEffect, MaxEffect) * state.EffectBonusPercent + state.EffectBonus;
         }
 
-        public virtual float CalculateDamage(Player player, Attack attack)
+        public virtual float CalculateDamage(Player player, Attack attack, SpellState state)
         {
-            return (GetBaseDamage(player) + attack.SpellPowerBonus) * attack.SchoolModifier * attack.SpellModifier * attack.DamageModifier;
+            return (GetBaseDamage(player, state) + attack.SpellPowerBonus) * attack.SchoolModifier * attack.DamageModifier;
         }
 
-        public override ProcMask Resolve(FightSimulation fight)
+        public override ProcMask Resolve(FightSimulation fight, SpellState state)
         {
             ProcMask mask = OnCast;
 
-            var attack = new Attack(fight.Player, fight.Enemy, this);
+            var attack = new Attack(fight.Player, fight.Enemy, this, state);
 
             if (attack.AttackResult == AttackResult.Hit)
             {

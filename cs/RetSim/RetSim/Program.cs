@@ -22,13 +22,25 @@ namespace RetSim
 
             RunOnce(equipment, talents, buffs);
             //RunMany(equipment, talents, buffs);
-            
 
-            //foreach (EquippableItem item in equipment.PlayerEquipment)
-            //{
-            //    if (item != null)
-            //        Logger.Log($"\n{item}");
-            //}
+            PrintEquipment(equipment);            
+        }
+
+        static void PrintEquipment(Equipment equipment)
+        {
+            Logger.Log("");
+
+            Logger.Log($"╔{"".PadRight(11, '═')}╦{"".PadRight(7, '═')}╦{"".PadRight(27, '═')}╦{"".PadRight(6, '═')}╦{"".PadRight(61, '═')}╗");
+            Logger.Log($"║ {"Slot",-9} ║ {"ID",-5} ║ {"Item",-25} ║ {"Gems", -4} ║ {"Gem Names", -59} ║");
+            Logger.Log($"╠{"".PadRight(11, '═')}╬{"".PadRight(7, '═')}╬{"".PadRight(27, '═')}╬{"".PadRight(6, '═')}╬{"".PadRight(61, '═')}╣");
+
+            foreach (EquippableItem item in equipment.PlayerEquipment)
+            {
+                if (item != null)
+                    Logger.Log($"{item}");
+            }
+
+            Logger.Log($"╚{"".PadRight(11, '═')}╩{"".PadRight(7, '═')}╩{"".PadRight(27, '═')}╩{"".PadRight(6, '═')}╩{"".PadRight(61, '═')}╝");
         }
 
         static void RunOnce(Equipment equipment, List<Talent> talents, List<Spell> buffs)

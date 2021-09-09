@@ -2,25 +2,25 @@
 
 namespace RetSim.AuraEffects
 {
-    class ModDamageSpell : Modify
+    class ModDamageSpell : ModifyPercent
     {
-        public List<Spell> Spells { get; init; }
+        public List<int> Spells { get; init; }
 
         public override void Apply(Aura aura, FightSimulation fight)
         {
             base.Apply(aura, fight);
 
-            foreach (Spell spell in Spells)
+            foreach (int spell in Spells)
             {
-                fight.Player.Modifiers.Spells[spell] *= RelativeDifference;
+                fight.Player.Spellbook[spell].EffectBonusPercent *= RelativeDifference;
             }
         }
 
         public override void Remove(Aura aura, FightSimulation fight)
         {
-            foreach (Spell spell in Spells)
+            foreach (int spell in Spells)
             {
-                fight.Player.Modifiers.Spells[spell] /= RelativeDifference;
+                fight.Player.Spellbook[spell].EffectBonusPercent /= RelativeDifference;
             }
 
             base.Remove(aura, fight);

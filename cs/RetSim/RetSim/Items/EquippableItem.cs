@@ -83,7 +83,24 @@ namespace RetSim.Items
 
         public override string ToString()
         {
-            return $"{Slot}: ({ID}) - {Name}";
+            var gems = GetGems();
+
+            string gems1 = $"{gems.Count, 4}";
+            string gems2 = "";
+
+            if (gems.Count > 0)
+            {
+                for (int i = 0; i < gems.Count; i++)
+                {
+                    if (i + 1 < gems.Count)
+                        gems2 += $"{gems[i].Name}, ";
+
+                    else
+                        gems2 += $"{gems[i].Name}";
+                }
+            }
+
+            return $"║ {Slot, -9} ║ {ID, -5} ║ {Name, -25} ║ {gems1} ║ {gems2, -59} ║";
         }
     }
 

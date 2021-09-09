@@ -13,7 +13,7 @@
 
         public override ProcMask Execute(object arguments = null)
         {
-            return Fight.Player.Cast(Spell, Fight);
+            return Player.Cast(Spell, Fight);
         }
 
         public override string ToString()

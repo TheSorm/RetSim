@@ -1,5 +1,4 @@
 ﻿using RetSim.SpellEffects;
-using System.Collections.Generic;
 
 namespace RetSim.Data
 {
@@ -10,7 +9,7 @@ namespace RetSim.Data
             ID = 1,
             Name = "Melee",
 
-            Effects = new List<SpellEffect>
+            Effects = new()
                 {
                     new WeaponDamage()
                     {
@@ -18,7 +17,7 @@ namespace RetSim.Data
                         DefenseCategory = DefenseType.White,
                         CritCategory = AttackCategory.Physical,
                         OnHit = ProcMask.OnAutoAttack,
-                        OnCrit = ProcMask.OnAnyCrit | ProcMask.OnMeleeCrit
+                        OnCrit = ProcMask.OnCrit | ProcMask.OnMeleeCrit
                     }
                 }
         };
@@ -29,9 +28,9 @@ namespace RetSim.Data
             Name = "Crusader Strike",
             ManaCost = 236,
             Cooldown = 6000,
-            GCD = new SpellGCD() { Category = AttackCategory.Physical },
+            GCD = new() { Category = AttackCategory.Physical },
 
-            Effects = new List<SpellEffect>
+            Effects = new()
                 {
                     new WeaponDamage()
                     {
@@ -40,7 +39,7 @@ namespace RetSim.Data
                         CritCategory = AttackCategory.Physical,
                         Normalized = true,
                         OnHit = ProcMask.OnSpecialAttack,
-                        OnCrit = ProcMask.OnAnyCrit | ProcMask.OnMeleeCrit,
+                        OnCrit = ProcMask.OnCrit | ProcMask.OnMeleeCrit,
                         Percentage = 1.1f
                     }
                 }
@@ -53,7 +52,7 @@ namespace RetSim.Data
             ManaCost = 148,
             Cooldown = 10000,
 
-            Effects = new List<SpellEffect> { new JudgementEffect() }
+            Effects = new() { new JudgementEffect() }
         };
 
         public static readonly Spell SealOfCommand = new()
@@ -61,7 +60,7 @@ namespace RetSim.Data
             ID = 27170,
             Name = "Seal of Command (Aura)",
             ManaCost = 280,
-            GCD = new SpellGCD() { Category = AttackCategory.Spell }
+            GCD = new() { Category = AttackCategory.Spell }
         };
 
         public static readonly Spell SealOfCommandProc = new()
@@ -69,15 +68,15 @@ namespace RetSim.Data
             ID = 20424,
             Name = "Seal of Command",
 
-            Effects = new List<SpellEffect>
+            Effects = new()
                 {
                     new WeaponDamage()
                     {
                         School =  School.Holy,
                         DefenseCategory = DefenseType.Special,
                         CritCategory = AttackCategory.Physical,
-                        OnHit = ProcMask.OnSpecialAttack | ProcMask.OnSealOfCommand,
-                        OnCrit = ProcMask.OnAnyCrit | ProcMask.OnMeleeCrit,
+                        OnHit = ProcMask.OnSealOfCommand,
+                        OnCrit = ProcMask.OnCrit | ProcMask.OnMeleeCrit,
                         Percentage = 0.7f,
                         Coefficient = 0.2f,
                         HolyCoefficient = 0.29f
@@ -90,15 +89,15 @@ namespace RetSim.Data
             ID = 27171,
             Name = "Judgement of Command",
 
-            Effects = new List<SpellEffect>
+            Effects = new()
                 {
                     new DamageEffect
                     {
                         School =  School.Holy,
                         DefenseCategory = DefenseType.Ranged,
                         CritCategory = AttackCategory.Physical,
-                        OnHit = ProcMask.OnSpecialAttack,
-                        OnCrit = ProcMask.OnAnyCrit | ProcMask.OnMeleeCrit,
+                        OnHit = ProcMask.OnJudgement | ProcMask.OnRangedAttack,
+                        OnCrit = ProcMask.OnCrit | ProcMask.OnMeleeCrit,
                         Coefficient = 0.429f,
                         MinEffect = 228,
                         MaxEffect = 252
@@ -111,7 +110,7 @@ namespace RetSim.Data
             ID = 31892,
             Name = "Seal of Blood (Aura)",
             ManaCost = 210,
-            GCD = new SpellGCD() { Category = AttackCategory.Spell }
+            GCD = new() { Category = AttackCategory.Spell }
         };
 
         public static readonly Spell SealOfBloodProc = new()
@@ -119,14 +118,14 @@ namespace RetSim.Data
             ID = 31893,
             Name = "Seal of Blood",
 
-            Effects = new List<SpellEffect>
+            Effects = new()
                 {
                     new WeaponDamage()
                     {
                         School = School.Holy,
                         DefenseCategory = DefenseType.Special,
                         CritCategory = AttackCategory.Physical,
-                        OnCrit = ProcMask.OnAnyCrit,
+                        OnCrit = ProcMask.OnCrit,
                         Percentage = 0.35f
                     }
                 }
@@ -137,15 +136,15 @@ namespace RetSim.Data
             ID = 31898,
             Name = "Judgement of Blood",
 
-            Effects = new List<SpellEffect>
+            Effects = new()
                 {
                     new DamageEffect
                     {
                         School =  School.Holy,
                         DefenseCategory = DefenseType.Ranged,
                         CritCategory = AttackCategory.Physical,
-                        OnHit = ProcMask.OnSpecialAttack,
-                        OnCrit = ProcMask.OnAnyCrit | ProcMask.OnMeleeCrit,
+                        OnHit = ProcMask.OnJudgement | ProcMask.OnRangedAttack,
+                        OnCrit = ProcMask.OnCrit | ProcMask.OnMeleeCrit,
                         Coefficient = 0.429f,
                         MinEffect = 331.6f,
                         MaxEffect = 361.6f
@@ -158,7 +157,7 @@ namespace RetSim.Data
             ID = 27158,
             Name = "Seal of the Crusader",
             ManaCost = 210,
-            GCD = new SpellGCD() { Category = AttackCategory.Spell },
+            GCD = new() { Category = AttackCategory.Spell },
 
             Effects = null
             //TODO: Give this shit an effect
@@ -181,15 +180,15 @@ namespace RetSim.Data
             ID = 2,
             Name = "Melee (Windfury)",
 
-            Effects = new List<SpellEffect>()
+            Effects = new()
                 {
                     new WeaponDamage()
                     {
                         School =  School.Physical,
                         DefenseCategory = DefenseType.White,
                         CritCategory = AttackCategory.Physical,
-                        OnHit = ProcMask.OnWindfury,
-                        OnCrit = ProcMask.OnAnyCrit | ProcMask.OnMeleeCrit
+                        OnHit = ProcMask.OnExtraAttack,
+                        OnCrit = ProcMask.OnCrit | ProcMask.OnMeleeCrit
                     }
                 }
         };
@@ -200,18 +199,6 @@ namespace RetSim.Data
             Name = "Avenging Wrath",
             ManaCost = 236,
             Cooldown = 180000            
-        };
-
-        public static readonly Spell DragonspineTrophy = new()
-        {
-            ID = 34774,
-            Name = "Dragonspine Trophy"
-        };
-
-        public static readonly Spell DragonspineTrophyProc = new()
-        {
-            ID = 34775,
-            Name = "Dragonspine Trophy"
         };
     }
 }

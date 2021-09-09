@@ -32,7 +32,6 @@ namespace RetSim.Events
             Fight.Queue.UpdateAdd(this);
         }
 
-
         public int CompareTo(Event other)
         {
             return Timestamp.CompareTo(other.Timestamp) == 0 ? Priority.CompareTo(other.Priority) : Timestamp.CompareTo(other.Timestamp);

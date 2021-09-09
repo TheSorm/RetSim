@@ -6,10 +6,6 @@ namespace RetSim
     public class Modifiers
     {
         public SchoolModifiers Schools { get; init; } = new SchoolModifiers();
-        public SpellModifiers Spells { get; init; } = new SpellModifiers();
-        public SpellCritModifiers SpellCrit { get; init; } = new SpellCritModifiers();
-        public SpellBonuses Bonuses { get; init; } = new SpellBonuses();
-
         public StatModifiers Stats { get; init; } = new StatModifiers();
 
         public float AttackSpeed { get; set; } = 1f;
@@ -40,44 +36,6 @@ namespace RetSim
             foreach (School school in Enum.GetValues(typeof(School)))
             {
                 Add(school, Default);
-            }
-        }
-    }
-
-    public class SpellModifiers : FailsafeDictionary<Spell, float>
-    {
-        public SpellModifiers()
-        {
-            Default = 1f;
-
-            foreach (Spell spell in Data.Spells.ByID.Values)
-            {
-                Add(spell, Default);
-            }
-        }
-    }
-    public class SpellCritModifiers : FailsafeDictionary<Spell, float>
-    {
-        public SpellCritModifiers()
-        {
-            Default = 1f;
-
-            foreach (Spell spell in Data.Spells.ByID.Values)
-            {
-                Add(spell, Default);
-            }
-        }
-    }
-
-    public class SpellBonuses : FailsafeDictionary<Spell, int>
-    {
-        public SpellBonuses()
-        {
-            Default = 0;
-
-            foreach (Spell spell in Data.Spells.ByID.Values)
-            {
-                Add(spell, Default);
             }
         }
     }

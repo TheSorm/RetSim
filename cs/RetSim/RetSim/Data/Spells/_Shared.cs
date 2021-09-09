@@ -30,6 +30,8 @@ namespace RetSim.Data
         {
         };
 
+        public static readonly List<School> AllSchools = new() { School.Typeless, School.Physical, School.Holy, School.Fire, School.Nature, School.Frost, School.Shadow, School.Arcane };
+
         static Spells()
         {
             ByID = new Dictionary<int, Spell>
@@ -51,6 +53,10 @@ namespace RetSim.Data
 
                 { DragonspineTrophyProc.ID, DragonspineTrophyProc },
                 { DragonspineTrophy.ID, DragonspineTrophy },
+                { Lionheart.ID, Lionheart },
+                { LionheartProc.ID, LionheartProc },
+                { LibramOfAvengement.ID, LibramOfAvengement },
+                { LibramOfAvengementProc.ID, LibramOfAvengementProc },
 
 
                 { GreaterBlessingOfMight.ID, GreaterBlessingOfMight },

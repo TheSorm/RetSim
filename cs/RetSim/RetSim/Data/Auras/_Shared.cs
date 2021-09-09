@@ -16,71 +16,41 @@ namespace RetSim.Data
 
         static Auras()
         {
-            SealOfCommand.Effects = new List<AuraEffect>() { new GainProc(Procs.SealOfCommand), new GainSeal() };
+            SealOfCommand.Effects = new() { new GainProc(Procs.SealOfCommand), new GainSeal() };
+            SealOfBlood.Effects = new() { new GainProc(Procs.SealOfBlood), new GainSeal() };
+            Vengeance.Effects = new() { new GainProc(Procs.Vengeance) };
 
-            SealOfBlood.Effects = new List<AuraEffect>() { new GainProc(Procs.SealOfBlood), new GainSeal() };
+            WindfuryTotem.Effects = new() { new GainProc(Procs.WindfuryAttack) };
 
-            Vengeance.Effects = new List<AuraEffect>() { new GainProc(Procs.Vengeance) };
+            DragonspineTrophy.Effects = new() { new GainProc(Procs.DragonspineTrophy) };
+            Lionheart.Effects = new() { new GainProc(Procs.Lionheart) };
+            LibramOfAvengement.Effects = new() { new GainProc(Procs.LibramOfAvengement) };
 
-            //VengeanceProc.Effects = new List<AuraEffect>() { new ModDamageSchool() { Percentage = 5, Schools = new List<School> { School.Physical, School.Holy, }} };
-
-            //Crusade.Effects = new List<AuraEffect>()
-            //{ 
-            //    new ModDamageCreature() 
-            //    {  
-            //        Percentage = 5,
-            //        Types = new List<CreatureType> { CreatureType.Humanoid, CreatureType.Demon, CreatureType.Undead, CreatureType.Elemental },
-            //        Schools = new List<School> { School.Typeless, School.Physical, School.Holy, School.Fire, School.Nature, School.Frost, School.Shadow, School.Arcane }
-            //    }
-            //};
-
-
-            TwoHandedWeaponSpecialization.Effects = new List<AuraEffect>()
+            TwoHandedWeaponSpecialization.Effects = new()
             {
                 new ModDamageSpell() 
                 { 
                     Percentage = 6,
-                    Spells = new List<Spell> { Spells.Melee, Spells.WindfuryProc, Spells.SealOfCommandProc, Spells.JudgementOfCommand, Spells.SealOfBloodProc, Spells.JudgementOfBlood }
+                    Spells = new() { Spells.Melee.ID, Spells.WindfuryProc.ID, Spells.SealOfCommandProc.ID, Spells.JudgementOfCommand.ID, Spells.SealOfBloodProc.ID, Spells.JudgementOfBlood.ID }
                 }
             };
 
-            //SanctityAura.Effects = new List<AuraEffect>() { new ModDamageSchool() { Percentage = 10, Schools = new List<School> { School.Holy } } };
-
-            //ImprovedSanctityAura.Effects = new List<AuraEffect>() 
-            //{ 
-            //    new ModDamageSchool() 
-            //    { 
-            //        Percentage = 2, 
-            //        Schools = new List<School> { School.Typeless, School.Physical, School.Holy, School.Fire, School.Nature, School.Frost, School.Shadow, School.Arcane } 
-            //    } 
-            //};
-
-
-            Fanaticism.Effects = new List<AuraEffect>()
+            Fanaticism.Effects = new ()
             {
                 new ModSpellCritChance()
                 {
-                    Percentage = 15,
-                    Spells = new List<Spell> { Spells.JudgementOfCommand, Spells.JudgementOfBlood }
+                    Amount = 15,
+                    Spells = new() { Spells.JudgementOfCommand.ID, Spells.JudgementOfBlood.ID }
                 }
-            };
+            };            
 
-            WindfuryTotem.Effects = new List<AuraEffect>()
-                    { new GainProc(Procs.WindfuryAttack) };
-
-            DragonspineTrophy.Effects = new List<AuraEffect>()
-                    { new GainProc(Procs.DragonspineTrophy) };
-
-            SealOfCommand.ExclusiveWith = new List<Seal>()
-                { SealOfBlood, SealOfTheCrusader };
+            SealOfCommand.ExclusiveWith = new () { SealOfBlood, SealOfTheCrusader };
             SealOfCommand.Judgement = Spells.JudgementOfCommand;
 
-            SealOfBlood.ExclusiveWith = new List<Seal>()
-                { SealOfCommand, SealOfTheCrusader };
+            SealOfBlood.ExclusiveWith = new() { SealOfCommand, SealOfTheCrusader };
             SealOfBlood.Judgement = Spells.JudgementOfBlood;
 
-            SealOfTheCrusader.ExclusiveWith = new List<Seal>()
-                { SealOfCommand, SealOfBlood };
+            SealOfTheCrusader.ExclusiveWith = new() { SealOfCommand, SealOfBlood };
             SealOfTheCrusader.Judgement = Spells.JudgementOfCommand;
 
             ByID = new()
@@ -125,7 +95,11 @@ namespace RetSim.Data
                 { Spells.DivineIntellect.ID, DivineIntellect },
 
                 { Spells.DragonspineTrophy.ID, DragonspineTrophy },
-                { Spells.DragonspineTrophyProc.ID, DragonspineTrophyProc }
+                { Spells.DragonspineTrophyProc.ID, DragonspineTrophyProc },
+                { Spells.Lionheart.ID, Lionheart },
+                { Spells.LionheartProc.ID, LionheartProc },
+                { Spells.LibramOfAvengement.ID, LibramOfAvengement },
+                { Spells.LibramOfAvengementProc.ID, LibramOfAvengementProc },
             };
         }
     }
