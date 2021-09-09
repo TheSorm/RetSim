@@ -98,10 +98,9 @@ namespace RetSim
 
             Logger.Log($"\nDuration - Expected: {Duration} / Real: {Timestamp}\n");     
 
-            Logger.Log($"╔{"".PadRight(20, '═')}╦{"".PadRight(16, '═')}╦{"".PadRight(16, '═')}╦{"".PadRight(5, '═')}╦{"".PadRight(13, '═')}╦{"".PadRight(13, '═')}╦{"".PadRight(13, '═')}╦{"".PadRight(13, '═')}╗");
-            Logger.Log($"║ {"Ability Name", -18} ║ {"Damage # / %", -15}║ {"DPS # / %",-15}║ {"#",3} ║ {"#   Crit  %",-12}║ {"#   Hit   %",-12}║ {"#   Miss  %",-12}║ {"#  Dodge  %",-12}║");
-            Logger.Log($"╠{"".PadRight(20, '═')}╬{"".PadRight(16, '═')}╬{"".PadRight(16, '═')}╬{"".PadRight(5, '═')}╬{"".PadRight(13, '═')}╬{"".PadRight(13, '═')}╬{"".PadRight(13, '═')}╬{"".PadRight(13, '═')}╣");
-            
+            Logger.Log($"╔════════════════════╦════════════════╦════════════════╦═════╦═════════════╦═════════════╦═════════════╦═════════════╗");
+            Logger.Log($"║    Ability Name    ║ #   Damage   % ║ #    DPS     % ║  #  ║ #  Crit   % ║ #   Hit   % ║ #  Miss   % ║ #  Dodge  % ║");
+            Logger.Log($"╠════════════════════╬════════════════╬════════════════╬═════╬═════════════╬═════════════╬═════════════╬═════════════╣");
 
             foreach (string s in CombatLog.DamageBreakdown.Keys)
             {
@@ -129,19 +128,13 @@ namespace RetSim
                 float dps = (float)damage / CombatLog.Duration * 1000;
                 float hit = count - miss - dodge;
 
-                //Logger.Log($"\nAbility: {s}");
-                //Logger.Log($"DPS: {dps.Rounded()} - {(dps / CombatLog.DPS * 100).Rounded()}%");
-                //Logger.Log($"Damage: {damage} - {(damage * 100f / CombatLog.Damage).Rounded()}%");
-                //Logger.Log($"{count} Casts: {crit} Crit ({(crit / hit * 100).Rounded()}%) / {hit} Hit ({(hit / count * 100).Rounded()}%) / {miss} Miss ({(miss / count * 100).Rounded()}%) / {dodge} Dodge ({(dodge / count * 100).Rounded()}%)");
-
-
                 Logger.Log($"║ {s, -18} ║ {damage, -6} {(damage * 100f / CombatLog.Damage).Rounded(),6}% ║ {dps.Rounded(), -6} {(dps / CombatLog.DPS * 100).Rounded(), 6}% ║ {count, 3} ║ {crit, -3} {(crit / hit * 100).Rounded(), 6}% ║ {hit, -3} {(hit / count * 100).Rounded(),6}% ║ {miss, -3} {(miss / count * 100).Rounded(),6}% ║ {dodge, -3} {(dodge / count * 100).Rounded(), 6}% ║");
-                //Logger.Log($"{"".PadRight(118, '-')}");
+                
             }
 
-            Logger.Log($"╠{"".PadRight(20, '═')}╬{"".PadRight(16, '═')}╬{"".PadRight(16, '═')}╬{"".PadRight(5, '═')}╩{"".PadRight(13, '═')}╩{"".PadRight(13, '═')}╩{"".PadRight(13, '═')}╩{"".PadRight(13, '═')}╝");
-            Logger.Log($"║ {"Total",-18} ║ {CombatLog.Damage,-6} {"Damage", 7} ║ {CombatLog.DPS.Rounded(), -7} {"DPS", 6} ║");
-            Logger.Log($"╚{"".PadRight(20, '═')}╩{"".PadRight(16, '═')}╩{"".PadRight(16, '═')}╝");
+            Logger.Log($"╠════════════════════╬════════════════╬════════════════╬═════╩═════════════╩═════════════╩═════════════╩═════════════╝");
+            Logger.Log($"║       Totals       ║ {CombatLog.Damage,-6} {"Damage", 7} ║ {CombatLog.DPS.Rounded(), -7} {"DPS", 6} ║");
+            Logger.Log($"╚════════════════════╩════════════════╩════════════════╝");
 
         }
     }

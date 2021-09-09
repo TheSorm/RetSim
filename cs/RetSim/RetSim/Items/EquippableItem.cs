@@ -85,7 +85,7 @@ namespace RetSim.Items
         {
             var gems = GetGems();
 
-            string gems1 = $"{gems.Count, 4}";
+            string gems1 = $" {gems.Count}  ";
             string gems2 = "";
 
             if (gems.Count > 0)
