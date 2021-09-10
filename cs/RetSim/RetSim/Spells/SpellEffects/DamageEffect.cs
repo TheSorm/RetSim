@@ -43,7 +43,7 @@ namespace RetSim.SpellEffects
             var entry = new DamageEntry()
             {
                 Timestamp = fight.Timestamp,
-                Mana = fight.Player.Stats.Mana,
+                Mana = (int)fight.Player.Stats[StatName.Mana].Value,
                 Source = Parent.Name,
                 AttackResult = attack.AttackResult,
                 Damage = attack.Damage,

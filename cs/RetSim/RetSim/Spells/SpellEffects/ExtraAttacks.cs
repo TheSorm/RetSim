@@ -19,7 +19,7 @@ namespace RetSim.SpellEffects
             fight.CombatLog.Add(new ExtraAttacksEntry()
             {
                 Timestamp = fight.Timestamp,
-                Mana = fight.Player.Stats.Mana,
+                Mana = (int)fight.Player.Stats[StatName.Mana].Value,
                 Source = Parent.Name,
                 Number = Number
             });

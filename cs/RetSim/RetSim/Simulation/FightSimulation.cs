@@ -54,6 +54,9 @@ namespace RetSim
                 Queue.Add(new CastEvent(buff, this, Timestamp, -1));
             }
 
+            if (Player.Race.Racial != null && Player.Race.Racial.Requirements(Player))
+                Queue.Add(new CastEvent(Player.Race.Racial, this, Timestamp, -1));
+
             Queue.AddRange(Tactic.PreFight(this));
             Queue.Add(new SimulationEndEvent(this, Duration));
 
@@ -94,7 +97,7 @@ namespace RetSim
             foreach (LogEntry entry in CombatLog.Log)
                 Logger.Log(entry.ToString());
 
-            Logger.Log($"\nPlayer stats: {Player.Stats.AttackPower} AP / {Player.Stats.CritChance.Rounded()}% Crit / {Player.Stats.HitChance.Rounded()}% Hit / {Player.Stats.Expertise} Expertise");
+            Logger.Log($"\nPlayer stats: {Player.Stats[StatName.AttackPower].Value} AP / {Player.Stats[StatName.CritChance].Value.Rounded()}% Crit / {Player.Stats[StatName.HitChance].Value.Rounded()}% Hit / {Player.Stats[StatName.Expertise].Value} Expertise");
 
             Logger.Log($"\nDuration - Expected: {Duration} / Real: {Timestamp}\n");     
 

@@ -18,10 +18,13 @@ namespace RetSim
 
             var talents = new List<Talent> { ImprovedSealOfTheCrusader, Conviction, Crusade, TwoHandedWeaponSpecialization, SanctityAura, ImprovedSanctityAura, Vengeance, Fanaticism, SanctifiedSeals, Precision, DivineStrength };
             var buffs = new List<Spell> { WindfuryTotem, GreaterBlessingOfMight, GreaterBlessingOfKings, BattleShout, StrengthOfEarthTotem, GraceOfAirTotem, ManaSpringTotem, UnleashedRage,
-                                            GiftOfTheWild, PrayerOfFortitude, PrayerOfSpirit, ArcaneBrilliance, InspiringPresence };
+                                          GiftOfTheWild, PrayerOfFortitude, PrayerOfSpirit, ArcaneBrilliance, InspiringPresence };
+            
 
             RunOnce(equipment, talents, buffs);
             //RunMany(equipment, talents, buffs);
+
+            //RELENTLESS CRIT BONUS
 
             PrintEquipment(equipment);            
         }
@@ -33,10 +36,6 @@ namespace RetSim
             Logger.Log($"╔═══════════╦═══════╦═══════════════════════════╦══════╦═════════════════════════════════════════════════════════════╗");
             Logger.Log($"║   Slot    ║  ID   ║           Item            ║ Gems ║                          Gem Names                          ║");
             Logger.Log($"╠═══════════╬═══════╬═══════════════════════════╬══════╬═════════════════════════════════════════════════════════════╣");
-
-            //Logger.Log($"╔{"".PadRight(11, '═')}╦{"".PadRight(7, '═')}╦{"".PadRight(27, '═')}╦{"".PadRight(6, '═')}╦{"".PadRight(61, '═')}╗");
-            //Logger.Log($"║ {"",-9} ║ {"",-5} ║ {"Item",-25} ║ {"Gems", -4} ║ {"Gem Names", -59} ║");
-            //Logger.Log($"╠{"".PadRight(11, '═')}╬{"".PadRight(7, '═')}╬{"".PadRight(27, '═')}╬{"".PadRight(6, '═')}╬{"".PadRight(61, '═')}╣");
 
             foreach (EquippableItem item in equipment.PlayerEquipment)
             {

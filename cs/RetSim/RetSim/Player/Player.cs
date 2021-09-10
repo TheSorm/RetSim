@@ -4,9 +4,9 @@ using System.Collections.Generic;
 
 namespace RetSim
 {
-    public partial class Player
+    public class Player
     {
-        public Stats Stats { get; init; }
+        public PlayerStats Stats { get; init; }
         public Modifiers Modifiers { get; init; }
 
         public Equipment Equipment { get; init; }
@@ -25,20 +25,18 @@ namespace RetSim
 
         public Player(Race race, Equipment equipment, List<Talent> talents)
         {
-            Spellbook = new Spellbook();
-
+            Talents = talents;
             Equipment = equipment;
             Race = race;
-            Stats = new Stats(this, race, equipment);
-            Modifiers = new Modifiers();
-            Weapon = new Weapon(this, equipment.Weapon.MinDamage, equipment.Weapon.MaxDamage, equipment.Weapon.AttackSpeed);
+            Stats = new PlayerStats(this);
 
+            Spellbook = new Spellbook();
+            Modifiers = new Modifiers();
+            Weapon = new Weapon(this);
             
             Auras = new Auras(this);
             Procs = new Procs(this);
             GCD = new GCD();
-
-            Talents = talents;
         }
 
         public static ProcMask Cast(Spell spell, FightSimulation fight)
@@ -82,7 +80,7 @@ namespace RetSim
 
         public bool SufficientMana(SpellState state)
         {
-            return state.EffectiveManaCost <= Stats.Mana;
+            return state.EffectiveManaCost <= Stats[StatName.Mana].Value; //TODO: Fix, implement current HP/mana
         }
     }
 }

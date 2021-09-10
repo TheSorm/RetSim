@@ -27,13 +27,18 @@ namespace RetSim.Data
         public static readonly Aura WindfuryAttack = new()
         {
             Duration = 10,
-            Effects = new() { new GainStats() { Stats = new() { AttackPower = 445 } } }
+            Effects = new() { new GainStats() { Stats = new() { { StatName.AttackPower, 445 } } } }
         };
 
         public static readonly Aura AvengingWrath = new()
         {
             Duration = 20000,
             Effects = new() { new ModDamageSchool() { Percentage = 30, Schools = Spells.AllSchools } }
-        };       
+        };
+
+        public static readonly Aura HumanRacial = new()
+        {
+            Effects = new() { new GainStats() { Stats = new() { { StatName.Expertise, 5 } } } }
+        };
     }
 }

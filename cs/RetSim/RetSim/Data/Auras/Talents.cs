@@ -9,7 +9,7 @@ namespace RetSim.Data
         {
             Effects = new()
             {
-                new GainStats() { Stats = new() { CritChance = 3, SpellCrit = 3 } }
+                new GainStats() { Stats = new() { { StatName.CritChance, 3 }, { StatName.SpellCrit, 3 } } }
             }
         };
 
@@ -17,7 +17,7 @@ namespace RetSim.Data
         {
             Effects = new()
             {
-                new GainStats() { Stats = new() { CritChance = 5 } }
+                new GainStats() { Stats = new() { { StatName.CritChance, 5 } } }
             }
         };
 
@@ -52,7 +52,7 @@ namespace RetSim.Data
         {
             Effects = new()
             {
-                new GainStats() { Stats = new() { CritChance = 3, SpellCrit = 3 } }
+                new GainStats() { Stats = new() { { StatName.CritChance, 3 }, { StatName.SpellCrit, 3 } } }
             }
         };
 
@@ -79,18 +79,18 @@ namespace RetSim.Data
         {
             Effects = new()
             {
-                new GainStats() { Stats = new() { HitChance = 3, SpellHit = 3 } }
+                new GainStats() { Stats = new() { { StatName.HitChance, 3 }, { StatName.SpellHit, 3 } } }
             }
         };
 
         public static readonly Aura DivineStrength = new()
         {
-            Effects = new() { new ModStat() { Percentage = 10, Strength = true } }
+            Effects = new() { new ModStat() { Percentage = 10, Stats = new() { StatName.Strength } } }
         };
 
         public static readonly Aura DivineIntellect = new()
         {
-            Effects = new() { new ModStat() { Percentage = 10, Intellect = true } }
+            Effects = new() { new ModStat() { Percentage = 10, Stats = new() { StatName.Intellect } } }
         };
     }
 }

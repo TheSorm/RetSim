@@ -1,4 +1,5 @@
-﻿using RetSim.SpellEffects;
+﻿using RetSim.Items;
+using RetSim.SpellEffects;
 
 namespace RetSim.Data
 {
@@ -199,6 +200,13 @@ namespace RetSim.Data
             Name = "Avenging Wrath",
             ManaCost = 236,
             Cooldown = 180000            
+        };
+
+        public static readonly Racial HumanRacial = new()
+        {
+            ID = 20597,
+            Name = "Sword Specialization",
+            Requirements = (Player player) => (player.Weapon.Type == WeaponType.Sword || player.Weapon.Type == WeaponType.Mace)
         };
     }
 }
