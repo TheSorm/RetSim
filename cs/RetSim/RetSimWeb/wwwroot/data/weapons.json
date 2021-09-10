@@ -1,5 +1,6 @@
 [
   {
+    "Type": 2,
     "MinDamage": 212,
     "MaxDamage": 318,
     "AttackSpeed": 3600,
@@ -26,6 +27,7 @@
     "Phase": 1
   },
   {
+    "Type": 3,
     "MinDamage": 176,
     "MaxDamage": 265,
     "AttackSpeed": 3000,
@@ -43,6 +45,7 @@
     "Phase": 1
   },
   {
+    "Type": 4,
     "MinDamage": 181,
     "MaxDamage": 273,
     "AttackSpeed": 3000,
@@ -59,6 +62,7 @@
     "Phase": 1
   },
   {
+    "Type": 4,
     "MinDamage": 181,
     "MaxDamage": 273,
     "AttackSpeed": 3000,
@@ -75,6 +79,7 @@
     "Phase": 1
   },
   {
+    "Type": 1,
     "MinDamage": 205,
     "MaxDamage": 309,
     "AttackSpeed": 3400,
@@ -92,6 +97,7 @@
     "Phase": 1
   },
   {
+    "Type": 2,
     "MinDamage": 270,
     "MaxDamage": 406,
     "AttackSpeed": 3200,
@@ -109,6 +115,7 @@
     "Phase": 1
   },
   {
+    "Type": 1,
     "MinDamage": 207,
     "MaxDamage": 311,
     "AttackSpeed": 3300,
@@ -125,6 +132,7 @@
     "Phase": 1
   },
   {
+    "Type": 3,
     "MinDamage": 213,
     "MaxDamage": 321,
     "AttackSpeed": 3400,
@@ -141,6 +149,7 @@
     "Phase": 1
   },
   {
+    "Type": 2,
     "MinDamage": 220,
     "MaxDamage": 330,
     "AttackSpeed": 3500,
@@ -157,6 +166,7 @@
     "Phase": 1
   },
   {
+    "Type": 4,
     "MinDamage": 270,
     "MaxDamage": 406,
     "AttackSpeed": 3200,
@@ -174,6 +184,7 @@
     "Phase": 1
   },
   {
+    "Type": 3,
     "MinDamage": 295,
     "MaxDamage": 444,
     "AttackSpeed": 3500,
@@ -191,6 +202,7 @@
     "Phase": 1
   },
   {
+    "Type": 2,
     "MinDamage": 304,
     "MaxDamage": 457,
     "AttackSpeed": 3600,
@@ -212,6 +224,7 @@
     "Phase": 1
   },
   {
+    "Type": 3,
     "MinDamage": 221,
     "MaxDamage": 333,
     "AttackSpeed": 3400,
@@ -229,6 +242,7 @@
     "Phase": 1
   },
   {
+    "Type": 1,
     "MinDamage": 286,
     "MaxDamage": 430,
     "AttackSpeed": 3300,
@@ -249,6 +263,7 @@
     "Phase": 1
   },
   {
+    "Type": 3,
     "MinDamage": 295,
     "MaxDamage": 443,
     "AttackSpeed": 3400,
@@ -265,6 +280,7 @@
     "Phase": 1
   },
   {
+    "Type": 2,
     "MinDamage": 286,
     "MaxDamage": 430,
     "AttackSpeed": 3300,
@@ -282,6 +298,7 @@
     "Phase": 1
   },
   {
+    "Type": 1,
     "MinDamage": 304,
     "MaxDamage": 456,
     "AttackSpeed": 3500,
@@ -299,6 +316,7 @@
     "Phase": 1
   },
   {
+    "Type": 2,
     "MinDamage": 313,
     "MaxDamage": 470,
     "AttackSpeed": 3600,
@@ -318,6 +336,7 @@
     "Phase": 53
   },
   {
+    "Type": 3,
     "MinDamage": 313,
     "MaxDamage": 470,
     "AttackSpeed": 3600,
@@ -337,6 +356,7 @@
     "Phase": 53
   },
   {
+    "Type": 2,
     "MinDamage": 313,
     "MaxDamage": 470,
     "AttackSpeed": 3600,
@@ -356,6 +376,7 @@
     "Phase": 53
   },
   {
+    "Type": 4,
     "MinDamage": 191,
     "MaxDamage": 287,
     "AttackSpeed": 2200,
@@ -375,6 +396,7 @@
     "Phase": 53
   },
   {
+    "Type": 1,
     "MinDamage": 313,
     "MaxDamage": 470,
     "AttackSpeed": 3600,
@@ -394,6 +416,7 @@
     "Phase": 53
   },
   {
+    "Type": 3,
     "MinDamage": 313,
     "MaxDamage": 470,
     "AttackSpeed": 3600,
@@ -409,6 +432,7 @@
     "Phase": 53
   },
   {
+    "Type": 2,
     "MinDamage": 182,
     "MaxDamage": 274,
     "AttackSpeed": 2100,
@@ -428,6 +452,7 @@
     "Phase": 1
   },
   {
+    "Type": 1,
     "MinDamage": 315,
     "MaxDamage": 474,
     "AttackSpeed": 3600,
@@ -444,6 +469,7 @@
     "Phase": 1
   },
   {
+    "Type": 3,
     "MinDamage": 324,
     "MaxDamage": 487,
     "AttackSpeed": 3700,
@@ -460,6 +486,7 @@
     "Phase": 1
   },
   {
+    "Type": 2,
     "MinDamage": 333,
     "MaxDamage": 500,
     "AttackSpeed": 3800,
@@ -477,6 +504,7 @@
     "Phase": 1
   },
   {
+    "Type": 3,
     "MinDamage": 251,
     "MaxDamage": 378,
     "AttackSpeed": 3600,
@@ -496,6 +524,7 @@
     "Phase": 1
   },
   {
+    "Type": 3,
     "MinDamage": 223,
     "MaxDamage": 336,
     "AttackSpeed": 3200,
@@ -512,6 +541,7 @@
     "Phase": 1
   },
   {
+    "Type": 3,
     "MinDamage": 230,
     "MaxDamage": 346,
     "AttackSpeed": 3300,
@@ -531,6 +561,7 @@
     "Phase": 1
   },
   {
+    "Type": 4,
     "MinDamage": 237,
     "MaxDamage": 357,
     "AttackSpeed": 3400,
@@ -547,6 +578,7 @@
     "Phase": 3
   },
   {
+    "Type": 2,
     "MinDamage": 250,
     "MaxDamage": 418,
     "AttackSpeed": 3700,
@@ -564,6 +596,7 @@
     "Phase": 1
   },
   {
+    "Type": 3,
     "MinDamage": 253,
     "MaxDamage": 380,
     "AttackSpeed": 3500,
@@ -581,6 +614,7 @@
     "Phase": 1
   },
   {
+    "Type": 1,
     "MinDamage": 253,
     "MaxDamage": 381,
     "AttackSpeed": 3400,
@@ -598,6 +632,7 @@
     "Phase": 1
   },
   {
+    "Type": 3,
     "MinDamage": 253,
     "MaxDamage": 381,
     "AttackSpeed": 3400,
@@ -615,6 +650,7 @@
     "Phase": 1
   },
   {
+    "Type": 2,
     "MinDamage": 245,
     "MaxDamage": 408,
     "AttackSpeed": 3500,
@@ -633,6 +669,7 @@
     "Phase": 1
   },
   {
+    "Type": 4,
     "MinDamage": 261,
     "MaxDamage": 392,
     "AttackSpeed": 3500,
@@ -651,6 +688,7 @@
     "Phase": 1
   },
   {
+    "Type": 3,
     "MinDamage": 253,
     "MaxDamage": 381,
     "AttackSpeed": 3400,
@@ -680,6 +718,7 @@
     "Phase": 1
   },
   {
+    "Type": 3,
     "MinDamage": 268,
     "MaxDamage": 403,
     "AttackSpeed": 3600,
@@ -706,6 +745,7 @@
     "Phase": 1
   },
   {
+    "Type": 4,
     "MinDamage": 261,
     "MaxDamage": 392,
     "AttackSpeed": 3500,
@@ -723,6 +763,7 @@
     "Phase": 1
   },
   {
+    "Type": 1,
     "MinDamage": 268,
     "MaxDamage": 403,
     "AttackSpeed": 3600,
@@ -742,6 +783,7 @@
     "Phase": 1
   },
   {
+    "Type": 1,
     "MinDamage": 261,
     "MaxDamage": 392,
     "AttackSpeed": 3500,
@@ -762,6 +804,7 @@
     "Phase": 1
   },
   {
+    "Type": 2,
     "MinDamage": 245,
     "MaxDamage": 408,
     "AttackSpeed": 3500,
@@ -789,6 +832,7 @@
     "Phase": 1
   },
   {
+    "Type": 1,
     "MinDamage": 319,
     "MaxDamage": 479,
     "AttackSpeed": 3500,
@@ -808,6 +852,7 @@
     "Phase": 1
   },
   {
+    "Type": 3,
     "MinDamage": 319,
     "MaxDamage": 479,
     "AttackSpeed": 3500,
@@ -826,6 +871,7 @@
     "Phase": 1
   },
   {
+    "Type": 2,
     "MinDamage": 268,
     "MaxDamage": 403,
     "AttackSpeed": 3600,
@@ -845,6 +891,7 @@
     "Phase": 1
   },
   {
+    "Type": 3,
     "MinDamage": 268,
     "MaxDamage": 403,
     "AttackSpeed": 3600,
@@ -864,6 +911,7 @@
     "Phase": 1
   },
   {
+    "Type": 2,
     "MinDamage": 268,
     "MaxDamage": 403,
     "AttackSpeed": 3600,
@@ -883,6 +931,7 @@
     "Phase": 1
   },
   {
+    "Type": 4,
     "MinDamage": 164,
     "MaxDamage": 246,
     "AttackSpeed": 2200,
@@ -902,6 +951,7 @@
     "Phase": 1
   },
   {
+    "Type": 2,
     "MinDamage": 268,
     "MaxDamage": 403,
     "AttackSpeed": 3600,
@@ -921,6 +971,7 @@
     "Phase": 1
   },
   {
+    "Type": 1,
     "MinDamage": 268,
     "MaxDamage": 403,
     "AttackSpeed": 3600,
@@ -940,6 +991,7 @@
     "Phase": 1
   },
   {
+    "Type": 3,
     "MinDamage": 268,
     "MaxDamage": 403,
     "AttackSpeed": 3600,
@@ -959,6 +1011,7 @@
     "Phase": 1
   },
   {
+    "Type": 2,
     "MinDamage": 268,
     "MaxDamage": 403,
     "AttackSpeed": 3600,
@@ -978,6 +1031,7 @@
     "Phase": 1
   },
   {
+    "Type": 4,
     "MinDamage": 164,
     "MaxDamage": 246,
     "AttackSpeed": 2200,
@@ -997,6 +1051,7 @@
     "Phase": 1
   },
   {
+    "Type": 3,
     "MinDamage": 261,
     "MaxDamage": 392,
     "AttackSpeed": 3500,
@@ -1013,6 +1068,7 @@
     "Phase": 1
   },
   {
+    "Type": 2,
     "MinDamage": 261,
     "MaxDamage": 392,
     "AttackSpeed": 3500,
@@ -1029,6 +1085,7 @@
     "Phase": 1
   },
   {
+    "Type": 4,
     "MinDamage": 261,
     "MaxDamage": 392,
     "AttackSpeed": 3500,
@@ -1046,6 +1103,7 @@
     "Phase": 1
   },
   {
+    "Type": 4,
     "MinDamage": 261,
     "MaxDamage": 392,
     "AttackSpeed": 3500,
@@ -1063,6 +1121,7 @@
     "Phase": 1
   },
   {
+    "Type": 4,
     "MinDamage": 246,
     "MaxDamage": 370,
     "AttackSpeed": 3300,
@@ -1079,6 +1138,7 @@
     "Phase": 1
   },
   {
+    "Type": 1,
     "MinDamage": 276,
     "MaxDamage": 414,
     "AttackSpeed": 3700,
@@ -1099,6 +1159,7 @@
     "Phase": 1
   },
   {
+    "Type": 2,
     "MinDamage": 252,
     "MaxDamage": 420,
     "AttackSpeed": 3600,
@@ -1117,6 +1178,7 @@
     "Phase": 1
   },
   {
+    "Type": 3,
     "MinDamage": 268,
     "MaxDamage": 403,
     "AttackSpeed": 3600,
@@ -1134,6 +1196,7 @@
     "Phase": 3
   },
   {
+    "Type": 1,
     "MinDamage": 746,
     "MaxDamage": 747,
     "AttackSpeed": 8000,
@@ -1147,6 +1210,7 @@
     "Phase": 53
   },
   {
+    "Type": 3,
     "MinDamage": 276,
     "MaxDamage": 414,
     "AttackSpeed": 3700,
@@ -1165,6 +1229,7 @@
     "Phase": 5
   },
   {
+    "Type": 3,
     "MinDamage": 283,
     "MaxDamage": 426,
     "AttackSpeed": 3800,
@@ -1182,6 +1247,7 @@
     "Phase": 5
   },
   {
+    "Type": 3,
     "MinDamage": 346,
     "MaxDamage": 519,
     "AttackSpeed": 3700,
@@ -1210,6 +1276,7 @@
     "Phase": 1
   },
   {
+    "Type": 1,
     "MinDamage": 341,
     "MaxDamage": 513,
     "AttackSpeed": 3600,
@@ -1229,6 +1296,7 @@
     "Phase": 1
   },
   {
+    "Type": 3,
     "MinDamage": 341,
     "MaxDamage": 513,
     "AttackSpeed": 3600,
@@ -1248,6 +1316,7 @@
     "Phase": 1
   },
   {
+    "Type": 2,
     "MinDamage": 341,
     "MaxDamage": 513,
     "AttackSpeed": 3600,
@@ -1267,6 +1336,7 @@
     "Phase": 1
   },
   {
+    "Type": 4,
     "MinDamage": 208,
     "MaxDamage": 313,
     "AttackSpeed": 2200,
@@ -1285,6 +1355,7 @@
     "Phase": 1
   },
   {
+    "Type": 1,
     "MinDamage": 341,
     "MaxDamage": 513,
     "AttackSpeed": 3600,
@@ -1305,6 +1376,7 @@
     "Phase": 1
   },
   {
+    "Type": 3,
     "MinDamage": 351,
     "MaxDamage": 527,
     "AttackSpeed": 3700,
@@ -1321,6 +1393,7 @@
     "Phase": 1
   },
   {
+    "Type": 2,
     "MinDamage": 360,
     "MaxDamage": 541,
     "AttackSpeed": 3800,
@@ -1338,6 +1411,7 @@
     "Phase": 1
   },
   {
+    "Type": 2,
     "MinDamage": 189,
     "MaxDamage": 285,
     "AttackSpeed": 2000,
@@ -1357,6 +1431,7 @@
     "Phase": 1
   },
   {
+    "Type": 3,
     "MinDamage": 345,
     "MaxDamage": 518,
     "AttackSpeed": 3600,
@@ -1374,6 +1449,7 @@
     "Phase": 1
   },
   {
+    "Type": 4,
     "MinDamage": 354,
     "MaxDamage": 532,
     "AttackSpeed": 3700,
@@ -1403,6 +1479,7 @@
     "Phase": 1
   },
   {
+    "Type": 3,
     "MinDamage": 345,
     "MaxDamage": 518,
     "AttackSpeed": 3600,
@@ -1419,6 +1496,7 @@
     "Phase": 1
   },
   {
+    "Type": 2,
     "MinDamage": 345,
     "MaxDamage": 518,
     "AttackSpeed": 3600,
@@ -1448,6 +1526,7 @@
     "Phase": 1
   },
   {
+    "Type": 3,
     "MinDamage": 354,
     "MaxDamage": 532,
     "AttackSpeed": 3600,
@@ -1463,6 +1542,7 @@
     "Phase": 53
   },
   {
+    "Type": 3,
     "MinDamage": 358,
     "MaxDamage": 537,
     "AttackSpeed": 3600,
@@ -1486,6 +1566,7 @@
     "Phase": 4
   },
   {
+    "Type": 2,
     "MinDamage": 371,
     "MaxDamage": 558,
     "AttackSpeed": 3700,
@@ -1506,6 +1587,7 @@
     "Phase": 2
   },
   {
+    "Type": 1,
     "MinDamage": 365,
     "MaxDamage": 549,
     "AttackSpeed": 3600,
@@ -1526,6 +1608,7 @@
     "Phase": 1
   },
   {
+    "Type": 3,
     "MinDamage": 375,
     "MaxDamage": 564,
     "AttackSpeed": 3700,
@@ -1542,6 +1625,7 @@
     "Phase": 1
   },
   {
+    "Type": 2,
     "MinDamage": 386,
     "MaxDamage": 579,
     "AttackSpeed": 3800,
@@ -1559,6 +1643,7 @@
     "Phase": 1
   },
   {
+    "Type": 2,
     "MinDamage": 365,
     "MaxDamage": 549,
     "AttackSpeed": 3600,
@@ -1578,6 +1663,7 @@
     "Phase": 2
   },
   {
+    "Type": 3,
     "MinDamage": 365,
     "MaxDamage": 549,
     "AttackSpeed": 3600,
@@ -1597,6 +1683,7 @@
     "Phase": 2
   },
   {
+    "Type": 1,
     "MinDamage": 365,
     "MaxDamage": 549,
     "AttackSpeed": 3600,
@@ -1616,6 +1703,7 @@
     "Phase": 2
   },
   {
+    "Type": 2,
     "MinDamage": 203,
     "MaxDamage": 305,
     "AttackSpeed": 2000,
@@ -1635,6 +1723,7 @@
     "Phase": 2
   },
   {
+    "Type": 4,
     "MinDamage": 223,
     "MaxDamage": 335,
     "AttackSpeed": 2200,
@@ -1653,6 +1742,7 @@
     "Phase": 2
   },
   {
+    "Type": 1,
     "MinDamage": 380,
     "MaxDamage": 570,
     "AttackSpeed": 3700,
@@ -1670,6 +1760,7 @@
     "Phase": 4
   },
   {
+    "Type": 1,
     "MinDamage": 375,
     "MaxDamage": 564,
     "AttackSpeed": 3600,
@@ -1696,6 +1787,7 @@
     "Phase": 2
   },
   {
+    "Type": 4,
     "MinDamage": 365,
     "MaxDamage": 548,
     "AttackSpeed": 3500,
@@ -1714,6 +1806,7 @@
     "Phase": 3
   },
   {
+    "Type": 2,
     "MinDamage": 396,
     "MaxDamage": 595,
     "AttackSpeed": 3800,
@@ -1732,6 +1825,7 @@
     "Phase": 3
   },
   {
+    "Type": 3,
     "MinDamage": 386,
     "MaxDamage": 579,
     "AttackSpeed": 3700,
@@ -1749,6 +1843,7 @@
     "Phase": 3
   },
   {
+    "Type": 2,
     "MinDamage": 386,
     "MaxDamage": 580,
     "AttackSpeed": 3600,
@@ -1769,6 +1864,7 @@
     "Phase": 3
   },
   {
+    "Type": 3,
     "MinDamage": 386,
     "MaxDamage": 580,
     "AttackSpeed": 3600,
@@ -1789,6 +1885,7 @@
     "Phase": 3
   },
   {
+    "Type": 1,
     "MinDamage": 386,
     "MaxDamage": 580,
     "AttackSpeed": 3600,
@@ -1809,6 +1906,7 @@
     "Phase": 3
   },
   {
+    "Type": 4,
     "MinDamage": 236,
     "MaxDamage": 354,
     "AttackSpeed": 2200,
@@ -1827,6 +1925,7 @@
     "Phase": 3
   },
   {
+    "Type": 3,
     "MinDamage": 375,
     "MaxDamage": 563,
     "AttackSpeed": 3500,
@@ -1844,6 +1943,7 @@
     "Phase": 5
   },
   {
+    "Type": 1,
     "MinDamage": 386,
     "MaxDamage": 580,
     "AttackSpeed": 3500,
@@ -1861,6 +1961,7 @@
     "Phase": 3
   },
   {
+    "Type": 4,
     "MinDamage": 393,
     "MaxDamage": 590,
     "AttackSpeed": 3500,
@@ -1881,6 +1982,7 @@
     "Phase": 5
   },
   {
+    "Type": 2,
     "MinDamage": 404,
     "MaxDamage": 606,
     "AttackSpeed": 3600,
@@ -1901,6 +2003,7 @@
     "Phase": 5
   },
   {
+    "Type": 3,
     "MinDamage": 404,
     "MaxDamage": 606,
     "AttackSpeed": 3600,
@@ -1921,6 +2024,7 @@
     "Phase": 5
   },
   {
+    "Type": 1,
     "MinDamage": 404,
     "MaxDamage": 606,
     "AttackSpeed": 3600,
@@ -1941,6 +2045,7 @@
     "Phase": 5
   },
   {
+    "Type": 4,
     "MinDamage": 247,
     "MaxDamage": 371,
     "AttackSpeed": 2200,
@@ -1959,6 +2064,7 @@
     "Phase": 5
   },
   {
+    "Type": 1,
     "MinDamage": 381,
     "MaxDamage": 466,
     "AttackSpeed": 3000,
@@ -1976,6 +2082,7 @@
     "Phase": 53
   },
   {
+    "Type": 1,
     "MinDamage": 404,
     "MaxDamage": 607,
     "AttackSpeed": 3400,
@@ -2006,6 +2113,7 @@
     "Phase": 5
   },
   {
+    "Type": 3,
     "MinDamage": 496,
     "MaxDamage": 744,
     "AttackSpeed": 3900,
