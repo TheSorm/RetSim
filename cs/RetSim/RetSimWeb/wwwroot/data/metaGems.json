@@ -11,7 +11,7 @@
     "Quality": 3,
     "Color": 1,
     "Stats": {
-      "SpellCrit": 14
+      "SpellCritRating": 14
     },
     "Phase": 1
   },
@@ -87,7 +87,7 @@
     "Quality": 3,
     "Color": 1,
     "Stats": {
-      "Defense": 12
+      "DefenseRating": 12
     },
     "Phase": 1
   },
@@ -251,7 +251,7 @@
     "Quality": 3,
     "Color": 1,
     "Stats": {
-      "SpellCrit": 12
+      "SpellCritRating": 12
     },
     "Phase": 1
   },
@@ -266,7 +266,7 @@
     "Quality": 3,
     "Color": 1,
     "Stats": {
-      "Defense": 12
+      "DefenseRating": 12
     },
     "Phase": 5
   },

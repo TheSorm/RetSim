@@ -103,8 +103,8 @@
     "Slot": 13,
     "Stats": {
       "Stamina": 39,
-      "Defense": 27,
-      "Expertise": 24
+      "DefenseRating": 27,
+      "ExpertiseRating": 24
     },
     "Phase": 1
   },
@@ -491,7 +491,7 @@
       "Agility": 27,
       "Stamina": 27,
       "HitRating": 26,
-      "Expertise": 17
+      "ExpertiseRating": 17
     },
     "Phase": 1
   },
@@ -525,7 +525,7 @@
       "Strength": 30,
       "Stamina": 27,
       "Intellect": 30,
-      "SpellCrit": 17,
+      "SpellCritRating": 17,
       "CritRating": 17
     },
     "Phase": 1
@@ -1160,7 +1160,7 @@
       "Strength": 31,
       "Stamina": 45,
       "CritRating": 26,
-      "Expertise": 19
+      "ExpertiseRating": 19
     },
     "Phase": 5
   },
@@ -1205,7 +1205,7 @@
       "Color": 8
     },
     "SocketBonus": {
-      "Expertise": 4
+      "ExpertiseRating": 4
     },
     "Phase": 1
   },
@@ -1664,7 +1664,7 @@
     "Slot": 13,
     "Stats": {
       "Stamina": 49,
-      "Haste": 45,
+      "HasteRating": 45,
       "AttackPower": 120
     },
     "Phase": 4
@@ -1727,7 +1727,7 @@
       "Strength": 51,
       "Stamina": 45,
       "CritRating": 38,
-      "Haste": 50
+      "HasteRating": 50
     },
     "Phase": 3
   },
@@ -1838,7 +1838,7 @@
     "Slot": 13,
     "Stats": {
       "CritRating": 55,
-      "Haste": 53,
+      "HasteRating": 53,
       "AttackPower": 108
     },
     "Phase": 5
@@ -1872,7 +1872,7 @@
     "Slot": 13,
     "Stats": {
       "Agility": 52,
-      "Haste": 53,
+      "HasteRating": 53,
       "AttackPower": 120
     },
     "Socket1": {
@@ -1988,7 +1988,7 @@
     "Stats": {
       "Stamina": 75,
       "CritRating": 42,
-      "Haste": 32,
+      "HasteRating": 32,
       "AttackPower": 126
     },
     "Socket1": {
