@@ -206,7 +206,7 @@ namespace RetSim.Data
         {
             ID = 20597,
             Name = "Sword Specialization",
-            Requirements = (Player player) => (player.Weapon.Type == WeaponType.Sword || player.Weapon.Type == WeaponType.Mace)
+            Requirements = (Player player) => player.Weapon.Type == WeaponType.Sword || player.Weapon.Type == WeaponType.Mace
         };
     }
 }

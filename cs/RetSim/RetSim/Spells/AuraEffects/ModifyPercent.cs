@@ -1,6 +1,6 @@
 ﻿namespace RetSim.AuraEffects
 {
-    class ModifyPercent : AuraEffect
+    abstract class ModifyPercent : AuraEffect
     {
         public int Percentage { get; init; }
 

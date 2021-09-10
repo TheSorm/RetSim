@@ -82,5 +82,9 @@ namespace RetSim
         {
             return state.EffectiveManaCost <= Stats[StatName.Mana].Value; //TODO: Fix, implement current HP/mana
         }
+
+        public void RecalculateAttack(FightSimulation fight, float previousSpeed)
+        { 
+        }
     }
 }

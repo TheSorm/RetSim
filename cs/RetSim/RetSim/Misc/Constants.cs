@@ -4,11 +4,6 @@ namespace RetSim
 {
     public static class Constants
     {
-        public static class Spells
-        {
-            public const int GCD = 1500;
-        }
-
         public static class BaseStats
         {
             public const int Health = 3197;
@@ -24,15 +19,21 @@ namespace RetSim
         {
             public const int HealthPerStamina = 10;
             public const int ManaPerIntellect = 15;
+            public const float StaminaPerHealth = 1f / HealthPerStamina;
+            public const float IntellectPerMana = 1f / ManaPerIntellect;
 
             public const int APPerDPS = 14;
 
             public const int APPerStrength = 2;
+            public const float StrengthPerAP = 1f / APPerStrength;
+
             public const int AgilityPerCrit = 25;
+            public const int ArmorPerAgility = 2;
+            public const float AgilityPerArmor = 1f / ArmorPerAgility;
+
             public const int IntellectPerSpellCrit = 80;
 
             public const int HitPenalty = 1;
-
 
             public const int ExpertiseCap = 26;
             public const int ExpertisePerDodge = 4;

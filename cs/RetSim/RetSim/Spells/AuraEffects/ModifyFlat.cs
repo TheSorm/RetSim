@@ -1,6 +1,6 @@
 ﻿namespace RetSim.AuraEffects
 {
-    class ModifyFlat : AuraEffect
+    abstract class ModifyFlat : AuraEffect
     {
         public int Amount { get; init; }
 
