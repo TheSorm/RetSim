@@ -298,7 +298,7 @@
     "Quality": 4,
     "Color": 10,
     "Stats": {
-      "Dodge": 5,
+      "DodgeRating": 5,
       "HitRating": 4
     },
     "Phase": 1
@@ -334,7 +334,7 @@
     "Quality": 4,
     "Color": 10,
     "Stats": {
-      "Defense": 4,
+      "DefenseRating": 4,
       "Strength": 5
     },
     "Phase": 1

@@ -71,7 +71,7 @@
       "Strength": 15,
       "Stamina": 15,
       "CritRating": 14,
-      "Defense": 15
+      "DefenseRating": 15
     },
     "Socket1": {
       "Color": 1
@@ -315,7 +315,7 @@
       "Strength": 30,
       "Agility": 12,
       "Stamina": 13,
-      "Dodge": 8,
+      "DodgeRating": 8,
       "HitRating": 8
     },
     "Phase": 1
@@ -372,7 +372,7 @@
       "Armor": 178,
       "Agility": 23,
       "Stamina": 18,
-      "Dodge": 13,
+      "DodgeRating": 13,
       "HitRating": 11,
       "AttackPower": 32
     },
@@ -388,8 +388,8 @@
       "Armor": 1172,
       "Strength": 21,
       "Stamina": 43,
-      "Defense": 20,
-      "Dodge": 12,
+      "DefenseRating": 20,
+      "DodgeRating": 12,
       "HitRating": 20
     },
     "Set": {
@@ -512,7 +512,7 @@
       "Color": 2
     },
     "SocketBonus": {
-      "SpellCrit": 3
+      "SpellCritRating": 3
     },
     "Phase": 1
   },
@@ -550,7 +550,7 @@
       "Armor": 721,
       "Strength": 16,
       "Stamina": 22,
-      "Defense": 18
+      "DefenseRating": 18
     },
     "Socket1": {
       "Color": 4
@@ -596,7 +596,7 @@
     "Stats": {
       "Armor": 214,
       "Stamina": 24,
-      "Dodge": 21,
+      "DodgeRating": 21,
       "HitRating": 16,
       "AttackPower": 40
     },
@@ -786,7 +786,7 @@
       "Armor": 172,
       "Agility": 22,
       "Stamina": 21,
-      "Parry": 15,
+      "ParryRating": 15,
       "AttackPower": 44
     },
     "Phase": 1
@@ -1444,7 +1444,7 @@
     "Stats": {
       "Armor": 1018,
       "Strength": 30,
-      "Defense": 23,
+      "DefenseRating": 23,
       "CritRating": 18
     },
     "Socket1": {
@@ -1496,7 +1496,7 @@
     "Stats": {
       "Armor": 255,
       "Agility": 24,
-      "Dodge": 24,
+      "DodgeRating": 24,
       "HitRating": 19,
       "AttackPower": 18
     },
@@ -1553,7 +1553,7 @@
       "Strength": 30,
       "Agility": 11,
       "Stamina": 36,
-      "Defense": 11
+      "DefenseRating": 11
     },
     "Socket1": {
       "Color": 2
@@ -1607,7 +1607,7 @@
       "Armor": 0,
       "Agility": 25,
       "Stamina": 18,
-      "Expertise": 20
+      "ExpertiseRating": 20
     },
     "Phase": 1
   },
@@ -1634,7 +1634,7 @@
     "Stats": {
       "Armor": 224,
       "Stamina": 28,
-      "Defense": 29,
+      "DefenseRating": 29,
       "CritRating": 20,
       "AttackPower": 60
     },
@@ -2016,7 +2016,7 @@
       "Armor": 917,
       "Strength": 12,
       "Stamina": 64,
-      "Defense": 16,
+      "DefenseRating": 16,
       "HitRating": 15,
       "CritRating": 12
     },
@@ -2032,7 +2032,7 @@
       "Armor": 786,
       "Strength": 23,
       "Stamina": 27,
-      "Parry": 18
+      "ParryRating": 18
     },
     "Socket1": {
       "Color": 2
@@ -2054,7 +2054,7 @@
     "Stats": {
       "Armor": 181,
       "Stamina": 16,
-      "Dodge": 23,
+      "DodgeRating": 23,
       "AttackPower": 42
     },
     "Socket1": {
@@ -2758,7 +2758,7 @@
       "Strength": 38,
       "Stamina": 36,
       "Intellect": 16,
-      "Defense": 16,
+      "DefenseRating": 16,
       "ManaPer5": 6
     },
     "Phase": 1
@@ -2928,7 +2928,7 @@
       "Armor": 0,
       "Strength": 17,
       "Stamina": 27,
-      "Defense": 18
+      "DefenseRating": 18
     },
     "Phase": 1
   },
@@ -2956,7 +2956,7 @@
       "Armor": 0,
       "Strength": 17,
       "Stamina": 27,
-      "Defense": 18
+      "DefenseRating": 18
     },
     "Phase": 1
   },
@@ -2985,7 +2985,7 @@
       "Strength": 35,
       "Agility": 25,
       "Stamina": 27,
-      "Expertise": 22
+      "ExpertiseRating": 22
     },
     "Phase": 1
   },
@@ -3411,7 +3411,7 @@
       "Agility": 30,
       "Stamina": 24,
       "HitRating": 17,
-      "Expertise": 18
+      "ExpertiseRating": 18
     },
     "Phase": 1
   },
@@ -3486,7 +3486,7 @@
       "Strength": 22,
       "Agility": 20,
       "Stamina": 22,
-      "Defense": 13
+      "DefenseRating": 13
     },
     "Phase": 1
   },
@@ -3501,7 +3501,7 @@
       "Strength": 26,
       "Agility": 22,
       "Stamina": 31,
-      "Defense": 23
+      "DefenseRating": 23
     },
     "Phase": 1
   },
@@ -3516,7 +3516,7 @@
       "Strength": 29,
       "Agility": 21,
       "Stamina": 33,
-      "Defense": 24
+      "DefenseRating": 24
     },
     "Phase": 1
   },
@@ -3779,7 +3779,7 @@
       "Strength": 22,
       "Agility": 18,
       "Stamina": 25,
-      "Defense": 15
+      "DefenseRating": 15
     },
     "Phase": 1
   },
@@ -3928,7 +3928,7 @@
       "Strength": 24,
       "Agility": 23,
       "Stamina": 36,
-      "Defense": 24
+      "DefenseRating": 24
     },
     "Phase": 1
   },
@@ -3943,7 +3943,7 @@
       "Strength": 25,
       "Agility": 24,
       "Stamina": 34,
-      "Defense": 23
+      "DefenseRating": 23
     },
     "Phase": 1
   },
@@ -4124,7 +4124,7 @@
       "Agility": 24,
       "Stamina": 25,
       "Intellect": 17,
-      "Haste": 20,
+      "HasteRating": 20,
       "AttackPower": 76
     },
     "Socket1": {
@@ -4389,7 +4389,7 @@
       "Armor": 922,
       "Strength": 36,
       "Stamina": 48,
-      "Defense": 30
+      "DefenseRating": 30
     },
     "Phase": 1
   },
@@ -4971,7 +4971,7 @@
       "Armor": 509,
       "Strength": 18,
       "Stamina": 26,
-      "Defense": 11,
+      "DefenseRating": 11,
       "BlockValue": 23
     },
     "Phase": 1
@@ -4986,7 +4986,7 @@
       "Armor": 292,
       "Agility": 31,
       "Stamina": 26,
-      "Parry": 16,
+      "ParryRating": 16,
       "HitRating": 17,
       "AttackPower": 70
     },
@@ -5067,7 +5067,7 @@
       "Strength": 17,
       "Agility": 16,
       "Stamina": 31,
-      "Defense": 14
+      "DefenseRating": 14
     },
     "Set": {
       "ID": 653,
@@ -5289,7 +5289,7 @@
       "Armor": 1019,
       "Strength": 25,
       "Stamina": 37,
-      "Defense": 25
+      "DefenseRating": 25
     },
     "Socket1": {
       "Color": 2
@@ -5428,7 +5428,7 @@
       "Armor": 655,
       "Strength": 17,
       "Stamina": 33,
-      "Defense": 18,
+      "DefenseRating": 18,
       "BlockRating": 12
     },
     "Socket1": {
@@ -5762,7 +5762,7 @@
       "Armor": 873,
       "Strength": 25,
       "Stamina": 25,
-      "Defense": 17
+      "DefenseRating": 17
     },
     "Set": {
       "ID": 653,
@@ -5786,7 +5786,7 @@
       "Armor": 800,
       "Strength": 22,
       "Stamina": 27,
-      "Defense": 19
+      "DefenseRating": 19
     },
     "Socket1": {
       "Color": 4
@@ -5895,8 +5895,8 @@
       "Armor": 873,
       "Strength": 16,
       "Stamina": 22,
-      "Defense": 20,
-      "Parry": 15
+      "DefenseRating": 20,
+      "ParryRating": 15
     },
     "Socket1": {
       "Color": 2
@@ -6137,7 +6137,7 @@
       "Strength": 31,
       "Agility": 19,
       "Stamina": 45,
-      "Defense": 26
+      "DefenseRating": 26
     },
     "Set": {
       "ID": 653,
@@ -6198,7 +6198,7 @@
       "Armor": 509,
       "Strength": 20,
       "Stamina": 18,
-      "Defense": 12
+      "DefenseRating": 12
     },
     "Socket1": {
       "Color": 8
@@ -6257,7 +6257,7 @@
     "Stats": {
       "Armor": 201,
       "Stamina": 15,
-      "Dodge": 27,
+      "DodgeRating": 27,
       "AttackPower": 36
     },
     "Socket1": {
@@ -6280,7 +6280,7 @@
       "Armor": 946,
       "Strength": 17,
       "Stamina": 37,
-      "Defense": 33
+      "DefenseRating": 33
     },
     "Socket1": {
       "Color": 1
@@ -6402,7 +6402,7 @@
       "Strength": 23,
       "Agility": 21,
       "Stamina": 33,
-      "Defense": 19
+      "DefenseRating": 19
     },
     "Set": {
       "ID": 653,
@@ -6427,7 +6427,7 @@
     "Stats": {
       "Armor": 237,
       "Stamina": 28,
-      "Dodge": 30,
+      "DodgeRating": 30,
       "Resilience": 31,
       "AttackPower": 52
     },
@@ -6593,7 +6593,7 @@
       "Armor": 1164,
       "Strength": 30,
       "Stamina": 50,
-      "Defense": 25,
+      "DefenseRating": 25,
       "BlockRating": 23
     },
     "Phase": 1
@@ -6837,7 +6837,7 @@
       "Armor": 256,
       "Agility": 32,
       "Stamina": 31,
-      "Dodge": 21,
+      "DodgeRating": 21,
       "HitRating": 14,
       "AttackPower": 56
     },
@@ -6883,7 +6883,7 @@
       "Strength": 24,
       "Agility": 22,
       "Stamina": 23,
-      "Defense": 20
+      "DefenseRating": 20
     },
     "Set": {
       "ID": 653,
@@ -6964,7 +6964,7 @@
       "Armor": 728,
       "Strength": 16,
       "Stamina": 35,
-      "Defense": 18,
+      "DefenseRating": 18,
       "BlockValue": 39
     },
     "Phase": 1
@@ -7213,7 +7213,7 @@
       "Armor": 816,
       "Strength": 16,
       "Stamina": 36,
-      "Defense": 24,
+      "DefenseRating": 24,
       "BlockRating": 20
     },
     "Socket1": {
@@ -7260,7 +7260,7 @@
       "Armor": 1178,
       "Strength": 31,
       "Stamina": 48,
-      "Defense": 34
+      "DefenseRating": 34
     },
     "Socket1": {
       "Color": 2
@@ -7358,8 +7358,8 @@
       "Armor": 1269,
       "Strength": 24,
       "Stamina": 48,
-      "Defense": 27,
-      "Dodge": 29
+      "DefenseRating": 27,
+      "DodgeRating": 29
     },
     "Socket1": {
       "Color": 2
@@ -7682,7 +7682,7 @@
       "Armor": 1087,
       "Strength": 21,
       "Stamina": 43,
-      "Defense": 23
+      "DefenseRating": 23
     },
     "Socket1": {
       "Color": 2
@@ -7741,8 +7741,8 @@
       "Armor": 997,
       "Strength": 18,
       "Stamina": 28,
-      "Defense": 23,
-      "Parry": 21
+      "DefenseRating": 23,
+      "ParryRating": 21
     },
     "Socket1": {
       "Color": 2
@@ -8083,7 +8083,7 @@
     "Stats": {
       "Armor": 0,
       "Stamina": 19,
-      "Dodge": 21,
+      "DodgeRating": 21,
       "AttackPower": 36
     },
     "Phase": 1
@@ -8095,7 +8095,7 @@
     "Quality": 3,
     "Stats": {
       "Armor": 237,
-      "Dodge": 36,
+      "DodgeRating": 36,
       "CritRating": 30,
       "AttackPower": 66
     },
@@ -8204,7 +8204,7 @@
       "Armor": 228,
       "Agility": 29,
       "Stamina": 34,
-      "Expertise": 15,
+      "ExpertiseRating": 15,
       "AttackPower": 60
     },
     "Phase": 1
@@ -8302,7 +8302,7 @@
     "Stats": {
       "Armor": 164,
       "Agility": 25,
-      "Dodge": 21,
+      "DodgeRating": 21,
       "HitRating": 15,
       "AttackPower": 44
     },
@@ -8395,7 +8395,7 @@
       "Armor": 78,
       "Agility": 15,
       "Stamina": 15,
-      "Haste": 26
+      "HasteRating": 26
     },
     "Phase": 1
   },
@@ -8480,7 +8480,7 @@
     "Slot": 11,
     "Stats": {
       "Armor": 0,
-      "Expertise": 44
+      "ExpertiseRating": 44
     },
     "OnEquip": {
       "ID": 45354,
@@ -8498,7 +8498,7 @@
       "Armor": 1087,
       "Strength": 30,
       "Stamina": 33,
-      "Haste": 21
+      "HasteRating": 21
     },
     "Socket1": {
       "Color": 4
@@ -8539,7 +8539,7 @@
       "Armor": 0,
       "Stamina": 48,
       "HitRating": 13,
-      "Expertise": 18
+      "ExpertiseRating": 18
     },
     "OnEquip": {
       "ID": 45483,
@@ -8576,7 +8576,7 @@
       "Armor": 256,
       "Agility": 26,
       "Stamina": 25,
-      "Haste": 18,
+      "HasteRating": 18,
       "AttackPower": 66
     },
     "Socket1": {
@@ -8589,7 +8589,7 @@
       "Color": 8
     },
     "SocketBonus": {
-      "Haste": 4
+      "HasteRating": 4
     },
     "Phase": 5
   },
@@ -8602,7 +8602,7 @@
     "Stats": {
       "Armor": 252,
       "Stamina": 35,
-      "Expertise": 17
+      "ExpertiseRating": 17
     },
     "UniqueEquipped": true,
     "Phase": 5
@@ -8617,7 +8617,7 @@
       "Armor": 78,
       "Stamina": 18,
       "HitRating": 12,
-      "Haste": 18,
+      "HasteRating": 18,
       "AttackPower": 38
     },
     "Phase": 5
@@ -8664,7 +8664,7 @@
     "Stats": {
       "Armor": 0,
       "Stamina": 25,
-      "Haste": 18,
+      "HasteRating": 18,
       "AttackPower": 40
     },
     "UniqueEquipped": true,
@@ -10017,7 +10017,7 @@
       "Armor": 252,
       "Agility": 33,
       "Stamina": 37,
-      "Expertise": 18,
+      "ExpertiseRating": 18,
       "AttackPower": 66
     },
     "Phase": 2
@@ -10381,7 +10381,7 @@
       "Agility": 33,
       "Stamina": 28,
       "CritRating": 16,
-      "Expertise": 10,
+      "ExpertiseRating": 10,
       "AttackPower": 60
     },
     "Socket1": {
@@ -10594,7 +10594,7 @@
     "Slot": 11,
     "Stats": {
       "Armor": 0,
-      "Defense": 42
+      "DefenseRating": 42
     },
     "OnUse": {
       "ID": 38351,
@@ -10760,7 +10760,7 @@
       "Armor": 0,
       "Stamina": 48,
       "HitRating": 22,
-      "Expertise": 21
+      "ExpertiseRating": 21
     },
     "Phase": 4
   },
@@ -10773,7 +10773,7 @@
     "Stats": {
       "Armor": 0,
       "Stamina": 37,
-      "Haste": 25,
+      "HasteRating": 25,
       "AttackPower": 50
     },
     "Phase": 4
@@ -10827,7 +10827,7 @@
       "Agility": 39,
       "Stamina": 25,
       "Intellect": 38,
-      "Haste": 30,
+      "HasteRating": 30,
       "AttackPower": 78
     },
     "Phase": 4
@@ -11014,8 +11014,8 @@
     "Stats": {
       "Armor": 703,
       "Stamina": 45,
-      "Defense": 23,
-      "Expertise": 22
+      "DefenseRating": 23,
+      "ExpertiseRating": 22
     },
     "Phase": 4
   },
@@ -11083,7 +11083,7 @@
       "Armor": 353,
       "Agility": 45,
       "Stamina": 46,
-      "Haste": 30,
+      "HasteRating": 30,
       "AttackPower": 92
     },
     "Phase": 3
@@ -11098,7 +11098,7 @@
       "Armor": 252,
       "Agility": 30,
       "Stamina": 28,
-      "Haste": 25,
+      "HasteRating": 25,
       "AttackPower": 68
     },
     "Phase": 3
@@ -11219,7 +11219,7 @@
       "Armor": 108,
       "Agility": 20,
       "Stamina": 22,
-      "Haste": 25,
+      "HasteRating": 25,
       "AttackPower": 46
     },
     "Phase": 4
@@ -11911,7 +11911,7 @@
       "Armor": 244,
       "Agility": 29,
       "Stamina": 25,
-      "Expertise": 25,
+      "ExpertiseRating": 25,
       "AttackPower": 74
     },
     "Socket1": {
@@ -12132,7 +12132,7 @@
       "Armor": 993,
       "Strength": 48,
       "Stamina": 37,
-      "Haste": 38
+      "HasteRating": 38
     },
     "Phase": 3
   },
@@ -12162,7 +12162,7 @@
       "Agility": 27,
       "Stamina": 25,
       "Intellect": 18,
-      "Haste": 36,
+      "HasteRating": 36,
       "AttackPower": 76
     },
     "Phase": 3
@@ -12178,7 +12178,7 @@
       "Agility": 25,
       "Stamina": 24,
       "Intellect": 17,
-      "Haste": 37,
+      "HasteRating": 37,
       "AttackPower": 76
     },
     "Phase": 3
@@ -12262,7 +12262,7 @@
       "Armor": 249,
       "Agility": 27,
       "Stamina": 38,
-      "Haste": 37,
+      "HasteRating": 37,
       "AttackPower": 76
     },
     "Phase": 3
@@ -12315,8 +12315,8 @@
     "Stats": {
       "Armor": 1103,
       "Stamina": 70,
-      "Defense": 32,
-      "Expertise": 21,
+      "DefenseRating": 32,
+      "ExpertiseRating": 21,
       "BlockValue": 36
     },
     "Phase": 3
@@ -12451,7 +12451,7 @@
       "Armor": 277,
       "Agility": 27,
       "Stamina": 38,
-      "Haste": 37,
+      "HasteRating": 37,
       "AttackPower": 76
     },
     "Phase": 3
@@ -12611,7 +12611,7 @@
       "Armor": 772,
       "Strength": 35,
       "Stamina": 32,
-      "Haste": 27
+      "HasteRating": 27
     },
     "Phase": 3
   },
@@ -12626,7 +12626,7 @@
       "Strength": 47,
       "Stamina": 29,
       "HitRating": 19,
-      "Haste": 35
+      "HasteRating": 35
     },
     "Phase": 3
   },
@@ -12641,7 +12641,7 @@
       "Agility": 21,
       "Stamina": 15,
       "Intellect": 16,
-      "Haste": 27,
+      "HasteRating": 27,
       "AttackPower": 56
     },
     "Phase": 3
@@ -12657,7 +12657,7 @@
       "Agility": 27,
       "Stamina": 19,
       "Intellect": 21,
-      "Haste": 37,
+      "HasteRating": 37,
       "AttackPower": 74
     },
     "Phase": 3
@@ -12672,7 +12672,7 @@
       "Armor": 194,
       "Agility": 20,
       "Stamina": 34,
-      "Haste": 27,
+      "HasteRating": 27,
       "AttackPower": 50
     },
     "Phase": 3
@@ -12687,7 +12687,7 @@
       "Armor": 333,
       "Agility": 29,
       "Stamina": 34,
-      "Haste": 38,
+      "HasteRating": 38,
       "AttackPower": 74
     },
     "Phase": 3
@@ -12732,7 +12732,7 @@
       "Strength": 49,
       "Stamina": 33,
       "Intellect": 21,
-      "Haste": 32
+      "HasteRating": 32
     },
     "Phase": 3
   },
@@ -12747,7 +12747,7 @@
       "Strength": 38,
       "Stamina": 45,
       "HitRating": 18,
-      "Haste": 38
+      "HasteRating": 38
     },
     "Phase": 3
   },
@@ -12870,7 +12870,7 @@
       "Agility": 49,
       "Stamina": 52,
       "Intellect": 23,
-      "Haste": 20
+      "HasteRating": 20
     },
     "Socket1": {
       "Color": 2
@@ -12892,7 +12892,7 @@
       "Agility": 45,
       "Stamina": 52,
       "Intellect": 20,
-      "Haste": 17
+      "HasteRating": 17
     },
     "Socket1": {
       "Color": 2
@@ -12917,7 +12917,7 @@
       "Agility": 35,
       "Stamina": 36,
       "Intellect": 19,
-      "Haste": 13
+      "HasteRating": 13
     },
     "Socket1": {
       "Color": 8
@@ -12938,7 +12938,7 @@
       "Agility": 47,
       "Stamina": 39,
       "Intellect": 26,
-      "Haste": 25,
+      "HasteRating": 25,
       "AttackPower": 102
     },
     "Socket1": {
@@ -13068,9 +13068,9 @@
     "Stats": {
       "Armor": 1544,
       "Stamina": 78,
-      "Defense": 43,
-      "Dodge": 35,
-      "Expertise": 23
+      "DefenseRating": 43,
+      "DodgeRating": 35,
+      "ExpertiseRating": 23
     },
     "Socket1": {
       "Color": 2
@@ -13089,9 +13089,9 @@
     "Stats": {
       "Armor": 993,
       "Stamina": 58,
-      "Defense": 34,
+      "DefenseRating": 34,
       "HitRating": 23,
-      "Expertise": 22
+      "ExpertiseRating": 22
     },
     "Socket1": {
       "Color": 2
@@ -13111,7 +13111,7 @@
       "Armor": 1765,
       "Strength": 52,
       "Stamina": 64,
-      "Haste": 51
+      "HasteRating": 51
     },
     "Socket1": {
       "Color": 2
@@ -13132,7 +13132,7 @@
       "Strength": 52,
       "Stamina": 48,
       "HitRating": 25,
-      "Haste": 43
+      "HasteRating": 43
     },
     "Socket1": {
       "Color": 4
@@ -13155,7 +13155,7 @@
       "Armor": 993,
       "Strength": 40,
       "Stamina": 55,
-      "Haste": 30
+      "HasteRating": 30
     },
     "Socket1": {
       "Color": 4
@@ -13725,7 +13725,7 @@
     "Stats": {
       "Armor": 0,
       "Stamina": 44,
-      "Haste": 31,
+      "HasteRating": 31,
       "AttackPower": 66
     },
     "Phase": 3
@@ -13758,7 +13758,7 @@
       "Armor": 0,
       "Agility": 25,
       "Stamina": 33,
-      "Haste": 30,
+      "HasteRating": 30,
       "AttackPower": 64
     },
     "Phase": 5
@@ -13772,8 +13772,8 @@
     "Stats": {
       "Armor": 0,
       "Stamina": 63,
-      "Defense": 25,
-      "Expertise": 29
+      "DefenseRating": 25,
+      "ExpertiseRating": 29
     },
     "Phase": 5
   },
@@ -13801,8 +13801,8 @@
     "Stats": {
       "Armor": 129,
       "Stamina": 61,
-      "Dodge": 28,
-      "Expertise": 28
+      "DodgeRating": 28,
+      "ExpertiseRating": 28
     },
     "Phase": 5
   },
@@ -13815,8 +13815,8 @@
     "Stats": {
       "Armor": 308,
       "Stamina": 48,
-      "Defense": 32,
-      "Expertise": 22,
+      "DefenseRating": 32,
+      "ExpertiseRating": 22,
       "BlockValue": 42
     },
     "Phase": 5
@@ -13829,7 +13829,7 @@
     "Slot": 11,
     "Stats": {
       "Armor": 0,
-      "Haste": 54
+      "HasteRating": 54
     },
     "OnEquip": {
       "ID": 45355,
@@ -13845,7 +13845,7 @@
     "Slot": 11,
     "Stats": {
       "Armor": 0,
-      "Expertise": 54
+      "ExpertiseRating": 54
     },
     "OnUse": {
       "ID": 45049,
@@ -13864,8 +13864,8 @@
       "Strength": 33,
       "Stamina": 15,
       "CritRating": 30,
-      "Haste": 17,
-      "Expertise": 16
+      "HasteRating": 17,
+      "ExpertiseRating": 16
     },
     "Set": {
       "ID": 680,
@@ -13890,8 +13890,8 @@
       "Strength": 44,
       "Stamina": 24,
       "CritRating": 42,
-      "Haste": 29,
-      "Expertise": 25
+      "HasteRating": 29,
+      "ExpertiseRating": 25
     },
     "Set": {
       "ID": 680,
@@ -13916,8 +13916,8 @@
       "Strength": 42,
       "Stamina": 22,
       "CritRating": 40,
-      "Haste": 27,
-      "Expertise": 19
+      "HasteRating": 27,
+      "ExpertiseRating": 19
     },
     "Set": {
       "ID": 680,
@@ -14044,7 +14044,7 @@
       "Strength": 61,
       "Stamina": 48,
       "CritRating": 34,
-      "Haste": 50
+      "HasteRating": 50
     },
     "Socket1": {
       "Color": 2
@@ -14123,7 +14123,7 @@
       "Agility": 33,
       "Stamina": 45,
       "HitRating": 26,
-      "Haste": 30,
+      "HasteRating": 30,
       "AttackPower": 90
     },
     "Phase": 5
@@ -14167,7 +14167,7 @@
       "Strength": 61,
       "Stamina": 67,
       "CritRating": 41,
-      "Haste": 32
+      "HasteRating": 32
     },
     "Socket1": {
       "Color": 2
@@ -14218,7 +14218,7 @@
       "Armor": 312,
       "Agility": 41,
       "Stamina": 33,
-      "Haste": 30,
+      "HasteRating": 30,
       "AttackPower": 82
     },
     "Socket1": {
@@ -14322,7 +14322,7 @@
     "Stats": {
       "Armor": 0,
       "Stamina": 42,
-      "Haste": 29,
+      "HasteRating": 29,
       "AttackPower": 58,
       "ArmorPenetration": 150
     },
@@ -14341,7 +14341,7 @@
       "Armor": 0,
       "Agility": 30,
       "Stamina": 42,
-      "Haste": 28,
+      "HasteRating": 28,
       "AttackPower": 58
     },
     "UniqueEquipped": true,
@@ -14358,7 +14358,7 @@
       "Agility": 42,
       "Stamina": 45,
       "HitRating": 30,
-      "Haste": 38,
+      "HasteRating": 38,
       "AttackPower": 120
     },
     "Socket1": {
@@ -14408,7 +14408,7 @@
       "Agility": 44,
       "Stamina": 43,
       "Intellect": 30,
-      "Haste": 44,
+      "HasteRating": 44,
       "AttackPower": 104
     },
     "Socket1": {
@@ -14433,7 +14433,7 @@
       "Agility": 30,
       "Stamina": 33,
       "Intellect": 25,
-      "Haste": 34,
+      "HasteRating": 34,
       "AttackPower": 76
     },
     "Socket1": {
@@ -14482,7 +14482,7 @@
       "Strength": 45,
       "Stamina": 45,
       "HitRating": 23,
-      "Haste": 36
+      "HasteRating": 36
     },
     "Socket1": {
       "Color": 2
@@ -14504,9 +14504,9 @@
     "Stats": {
       "Armor": 1735,
       "Stamina": 78,
-      "Defense": 40,
-      "Dodge": 50,
-      "Expertise": 40
+      "DefenseRating": 40,
+      "DodgeRating": 50,
+      "ExpertiseRating": 40
     },
     "Socket1": {
       "Color": 2
@@ -14561,7 +14561,7 @@
       "Strength": 45,
       "Stamina": 48,
       "CritRating": 30,
-      "Haste": 27
+      "HasteRating": 27
     },
     "Socket1": {
       "Color": 2
@@ -14609,9 +14609,9 @@
     "Stats": {
       "Armor": 1983,
       "Stamina": 78,
-      "Defense": 36,
-      "Dodge": 52,
-      "Haste": 40
+      "DefenseRating": 36,
+      "DodgeRating": 52,
+      "HasteRating": 40
     },
     "Socket1": {
       "Color": 2
@@ -14936,7 +14936,7 @@
       "Armor": 137,
       "Agility": 26,
       "Stamina": 25,
-      "Haste": 32,
+      "HasteRating": 32,
       "AttackPower": 72
     },
     "Socket1": {
@@ -14954,7 +14954,7 @@
       "Agility": 43,
       "Stamina": 57,
       "HitRating": 30,
-      "Haste": 34,
+      "HasteRating": 34,
       "AttackPower": 126
     },
     "Socket1": {
