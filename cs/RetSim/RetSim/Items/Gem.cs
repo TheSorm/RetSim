@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace RetSim.Items
 {
-    public record Gem
+    public class Gem
     {
         public int ID { get; init; }
         public string Name { get; init; }
@@ -19,7 +19,7 @@ namespace RetSim.Items
     }
 
 
-    public record MetaGem : Gem
+    public class MetaGem : Gem
     {
         public MetaRequirements Requirements { get; init; }
         public ItemSpell Spell { get; init; }

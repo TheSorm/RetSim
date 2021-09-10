@@ -61,7 +61,7 @@ namespace RetSim
         };
     }
 
-    public record Race
+    public class Race
     {
         public string Name { get; init; }
         public StatSet Stats { get; init; }

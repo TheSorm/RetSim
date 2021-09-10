@@ -21,8 +21,10 @@ namespace RetSim
                                           GiftOfTheWild, PrayerOfFortitude, PrayerOfSpirit, ArcaneBrilliance, InspiringPresence };
             
 
-            RunOnce(equipment, talents, buffs);
-            //RunMany(equipment, talents, buffs);
+            //RunOnce(equipment, talents, buffs);
+            RunMany(equipment, talents, buffs);
+
+            //HUMAN RACIAL, RELENTLESS CRIT BONUS
 
             PrintEquipment(equipment);            
         }

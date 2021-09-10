@@ -2,7 +2,7 @@
 
 namespace RetSim
 {
-    public record Proc
+    public class Proc
     {
         public Spell Spell { get; set; }
         public ProcMask ProcMask { get; init; }

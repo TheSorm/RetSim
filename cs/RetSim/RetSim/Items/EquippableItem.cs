@@ -103,7 +103,7 @@ namespace RetSim.Items
         }
     }
 
-    public record Set
+    public class Set
     {
         public int ID { get; init; }
         public string Name { get; init; }
@@ -111,13 +111,13 @@ namespace RetSim.Items
 
     
 
-    public record SocketBonus
+    public class SocketBonus
     {
         public StatName Stat { get; init; }
         public int Value { get; init; }
     }
 
-    public record ItemSpell
+    public class ItemSpell
     {
         public int ID { get; init; }
         public string Name { get; init; }

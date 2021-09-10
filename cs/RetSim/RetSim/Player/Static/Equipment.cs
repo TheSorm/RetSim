@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace RetSim
 {
-    public record Equipment
+    public class Equipment
     {
         public StatSet Stats => CalculateStats(this);
         public List<Spell> Spells => GenerateAuraList(this);

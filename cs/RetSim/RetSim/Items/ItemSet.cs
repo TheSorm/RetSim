@@ -2,14 +2,14 @@
 
 namespace RetSim.Items
 {
-    public record ItemSet
+    public class ItemSet
     {
         public int ID { get; init; }
         public string Name { get; init; }
         public List<SetSpell> SetSpells { get; init; }
     }
 
-    public record SetSpell
+    public class SetSpell
     {
         public string Name { get; init; }
         public int ID { get; init; }

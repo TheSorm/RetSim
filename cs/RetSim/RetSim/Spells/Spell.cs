@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace RetSim
 {
-    public record Spell
+    public class Spell
     {
         public int ID { get; init; }
         public string Name { get; init; }
@@ -15,11 +15,11 @@ namespace RetSim
         public List<SpellEffect> Effects { get; set; } = null;
     }
 
-    public record Judgement : Spell { }
+    public class Judgement : Spell { }
 
-    public record Talent : Spell { }
+    public class Talent : Spell { }
 
-    public record SpellGCD
+    public class SpellGCD
     {
         public int Duration { get; init; } = Constants.Numbers.DefaultGCD;
         public AttackCategory Category { get; init; } = AttackCategory.None;
