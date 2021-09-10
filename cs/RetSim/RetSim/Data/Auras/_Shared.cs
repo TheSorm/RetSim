@@ -61,6 +61,7 @@ namespace RetSim.Data
                 { Spells.WindfuryTotem.ID, WindfuryTotem },
                 { Spells.WindfuryAttack.ID, WindfuryAttack },
                 { Spells.AvengingWrath.ID, AvengingWrath },
+                { Spells.HumanRacial.ID, HumanRacial },
 
                 { Spells.GreaterBlessingOfMight.ID, GreaterBlessingOfMight },
                 { Spells.GreaterBlessingOfKings.ID, GreaterBlessingOfKings },

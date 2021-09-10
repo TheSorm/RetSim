@@ -1,4 +1,5 @@
 ﻿using RetSim.SpellEffects;
+using System;
 using System.Collections.Generic;
 
 namespace RetSim
@@ -13,11 +14,14 @@ namespace RetSim
         public SpellGCD GCD { get; init; } = null;
         public Aura Aura { get; set; } = null;
         public List<SpellEffect> Effects { get; set; } = null;
+        public Func<Player, bool> Requirements { get; init; }
     }
 
     public class Judgement : Spell { }
 
     public class Talent : Spell { }
+
+    public class Racial : Spell { }
 
     public class SpellGCD
     {

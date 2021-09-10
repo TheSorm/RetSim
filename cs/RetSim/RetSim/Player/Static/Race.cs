@@ -7,13 +7,14 @@ namespace RetSim
         public static readonly Race Human = new()
         {
             Name = "Human",
+            Racial = Data.Spells.HumanRacial,
             Stats = new()
             {
                 [StatName.Strength] = 126,
                 [StatName.Agility] = 77,
                 [StatName.Intellect] = 83,
                 [StatName.Stamina] = 120
-            }
+            }            
         };
 
         public static readonly Race Dwarf = new()
@@ -65,5 +66,6 @@ namespace RetSim
     {
         public string Name { get; init; }
         public StatSet Stats { get; init; }
+        public Racial Racial { get; init; } = null;
     }
 }

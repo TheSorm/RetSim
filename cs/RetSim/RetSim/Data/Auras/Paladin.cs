@@ -34,6 +34,11 @@ namespace RetSim.Data
         {
             Duration = 20000,
             Effects = new() { new ModDamageSchool() { Percentage = 30, Schools = Spells.AllSchools } }
-        };       
+        };
+
+        public static readonly Aura HumanRacial = new()
+        {
+            Effects = new() { new GainStats() { Stats = new() { { StatName.Expertise, 5 } } } }
+        };
     }
 }

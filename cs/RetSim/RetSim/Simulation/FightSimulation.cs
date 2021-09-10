@@ -54,6 +54,9 @@ namespace RetSim
                 Queue.Add(new CastEvent(buff, this, Timestamp, -1));
             }
 
+            if (Player.Race.Racial != null && Player.Race.Racial.Requirements(Player))
+                Queue.Add(new CastEvent(Player.Race.Racial, this, Timestamp, -1));
+
             Queue.AddRange(Tactic.PreFight(this));
             Queue.Add(new SimulationEndEvent(this, Duration));
 

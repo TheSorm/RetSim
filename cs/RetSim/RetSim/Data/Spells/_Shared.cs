@@ -50,6 +50,7 @@ namespace RetSim.Data
                 { WindfuryAttack.ID, WindfuryAttack },
                 { WindfuryTotem.ID, WindfuryTotem },
                 { AvengingWrath.ID, AvengingWrath },
+                { HumanRacial.ID, HumanRacial },
 
                 { DragonspineTrophyProc.ID, DragonspineTrophyProc },
                 { DragonspineTrophy.ID, DragonspineTrophy },

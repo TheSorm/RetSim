@@ -25,6 +25,5 @@ namespace RetSim.AuraEffects
 
             base.Remove(aura, fight);
         }
-
     }
 }

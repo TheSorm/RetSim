@@ -2,6 +2,7 @@
 {
     public class EquippableWeapon : EquippableItem
     {
+        public WeaponType Type { get; init; }
         public int MinDamage { get; init; }
         public int MaxDamage { get; init; }
         public int AttackSpeed { get; init; }
@@ -11,5 +12,14 @@
         {
             return base.ToString();
         }
+    }
+
+    public enum WeaponType
+    {
+        Unarmed = 1,
+        Sword = 0,
+        Mace = 2,
+        Axe = 3,
+        Polearm = 4
     }
 }
