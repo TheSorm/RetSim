@@ -15,7 +15,7 @@ namespace RetSim
             public const int Mana = 2673;
 
             public const int AttackPower = 190;
-            public const float CritChance = 0.6f;
+            public const float CritChance = 0.65f;
 
             public const float SpellCritChance = 3.32f;
         }

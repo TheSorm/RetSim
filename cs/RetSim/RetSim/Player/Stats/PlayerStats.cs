@@ -102,7 +102,7 @@ namespace RetSim
             this[StatName.Haste] = new DecimalStat(StatName.Haste, 0, gear[StatName.Haste]);
             this[StatName.HasteRating] = new Rating(StatName.HasteRating, 0, gear[StatName.HasteRating], this[StatName.Haste], 15.77f);
 
-            this[StatName.Expertise] = new DecimalStat(StatName.Expertise, 0, gear[StatName.Expertise]);
+            this[StatName.Expertise] = new IntegerStat(StatName.Expertise, 0, gear[StatName.Expertise]);
             this[StatName.ExpertiseRating] = new Rating(StatName.ExpertiseRating, 0, gear[StatName.ExpertiseRating], this[StatName.Expertise], 3.93f);
 
             this[StatName.ArmorPenetration] = new IntegerStat(StatName.ArmorPenetration, 0, gear[StatName.ArmorPenetration]);

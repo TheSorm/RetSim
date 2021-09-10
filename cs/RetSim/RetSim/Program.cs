@@ -18,7 +18,8 @@ namespace RetSim
 
             var talents = new List<Talent> { ImprovedSealOfTheCrusader, Conviction, Crusade, TwoHandedWeaponSpecialization, SanctityAura, ImprovedSanctityAura, Vengeance, Fanaticism, SanctifiedSeals, Precision, DivineStrength };
             var buffs = new List<Spell> { WindfuryTotem, GreaterBlessingOfMight, GreaterBlessingOfKings, BattleShout, StrengthOfEarthTotem, GraceOfAirTotem, ManaSpringTotem, UnleashedRage,
-                                            GiftOfTheWild, PrayerOfFortitude, PrayerOfSpirit, ArcaneBrilliance, InspiringPresence };
+                                          GiftOfTheWild, PrayerOfFortitude, PrayerOfSpirit, ArcaneBrilliance, InspiringPresence };
+            
 
             RunOnce(equipment, talents, buffs);
             //RunMany(equipment, talents, buffs);
@@ -33,10 +34,6 @@ namespace RetSim
             Logger.Log($"╔═══════════╦═══════╦═══════════════════════════╦══════╦═════════════════════════════════════════════════════════════╗");
             Logger.Log($"║   Slot    ║  ID   ║           Item            ║ Gems ║                          Gem Names                          ║");
             Logger.Log($"╠═══════════╬═══════╬═══════════════════════════╬══════╬═════════════════════════════════════════════════════════════╣");
-
-            //Logger.Log($"╔{"".PadRight(11, '═')}╦{"".PadRight(7, '═')}╦{"".PadRight(27, '═')}╦{"".PadRight(6, '═')}╦{"".PadRight(61, '═')}╗");
-            //Logger.Log($"║ {"",-9} ║ {"",-5} ║ {"Item",-25} ║ {"Gems", -4} ║ {"Gem Names", -59} ║");
-            //Logger.Log($"╠{"".PadRight(11, '═')}╬{"".PadRight(7, '═')}╬{"".PadRight(27, '═')}╬{"".PadRight(6, '═')}╬{"".PadRight(61, '═')}╣");
 
             foreach (EquippableItem item in equipment.PlayerEquipment)
             {
@@ -120,13 +117,13 @@ namespace RetSim
 
                 fight.Run();
 
-                //var index = i + 1;
+                var index = i + 1;
 
-                //var progress = Math.Round(index / iterations * 100, 2);
+                var progress = Math.Round(index / iterations * 100, 2);
 
-                //Console.SetCursorPosition(0, outer);
+                Console.SetCursorPosition(0, outer);
 
-                //Console.WriteLine($"Iteration #{outer + 1} - Progress: {index}/{iterations} / {progress}%");
+                Console.WriteLine($"Iteration #{outer + 1} - Progress: {index}/{iterations} / {progress}%");
 
                 dps += fight.CombatLog.DPS;
             }
