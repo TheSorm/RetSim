@@ -104,41 +104,27 @@ namespace RetSim
 
         #endregion
 
-        private static StatSet CalculateStats(Equipment equipment)
+        public static StatSet CalculateStats(Equipment equipment)
         {
             if (equipment.GemTotals == null)
                 equipment.GemTotals = GetGemCount(equipment);
 
-            return new()
+            StatSet result = new();
+
+            var stats = new List<StatName> { StatName.Stamina, StatName.Intellect, StatName.ManaPer5, StatName.AttackPower, StatName.Strength, StatName.CritRating, StatName.Agility,
+                StatName.HitRating, StatName.HasteRating, StatName.ExpertiseRating, StatName.ArmorPenetration, StatName.SpellPower, StatName.SpellCrit, StatName.SpellHit, StatName.SpellHaste };
+
+            foreach (var stat in stats)
             {
-                Stamina = CalculateStat(StatName.Stamina, equipment, equipment.GemTotals),
+                result.Add(stat, CalculateStat(stat, equipment, equipment.GemTotals));
+            }
 
-                Intellect = CalculateStat(StatName.Intellect, equipment, equipment.GemTotals),
-                ManaPer5 = CalculateStat(StatName.ManaPer5, equipment, equipment.GemTotals),
-
-                Strength = CalculateStat(StatName.Strength, equipment, equipment.GemTotals),
-                AttackPower = CalculateStat(StatName.AttackPower, equipment, equipment.GemTotals),
-
-                Agility = CalculateStat(StatName.Agility, equipment, equipment.GemTotals),
-                CritRating = CalculateStat(StatName.CritRating, equipment, equipment.GemTotals),
-
-                HitRating = CalculateStat(StatName.HitRating, equipment, equipment.GemTotals),
-                HasteRating = CalculateStat(StatName.Haste, equipment, equipment.GemTotals),
-
-                ExpertiseRating = CalculateStat(StatName.Expertise, equipment, equipment.GemTotals),
-
-                ArmorPenetration = CalculateStat(StatName.ArmorPenetration, equipment, equipment.GemTotals),
-
-                SpellPower = CalculateStat(StatName.SpellPower, equipment, equipment.GemTotals),
-                SpellCritRating = CalculateStat(StatName.SpellCrit, equipment, equipment.GemTotals),
-                SpellHitRating = CalculateStat(StatName.SpellHit, equipment, equipment.GemTotals),
-                SpellHasteRating = CalculateStat(StatName.SpellHaste, equipment, equipment.GemTotals)
-            };
+            return result;
         }
 
-        private static int CalculateStat(StatName name, Equipment equipment, Dictionary<GemColor, int> gems)
+        private static float CalculateStat(StatName name, Equipment equipment, Dictionary<GemColor, int> gems)
         {
-            int total = 0;
+            float total = 0;
 
             foreach (EquippableItem item in equipment.PlayerEquipment)
             {
@@ -149,11 +135,11 @@ namespace RetSim
             return total;
         }
 
-        private static int CalculateStatOfPiece(StatName name, EquippableItem item, Dictionary<GemColor, int> gems)
+        private static float CalculateStatOfPiece(StatName name, EquippableItem item, Dictionary<GemColor, int> gems)
         {
-            int passive = item.Stats[name];
-            int bonus = item.IsSocketBonusActive() ? item.SocketBonus[name] : 0;
-            int sockets = 0;
+            float passive = item.Stats[name];
+            float bonus = item.IsSocketBonusActive() ? item.SocketBonus[name] : 0;
+            float sockets = 0;
 
             foreach (Socket socket in item.Sockets)
             {

@@ -107,7 +107,7 @@ namespace RetSim
             var entry = new AuraEntry()
             {
                 Timestamp = fight.Timestamp,
-                Mana = fight.Player.Stats.Mana,
+                Mana = (int)fight.Player.Stats[StatName.Mana].Value,
                 Source = aura.Parent.Name,
                 Stacks = fight.Player.Auras[aura].Stacks,
                 Type = type

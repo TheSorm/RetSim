@@ -8,18 +8,18 @@
         public int MaxDamage { get; private set; }
         public int BaseSpeed { get; private set; }
 
-        public int EffectiveSpeed => (int)(BaseSpeed / player.Stats.Haste);
+        public int EffectiveSpeed => (int)(BaseSpeed / player.Stats.EffectiveAttackSpeed);
 
-        public float APBonus => player.Stats.AttackPower * BaseSpeed / Constants.Numbers.MillisecondsPerSec / Constants.Stats.APPerDPS;
-        public float NormalizedAPBonus => player.Stats.AttackPower * Constants.Stats.NormalizedWeaponSpeed / Constants.Numbers.MillisecondsPerSec / Constants.Stats.APPerDPS;
+        public float APBonus => player.Stats[StatName.AttackPower].Value * BaseSpeed / Constants.Numbers.MillisecondsPerSec / Constants.Stats.APPerDPS;
+        public float NormalizedAPBonus => player.Stats[StatName.AttackPower].Value * Constants.Stats.NormalizedWeaponSpeed / Constants.Numbers.MillisecondsPerSec / Constants.Stats.APPerDPS;
 
-        public Weapon(Player owner, int min, int max, int speed)
+        public Weapon(Player owner)
         {
             player = owner;
 
-            MinDamage = min;
-            MaxDamage = max;
-            BaseSpeed = speed;
+            MinDamage = player.Equipment.Weapon.MinDamage;
+            MaxDamage = player.Equipment.Weapon.MaxDamage;
+            BaseSpeed = player.Equipment.Weapon.AttackSpeed;
         }
 
         public float Attack()

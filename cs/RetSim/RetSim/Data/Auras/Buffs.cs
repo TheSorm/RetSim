@@ -9,7 +9,7 @@ namespace RetSim.Data
         {
             Effects = new()
             {
-                new GainStats() { Stats = new() { AttackPower = 220 } }
+                new GainStats() { Stats = new() { { StatName.AttackPower, 220 } } }
             }
         };
 
@@ -25,7 +25,7 @@ namespace RetSim.Data
         {
             Effects = new()
             {
-                new GainStats() { Stats = new() { ManaPer5 = 41 } }
+                new GainStats() { Stats = new() { { StatName.ManaPer5, 41 } } }
             }
         };
 
@@ -33,7 +33,7 @@ namespace RetSim.Data
         {
             Effects = new()
             {
-                new GainStats() { Stats = new() { AttackPower = 306 } }
+                new GainStats() { Stats = new() {{ StatName.AttackPower, 306 } } }
             }
         };
 
@@ -41,7 +41,7 @@ namespace RetSim.Data
         {
             Effects = new()
             {
-                new GainStats() { Stats = new() { AttackPower = 125 } }
+                new GainStats() { Stats = new() { { StatName.AttackPower, 125 } } }
             }
         };
 
@@ -61,7 +61,7 @@ namespace RetSim.Data
         {
             Effects = new()
             {
-                new GainStats() { Stats = new() { Strength = 86 } }
+                new GainStats() { Stats = new() { { StatName.Strength, 86 } } }
             }
         };
 
@@ -69,7 +69,7 @@ namespace RetSim.Data
         {
             Effects = new()
             {
-                new GainStats() { Stats = new() { Agility = 77 } }
+                new GainStats() { Stats = new() { { StatName.Agility, 77 } } }
             }
         };
 
@@ -77,7 +77,7 @@ namespace RetSim.Data
         {
             Effects = new()
             {
-                new GainStats() { Stats = new() { ManaPer5 = 50 } }
+                new GainStats() { Stats = new() { { StatName.ManaPer5, 50 } } }
             }
         };
 
@@ -93,7 +93,7 @@ namespace RetSim.Data
         {
             Effects = new()
             {
-                new GainStats() { Stats = new() { Armor = 340, Strength = 14, Agility = 14, Intellect = 14, Stamina = 14 } }
+                new GainStats() { Stats = new() { { StatName.Armor, 340 }, { StatName.Strength, 14 }, { StatName.Agility, 14 }, { StatName.Intellect, 14 }, { StatName.Stamina, 14 } } }
             }
         };
 
@@ -101,7 +101,7 @@ namespace RetSim.Data
         {
             Effects = new()
             {
-                new GainStats() { Stats = new() { CritChance = 5 } }
+                new GainStats() { Stats = new() { { StatName.CritChance, 5 } } }
             }
         };
 
@@ -109,7 +109,7 @@ namespace RetSim.Data
         {
             Effects = new()
             {
-                new GainStats() { Stats = new() { Stamina = 79 } }
+                new GainStats() { Stats = new() { { StatName.Stamina, 79 } } }
             }
         };
 
@@ -117,7 +117,7 @@ namespace RetSim.Data
         {
             Effects = new()
             {
-                new GainStats() { Stats = new() { SpellPower = 20 } }
+                new GainStats() { Stats = new() { { StatName.SpellPower, 20 } } }
             }
         };
 
@@ -125,7 +125,7 @@ namespace RetSim.Data
         {
             Effects = new()
             {
-                new GainStats() { Stats = new() { Intellect = 40 } }
+                new GainStats() { Stats = new() { { StatName.Intellect, 40 } } }
             }
         };
 
@@ -133,7 +133,7 @@ namespace RetSim.Data
         {
             Effects = new()
             {
-                new GainStats() { Stats = new() { HitChance = 1 } }
+                new GainStats() { Stats = new() { { StatName.HitChance, 1 } } }
             }
         };
 
@@ -141,7 +141,7 @@ namespace RetSim.Data
         {
             Effects = new()
             {
-                new GainStats() { Stats = new() { SpellHit = 1 } }
+                new GainStats() { Stats = new() { { StatName.SpellHit, 1 } } }
             }
         };
     }

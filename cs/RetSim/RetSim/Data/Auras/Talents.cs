@@ -9,7 +9,7 @@ namespace RetSim.Data
         {
             Effects = new()
             {
-                new GainStats() { Stats = new() { CritChance = 3, SpellCrit = 3 } }
+                new GainStats() { Stats = new() { { StatName.CritChance, 3 }, { StatName.SpellCrit, 3 } } }
             }
         };
 
@@ -17,7 +17,7 @@ namespace RetSim.Data
         {
             Effects = new()
             {
-                new GainStats() { Stats = new() { CritChance = 5 } }
+                new GainStats() { Stats = new() { { StatName.CritChance, 5 } } }
             }
         };
 
@@ -52,7 +52,7 @@ namespace RetSim.Data
         {
             Effects = new()
             {
-                new GainStats() { Stats = new() { CritChance = 3, SpellCrit = 3 } }
+                new GainStats() { Stats = new() { { StatName.CritChance, 3 }, { StatName.SpellCrit, 3 } } }
             }
         };
 
@@ -79,7 +79,7 @@ namespace RetSim.Data
         {
             Effects = new()
             {
-                new GainStats() { Stats = new() { HitChance = 3, SpellHit = 3 } }
+                new GainStats() { Stats = new() { { StatName.HitChance, 3 }, { StatName.SpellHit, 3 } } }
             }
         };
 

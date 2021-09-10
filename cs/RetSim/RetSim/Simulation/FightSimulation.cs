@@ -94,7 +94,7 @@ namespace RetSim
             foreach (LogEntry entry in CombatLog.Log)
                 Logger.Log(entry.ToString());
 
-            Logger.Log($"\nPlayer stats: {Player.Stats.AttackPower} AP / {Player.Stats.CritChance.Rounded()}% Crit / {Player.Stats.HitChance.Rounded()}% Hit / {Player.Stats.Expertise} Expertise");
+            Logger.Log($"\nPlayer stats: {Player.Stats[StatName.AttackPower].Value} AP / {Player.Stats[StatName.CritChance].Value.Rounded()}% Crit / {Player.Stats[StatName.HitChance].Value.Rounded()}% Hit / {Player.Stats[StatName.Expertise].Value} Expertise");
 
             Logger.Log($"\nDuration - Expected: {Duration} / Real: {Timestamp}\n");     
 

@@ -7,48 +7,48 @@ namespace RetSim
         public static readonly Race Human = new()
         {
             Name = "Human",
-            Stats = new StatSet
+            Stats = new()
             {
-                Strength = 126,
-                Agility = 77,
-                Intellect = 83,
-                Stamina = 120
+                [StatName.Strength] = 126,
+                [StatName.Agility] = 77,
+                [StatName.Intellect] = 83,
+                [StatName.Stamina] = 120
             }
         };
 
         public static readonly Race Dwarf = new()
         {
             Name = "Dwarf",
-            Stats = new StatSet
+            Stats = new()
             {
-                Strength = 128,
-                Agility = 73,
-                Intellect = 82,
-                Stamina = 123
+                [StatName.Strength] = 128,
+                [StatName.Agility] = 73,
+                [StatName.Intellect] = 82,
+                [StatName.Stamina] = 123
             }
         };
 
         public static readonly Race Draenei = new()
         {
             Name = "Draenei",
-            Stats = new StatSet
+            Stats = new()
             {
-                Strength = 127,
-                Agility = 74,
-                Intellect = 84,
-                Stamina = 119
+                [StatName.Strength] = 127,
+                [StatName.Agility] = 74,
+                [StatName.Intellect] = 84,
+                [StatName.Stamina] = 119
             }
         };
 
         public static readonly Race BloodElf = new()
         {
             Name = "Blood Elf",
-            Stats = new StatSet
+            Stats = new()
             {
-                Strength = 123,
-                Agility = 79,
-                Intellect = 87,
-                Stamina = 118
+                [StatName.Strength] = 123,
+                [StatName.Agility] = 79,
+                [StatName.Intellect] = 87,
+                [StatName.Stamina] = 118
             }
         };
 

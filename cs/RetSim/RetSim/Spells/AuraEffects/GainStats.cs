@@ -1,4 +1,6 @@
-﻿namespace RetSim.AuraEffects
+﻿using System.Collections.Generic;
+
+namespace RetSim.AuraEffects
 {
     public class GainStats : AuraEffect
     {
@@ -6,12 +8,14 @@
 
         public override void Apply(Aura aura, FightSimulation fight)
         {
-            fight.Player.Stats.Temporary += Stats;
+            foreach (KeyValuePair<StatName, float> stat in Stats)
+                fight.Player.Stats[stat.Key].Bonus += stat.Value;
         }
 
         public override void Remove(Aura aura, FightSimulation fight)
         {
-            fight.Player.Stats.Temporary -= Stats;
+            foreach (KeyValuePair<StatName, float> stat in Stats)
+                fight.Player.Stats[stat.Key].Bonus -= stat.Value;
         }
     }
 }

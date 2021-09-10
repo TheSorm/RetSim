@@ -13,7 +13,7 @@ namespace RetSim.Items
         public int ItemLevel { get; init; }
         public Quality Quality { get; init; }
         public GemColor Color { get; init; }
-        public ItemStats Stats { get; init; }
+        public StatSet Stats { get; init; }
         public bool UniqueEquipped { get; set; }
         public int Phase { get; set; }
     }

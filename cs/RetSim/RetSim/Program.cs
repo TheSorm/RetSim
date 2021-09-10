@@ -120,13 +120,13 @@ namespace RetSim
 
                 fight.Run();
 
-                var index = i + 1;
+                //var index = i + 1;
 
-                var progress = Math.Round(index / iterations * 100, 2);
+                //var progress = Math.Round(index / iterations * 100, 2);
 
-                Console.SetCursorPosition(0, outer);
+                //Console.SetCursorPosition(0, outer);
 
-                Console.WriteLine($"Iteration #{outer + 1} - Progress: {index}/{iterations} / {progress}%");
+                //Console.WriteLine($"Iteration #{outer + 1} - Progress: {index}/{iterations} / {progress}%");
 
                 dps += fight.CombatLog.DPS;
             }

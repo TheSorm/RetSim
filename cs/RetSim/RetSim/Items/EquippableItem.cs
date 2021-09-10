@@ -10,7 +10,7 @@ namespace RetSim.Items
         public int ItemLevel { get; init; }
         public Quality Quality { get; init; }
         public Slot Slot { get; init; }
-        public ItemStats Stats { get; init; }
+        public StatSet Stats { get; init; }
         public Set Set { get; init; }
         public ItemSpell OnUse { get; set; }
         public ItemSpell OnEquip { get; init; }
@@ -19,7 +19,7 @@ namespace RetSim.Items
         public Socket Socket1 { get => Sockets[0]; init => Sockets[0] = value; }
         public Socket Socket2 { get => Sockets[1]; init => Sockets[1] = value; }
         public Socket Socket3 { get => Sockets[2]; init => Sockets[2] = value; }
-        public ItemStats SocketBonus { get; init; }
+        public StatSet SocketBonus { get; init; }
         public bool UniqueEquipped { get; set; }
         public int Phase { get; init; }
 
@@ -109,29 +109,7 @@ namespace RetSim.Items
         public string Name { get; init; }
     }
 
-    public class ItemStats : Dictionary<StatName, int>
-    {
-        public new int this[StatName key]
-        {
-            get
-            {
-                if (ContainsKey(key))
-                    return base[key];
-
-                else
-                    return 0;
-            }
-
-            set
-            {
-                if (ContainsKey(key))
-                    base[key] = value;
-
-                else
-                    Add(key, value);
-            }
-        }
-    }
+    
 
     public record SocketBonus
     {
