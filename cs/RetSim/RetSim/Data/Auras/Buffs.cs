@@ -17,7 +17,7 @@ namespace RetSim.Data
         {
             Effects = new List<AuraEffect>
             {
-                new ModStat() { Percentage = 10, All = true }
+                new ModStat() { Percentage = 10, Stats = new() { StatName.Strength, StatName.Agility, StatName.Stamina, StatName.Intellect } }
             }
         };
 
@@ -85,7 +85,7 @@ namespace RetSim.Data
         {
             Effects = new List<AuraEffect>
             {
-                new ModStat() { Percentage = 10, AttackPower = true }
+                new ModStat() { Percentage = 10, Stats = new() { StatName.AttackPower } }
             }
         };
 

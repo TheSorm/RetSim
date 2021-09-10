@@ -6,7 +6,6 @@ namespace RetSim
     public class Modifiers
     {
         public SchoolModifiers Schools { get; init; } = new SchoolModifiers();
-        public StatModifiers Stats { get; init; } = new StatModifiers();
 
         public float AttackSpeed { get; set; } = 1f;
         public float CastSpeed { get; set; } = 1f;
@@ -37,25 +36,6 @@ namespace RetSim
             {
                 Add(school, Default);
             }
-        }
-    }
-
-    public class StatModifiers
-    {
-        public float All { get; set; } = 1f;
-
-        public float Strength { get; set; } = 1f;
-
-        public float Intellect { get; set; } = 1f;
-
-        public float AttackPower { get; set; } = 1f;
-
-        public StatModifiers()
-        {
-            All = 1f;
-            Strength = 1f;
-            Intellect = 1f;
-            AttackPower = 1f;
         }
     }
 }

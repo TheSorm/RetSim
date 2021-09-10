@@ -10,7 +10,18 @@ namespace RetSim
         public float Race { get; init; }
         public float Gear { get; init; }
         public float Permanent { get; init; }
-        public float Modifier { get; set; }
+
+        protected float modifier;
+        public float Modifier
+        {
+            get => modifier;
+
+            set
+            {
+                modifier = value;
+                Update();
+            }
+        }
 
         protected float bonus;
         public virtual float Bonus
@@ -89,8 +100,11 @@ namespace RetSim
         {
             Value = (int)((Permanent + Bonus + RatingValue + SupportValue) * Modifier);
 
-            foreach (SupportedStat stat in SupportedStats)
-                stat.Update();
+            if (SupportedStats != null)
+            {
+                foreach (SupportedStat stat in SupportedStats)
+                    stat.Update();
+            }
         }
     }
 
@@ -104,8 +118,11 @@ namespace RetSim
         {
             Value = (Permanent + Bonus + RatingValue + SupportValue) * Modifier;
 
-            foreach (SupportedStat stat in SupportedStats)
-                stat.Update();
+            if (SupportedStats != null)
+            {
+                foreach (SupportedStat stat in SupportedStats)
+                    stat.Update();
+            }
         }
     }
 

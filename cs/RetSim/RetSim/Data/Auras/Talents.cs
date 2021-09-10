@@ -85,12 +85,12 @@ namespace RetSim.Data
 
         public static readonly Aura DivineStrength = new()
         {
-            Effects = new() { new ModStat() { Percentage = 10, Strength = true } }
+            Effects = new() { new ModStat() { Percentage = 10, Stats = new() { StatName.Strength } } }
         };
 
         public static readonly Aura DivineIntellect = new()
         {
-            Effects = new() { new ModStat() { Percentage = 10, Intellect = true } }
+            Effects = new() { new ModStat() { Percentage = 10, Stats = new() { StatName.Intellect } } }
         };
     }
 }
