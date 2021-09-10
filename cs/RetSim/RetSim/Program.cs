@@ -25,6 +25,7 @@ namespace RetSim
             //RunMany(equipment, talents, buffs);
 
             //RELENTLESS CRIT BONUS
+            //ADD DEBUFFS
 
             PrintEquipment(equipment);            
         }
@@ -48,7 +49,7 @@ namespace RetSim
 
         static void RunOnce(Equipment equipment, List<Talent> talents, List<Spell> buffs)
         {
-            FightSimulation fight = new(new Player(Races.Human, equipment, talents), new Enemy(Armor.Warrior, CreatureType.Demon), new EliteTactic(), buffs, 360000, 400000);
+            FightSimulation fight = new(new Player(Races.Human, equipment, talents), new Enemy(Armor.Warrior, CreatureType.Demon), new EliteTactic(), buffs, 180000, 200000);
             //TODO: Add human racial tho
 
             fight.Run();

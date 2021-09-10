@@ -16,8 +16,8 @@
 
     public enum WeaponType
     {
-        Unarmed = 1,
-        Sword = 0,
+        Unarmed = 0,
+        Sword = 1,
         Mace = 2,
         Axe = 3,
         Polearm = 4
