@@ -1,6 +1,8 @@
 ﻿@using RetSim
 @using RetSim.Items
-<MudTable Class="full-height" Height="100%" CustomHeader="true" RowClassFunc=@RowClass @bind-SelectedItem="SelectedItem" AllowUnsorted="false" Dense="true" Striped="@true" SortLabel="Sort By" Items="@Items" Hover="true" Breakpoint="Breakpoint.Sm">	
+@inject IJSRuntime JS
+
+<MudTable Class="full-height" Height="100%" CustomHeader="true" RowClassFunc=@RowClass @bind-SelectedItem="SelectedItem" AllowUnsorted="false" Dense="true" Striped="true" SortLabel="Sort By" Items="@Items" Hover="true" Breakpoint="Breakpoint.Sm">	
 <HeaderContent>
         <MudTh Class="py-0 pl-3 pr-0" Style="background-color: var(--mud-palette-surface);position:sticky;z-index:2;top:0;"><MudTableSortLabel SortBy="new Func<EquippableItem, object>(x=>x.Name)">Name</MudTableSortLabel></MudTh>
 		<MudTh Class="py-0 pl-3 pr-0" Style="background-color: var(--mud-palette-surface);position:sticky;z-index:2;top:0;"><MudTableSortLabel SortBy="new Func<EquippableItem, object>(x=>x.ItemLevel)">Level</MudTableSortLabel></MudTh>	
@@ -26,7 +28,7 @@
         <MudTd Class="py-0 pl-3 pr-0" DataLabel="Name"><a onclick="return false;" href="https://tbc.wowhead.com/item=@context.ID">@context.Name</a></MudTd>
         <MudTd Class="py-0 pl-3 pr-0" DataLabel="Level">@context.ItemLevel</MudTd>
 		<MudTd Class="py-0 pl-3 pr-0" DataLabel="Socket"> 
-			<MudButton Style="min-width:0" Class="pa-1" Disabled="@(context.Socket1==null)" OnClick="@(e => ToggleOverlay(true))" Variant="Variant.Text"><img style="display:@(context.Socket1==null? "none" : "");width:16px;height:16px;" src="@GetSocketImage(@context.Socket1)" alt=""></MudButton><MudButton Style="min-width:0" Class="pa-1" Disabled="@(context.Socket2==null)" OnClick="@(e => ToggleOverlay(true))" Variant="Variant.Text"><img style="display:@(context.Socket2==null? "none" : "");width:16px;height:16px;" src="@GetSocketImage(@context.Socket2)" ></MudButton><MudButton Style="min-width:0" Class="pa-1" Disabled="@(context.Socket3==null)" OnClick="@(e => ToggleOverlay(true))" Variant="Variant.Text"><img style="display:@(context.Socket3==null? "none" : "");width:16px;height:16px;" src="@GetSocketImage(@context.Socket3)" ></MudButton>
+			<MudButton Style="min-width:0" Class="pa-1" Disabled="@(context.Socket1==null)" OnClick="@(e => OpenGemSelect(context.Socket1))" Variant="Variant.Text"><img style="display:@(context.Socket1==null? "none" : "");width:16px;height:16px;" src="@GetSocketImage(@context.Socket1)" alt=""></MudButton><MudButton Style="min-width:0" Class="pa-1" Disabled="@(context.Socket2==null)" OnClick="@(e => OpenGemSelect(context.Socket2))" Variant="Variant.Text"><img style="display:@(context.Socket2==null? "none" : "");width:16px;height:16px;" src="@GetSocketImage(@context.Socket2)" ></MudButton><MudButton Style="min-width:0" Class="pa-1" Disabled="@(context.Socket3==null)" OnClick="@(e => OpenGemSelect(context.Socket3))" Variant="Variant.Text"><img style="display:@(context.Socket3==null? "none" : "");width:16px;height:16px;" src="@GetSocketImage(@context.Socket3)" ></MudButton>
 		</MudTd>
 		<MudTd Class="py-0 pl-3 pr-0" DataLabel="Str">@Format(@context.Stats[StatName.Strength])</MudTd>
 		<MudTd Class="py-0 pl-3 pr-0" DataLabel="AP">@Format(@context.Stats[StatName.AttackPower])</MudTd>
@@ -48,24 +50,55 @@
 	</RowTemplate>
 </MudTable>
 
-<MudOverlay Visible="isVisible" DarkBackground="true" Absolute="true">
-	<MudButton Variant="Variant.Filled" Color="Color.Primary"  OnClick="@(e => ToggleOverlay(false))">Hide Overlay</MudButton>
+<MudOverlay OnClick="CancleGemSelect" Visible="isVisible" DarkBackground="true" Absolute="true">
+	<MudTable Height="500px" T="Gem" OnRowClick="@(args => OnGemClicked(args))" Items="RetSim.Data.Items.Gems.Values" Hover="true" Dense="true" Striped="true" FixedHeader="true" Breakpoint="Breakpoint.Sm">
+		<HeaderContent>
+			<MudTh>Name</MudTh>
+		</HeaderContent>
+		<RowTemplate>
+			<MudTd DataLabel="Name">
+				<a onclick="return false;" href="https://tbc.wowhead.com/item=@context.ID">@context.Name</a>
+				</MudTd>
+		</RowTemplate>
+	</MudTable>
+	<MudButton Variant="Variant.Filled" Color="Color.Primary"  OnClick="@(e => RemoveGem())">Remove Gem</MudButton>
 </MudOverlay>
 
 @code {
 	public static EquippableItem SelectedItem { get; set; }
-
-    [Parameter]
-    public IEnumerable<EquippableItem> Items { get; set; }
 	
 	private bool isVisible;
+	private Socket selectedSocket;
+
+    private void OpenGemSelect(Socket socket)
+    {
+        isVisible = true;
+		selectedSocket = socket;
+	}
+
+	private void CancleGemSelect()
+	{
+		isVisible = false;
+		selectedSocket = null;
+		JS.InvokeVoidAsync("WH.Tooltip.hide");
+	}
+
+	private void RemoveGem()
+    {
+		selectedSocket.SocketedGem = null;
+		CancleGemSelect();
+	}
+
+	private void OnGemClicked(TableRowClickEventArgs<Gem> args )
+    {
+		selectedSocket.SocketedGem = args.Item;
+		CancleGemSelect();
+	}
+
+	[Parameter]
+    public IEnumerable<EquippableItem> Items { get; set; }
 
 	Func<EquippableItem, int, string> RowClass = (item, rowNumber) => item == SelectedItem? "mud-info" : "";
-
-    public void ToggleOverlay(bool value)
-    {
-        isVisible = value;
-    }
 
 	public string Format(float value)
 	{
