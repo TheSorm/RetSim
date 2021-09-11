@@ -25,10 +25,10 @@ namespace RetSim.Tactics
                 new AutoAttackEvent(fight, 1501)
             };
 
-            if (fight.Player.Equipment.Trinket1.OnUse != null)
+            if (fight.Player.Equipment.Trinket1 != null && fight.Player.Equipment.Trinket1.OnUse != null && Spells.ByID.ContainsKey(fight.Player.Equipment.Trinket1.OnUse.ID))
                 trinket1 = Spells.ByID[fight.Player.Equipment.Trinket1.OnUse.ID];
 
-            if (fight.Player.Equipment.Trinket2.OnUse != null)
+            if (fight.Player.Equipment.Trinket2 != null && fight.Player.Equipment.Trinket2.OnUse != null && Spells.ByID.ContainsKey(fight.Player.Equipment.Trinket2.OnUse.ID))
                 trinket2 = Spells.ByID[fight.Player.Equipment.Trinket2.OnUse.ID];
 
             if (trinket1 != null)
