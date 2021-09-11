@@ -67,9 +67,10 @@
         isVisible = value;
     }
 
-	public string Format(int value)
+	public string Format(float value)
 	{
-		return value == 0? "" : value.ToString();
+		int oVlaue = Convert.ToInt32(value);
+		return oVlaue == 0? "" : oVlaue.ToString();
 	}
 
 	public string GetSocketImage(Socket socket)

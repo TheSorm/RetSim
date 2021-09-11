@@ -65,7 +65,7 @@ public int SelectedWeaponID { get; set; }
 [Parameter]
 public IEnumerable<EquippableWeapon> Weapons { get; set; }
 	
-	public string Format(int value)
+	public string Format(float value)
 	{
 		return value == 0? "" : value.ToString();
 	}
