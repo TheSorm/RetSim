@@ -165,8 +165,8 @@ namespace RetSim
         {
             return category switch
             {
-                AttackCategory.Physical => player.Stats.EffectiveCritDamage.Value,
-                AttackCategory.Spell => player.Stats.EffectiveSpellCritDamage.Value,
+                AttackCategory.Physical => player.Stats[StatName.CritDamage].Value,
+                AttackCategory.Spell => player.Stats[StatName.SpellCritDamage].Value,
                 _ => 0f,
             };
         }

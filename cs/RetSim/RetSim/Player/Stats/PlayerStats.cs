@@ -5,7 +5,7 @@ namespace RetSim
     public class PlayerStats
     {
         private Player Player { get; init; }
-        private Stat[] All { get; init; }
+        public Stat[] All { get; init; }
 
         public Stat this[StatName key]
         {
@@ -13,21 +13,9 @@ namespace RetSim
             private set => All[(int)key] = value;
         }
 
-        public Stat EffectiveCritDamage;
-        public Stat EffectiveSpellCritDamage;
-
-        public float HitPenalty = 1f; //TODO: HACK
+        public float HitPenalty => Math.Min(this[StatName.HitChance].Value, 1f);
         public float EffectiveHitChance => this[StatName.HitChance].Value - HitPenalty;
-
-        public float EffectiveMissChance
-        {
-            get
-            {
-                float miss = Constants.Boss.MissChance - EffectiveHitChance;
-
-                return miss > 0 ? miss : 0;
-            }
-        }
+        public float EffectiveMissChance => Math.Max(Constants.Boss.MissChance - EffectiveHitChance, 0);
 
         public float EffectiveSpellMissChance
         {
@@ -39,29 +27,8 @@ namespace RetSim
             }
         }
 
-        public float DodgeChanceReduction
-        {
-            get
-            {
-                float expertise = this[StatName.Expertise].Value;
-
-                if (expertise >= Constants.Stats.ExpertiseCap)
-                    return Constants.Stats.ExpertiseCap / Constants.Stats.ExpertisePerDodge;
-
-                else
-                    return expertise / Constants.Stats.ExpertisePerDodge;
-            }
-        }
-
-        public float EffectiveDodgeChance
-        {
-            get
-            {
-                float dodge = Constants.Boss.DodgeChance - DodgeChanceReduction;
-
-                return dodge > 0 ? dodge : 0;
-            }
-        }
+        public float DodgeChanceReduction => Math.Min(this[StatName.Expertise].Value, Constants.Stats.ExpertiseCap) / Constants.Stats.ExpertisePerDodge;
+        public float EffectiveDodgeChance => Math.Max(Constants.Boss.DodgeChance - DodgeChanceReduction, 0);
 
         public float EffectiveAttackSpeed => (1 + (this[StatName.Haste].Value * 0.01f)) * Player.Modifiers.AttackSpeed;
 
@@ -120,10 +87,6 @@ namespace RetSim
 
             this[StatName.CritDamage] = new DecimalStat(StatName.CritDamage, Constants.Stats.PhysicalCritBonus, 0);
             this[StatName.SpellCritDamage] = new DecimalStat(StatName.SpellCritDamage, Constants.Stats.SpellCritBonus, 0);
-
-            EffectiveCritDamage = this[StatName.CritDamage];
-            EffectiveSpellCritDamage = this[StatName.SpellCritDamage];
         }
-
     }
 }
