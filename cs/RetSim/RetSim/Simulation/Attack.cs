@@ -155,7 +155,7 @@ namespace RetSim
         {
             return result switch
             {
-                DamageResult.Crit => 1 + GetCritDamage(player, category),
+                DamageResult.Crit => GetCritDamage(player, category),
                 DamageResult.Glancing => 1 - RNG.RollGlancing(),
                 _ => 1f,
             };
@@ -165,8 +165,8 @@ namespace RetSim
         {
             return category switch
             {
-                AttackCategory.Physical => player.Stats.EffectiveCritDamage,
-                AttackCategory.Spell => player.Stats.EffectiveSpellCritDamage,
+                AttackCategory.Physical => player.Stats.EffectiveCritDamage.Value,
+                AttackCategory.Spell => player.Stats.EffectiveSpellCritDamage.Value,
                 _ => 0f,
             };
         }

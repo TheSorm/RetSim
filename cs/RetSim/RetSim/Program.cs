@@ -19,15 +19,17 @@ namespace RetSim
             var talents = new List<Talent> { ImprovedSealOfTheCrusader, Conviction, Crusade, TwoHandedWeaponSpecialization, SanctityAura, ImprovedSanctityAura, Vengeance, Fanaticism, SanctifiedSeals, Precision, DivineStrength };
             var buffs = new List<Spell> { WindfuryTotem, GreaterBlessingOfMight, GreaterBlessingOfKings, BattleShout, StrengthOfEarthTotem, GraceOfAirTotem, ManaSpringTotem, UnleashedRage,
                                           GiftOfTheWild, PrayerOfFortitude, PrayerOfSpirit, ArcaneBrilliance, InspiringPresence };
-            
 
-            RunOnce(equipment, talents, buffs);
-            //RunMany(equipment, talents, buffs);
+            Logger.DisableInput();
 
-            //RELENTLESS CRIT BONUS
+            //RunOnce(equipment, talents, buffs);
+            RunMany(equipment, talents, buffs);
+
             //ADD DEBUFFS
 
-            PrintEquipment(equipment);            
+            //PrintEquipment(equipment);
+
+            Logger.EnableInput();
         }
 
         static void PrintEquipment(Equipment equipment)
@@ -50,7 +52,6 @@ namespace RetSim
         static void RunOnce(Equipment equipment, List<Talent> talents, List<Spell> buffs)
         {
             FightSimulation fight = new(new Player(Races.Human, equipment, talents), new Enemy(Armor.Warrior, CreatureType.Demon), new EliteTactic(), buffs, 180000, 200000);
-            //TODO: Add human racial tho
 
             fight.Run();
 
@@ -73,6 +74,26 @@ namespace RetSim
 
             TimeSpan maxTime = TimeSpan.Zero;
             TimeSpan minTime = TimeSpan.MaxValue;
+
+            Logger.Log($"╔═════╦═══════════════╦════════╦════════════╦══════════════════╗");
+            Logger.Log($"║  #  ║   Progress    ║   %    ║    DPS     ║   Elapsed Time   ║");
+            Logger.Log($"╠═════╬═══════════════╬════════╬════════════╬══════════════════╣");
+
+            for (int i = 0; i < outerIterations; i++)
+            {
+                Logger.Log($"║ {i + 1, 3} ║ {$"0/{iterations}",13} ║     0% ║          0 ║ 00:00:00.0000000 ║");
+            }
+
+            Logger.Log($"╠═════╩═══════════════╩════════╬════════════╬══════════════════╣");
+            Logger.Log($"║           Average            ║          0 ║ 00:00:00.0000000 ║");
+            Logger.Log($"╠══════════════════════════════╬════════════╬══════════════════╣");
+            Logger.Log($"║           Maximum            ║          0 ║ 00:00:00.0000000 ║");
+            Logger.Log($"╠══════════════════════════════╬════════════╬══════════════════╣");
+            Logger.Log($"║          Mininimum           ║          0 ║ 00:00:00.0000000 ║");
+            Logger.Log($"╚══════════════════════════════╩════════════╩══════════════════╝");
+
+
+
 
             for (int i = 0; i < outerIterations; i++)
             {
@@ -102,15 +123,22 @@ namespace RetSim
                 }
             }
 
-            Logger.Log($"DPS  - Average: {(dps / outerIterations)} / Max: {maxDPS} / Min: {minDPS}");
-            Logger.Log($"Time - Average: {(time / outerIterations)} / Max: {maxTime} / Min: {minTime}");
+            Logger.Log($"╠═════╩═══════════════╩════════╬════════════╬══════════════════╣");
+            Logger.Log($"║           Average            ║ {dps / outerIterations, 10} ║ {time / outerIterations, 16} ║");
+            Logger.Log($"╠══════════════════════════════╬════════════╬══════════════════╣");
+            Logger.Log($"║           Maximum            ║ {maxDPS, 10} ║ {maxTime, 16} ║");
+            Logger.Log($"╠══════════════════════════════╬════════════╬══════════════════╣");
+            Logger.Log($"║          Mininimum           ║ {minDPS, 10} ║ {minTime, 16} ║");
+            Logger.Log($"╚══════════════════════════════╩════════════╩══════════════════╝");
         }
 
         static (float AverageDPS, TimeSpan span) Run(float iterations, Equipment equipment, List<Talent> talents, List<Spell> buffs, int outer, bool log)
         {
             var dps = 0f;
+            var row = outer + 3;
 
-            Stopwatch watch = new Stopwatch();
+            Stopwatch watch = new();
+
             watch.Start();
 
             for (int i = 0; i < iterations; i++)
@@ -122,22 +150,15 @@ namespace RetSim
 
                 var index = i + 1;
 
-                var progress = Math.Round(index / iterations * 100, 2);
-
-                Console.SetCursorPosition(0, outer);
-
-                Console.WriteLine($"Iteration #{outer + 1} - Progress: {index}/{iterations} / {progress}%");
+                var progress = Math.Round(index / iterations * 100, 2);                
 
                 dps += fight.CombatLog.DPS;
+
+                Console.SetCursorPosition(0, row);
+                Logger.Log($"║ {outer + 1, 3} ║ {$"{index}/{iterations}", 13} ║ {progress, 5}% ║ {dps / index, 10} ║ {watch.Elapsed, 16} ║");                
             }
 
             watch.Stop();
-
-            if (log)
-            {
-                Logger.Log($"Average DPS: {(dps / iterations)}");
-                Logger.Log($"Elapsed time: {watch.Elapsed }");
-            }
 
             return (dps / iterations, watch.Elapsed);
         }

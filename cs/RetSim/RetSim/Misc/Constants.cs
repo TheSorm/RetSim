@@ -38,8 +38,8 @@ namespace RetSim
             public const int ExpertiseCap = 26;
             public const int ExpertisePerDodge = 4;
 
-            public const float PhysicalCritBonus = 1f;
-            public const float SpellCritBonus = 0.5f;
+            public const float PhysicalCritBonus = 2f;
+            public const float SpellCritBonus = 1.5f;
 
             public const int NormalizedWeaponSpeed = 3300;
         }

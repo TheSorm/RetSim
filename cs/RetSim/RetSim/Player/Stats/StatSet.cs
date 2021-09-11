@@ -56,15 +56,17 @@ namespace RetSim
         SpellHasteRating = 25,
         Spirit = 26,
         WeaponDamage = 27,
-        HealingPower = 28,
-        Defense = 29,
-        DefenseRating = 30,
-        Dodge = 31,
-        DodgeRating = 32,
-        Parry = 33,
-        ParryRating = 34,
-        BlockChance = 35,
-        BlockRating = 36,
-        BlockValue = 37
+        CritDamage = 28,
+        SpellCritDamage = 29,
+        HealingPower = 30,
+        Defense = 31,
+        DefenseRating = 32,
+        Dodge = 33,
+        DodgeRating = 34,
+        Parry = 35,
+        ParryRating = 36,
+        BlockChance = 37,
+        BlockRating = 38,
+        BlockValue = 39
     }
 }
