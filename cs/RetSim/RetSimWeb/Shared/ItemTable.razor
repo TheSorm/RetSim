@@ -1,8 +1,9 @@
 ﻿@using RetSim
 @using RetSim.Items
+@inject AppState AppState
 @inject IJSRuntime JS
 
-<MudTable Class="full-height" Height="100%" CustomHeader="true" RowClassFunc=@RowClass @bind-SelectedItem="SelectedItem" AllowUnsorted="false" Dense="true" Striped="true" SortLabel="Sort By" Items="@Items" Hover="true" Breakpoint="Breakpoint.Sm">	
+<MudTable Class="full-height" Height="100%" T="EquippableItem" OnRowClick="@(args => OnItemClicked(args))" CustomHeader="true" RowClassFunc=@RowClass @bind-SelectedItem="SelectedItem" AllowUnsorted="false" Dense="true" Striped="true" SortLabel="Sort By" Items="@Items" Hover="true" Breakpoint="Breakpoint.Sm">	
 <HeaderContent>
         <MudTh Class="py-0 pl-3 pr-0" Style="background-color: var(--mud-palette-surface);position:sticky;z-index:2;top:0;"><MudTableSortLabel SortBy="new Func<EquippableItem, object>(x=>x.Name)">Name</MudTableSortLabel></MudTh>
 		<MudTh Class="py-0 pl-3 pr-0" Style="background-color: var(--mud-palette-surface);position:sticky;z-index:2;top:0;"><MudTableSortLabel SortBy="new Func<EquippableItem, object>(x=>x.ItemLevel)">Level</MudTableSortLabel></MudTh>	
@@ -65,10 +66,16 @@
 </MudOverlay>
 
 @code {
-	public static EquippableItem SelectedItem { get; set; }
+	public EquippableItem SelectedItem { get; set; }
 	
 	private bool isVisible;
 	private Socket selectedSocket;
+
+	protected override void OnInitialized()
+    {
+        SelectedItem = AppState.Equipment.PlayerEquipment[Slot];
+		RowClass = (item, rowNumber) => item == SelectedItem ? "mud-info" : "";
+	}
 
     private void OpenGemSelect(Socket socket)
     {
@@ -86,19 +93,29 @@
 	private void RemoveGem()
     {
 		selectedSocket.SocketedGem = null;
+		AppState.GemsUpdated();
 		CancleGemSelect();
 	}
 
 	private void OnGemClicked(TableRowClickEventArgs<Gem> args )
     {
 		selectedSocket.SocketedGem = args.Item;
+		AppState.GemsUpdated();
 		CancleGemSelect();
+	}
+
+	private void OnItemClicked(TableRowClickEventArgs<EquippableItem> args )
+    {
+		AppState.ChangeItem(Slot, args.Item);
 	}
 
 	[Parameter]
     public IEnumerable<EquippableItem> Items { get; set; }
 
-	Func<EquippableItem, int, string> RowClass = (item, rowNumber) => item == SelectedItem? "mud-info" : "";
+    [Parameter]
+    public int Slot { get; set; }
+
+	Func<EquippableItem, int, string> RowClass;
 
 	public string Format(float value)
 	{

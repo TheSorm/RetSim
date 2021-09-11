@@ -1,37 +1,53 @@
-﻿<MudPaper Elevation="2" Fixed="true" Class="d-flex flex-column px-4 ma-4">
+﻿@using RetSim
+@implements IDisposable
+@inject AppState AppState
+
+<MudPaper Elevation="2" Fixed="true" Class="d-flex flex-column px-4 ma-4">
 	<MudText Align="Align.Center" Typo="Typo.h5">Human Paladin</MudText>
 	<MudText Align="Align.Center" Typo="Typo.h6">Level 70</MudText>
 	<MudList Clickable="false">
-		<ListStatItem StatName="Strength">121</ListStatItem>
+		<ListStatItem StatName="Strength">@AppState.Equipment.Stats[StatName.Strength]</ListStatItem>
 		<MudDivider />
-		<ListStatItem StatName="AttackPower">121</ListStatItem>
+		<ListStatItem StatName="AttackPower">@AppState.Equipment.Stats[StatName.AttackPower]</ListStatItem>
 		<MudDivider />
-		<ListStatItem StatName="Agility">121</ListStatItem>
+		<ListStatItem StatName="Agility">@AppState.Equipment.Stats[StatName.Agility]</ListStatItem>
 		<MudDivider />
-		<ListStatItem StatName="Crit">121</ListStatItem>
+		<ListStatItem StatName="Crit">@AppState.Equipment.Stats[StatName.CritRating]</ListStatItem>
 		<MudDivider />
-		<ListStatItem StatName="Hit">121</ListStatItem>
+		<ListStatItem StatName="Hit">@AppState.Equipment.Stats[StatName.HitRating]</ListStatItem>
 		<MudDivider />
-		<ListStatItem StatName="Haste">121</ListStatItem>
+		<ListStatItem StatName="Haste">@AppState.Equipment.Stats[StatName.HasteRating]</ListStatItem>
 		<MudDivider />
-		<ListStatItem StatName="Expertise">121</ListStatItem>
+		<ListStatItem StatName="Expertise">@AppState.Equipment.Stats[StatName.ExpertiseRating]</ListStatItem>
 		<MudDivider />
-		<ListStatItem StatName="ArmorPenetration">121</ListStatItem>
+		<ListStatItem StatName="ArmorPenetration">@AppState.Equipment.Stats[StatName.ArmorPenetration]</ListStatItem>
 		<MudDivider />
-		<ListStatItem StatName="WeaponDamage">121</ListStatItem>
+		<ListStatItem StatName="WeaponDamage">@AppState.Equipment.Stats[StatName.WeaponDamage]</ListStatItem>
 		<MudDivider />
-		<ListStatItem StatName="Stamina">121</ListStatItem>
+		<ListStatItem StatName="Stamina">@AppState.Equipment.Stats[StatName.Stamina]</ListStatItem>
 		<MudDivider />
-		<ListStatItem StatName="Intellect">121</ListStatItem>
+		<ListStatItem StatName="Intellect">@AppState.Equipment.Stats[StatName.Intellect]</ListStatItem>
 		<MudDivider />
-		<ListStatItem StatName="Mana Per 5s">121</ListStatItem>
+		<ListStatItem StatName="Mana Per 5s">@AppState.Equipment.Stats[StatName.ManaPer5]</ListStatItem>
 		<MudDivider />
-		<ListStatItem StatName="SpellPower">121</ListStatItem>
+		<ListStatItem StatName="SpellPower">@AppState.Equipment.Stats[StatName.SpellPower]</ListStatItem>
 		<MudDivider />
-		<ListStatItem StatName="SpellCrit">121</ListStatItem>
+		<ListStatItem StatName="SpellCrit">@AppState.Equipment.Stats[StatName.SpellCritRating]</ListStatItem>
 		<MudDivider />
-		<ListStatItem StatName="SpellHit">121</ListStatItem>
+		<ListStatItem StatName="SpellHit">@AppState.Equipment.Stats[StatName.SpellHitRating]</ListStatItem>
 		<MudDivider />
-		<ListStatItem StatName="SpellHaste">121</ListStatItem>
+		<ListStatItem StatName="SpellHaste">@AppState.Equipment.Stats[StatName.SpellHasteRating]</ListStatItem>
 	</MudList>
 </MudPaper>
+
+@code{
+	protected override void OnInitialized()
+    {
+        AppState.OnChange += StateHasChanged;
+    }
+
+    public void Dispose()
+    {
+        AppState.OnChange -= StateHasChanged;
+    }
+}

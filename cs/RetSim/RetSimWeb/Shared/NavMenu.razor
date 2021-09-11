@@ -1,4 +1,12 @@
-﻿<MudNavMenu Class="d-flex flex-column full-height justify-space-between">
+﻿@using BlazorWorker.Core
+@using RetSim
+@using RetSim.Tactics
+@inject AppState AppState
+@inject HttpClient httpClient
+@using BlazorWorker.BackgroundServiceFactory
+@inject IWorkerFactory workerFactory
+
+<MudNavMenu Class="d-flex flex-column full-height justify-space-between">
 	<MudContainer Class="d-flex flex-column px-0">
 		<MudNavLink Href="/gear" Icon="@Icons.Filled.Shield">Gear</MudNavLink>
 		<MudNavLink Href="/settings" Icon="@Icons.Filled.Settings">Settings</MudNavLink>
@@ -6,7 +14,7 @@
 	</MudContainer>
 	<StatFrame />
 	<MudContainer Class="d-flex flex-column mb-4">
-		<MudPaper Style="height:80px;"></MudPaper>
+		<MudPaper Style="height:80px;">@dps</MudPaper>
 		<MudButton Disabled="@_processing" OnClick="ProcessSomething" Variant="Variant.Filled" Color="Color.Primary">
 			@if (_processing)
 			{
@@ -23,11 +31,25 @@
 
 @code {
 	private bool _processing = false;
-
-	async Task ProcessSomething()
+	private float dps = 0;
+	private async Task ProcessSomething()
 	{
 		_processing = true;
-		await Task.Delay(2000);
+		var worker = await workerFactory.CreateAsync();
+		Console.WriteLine("Worker");
+		var service = await worker.CreateBackgroundServiceAsync<SimulationService>(
+			options => options
+			.AddConventionalAssemblyOfService()
+			.AddAssemblies("RetSim.dll", "System.Text.Encodings.Web.dll", "System.Text.Json.dll")
+			.AddHttpClient()
+		);
+		Console.WriteLine("Service");
+		var baseAdress = httpClient.BaseAddress.ToString();
+		Console.WriteLine(baseAdress);
+		await service.RunAsync(s => s.InitAsync(baseAdress));
+		Console.WriteLine("Init");
+		dps = await service.RunAsync(s => s.Run());
+		Console.WriteLine("Run");
 		_processing = false;
 	}
 }
