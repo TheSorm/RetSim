@@ -35,9 +35,11 @@ namespace RetSim
             Ongoing = true;
 
             Duration = RNG.RollRange(minDuration, maxDuration);
+
+            Initialize();
         }
 
-        public CombatLog Run()
+        public void Initialize()
         {
             foreach (Spell spell in Player.Equipment.Spells)
             {
@@ -57,6 +59,15 @@ namespace RetSim
             if (Player.Race.Racial != null && Player.Race.Racial.Requirements(Player))
                 Queue.Add(new CastEvent(Player.Race.Racial, this, Timestamp, -1));
 
+            while (!Queue.IsEmpty())
+            {
+                Event current = Queue.RemoveNext();
+                current.Execute(); 
+            }
+        }
+
+        public CombatLog Run()
+        {
             Queue.AddRange(Tactic.PreFight(this));
             Queue.Add(new SimulationEndEvent(this, Duration));
 

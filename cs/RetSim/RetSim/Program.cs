@@ -53,6 +53,8 @@ namespace RetSim
         {
             FightSimulation fight = new(new Player(Races.Human, equipment, talents), new Enemy(Armor.Warrior, CreatureType.Demon), new EliteTactic(), buffs, 180000, 200000);
 
+            PrintStats(fight.Player.Stats.All);
+
             fight.Run();
 
             fight.Output();
@@ -161,6 +163,21 @@ namespace RetSim
             watch.Stop();
 
             return (dps / iterations, watch.Elapsed);
+        }
+
+        static void PrintStats(Stat[] stats)
+        {
+            Logger.Log($"╔══════════════════╦═══════╦══════╦═══════╦═══════╦═══════╦═══════╦═══════╗");
+            Logger.Log($"║    Stat Name     ║ Total ║ Mod  ║ Base  ║ Gear  ║ Buffs ║ Ratng ║ Suprt ║");
+            Logger.Log($"╠══════════════════╬═══════╬══════╬═══════╬═══════╬═══════╬═══════╬═══════╣");
+
+            foreach (Stat stat in stats)
+            {
+                if (stat != null)
+                    Logger.Log($"║ {stat.Name, -16} ║ {$"{stat.Value.Rounded()}",5} ║ {stat.Modifier.Rounded(), 4} ║ {stat.Race.Rounded(), 5} ║ {stat.Gear.Rounded(), 5} ║ {stat.Bonus.Rounded(), 5} ║ {stat.RatingValue.Rounded(), 5} ║ {stat.SupportValue.Rounded(), 5} ║");
+            }
+
+            Logger.Log($"╚══════════════════╩═══════╩══════╩═══════╩═══════╩═══════╩═══════╩═══════╝");
         }
     }
 }
