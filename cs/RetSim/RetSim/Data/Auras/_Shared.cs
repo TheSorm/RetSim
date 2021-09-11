@@ -95,6 +95,7 @@ namespace RetSim.Data
                 { Spells.DivineStrength.ID, DivineStrength },
                 { Spells.DivineIntellect.ID, DivineIntellect },
 
+                { Spells.Relentless.ID, Relentless },
                 { Spells.DragonspineTrophy.ID, DragonspineTrophy },
                 { Spells.DragonspineTrophyProc.ID, DragonspineTrophyProc },
                 { Spells.BloodlustBrooch.ID, BloodlustBrooch },

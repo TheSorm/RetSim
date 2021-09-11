@@ -4,5 +4,11 @@
     {
         public override void Log(string message)
         { }
+
+        public override void DisableInput()
+        { }
+
+        public override void EnableInput()
+        { }        
     }
 }

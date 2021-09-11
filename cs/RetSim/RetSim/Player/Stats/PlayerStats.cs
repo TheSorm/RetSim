@@ -13,21 +13,11 @@ namespace RetSim
             private set => All[(int)key] = value;
         }
 
-        public float EffectiveCritDamage = Constants.Stats.PhysicalCritBonus;
-        public float EffectiveSpellCritDamage = Constants.Stats.SpellCritBonus;
+        public Stat EffectiveCritDamage;
+        public Stat EffectiveSpellCritDamage;
 
         public float HitPenalty = 1f; //TODO: HACK
         public float EffectiveHitChance => this[StatName.HitChance].Value - HitPenalty;
-
-        public float EffectiveSpellMissChance
-        {
-            get
-            {
-                float miss = Constants.Boss.SpellMissChance - this[StatName.SpellHit].Value;
-
-                return miss > Constants.Boss.MininumSpellMissChance ? Constants.Boss.MininumSpellMissChance : 0;
-            }
-        }
 
         public float EffectiveMissChance
         {
@@ -36,6 +26,16 @@ namespace RetSim
                 float miss = Constants.Boss.MissChance - EffectiveHitChance;
 
                 return miss > 0 ? miss : 0;
+            }
+        }
+
+        public float EffectiveSpellMissChance
+        {
+            get
+            {
+                float miss = Constants.Boss.SpellMissChance - this[StatName.SpellHit].Value;
+
+                return miss > Constants.Boss.MininumSpellMissChance ? Constants.Boss.MininumSpellMissChance : 0;
             }
         }
 
@@ -115,8 +115,15 @@ namespace RetSim
             this[StatName.SpellHaste] = new DecimalStat(StatName.SpellHaste, 0, gear[StatName.SpellHaste]);
             this[StatName.SpellHasteRating] = new Rating(StatName.SpellHasteRating, 0, gear[StatName.SpellHasteRating], this[StatName.SpellHaste], Constants.Ratings.SpellHaste);
 
-            this[StatName.Spirit] = new DecimalStat(StatName.Spirit, 0, gear[StatName.Spirit]);
-            this[StatName.WeaponDamage] = new DecimalStat(StatName.WeaponDamage, 0, gear[StatName.WeaponDamage]);
+            this[StatName.Spirit] = new IntegerStat(StatName.Spirit, 0, gear[StatName.Spirit]);
+            this[StatName.WeaponDamage] = new IntegerStat(StatName.WeaponDamage, 0, gear[StatName.WeaponDamage]);
+
+            this[StatName.CritDamage] = new DecimalStat(StatName.CritDamage, Constants.Stats.PhysicalCritBonus, 0);
+            this[StatName.SpellCritDamage] = new DecimalStat(StatName.SpellCritDamage, Constants.Stats.SpellCritBonus, 0);
+
+            EffectiveCritDamage = this[StatName.CritDamage];
+            EffectiveSpellCritDamage = this[StatName.SpellCritDamage];
         }
+
     }
 }

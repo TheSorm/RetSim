@@ -8,5 +8,15 @@ namespace RetSim.Loggers
         {
             Console.WriteLine(message);
         }
+
+        public override void DisableInput()
+        {
+            Console.CursorVisible = false;
+        }
+
+        public override void EnableInput()
+        {
+            Console.CursorVisible = true;
+        }
     }
 }

@@ -52,6 +52,7 @@ namespace RetSim.Data
                 { AvengingWrath.ID, AvengingWrath },
                 { HumanRacial.ID, HumanRacial },
 
+                { Relentless.ID, Relentless },
                 { DragonspineTrophyProc.ID, DragonspineTrophyProc },
                 { DragonspineTrophy.ID, DragonspineTrophy },
                 { BloodlustBrooch.ID, BloodlustBrooch },

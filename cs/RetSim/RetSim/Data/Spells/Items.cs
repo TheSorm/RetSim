@@ -2,6 +2,11 @@
 {
     public static partial class Spells
     {
+        public static readonly Spell Relentless = new()
+        {
+            ID = 39957,
+            Name = "Increase Critical Damage 3%"
+        };
 
         public static readonly Spell DragonspineTrophy = new()
         {
