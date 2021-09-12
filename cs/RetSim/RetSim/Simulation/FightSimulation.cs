@@ -2,7 +2,6 @@
 using RetSim.Events;
 using RetSim.Log;
 using RetSim.Tactics;
-using System.Collections.Generic;
 using static RetSim.Program;
 
 namespace RetSim
@@ -12,7 +11,9 @@ namespace RetSim
         public readonly Player Player;
         public readonly Enemy Enemy;
         public readonly Tactic Tactic;
+
         public readonly List<Spell> Buffs;
+        public readonly List<Spell> Debuffs;
 
         public readonly CombatLog CombatLog;
         public readonly IEventQueue Queue;
@@ -21,12 +22,13 @@ namespace RetSim
 
         public readonly int Duration;
 
-        public FightSimulation(Player player, Enemy enemy, Tactic tactic, List<Spell> buffs, int minDuration, int maxDuration)
+        public FightSimulation(Player player, Enemy enemy, Tactic tactic, List<Spell> buffs,  List<Spell> debuffs, int minDuration, int maxDuration)
         {
             Player = player;
             Enemy = enemy;
             Tactic = tactic;
             Buffs = buffs;
+            Debuffs = debuffs;
 
             CombatLog = new CombatLog();
             Queue = new MinQueue();
@@ -43,21 +45,26 @@ namespace RetSim
         {
             foreach (Spell spell in Player.Equipment.Spells)
             {
-                Queue.Add(new CastEvent(spell, this, Timestamp, -3));
+                Queue.Add(new CastEvent(spell, Player, Player, this, Timestamp, -3));
             }
 
             foreach (Talent talent in Player.Talents)
             {
-                Queue.Add(new CastEvent(talent, this, Timestamp, -2));
+                Queue.Add(new CastEvent(talent, Player, Player, this, Timestamp, -2));
             }
 
             foreach (Spell buff in Buffs)
             {
-                Queue.Add(new CastEvent(buff, this, Timestamp, -1));
+                Queue.Add(new CastEvent(buff, Player, Player, this, Timestamp, -1));
+            }
+
+            foreach (Spell debuff in Debuffs)
+            {
+                Queue.Add(new CastEvent(debuff, Player, Enemy, this, Timestamp, -1));
             }
 
             if (Player.Race.Racial != null && Player.Race.Racial.Requirements(Player))
-                Queue.Add(new CastEvent(Player.Race.Racial, this, Timestamp, -1));
+                Queue.Add(new CastEvent(Player.Race.Racial, Player, Player, this, Timestamp, -1));
 
             while (!Queue.IsEmpty())
             {
@@ -107,8 +114,6 @@ namespace RetSim
             
             foreach (LogEntry entry in CombatLog.Log)
                 Logger.Log(entry.ToString());
-
-            Logger.Log($"\nPlayer stats: {Player.Stats[StatName.AttackPower].Value} AP / {Player.Stats[StatName.CritChance].Value.Rounded()}% Crit / {Player.Stats[StatName.HitChance].Value.Rounded()}% Hit / {Player.Stats[StatName.Expertise].Value} Expertise");
 
             Logger.Log($"\nDuration - Expected: {Duration} / Real: {Timestamp}\n");     
 

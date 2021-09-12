@@ -1,5 +1,4 @@
 ﻿using RetSim.Events;
-using System.Collections.Generic;
 
 namespace RetSim
 {
@@ -27,7 +26,7 @@ namespace RetSim
                     if (proc.Cooldown > 0)
                         fight.Queue.Add(new ProcCooldownEndEvent(proc, fight, fight.Timestamp + proc.Cooldown));
 
-                    fight.Queue.Add(new CastEvent(proc.Spell, fight, fight.Timestamp)); //TODO: Increase Prio of those cast events
+                    fight.Queue.Add(new CastEvent(proc.Spell, fight.Player, fight.Player, fight, fight.Timestamp)); //TODO: Increase Prio of those cast events
                     //Program.Logger.Log($"{proc.Name} procced");
                 }
             }

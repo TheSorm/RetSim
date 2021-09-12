@@ -1,5 +1,4 @@
 ﻿using RetSim.AuraEffects;
-using System.Collections.Generic;
 
 namespace RetSim.Data
 {
@@ -9,7 +8,7 @@ namespace RetSim.Data
         {
             Effects = new()
             {
-                new GainStats() { Stats = new() { { StatName.CritChance, 3 }, { StatName.SpellCrit, 3 } } }
+                new ModifyStats() { Stats = new() { { StatName.CritChance, 3 }, { StatName.SpellCrit, 3 } } }
             }
         };
 
@@ -17,7 +16,7 @@ namespace RetSim.Data
         {
             Effects = new()
             {
-                new GainStats() { Stats = new() { { StatName.CritChance, 5 } } }
+                new ModifyStats() { Stats = new() { { StatName.CritChance, 5 } } }
             }
         };
 
@@ -52,7 +51,7 @@ namespace RetSim.Data
         {
             Effects = new()
             {
-                new GainStats() { Stats = new() { { StatName.CritChance, 3 }, { StatName.SpellCrit, 3 } } }
+                new ModifyStats() { Stats = new() { { StatName.CritChance, 3 }, { StatName.SpellCrit, 3 } } }
             }
         };
 
@@ -79,7 +78,7 @@ namespace RetSim.Data
         {
             Effects = new()
             {
-                new GainStats() { Stats = new() { { StatName.HitChance, 3 }, { StatName.SpellHit, 3 } } }
+                new ModifyStats() { Stats = new() { { StatName.HitChance, 3 }, { StatName.SpellHit, 3 } } }
             }
         };
 

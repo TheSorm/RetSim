@@ -1,11 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace RetSim
+﻿namespace RetSim
 {
     public class Modifiers
     {
-        public SchoolModifiers Schools { get; init; } = new SchoolModifiers();
+        public SchoolModifiers SchoolModifiers { get; init; } = new SchoolModifiers();
+        public SchoolBonuses SchoolBonuses { get; init; } = new SchoolBonuses();
 
         public float AttackSpeed { get; set; } = 1f;
         public float CastSpeed { get; set; } = 1f;
@@ -31,6 +29,19 @@ namespace RetSim
         public SchoolModifiers()
         {
             Default = 1f;
+
+            foreach (School school in Enum.GetValues(typeof(School)))
+            {
+                Add(school, Default);
+            }
+        }
+    }
+
+    public class SchoolBonuses : FailsafeDictionary<School, int>
+    {
+        public SchoolBonuses()
+        {
+            Default = 1;
 
             foreach (School school in Enum.GetValues(typeof(School)))
             {

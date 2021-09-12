@@ -1,14 +1,12 @@
-﻿using System.Collections.Generic;
-
-namespace RetSim.AuraEffects
+﻿namespace RetSim.AuraEffects
 {
     class ModDamageSpell : ModifyPercent
     {
         public List<int> Spells { get; init; }
 
-        public override void Apply(Aura aura, FightSimulation fight)
+        public override void Apply(Aura aura, Unit caster, Unit target, FightSimulation fight)
         {
-            base.Apply(aura, fight);
+            base.Apply(aura, caster, target, fight);
 
             foreach (int spell in Spells)
             {
@@ -16,14 +14,14 @@ namespace RetSim.AuraEffects
             }
         }
 
-        public override void Remove(Aura aura, FightSimulation fight)
+        public override void Remove(Aura aura, Unit caster, Unit target, FightSimulation fight)
         {
             foreach (int spell in Spells)
             {
                 fight.Player.Spellbook[spell].EffectBonusPercent /= RelativeDifference;
             }
 
-            base.Remove(aura, fight);
+            base.Remove(aura, caster, target, fight);
         }
     }
 }

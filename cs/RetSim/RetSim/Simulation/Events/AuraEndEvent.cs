@@ -5,15 +5,19 @@
         private const int BasePriority = 1;
 
         private Aura Aura { get; init; }
+        private Unit Caster { get; init; }
+        private Unit Target { get; init; }
 
-        public AuraEndEvent(Aura aura, FightSimulation fight, int timestamp, int priority = 0) : base(fight, timestamp, priority + BasePriority)
+        public AuraEndEvent(Aura aura, Unit caster, Unit target, FightSimulation fight, int timestamp, int priority = 0) : base(fight, timestamp, priority + BasePriority)
         {
             Aura = aura;
+            Caster = caster;
+            Target = target;
         }
 
         public override ProcMask Execute(object arguments = null)
         {
-            Fight.Player.Auras.Cancel(Aura, Fight);
+            Target.Auras.Cancel(Aura, Caster, Target,  Fight);
 
             return ProcMask.None;
         }

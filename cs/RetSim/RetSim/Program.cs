@@ -1,8 +1,6 @@
 ﻿using RetSim.Items;
 using RetSim.Loggers;
 using RetSim.Tactics;
-using System;
-using System.Collections.Generic;
 using System.Diagnostics;
 using static RetSim.Data.Spells;
 
@@ -19,13 +17,24 @@ namespace RetSim
             var talents = new List<Talent> { ImprovedSealOfTheCrusader, Conviction, Crusade, TwoHandedWeaponSpecialization, SanctityAura, ImprovedSanctityAura, Vengeance, Fanaticism, SanctifiedSeals, Precision, DivineStrength };
             var buffs = new List<Spell> { WindfuryTotem, GreaterBlessingOfMight, GreaterBlessingOfKings, BattleShout, StrengthOfEarthTotem, GraceOfAirTotem, ManaSpringTotem, UnleashedRage,
                                           GiftOfTheWild, PrayerOfFortitude, PrayerOfSpirit, ArcaneBrilliance, InspiringPresence };
+            var debuffs = new List<Spell> { ImprovedExposeArmor, ImprovedFaerieFire, CurseOfRecklessness };
+
+
+            Logger.Log("Press Enter to run a single, detailed sim, or any other key to run many, non-detailed sims.");
+
+            bool once = Console.ReadKey(false).Key == ConsoleKey.Enter;
+
+            Console.Clear();
 
             Logger.DisableInput();
 
-            //RunOnce(equipment, talents, buffs);
-            RunMany(equipment, talents, buffs);
+            if (once)
+                RunOnce(equipment, talents, buffs, debuffs);
 
-            //ADD DEBUFFS
+            else
+                RunMany(equipment, talents, buffs, debuffs);
+
+            //TODO: Add more debuffs
 
             //PrintEquipment(equipment);
 
@@ -49,9 +58,9 @@ namespace RetSim
             Logger.Log($"╚═══════════╩═══════╩═══════════════════════════╩══════╩═════════════════════════════════════════════════════════════╝");
         }
 
-        static void RunOnce(Equipment equipment, List<Talent> talents, List<Spell> buffs)
+        static void RunOnce(Equipment equipment, List<Talent> talents, List<Spell> buffs, List<Spell> debuffs)
         {
-            FightSimulation fight = new(new Player(Races.Human, equipment, talents), new Enemy(Armor.Warrior, CreatureType.Demon), new EliteTactic(), buffs, 180000, 200000);
+            FightSimulation fight = new(new Player("Brave Hero", Races.Human, equipment, talents), new Enemy("Magtheridon", CreatureType.Demon, ArmorCategory.Warrior), new EliteTactic(), buffs, debuffs, 180000, 200000);
 
             PrintStats(fight.Player.Stats.All);
 
@@ -60,7 +69,7 @@ namespace RetSim
             fight.Output();
         }
 
-        static void RunMany(Equipment equipment, List<Talent> talents, List<Spell> buffs)
+        static void RunMany(Equipment equipment, List<Talent> talents, List<Spell> buffs, List<Spell> debuffs)
         {
             float iterations = 10000;
             int outerIterations = 10;
@@ -99,7 +108,7 @@ namespace RetSim
 
             for (int i = 0; i < outerIterations; i++)
             {
-                results[i] = Run(iterations, equipment, talents, buffs, i, false);
+                results[i] = Run(iterations, equipment, talents, buffs, debuffs, i, false);
 
                 dps += results[i].AverageDPS;
                 time += results[i].TimeSpan;
@@ -134,7 +143,7 @@ namespace RetSim
             Logger.Log($"╚══════════════════════════════╩════════════╩══════════════════╝");
         }
 
-        static (float AverageDPS, TimeSpan span) Run(float iterations, Equipment equipment, List<Talent> talents, List<Spell> buffs, int outer, bool log)
+        static (float AverageDPS, TimeSpan span) Run(float iterations, Equipment equipment, List<Talent> talents, List<Spell> buffs, List<Spell> debuffs, int outer, bool log)
         {
             var dps = 0f;
             var row = outer + 3;
@@ -145,7 +154,7 @@ namespace RetSim
 
             for (int i = 0; i < iterations; i++)
             {
-                FightSimulation fight = new(new Player(Races.Human, equipment, talents), new Enemy(Armor.Warrior, CreatureType.Demon), new EliteTactic(), buffs, 180000, 190000);
+                FightSimulation fight = new(new Player("Brave Hero", Races.Human, equipment, talents), new Enemy("Magtheridon", CreatureType.Demon, ArmorCategory.Warrior), new EliteTactic(), buffs, debuffs, 180000, 190000);
                 //TODO: Add human racial tho
 
                 fight.Run();

@@ -1,6 +1,4 @@
 ﻿using RetSim.SpellEffects;
-using System.Collections.Generic;
-using System.Linq;
 
 namespace RetSim.Data
 {
@@ -79,6 +77,23 @@ namespace RetSim.Data
                 { ArcaneBrilliance.ID, ArcaneBrilliance },
                 { HeroicPresence.ID, HeroicPresence },
                 { InspiringPresence.ID, InspiringPresence },
+
+                { SunderArmor.ID, SunderArmor },
+                { ExposeArmor.ID, ExposeArmor },
+                { ImprovedExposeArmor.ID, ImprovedExposeArmor },
+                { FaerieFire.ID, FaerieFire },
+                { ImprovedFaerieFire.ID, ImprovedFaerieFire },
+                { CurseOfRecklessness.ID, CurseOfRecklessness },
+                { CurseOfTheElements.ID, CurseOfTheElements },
+                { ImprovedCurseOfTheElements.ID, ImprovedCurseOfTheElements },
+                { ImprovedSealOfTheCrusaderz.ID, ImprovedSealOfTheCrusaderz },
+                { JudgementOfWisdom.ID, JudgementOfWisdom },
+                { ImprovedHuntersMark.ID, ImprovedHuntersMark },
+                { ExposeWeakness.ID, ExposeWeakness },
+                { ImprovedShadowBolt.ID, ImprovedShadowBolt },
+                { Misery.ID, Misery },
+                { ShadowWeaving.ID, ShadowWeaving },
+                { ImprovedScorch.ID, ImprovedScorch },
 
                 { ImprovedSealOfTheCrusader.ID, ImprovedSealOfTheCrusader },
                 { Conviction.ID, Conviction },

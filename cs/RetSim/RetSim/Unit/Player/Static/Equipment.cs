@@ -1,6 +1,4 @@
 ﻿using RetSim.Items;
-using System;
-using System.Collections.Generic;
 
 namespace RetSim
 {

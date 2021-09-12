@@ -26,7 +26,7 @@ namespace RetSim.SpellEffects
 
             for (int i = 0; i < Number; i++)
             {
-                fight.Queue.Add(new CastEvent(Proc, fight, fight.Timestamp));
+                fight.Queue.Add(new CastEvent(Proc, fight.Player, fight.Enemy, fight, fight.Timestamp));
             }
 
             return ProcMask.None;

@@ -1,14 +1,15 @@
 ﻿using RetSim.AuraEffects;
-using System.Collections.Generic;
 
 namespace RetSim
 {
     public class Aura
     {
+        public Unit Caster { get; init; }
         public Spell Parent { get; set; }
         public virtual int Duration { get; init; } = 0;
         public int MaxStacks { get; init; } = 1;
         public List<AuraEffect> Effects { get; set; } = null;
+        public bool IsDebuff { get; init; } = false;
 
         public override string ToString()
         {

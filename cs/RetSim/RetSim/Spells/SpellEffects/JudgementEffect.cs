@@ -10,9 +10,9 @@ namespace RetSim.SpellEffects
             {
                 var seal = fight.Player.Auras.CurrentSeal;
 
-                fight.Player.Auras.Cancel(seal, fight);
+                fight.Player.Auras.Cancel(seal, fight.Player, fight.Player, fight);
 
-                fight.Queue.Add(new CastEvent(seal.Judgement, fight, fight.Timestamp));
+                fight.Queue.Add(new CastEvent(seal.Judgement, fight.Player, fight.Enemy, fight, fight.Timestamp));
             }
             
             return ProcMask.None;

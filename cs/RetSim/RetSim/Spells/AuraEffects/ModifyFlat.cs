@@ -8,14 +8,14 @@
         protected int PreviousAmount;
         protected int Difference;
 
-        public override void Apply(Aura aura, FightSimulation fight)
+        public override void Apply(Aura aura, Unit caster, Unit target, FightSimulation fight)
         {
             CurrentAmount = Amount * fight.Player.Auras[aura].Stacks;
             PreviousAmount = CurrentAmount - Amount;
             Difference = CurrentAmount - PreviousAmount;
         }
 
-        public override void Remove(Aura aura, FightSimulation fight)
+        public override void Remove(Aura aura, Unit caster, Unit target, FightSimulation fight)
         {
             CurrentAmount = PreviousAmount;
             PreviousAmount -= Amount;

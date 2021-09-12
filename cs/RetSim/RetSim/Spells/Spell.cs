@@ -1,6 +1,4 @@
 ﻿using RetSim.SpellEffects;
-using System;
-using System.Collections.Generic;
 
 namespace RetSim
 {
@@ -14,6 +12,7 @@ namespace RetSim
         public SpellGCD GCD { get; init; } = null;
         public Aura Aura { get; set; } = null;
         public List<SpellEffect> Effects { get; set; } = null;
+        public SpellTarget Target { get; init; } = SpellTarget.Self;
         public Func<Player, bool> Requirements { get; init; }
     }
 
@@ -22,6 +21,13 @@ namespace RetSim
     public class Talent : Spell { }
 
     public class Racial : Spell { }
+
+    public enum SpellTarget
+    {
+        Self = 0,
+        Enemy = 1,
+        Ally = 2
+    }
 
     public class SpellGCD
     {

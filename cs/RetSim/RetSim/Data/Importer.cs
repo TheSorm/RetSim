@@ -1,6 +1,4 @@
 ﻿using RetSim.Items;
-using System.Collections.Generic;
-using System.IO;
 using System.Text.Json;
 using static RetSim.Data.Items;
 

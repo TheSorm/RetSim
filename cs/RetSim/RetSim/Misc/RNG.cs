@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace RetSim
+﻿namespace RetSim
 {
     public static class RNG
     {

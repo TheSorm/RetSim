@@ -8,14 +8,14 @@
         protected float PreviousMod;
         protected float RelativeDifference;
 
-        public override void Apply(Aura aura, FightSimulation fight)
+        public override void Apply(Aura aura, Unit caster, Unit target, FightSimulation fight)
         {
             CurrentMod = 100 + (Percentage * fight.Player.Auras[aura].Stacks);
             PreviousMod = CurrentMod - Percentage;            
             RelativeDifference = CurrentMod / PreviousMod;
         }
 
-        public override void Remove(Aura aura, FightSimulation fight)
+        public override void Remove(Aura aura, Unit caster, Unit target, FightSimulation fight)
         {
             CurrentMod = (int)PreviousMod;
             PreviousMod -= Percentage;

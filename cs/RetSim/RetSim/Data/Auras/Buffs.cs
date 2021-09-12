@@ -1,5 +1,4 @@
 ﻿using RetSim.AuraEffects;
-using System.Collections.Generic;
 
 namespace RetSim.Data
 {
@@ -9,7 +8,7 @@ namespace RetSim.Data
         {
             Effects = new()
             {
-                new GainStats() { Stats = new() { { StatName.AttackPower, 220 } } }
+                new ModifyStats() { Stats = new() { { StatName.AttackPower, 220 } } }
             }
         };
 
@@ -25,7 +24,7 @@ namespace RetSim.Data
         {
             Effects = new()
             {
-                new GainStats() { Stats = new() { { StatName.ManaPer5, 41 } } }
+                new ModifyStats() { Stats = new() { { StatName.ManaPer5, 41 } } }
             }
         };
 
@@ -33,7 +32,7 @@ namespace RetSim.Data
         {
             Effects = new()
             {
-                new GainStats() { Stats = new() {{ StatName.AttackPower, 306 } } }
+                new ModifyStats() { Stats = new() {{ StatName.AttackPower, 306 } } }
             }
         };
 
@@ -41,7 +40,7 @@ namespace RetSim.Data
         {
             Effects = new()
             {
-                new GainStats() { Stats = new() { { StatName.AttackPower, 125 } } }
+                new ModifyStats() { Stats = new() { { StatName.AttackPower, 125 } } }
             }
         };
 
@@ -61,7 +60,7 @@ namespace RetSim.Data
         {
             Effects = new()
             {
-                new GainStats() { Stats = new() { { StatName.Strength, 86 } } }
+                new ModifyStats() { Stats = new() { { StatName.Strength, 86 } } }
             }
         };
 
@@ -69,7 +68,7 @@ namespace RetSim.Data
         {
             Effects = new()
             {
-                new GainStats() { Stats = new() { { StatName.Agility, 77 } } }
+                new ModifyStats() { Stats = new() { { StatName.Agility, 77 } } }
             }
         };
 
@@ -77,7 +76,7 @@ namespace RetSim.Data
         {
             Effects = new()
             {
-                new GainStats() { Stats = new() { { StatName.ManaPer5, 50 } } }
+                new ModifyStats() { Stats = new() { { StatName.ManaPer5, 50 } } }
             }
         };
 
@@ -93,7 +92,7 @@ namespace RetSim.Data
         {
             Effects = new()
             {
-                new GainStats() { Stats = new() { { StatName.Armor, 340 }, { StatName.Strength, 14 }, { StatName.Agility, 14 }, { StatName.Intellect, 14 }, { StatName.Stamina, 14 } } }
+                new ModifyStats() { Stats = new() { { StatName.Armor, 340 }, { StatName.Strength, 14 }, { StatName.Agility, 14 }, { StatName.Intellect, 14 }, { StatName.Stamina, 14 } } }
             }
         };
 
@@ -101,7 +100,7 @@ namespace RetSim.Data
         {
             Effects = new()
             {
-                new GainStats() { Stats = new() { { StatName.CritChance, 5 } } }
+                new ModifyStats() { Stats = new() { { StatName.CritChance, 5 } } }
             }
         };
 
@@ -109,7 +108,7 @@ namespace RetSim.Data
         {
             Effects = new()
             {
-                new GainStats() { Stats = new() { { StatName.Stamina, 79 } } }
+                new ModifyStats() { Stats = new() { { StatName.Stamina, 79 } } }
             }
         };
 
@@ -117,7 +116,7 @@ namespace RetSim.Data
         {
             Effects = new()
             {
-                new GainStats() { Stats = new() { { StatName.SpellPower, 20 } } }
+                new ModifyStats() { Stats = new() { { StatName.SpellPower, 20 } } }
             }
         };
 
@@ -125,15 +124,15 @@ namespace RetSim.Data
         {
             Effects = new()
             {
-                new GainStats() { Stats = new() { { StatName.Intellect, 40 } } }
+                new ModifyStats() { Stats = new() { { StatName.Intellect, 40 } } }
             }
         };
 
         public static readonly Aura HeroicPresence = new()
-        {
+        {            
             Effects = new()
             {
-                new GainStats() { Stats = new() { { StatName.HitChance, 1 } } }
+                new ModifyStats() { Stats = new() { { StatName.HitChance, 1 } } }
             }
         };
 
@@ -141,7 +140,7 @@ namespace RetSim.Data
         {
             Effects = new()
             {
-                new GainStats() { Stats = new() { { StatName.SpellHit, 1 } } }
+                new ModifyStats() { Stats = new() { { StatName.SpellHit, 1 } } }
             }
         };
     }

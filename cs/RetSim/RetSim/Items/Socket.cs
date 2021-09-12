@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace RetSim.Items
+﻿namespace RetSim.Items
 {
     public class Socket
     {

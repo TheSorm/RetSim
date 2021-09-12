@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace RetSim.Log
+﻿namespace RetSim.Log
 {
     public class CombatLog
     {

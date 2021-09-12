@@ -1,6 +1,6 @@
 ﻿namespace RetSim.Log
 {
-    public class AuraEntry : LogEntry
+    public class BuffEntry : LogEntry
     {
         public string Source { get; init; } //TODO: Change Source to ID, add Name
         public int Stacks { get; init; }

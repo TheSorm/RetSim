@@ -9,6 +9,7 @@ namespace RetSim.Data
         {
             ID = 1,
             Name = "Melee",
+            Target = SpellTarget.Enemy,
 
             Effects = new()
                 {
@@ -30,6 +31,7 @@ namespace RetSim.Data
             ManaCost = 236,
             Cooldown = 6000,
             GCD = new() { Category = AttackCategory.Physical },
+            Target = SpellTarget.Enemy,
 
             Effects = new()
                 {
@@ -52,6 +54,7 @@ namespace RetSim.Data
             Name = "Judgement",
             ManaCost = 148,
             Cooldown = 10000,
+            Target = SpellTarget.Enemy,
 
             Effects = new() { new JudgementEffect() }
         };
@@ -68,6 +71,7 @@ namespace RetSim.Data
         {
             ID = 20424,
             Name = "Seal of Command",
+            Target = SpellTarget.Enemy,
 
             Effects = new()
                 {
@@ -89,6 +93,7 @@ namespace RetSim.Data
         {
             ID = 27171,
             Name = "Judgement of Command",
+            Target = SpellTarget.Enemy,
 
             Effects = new()
                 {
@@ -118,6 +123,7 @@ namespace RetSim.Data
         {
             ID = 31893,
             Name = "Seal of Blood",
+            Target = SpellTarget.Enemy,
 
             Effects = new()
                 {
@@ -136,6 +142,7 @@ namespace RetSim.Data
         {
             ID = 31898,
             Name = "Judgement of Blood",
+            Target = SpellTarget.Enemy,
 
             Effects = new()
                 {
@@ -180,6 +187,7 @@ namespace RetSim.Data
         {
             ID = 2,
             Name = "Melee (Windfury)",
+            Target = SpellTarget.Enemy,
 
             Effects = new()
                 {

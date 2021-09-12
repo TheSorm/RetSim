@@ -4,29 +4,29 @@
     {
         private Seal Seal { get; set; }
 
-        public override void Apply(Aura aura, FightSimulation fight)
+        public override void Apply(Aura aura, Unit caster, Unit target, FightSimulation fight)
         {
             Seal = (Seal)aura;
 
             foreach (Seal other in Seal.ExclusiveWith)
             {
-                if (fight.Player.Auras.IsActive(other))
+                if (target.Auras.IsActive(other))
                 {
                     if (other.Persist == 0)
-                        fight.Player.Auras[other].End.Timestamp = fight.Timestamp;
+                       target.Auras[other].End.Timestamp = fight.Timestamp;
 
                     else
-                        fight.Player.Auras[other].End.Timestamp = fight.Timestamp + other.Persist;
+                        target.Auras[other].End.Timestamp = fight.Timestamp + other.Persist;
                 }
             }
 
-            fight.Player.Auras.CurrentSeal = Seal;
+            target.Auras.CurrentSeal = Seal;
         }
 
-        public override void Remove(Aura aura, FightSimulation fight)
+        public override void Remove(Aura aura, Unit caster, Unit target, FightSimulation fight)
         {
-            if (fight.Player.Auras.CurrentSeal != null && fight.Player.Auras.CurrentSeal == Seal)
-                fight.Player.Auras.CurrentSeal = null;
+            if (target.Auras.CurrentSeal != null && target.Auras.CurrentSeal == Seal)
+                target.Auras.CurrentSeal = null;
         }
     }
 }

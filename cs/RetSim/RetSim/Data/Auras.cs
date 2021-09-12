@@ -1,5 +1,4 @@
 ﻿using RetSim.AuraEffects;
-using System.Collections.Generic;
 
 namespace RetSim.Data
 {
@@ -94,6 +93,23 @@ namespace RetSim.Data
                 { Spells.Precision.ID, Precision },
                 { Spells.DivineStrength.ID, DivineStrength },
                 { Spells.DivineIntellect.ID, DivineIntellect },
+
+                { Spells.SunderArmor.ID, SunderArmor },
+                { Spells.ExposeArmor.ID, ExposeArmor },
+                { Spells.ImprovedExposeArmor.ID, ImprovedExposeArmor },
+                { Spells.FaerieFire.ID, FaerieFire },
+                { Spells.ImprovedFaerieFire.ID, ImprovedFaerieFire },
+                { Spells.CurseOfRecklessness.ID, CurseOfRecklessness },
+                { Spells.CurseOfTheElements.ID, CurseOfTheElements },
+                { Spells.ImprovedCurseOfTheElements.ID, ImprovedCurseOfTheElements },
+                { Spells.ImprovedSealOfTheCrusaderz.ID, ImprovedSealOfTheCrusaderz },
+                { Spells.JudgementOfWisdom.ID, JudgementOfWisdom },
+                { Spells.ImprovedHuntersMark.ID, ImprovedHuntersMark },
+                { Spells.ExposeWeakness.ID, ExposeWeakness },
+                { Spells.ImprovedShadowBolt.ID, ImprovedShadowBolt },
+                { Spells.Misery.ID, Misery },
+                { Spells.ShadowWeaving.ID, ShadowWeaving },
+                { Spells.ImprovedScorch.ID, ImprovedScorch },
 
                 { Spells.Relentless.ID, Relentless },
                 { Spells.DragonspineTrophy.ID, DragonspineTrophy },

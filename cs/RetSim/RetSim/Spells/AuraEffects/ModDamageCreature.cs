@@ -1,25 +1,23 @@
-﻿using System.Collections.Generic;
-
-namespace RetSim.AuraEffects
+﻿namespace RetSim.AuraEffects
 {
     class ModDamageCreature : ModDamageSchool
     {
         public List<CreatureType> Types { get; init; }
 
         protected bool MatchingType = false;
-        public override void Apply(Aura aura, FightSimulation fight)
+        public override void Apply(Aura aura, Unit caster, Unit target, FightSimulation fight)
         {
             if (Types.Contains(fight.Enemy.Type))
             {
                 MatchingType = true;
-                base.Apply(aura, fight);
+                base.Apply(aura, caster, target, fight);
             }
         }
 
-        public override void Remove(Aura aura, FightSimulation fight)
+        public override void Remove(Aura aura, Unit caster, Unit target, FightSimulation fight)
         {
             if (MatchingType)
-                base.Remove(aura, fight);
+                base.Remove(aura, caster, target, fight);
         }
     }
 }

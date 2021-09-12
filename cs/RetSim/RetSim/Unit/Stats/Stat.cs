@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace RetSim
+﻿namespace RetSim
 {
     public abstract class Stat
     {

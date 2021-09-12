@@ -1,29 +1,23 @@
 ﻿using RetSim.Events;
 using RetSim.SpellEffects;
-using System.Collections.Generic;
 
 namespace RetSim
 {
-    public class Player
+    public class Player : Unit
     {
-        public PlayerStats Stats { get; init; }
-        public Modifiers Modifiers { get; init; }
-
         public Equipment Equipment { get; init; }
         public Weapon Weapon { get; init; }
         public Race Race { get; init; }
 
         public Spellbook Spellbook { get; init; }
-        public Auras Auras { get; init; }
         public Procs Procs { get; init; }
         public GCD GCD { get; init; }
 
-        public List<Talent> Talents { get; init; }
-        
+        public List<Talent> Talents { get; init; }        
 
         public AutoAttackEvent NextAutoAttack { get; set; }
 
-        public Player(Race race, Equipment equipment, List<Talent> talents)
+        public Player(string name, Race race, Equipment equipment, List<Talent> talents) : base(name, CreatureType.Humanoid)
         {
             Talents = talents;
             Equipment = equipment;
@@ -34,14 +28,19 @@ namespace RetSim
             Modifiers = new Modifiers();
             Weapon = new Weapon(this);
             
-            Auras = new Auras(this);
+            Auras = new Auras();
             Procs = new Procs(this);
             GCD = new GCD();
+
+            foreach (Aura aura in Data.Auras.ByID.Values)
+                Auras.Add(aura);
         }
 
-        public static ProcMask Cast(Spell spell, FightSimulation fight)
+        public override ProcMask Cast(Spell spell, FightSimulation fight)
         {
             ProcMask mask = ProcMask.None;
+
+            Unit target = GetSpellTarget(spell.Target, fight);
 
             SpellState state = fight.Player.Spellbook[spell.ID];
 
@@ -52,7 +51,7 @@ namespace RetSim
                 fight.Queue.Add(new GCDEndEvent(fight, fight.Timestamp + spell.GCD.Duration));
 
             if (spell.Aura != null)
-                fight.Player.Auras.Apply(spell.Aura, fight);
+                target.Auras.Apply(spell.Aura, this, target, fight);
 
             if (spell.Effects != null)
             {
@@ -63,14 +62,19 @@ namespace RetSim
             return mask;
         }
 
+        protected override Unit GetSpellTarget(SpellTarget target, FightSimulation fight)
+        {
+            return target switch
+            {
+                SpellTarget.Self => this,
+                SpellTarget.Enemy => fight.Enemy,
+                _ => fight.Player
+            };
+        }
+
         public void CheckForProcs(ProcMask mask, FightSimulation fight)
         {
             Procs.CheckProcs(mask, fight);
-        }
-
-        public void Apply(Aura aura, FightSimulation fight)
-        {
-            Auras.Apply(aura, fight);
         }
 
         public int TimeOfNextSwing()

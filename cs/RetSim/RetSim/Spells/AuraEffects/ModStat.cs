@@ -1,29 +1,27 @@
-﻿using System.Collections.Generic;
-
-namespace RetSim.AuraEffects
+﻿namespace RetSim.AuraEffects
 {
     class ModStat : ModifyPercent
     {
         public List<StatName> Stats { get; init; }
 
-        public override void Apply(Aura aura, FightSimulation fight)
+        public override void Apply(Aura aura, Unit caster, Unit target, FightSimulation fight)
         {
-            base.Apply(aura, fight);
+            base.Apply(aura, caster, target, fight);
 
             foreach (StatName stat in Stats)
             {
-                fight.Player.Stats[stat].Modifier *= RelativeDifference;
+                target.Stats[stat].Modifier *= RelativeDifference;
             }
         }
 
-        public override void Remove(Aura aura, FightSimulation fight)
+        public override void Remove(Aura aura, Unit caster, Unit target, FightSimulation fight)
         {
             foreach (StatName stat in Stats)
             {
-                fight.Player.Stats[stat].Modifier /= RelativeDifference;
+                target.Stats[stat].Modifier /= RelativeDifference;
             }
 
-            base.Remove(aura, fight);
+            base.Remove(aura, caster, target, fight);
         }
     }
 }

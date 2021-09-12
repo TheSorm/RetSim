@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace RetSim.Items
+﻿namespace RetSim.Items
 {
     public class ItemSet
     {

@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace RetSim.Events
+﻿namespace RetSim.Events
 {
     public abstract class Event : IComparable<Event>
     {

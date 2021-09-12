@@ -33,7 +33,7 @@ namespace RetSimWeb
             Console.WriteLine(System.DateTime.Now.ToString());
 			for (int i = 0; i < iterations; i++)
 			{
-				FightSimulation fight = new(new Player(Races.Human, new() { Weapon = RetSim.Data.Items.Weapons[28429] }, new()), new Enemy(Armor.Warrior, CreatureType.Demon), new EliteTactic(), new(), 180000, 200000);
+				FightSimulation fight = new(new Player(Races.Human, new() { Weapon = RetSim.Data.Items.Weapons[28429] }, new()), new Enemy(ArmorCategory.Warrior, CreatureType.Demon), new EliteTactic(), new(), 180000, 200000);
 				fight.Run();
 
 				localDps += fight.CombatLog.DPS;

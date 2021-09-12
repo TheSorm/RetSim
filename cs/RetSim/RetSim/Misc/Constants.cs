@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace RetSim
+﻿namespace RetSim
 {
     public static class Constants
     {
@@ -83,9 +81,9 @@ namespace RetSim
 
             public static readonly Dictionary<float, int> ResistanceProbabilities = new()
             {
-                { 0.25f, 1 },
-                { 0.5f, 5 },
-                { 0.75f, 18 },
+                { 0.25f, 1 }, //75% resist, 1% chance
+                { 0.5f, 5 }, //50% resist, 4% chance
+                { 0.75f, 18 }, //25% resist, 13% chance
                 //{ 1f, 82 },
             };
 

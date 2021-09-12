@@ -19,7 +19,7 @@ namespace RetSim
         public float Mitigation { get; private set; }
 
         public float SpellPowerBonus => Effect.Coefficient * (Player.Stats[StatName.SpellPower].Value + State.BonusSpellPower);
-        public float SchoolModifier => Player.Modifiers.Schools.GetValue(Effect.School);
+        public float SchoolModifier => Player.Modifiers.SchoolModifiers.GetValue(Effect.School);
         public float DamageModifier { get; private set; }
 
         public float JotCBonus => Effect.HolyCoefficient == 0 ? SpellPowerBonus : Effect.HolyCoefficient * (Player.Stats[StatName.SpellPower].Value + State.BonusSpellPower);
@@ -212,7 +212,7 @@ namespace RetSim
 
         public static float GetArmorDR(Player player, Enemy enemy)
         {
-            int effective = enemy.EffectiveArmor((int)player.Stats[StatName.ArmorPenetration].Value);
+            int effective = enemy.GetEffectiveArmor(player);
 
             float dr = effective / (effective + Constants.Boss.ArmorMagicNumber);
 

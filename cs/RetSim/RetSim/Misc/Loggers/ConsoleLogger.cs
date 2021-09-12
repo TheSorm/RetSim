@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace RetSim.Loggers
+﻿namespace RetSim.Loggers
 {
     class ConsoleLogger : AbstractLogger
     {

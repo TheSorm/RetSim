@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace RetSim
+﻿namespace RetSim
 {
     public class Proc
     {

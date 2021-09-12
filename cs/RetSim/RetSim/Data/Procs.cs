@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace RetSim.Data
+﻿namespace RetSim.Data
 {
     public static class Procs
     {
