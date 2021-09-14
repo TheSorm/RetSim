@@ -1,4 +1,6 @@
-﻿namespace RetSim.Log
+﻿using RetSim.Misc;
+
+namespace RetSim.Simulation.CombatLogEntries
 {
     public abstract class LogEntry
     {

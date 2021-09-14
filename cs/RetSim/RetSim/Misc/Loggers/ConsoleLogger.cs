@@ -1,20 +1,19 @@
-﻿namespace RetSim.Loggers
+﻿namespace RetSim.Misc.Loggers;
+
+class ConsoleLogger : AbstractLogger
 {
-    class ConsoleLogger : AbstractLogger
+    public override void Log(string message)
     {
-        public override void Log(string message)
-        {
-            Console.WriteLine(message);
-        }
+        Console.WriteLine(message);
+    }
 
-        public override void DisableInput()
-        {
-            Console.CursorVisible = false;
-        }
+    public override void DisableInput()
+    {
+        Console.CursorVisible = false;
+    }
 
-        public override void EnableInput()
-        {
-            Console.CursorVisible = true;
-        }
+    public override void EnableInput()
+    {
+        Console.CursorVisible = true;
     }
 }

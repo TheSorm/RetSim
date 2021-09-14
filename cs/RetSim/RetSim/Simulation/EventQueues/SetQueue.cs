@@ -1,6 +1,7 @@
-﻿using RetSim.Events;
+﻿using RetSim.Simulation.Events;
+using System.Linq;
 
-namespace RetSim.EventQueues
+namespace RetSim.Simulation.EventQueues
 {
     public class SetQueue : SortedSet<Event>, IEventQueue
     {

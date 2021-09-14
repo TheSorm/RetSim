@@ -1,35 +1,39 @@
-﻿using RetSim.Events;
-using RetSim.Log;
+﻿using RetSim.Simulation;
+using RetSim.Simulation.CombatLogEntries;
+using RetSim.Simulation.Events;
+using RetSim.Units.Player.State;
+using RetSim.Units.UnitStats;
 
-namespace RetSim.SpellEffects
+namespace RetSim.Spells.SpellEffects;
+
+class ExtraAttacks : SpellEffect
 {
-    class ExtraAttacks : SpellEffect
+    Spell Proc { get; init; }
+    int Number { get; init; }
+
+    public ExtraAttacks(Spell proc, int number)
     {
-        Spell Proc { get; init; }
-        int Number { get; init; }
+        Proc = proc;
+        Number = number;
+    }
 
-        public ExtraAttacks(Spell proc, int number)
+    public override ProcMask Resolve(FightSimulation fight, SpellState state)
+    {
+        var entry = new ExtraAttacksEntry
         {
-            Proc = proc;
-            Number = number;
+            Timestamp = fight.Timestamp,
+            Mana = (int)fight.Player.Stats[StatName.Mana].Value,
+            Source = Parent.Name,
+            Number = Number
+        };
+
+        fight.CombatLog.Add(entry);
+
+        for (int i = 0; i < Number; i++)
+        {
+            fight.Queue.Add(new CastEvent(Proc, fight.Player, fight.Enemy, fight, fight.Timestamp));
         }
 
-        public override ProcMask Resolve(FightSimulation fight, SpellState state)
-        {
-            fight.CombatLog.Add(new ExtraAttacksEntry()
-            {
-                Timestamp = fight.Timestamp,
-                Mana = (int)fight.Player.Stats[StatName.Mana].Value,
-                Source = Parent.Name,
-                Number = Number
-            });
-
-            for (int i = 0; i < Number; i++)
-            {
-                fight.Queue.Add(new CastEvent(Proc, fight.Player, fight.Enemy, fight, fight.Timestamp));
-            }
-
-            return ProcMask.None;
-        }
+        return ProcMask.None;
     }
 }

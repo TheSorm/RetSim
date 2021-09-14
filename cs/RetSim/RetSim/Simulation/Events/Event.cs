@@ -1,38 +1,39 @@
-﻿namespace RetSim.Events
+﻿using RetSim.Spells;
+
+namespace RetSim.Simulation.Events;
+
+public abstract class Event : IComparable<Event>
 {
-    public abstract class Event : IComparable<Event>
+    private int timestamp;
+    public int Timestamp { get { return timestamp; } set { UpdateTimestamp(value); } }
+    public int Priority { get; init; }
+
+    protected FightSimulation Fight { get; init; }
+
+    protected Event(FightSimulation fight, int timestamp, int priority = 0)
     {
-        private int timestamp;
-        public int Timestamp { get { return timestamp; } set { UpdateTimestamp(value); } }
-        public int Priority { get; init; }
+        Fight = fight;
 
-        protected FightSimulation Fight { get; init; }
+        this.timestamp = timestamp;
+        Priority = priority;
+    }
 
-        protected Event(FightSimulation fight, int timestamp, int priority = 0)
-        {
-            Fight = fight;
+    public abstract ProcMask Execute(object arguments = null);
 
-            this.timestamp = timestamp;
-            Priority = priority;
-        }
+    public void SetTimeStemp(int value)
+    {
+        timestamp = value;
+    }
 
-        public abstract ProcMask Execute(object arguments = null);
+    private void UpdateTimestamp(int value)
+    {
+        Fight.Queue.UpdateRemove(this);
+        timestamp = value;
+        Fight.Queue.UpdateAdd(this);
+    }
 
-        public void SetTimeStemp(int value)
-        {
-            timestamp = value;
-        }
-
-        private void UpdateTimestamp(int value)
-        {
-            Fight.Queue.UpdateRemove(this);
-            timestamp = value;
-            Fight.Queue.UpdateAdd(this);
-        }
-
-        public int CompareTo(Event other)
-        {
-            return Timestamp.CompareTo(other.Timestamp) == 0 ? Priority.CompareTo(other.Priority) : Timestamp.CompareTo(other.Timestamp);
-        }
+    public int CompareTo(Event other)
+    {
+        return Timestamp.CompareTo(other.Timestamp) == 0 ? Priority.CompareTo(other.Priority) : Timestamp.CompareTo(other.Timestamp);
     }
 }

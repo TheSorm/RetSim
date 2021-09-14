@@ -1,4 +1,6 @@
-﻿namespace RetSim
+﻿using RetSim.Units.UnitStats;
+
+namespace RetSim.Units.Enemy
 {
     public class EnemyStats : Stats
     {

@@ -1,61 +1,65 @@
-﻿using RetSim.Log;
+﻿using RetSim.Misc;
+using RetSim.Simulation;
+using RetSim.Simulation.CombatLogEntries;
+using RetSim.Units.Player;
+using RetSim.Units.Player.State;
+using RetSim.Units.UnitStats;
 
-namespace RetSim.SpellEffects
+namespace RetSim.Spells.SpellEffects;
+
+public class DamageEffect : SpellEffect
 {
-    public class DamageEffect : SpellEffect
+    public School School { get; init; } = School.Physical;
+    public float Coefficient { get; init; } = 0;
+    public float HolyCoefficient { get; init; } = 0;
+    public DefenseType DefenseCategory { get; init; } = DefenseType.Special;
+    public AttackCategory CritCategory { get; init; } = AttackCategory.Physical;
+    public bool Normalized { get; init; } = false;
+    public ProcMask OnCast { get; init; } = ProcMask.None;
+    public ProcMask OnHit { get; init; } = ProcMask.None;
+    public ProcMask OnCrit { get; init; } = ProcMask.None;
+
+    public virtual float GetBaseDamage(Player player, SpellState state)
     {
-        public School School { get; init; } = School.Physical;
-        public float Coefficient { get; init; } = 0;
-        public float HolyCoefficient { get; init; } = 0;
-        public DefenseType DefenseCategory { get; init; } = DefenseType.Special;
-        public AttackCategory CritCategory { get; init; } = AttackCategory.Physical;
-        public bool Normalized { get; init; } = false;
-        public ProcMask OnCast { get; init; } = ProcMask.None;
-        public ProcMask OnHit { get; init; } = ProcMask.None;
-        public ProcMask OnCrit { get; init; } = ProcMask.None;
+        return RNG.RollRange(MinEffect, MaxEffect) * state.EffectBonusPercent + state.EffectBonus;
+    }
 
-        public virtual float GetBaseDamage(Player player, SpellState state)
+    public virtual float CalculateDamage(Player player, Attack attack, SpellState state)
+    {
+        return (GetBaseDamage(player, state) + attack.SpellPowerBonus) * attack.SchoolModifier * attack.DamageModifier;
+    }
+
+    public override ProcMask Resolve(FightSimulation fight, SpellState state)
+    {
+        ProcMask mask = OnCast;
+
+        var attack = new Attack(fight.Player, fight.Enemy, this, state);
+
+        if (attack.AttackResult == AttackResult.Hit)
         {
-            return RNG.RollRange(MinEffect, MaxEffect) * state.EffectBonusPercent + state.EffectBonus;
+            mask |= OnHit;
+
+            if (attack.DamageResult == DamageResult.Crit)
+                mask |= OnCrit;
+
+            attack.ResolveDamage();
         }
 
-        public virtual float CalculateDamage(Player player, Attack attack, SpellState state)
+        var entry = new DamageEntry()
         {
-            return (GetBaseDamage(player, state) + attack.SpellPowerBonus) * attack.SchoolModifier * attack.DamageModifier;
-        }
+            Timestamp = fight.Timestamp,
+            Mana = (int)fight.Player.Stats[StatName.Mana].Value,
+            Source = Parent.Name,
+            AttackResult = attack.AttackResult,
+            Damage = attack.Damage,
+            School = School,
+            Crit = attack.DamageResult == DamageResult.Crit,
+            Glancing = attack.Glancing,
+            Mitigation = attack.Mitigation
+        };
 
-        public override ProcMask Resolve(FightSimulation fight, SpellState state)
-        {
-            ProcMask mask = OnCast;
+        fight.CombatLog.Add(entry);
 
-            var attack = new Attack(fight.Player, fight.Enemy, this, state);
-
-            if (attack.AttackResult == AttackResult.Hit)
-            {
-                mask |= OnHit;
-
-                if (attack.DamageResult == DamageResult.Crit)
-                    mask |= OnCrit;
-
-                attack.ResolveDamage();
-            }
-
-            var entry = new DamageEntry()
-            {
-                Timestamp = fight.Timestamp,
-                Mana = (int)fight.Player.Stats[StatName.Mana].Value,
-                Source = Parent.Name,
-                AttackResult = attack.AttackResult,
-                Damage = attack.Damage,
-                School = School,
-                Crit = attack.DamageResult == DamageResult.Crit,
-                Glancing = attack.Glancing,
-                Mitigation = attack.Mitigation
-            };
-
-            fight.CombatLog.Add(entry);
-
-            return mask;
-        }
+        return mask;
     }
 }

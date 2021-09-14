@@ -1,27 +1,29 @@
-﻿namespace RetSim.AuraEffects
+﻿using RetSim.Simulation;
+using RetSim.Units;
+
+namespace RetSim.Spells.AuraEffects;
+
+class ModDamageSchool : ModifyPercent
 {
-    class ModDamageSchool : ModifyPercent
+    public List<School> Schools { get; init; }
+
+    public override void Apply(Aura aura, Unit caster, Unit target, FightSimulation fight)
     {
-        public List<School> Schools { get; init; }
+        base.Apply(aura, caster, target, fight);
 
-        public override void Apply(Aura aura, Unit caster, Unit target, FightSimulation fight)
+        foreach (School school in Schools)
         {
-            base.Apply(aura, caster, target, fight);
+            fight.Player.Modifiers.SchoolModifiers[school] *= RelativeDifference;
+        }
+    }
 
-            foreach (School school in Schools)
-            {
-                fight.Player.Modifiers.SchoolModifiers[school] *= RelativeDifference;
-            }
+    public override void Remove(Aura aura, Unit caster, Unit target, FightSimulation fight)
+    {
+        foreach (School school in Schools)
+        {
+            fight.Player.Modifiers.SchoolModifiers[school] /= RelativeDifference;
         }
 
-        public override void Remove(Aura aura, Unit caster, Unit target, FightSimulation fight)
-        {
-            foreach (School school in Schools)
-            {
-                fight.Player.Modifiers.SchoolModifiers[school] /= RelativeDifference;
-            }
-
-            base.Remove(aura, caster, target, fight);
-        }
+        base.Remove(aura, caster, target, fight);
     }
 }

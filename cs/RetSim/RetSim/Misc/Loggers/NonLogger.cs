@@ -1,14 +1,13 @@
-﻿namespace RetSim.Loggers
+﻿namespace RetSim.Misc.Loggers;
+
+class NonLogger : AbstractLogger
 {
-    class NonLogger : AbstractLogger
-    {
-        public override void Log(string message)
-        { }
+    public override void Log(string message)
+    { }
 
-        public override void DisableInput()
-        { }
+    public override void DisableInput()
+    { }
 
-        public override void EnableInput()
-        { }        
-    }
+    public override void EnableInput()
+    { }
 }

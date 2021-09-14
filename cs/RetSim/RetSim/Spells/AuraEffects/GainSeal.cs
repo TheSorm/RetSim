@@ -1,32 +1,34 @@
-﻿namespace RetSim.AuraEffects
+﻿using RetSim.Simulation;
+using RetSim.Units;
+
+namespace RetSim.Spells.AuraEffects;
+
+class GainSeal : AuraEffect
 {
-    class GainSeal : AuraEffect
+    private Seal Seal { get; set; }
+
+    public override void Apply(Aura aura, Unit caster, Unit target, FightSimulation fight)
     {
-        private Seal Seal { get; set; }
+        Seal = (Seal)aura;
 
-        public override void Apply(Aura aura, Unit caster, Unit target, FightSimulation fight)
+        foreach (Seal other in Seal.ExclusiveWith)
         {
-            Seal = (Seal)aura;
-
-            foreach (Seal other in Seal.ExclusiveWith)
+            if (target.Auras.IsActive(other))
             {
-                if (target.Auras.IsActive(other))
-                {
-                    if (other.Persist == 0)
-                       target.Auras[other].End.Timestamp = fight.Timestamp;
+                if (other.Persist == 0)
+                    target.Auras[other].End.Timestamp = fight.Timestamp;
 
-                    else
-                        target.Auras[other].End.Timestamp = fight.Timestamp + other.Persist;
-                }
+                else
+                    target.Auras[other].End.Timestamp = fight.Timestamp + other.Persist;
             }
-
-            target.Auras.CurrentSeal = Seal;
         }
 
-        public override void Remove(Aura aura, Unit caster, Unit target, FightSimulation fight)
-        {
-            if (target.Auras.CurrentSeal != null && target.Auras.CurrentSeal == Seal)
-                target.Auras.CurrentSeal = null;
-        }
+        target.Auras.CurrentSeal = Seal;
+    }
+
+    public override void Remove(Aura aura, Unit caster, Unit target, FightSimulation fight)
+    {
+        if (target.Auras.CurrentSeal != null && target.Auras.CurrentSeal == Seal)
+            target.Auras.CurrentSeal = null;
     }
 }

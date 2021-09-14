@@ -1,10 +1,9 @@
-﻿namespace RetSim.Loggers
-{
-    public abstract class AbstractLogger
-    {
-        public abstract void Log(string message);
+﻿namespace RetSim.Misc.Loggers;
 
-        public abstract void DisableInput();
-        public abstract void EnableInput();
-    }
+public abstract class AbstractLogger
+{
+    public abstract void Log(string message);
+
+    public abstract void DisableInput();
+    public abstract void EnableInput();
 }

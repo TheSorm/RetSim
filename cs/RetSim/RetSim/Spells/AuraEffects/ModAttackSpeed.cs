@@ -1,26 +1,28 @@
-﻿namespace RetSim.AuraEffects
+﻿using RetSim.Simulation;
+using RetSim.Units;
+
+namespace RetSim.Spells.AuraEffects;
+
+class ModAttackSpeed : ModifyPercent
 {
-    class ModAttackSpeed : ModifyPercent
+    public bool Snapshots { get; init; }
+
+    public override void Apply(Aura aura, Unit caster, Unit target, FightSimulation fight)
     {
-        public bool Snapshots { get; init; }
+        base.Apply(aura, caster, target, fight);
 
-        public override void Apply(Aura aura, Unit caster, Unit target, FightSimulation fight)
-        {
-            base.Apply(aura, caster, target, fight);
+        float previousAttackSpeed = fight.Player.Weapon.EffectiveSpeed;
 
-            float previousAttackSpeed = fight.Player.Weapon.EffectiveSpeed;
-            
-            fight.Player.Modifiers.AttackSpeed *= RelativeDifference;
+        fight.Player.Modifiers.AttackSpeed *= RelativeDifference;
 
-            if (!Snapshots)
-                fight.Player.RecalculateAttack(fight, previousAttackSpeed);
-        }
+        if (!Snapshots)
+            fight.Player.RecalculateAttack(fight, previousAttackSpeed);
+    }
 
-        public override void Remove(Aura aura, Unit caster, Unit target, FightSimulation fight)
-        {
-            fight.Player.Modifiers.AttackSpeed /= RelativeDifference;
+    public override void Remove(Aura aura, Unit caster, Unit target, FightSimulation fight)
+    {
+        fight.Player.Modifiers.AttackSpeed /= RelativeDifference;
 
-            base.Remove(aura, caster, target, fight);
-        }
+        base.Remove(aura, caster, target, fight);
     }
 }

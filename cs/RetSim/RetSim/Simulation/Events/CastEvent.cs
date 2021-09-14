@@ -1,28 +1,30 @@
-﻿namespace RetSim.Events
+﻿using RetSim.Spells;
+using RetSim.Units;
+
+namespace RetSim.Simulation.Events;
+
+public class CastEvent : Event
 {
-    public class CastEvent : Event
+    private const int BasePriority = 3;
+
+    private Spell Spell { get; init; }
+    private Unit Caster { get; init; }
+    private Unit Target { get; init; }
+
+    public CastEvent(Spell spell, Unit caster, Unit target, FightSimulation fight, int timestamp, int priority = 0) : base(fight, timestamp, priority + BasePriority)
     {
-        private const int BasePriority = 3;
+        Spell = spell;
+        Caster = caster;
+        Target = target;
+    }
 
-        private Spell Spell { get; init; }
-        private Unit Caster { get; init; }
-        private Unit Target { get; init; }
+    public override ProcMask Execute(object arguments = null)
+    {
+        return Caster.Cast(Spell, Fight);
+    }
 
-        public CastEvent(Spell spell, Unit caster, Unit target, FightSimulation fight, int timestamp, int priority = 0) : base(fight, timestamp, priority + BasePriority)
-        {
-            Spell = spell;
-            Caster = caster;
-            Target = target;
-        }
-
-        public override ProcMask Execute(object arguments = null)
-        {
-            return Caster.Cast(Spell, Fight);
-        }
-
-        public override string ToString()
-        {
-            return $"{Caster.Name} casts {Spell.Name} on {Target.Name}";
-        }
+    public override string ToString()
+    {
+        return $"{Caster.Name} casts {Spell.Name} on {Target.Name}";
     }
 }

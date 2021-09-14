@@ -1,4 +1,7 @@
-﻿namespace RetSim.Log
+﻿using RetSim.Misc;
+using RetSim.Spells;
+
+namespace RetSim.Simulation.CombatLogEntries
 {
     public class DamageEntry : LogEntry
     {

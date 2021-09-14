@@ -1,4 +1,8 @@
-﻿namespace RetSim
+﻿using RetSim.Spells;
+using RetSim.Units.Player.State;
+using RetSim.Units.UnitStats;
+
+namespace RetSim.Units.Enemy
 {
     public class Enemy : Unit
     {
@@ -17,11 +21,11 @@
                 Auras.Add(aura);
         }
 
-        public int GetEffectiveArmor(Player player)
+        public int GetEffectiveArmor(int penetration)
         {
             int armor = (int)Stats[StatName.Armor].Value;
 
-            return Math.Max(armor - (int)player.Stats[StatName.ArmorPenetration].Value, 0);
+            return Math.Max(armor - penetration, 0);
         }
     }
 

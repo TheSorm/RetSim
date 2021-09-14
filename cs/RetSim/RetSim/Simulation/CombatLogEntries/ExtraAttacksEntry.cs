@@ -1,4 +1,4 @@
-﻿namespace RetSim.Log
+﻿namespace RetSim.Simulation.CombatLogEntries
 {
     public class ExtraAttacksEntry : LogEntry
     {

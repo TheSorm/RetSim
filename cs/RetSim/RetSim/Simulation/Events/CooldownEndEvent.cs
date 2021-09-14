@@ -1,28 +1,30 @@
-﻿namespace RetSim.Events
+﻿using RetSim.Spells;
+using RetSim.Units.Player.State;
+
+namespace RetSim.Simulation.Events;
+
+public class CooldownEndEvent : Event
 {
-    public class CooldownEndEvent : Event
+    private const int BasePriority = 2;
+
+    private SpellState State { get; init; }
+
+    public CooldownEndEvent(SpellState state, FightSimulation fight, int timestamp, int priority = 0) : base(fight, timestamp, priority + BasePriority)
     {
-        private const int BasePriority = 2;
+        State = state;
 
-        private SpellState State { get; init; }
+        Spellbook.StartCooldown(state, this);
+    }
 
-        public CooldownEndEvent(SpellState state, FightSimulation fight, int timestamp, int priority = 0) : base(fight, timestamp, priority + BasePriority)
-        {
-            State = state;
+    public override ProcMask Execute(object arguments = null)
+    {
+        Spellbook.EndCooldown(State);
 
-            Spellbook.StartCooldown(state, this);
-        }
+        return ProcMask.None;
+    }
 
-        public override ProcMask Execute(object arguments = null)
-        {
-            Spellbook.EndCooldown(State);
-
-            return ProcMask.None;
-        }
-
-        public override string ToString()
-        {
-            return $"Cooldown of {State.Spell.Name} ends";
-        }
+    public override string ToString()
+    {
+        return $"Cooldown of {State.Spell.Name} ends";
     }
 }

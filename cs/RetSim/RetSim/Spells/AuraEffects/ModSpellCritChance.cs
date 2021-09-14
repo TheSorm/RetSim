@@ -1,27 +1,29 @@
-﻿namespace RetSim.AuraEffects
+﻿using RetSim.Simulation;
+using RetSim.Units;
+
+namespace RetSim.Spells.AuraEffects;
+
+class ModSpellCritChance : ModifyFlat
 {
-    class ModSpellCritChance : ModifyFlat
+    public List<int> Spells { get; init; }
+
+    public override void Apply(Aura aura, Unit caster, Unit target, FightSimulation fight)
     {
-        public List<int> Spells { get; init; }
+        base.Apply(aura, caster, target, fight);
 
-        public override void Apply(Aura aura, Unit caster, Unit target, FightSimulation fight)
+        foreach (int spell in Spells)
         {
-            base.Apply(aura, caster, target, fight);
+            fight.Player.Spellbook[spell].BonusCritChance += Difference;
+        }
+    }
 
-            foreach (int spell in Spells)
-            {
-                fight.Player.Spellbook[spell].BonusCritChance += Difference;
-            }
+    public override void Remove(Aura aura, Unit caster, Unit target, FightSimulation fight)
+    {
+        foreach (int spell in Spells)
+        {
+            fight.Player.Spellbook[spell].BonusCritChance -= Difference;
         }
 
-        public override void Remove(Aura aura, Unit caster, Unit target, FightSimulation fight)
-        {
-            foreach (int spell in Spells)
-            {
-                fight.Player.Spellbook[spell].BonusCritChance -= Difference;
-            }
-
-            base.Remove(aura, caster, target, fight);
-        }
+        base.Remove(aura, caster, target, fight);
     }
 }

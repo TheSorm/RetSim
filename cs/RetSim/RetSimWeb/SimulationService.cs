@@ -1,6 +1,9 @@
 ﻿using RetSim;
 using RetSim.Items;
+using RetSim.Simulation;
 using RetSim.Tactics;
+using RetSim.Units.Enemy;
+using RetSim.Units.Player.Static;
 using System;
 using System.Collections.Generic;
 using System.Net.Http;

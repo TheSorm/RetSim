@@ -1,6 +1,6 @@
-﻿using RetSim.Events;
+﻿using RetSim.Simulation.Events;
 
-namespace RetSim.EventQueues
+namespace RetSim.Simulation.EventQueues
 {
     public class HeapQueue : IEventQueue
     {

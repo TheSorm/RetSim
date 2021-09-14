@@ -1,164 +1,166 @@
-﻿using RetSim.EventQueues;
-using RetSim.Events;
-using RetSim.Log;
-using RetSim.Tactics;
+﻿using RetSim.Misc;
+using RetSim.Simulation.CombatLogEntries;
+using RetSim.Simulation.EventQueues;
+using RetSim.Simulation.Events;
+using RetSim.Simulation.Tactics;
+using RetSim.Spells;
+using RetSim.Units.Enemy;
+using RetSim.Units.Player;
+
 using static RetSim.Program;
 
-namespace RetSim
+namespace RetSim.Simulation;
+
+public class FightSimulation
 {
-    public class FightSimulation
+    public readonly Player Player;
+    public readonly Enemy Enemy;
+    public readonly Tactic Tactic;
+
+    public readonly List<Spell> Buffs;
+    public readonly List<Spell> Debuffs;
+
+    public readonly CombatLog CombatLog;
+    public readonly IEventQueue Queue;
+    public int Timestamp { get; set; }
+    public bool Ongoing { get; set; }
+
+    public readonly int Duration;
+
+    public FightSimulation(Player player, Enemy enemy, Tactic tactic, List<Spell> buffs, List<Spell> debuffs, int minDuration, int maxDuration)
     {
-        public readonly Player Player;
-        public readonly Enemy Enemy;
-        public readonly Tactic Tactic;
+        Player = player;
+        Enemy = enemy;
+        Tactic = tactic;
+        Buffs = buffs;
+        Debuffs = debuffs;
 
-        public readonly List<Spell> Buffs;
-        public readonly List<Spell> Debuffs;
+        CombatLog = new CombatLog();
+        Queue = new MinQueue();
 
-        public readonly CombatLog CombatLog;
-        public readonly IEventQueue Queue;
-        public int Timestamp { get; set; }
-        public bool Ongoing { get; set; }
+        Timestamp = 0;
+        Ongoing = true;
 
-        public readonly int Duration;
+        Duration = RNG.RollRange(minDuration, maxDuration);
 
-        public FightSimulation(Player player, Enemy enemy, Tactic tactic, List<Spell> buffs,  List<Spell> debuffs, int minDuration, int maxDuration)
+        Initialize();
+    }
+
+    public void Initialize()
+    {
+        foreach (Spell spell in Player.Equipment.Spells)
         {
-            Player = player;
-            Enemy = enemy;
-            Tactic = tactic;
-            Buffs = buffs;
-            Debuffs = debuffs;
-
-            CombatLog = new CombatLog();
-            Queue = new MinQueue();
-
-            Timestamp = 0;
-            Ongoing = true;
-
-            Duration = RNG.RollRange(minDuration, maxDuration);
-
-            Initialize();
+            Queue.Add(new CastEvent(spell, Player, Player, this, Timestamp, -3));
         }
 
-        public void Initialize()
+        foreach (Talent talent in Player.Talents)
         {
-            foreach (Spell spell in Player.Equipment.Spells)
-            {
-                Queue.Add(new CastEvent(spell, Player, Player, this, Timestamp, -3));
-            }
-
-            foreach (Talent talent in Player.Talents)
-            {
-                Queue.Add(new CastEvent(talent, Player, Player, this, Timestamp, -2));
-            }
-
-            foreach (Spell buff in Buffs)
-            {
-                Queue.Add(new CastEvent(buff, Player, Player, this, Timestamp, -1));
-            }
-
-            foreach (Spell debuff in Debuffs)
-            {
-                Queue.Add(new CastEvent(debuff, Player, Enemy, this, Timestamp, -1));
-            }
-
-            if (Player.Race.Racial != null && Player.Race.Racial.Requirements(Player))
-                Queue.Add(new CastEvent(Player.Race.Racial, Player, Player, this, Timestamp, -1));
-
-            while (!Queue.IsEmpty())
-            {
-                Event current = Queue.RemoveNext();
-                current.Execute(); 
-            }
+            Queue.Add(new CastEvent(talent, Player, Player, this, Timestamp, -2));
         }
 
-        public CombatLog Run()
+        foreach (Spell buff in Buffs)
         {
-            Queue.AddRange(Tactic.PreFight(this));
-            Queue.Add(new SimulationEndEvent(this, Duration));
+            Queue.Add(new CastEvent(buff, Player, Player, this, Timestamp, -1));
+        }
 
-            while (Ongoing)
+        foreach (Spell debuff in Debuffs)
+        {
+            Queue.Add(new CastEvent(debuff, Player, Enemy, this, Timestamp, -1));
+        }
+
+        if (Player.Race.Racial != null && Player.Race.Racial.Requirements(Player))
+            Queue.Add(new CastEvent(Player.Race.Racial, Player, Player, this, Timestamp, -1));
+
+        while (!Queue.IsEmpty())
+        {
+            Event current = Queue.RemoveNext();
+            current.Execute();
+        }
+    }
+
+    public CombatLog Run()
+    {
+        Queue.AddRange(Tactic.PreFight(this));
+        Queue.Add(new SimulationEndEvent(this, Duration));
+
+        while (Ongoing)
+        {
+            int nextTimestamp = Duration;
+
+            if (!Queue.IsEmpty())
             {
-                int nextTimestamp = Duration;
+                Queue.EnsureSorting();
+                Event curent = Queue.RemoveNext();
+                Timestamp = curent.Timestamp;
+
+                ProcMask mask = curent.Execute();
+                Player.CheckForProcs(mask, this);
+
+                //Logger.Log(Timestamp + ": Event: " + curent.ToString());
 
                 if (!Queue.IsEmpty())
                 {
                     Queue.EnsureSorting();
-                    Event curent = Queue.RemoveNext();
-                    Timestamp = curent.Timestamp;
+                    nextTimestamp = Queue.GetNext().Timestamp;
 
-                    ProcMask mask = curent.Execute();
-                    Player.CheckForProcs(mask, this);
-
-                    //Logger.Log(Timestamp + ": Event: " + curent.ToString());
-                    
-                    if (!Queue.IsEmpty())
-                    {
-                        Queue.EnsureSorting();
-                        nextTimestamp = Queue.GetNext().Timestamp;
-                        
-                        if (Timestamp == nextTimestamp) 
-                            continue;
-                    }
+                    if (Timestamp == nextTimestamp)
+                        continue;
                 }
-
-                Queue.Add(Tactic.GetActionBetween(Timestamp, nextTimestamp, this));
             }
 
-            return CombatLog;
+            Queue.Add(Tactic.GetActionBetween(Timestamp, nextTimestamp, this));
         }
 
-        public void Output()
+        return CombatLog;
+    }
+
+    public void Output()
+    {
+        foreach (LogEntry entry in CombatLog.Log)
+            Logger.Log(entry.ToString());
+
+        Logger.Log($"\nDuration - Expected: {Duration} / Real: {Timestamp}\n");
+
+        Logger.Log($"╔════════════════════╦═════════╦═════════╦════════╦═════╦═════════════╦═════════════╦═════════════╦═════════════╗");
+        Logger.Log($"║    Ability Name    ║ Damage  ║   DPS   ║   %    ║  #  ║ #  Crit   % ║ #   Hit   % ║ #  Miss   % ║ #  Dodge  % ║");
+        Logger.Log($"╠════════════════════╬═════════╬═════════╬════════╬═════╬═════════════╬═════════════╬═════════════╬═════════════╣");
+
+        int totals = 0;
+
+        foreach (string s in CombatLog.DamageBreakdown.Keys)
         {
-            
-            foreach (LogEntry entry in CombatLog.Log)
-                Logger.Log(entry.ToString());
+            float count = CombatLog.DamageBreakdown[s].Count;
+            float miss = 0;
+            float dodge = 0;
+            float crit = 0;
 
-            Logger.Log($"\nDuration - Expected: {Duration} / Real: {Timestamp}\n");     
+            int damage = 0;
 
-            Logger.Log($"╔════════════════════╦═════════╦═════════╦════════╦═════╦═════════════╦═════════════╦═════════════╦═════════════╗");
-            Logger.Log($"║    Ability Name    ║ Damage  ║   DPS   ║   %    ║  #  ║ #  Crit   % ║ #   Hit   % ║ #  Miss   % ║ #  Dodge  % ║");
-            Logger.Log($"╠════════════════════╬═════════╬═════════╬════════╬═════╬═════════════╬═════════════╬═════════════╬═════════════╣");
-
-            int totals = 0;
-
-            foreach (string s in CombatLog.DamageBreakdown.Keys)
+            foreach (DamageEntry entry in CombatLog.DamageBreakdown[s])
             {
-                float count = CombatLog.DamageBreakdown[s].Count;
-                float miss = 0;
-                float dodge = 0;
-                float crit = 0;
+                damage += entry.Damage;
 
-                int damage = 0;
+                if (entry.AttackResult == AttackResult.Miss)
+                    miss++;
 
-                foreach (DamageEntry entry in CombatLog.DamageBreakdown[s])
-                {
-                    damage += entry.Damage;
+                if (entry.AttackResult == AttackResult.Dodge)
+                    dodge++;
 
-                    if (entry.AttackResult == AttackResult.Miss)
-                        miss++;
+                if (entry.Crit)
+                    crit++;
 
-                    if (entry.AttackResult == AttackResult.Dodge)
-                        dodge++;
-
-                    if (entry.Crit)
-                        crit++;
-
-                    totals++;
-                }
-
-                float dps = (float)damage / CombatLog.Duration * 1000;
-                float hit = count - miss - dodge;
-
-                Logger.Log($"║ {s, -18} ║ {damage, 7} ║ {dps.Rounded(), 7} ║ {(dps / CombatLog.DPS * 100).Rounded(), 5}% ║ {count, 3} ║ {crit, -3} {(crit / hit * 100).Rounded(), 6}% ║ {hit, -3} {(hit / count * 100).Rounded(),6}% ║ {miss, -3} {(miss / count * 100).Rounded(),6}% ║ {dodge, -3} {(dodge / count * 100).Rounded(), 6}% ║");
-                
+                totals++;
             }
 
-            Logger.Log($"╠════════════════════╬═════════╬═════════╬════════╬═════╬═════════════╩═════════════╩═════════════╩═════════════╝");
-            Logger.Log($"║       Totals       ║ {CombatLog.Damage,7} ║ {CombatLog.DPS.Rounded(), 7} ║ {"100%", 6} ║ {totals, 3} ║");
-            Logger.Log($"╚════════════════════╩═════════╩═════════╩════════╩═════╝");
+            float dps = (float)damage / CombatLog.Duration * 1000;
+            float hit = count - miss - dodge;
+
+            Logger.Log($"║ {s,-18} ║ {damage,7} ║ {dps.Rounded(),7} ║ {(dps / CombatLog.DPS * 100).Rounded(),5}% ║ {count,3} ║ {crit,-3} {(crit / hit * 100).Rounded(),6}% ║ {hit,-3} {(hit / count * 100).Rounded(),6}% ║ {miss,-3} {(miss / count * 100).Rounded(),6}% ║ {dodge,-3} {(dodge / count * 100).Rounded(),6}% ║");
 
         }
+
+        Logger.Log($"╠════════════════════╬═════════╬═════════╬════════╬═════╬═════════════╩═════════════╩═════════════╩═════════════╝");
+        Logger.Log($"║       Totals       ║ {CombatLog.Damage,7} ║ {CombatLog.DPS.Rounded(),7} ║ {"100%",6} ║ {totals,3} ║");
+        Logger.Log($"╚════════════════════╩═════════╩═════════╩════════╩═════╝");
     }
 }

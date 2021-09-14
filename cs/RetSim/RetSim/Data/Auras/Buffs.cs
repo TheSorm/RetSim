@@ -1,147 +1,148 @@
-﻿using RetSim.AuraEffects;
+﻿using RetSim.Spells;
+using RetSim.Spells.AuraEffects;
+using RetSim.Units.UnitStats;
 
-namespace RetSim.Data
+namespace RetSim.Data;
+
+public static partial class Auras
 {
-    public static partial class Auras
+    public static readonly Aura GreaterBlessingOfMight = new()
     {
-        public static readonly Aura GreaterBlessingOfMight = new()
+        Effects = new()
         {
-            Effects = new()
-            {
-                new ModifyStats() { Stats = new() { { StatName.AttackPower, 220 } } }
-            }
-        };
+            new ModifyStats { Stats = new() { { StatName.AttackPower, 220 } } }
+        }
+    };
 
-        public static readonly Aura GreaterBlessingOfKings = new()
-        {
-            Effects = new List<AuraEffect>
+    public static readonly Aura GreaterBlessingOfKings = new()
+    {
+        Effects = new()
             {
-                new ModStat() { Percentage = 10, Stats = new() { StatName.Strength, StatName.Agility, StatName.Stamina, StatName.Intellect } }
+                new ModStat { Percentage = 10, Stats = new() { StatName.Strength, StatName.Agility, StatName.Stamina, StatName.Intellect } }
             }
-        };
+    };
 
-        public static readonly Aura GreaterBlessingOfWisdom = new()
+    public static readonly Aura GreaterBlessingOfWisdom = new()
+    {
+        Effects = new()
         {
-            Effects = new()
-            {
-                new ModifyStats() { Stats = new() { { StatName.ManaPer5, 41 } } }
-            }
-        };
+            new ModifyStats { Stats = new() { { StatName.ManaPer5, 41 } } }
+        }
+    };
 
-        public static readonly Aura BattleShout = new()
+    public static readonly Aura BattleShout = new()
+    {
+        Effects = new()
         {
-            Effects = new()
-            {
-                new ModifyStats() { Stats = new() {{ StatName.AttackPower, 306 } } }
-            }
-        };
+            new ModifyStats { Stats = new() { { StatName.AttackPower, 306 } } }
+        }
+    };
 
-        public static readonly Aura TrueshotAura = new()
+    public static readonly Aura TrueshotAura = new()
+    {
+        Effects = new()
         {
-            Effects = new()
-            {
-                new ModifyStats() { Stats = new() { { StatName.AttackPower, 125 } } }
-            }
-        };
+            new ModifyStats { Stats = new() { { StatName.AttackPower, 125 } } }
+        }
+    };
 
-        public static readonly Aura FerociousInspiration = new()
-        {
-            Effects = new List<AuraEffect>()
+    public static readonly Aura FerociousInspiration = new()
+    {
+        Effects = new()
             {
-                new ModDamageSchool()
+                new ModDamageSchool
                 {
                     Percentage = 3,
                     Schools = Spells.AllSchools
                 }
             }
-        };
+    };
 
-        public static readonly Aura StrengthOfEarthTotem = new()
+    public static readonly Aura StrengthOfEarthTotem = new()
+    {
+        Effects = new()
         {
-            Effects = new()
-            {
-                new ModifyStats() { Stats = new() { { StatName.Strength, 86 } } }
-            }
-        };
+            new ModifyStats { Stats = new() { { StatName.Strength, 86 } } }
+        }
+    };
 
-        public static readonly Aura GraceOfAirTotem = new()
+    public static readonly Aura GraceOfAirTotem = new()
+    {
+        Effects = new()
         {
-            Effects = new()
-            {
-                new ModifyStats() { Stats = new() { { StatName.Agility, 77 } } }
-            }
-        };
+            new ModifyStats { Stats = new() { { StatName.Agility, 77 } } }
+        }
+    };
 
-        public static readonly Aura ManaSpringTotem = new()
+    public static readonly Aura ManaSpringTotem = new()
+    {
+        Effects = new()
         {
-            Effects = new()
-            {
-                new ModifyStats() { Stats = new() { { StatName.ManaPer5, 50 } } }
-            }
-        };
+            new ModifyStats { Stats = new() { { StatName.ManaPer5, 50 } } }
+        }
+    };
 
-        public static readonly Aura UnleashedRage = new()
+    public static readonly Aura UnleashedRage = new()
+    {
+        Effects = new()
+            {
+                new ModStat { Percentage = 10, Stats = new() { StatName.AttackPower } }
+            }
+    };
+
+    public static readonly Aura MarkOfTheWild = new()
+    {
+        Effects = new()
         {
-            Effects = new List<AuraEffect>
-            {
-                new ModStat() { Percentage = 10, Stats = new() { StatName.AttackPower } }
-            }
-        };
+            new ModifyStats { Stats = new() { { StatName.Armor, 340 }, { StatName.Strength, 14 }, { StatName.Agility, 14 }, { StatName.Intellect, 14 }, { StatName.Stamina, 14 } } }
+        }
+    };
 
-        public static readonly Aura MarkOfTheWild = new()
+    public static readonly Aura LeaderOfThePack = new()
+    {
+        Effects = new()
         {
-            Effects = new()
-            {
-                new ModifyStats() { Stats = new() { { StatName.Armor, 340 }, { StatName.Strength, 14 }, { StatName.Agility, 14 }, { StatName.Intellect, 14 }, { StatName.Stamina, 14 } } }
-            }
-        };
+            new ModifyStats { Stats = new() { { StatName.CritChance, 5 } } }
+        }
+    };
 
-        public static readonly Aura LeaderOfThePack = new()
+    public static readonly Aura PrayerOfFortitude = new()
+    {
+        Effects = new()
         {
-            Effects = new()
-            {
-                new ModifyStats() { Stats = new() { { StatName.CritChance, 5 } } }
-            }
-        };
+            new ModifyStats { Stats = new() { { StatName.Stamina, 79 } } }
+        }
+    };
 
-        public static readonly Aura PrayerOfFortitude = new()
+    public static readonly Aura PrayerOfSpirit = new()
+    {
+        Effects = new()
         {
-            Effects = new()
-            {
-                new ModifyStats() { Stats = new() { { StatName.Stamina, 79 } } }
-            }
-        };
+            new ModifyStats { Stats = new() { { StatName.SpellPower, 20 } } }
+        }
+    };
 
-        public static readonly Aura PrayerOfSpirit = new()
+    public static readonly Aura ArcaneBrilliance = new()
+    {
+        Effects = new()
         {
-            Effects = new()
-            {
-                new ModifyStats() { Stats = new() { { StatName.SpellPower, 20 } } }
-            }
-        };
+            new ModifyStats { Stats = new() { { StatName.Intellect, 40 } } }
+        }
+    };
 
-        public static readonly Aura ArcaneBrilliance = new()
+    public static readonly Aura HeroicPresence = new()
+    {
+        Effects = new()
         {
-            Effects = new()
-            {
-                new ModifyStats() { Stats = new() { { StatName.Intellect, 40 } } }
-            }
-        };
+            new ModifyStats { Stats = new() { { StatName.HitChance, 1 } } }
+        }
+    };
 
-        public static readonly Aura HeroicPresence = new()
-        {            
-            Effects = new()
-            {
-                new ModifyStats() { Stats = new() { { StatName.HitChance, 1 } } }
-            }
-        };
-
-        public static readonly Aura InspiringPresence = new()
+    public static readonly Aura InspiringPresence = new()
+    {
+        Effects = new()
         {
-            Effects = new()
-            {
-                new ModifyStats() { Stats = new() { { StatName.SpellHit, 1 } } }
-            }
-        };
-    }
+            new ModifyStats { Stats = new() { { StatName.SpellHit, 1 } } }
+        }
+    };
 }

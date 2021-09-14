@@ -1,4 +1,6 @@
-﻿namespace RetSim.Log
+﻿using RetSim.Spells;
+
+namespace RetSim.Simulation.CombatLogEntries
 {
     public class BuffEntry : LogEntry
     {

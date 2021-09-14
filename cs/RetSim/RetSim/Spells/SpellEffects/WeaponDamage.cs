@@ -1,17 +1,19 @@
-﻿namespace RetSim.SpellEffects
+﻿using RetSim.Units.Player;
+using RetSim.Units.Player.State;
+
+namespace RetSim.Spells.SpellEffects;
+
+public class WeaponDamage : DamageEffect
 {
-    public class WeaponDamage : DamageEffect
+    public float Percentage { get; init; } = 1f;
+
+    public override float GetBaseDamage(Player player, SpellState state)
     {
-        public float Percentage { get; init; } = 1f;
+        return GetWeaponDamage(player) * Percentage * state.EffectBonusPercent + state.EffectBonus;
+    }
 
-        public override float GetBaseDamage(Player player, SpellState state)
-        {
-            return GetWeaponDamage(player) * Percentage * state.EffectBonusPercent + state.EffectBonus;
-        }
-
-        protected float GetWeaponDamage(Player player)
-        {
-            return Normalized ? player.Weapon.NormalizedAttack() : player.Weapon.Attack();
-        }
+    protected float GetWeaponDamage(Player player)
+    {
+        return Normalized ? player.Weapon.NormalizedAttack() : player.Weapon.Attack();
     }
 }
