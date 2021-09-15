@@ -116,6 +116,9 @@ public class FightSimulation
 
     public void Output()
     {
+        if (CombatLog.DamageBreakdown.Count == 0)
+            CombatLog.CreateDamageBreakdown();
+
         foreach (LogEntry entry in CombatLog.Log)
             Logger.Log(entry.ToString());
 
