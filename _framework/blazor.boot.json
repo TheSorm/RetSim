@@ -31,7 +31,7 @@
       "netstandard.dll": "sha256-YJsE4oLHXETXQFKkoSxgZ+Rlm5bspLCBGZ4tYOuBfew=",
       "Newtonsoft.Json.dll": "sha256-mRd6TL4DYldo1ko9czkjEDcoiPdMPrJxz3dekwV6OOY=",
       "RetSim.dll": "sha256-Eh9GvUQWEKAEaoiRCcbyT80RBkvK\/vPaRC5SuCWKPOE=",
-      "RetSimWeb.dll": "sha256-eI4NGaF89taE13ooz86pz64dCVeTmXjHpkD01PQG9cE=",
+      "RetSimWeb.dll": "sha256-0bpQtCf8DITHa0rZmigNCfDpBCXH1kTVTKPNgZIdn6U=",
       "Serialize.Linq.dll": "sha256-xGhk6SsVvfETdCgFxzFwUZUJvNoUs9qja8r5Ezul6h0=",
       "System.Collections.Concurrent.dll": "sha256-Pv6xR1D9qJfuB37suqiIDesOSsqkmImaVziAoQrxHKE=",
       "System.Collections.dll": "sha256-YamljOZN7XP9yB7cI3vulxHiGUzYrW8CfWpIxmZE44Q=",
@@ -81,7 +81,7 @@
     "pdb": null,
     "runtime": {
       "dotnet.timezones.blat": "sha256-IRA3aSR05YjbbkfXMY8trRnmm9TfDlmrKiB4EPRl16I=",
-      "dotnet.wasm": "sha256-gg685bfkyquw014NJCDGTibUF6haDcyYwzK1gYG7Tf8=",
+      "dotnet.wasm": "sha256-NfXq8bVn9LdeZ+pXsqa4iQnJddGZE3cxv286\/qA9TuM=",
       "icudt.dat": "sha256-Zuq0dWAsBm6\/2lSOsz7+H9PvFaRn61KIXHMMwXDfvyE=",
       "icudt_CJK.dat": "sha256-WPyI4hWDPnOw62Nr27FkzGjdbucZnQD+Ph+GOPhAedw=",
       "icudt_EFIGS.dat": "sha256-4RwaPx87Z4dvn77ie\/ro3\/QzyS+\/gGmO3Y\/0CSAXw4k=",
