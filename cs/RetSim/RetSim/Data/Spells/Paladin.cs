@@ -58,7 +58,7 @@ public static partial class Spells
         Cooldown = 10000,
         Target = SpellTarget.Enemy,
 
-        Effects = new() { new JudgementEffect }
+        Effects = new() { new JudgementEffect() }
     };
 
     public static readonly Spell SealOfCommand = new()

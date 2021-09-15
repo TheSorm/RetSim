@@ -1,9 +1,13 @@
 ﻿@using BlazorWorker.Core
 @using RetSim
-@using RetSim.Tactics
+@using RetSim.Simulation
+@using RetSim.Simulation.Tactics
 @inject AppState AppState
 @inject HttpClient httpClient
 @using BlazorWorker.BackgroundServiceFactory
+@using RetSim.Units.Enemy
+@using RetSim.Units.Player
+@using RetSim.Units.Player.Static
 @inject IWorkerFactory workerFactory
 
 <MudNavMenu Class="d-flex flex-column full-height justify-space-between">
@@ -35,7 +39,7 @@
 	private async Task ProcessSomething()
 	{
 		_processing = true;
-		var worker = await workerFactory.CreateAsync();
+		/**var worker = await workerFactory.CreateAsync();
 		Console.WriteLine("Worker");
 		var service = await worker.CreateBackgroundServiceAsync<SimulationService>(
 			options => options
@@ -49,7 +53,40 @@
 		await service.RunAsync(s => s.InitAsync(baseAdress));
 		Console.WriteLine("Init");
 		dps = await service.RunAsync(s => s.Run());
-		Console.WriteLine("Run");
+		Console.WriteLine("Run");*/
+		/**
+		var worker = await workerFactory.CreateAsync();
+		Console.WriteLine("worker created: " + worker.ToString());
+        var service = await worker.CreateBackgroundServiceAsync<TestService>(
+			options => options.
+			AddConventionalAssemblyOfService()
+		);
+		Console.WriteLine("service created");
+        var localParameterValue = 42;
+        var result = await service.RunAsync(s => s.MyMethod(localParameterValue));
+		*/
+
+		var localDps = 0f;
+		var iterations = 10000;
+        Console.WriteLine(System.DateTime.Now.ToString());
+		for (int i = 0; i < iterations; i++)
+		{
+			FightSimulation fight = new(new Player("Brave Hero", Races.Human, new() { Weapon = RetSim.Data.Items.Weapons[28429] }, new()), new Enemy("Magtheridon", CreatureType.Demon, ArmorCategory.Warrior), new EliteTactic(), new(), new(), 180000, 190000);
+			fight.Run();
+
+			localDps += fight.CombatLog.DPS;
+
+			if(i % 100 == 0)
+            {
+				dps = localDps / i;
+                StateHasChanged();
+                await Task.Delay(1);
+            }
+		}
+        Console.WriteLine(System.DateTime.Now.ToString());
+
+        dps = localDps / iterations;
+
 		_processing = false;
 	}
 }
