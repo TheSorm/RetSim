@@ -31,23 +31,24 @@ public static partial class Auras
             {
                 Percentage = 3,
                 Types = new() { CreatureType.Humanoid, CreatureType.Demon, CreatureType.Undead, CreatureType.Elemental },
-                Schools = Spells.AllSchools
+                SchoolMask = School.All
             }
         }
     };
 
     public static readonly Aura TwoHandedWeaponSpecialization = new()
     {
+        Effects = new() { new ModDamageSchool { Percentage = 6, SchoolMask = School.Physical } }
     };
 
     public static readonly Aura SanctityAura = new()
     {
-        Effects = new() { new ModDamageSchool { Percentage = 10, Schools = new() { School.Holy } } }
+        Effects = new() { new ModDamageSchool { Percentage = 10, SchoolMask = School.Holy } }
     };
 
     public static readonly Aura ImprovedSanctityAura = new()
     {
-        Effects = new() { new ModDamageSchool { Percentage = 2, Schools = Spells.AllSchools } }
+        Effects = new() { new ModDamageSchool { Percentage = 2, SchoolMask = School.All } }
     };
 
     public static readonly Aura SanctifiedSeals = new()
@@ -66,7 +67,7 @@ public static partial class Auras
     {
         Duration = 30000,
         MaxStacks = 3,
-        Effects = new() { new ModDamageSchool { Percentage = 5, Schools = new() { School.Physical, School.Holy } } }
+        Effects = new() { new ModDamageSchool { Percentage = 5, SchoolMask = School.Physical | School.Holy } }
     };
 
     public static readonly Aura Fanaticism = new()

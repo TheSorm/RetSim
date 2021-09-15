@@ -5,24 +5,22 @@ namespace RetSim.Spells.AuraEffects;
 
 class ModDamageSchool : ModifyPercent
 {
-    public List<School> Schools { get; init; }
+    public School SchoolMask { get; init; }
 
     public override void Apply(Aura aura, Unit caster, Unit target, FightSimulation fight)
     {
         base.Apply(aura, caster, target, fight);
 
-        foreach (School school in Schools)
-        {
-            fight.Player.Modifiers.SchoolModifiers[school] *= RelativeDifference;
-        }
+        fight.Player.Modifiers.SchoolModifiers[SchoolMask] *= RelativeDifference;
+
+        //Program.Logger.Log($"{fight.Timestamp} - {aura.Parent.Name} increased {SchoolMask} damage modifier to {fight.Player.Modifiers.SchoolModifiers[SchoolMask]}");
     }
 
     public override void Remove(Aura aura, Unit caster, Unit target, FightSimulation fight)
     {
-        foreach (School school in Schools)
-        {
-            fight.Player.Modifiers.SchoolModifiers[school] /= RelativeDifference;
-        }
+        fight.Player.Modifiers.SchoolModifiers[SchoolMask] /= RelativeDifference;
+
+        //Program.Logger.Log($"{fight.Timestamp} - {aura.Parent.Name} decreased {SchoolMask} damage modifier to {fight.Player.Modifiers.SchoolModifiers[SchoolMask]}");
 
         base.Remove(aura, caster, target, fight);
     }

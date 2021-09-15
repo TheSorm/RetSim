@@ -96,4 +96,9 @@ public class Player : Unit
     public void RecalculateAttack(FightSimulation fight, float previousSpeed)
     {
     }
+
+    public override string ToString()
+    {
+        return Name;
+    }
 }

@@ -9,7 +9,9 @@ public static class Helpers
     /// <returns>The fractional component of the input number, expressed as an integer of up to 2 digits, i.e. 0-99.</returns>
     public static int GetFraction(float input)
     {
-        return (int)((decimal)input % 1 * 100);
+        //return (int)((decimal)input % 1 * 100);
+
+        return (int)(input * 100 - input);
     }
 
     /// <summary>
@@ -19,9 +21,11 @@ public static class Helpers
     /// <returns>The truncated integer representation of the processed fraction.</returns>
     public static int UpgradeFraction(float fraction)
     {
-        float mult = fraction * 100;
+        //float mult = fraction * 100;
 
-        return (int)mult + (int)(GetFraction(mult) / 100f);
+        //return (int)mult + (int)(GetFraction(mult) / 100f);
+
+        return (int)(fraction * 100);
     }
 }
 

@@ -20,15 +20,14 @@ public class Attack
 
     public float BaseDamage { get; private set; }
     public int Damage { get; private set; }
-
     public float Glancing { get; private set; }
     public float Mitigation { get; private set; }
+    public float DamageResultMultiplier { get; private set; }
 
-    public float SpellPowerBonus => Effect.Coefficient * (Player.Stats[StatName.SpellPower].Value + State.BonusSpellPower);
-    public float SchoolModifier => Player.Modifiers.SchoolModifiers.GetValue(Effect.School);
-    public float DamageModifier { get; private set; }
-
-    public float JotCBonus => Effect.HolyCoefficient == 0 ? SpellPowerBonus : Effect.HolyCoefficient * (Player.Stats[StatName.SpellPower].Value + State.BonusSpellPower);
+    public override string ToString()
+    {
+        return $"{Player} attacks {Enemy} with {State.Spell.Name} ({AttackResult} / {DamageResult}) - {Damage} Damage";
+    }
 
     public Attack(Player player, Enemy enemy, DamageEffect effect, SpellState state)
     {
@@ -50,27 +49,21 @@ public class Attack
 
         AttackResult = result.Attack;
         DamageResult = result.Damage;
-
-        DamageModifier = GetDamageModifier(Player, DamageResult, Effect.CritCategory);
-
-        if (DamageResult == DamageResult.Glancing)
-            Glancing = DamageResult == DamageResult.Glancing ? (1 - DamageModifier) * 100 : 0f;
-
-        Mitigation = AttackResult == AttackResult.Hit ? GetMitigation(Player, Enemy, Effect.School) : 0;
     }
 
     public void ResolveDamage()
     {
-        DamageModifier = GetDamageModifier(Player, DamageResult, Effect.CritCategory);
+        DamageResultMultiplier = GetDamageResultMultiplier(Player, DamageResult, Effect.CritCategory);
 
-        if (DamageResult == DamageResult.Glancing)
-            Glancing = DamageResult == DamageResult.Glancing ? (1 - DamageModifier) * 100 : 0f;
+        Glancing = DamageResult == DamageResult.Glancing ? (1 - DamageResultMultiplier) * 100 : 0f;
 
-        float mitigation = AttackResult == AttackResult.Hit ? GetMitigation(Player, Enemy, Effect.School) : 0; //TODO: Fix partial resist crits?
+        float mitigation = GetMitigation(Player, Enemy, Effect.School);
 
         BaseDamage = Effect.CalculateDamage(Player, this, State);
 
-        Damage = RNG.RollDamage(BaseDamage * mitigation);
+        //TODO: Implement enemy bonuses
+
+        Damage = RNG.RollDamage(BaseDamage * DamageResultMultiplier * mitigation);
 
         Mitigation = (1 - mitigation) * 100f;
     }
@@ -157,7 +150,7 @@ public class Attack
         return (AttackResult.Hit, CritCheck(crit) ? DamageResult.Crit : DamageResult.None);
     }
 
-    public static float GetDamageModifier(Player player, DamageResult result, AttackCategory category)
+    public static float GetDamageResultMultiplier(Player player, DamageResult result, AttackCategory category)
     {
         return result switch
         {

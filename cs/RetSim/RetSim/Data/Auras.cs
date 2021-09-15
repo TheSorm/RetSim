@@ -26,15 +26,6 @@ public static partial class Auras
         Lionheart.Effects = new() { new GainProc(Procs.Lionheart) };
         LibramOfAvengement.Effects = new() { new GainProc(Procs.LibramOfAvengement) };
 
-        TwoHandedWeaponSpecialization.Effects = new()
-        {
-            new ModDamageSpell
-            {
-                Percentage = 6,
-                Spells = new() { Spells.Melee.ID, Spells.WindfuryProc.ID, Spells.SealOfCommandProc.ID, Spells.JudgementOfCommand.ID, Spells.SealOfBloodProc.ID, Spells.JudgementOfBlood.ID }
-            }
-        };
-
         Fanaticism.Effects = new()
         {
             new ModSpellCritChance

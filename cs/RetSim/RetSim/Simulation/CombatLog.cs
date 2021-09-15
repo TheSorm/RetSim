@@ -4,8 +4,8 @@ namespace RetSim.Simulation;
 
 public class CombatLog
 {
-    public int Damage { get; private set; }
     public int Duration { get; private set; }
+    public int Damage { get; private set; }    
     public float DPS { get; private set; }
 
     public Dictionary<string, List<DamageEntry>> DamageBreakdown { get; init; }
@@ -23,7 +23,7 @@ public class CombatLog
 
     public void Add(LogEntry entry)
     {
-        AddToLog(entry);
+        Log.Add(entry);
     }
 
     public void Add(DamageEntry entry)
@@ -34,17 +34,20 @@ public class CombatLog
 
         DPS = Duration == 0 ? Damage : (float)Damage / Duration * 1000;
 
-        if (DamageBreakdown.ContainsKey(entry.Source))
-            DamageBreakdown[entry.Source].Add(entry);
-
-        else
-            DamageBreakdown.Add(entry.Source, new List<DamageEntry> { entry });
-
-        AddToLog(entry);
+        Log.Add(entry);
     }
 
-    private void AddToLog(LogEntry entry)
+    public void CreateDamageBreakdown()
     {
-        Log.Add(entry);
+        DamageBreakdown.Clear();
+
+        foreach (DamageEntry entry in Log)
+        {
+            if (DamageBreakdown.ContainsKey(entry.Source))
+                DamageBreakdown[entry.Source].Add(entry);
+
+            else
+                DamageBreakdown.Add(entry.Source, new List<DamageEntry> { entry });
+        }
     }
 }

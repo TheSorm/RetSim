@@ -53,7 +53,7 @@ public static partial class Auras
                 new ModDamageSchool
                 {
                     Percentage = 3,
-                    Schools = Spells.AllSchools
+                    SchoolMask = School.All
                 }
             }
     };

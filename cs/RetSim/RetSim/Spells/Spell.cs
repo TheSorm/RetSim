@@ -34,24 +34,25 @@ public enum SpellTarget
 public class SpellGCD
 {
     public int Duration { get; init; } = Constants.Numbers.DefaultGCD;
-    public AttackCategory Category { get; init; } = AttackCategory.None;
+    public AttackCategory Category { get; init; } = AttackCategory.Physical;
 }
 
+[Flags]
 public enum School
 {
     Typeless = 0,
     Physical = 1,
     Holy = 2,
-    Fire = 3,
-    Nature = 4,
-    Frost = 5,
-    Shadow = 6,
-    Arcane = 7
+    Fire = 4,
+    Nature = 8,
+    Frost = 16,
+    Shadow = 32,
+    Arcane = 64,
+    All = Physical | Holy | Fire | Nature | Frost | Shadow | Arcane
 }
 
 public enum AttackCategory
 {
-    None = 0,
     Physical = 1,
     Spell = 2
 }

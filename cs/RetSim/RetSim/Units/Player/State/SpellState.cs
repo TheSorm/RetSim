@@ -37,4 +37,9 @@ public class SpellState
         BonusSpellPower = 0;
         BonusCritChance = 0f;
     }
+
+    public override string ToString()
+    {
+        return Spell.Name;
+    }
 }

@@ -58,7 +58,7 @@ public static partial class Spells
         Cooldown = 10000,
         Target = SpellTarget.Enemy,
 
-        Effects = new() { new JudgementEffect }
+        Effects = new() { new JudgementEffect() }
     };
 
     public static readonly Spell SealOfCommand = new()
@@ -85,8 +85,7 @@ public static partial class Spells
                 OnHit = ProcMask.OnSealOfCommand,
                 OnCrit = ProcMask.OnCrit | ProcMask.OnMeleeCrit,
                 Percentage = 0.7f,
-                Coefficient = 0.2f,
-                HolyCoefficient = 0.29f
+                Coefficient = 0.29f
             }
         }
     };

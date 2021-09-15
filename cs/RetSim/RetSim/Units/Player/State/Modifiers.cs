@@ -26,16 +26,54 @@ public abstract class FailsafeDictionary<Key, Value> : Dictionary<Key, Value>
     }
 }
 
-public class SchoolModifiers : FailsafeDictionary<School, float>
+public class SchoolModifiers
 {
+    protected readonly static float Default = 1f;
+    protected Dictionary<School, float> map;
+
     public SchoolModifiers()
     {
-        Default = 1f;
+        map = new();
+    }
 
-        foreach (School school in Enum.GetValues(typeof(School)))
+    public float this[School school]
+    {
+        get
         {
-            Add(school, Default);
+            if (map.ContainsKey(school))
+                return map[school];
+
+            else
+                return Default;
         }
+
+        set 
+        {
+            if (map.ContainsKey(school))
+            {
+                if (value == Default)
+                    map.Remove(school);
+
+                else
+                    map[school] = value;
+            }
+
+            else
+                map.Add(school, value);
+        }    
+    }
+
+    public float GetModifier(School school)
+    {
+        float mod = Default;
+
+        foreach ((School key, float value) in map)
+        {
+            if ((key & school) != 0)
+                mod *= value;
+        }
+
+        return mod;
     }
 }
 

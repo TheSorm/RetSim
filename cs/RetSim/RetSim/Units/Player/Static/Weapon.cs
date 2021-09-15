@@ -30,11 +30,11 @@ public class Weapon
 
     public float Attack()
     {
-        return (RNG.RollRange(MinDamage, MaxDamage) + APBonus) * player.Modifiers.WeaponDamage;
+        return RNG.RollRange(MinDamage, MaxDamage) + APBonus;
     }
 
     public float NormalizedAttack()
     {
-        return (RNG.RollRange(MinDamage, MaxDamage) + NormalizedAPBonus) * player.Modifiers.WeaponDamage;
+        return RNG.RollRange(MinDamage, MaxDamage) + NormalizedAPBonus;
     }
 }

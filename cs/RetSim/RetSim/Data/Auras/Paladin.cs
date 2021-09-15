@@ -32,7 +32,7 @@ public static partial class Auras
     public static readonly Aura AvengingWrath = new()
     {
         Duration = 20000,
-        Effects = new() { new ModDamageSchool { Percentage = 30, Schools = Spells.AllSchools } }
+        Effects = new() { new ModDamageSchool { Percentage = 30, SchoolMask = School.All } }
     };
 
     public static readonly Aura HumanRacial = new()

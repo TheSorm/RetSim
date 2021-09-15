@@ -29,8 +29,6 @@ public static partial class Spells
     {
     };
 
-    public static readonly List<School> AllSchools = new() { School.Typeless, School.Physical, School.Holy, School.Fire, School.Nature, School.Frost, School.Shadow, School.Arcane };
-
     static Spells()
     {
         ByID = new()

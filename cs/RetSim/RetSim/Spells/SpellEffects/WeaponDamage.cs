@@ -1,4 +1,5 @@
-﻿using RetSim.Units.Player;
+﻿using RetSim.Simulation;
+using RetSim.Units.Player;
 using RetSim.Units.Player.State;
 
 namespace RetSim.Spells.SpellEffects;
@@ -7,9 +8,16 @@ public class WeaponDamage : DamageEffect
 {
     public float Percentage { get; init; } = 1f;
 
-    public override float GetBaseDamage(Player player, SpellState state)
+    public override float CalculateDamage(Player player, Attack attack, SpellState state)
     {
-        return GetWeaponDamage(player) * Percentage * state.EffectBonusPercent + state.EffectBonus;
+        School school = School;
+
+        if (CritCategory == AttackCategory.Physical)
+            school |= School.Physical;
+
+        float schoolMultiplier = player.Modifiers.SchoolModifiers.GetModifier(school);
+
+        return ((GetWeaponDamage(player) + GetSpellPowerBonus(player, state)) * Percentage * state.EffectBonusPercent + state.EffectBonus) * schoolMultiplier;
     }
 
     protected float GetWeaponDamage(Player player)
