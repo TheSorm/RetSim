@@ -32,26 +32,26 @@ else
 
     public Task<List<EquippableWeapon>> LoadWeponData()
     {
-        return httpClient.GetFromJsonAsync<List<EquippableWeapon>>("/data/weapons.json");
+        return httpClient.GetFromJsonAsync<List<EquippableWeapon>>("data/weapons.json");
     }
 
     public Task<List<EquippableItem>> LoadArmorData()
     {
-        return httpClient.GetFromJsonAsync<List<EquippableItem>>("/data/armor.json");
+        return httpClient.GetFromJsonAsync<List<EquippableItem>>("data/armor.json");
     }
 
     public Task<List<ItemSet>> LoadSetData()
     {
-        return httpClient.GetFromJsonAsync<List<ItemSet>>("/data/sets.json");
+        return httpClient.GetFromJsonAsync<List<ItemSet>>("data/sets.json");
     }
 
     public Task<List<Gem>> LoadGemData()
     {
-        return httpClient.GetFromJsonAsync<List<Gem>>("/data/gems.json");
+        return httpClient.GetFromJsonAsync<List<Gem>>("data/gems.json");
     }
 
     public Task<List<MetaGem>> LoadMetaGemData()
     {
-        return httpClient.GetFromJsonAsync<List<MetaGem>>("/data/metaGems.json");
+        return httpClient.GetFromJsonAsync<List<MetaGem>>("data/metaGems.json");
     }
 }
