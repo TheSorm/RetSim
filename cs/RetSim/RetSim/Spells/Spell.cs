@@ -48,6 +48,7 @@ public enum School
     Frost = 16,
     Shadow = 32,
     Arcane = 64,
+    Magic = Holy | Fire | Nature | Frost | Shadow | Arcane,
     All = Physical | Holy | Fire | Nature | Frost | Shadow | Arcane
 }
 

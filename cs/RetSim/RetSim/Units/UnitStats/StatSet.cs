@@ -65,5 +65,8 @@ public enum StatName
     ParryRating = 36,
     BlockChance = 37,
     BlockRating = 38,
-    BlockValue = 39
+    BlockValue = 39,
+    IncreasedAttackerAttackPower = 40,
+    IncreasedAttackerHitChance = 41,
+    IncreasedAttackerCritChance = 42
 }

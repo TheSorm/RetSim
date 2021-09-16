@@ -20,7 +20,7 @@ public static partial class Spells
 
     public static readonly Spell ImprovedExposeArmor = new()
     {
-        ID = 268660,
+        ID = 14169,
         Name = "Improved Expose Armor",
         Target = SpellTarget.Enemy,
     };
@@ -57,13 +57,6 @@ public static partial class Spells
     {
         ID = 32484,
         Name = "Improved Curse of the Elements (Malediction)",
-        Target = SpellTarget.Enemy,
-    };
-
-    public static readonly Spell ImprovedSealOfTheCrusaderz = new()
-    {
-        ID = 324841,
-        Name = "FIX THIS", //TODO: FIX THIS
         Target = SpellTarget.Enemy,
     };
 

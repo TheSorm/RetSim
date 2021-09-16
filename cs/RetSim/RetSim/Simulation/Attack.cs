@@ -11,9 +11,9 @@ namespace RetSim.Simulation;
 public class Attack
 {
     private Player Player { get; init; }
-    private Enemy Enemy { get; init; }
+    public Enemy Enemy { get; init; }
     private DamageEffect Effect { get; init; }
-    private SpellState State { get; init; }
+    private SpellState Spell { get; init; }
 
     public AttackResult AttackResult { get; private set; }
     public DamageResult DamageResult { get; private set; }
@@ -26,7 +26,7 @@ public class Attack
 
     public override string ToString()
     {
-        return $"{Player} attacks {Enemy} with {State.Spell.Name} ({AttackResult} / {DamageResult}) - {Damage} Damage";
+        return $"{Player} attacks {Enemy} with {Spell.Spell.Name} ({AttackResult} / {DamageResult}) - {Damage} Damage";
     }
 
     public Attack(Player player, Enemy enemy, DamageEffect effect, SpellState state)
@@ -34,16 +34,20 @@ public class Attack
         Player = player;
         Enemy = enemy;
         Effect = effect;
-        State = state;
+        Spell = state;
 
         ResolveAttack();
     }
 
     public void ResolveAttack()
     {
-        float miss = GetMissChance(Player, Effect.DefenseCategory);
-        float dodge = GetDodgeChance(Player, Effect.DefenseCategory);
-        float crit = GetCritChance(Player, Effect.CritCategory) + State.BonusCritChance;
+        float miss = GetMissChance(Player, Effect.DefenseCategory) - Enemy.Stats[StatName.IncreasedAttackerHitChance].Value;
+
+        if (miss < 0)
+            miss = 0;
+
+        float dodge = Effect.IgnoresDefenses ? 0 : GetDodgeChance(Player, Effect.DefenseCategory);
+        float crit = GetCritChance(Player, Effect.CritCategory) + Spell.BonusCritChance + Enemy.Stats[StatName.IncreasedAttackerCritChance].Value;
 
         var result = GetAttackResult(Effect.DefenseCategory, miss, dodge, crit);
 
@@ -59,9 +63,10 @@ public class Attack
 
         float mitigation = GetMitigation(Player, Enemy, Effect.School);
 
-        BaseDamage = Effect.CalculateDamage(Player, this, State);
+        float playerDamage = Effect.CalculateDamage(Player, this, Spell);
+        float bonusSpellPower = Effect.Coefficient == 0 ? 0 : Enemy.Modifiers.BonusSpellDamageTaken[Effect.School] * Effect.Coefficient;
 
-        //TODO: Implement enemy bonuses
+        BaseDamage = (playerDamage + bonusSpellPower) * Enemy.Modifiers.SchoolDamageTaken.GetModifier(Effect.School);
 
         Damage = RNG.RollDamage(BaseDamage * DamageResultMultiplier * mitigation);
 

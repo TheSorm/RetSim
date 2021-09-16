@@ -1,6 +1,7 @@
 ﻿using RetSim.Simulation;
 using RetSim.Units.Player;
 using RetSim.Units.Player.State;
+using RetSim.Units.UnitStats;
 
 namespace RetSim.Spells.SpellEffects;
 
@@ -15,13 +16,10 @@ public class WeaponDamage : DamageEffect
         if (CritCategory == AttackCategory.Physical)
             school |= School.Physical;
 
-        float schoolMultiplier = player.Modifiers.SchoolModifiers.GetModifier(school);
+        float schoolMultiplier = player.Modifiers.SchoolDamageDone.GetModifier(school);
 
-        return ((GetWeaponDamage(player) + GetSpellPowerBonus(player, state)) * Percentage * state.EffectBonusPercent + state.EffectBonus) * schoolMultiplier;
-    }
+        float weapon = player.Weapon.Attack(attack.Enemy.Stats[StatName.IncreasedAttackerAttackPower].Value, Normalized);
 
-    protected float GetWeaponDamage(Player player)
-    {
-        return Normalized ? player.Weapon.NormalizedAttack() : player.Weapon.Attack();
+        return ((weapon + GetSpellPowerBonus(player, state)) * Percentage * state.EffectBonusPercent + state.EffectBonus) * schoolMultiplier;
     }
 }

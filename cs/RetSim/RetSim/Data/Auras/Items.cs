@@ -8,7 +8,7 @@ public static partial class Auras
 {
     public static readonly Aura Relentless = new()
     {
-        Effects = new() { new ModStat { Percentage = 3, Stats = new() { StatName.CritDamage, StatName.SpellCritDamage } } }
+        Effects = new() { new ModStat { Percent = 3, Stats = new() { StatName.CritDamage, StatName.SpellCritDamage } } }
     };
 
     public static readonly Aura DragonspineTrophy = new()

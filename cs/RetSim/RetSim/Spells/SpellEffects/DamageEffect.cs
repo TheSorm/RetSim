@@ -14,6 +14,7 @@ public class DamageEffect : SpellEffect
     public DefenseType DefenseCategory { get; init; } = DefenseType.Special;
     public AttackCategory CritCategory { get; init; } = AttackCategory.Physical;
     public bool Normalized { get; init; } = false;
+    public bool IgnoresDefenses { get; init; } = false;
     public ProcMask OnCast { get; init; } = ProcMask.None;
     public ProcMask OnHit { get; init; } = ProcMask.None;
     public ProcMask OnCrit { get; init; } = ProcMask.None;
@@ -39,7 +40,7 @@ public class DamageEffect : SpellEffect
         if (CritCategory == AttackCategory.Physical)
             school |= School.Physical;
 
-        float schoolMultiplier = player.Modifiers.SchoolModifiers.GetModifier(school);
+        float schoolMultiplier = player.Modifiers.SchoolDamageDone.GetModifier(school);
 
         return ((GetBaseDamage(player, state) + GetSpellPowerBonus(player, state)) * state.EffectBonusPercent + state.EffectBonus) * schoolMultiplier;
     }

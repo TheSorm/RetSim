@@ -11,6 +11,7 @@ public class CombatLog
     public Dictionary<string, List<DamageEntry>> DamageBreakdown { get; init; }
 
     public List<LogEntry> Log { get; init; }
+    public List<DamageEntry> DamageLog { get; init; }
 
     public CombatLog()
     {
@@ -19,6 +20,7 @@ public class CombatLog
 
         DamageBreakdown = new Dictionary<string, List<DamageEntry>>();
         Log = new List<LogEntry>();
+        DamageLog = new List<DamageEntry>();
     }
 
     public void Add(LogEntry entry)
@@ -35,14 +37,16 @@ public class CombatLog
         DPS = Duration == 0 ? Damage : (float)Damage / Duration * 1000;
 
         Log.Add(entry);
+        DamageLog.Add(entry);
     }
 
     public void CreateDamageBreakdown()
     {
         DamageBreakdown.Clear();
 
-        foreach (DamageEntry entry in Log)
+        foreach (DamageEntry entry in DamageLog)
         {
+
             if (DamageBreakdown.ContainsKey(entry.Source))
                 DamageBreakdown[entry.Source].Add(entry);
 

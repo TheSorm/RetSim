@@ -15,9 +15,6 @@ public class Weapon
 
     public int EffectiveSpeed => (int)(BaseSpeed / player.Stats.EffectiveAttackSpeed);
 
-    public float APBonus => player.Stats[StatName.AttackPower].Value * BaseSpeed / Constants.Numbers.MillisecondsPerSec / Constants.Stats.APPerDPS;
-    public float NormalizedAPBonus => player.Stats[StatName.AttackPower].Value * Constants.Stats.NormalizedWeaponSpeed / Constants.Numbers.MillisecondsPerSec / Constants.Stats.APPerDPS;
-
     public Weapon(Player owner)
     {
         player = owner;
@@ -28,13 +25,17 @@ public class Weapon
         BaseSpeed = player.Equipment.Weapon.AttackSpeed;
     }
 
-    public float Attack()
+    public float Attack(float bonusAP, bool normalized)
     {
-        return RNG.RollRange(MinDamage, MaxDamage) + APBonus;
+        return RNG.RollRange(MinDamage, MaxDamage) + GetAPBonus(bonusAP, normalized); ;
     }
 
-    public float NormalizedAttack()
+    public float GetAPBonus(float bonusAP, bool normalized)
     {
-        return RNG.RollRange(MinDamage, MaxDamage) + NormalizedAPBonus;
+        if (normalized)
+            return (player.Stats[StatName.AttackPower].Value + bonusAP) * Constants.Stats.NormalizedWeaponSpeed / Constants.Numbers.MillisecondsPerSec / Constants.Stats.APPerDPS;
+
+        else
+            return (player.Stats[StatName.AttackPower].Value + bonusAP) * BaseSpeed / Constants.Numbers.MillisecondsPerSec / Constants.Stats.APPerDPS;
     }
 }

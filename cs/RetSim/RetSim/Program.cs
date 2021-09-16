@@ -21,14 +21,19 @@ class Program
 {
     public static AbstractLogger Logger = new ConsoleLogger();
 
+    public static int HunterAgility = 1000;
+    //TODO: Find a better way to handle this
+
     static void Main(string[] args)
     {
         var equipment = Data.Importer.GetEquipment();
 
-        var talents = new List<Talent> { ImprovedSealOfTheCrusader, Conviction, Crusade, TwoHandedWeaponSpecialization, SanctityAura, ImprovedSanctityAura, Vengeance, Fanaticism, SanctifiedSeals, Precision, DivineStrength };
+        var talents = new List<Talent> { Conviction, Crusade, TwoHandedWeaponSpecialization, SanctityAura, ImprovedSanctityAura, Vengeance, Fanaticism, 
+                                            SanctifiedSeals, Precision, DivineStrength };
         var buffs = new List<Spell> { WindfuryTotem, GreaterBlessingOfMight, GreaterBlessingOfKings, BattleShout, StrengthOfEarthTotem, GraceOfAirTotem, ManaSpringTotem, UnleashedRage,
                                           GiftOfTheWild, PrayerOfFortitude, PrayerOfSpirit, ArcaneBrilliance, InspiringPresence };
-        var debuffs = new List<Spell> { ImprovedExposeArmor, ImprovedFaerieFire, CurseOfRecklessness };
+        var debuffs = new List<Spell> { ImprovedSealOfTheCrusader, ImprovedExposeArmor, ImprovedFaerieFire, CurseOfRecklessness, BloodFrenzy, ImprovedCurseOfTheElements, ImprovedShadowBolt, Misery, 
+                                        ShadowWeaving, ImprovedScorch, ImprovedHuntersMark, ExposeWeakness };
 
 
         Logger.Log("Press Enter to run a single, detailed sim, or any other key to run many, non-detailed sims.");

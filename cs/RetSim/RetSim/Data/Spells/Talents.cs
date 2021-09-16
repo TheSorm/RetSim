@@ -4,10 +4,11 @@ namespace RetSim.Data;
 
 public static partial class Spells
 {
-    public static readonly Talent ImprovedSealOfTheCrusader = new() //TODO: Change this into a debuff
+    public static readonly Talent ImprovedSealOfTheCrusader = new() //TODO: Add increased Holy Spell Power
     {
         ID = 20337,
-        Name = "Improved Seal of the Crusader"
+        Name = "Improved Seal of the Crusader",
+        Target = SpellTarget.Enemy
     };
 
     public static readonly Talent Conviction = new()

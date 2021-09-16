@@ -11,14 +11,14 @@ class ModDamageSchool : ModifyPercent
     {
         base.Apply(aura, caster, target, fight);
 
-        fight.Player.Modifiers.SchoolModifiers[SchoolMask] *= RelativeDifference;
+        fight.Player.Modifiers.SchoolDamageDone[SchoolMask] *= RelativeDifference;
 
         //Program.Logger.Log($"{fight.Timestamp} - {aura.Parent.Name} increased {SchoolMask} damage modifier to {fight.Player.Modifiers.SchoolModifiers[SchoolMask]}");
     }
 
     public override void Remove(Aura aura, Unit caster, Unit target, FightSimulation fight)
     {
-        fight.Player.Modifiers.SchoolModifiers[SchoolMask] /= RelativeDifference;
+        fight.Player.Modifiers.SchoolDamageDone[SchoolMask] /= RelativeDifference;
 
         //Program.Logger.Log($"{fight.Timestamp} - {aura.Parent.Name} decreased {SchoolMask} damage modifier to {fight.Player.Modifiers.SchoolModifiers[SchoolMask]}");
 

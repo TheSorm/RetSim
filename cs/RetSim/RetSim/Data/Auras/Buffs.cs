@@ -18,7 +18,7 @@ public static partial class Auras
     {
         Effects = new()
             {
-                new ModStat { Percentage = 10, Stats = new() { StatName.Strength, StatName.Agility, StatName.Stamina, StatName.Intellect } }
+                new ModStat { Percent = 10, Stats = new() { StatName.Strength, StatName.Agility, StatName.Stamina, StatName.Intellect } }
             }
     };
 
@@ -52,7 +52,7 @@ public static partial class Auras
             {
                 new ModDamageSchool
                 {
-                    Percentage = 3,
+                    Percent = 3,
                     SchoolMask = School.All
                 }
             }
@@ -86,7 +86,7 @@ public static partial class Auras
     {
         Effects = new()
             {
-                new ModStat { Percentage = 10, Stats = new() { StatName.AttackPower } }
+                new ModStat { Percent = 10, Stats = new() { StatName.AttackPower } }
             }
     };
 

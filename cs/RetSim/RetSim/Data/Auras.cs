@@ -1,5 +1,6 @@
 ﻿using RetSim.Spells;
 using RetSim.Spells.AuraEffects;
+using RetSim.Units.UnitStats;
 
 namespace RetSim.Data;
 
@@ -33,6 +34,11 @@ public static partial class Auras
                 Amount = 15,
                 Spells = new() { Spells.JudgementOfCommand.ID, Spells.JudgementOfBlood.ID }
             }
+        };
+
+        ExposeWeakness.Effects = new()
+        {
+             new ModifyStats { Stats = new() { { StatName.IncreasedAttackerAttackPower, Program.HunterAgility * 0.25f } } } 
         };
 
         SealOfCommand.ExclusiveWith = new() { SealOfBlood, SealOfTheCrusader };
@@ -94,10 +100,10 @@ public static partial class Auras
             { Spells.CurseOfRecklessness.ID, CurseOfRecklessness },
             { Spells.CurseOfTheElements.ID, CurseOfTheElements },
             { Spells.ImprovedCurseOfTheElements.ID, ImprovedCurseOfTheElements },
-            { Spells.ImprovedSealOfTheCrusaderz.ID, ImprovedSealOfTheCrusaderz },
             { Spells.JudgementOfWisdom.ID, JudgementOfWisdom },
             { Spells.ImprovedHuntersMark.ID, ImprovedHuntersMark },
             { Spells.ExposeWeakness.ID, ExposeWeakness },
+            { Spells.BloodFrenzy.ID, BloodFrenzy },
             { Spells.ImprovedShadowBolt.ID, ImprovedShadowBolt },
             { Spells.Misery.ID, Misery },
             { Spells.ShadowWeaving.ID, ShadowWeaving },
