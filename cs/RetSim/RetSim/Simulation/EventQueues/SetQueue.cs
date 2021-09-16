@@ -5,6 +5,9 @@ namespace RetSim.Simulation.EventQueues
 {
     public class SetQueue : SortedSet<Event>, IEventQueue
     {
+        public SetQueue() : base(new EventComparer())
+        { }
+
         public new void Add(Event e)
         {
             if (e != null)
@@ -46,6 +49,16 @@ namespace RetSim.Simulation.EventQueues
         public void UpdateAdd(Event e)
         {
             Add(e);
+        }
+        private class EventComparer : IComparer<Event>
+        {
+            public int Compare(Event x, Event y)
+            {
+                int result = x.CompareTo(y);
+                if (result == 0) 
+                    return x.GetHashCode().CompareTo(y.GetHashCode());
+                return result;
+            }
         }
     }
 }
