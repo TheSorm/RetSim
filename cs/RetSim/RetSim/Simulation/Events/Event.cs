@@ -34,6 +34,9 @@ public abstract class Event : IComparable<Event>
 
     public int CompareTo(Event other)
     {
-        return Timestamp.CompareTo(other.Timestamp) == 0 ? Priority.CompareTo(other.Priority) : Timestamp.CompareTo(other.Timestamp);
+        int result = Timestamp.CompareTo(other.Timestamp);
+        if (result == 0) 
+            return Priority.CompareTo(other.Priority);
+        return result;
     }
 }
