@@ -1,11 +1,9 @@
 ﻿using RetSim.Spells.AuraEffects;
-using RetSim.Units;
 
 namespace RetSim.Spells;
 
 public class Aura
 {
-    public Unit Caster { get; init; }
     public Spell Parent { get; set; }
     public virtual int Duration { get; init; } = 0;
     public int MaxStacks { get; init; } = 1;
