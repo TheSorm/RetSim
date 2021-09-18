@@ -12,9 +12,9 @@
 
 <MudNavMenu Class="d-flex flex-column full-height justify-space-between">
 	<MudContainer Class="d-flex flex-column px-0">
-		<MudNavLink Href="/gear" Icon="@Icons.Filled.Shield">Gear</MudNavLink>
-		<MudNavLink Href="/settings" Icon="@Icons.Filled.Settings">Settings</MudNavLink>
-		<MudNavLink Href="/statistics" Icon="@Icons.Filled.BarChart">Statistics</MudNavLink>
+		<MudNavLink Href="gear" Icon="@Icons.Filled.Shield">Gear</MudNavLink>
+		<MudNavLink Href="settings" Icon="@Icons.Filled.Settings">Settings</MudNavLink>
+		<MudNavLink Href="statistics" Icon="@Icons.Filled.BarChart">Statistics</MudNavLink>
 	</MudContainer>
 	<StatFrame />
 	<MudContainer Class="d-flex flex-column mb-4">
@@ -75,13 +75,6 @@
 			fight.Run();
 
 			localDps += fight.CombatLog.DPS;
-
-			if(i % 100 == 0)
-            {
-				dps = localDps / i;
-                StateHasChanged();
-                await Task.Delay(1);
-            }
 		}
         Console.WriteLine(System.DateTime.Now.ToString());
 
