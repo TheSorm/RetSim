@@ -1,9 +1,11 @@
 ﻿using RetSim.Spells.AuraEffects;
+using System.Text.Json.Serialization;
 
 namespace RetSim.Spells;
 
 public class Aura
 {
+    [JsonIgnore]
     public Spell Parent { get; set; }
     public virtual int Duration { get; init; } = 0;
     public int MaxStacks { get; init; } = 1;

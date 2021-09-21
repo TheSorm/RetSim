@@ -2,7 +2,8 @@
 using RetSim.Units.Player.Static;
 using System.IO;
 using System.Text.Json;
-
+using System.Text.Json.Serialization;
+using System.Xml;
 using static RetSim.Data.Items;
 
 namespace RetSim.Data;
@@ -38,6 +39,52 @@ public static class Importer
             Relic = EquippableItem.GetItemWithGems(27484, null),
             Weapon = Weapons[28429],
         };
+    }
+
+    public class CustomJsonConverterForType : JsonConverter<Type>
+    {
+        public override Type Read(
+            ref Utf8JsonReader reader,
+            Type typeToConvert,
+            JsonSerializerOptions options
+            )
+        {
+            // Caution: Deserialization of type instances like this 
+            // is not recommended and should be avoided
+            // since it can lead to potential security issues.
+
+            // If you really want this supported (for instance if the JSON input is trusted):
+            // string assemblyQualifiedName = reader.GetString();
+            // return Type.GetType(assemblyQualifiedName);
+            throw new NotSupportedException();
+        }
+
+        public override void Write(
+            Utf8JsonWriter writer,
+            Type value,
+            JsonSerializerOptions options
+            )
+        {
+            string assemblyQualifiedName = value.AssemblyQualifiedName;
+            // Use this with caution, since you are disclosing type information.
+            writer.WriteStringValue(assemblyQualifiedName);
+        }
+    }
+
+    public static void SerializeSpells()
+    {
+        //Console.WriteLine(Spells.ByID[Spells.CrusaderStrike.ID].Effects[0].ToString());
+        var options = new JsonSerializerOptions { WriteIndented = true, DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull };
+        
+        //Ignore 0 value option?
+        
+        //options.Converters.Add(new CustomJsonConverterForType());
+        string serialized = JsonSerializer.Serialize(Spells.ByID, typeof(object), options);
+
+
+        using StreamWriter writer = new("D:/spells.json");
+
+        writer.WriteLine(serialized);
     }
 
     public static (List<EquippableWeapon> Weapons, List<EquippableItem> Armor, List<ItemSet> Sets, List<Gem> Gems, List<MetaGem> MetaGems) LoadData()

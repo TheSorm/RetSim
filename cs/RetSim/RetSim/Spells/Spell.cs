@@ -1,9 +1,12 @@
 ﻿using RetSim.Misc;
 using RetSim.Spells.SpellEffects;
 using RetSim.Units.Player;
+using System.Text.Json.Serialization;
 
 namespace RetSim.Spells;
 
+[Serializable]
+[JsonSerializable(typeof(object))]
 public class Spell
 {
     public int ID { get; init; }
@@ -13,8 +16,11 @@ public class Spell
     public int CastTime { get; init; } = 0;
     public SpellGCD GCD { get; init; } = null;
     public Aura Aura { get; set; } = null;
+
     public List<SpellEffect> Effects { get; set; } = null;
     public SpellTarget Target { get; init; } = SpellTarget.Self;
+
+    [JsonIgnore]
     public Func<Player, bool> Requirements { get; init; }
 }
 

@@ -5,6 +5,7 @@ using RetSim.Units.UnitStats;
 
 namespace RetSim.Spells.SpellEffects;
 
+[Serializable]
 public class WeaponDamage : DamageEffect
 {
     public float Percentage { get; init; } = 1f;
