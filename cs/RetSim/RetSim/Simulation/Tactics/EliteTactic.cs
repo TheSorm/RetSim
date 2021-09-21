@@ -42,30 +42,39 @@ public class EliteTactic : Tactic
 
     public override Event GetActionBetween(int start, int end, FightSimulation fight)
     {
-        var swing = fight.Player.TimeOfNextSwing() - start;
-        var gcd = fight.Player.GCD.GetDuration(start);
-        var cs = fight.Player.Spellbook.IsOnCooldown(CrusaderStrike) ? fight.Player.Spellbook[CrusaderStrike.ID].CooldownEnd.Timestamp - start : 0;
-
         if (!fight.Player.Spellbook.IsOnCooldown(AvengingWrath) && start > 1500)
-            return new CastEvent(AvengingWrath, fight.Player, fight.Player, fight, fight.Timestamp);
+            return new CastEvent(AvengingWrath, fight.Player, fight.Player, fight, start);
 
         if (trinket1 != null && !fight.Player.Spellbook.IsOnCooldown(trinket1) && start > 21495)
-            return new CastEvent(trinket1, fight.Player, fight.Player, fight, fight.Timestamp);
+            return new CastEvent(trinket1, fight.Player, fight.Player, fight, start);
 
         if (trinket2 != null && !fight.Player.Spellbook.IsOnCooldown(trinket2) && start > 21495)
-            return new CastEvent(trinket2, fight.Player, fight.Player, fight, fight.Timestamp);
+            return new CastEvent(trinket2, fight.Player, fight.Player, fight, start);
 
-        if (gcd == 0 && !fight.Player.Auras[Auras.SealOfCommand].Active && swing - gcd > 1510 && end > start + gcd)
+        if (!fight.Player.GCD.Active)
         {
-            if (fight.Player.Auras.CurrentSeal == Auras.SealOfBlood && !fight.Player.Spellbook.IsOnCooldown(Data.Spells.Judgement))
-                return new CastEvent(Data.Spells.Judgement, fight.Player, fight.Enemy, fight, fight.Timestamp);
+            int crusaderStrikeCooldownEnd = fight.Player.Spellbook.IsOnCooldown(CrusaderStrike) ? fight.Player.Spellbook[CrusaderStrike.ID].CooldownEnd.Timestamp : start;
+            int twistWindowEnd = fight.Player.TimeOfNextSwing() - 1510;
 
-            return new CastEvent(SealOfCommand, fight.Player, fight.Player, fight, start + gcd);
+            if (!fight.Player.Auras[Auras.SealOfCommand].Active && start < twistWindowEnd && crusaderStrikeCooldownEnd > fight.Player.TimeOfNextSwing())
+            {
+                if (!fight.Player.Spellbook.IsOnCooldown(Data.Spells.Judgement))
+                    return new CastEvent(Data.Spells.Judgement, fight.Player, fight.Enemy, fight, fight.Timestamp);
+
+                if (fight.Player.Spellbook.IsOnCooldown(Data.Spells.Judgement) && fight.Player.Spellbook[Data.Spells.Judgement.ID].CooldownEnd.Timestamp > twistWindowEnd)
+                    return new CastEvent(SealOfCommand, fight.Player, fight.Player, fight, start);
+            }
+
+            if (!fight.Player.Auras[Auras.SealOfCommand].Active && !fight.Player.Spellbook.IsOnCooldown(CrusaderStrike))
+            {
+                return new CastEvent(CrusaderStrike, fight.Player, fight.Player, fight, start);
+            }
+
+            int twistTime = fight.Player.TimeOfNextSwing() - 390;
+            if (fight.Player.Auras[Auras.SealOfCommand].Active && start < twistTime && end > twistTime)
+                return new CastEvent(SealOfBlood, fight.Player, fight.Player, fight, twistTime, start);
         }
 
-        if (gcd == 0 && fight.Player.Auras[Auras.SealOfCommand].Active && end > fight.Player.TimeOfNextSwing() - 390)
-            return new CastEvent(SealOfBlood, fight.Player, fight.Player, fight, Math.Max(fight.Player.TimeOfNextSwing() - 390, start));
-        
         //if (!player.IsOnGCD())
         //{
         //    if (player.Auras.GetRemainingDuration(Glossaries.Auras.SealOfCommand, start) < 5000)
@@ -78,7 +87,6 @@ public class EliteTactic : Tactic
         //if (!fight.Player.GCD.Active && !fight.Player.Spellbook.IsOnCooldown(Spells.CrusaderStrike))
         //    return new CastEvent(Spells.CrusaderStrike, fight, fight.Timestamp);
 
-        else
-            return null;
+        return null;
     }
 }
