@@ -58,9 +58,9 @@ public class EliteTactic : Tactic
 
             if (!fight.Player.Auras[Auras.SealOfCommand].Active && start < twistWindowEnd && crusaderStrikeCooldownEnd > fight.Player.TimeOfNextSwing())
             {
-                if (!fight.Player.Spellbook.IsOnCooldown(Data.Spells.Judgement))
+                if (!fight.Player.Spellbook.IsOnCooldown(Data.Spells.Judgement) && fight.Player.Auras[Auras.SealOfBlood].Active)
                     return new CastEvent(Data.Spells.Judgement, fight.Player, fight.Enemy, fight, fight.Timestamp);
-
+                
                 if (fight.Player.Spellbook.IsOnCooldown(Data.Spells.Judgement) && fight.Player.Spellbook[Data.Spells.Judgement.ID].CooldownEnd.Timestamp > twistWindowEnd)
                     return new CastEvent(SealOfCommand, fight.Player, fight.Player, fight, start);
             }
@@ -72,7 +72,7 @@ public class EliteTactic : Tactic
 
             int twistTime = fight.Player.TimeOfNextSwing() - 390;
             if (fight.Player.Auras[Auras.SealOfCommand].Active && start < twistTime && end > twistTime)
-                return new CastEvent(SealOfBlood, fight.Player, fight.Player, fight, twistTime, start);
+                return new CastEvent(SealOfBlood, fight.Player, fight.Player, fight, twistTime);
         }
 
         //if (!player.IsOnGCD())

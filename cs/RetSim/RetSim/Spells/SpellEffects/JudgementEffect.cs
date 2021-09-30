@@ -12,7 +12,8 @@ class JudgementEffect : SpellEffect
         {
             var seal = fight.Player.Auras.CurrentSeal;
 
-            fight.Player.Auras.Cancel(seal, fight.Player, fight.Player, fight);
+            //fight.Player.Auras.Cancel(seal, fight.Player, fight.Player, fight);
+            fight.Player.Auras[seal].End.Timestamp = fight.Timestamp;
 
             fight.Queue.Add(new CastEvent(seal.Judgement, fight.Player, fight.Enemy, fight, fight.Timestamp));
         }
