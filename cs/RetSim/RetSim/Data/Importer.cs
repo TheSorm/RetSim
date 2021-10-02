@@ -1,4 +1,6 @@
 ﻿using RetSim.Items;
+using RetSim.Spells;
+using RetSim.Spells.SpellEffects;
 using RetSim.Units.Player.Static;
 using System.IO;
 using System.Text.Json;
@@ -41,50 +43,108 @@ public static class Importer
         };
     }
 
-    public class CustomJsonConverterForType : JsonConverter<Type>
+    public static void SerializeSpells()
     {
-        public override Type Read(
-            ref Utf8JsonReader reader,
-            Type typeToConvert,
-            JsonSerializerOptions options
-            )
-        {
-            // Caution: Deserialization of type instances like this 
-            // is not recommended and should be avoided
-            // since it can lead to potential security issues.
+        var options = new JsonSerializerOptions { 
+            WriteIndented = true, 
+            DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull,
+            Converters = { new JsonStringEnumConverter(), new SpellEffectConverterWithTypeDiscriminator() }
+        };
 
-            // If you really want this supported (for instance if the JSON input is trusted):
-            // string assemblyQualifiedName = reader.GetString();
-            // return Type.GetType(assemblyQualifiedName);
-            throw new NotSupportedException();
+        string serialized = JsonSerializer.Serialize(Spells.ByID.Values, options);
+
+        using StreamWriter writer = new("spells.json");
+
+        writer.WriteLine(serialized);
+
+        //using StreamReader reader = new("spells.json");
+        //List<Spell> de = JsonSerializer.Deserialize<List<Spell>>(reader.ReadToEnd(), options);
+        //Program.Logger.Log(de[0].ID.ToString());
+    }
+
+    public class SpellEffectConverterWithTypeDiscriminator : JsonConverter<SpellEffect>
+    {
+        enum TypeDiscriminator
+        {
+            DamageEffect = 1,
+            ExtraAttacks = 2,
+            JudgementEffect = 3,
+            WeaponDamage = 4
+        }
+
+        public override bool CanConvert(Type typeToConvert) =>
+            typeof(SpellEffect).IsAssignableFrom(typeToConvert);
+
+        public override SpellEffect Read(
+    ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+        {
+            Utf8JsonReader readerClone = reader;
+
+            if (readerClone.TokenType != JsonTokenType.StartObject)
+            {
+                throw new JsonException();
+            }
+
+            readerClone.Read();
+            if (readerClone.TokenType != JsonTokenType.PropertyName)
+            {
+                throw new JsonException();
+            }
+
+            string propertyName = readerClone.GetString();
+            if (propertyName != "TypeDiscriminator")
+            {
+                throw new JsonException();
+            }
+
+            readerClone.Read();
+            if (readerClone.TokenType != JsonTokenType.Number)
+            {
+                throw new JsonException();
+            }
+
+            TypeDiscriminator typeDiscriminator = (TypeDiscriminator)readerClone.GetInt32();
+            SpellEffect spellEffect = typeDiscriminator switch
+            {
+                TypeDiscriminator.DamageEffect => JsonSerializer.Deserialize<DamageEffect>(ref reader),
+                TypeDiscriminator.ExtraAttacks => JsonSerializer.Deserialize<ExtraAttacks>(ref reader),
+                TypeDiscriminator.JudgementEffect => JsonSerializer.Deserialize<JudgementEffect>(ref reader),
+                TypeDiscriminator.WeaponDamage => JsonSerializer.Deserialize<WeaponDamage>(ref reader),
+
+                _ => throw new JsonException()
+            };
+            return spellEffect;
         }
 
         public override void Write(
-            Utf8JsonWriter writer,
-            Type value,
-            JsonSerializerOptions options
-            )
+            Utf8JsonWriter writer, SpellEffect spellEffect, JsonSerializerOptions options)
         {
-            string assemblyQualifiedName = value.AssemblyQualifiedName;
-            // Use this with caution, since you are disclosing type information.
-            writer.WriteStringValue(assemblyQualifiedName);
+            writer.WriteStartObject();
+
+            if (spellEffect is DamageEffect damageEffect)
+            {
+                writer.WriteNumber("TypeDiscriminator", (int)TypeDiscriminator.DamageEffect);
+                writer.WriteNumber("School", (int)damageEffect.School);
+                // Write every single property of DamageEffect here.
+            }
+            else if (spellEffect is ExtraAttacks extraAttacks)
+            {
+                writer.WriteNumber("TypeDiscriminator", (int)TypeDiscriminator.ExtraAttacks);
+                // Write every single property of ExtraAttacks here.
+            }
+            else if (spellEffect is JudgementEffect judgementEffect)
+            {
+                writer.WriteNumber("TypeDiscriminator", (int)TypeDiscriminator.JudgementEffect);
+                // Write every single property of JudgementEffect here.
+            }
+            else if (spellEffect is WeaponDamage weaponDamage)
+            {
+                writer.WriteNumber("TypeDiscriminator", (int)TypeDiscriminator.WeaponDamage);
+                // Write every single property of WeaponDamage here.
+            }
+
+            writer.WriteEndObject();
         }
-    }
-
-    public static void SerializeSpells()
-    {
-        //Console.WriteLine(Spells.ByID[Spells.CrusaderStrike.ID].Effects[0].ToString());
-        var options = new JsonSerializerOptions { WriteIndented = true, DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull };
-        
-        //Ignore 0 value option?
-        
-        //options.Converters.Add(new CustomJsonConverterForType());
-        string serialized = JsonSerializer.Serialize(Spells.ByID, typeof(object), options);
-
-
-        using StreamWriter writer = new("D:/spells.json");
-
-        writer.WriteLine(serialized);
     }
 
     public static (List<EquippableWeapon> Weapons, List<EquippableItem> Armor, List<ItemSet> Sets, List<Gem> Gems, List<MetaGem> MetaGems) LoadData()
