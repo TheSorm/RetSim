@@ -16,15 +16,12 @@ using System.Windows.Shapes;
 namespace RetSimDesktop
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for GearSelect.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class GearSelect : UserControl
     {
-        public MainWindow()
+        public GearSelect()
         {
-            var (Weapons, Armor, Sets, Gems, MetaGems) = RetSim.Data.Importer.LoadData();
-            RetSim.Data.Items.Initialize(Weapons, Armor, Sets, Gems, MetaGems);
-
             InitializeComponent();
         }
     }

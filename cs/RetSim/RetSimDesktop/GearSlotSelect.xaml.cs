@@ -16,16 +16,20 @@ using System.Windows.Shapes;
 namespace RetSimDesktop
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for GearSlotSelect.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class GearSlotSelect : UserControl
     {
-        public MainWindow()
+        public string SlotName { get; set; }
+        public GearSlotSelect()
         {
-            var (Weapons, Armor, Sets, Gems, MetaGems) = RetSim.Data.Importer.LoadData();
-            RetSim.Data.Items.Initialize(Weapons, Armor, Sets, Gems, MetaGems);
-
             InitializeComponent();
+
+            gearSlot.ItemsSource = SlotName switch
+            {
+                "Head" => RetSim.Data.Items.Heads.Values,
+                _ => RetSim.Data.Items.Heads.Values,
+            };
         }
     }
 }

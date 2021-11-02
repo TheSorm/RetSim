@@ -14,13 +14,6 @@
                 <Button Content="Statistics"/>
             </StackPanel>
         </Border>
-        <TabControl>
-            <TabItem Header="TabItem">
-                <Grid Background="#FFE5E5E5"/>
-            </TabItem>
-            <TabItem Header="TabItem">
-                <Grid Background="#FFE5E5E5"/>
-            </TabItem>
-        </TabControl>
+        <local:GearSelect/>
     </DockPanel>
 </Window>
