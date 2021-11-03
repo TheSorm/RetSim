@@ -7,8 +7,33 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-        <DataGrid Name="gearSlot" Margin="0,0,0,35"></DataGrid>
-        <Button Content="Gear Sim" Width="100" Height="20" Margin="690,420,10,10" VerticalAlignment="Bottom" HorizontalAlignment="Right"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="30px" />
+        </Grid.RowDefinitions>
+        <DataGrid Name="gearSlot" IsReadOnly="True" SelectionMode="Single" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Name" Binding="{Binding Name}" />
+                <DataGridTextColumn Header="Level" Binding="{Binding ItemLevel}" />
+                <DataGridTextColumn Header="Str"    x:Name="StrColumn" />
+                <DataGridTextColumn Header="AP"     x:Name="APColumn" />
+                <DataGridTextColumn Header="Agi"    x:Name="AgiColumn" />
+                <DataGridTextColumn Header="Crit"   x:Name="CritColumn" />
+                <DataGridTextColumn Header="Hit"    x:Name="HitColumn" />
+                <DataGridTextColumn Header="Haste"  x:Name="HasteColumn" />
+                <DataGridTextColumn Header="Exp"    x:Name="ExpColumn" />
+                <DataGridTextColumn Header="APen"   x:Name="APenColumn" />
+                <DataGridTextColumn Header="Sta"    x:Name="StaColumn" />
+                <DataGridTextColumn Header="Int"    x:Name="IntColumn" />
+                <DataGridTextColumn Header="MP5"    x:Name="MP5Column" />
+                <DataGridTextColumn Header="SP"     x:Name="SPColumn" />
+                <DataGridTextColumn Header="SCrit"  x:Name="SCritColumn" />
+                <DataGridTextColumn Header="SHit"   x:Name="SHitColumn" />
+                <DataGridTextColumn Header="SHaste" x:Name="SHasteColumn" />
+                <DataGridTextColumn Header="DPS"    x:Name="DPSColumn" />
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Content="Sim Gear DPS" Grid.Row="1" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="100" Height="20" Margin="0,0,5,5" />
     </Grid>
     
 </UserControl>

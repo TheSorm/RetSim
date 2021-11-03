@@ -27,5 +27,35 @@ namespace RetSimDesktop
 
             InitializeComponent();
         }
+
+        private void Gear_Click(object sender, RoutedEventArgs e)
+        {
+            Settings.Visibility = Visibility.Hidden;
+            Statistics.Visibility = Visibility.Hidden;
+            GearSelect.Visibility = Visibility.Visible;
+            GearButton.IsEnabled = false;
+            SettingsButton.IsEnabled = true;
+            StatisticsButton.IsEnabled = true;
+        }
+
+        private void Settings_Click(object sender, RoutedEventArgs e)
+        {
+            Settings.Visibility = Visibility.Visible;
+            Statistics.Visibility = Visibility.Hidden;
+            GearSelect.Visibility = Visibility.Hidden;
+            GearButton.IsEnabled = true;
+            SettingsButton.IsEnabled = false;
+            StatisticsButton.IsEnabled = true;
+        }
+
+        private void Statistics_Click(object sender, RoutedEventArgs e)
+        {
+            Settings.Visibility = Visibility.Hidden;
+            Statistics.Visibility = Visibility.Visible;
+            GearSelect.Visibility = Visibility.Hidden;
+            GearButton.IsEnabled = true;
+            SettingsButton.IsEnabled = true;
+            StatisticsButton.IsEnabled = false;
+        }
     }
 }

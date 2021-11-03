@@ -4,14 +4,53 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:RetSimDesktop"
+             xmlns:sim="clr-namespace:RetSim"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <TabControl>
-        <TabItem Header="Head">
-            <local:GearSlotSelect SlotName="Head"/>
-        </TabItem>
-        <TabItem Header="Neck">
-            <local:GearSlotSelect SlotName="Neck"/>
-        </TabItem>
-    </TabControl>
+    <Grid >
+        <TabControl>
+            <TabItem Header="Head" Height="22" VerticalAlignment="Top">
+                <local:GearSlotSelect x:Name="HeadSelect"/>
+            </TabItem>
+            <TabItem Header="Neck">
+                <local:GearSlotSelect x:Name="NeckSelect"/>
+            </TabItem>
+            <TabItem Header="Shoulders">
+                <local:GearSlotSelect x:Name="ShouldersSelect"/>
+            </TabItem>
+            <TabItem Header="Back">
+                <local:GearSlotSelect x:Name="BackSelect"/>
+            </TabItem>
+            <TabItem Header="Chest">
+                <local:GearSlotSelect x:Name="ChestSelect"/>
+            </TabItem>
+            <TabItem Header="Wrist">
+                <local:GearSlotSelect x:Name="WristSelect"/>
+            </TabItem>
+            <TabItem Header="Hands">
+                <local:GearSlotSelect x:Name="HandsSelect"/>
+            </TabItem>
+            <TabItem Header="Waist">
+                <local:GearSlotSelect x:Name="WaistSelect"/>
+            </TabItem>
+            <TabItem Header="Legs">
+                <local:GearSlotSelect x:Name="LegsSelect"/>
+            </TabItem>
+            <TabItem Header="Finger 1">
+                <local:GearSlotSelect x:Name="Finger1Select"/>
+            </TabItem>
+            <TabItem Header="Finger 2">
+                <local:GearSlotSelect x:Name="Finger2Select"/>
+            </TabItem>
+            <TabItem Header="Trinket 1">
+                <local:GearSlotSelect x:Name="Trinket1Select"/>
+            </TabItem>
+            <TabItem Header="Trinket 2">
+                <local:GearSlotSelect x:Name="Trinket2Select"/>
+            </TabItem>
+            <TabItem Header="Relic">
+                <local:GearSlotSelect x:Name="RelicSelect"/>
+            </TabItem>
+        </TabControl>
+    </Grid>
 </UserControl>

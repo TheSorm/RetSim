@@ -5,15 +5,28 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RetSimDesktop"
         mc:Ignorable="d"
-        Title="RetSim" Height="450" Width="800">
-    <DockPanel>
-        <Border BorderBrush="Black" BorderThickness="1" Width="100">
-            <StackPanel Width="100">
-                <Button Content="Gear"/>
-                <Button Content="Settings"/>
-                <Button Content="Statistics"/>
-            </StackPanel>
+        Title="RetSim" Height="450" Width="900" MinHeight="250" MinWidth="400">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Border BorderBrush="Black" BorderThickness="1">
+            <Grid Margin="0,0,0,5">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <StackPanel VerticalAlignment="Top" HorizontalAlignment="Center" Width="100">
+                    <Button x:Name="GearButton" IsEnabled="False" Content="Gear" Click="Gear_Click"/>
+                    <Button x:Name="SettingsButton" Content="Settings" Click="Settings_Click"/>
+                    <Button x:Name="StatisticsButton" Content="Statistics" Click="Statistics_Click"/>
+                </StackPanel>
+                <Button VerticalAlignment="Bottom" HorizontalAlignment="Center" Content="DPS" Width="50"/>
+            </Grid>
         </Border>
-        <local:GearSelect/>
-    </DockPanel>
+        <local:GearSelect x:Name="GearSelect" Grid.Column="1"/>
+        <local:Settings Visibility="Hidden" x:Name="Settings" Grid.Column="1"/>
+        <local:Statistics Visibility="Hidden" x:Name="Statistics" Grid.Column="1"/>
+
+    </Grid>
 </Window>

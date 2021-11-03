@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using RetSim.Items;
+using RetSim.Units.UnitStats;
 
 namespace RetSimDesktop
 {
@@ -20,16 +22,43 @@ namespace RetSimDesktop
     /// </summary>
     public partial class GearSlotSelect : UserControl
     {
-        public string SlotName { get; set; }
+        public IEnumerable<EquippableItem> SlotList
+        {
+            get => (IEnumerable<EquippableItem>)GetValue(SlotListProperty);
+            set => SetValue(SlotListProperty, value);
+        }
+
+        public static readonly DependencyProperty SlotListProperty = DependencyProperty.Register(
+            "SlotList", 
+            typeof(IEnumerable<EquippableItem>),
+            typeof(GearSlotSelect),
+            new PropertyMetadata());
+
         public GearSlotSelect()
         {
             InitializeComponent();
 
-            gearSlot.ItemsSource = SlotName switch
+            gearSlot.SetBinding(DataGrid.ItemsSourceProperty, new Binding("SlotList")
             {
-                "Head" => RetSim.Data.Items.Heads.Values,
-                _ => RetSim.Data.Items.Heads.Values,
-            };
+                Source = this,
+                Mode = BindingMode.OneWay
+            });
+
+            StrColumn.Binding = new Binding("Stats[" + StatName.Strength + "]");
+            APColumn.Binding = new Binding("Stats[" + StatName.AttackPower + "]");
+            AgiColumn.Binding = new Binding("Stats[" + StatName.Agility + "]");
+            CritColumn.Binding = new Binding("Stats[" + StatName.CritRating + "]");
+            HitColumn.Binding = new Binding("Stats[" + StatName.HitRating + "]");
+            HasteColumn.Binding = new Binding("Stats[" + StatName.HasteRating + "]");
+            ExpColumn.Binding = new Binding("Stats[" + StatName.ExpertiseRating + "]");
+            APenColumn.Binding = new Binding("Stats[" + StatName.ArmorPenetration + "]");
+            StaColumn.Binding = new Binding("Stats[" + StatName.Stamina + "]");
+            IntColumn.Binding = new Binding("Stats[" + StatName.Intellect + "]");
+            MP5Column.Binding = new Binding("Stats[" + StatName.ManaPer5 + "]");
+            SPColumn.Binding = new Binding("Stats[" + StatName.SpellPower + "]");
+            SCritColumn.Binding = new Binding("Stats[" + StatName.SpellCritRating + "]");
+            SHitColumn.Binding = new Binding("Stats[" + StatName.SpellHitRating + "]");
+            SHasteColumn.Binding = new Binding("Stats[" + StatName.SpellHasteRating + "]");
         }
     }
 }
