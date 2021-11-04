@@ -32,6 +32,16 @@
                 <DataGridTextColumn Header="SHaste" x:Name="SHasteColumn" />
                 <DataGridTextColumn Header="DPS"    x:Name="DPSColumn" />
             </DataGrid.Columns>
+            <DataGrid.Resources>
+                <Style TargetType="{x:Type DataGridCell}">
+                    <Style.Triggers>
+                        <Trigger Property="DataGridCell.IsSelected" Value="True">
+                            <Setter Property="Background" Value="#CCDAFF" />
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </DataGrid.Resources>
+
         </DataGrid>
         <Button Content="Sim Gear DPS" Grid.Row="1" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="100" Height="20" Margin="0,0,5,5" />
     </Grid>

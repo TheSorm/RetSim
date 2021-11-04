@@ -11,4 +11,14 @@
     <ProjectReference Include="..\RetSim\RetSim.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Page Include="App.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Update="View\WeaponSlotSelect.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+    </Page>
+  </ItemGroup>
+
 </Project>

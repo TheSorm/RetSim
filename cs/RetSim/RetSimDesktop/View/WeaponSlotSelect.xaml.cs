@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,28 +21,44 @@ namespace RetSimDesktop
     /// <summary>
     /// Interaction logic for GearSlotSelect.xaml
     /// </summary>
-    public partial class GearSlotSelect : UserControl
+    public partial class WeaponSlotSelect : UserControl
     {
-        public IEnumerable<EquippableItem> SlotList
+        public IEnumerable<EquippableWeapon> WeaponList
         {
-            get => (IEnumerable<EquippableItem>)GetValue(SlotListProperty);
-            set => SetValue(SlotListProperty, value);
+            get => (IEnumerable<EquippableWeapon>)GetValue(WeaponListProperty);
+            set => SetValue(WeaponListProperty, value);
         }
 
-        public static readonly DependencyProperty SlotListProperty = DependencyProperty.Register(
-            "SlotList", 
-            typeof(IEnumerable<EquippableItem>),
-            typeof(GearSlotSelect),
-            new PropertyMetadata());
+        public static readonly DependencyProperty WeaponListProperty = DependencyProperty.Register(
+            "WeaponList", 
+            typeof(IEnumerable<EquippableWeapon>),
+            typeof(WeaponSlotSelect));
 
-        public GearSlotSelect()
+        public EquippableWeapon SelectedItem
+        {
+            get => (EquippableWeapon)GetValue(SelectedItemProperty);
+            set => SetValue(SelectedItemProperty, value);
+        }
+
+        public static readonly DependencyProperty SelectedItemProperty = DependencyProperty.Register(
+            "SelectedItem",
+            typeof(EquippableWeapon),
+            typeof(WeaponSlotSelect));
+
+        public WeaponSlotSelect()
         {
             InitializeComponent();
 
-            gearSlot.SetBinding(DataGrid.ItemsSourceProperty, new Binding("SlotList")
+            gearSlot.SetBinding(DataGrid.ItemsSourceProperty, new Binding("WeaponList")
             {
                 Source = this,
                 Mode = BindingMode.OneWay
+            });
+
+            gearSlot.SetBinding(DataGrid.SelectedItemProperty, new Binding("SelectedItem")
+            {
+                Source = this,
+                Mode = BindingMode.TwoWay
             });
 
             StrColumn.Binding = new Binding("Stats[" + StatName.Strength + "]");

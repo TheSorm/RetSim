@@ -1,5 +1,6 @@
 ﻿using RetSim.Data;
 using RetSim.Items;
+using RetSimDesktop.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,11 +21,18 @@ namespace RetSimDesktop
     /// <summary>
     /// Interaction logic for GearSelect.xaml
     /// </summary>
+    /// 
     public partial class GearSelect : UserControl
     {
         public GearSelect()
         {
             InitializeComponent();
+
+            WeaponSelect.SetBinding(WeaponSlotSelect.WeaponListProperty, new Binding("Values")
+            {
+                Source = Items.Weapons,
+                Mode = BindingMode.OneWay
+            });
 
             HeadSelect.SetBinding(GearSlotSelect.SlotListProperty, new Binding("Values")
             {

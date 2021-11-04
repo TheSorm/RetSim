@@ -21,10 +21,14 @@
                     <Button x:Name="SettingsButton" Content="Settings" Click="Settings_Click"/>
                     <Button x:Name="StatisticsButton" Content="Statistics" Click="Statistics_Click"/>
                 </StackPanel>
-                <Button VerticalAlignment="Bottom" HorizontalAlignment="Center" Content="DPS" Width="50"/>
+                <StackPanel VerticalAlignment="Bottom" HorizontalAlignment="Center" Width="100">
+                    <Label HorizontalContentAlignment="Center" Content="{Binding CurrentSimOutput.Progress}" ContentStringFormat=" {0}%"/>
+                    <Label HorizontalContentAlignment="Center" Content="{Binding CurrentSimOutput.DPS}" ContentStringFormat="DPS:{0}"/>
+                    <Button Content="DPS" Width="50" Click="DpsSimClick"/>
+                </StackPanel>
             </Grid>
         </Border>
-        <local:GearSelect x:Name="GearSelect" Grid.Column="1"/>
+        <local:GearSelect x:Name="GearSelect"  Grid.Column="1"/>
         <local:Settings Visibility="Hidden" x:Name="Settings" Grid.Column="1"/>
         <local:Statistics Visibility="Hidden" x:Name="Statistics" Grid.Column="1"/>
 
