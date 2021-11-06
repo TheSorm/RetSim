@@ -38,7 +38,7 @@ namespace RetSimDesktop.ViewModel
                 SelectedWeapon = Weapons[28429],
             };
 
-            _CurrentSimOutput = new SimOutput() { Progress = 0, DPS = 0 };
+            _CurrentSimOutput = new SimOutput() { Progress = 0, DPS = 0, Min = 0, Max = 0, MedianCombatLog = new(), MaxCombatLog = new(), MinCombatLog = new() };
 
             _SelectedTalents = new SelectedTalents()
             {

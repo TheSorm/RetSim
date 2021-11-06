@@ -1,0 +1,128 @@
+﻿<UserControl x:Class="RetSimDesktop.StatPanel"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:RetSimDesktop"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800" >
+    <Grid Background="White">
+        <GroupBox Margin="5">
+            <GroupBox.Header>
+                Human Paladine
+            </GroupBox.Header>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2.5*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <StackPanel HorizontalAlignment="Stretch" >
+                    <Label Padding="0" Content="Strength"/>
+                    <Separator/>
+                    <Label Padding="0" Content="Attack Power"/>
+                    <Separator/>
+                    <Label Padding="0" Content="Agility"/>
+                    <Separator/>
+                    <Label Padding="0" Content="Crit"/>
+                    <Separator/>
+                    <Label Padding="0" Content="Hit"/>
+                    <Separator/>
+                    <Label Padding="0" Content="Haste"/>
+                    <Separator/>
+                    <Label Padding="0" Content="Expertise"/>
+                    <Separator/>
+                    <Label Padding="0" Content="Armor Penetration"/>
+                    <Separator/>
+                    <Label Padding="0" Content="Weapon Damage"/>
+                    <Separator/>
+                    <Label Padding="0" Content="Stamina"/>
+                    <Separator/>
+                    <Label Padding="0" Content="Intellect"/>
+                    <Separator/>
+                    <Label Padding="0" Content="Mana Per 5"/>
+                    <Separator/>
+                    <Label Padding="0" Content="Spell Power"/>
+                    <Separator/>
+                    <Label Padding="0" Content="Spell Crit"/>
+                    <Separator/>
+                    <Label Padding="0" Content="Spell Hit"/>
+                    <Separator/>
+                    <Label Padding="0" Content="Spell Haste"/>
+                </StackPanel>
+                <StackPanel Grid.Column="1" HorizontalAlignment="Stretch">
+                    <Label HorizontalContentAlignment="Right" Padding="0" Content=" "/>
+                    <Separator/>
+                    <Label HorizontalContentAlignment="Right" Padding="0" Content=" "/>
+                    <Separator/>
+                    <Label HorizontalContentAlignment="Right" Padding="0" Content=" "/>
+                    <Separator/>
+                    <Label HorizontalContentAlignment="Right" Padding="0" Content="0" x:Name="CritPercentage"/>
+                    <Separator/>
+                    <Label HorizontalContentAlignment="Right" Padding="0" Content="0" x:Name="HitPercentage"/>
+                    <Separator/>
+                    <Label HorizontalContentAlignment="Right" Padding="0" Content="0" x:Name="HastePercentage"/>
+                    <Separator/>
+                    <Label HorizontalContentAlignment="Right" Padding="0" Content="0" x:Name="ExpertisePercentage"/>
+                    <Separator/>
+                    <Label HorizontalContentAlignment="Right" Padding="0" Content=" "/>
+                    <Separator/>
+                    <Label HorizontalContentAlignment="Right" Padding="0" Content=" "/>
+                    <Separator/>
+                    <Label HorizontalContentAlignment="Right" Padding="0" Content=" "/>
+                    <Separator/>
+                    <Label HorizontalContentAlignment="Right" Padding="0" Content=" "/>
+                    <Separator/>
+                    <Label HorizontalContentAlignment="Right" Padding="0" Content=" "/>
+                    <Separator/>
+                    <Label HorizontalContentAlignment="Right" Padding="0" Content=" "/>
+                    <Separator/>
+                    <Label HorizontalContentAlignment="Right" Padding="0" Content="0" x:Name="SpellCritPercentage"/>
+                    <Separator/>
+                    <Label HorizontalContentAlignment="Right"  Padding="0" Content="0" x:Name="SpellHitPercentage"/>
+                    <Separator/>
+                    <Label HorizontalContentAlignment="Right"  Padding="0" Content="0" x:Name="SpellHastePercentage"/>
+                </StackPanel>
+                <StackPanel Grid.Column="2" HorizontalAlignment="Stretch">
+                    <Label HorizontalContentAlignment="Right" Padding="0" Content="0" x:Name="Strength"/>
+                    <Separator/>
+                    <Label HorizontalContentAlignment="Right" Padding="0" Content="0" x:Name="AttackPower"/>
+                    <Separator/>
+                    <Label HorizontalContentAlignment="Right" Padding="0" Content="0" x:Name="Agility"/>
+                    <Separator/>
+                    <Label HorizontalContentAlignment="Right" Padding="0" Content="0" x:Name="Crit"/>
+                    <Separator/>
+                    <Label HorizontalContentAlignment="Right" Padding="0" Content="0" x:Name="Hit"/>
+                    <Separator/>
+                    <Label HorizontalContentAlignment="Right" Padding="0" Content="0" x:Name="Haste"/>
+                    <Separator/>
+                    <Label HorizontalContentAlignment="Right" Padding="0" Content="0" x:Name="Expertise"/>
+                    <Separator/>
+                    <Label HorizontalContentAlignment="Right" Padding="0" Content="0" x:Name="ArmorPenetration"/>
+                    <Separator/>
+                    <Label HorizontalContentAlignment="Right" Padding="0" Content="0" x:Name="WeaponDamage"/>
+                    <Separator/>
+                    <Label HorizontalContentAlignment="Right" Padding="0" Content="0" x:Name="Stamina"/>
+                    <Separator/>
+                    <Label HorizontalContentAlignment="Right" Padding="0" Content="0" x:Name="Intellect"/>
+                    <Separator/>
+                    <Label HorizontalContentAlignment="Right"  Padding="0" Content="0" x:Name="ManaPer5"/>
+                    <Separator/>
+                    <Label HorizontalContentAlignment="Right" Padding="0" Content="0" x:Name="SpellPower"/>
+                    <Separator/>
+                    <Label HorizontalContentAlignment="Right" Padding="0" Content="0" x:Name="SpellCrit"/>
+                    <Separator/>
+                    <Label HorizontalContentAlignment="Right"  Padding="0" Content="0" x:Name="SpellHit"/>
+                    <Separator/>
+                    <Label HorizontalContentAlignment="Right"  Padding="0" Content="0" x:Name="SpellHaste"/>
+                </StackPanel>
+                
+
+            </Grid>
+        </GroupBox>
+    </Grid>
+</UserControl>
