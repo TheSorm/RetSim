@@ -8,6 +8,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="View\GearSlotSelect.xaml.cs~RF16209c.TMP" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\RetSim\RetSim.csproj" />
   </ItemGroup>
 

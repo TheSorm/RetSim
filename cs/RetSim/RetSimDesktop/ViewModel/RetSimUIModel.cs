@@ -1,11 +1,6 @@
 ﻿using RetSim.Items;
 using RetSimDesktop.Model;
 using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Input;
 using static RetSim.Data.Items;
 
@@ -14,6 +9,7 @@ namespace RetSimDesktop.ViewModel
     public class RetSimUIModel
     {
         private SelectedGear _SelectedGear;
+        private SelectedTalents _SelectedTalents;
         private SimOutput _CurrentSimOutput;
 
         public RetSimUIModel()
@@ -43,6 +39,20 @@ namespace RetSimDesktop.ViewModel
             };
 
             _CurrentSimOutput = new SimOutput() { Progress = 0, DPS = 0 };
+
+            _SelectedTalents = new SelectedTalents()
+            {
+                ConvictionEnabled = true,
+                CrusadeEnabled = true,
+                DivineStrengthEnabled = true,
+                FanaticismEnabled = true,
+                ImprovedSanctityAuraEnabled = true,
+                PrecisionEnabled = true,
+                SanctifiedSealsEnabled = true,
+                SanctityAuraEnabled = true,
+                TwoHandedWeaponSpecializationEnabled = true,
+                VengeanceEnabled = true
+            };
         }
 
         public SelectedGear SelectedGear
@@ -55,6 +65,12 @@ namespace RetSimDesktop.ViewModel
         {
             get { return _CurrentSimOutput; }
             set { _CurrentSimOutput = value; }
+        }
+
+        public SelectedTalents SelectedTalents
+        {
+            get { return _SelectedTalents; }
+            set { _SelectedTalents = value; }
         }
 
         private ICommand mUpdater;

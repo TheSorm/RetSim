@@ -1,11 +1,5 @@
 ﻿using RetSim.Items;
-using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace RetSimDesktop.Model
 {
@@ -31,7 +25,8 @@ namespace RetSimDesktop.Model
         public EquippableItem SelectedHead
         {
             get { return selectedHead; }
-            set { 
+            set
+            {
                 selectedHead = value;
                 OnPropertyChanged(nameof(SelectedHead));
             }

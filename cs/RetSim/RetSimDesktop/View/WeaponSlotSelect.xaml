@@ -6,44 +6,52 @@
              xmlns:local="clr-namespace:RetSimDesktop"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <local:SocketConverter x:Key="SocketConverter" />
+    </UserControl.Resources>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
             <RowDefinition Height="30px" />
         </Grid.RowDefinitions>
-        <DataGrid Name="gearSlot" IsReadOnly="True" SelectionMode="Single" AutoGenerateColumns="False">
+        <DataGrid Name="gearSlot" IsReadOnly="True" SelectionMode="Single" HeadersVisibility="Column" CanUserResizeColumns="False" CanUserResizeRows="False" AutoGenerateColumns="False">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Name" Binding="{Binding Name}" />
-                <DataGridTextColumn Header="Level" Binding="{Binding ItemLevel}" />
-                <DataGridTextColumn Header="Type" Binding="{Binding Type}" />
-                <DataGridTextColumn Header="Min" Binding="{Binding MinDamage}" />
-                <DataGridTextColumn Header="Max" Binding="{Binding MaxDamage}" />
-                <DataGridTextColumn Header="Speed" Binding="{Binding AttackSpeed}" />
-                <DataGridTextColumn Header="DPS" Binding="{Binding DPS}" />
-                <DataGridTextColumn Header="Str"    x:Name="StrColumn" />
-                <DataGridTextColumn Header="AP"     x:Name="APColumn" />
-                <DataGridTextColumn Header="Agi"    x:Name="AgiColumn" />
-                <DataGridTextColumn Header="Crit"   x:Name="CritColumn" />
-                <DataGridTextColumn Header="Hit"    x:Name="HitColumn" />
-                <DataGridTextColumn Header="Haste"  x:Name="HasteColumn" />
-                <DataGridTextColumn Header="Exp"    x:Name="ExpColumn" />
-                <DataGridTextColumn Header="APen"   x:Name="APenColumn" />
-                <DataGridTextColumn Header="Sta"    x:Name="StaColumn" />
-                <DataGridTextColumn Header="Int"    x:Name="IntColumn" />
-                <DataGridTextColumn Header="MP5"    x:Name="MP5Column" />
-                <DataGridTextColumn Header="SP"     x:Name="SPColumn" />
-                <DataGridTextColumn Header="SCrit"  x:Name="SCritColumn" />
-                <DataGridTextColumn Header="SHit"   x:Name="SHitColumn" />
-                <DataGridTextColumn Header="SHaste" x:Name="SHasteColumn" />
-                <DataGridTextColumn Header="DPS"    x:Name="DPSColumn" />
+                <DataGridTextColumn CanUserReorder="False" Header="Name" Binding="{Binding Name}" />
+                <DataGridTextColumn CanUserReorder="False" Header="Level" Binding="{Binding ItemLevel}" />
+                <DataGridTextColumn CanUserReorder="False" CanUserSort="False" Header="Socket 1" Binding="{Binding Socket1, Converter={StaticResource SocketConverter}}" />
+                <DataGridTextColumn CanUserReorder="False" CanUserSort="False" Header="Socket 2" Binding="{Binding Socket2, Converter={StaticResource SocketConverter}}" />
+                <DataGridTextColumn CanUserReorder="False" CanUserSort="False" Header="Socket 3" Binding="{Binding Socket3, Converter={StaticResource SocketConverter}}" />
+                <DataGridTextColumn CanUserReorder="False" Header="Type" Binding="{Binding Type}" />
+                <DataGridTextColumn CanUserReorder="False" Header="Min" Binding="{Binding MinDamage}" />
+                <DataGridTextColumn CanUserReorder="False" Header="Max" Binding="{Binding MaxDamage}" />
+                <DataGridTextColumn CanUserReorder="False" Header="Speed" Binding="{Binding AttackSpeed}" />
+                <DataGridTextColumn CanUserReorder="False" Header="DPS" Binding="{Binding DPS}" />
+                <DataGridTextColumn CanUserReorder="False" Header="Str"    x:Name="StrColumn" />
+                <DataGridTextColumn CanUserReorder="False" Header="AP"     x:Name="APColumn" />
+                <DataGridTextColumn CanUserReorder="False" Header="Agi"    x:Name="AgiColumn" />
+                <DataGridTextColumn CanUserReorder="False" Header="Crit"   x:Name="CritColumn" />
+                <DataGridTextColumn CanUserReorder="False" Header="Hit"    x:Name="HitColumn" />
+                <DataGridTextColumn CanUserReorder="False" Header="Haste"  x:Name="HasteColumn" />
+                <DataGridTextColumn CanUserReorder="False" Header="Exp"    x:Name="ExpColumn" />
+                <DataGridTextColumn CanUserReorder="False" Header="APen"   x:Name="APenColumn" />
+                <DataGridTextColumn CanUserReorder="False" Header="Sta"    x:Name="StaColumn" />
+                <DataGridTextColumn CanUserReorder="False" Header="Int"    x:Name="IntColumn" />
+                <DataGridTextColumn CanUserReorder="False" Header="MP5"    x:Name="MP5Column" />
+                <DataGridTextColumn CanUserReorder="False" Header="SP"     x:Name="SPColumn" />
+                <DataGridTextColumn CanUserReorder="False" Header="SCrit"  x:Name="SCritColumn" />
+                <DataGridTextColumn CanUserReorder="False" Header="SHit"   x:Name="SHitColumn" />
+                <DataGridTextColumn CanUserReorder="False" Header="SHaste" x:Name="SHasteColumn" />
+                <DataGridTextColumn CanUserReorder="False" Header="DPS"    x:Name="DPSColumn" />
             </DataGrid.Columns>
             <DataGrid.Resources>
                 <Style TargetType="{x:Type DataGridCell}">
                     <Style.Triggers>
                         <Trigger Property="DataGridCell.IsSelected" Value="True">
-                            <Setter Property="Background" Value="#CCDAFF" />
+                            <Setter Property="Background" Value="#0078d7" />
+                            <Setter Property="BorderBrush" Value="#0078d7" />
                         </Trigger>
                     </Style.Triggers>
+                    <EventSetter Event="MouseDoubleClick" Handler="DataGridCell_MouseDoubleClick"/>
                 </Style>
             </DataGrid.Resources>
 

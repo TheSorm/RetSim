@@ -7,7 +7,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid >
-        <TabControl>
+        <TabControl x:Name="GearTabs">
             <TabItem Header="Weapon">
                 <local:WeaponSlotSelect x:Name="WeaponSelect" SelectedItem="{Binding SelectedGear.SelectedWeapon, Mode=TwoWay}"/>
             </TabItem>
@@ -37,6 +37,9 @@
             </TabItem>
             <TabItem Header="Legs">
                 <local:GearSlotSelect x:Name="LegsSelect" SelectedItem="{Binding SelectedGear.SelectedLegs, Mode=TwoWay}"/>
+            </TabItem>
+            <TabItem Header="Feet">
+                <local:GearSlotSelect x:Name="FeetSelect" SelectedItem="{Binding SelectedGear.SelectedFeet, Mode=TwoWay}"/>
             </TabItem>
             <TabItem Header="Finger 1">
                 <local:GearSlotSelect x:Name="Finger1Select" SelectedItem="{Binding SelectedGear.SelectedFinger1, Mode=TwoWay}"/>

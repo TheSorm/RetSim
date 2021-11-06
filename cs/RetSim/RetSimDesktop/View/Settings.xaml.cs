@@ -1,17 +1,8 @@
-﻿using System;
+﻿using RetSim.Items;
+using RetSimDesktop.View;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace RetSimDesktop
 {
@@ -23,6 +14,41 @@ namespace RetSimDesktop
         public Settings()
         {
             InitializeComponent();
+        }
+
+        private void RedSocketSelect_Click(object sender, RoutedEventArgs e)
+        {
+            SelectGemForSocketColor(SocketColor.Red, RetSim.Data.Items.Gems.Values);
+        }
+        private void YellowSocketSelect_Click(object sender, RoutedEventArgs e)
+        {
+            SelectGemForSocketColor(SocketColor.Yellow, RetSim.Data.Items.Gems.Values);
+        }
+        private void BlueSocketSelect_Click(object sender, RoutedEventArgs e)
+        {
+            SelectGemForSocketColor(SocketColor.Blue, RetSim.Data.Items.Gems.Values);
+        }
+        private void MetaSocketSelect_Click(object sender, RoutedEventArgs e)
+        {
+            SelectGemForSocketColor(SocketColor.Meta, RetSim.Data.Items.MetaGems.Values);
+        }
+
+        private static void SelectGemForSocketColor(SocketColor color, IEnumerable<Gem> gemList)
+        {
+            GemPickerWindow gemPicker = new(gemList);
+            if (gemPicker.ShowDialog() == true)
+            {
+                foreach (var item in RetSim.Data.Items.AllItems.Values)
+                {
+                    for (int i = 0; i < item.Sockets.Length; i++)
+                    {
+                        if (item.Sockets[i] != null && item.Sockets[i].Color == color)
+                        {
+                            item.Sockets[i].SocketedGem = gemPicker.SelectedGem;
+                        }
+                    }
+                }
+            }
         }
     }
 }

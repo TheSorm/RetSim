@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel;
 
 namespace RetSimDesktop.Model
 {
@@ -18,7 +13,7 @@ namespace RetSimDesktop.Model
             set
             {
                 progress = value;
-                OnPropertyChanged(nameof(progress));
+                OnPropertyChanged(nameof(Progress));
             }
         }
         public float DPS
