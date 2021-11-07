@@ -3,6 +3,7 @@ using RetSim.Units.UnitStats;
 using RetSimDesktop.View;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -41,6 +42,7 @@ namespace RetSimDesktop
         {
             InitializeComponent();
 
+
             gearSlot.SetBinding(DataGrid.ItemsSourceProperty, new Binding("SlotList")
             {
                 Source = this,
@@ -53,21 +55,56 @@ namespace RetSimDesktop
                 Mode = BindingMode.TwoWay
             });
 
-            StrColumn.Binding = new Binding("Stats[" + StatName.Strength + "]");
-            APColumn.Binding = new Binding("Stats[" + StatName.AttackPower + "]");
-            AgiColumn.Binding = new Binding("Stats[" + StatName.Agility + "]");
-            CritColumn.Binding = new Binding("Stats[" + StatName.CritRating + "]");
-            HitColumn.Binding = new Binding("Stats[" + StatName.HitRating + "]");
-            HasteColumn.Binding = new Binding("Stats[" + StatName.HasteRating + "]");
-            ExpColumn.Binding = new Binding("Stats[" + StatName.ExpertiseRating + "]");
-            APenColumn.Binding = new Binding("Stats[" + StatName.ArmorPenetration + "]");
-            StaColumn.Binding = new Binding("Stats[" + StatName.Stamina + "]");
-            IntColumn.Binding = new Binding("Stats[" + StatName.Intellect + "]");
-            MP5Column.Binding = new Binding("Stats[" + StatName.ManaPer5 + "]");
-            SPColumn.Binding = new Binding("Stats[" + StatName.SpellPower + "]");
-            SCritColumn.Binding = new Binding("Stats[" + StatName.SpellCritRating + "]");
-            SHitColumn.Binding = new Binding("Stats[" + StatName.SpellHitRating + "]");
-            SHasteColumn.Binding = new Binding("Stats[" + StatName.SpellHasteRating + "]");
+            StatConverter statConverter = new();
+
+            Binding strBinding = new("Stats[" + StatName.Strength + "]");
+            strBinding.Converter = statConverter;
+            StrColumn.Binding = strBinding;
+            Binding apBinding = new("Stats[" + StatName.AttackPower + "]");
+            apBinding.Converter = statConverter;
+            APColumn.Binding = apBinding;
+            Binding agiBinding = new("Stats[" + StatName.Agility + "]");
+            agiBinding.Converter = statConverter;
+            AgiColumn.Binding = agiBinding;
+            Binding critBinding = new("Stats[" + StatName.CritRating + "]");
+            critBinding.Converter = statConverter;
+            CritColumn.Binding = critBinding;
+            Binding hitBinding = new("Stats[" + StatName.HitRating + "]");
+            hitBinding.Converter = statConverter;
+            HitColumn.Binding = hitBinding;
+            Binding hasteBinding = new("Stats[" + StatName.HasteRating + "]");
+            hasteBinding.Converter = statConverter;
+            HasteColumn.Binding = hasteBinding;
+            Binding expBinding = new("Stats[" + StatName.ExpertiseRating + "]");
+            expBinding.Converter = statConverter;
+            ExpColumn.Binding = expBinding;
+            Binding apenBinding = new("Stats[" + StatName.ArmorPenetration + "]");
+            apenBinding.Converter = statConverter;
+            APenColumn.Binding = apenBinding;
+            Binding staBinding = new("Stats[" + StatName.Stamina + "]");
+            staBinding.Converter = statConverter;
+            StaColumn.Binding = staBinding;
+            Binding intBinding = new("Stats[" + StatName.Intellect + "]");
+            intBinding.Converter = statConverter;
+            IntColumn.Binding = intBinding;
+            Binding mp5Binding = new("Stats[" + StatName.ManaPer5 + "]");
+            mp5Binding.Converter = statConverter;
+            MP5Column.Binding = mp5Binding;
+            Binding spBinding = new("Stats[" + StatName.SpellPower + "]");
+            spBinding.Converter = statConverter;
+            SPColumn.Binding = spBinding;
+            Binding sCritBinding = new("Stats[" + StatName.SpellCritRating + "]");
+            sCritBinding.Converter = statConverter;
+            SCritColumn.Binding = sCritBinding;
+            Binding sHitBinding = new("Stats[" + StatName.SpellHitRating + "]");
+            sHitBinding.Converter = statConverter;
+            SHitColumn.Binding = sHitBinding;
+            Binding sHasteBinding = new("Stats[" + StatName.SpellHasteRating + "]");
+            sHasteBinding.Converter = statConverter;
+            SHasteColumn.Binding = sHasteBinding;
+
+            LevelColumn.SortDirection = ListSortDirection.Descending;
+            gearSlot.Items.SortDescriptions.Add(new SortDescription(LevelColumn.SortMemberPath, ListSortDirection.Descending));
         }
 
         private void DataGridCell_MouseDoubleClick(object sender, MouseButtonEventArgs e)
@@ -107,6 +144,18 @@ namespace RetSimDesktop
                     gearSlot.Items.Refresh();
                 }
             }
+        }
+    }
+    public class StatConverter : IValueConverter
+    {
+        public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
+        {
+            return ((float)value).ToString("0;;' '");
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
+        {
+            return 0f;
         }
     }
 
