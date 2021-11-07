@@ -5,13 +5,12 @@ namespace RetSim.Spells.AuraEffects;
 
 class ModAttackSpeed : ModifyPercent
 {
-
     public override void Apply(Aura aura, Unit caster, Unit target, FightSimulation fight)
     {
         base.Apply(aura, caster, target, fight);
 
         fight.Player.Modifiers.AttackSpeed *= RelativeDifference;
-        
+
         fight.Player.RecalculateAttack(fight);
     }
 
@@ -20,5 +19,7 @@ class ModAttackSpeed : ModifyPercent
         fight.Player.Modifiers.AttackSpeed /= RelativeDifference;
 
         base.Remove(aura, caster, target, fight);
+
+        fight.Player.RecalculateAttack(fight);
     }
 }

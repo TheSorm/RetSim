@@ -21,8 +21,10 @@ public class Player : Unit
 
     public List<Talent> Talents { get; init; }
 
-    public int PreviousAutoAttack { get; set; }
     public AutoAttackEvent NextAutoAttack { get; set; }
+    public int PreviousAutoAttack { get; set; }
+
+    private float previousAttackSpeed;
 
     public Player(string name, Race race, Equipment equipment, List<Talent> talents) : base(name, CreatureType.Humanoid)
     {
@@ -41,6 +43,8 @@ public class Player : Unit
 
         foreach (Aura aura in Data.Auras.ByID.Values)
             Auras.Add(aura);
+
+        previousAttackSpeed = Weapon.EffectiveSpeed;
     }
 
     public override ProcMask Cast(Spell spell, FightSimulation fight)
@@ -94,9 +98,19 @@ public class Player : Unit
         return state.EffectiveManaCost <= Stats[StatName.Mana].Value; //TODO: Fix, implement current HP/mana
     }
 
-    public void RecalculateAttack()
+    public void RecalculateAttack(FightSimulation fight)
     {
-        NextAutoAttack.Timestamp = PreviousAutoAttack + Weapon.EffectiveSpeed;
+        int speed = Weapon.EffectiveSpeed;
+
+        if (NextAutoAttack != null)
+        {
+            float ratio = speed / previousAttackSpeed;
+            float remaining = (PreviousAutoAttack + previousAttackSpeed - fight.Timestamp) * ratio;
+
+            NextAutoAttack.Timestamp = fight.Timestamp + (int)remaining;
+        }
+
+        previousAttackSpeed = speed;
     }
 
     public override string ToString()

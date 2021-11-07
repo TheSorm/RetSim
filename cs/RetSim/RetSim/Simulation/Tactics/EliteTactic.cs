@@ -21,6 +21,7 @@ public class EliteTactic : Tactic
             {
                 new CastEvent(SealOfCommand, fight.Player, fight.Player, fight, 0),
                 new CastEvent(AvengingWrath, fight.Player, fight.Player, fight, 1495),
+                new CastEvent(Heroism, fight.Player, fight.Player, fight, 1495),
                 new CastEvent(SealOfBlood, fight.Player, fight.Player, fight, 1500),
                 new AutoAttackEvent(fight, 1501)
             };

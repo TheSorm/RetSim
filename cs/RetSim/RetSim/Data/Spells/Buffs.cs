@@ -122,5 +122,12 @@ public static partial class Spells
         Name = "Inspiring Presence",
         Target = SpellTarget.Ally
     };
+
+    public static readonly Spell Heroism = new()
+    {
+        ID = 32182,
+        Name = "Heroism",
+        Target = SpellTarget.Ally
+    };
 }
 

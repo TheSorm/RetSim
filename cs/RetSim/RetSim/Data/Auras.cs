@@ -81,6 +81,7 @@ public static partial class Auras
             { Spells.ArcaneBrilliance.ID, ArcaneBrilliance },
             { Spells.HeroicPresence.ID, HeroicPresence },
             { Spells.InspiringPresence.ID, InspiringPresence },
+            { Spells.Heroism.ID, Heroism },
 
             { Spells.ImprovedSealOfTheCrusader.ID, ImprovedSealOfTheCrusader },
             { Spells.Conviction.ID, Conviction },

@@ -17,9 +17,9 @@ public static partial class Auras
     public static readonly Aura GreaterBlessingOfKings = new()
     {
         Effects = new()
-            {
-                new ModStat { Percent = 10, Stats = new() { StatName.Strength, StatName.Agility, StatName.Stamina, StatName.Intellect } }
-            }
+        {
+            new ModStat { Percent = 10, Stats = new() { StatName.Strength, StatName.Agility, StatName.Stamina, StatName.Intellect } }
+        }
     };
 
     public static readonly Aura GreaterBlessingOfWisdom = new()
@@ -49,13 +49,13 @@ public static partial class Auras
     public static readonly Aura FerociousInspiration = new()
     {
         Effects = new()
+        {
+            new ModDamageSchool
             {
-                new ModDamageSchool
-                {
-                    Percent = 3,
-                    SchoolMask = School.All
-                }
+                Percent = 3,
+                SchoolMask = School.All
             }
+        }
     };
 
     public static readonly Aura StrengthOfEarthTotem = new()
@@ -85,9 +85,9 @@ public static partial class Auras
     public static readonly Aura UnleashedRage = new()
     {
         Effects = new()
-            {
-                new ModStat { Percent = 10, Stats = new() { StatName.AttackPower } }
-            }
+        {
+            new ModStat { Percent = 10, Stats = new() { StatName.AttackPower } }
+        }
     };
 
     public static readonly Aura MarkOfTheWild = new()
@@ -143,6 +143,16 @@ public static partial class Auras
         Effects = new()
         {
             new ModifyStats { Stats = new() { { StatName.SpellHit, 1 } } }
+        }
+    };
+
+    public static readonly Aura Heroism = new()
+    {
+        Duration = 40000,
+        Effects = new()
+        {
+            new ModAttackSpeed { Percent = 30 },
+            //TODO: ModSpellCastSpeed
         }
     };
 }

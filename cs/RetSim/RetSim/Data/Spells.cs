@@ -83,6 +83,7 @@ public static partial class Spells
             { ArcaneBrilliance.ID, ArcaneBrilliance },
             { HeroicPresence.ID, HeroicPresence },
             { InspiringPresence.ID, InspiringPresence },
+            { Heroism.ID, Heroism },
 
             { SunderArmor.ID, SunderArmor },
             { ExposeArmor.ID, ExposeArmor },
