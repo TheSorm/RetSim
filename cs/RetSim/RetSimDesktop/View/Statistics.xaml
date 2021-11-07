@@ -18,7 +18,7 @@
         </ComboBox>
         <DataGrid Grid.Row="1" Name="CombatLogTable" IsReadOnly="True" SelectionMode="Single" HeadersVisibility="Column" CanUserResizeColumns="False" CanUserResizeRows="False" AutoGenerateColumns="False" ItemsSource="{Binding CurrentSimOutput.MedianCombatLog}">
             <DataGrid.Columns>
-                <DataGridTextColumn CanUserReorder="False" Header="Timestemp" Binding="{Binding Timestamp}" />
+                <DataGridTextColumn CanUserReorder="False" Header="Timestamp" Binding="{Binding Timestamp}" />
                 <DataGridTextColumn CanUserReorder="False" Header="Event" Binding="{Binding Message}" />
             </DataGrid.Columns>
         </DataGrid>

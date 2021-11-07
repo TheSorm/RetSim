@@ -9,7 +9,7 @@
     <Grid Background="White">
         <GroupBox Margin="5">
             <GroupBox.Header>
-                Human Paladine
+                Level 70 Human Paladin
             </GroupBox.Header>
             <Grid>
                 <Grid.ColumnDefinitions>
