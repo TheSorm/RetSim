@@ -15,7 +15,6 @@ public class Equipment
     public EquippableItem[] PlayerEquipment { get; init; } = new EquippableItem[Constants.EquipmentSlots.Total];
 
     public Enchant[] Enchants { get; set; } = new Enchant[Constants.EquipmentSlots.Total];
-    7
 
     #region Equipment
 

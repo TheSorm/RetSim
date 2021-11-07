@@ -21,7 +21,7 @@ public static class Items
     public static readonly Dictionary<int, ItemSet> Sets = new();
     public static readonly Dictionary<int, Gem> Gems = new();
     public static readonly Dictionary<int, MetaGem> MetaGems = new();
-77    public static readonly Dictionary<int, Enchant> Enchants = new();
+    public static readonly Dictionary<int, Enchant> Enchants = new();
 
     public static void Initialize(List<EquippableWeapon> weapons, List<EquippableItem> armorPieces, List<ItemSet> sets, List<Gem> gems, List<MetaGem> metaGems, List<Enchant> enchants)
     {
