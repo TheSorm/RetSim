@@ -1,5 +1,4 @@
 ﻿using RetSimDesktop.ViewModel;
-using System.Diagnostics;
 using System.Windows.Controls;
 
 namespace RetSimDesktop

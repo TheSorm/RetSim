@@ -15,9 +15,20 @@
             <RowDefinition Height="30px" />
         </Grid.RowDefinitions>
         <DataGrid Name="gearSlot" IsReadOnly="True" SelectionMode="Single" HeadersVisibility="Column" CanUserResizeColumns="False" CanUserResizeRows="False" AutoGenerateColumns="False">
+            <DataGrid.Resources>
+                <Style TargetType="{x:Type DataGridCell}">
+                    <Style.Triggers>
+                        <Trigger Property="DataGridCell.IsSelected" Value="True">
+                            <Setter Property="Background" Value="#0078d7" />
+                            <Setter Property="BorderBrush" Value="#0078d7" />
+                        </Trigger>
+                    </Style.Triggers>
+                    <EventSetter Event="MouseDoubleClick" Handler="DataGridCell_MouseDoubleClick"/>
+                </Style>
+            </DataGrid.Resources>
             <DataGrid.Columns>
                 <DataGridTextColumn CanUserReorder="False" Header="Name" Binding="{Binding Name}" />
-                <DataGridTextColumn CanUserReorder="False" Header="Level" Binding="{Binding ItemLevel}" />
+                <DataGridTextColumn CanUserReorder="False" Header="Level" x:Name="LevelColumn" Binding="{Binding ItemLevel}" />
                 <DataGridTextColumn CanUserReorder="False" CanUserSort="False" Header="Socket 1" Binding="{Binding Socket1, Converter={StaticResource SocketConverter}}" />
                 <DataGridTextColumn CanUserReorder="False" CanUserSort="False" Header="Socket 2" Binding="{Binding Socket2, Converter={StaticResource SocketConverter}}" />
                 <DataGridTextColumn CanUserReorder="False" CanUserSort="False" Header="Socket 3" Binding="{Binding Socket3, Converter={StaticResource SocketConverter}}" />
@@ -38,18 +49,6 @@
                 <DataGridTextColumn CanUserReorder="False" Header="SHaste" x:Name="SHasteColumn" />
                 <DataGridTextColumn CanUserReorder="False" Header="DPS"    x:Name="DPSColumn" />
             </DataGrid.Columns>
-            <DataGrid.Resources>
-                <Style TargetType="{x:Type DataGridCell}">
-                    <Style.Triggers>
-                        <Trigger Property="DataGridCell.IsSelected" Value="True">
-                            <Setter Property="Background" Value="#0078d7" />
-                            <Setter Property="BorderBrush" Value="#0078d7" />
-                        </Trigger>
-                    </Style.Triggers>
-                    <EventSetter Event="MouseDoubleClick" Handler="DataGridCell_MouseDoubleClick"/>
-                </Style>
-            </DataGrid.Resources>
-
         </DataGrid>
         <Button Content="Sim Gear DPS" Grid.Row="1" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="100" Height="20" Margin="0,0,5,5" />
     </Grid>

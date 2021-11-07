@@ -11,7 +11,7 @@
             <DataGrid.Columns>
                 <DataGridTextColumn CanUserReorder="False" Header="Name" Binding="{Binding Name}" />
                 <DataGridTextColumn CanUserReorder="False" Header="Level" Binding="{Binding ItemLevel}" />
-                <DataGridTextColumn CanUserReorder="False" Header="Color" Binding="{Binding Color}" />
+                <DataGridTextColumn CanUserReorder="False" Header="Color" x:Name="ColorColumn" Binding="{Binding Color}" />
                 <DataGridTextColumn CanUserReorder="False" Header="Str"    x:Name="StrColumn" />
                 <DataGridTextColumn CanUserReorder="False" Header="AP"     x:Name="APColumn" />
                 <DataGridTextColumn CanUserReorder="False" Header="Agi"    x:Name="AgiColumn" />

@@ -1,25 +1,15 @@
-﻿using RetSim.Spells;
+﻿using RetSim.Simulation;
+using RetSim.Simulation.Tactics;
+using RetSim.Spells;
+using RetSim.Units.Enemy;
 using RetSim.Units.Player;
 using RetSim.Units.Player.Static;
 using RetSim.Units.UnitStats;
 using RetSimDesktop.View;
 using RetSimDesktop.ViewModel;
-using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace RetSimDesktop
 {
@@ -31,7 +21,8 @@ namespace RetSimDesktop
         private Player player;
         public StatPanel()
         {
-            this.DataContextChanged += (o, e) => {
+            this.DataContextChanged += (o, e) =>
+            {
                 if (DataContext is RetSimUIModel)
                 {
                     var viewModel = DataContext;
@@ -68,6 +59,7 @@ namespace RetSimDesktop
                 Weapon = retSimUIModel.SelectedGear.SelectedWeapon,
             };
             player = new Player("Brave Hero", Races.Human, playerEquipment, SimWorker.GetSelectedTalentList(retSimUIModel));
+            FightSimulation fight = new(player, new Enemy("Magtheridon", CreatureType.Demon, ArmorCategory.Warrior), new EliteTactic(), new List<Spell>(), new List<Spell>(), 0, 0);
 
             Strength.Content = player.Stats[StatName.Strength].Value;
             AttackPower.Content = player.Stats[StatName.AttackPower].Value;
@@ -86,13 +78,13 @@ namespace RetSimDesktop
             SpellHit.Content = player.Stats[StatName.SpellHitRating].Value;
             SpellHaste.Content = player.Stats[StatName.SpellHasteRating].Value;
 
-            CritPercentage.Content = player.Stats[StatName.CritChance].Value.ToString("0.0") + "%"; 
-            HitPercentage.Content = player.Stats[StatName.HitChance].Value.ToString("0.0") + "%"; 
-            HastePercentage.Content = player.Stats[StatName.Haste].Value.ToString("0.0") + "%"; 
-            ExpertisePercentage.Content = player.Stats[StatName.Expertise].Value.ToString("0.0") + "%"; 
-            SpellCritPercentage.Content = player.Stats[StatName.SpellCrit].Value.ToString("0.0") + "%"; 
-            SpellHitPercentage.Content = player.Stats[StatName.SpellHit].Value.ToString("0.0") + "%"; 
-            SpellHastePercentage.Content = player.Stats[StatName.SpellHaste].Value.ToString("0.0") + "%"; 
+            CritPercentage.Content = player.Stats[StatName.CritChance].Value.ToString("0.0") + "%";
+            HitPercentage.Content = player.Stats[StatName.HitChance].Value.ToString("0.0") + "%";
+            HastePercentage.Content = player.Stats[StatName.Haste].Value.ToString("0.0") + "%";
+            ExpertisePercentage.Content = player.Stats[StatName.Expertise].Value.ToString("0.0") + "%";
+            SpellCritPercentage.Content = player.Stats[StatName.SpellCrit].Value.ToString("0.0") + "%";
+            SpellHitPercentage.Content = player.Stats[StatName.SpellHit].Value.ToString("0.0") + "%";
+            SpellHastePercentage.Content = player.Stats[StatName.SpellHaste].Value.ToString("0.0") + "%";
         }
     }
 }

@@ -8,6 +8,8 @@
              d:DesignHeight="450" d:DesignWidth="800">
     <UserControl.Resources>
         <local:SocketConverter x:Key="SocketConverter" />
+        <local:WeaponSpeedConverter x:Key="WeaponSpeedConverter" />
+        <local:WeaponDPSConverter x:Key="WeaponDPSConverter" />
     </UserControl.Resources>
     <Grid>
         <Grid.RowDefinitions>
@@ -17,15 +19,15 @@
         <DataGrid Name="gearSlot" IsReadOnly="True" SelectionMode="Single" HeadersVisibility="Column" CanUserResizeColumns="False" CanUserResizeRows="False" AutoGenerateColumns="False">
             <DataGrid.Columns>
                 <DataGridTextColumn CanUserReorder="False" Header="Name" Binding="{Binding Name}" />
-                <DataGridTextColumn CanUserReorder="False" Header="Level" Binding="{Binding ItemLevel}" />
+                <DataGridTextColumn CanUserReorder="False" Header="Level" x:Name="LevelColumn" Binding="{Binding ItemLevel}" />
                 <DataGridTextColumn CanUserReorder="False" CanUserSort="False" Header="Socket 1" Binding="{Binding Socket1, Converter={StaticResource SocketConverter}}" />
                 <DataGridTextColumn CanUserReorder="False" CanUserSort="False" Header="Socket 2" Binding="{Binding Socket2, Converter={StaticResource SocketConverter}}" />
                 <DataGridTextColumn CanUserReorder="False" CanUserSort="False" Header="Socket 3" Binding="{Binding Socket3, Converter={StaticResource SocketConverter}}" />
                 <DataGridTextColumn CanUserReorder="False" Header="Type" Binding="{Binding Type}" />
                 <DataGridTextColumn CanUserReorder="False" Header="Min" Binding="{Binding MinDamage}" />
                 <DataGridTextColumn CanUserReorder="False" Header="Max" Binding="{Binding MaxDamage}" />
-                <DataGridTextColumn CanUserReorder="False" Header="Speed" Binding="{Binding AttackSpeed}" />
-                <DataGridTextColumn CanUserReorder="False" Header="DPS" Binding="{Binding DPS}" />
+                <DataGridTextColumn CanUserReorder="False" Header="Speed" Binding="{Binding AttackSpeed, Converter={StaticResource WeaponSpeedConverter}}" />
+                <DataGridTextColumn CanUserReorder="False" Header="DPS" Binding="{Binding DPS, Converter={StaticResource WeaponDPSConverter}}" />
                 <DataGridTextColumn CanUserReorder="False" Header="Str"    x:Name="StrColumn" />
                 <DataGridTextColumn CanUserReorder="False" Header="AP"     x:Name="APColumn" />
                 <DataGridTextColumn CanUserReorder="False" Header="Agi"    x:Name="AgiColumn" />
