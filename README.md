@@ -1,8 +1,6 @@
 # RetSim
 A WoW TBC Classic Retribution Paladin Simulator
 ## TODO
-* Events
-  * Twist window event?
 * Uptime simulation (player / buffs)
 * Combat Logger 
   * More combat events (like mana regen)
@@ -13,11 +11,9 @@ A WoW TBC Classic Retribution Paladin Simulator
   * Periodic spells
     * Create CastEvents for every tick (but this "sounds wrong")
 * Gear 
-  * Enchants
+  * Implement auras / procs
+  * Remove trash
 * Talents
-* Spell, Aura, Proc Data 
+  * Add ranks
 * Proc
-  * ProcCooldownEvent - Implemented
-    * Option 1: Proc has (invisible) Cooldown (tactic can not react)
-    * Option 2: Proc-Spell has Cooldown (tactic can react)
   * Should Prio on ProcEvents should be higher than on normal cast events?
