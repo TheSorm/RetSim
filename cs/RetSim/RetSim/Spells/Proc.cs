@@ -26,6 +26,8 @@ public enum ProcMask
     OnRangedAttack = 64,
     OnJudgement = 128,
     OnAnyAttack = OnMeleeAttack + OnRangedAttack,
-    OnSpellCastSuccess = 256
+    OnSpellCastSuccess = 256,
+    OnSpellHit = 512,
+    OnAnyHit = OnAnyAttack + OnSpellHit
     // TODO: Update and enhance
 }

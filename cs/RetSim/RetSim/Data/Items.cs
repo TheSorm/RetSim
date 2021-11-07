@@ -21,8 +21,9 @@ public static class Items
     public static readonly Dictionary<int, ItemSet> Sets = new();
     public static readonly Dictionary<int, Gem> Gems = new();
     public static readonly Dictionary<int, MetaGem> MetaGems = new();
+77    public static readonly Dictionary<int, Enchant> Enchants = new();
 
-    public static void Initialize(List<EquippableWeapon> weapons, List<EquippableItem> armorPieces, List<ItemSet> sets, List<Gem> gems, List<MetaGem> metaGems)
+    public static void Initialize(List<EquippableWeapon> weapons, List<EquippableItem> armorPieces, List<ItemSet> sets, List<Gem> gems, List<MetaGem> metaGems, List<Enchant> enchants)
     {
         foreach (var weapon in weapons)
         {
@@ -94,6 +95,9 @@ public static class Items
         {
             MetaGems.Add(metaGem.ID, metaGem);
         }
+
+        foreach (var enchant in enchants)
+            Enchants.Add(enchant.ID, enchant);
     }
 }
 

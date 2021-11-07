@@ -29,6 +29,25 @@ public static class Procs
         Chance = 20
     };
 
+    public static readonly Proc Mongoose = new()
+    {
+        ProcMask = ProcMask.OnAnyAttack,
+        PPM = 1
+    };
+
+    public static readonly Proc Executioner = new()
+    {
+        ProcMask = ProcMask.OnAnyAttack,
+        PPM = 1
+    };
+
+    public static readonly Proc Deathfrost = new() //Possibly two procs?
+    {
+        ProcMask = ProcMask.OnAnyHit,
+        Chance = 50,
+        Cooldown = 25000
+    };
+
     public static readonly Proc DragonspineTrophy = new()
     {
         ProcMask = ProcMask.OnAnyAttack,
@@ -57,6 +76,9 @@ public static class Procs
         SealOfBlood.Spell = Spells.SealOfBloodProc;
         Vengeance.Spell = Spells.VengeanceProc;
         WindfuryAttack.Spell = Spells.WindfuryAttack;
+        Mongoose.Spell = Spells.MongooseProc;
+        Executioner.Spell = Spells.ExecutionerProc;
+        Deathfrost.Spell = Spells.DeathfrostProc;
         DragonspineTrophy.Spell = Spells.DragonspineTrophyProc;
         Lionheart.Spell = Spells.LionheartProc;
         LibramOfAvengement.Spell = Spells.LibramOfAvengementProc;
@@ -67,6 +89,9 @@ public static class Procs
             { Spells.SealOfBlood.ID, SealOfBlood },
             { Spells.Vengeance.ID, Vengeance },
             { Spells.WindfuryTotem.ID, WindfuryAttack },
+            { Spells.Mongoose.ID, Mongoose },
+            { Spells.Executioner.ID, Executioner },
+            { Spells.Deathfrost.ID, Deathfrost },
             { Spells.DragonspineTrophy.ID, DragonspineTrophy },
             { Spells.Lionheart.ID, Lionheart },
             { Spells.LibramOfAvengement.ID, LibramOfAvengement }

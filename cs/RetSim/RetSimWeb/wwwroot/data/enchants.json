@@ -70,7 +70,7 @@
     "Phase": 1
   },
   {
-    "ID": 15397,
+    "ID": 22840,
     "ItemID": 18329,
     "Name": "Arcanum of Rapidity",
     "Nickname": "10 Haste Rating",
@@ -397,7 +397,7 @@
     "Phase": 1
   },
   {
-    "ID": 24160,
+    "ID": 241600,
     "ItemID": 19783,
     "Name": "Syncretist\u0027s Sigil",
     "Nickname": "10 Stamina, 10 Defense Rating, 24 Healing Power",
@@ -408,7 +408,7 @@
     "Phase": 1
   },
   {
-    "ID": 15397,
+    "ID": 153970,
     "ItemID": 11645,
     "Name": "Lesser Arcanum of Voracity",
     "Nickname": "8 Strength",
@@ -419,7 +419,7 @@
     "Phase": 1
   },
   {
-    "ID": 15397,
+    "ID": 228400,
     "ItemID": 18329,
     "Name": "Arcanum of Rapidity",
     "Nickname": "10 Haste Rating",
@@ -519,7 +519,7 @@
     "Stats": {
     },
     "OnEquip": {
-      "ID": "TODO",
+      "ID": 279840,
       "Name": "Mongoose"
     },
     "Phase": 1
@@ -532,7 +532,7 @@
     "Stats": {
     },
     "OnEquip": {
-      "ID": "TODO",
+      "ID": 429740,
       "Name": "Executioner"
     },
     "Phase": 4
@@ -545,7 +545,7 @@
     "Stats": {
     },
     "OnEquip": {
-      "ID": "TODO",
+      "ID": 46662,
       "Name": "Deathfrost"
     },
     "Phase": 1

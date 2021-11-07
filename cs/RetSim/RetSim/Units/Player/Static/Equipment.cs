@@ -14,6 +14,9 @@ public class Equipment
 
     public EquippableItem[] PlayerEquipment { get; init; } = new EquippableItem[Constants.EquipmentSlots.Total];
 
+    public Enchant[] Enchants { get; set; } = new Enchant[Constants.EquipmentSlots.Total];
+    7
+
     #region Equipment
 
     public EquippableItem Head
@@ -105,6 +108,71 @@ public class Equipment
 
     #endregion
 
+    #region Enchants
+
+    public Enchant HeadEnchant
+    {
+        get => Enchants[Constants.EquipmentSlots.Head];
+        set => Enchants[Constants.EquipmentSlots.Head] = value;
+    }
+
+    public Enchant ShouldersEnchant
+    {
+        get => Enchants[Constants.EquipmentSlots.Shoulders];
+        set => Enchants[Constants.EquipmentSlots.Shoulders] = value;
+    }
+
+    public Enchant BackEnchant
+    {
+        get => Enchants[Constants.EquipmentSlots.Back];
+        set => Enchants[Constants.EquipmentSlots.Back] = value;
+    }
+    public Enchant ChestEnchant
+
+    {
+        get => Enchants[Constants.EquipmentSlots.Chest];
+        set => Enchants[Constants.EquipmentSlots.Chest] = value;
+    }
+    public Enchant WristsEnchant
+    {
+        get => Enchants[Constants.EquipmentSlots.Wrists];
+        set => Enchants[Constants.EquipmentSlots.Wrists] = value;
+    }
+    public Enchant HandsEnchant
+    {
+        get => Enchants[Constants.EquipmentSlots.Hands];
+        set => Enchants[Constants.EquipmentSlots.Hands] = value;
+    }
+    public Enchant LegsEnchant
+    {
+        get => Enchants[Constants.EquipmentSlots.Legs];
+        set => Enchants[Constants.EquipmentSlots.Legs] = value;
+    }
+    public Enchant FeetEnchant
+    {
+        get => Enchants[Constants.EquipmentSlots.Feet];
+        set => Enchants[Constants.EquipmentSlots.Feet] = value;
+    }
+
+    public Enchant Finger1Enchant
+    {
+        get => Enchants[Constants.EquipmentSlots.Finger1];
+        set => Enchants[Constants.EquipmentSlots.Finger1] = value;
+    }
+    public Enchant Finger2Enchant
+    {
+        get => Enchants[Constants.EquipmentSlots.Finger2];
+        set => Enchants[Constants.EquipmentSlots.Finger2] = value;
+    }
+
+    public Enchant WeaponEnchant
+    {
+        get => Enchants[Constants.EquipmentSlots.Weapon];
+        set => Enchants[Constants.EquipmentSlots.Weapon] = value;
+    }
+
+#endregion
+
     public static StatSet CalculateStats(Equipment equipment)
     {
         if (equipment.GemTotals == null)
@@ -131,6 +199,12 @@ public class Equipment
         {
             if (item != null)
                 total += CalculateStatOfPiece(name, item, gems);
+        }
+
+        foreach (Enchant enchant in equipment.Enchants)
+        {
+            if (enchant != null)
+                total += enchant.Stats[name];
         }
 
         return total;
@@ -188,6 +262,9 @@ public class Equipment
                 }
             }
         }
+
+        if (equipment.WeaponEnchant != null && equipment.WeaponEnchant.OnEquip != null)
+            spells.Add(Data.Spells.ByID[equipment.WeaponEnchant.OnEquip.ID]);
 
         return spells;
     }

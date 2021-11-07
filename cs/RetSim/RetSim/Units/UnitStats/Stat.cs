@@ -84,7 +84,7 @@ public abstract class Stat
 
     public override string ToString()
     {
-        return $"{Name} - Value: {Value} / Base: {Permanent} / Modifier: {Modifier}, / Bonus: {Bonus} / Rating: {RatingValue} / Support: {SupportValue}";
+        return $"{Name} - Value: {Value} / Base: {Permanent} / Modifier: {Modifier} / Bonus: {Bonus} / Rating: {RatingValue} / Support: {SupportValue}";
     }
 }
 

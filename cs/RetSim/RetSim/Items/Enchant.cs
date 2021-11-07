@@ -12,4 +12,13 @@ public class Enchant
     public StatSet Stats { get; init; }
     public SpellReference OnEquip { get; init; }
     public int Phase { get; set; }
+
+    public override string ToString()
+    {
+        if (string.IsNullOrEmpty(Nickname))
+            return Name;
+
+        else 
+            return Nickname;
+    }
 }

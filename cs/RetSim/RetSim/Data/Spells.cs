@@ -49,6 +49,13 @@ public static partial class Spells
             { AvengingWrath.ID, AvengingWrath },
             { HumanRacial.ID, HumanRacial },
 
+            { MongooseProc.ID, MongooseProc },
+            { Mongoose.ID, Mongoose },
+            { ExecutionerProc.ID, ExecutionerProc },
+            { Executioner.ID, Executioner },
+            { DeathfrostProc.ID, DeathfrostProc },
+            { Deathfrost.ID, Deathfrost },
+
             { Relentless.ID, Relentless },
             { DragonspineTrophyProc.ID, DragonspineTrophyProc },
             { DragonspineTrophy.ID, DragonspineTrophy },

@@ -39,7 +39,7 @@
             <StackPanel>
                 <CheckBox Content = "Conviction" HorizontalAlignment = "Left" IsChecked="{Binding SelectedTalents.ConvictionEnabled}" VerticalAlignment = "Top"  />
                 <CheckBox Content = "Crusade" HorizontalAlignment = "Left" IsChecked="{Binding SelectedTalents.CrusadeEnabled}" VerticalAlignment = "Top"  />
-                <CheckBox Content = "Two Handed Weapon Specialization" HorizontalAlignment = "Left"  IsChecked="{Binding SelectedTalents.TwoHandedWeaponSpecializationEnabled}" VerticalAlignment = "Top"  />
+                <CheckBox Content = "Two-Handed Weapon Specialization" HorizontalAlignment = "Left"  IsChecked="{Binding SelectedTalents.TwoHandedWeaponSpecializationEnabled}" VerticalAlignment = "Top"  />
                 <CheckBox Content = "Sanctity Aura" HorizontalAlignment = "Left" IsChecked="{Binding SelectedTalents.SanctityAuraEnabled}"  VerticalAlignment = "Top"  />
                 <CheckBox Content = "Improved Sanctity Aura" HorizontalAlignment = "Left" IsChecked="{Binding SelectedTalents.ImprovedSanctityAuraEnabled}"  VerticalAlignment = "Top"  />
                 <CheckBox Content = "Vengeance" HorizontalAlignment = "Left" IsChecked="{Binding SelectedTalents.VengeanceEnabled}" VerticalAlignment = "Top"  />

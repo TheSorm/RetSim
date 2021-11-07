@@ -23,6 +23,10 @@ public static partial class Auras
 
         WindfuryTotem.Effects = new() { new GainProc(Procs.WindfuryAttack) };
 
+        Mongoose.Effects = new() { new GainProc(Procs.Mongoose) };
+        Executioner.Effects = new() { new GainProc(Procs.Executioner) };
+        Deathfrost.Effects = new() { new GainProc(Procs.Deathfrost) };
+
         DragonspineTrophy.Effects = new() { new GainProc(Procs.DragonspineTrophy) };
         Lionheart.Effects = new() { new GainProc(Procs.Lionheart) };
         LibramOfAvengement.Effects = new() { new GainProc(Procs.LibramOfAvengement) };
@@ -108,6 +112,14 @@ public static partial class Auras
             { Spells.Misery.ID, Misery },
             { Spells.ShadowWeaving.ID, ShadowWeaving },
             { Spells.ImprovedScorch.ID, ImprovedScorch },
+
+
+            { Spells.Mongoose.ID, Mongoose },
+            { Spells.MongooseProc.ID, MongooseProc },
+            { Spells.Executioner.ID, Executioner },
+            { Spells.ExecutionerProc.ID, ExecutionerProc },
+            { Spells.Deathfrost.ID, Deathfrost },
+            { Spells.DeathfrostProc.ID, DeathfrostProc },
 
             { Spells.Relentless.ID, Relentless },
             { Spells.DragonspineTrophy.ID, DragonspineTrophy },
