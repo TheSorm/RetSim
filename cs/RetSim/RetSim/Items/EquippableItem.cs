@@ -11,8 +11,8 @@ public class EquippableItem
     public Slot Slot { get; init; }
     public StatSet Stats { get; init; }
     public Set Set { get; init; }
-    public ItemSpell OnUse { get; set; }
-    public ItemSpell OnEquip { get; init; }
+    public SpellReference OnUse { get; set; }
+    public SpellReference OnEquip { get; init; }
 
     public Socket[] Sockets = new Socket[3];
     public Socket Socket1 { get => Sockets[0]; init => Sockets[0] = value; }
@@ -114,7 +114,7 @@ public class SocketBonus
     public int Value { get; init; }
 }
 
-public class ItemSpell
+public class SpellReference
 {
     public int ID { get; init; }
     public string Name { get; init; }

@@ -20,7 +20,7 @@ public class Gem
 public class MetaGem : Gem
 {
     public MetaRequirements Requirements { get; init; }
-    public ItemSpell Spell { get; init; }
+    public SpellReference Spell { get; init; }
 
     public MetaGem()
     {
