@@ -12,6 +12,7 @@ public class AutoAttackEvent : Event
 
     public override ProcMask Execute(object arguments = null)
     {
+        Fight.Player.PreviousAutoAttack = Timestamp;
         Fight.Player.NextAutoAttack = new AutoAttackEvent(Fight, Timestamp + Fight.Player.Weapon.EffectiveSpeed);
 
         Fight.Queue.Add(Fight.Player.NextAutoAttack);

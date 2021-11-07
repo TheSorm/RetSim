@@ -14,8 +14,11 @@ public static partial class Auras
     public static readonly Aura MongooseProc = new()
     {
         Duration = 15000,
-        Effects = new() { new ModifyStats { Stats = new() { { StatName.Haste, 3 }, { StatName.Agility, 120 } } }}
-        //TODO: Add ModAttackSpeed effect
+        Effects = new()
+        {
+            new ModifyStats { Stats = new() { { StatName.Agility, 120 } } },
+            new ModAttackSpeed { Percent = 3 }
+        }
     };
 
     public static readonly Aura Executioner = new()

@@ -21,6 +21,7 @@ public class Player : Unit
 
     public List<Talent> Talents { get; init; }
 
+    public int PreviousAutoAttack { get; set; }
     public AutoAttackEvent NextAutoAttack { get; set; }
 
     public Player(string name, Race race, Equipment equipment, List<Talent> talents) : base(name, CreatureType.Humanoid)
@@ -93,8 +94,9 @@ public class Player : Unit
         return state.EffectiveManaCost <= Stats[StatName.Mana].Value; //TODO: Fix, implement current HP/mana
     }
 
-    public void RecalculateAttack(FightSimulation fight, float previousSpeed)
+    public void RecalculateAttack()
     {
+        NextAutoAttack.Timestamp = PreviousAutoAttack + Weapon.EffectiveSpeed;
     }
 
     public override string ToString()

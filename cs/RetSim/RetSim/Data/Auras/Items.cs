@@ -18,7 +18,11 @@ public static partial class Auras
     public static readonly Aura DragonspineTrophyProc = new()
     {
         Duration = 10000,
-        Effects = new() { new ModifyStats { Stats = new() { { StatName.HasteRating, 325 } } } }
+        Effects = new()
+        {
+            new ModifyStats { Stats = new() { { StatName.HasteRating, 325 } } },
+            new ModAttackSpeed { Percent = 0 }
+        }
     };
 
     public static readonly Aura Lionheart = new()
