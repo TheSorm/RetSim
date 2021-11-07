@@ -1,0 +1,597 @@
+[
+  {
+    "ID": 35452,
+    "ItemID": 29192,
+    "Name": "Glyph of Ferocity",
+    "Nickname": "34 Attack Power, 16 Hit Rating",
+    "Slot": 0,
+    "Stats": {
+      "AttackPower": 34,
+      "HitRating": 16
+    },
+    "Phase": 1
+  },
+  {
+    "ID": 37891,
+    "ItemID": 30846,
+    "Name": "Glyph of the Outcast",
+    "Nickname": "17 Strength, 16 Intellect",
+    "Slot": 0,
+    "Stats": {
+      "Strength": 17,
+      "Intellect": 16
+    },
+    "Phase": 1
+  },
+  {
+    "ID": 35447,
+    "ItemID": 29191,
+    "Name": "Glyph of Power",
+    "Nickname": "22 Spell Power, 14 Spell Hit Rating",
+    "Slot": 0,
+    "Stats": {
+      "SpellPower": 22,
+      "SpellHitRating": 14
+    },
+    "Phase": 1
+  },
+  {
+    "ID": 35453,
+    "ItemID": 29193,
+    "Name": "Glyph of the Gladiator",
+    "Nickname": "18 Stamina, 20 Resilience Rating",
+    "Slot": 0,
+    "Stats": {
+      "Stamina": 18,
+      "Resilience": 20
+    },
+    "Phase": 5
+  },
+  {
+    "ID": 24160,
+    "ItemID": 19783,
+    "Name": "Syncretist\u0027s Sigil",
+    "Nickname": "10 Stamina, 10 Defense Rating, 24 Healing Power",
+    "Slot": 0,
+    "Stats": {
+      "Stamina": 10
+    },
+    "Phase": 1
+  },
+  {
+    "ID": 15397,
+    "ItemID": 11645,
+    "Name": "Lesser Arcanum of Voracity",
+    "Nickname": "8 Strength",
+    "Slot": 0,
+    "Stats": {
+      "Strength": 8
+    },
+    "Phase": 1
+  },
+  {
+    "ID": 15397,
+    "ItemID": 18329,
+    "Name": "Arcanum of Rapidity",
+    "Nickname": "10 Haste Rating",
+    "Slot": 0,
+    "Stats": {
+      "HasteRating": 10
+    },
+    "Phase": 1
+  },
+  {
+    "ID": 35417,
+    "ItemID": 28888,
+    "Name": "Greater Inscription of Vengeance",
+    "Nickname": "30 Attack Power, 10 Crit Rating",
+    "Slot": 2,
+    "Stats": {
+      "AttackPower": 30,
+      "CritRating": 10
+    },
+    "Phase": 1
+  },
+  {
+    "ID": 35439,
+    "ItemID": 28910,
+    "Name": "Greater Inscription of the Blade",
+    "Nickname": "20 Attack Power, 15 Crit Rating",
+    "Slot": 2,
+    "Stats": {
+      "AttackPower": 20,
+      "CritRating": 15
+    },
+    "Phase": 1
+  },
+  {
+    "ID": 35406,
+    "ItemID": 28886,
+    "Name": "Greater Inscription of Discipline",
+    "Nickname": "18 Spell Power, 10 Spell Crit Rating",
+    "Slot": 2,
+    "Stats": {
+      "SpellPower": 18,
+      "SpellCritRating": 10
+    },
+    "Phase": 1
+  },
+  {
+    "ID": 35437,
+    "ItemID": 28909,
+    "Name": "Greater Inscription of the Orb",
+    "Nickname": "12 Spell Power, 15 Spell Crit Rating",
+    "Slot": 2,
+    "Stats": {
+      "SpellPower": 12,
+      "SpellCritRating": 15
+    },
+    "Phase": 1
+  },
+  {
+    "ID": 35407,
+    "ItemID": 28885,
+    "Name": "Inscription of Vengeance",
+    "Nickname": "26 Attack Power",
+    "Slot": 2,
+    "Stats": {
+      "AttackPower": 26
+    },
+    "Phase": 1
+  },
+  {
+    "ID": 35438,
+    "ItemID": 28907,
+    "Name": "Inscription of the Blade",
+    "Nickname": "13 Crit Rating",
+    "Slot": 2,
+    "Stats": {
+      "CritRating": 13
+    },
+    "Phase": 1
+  },
+  {
+    "ID": 35405,
+    "ItemID": 28881,
+    "Name": "Inscription of Discipline",
+    "Nickname": "15 Spell Power",
+    "Slot": 2,
+    "Stats": {
+      "SpellPower": 15
+    },
+    "Phase": 1
+  },
+  {
+    "ID": 35436,
+    "ItemID": 28903,
+    "Name": "Inscription of the Orb",
+    "Nickname": "13 Spell Crit Rating",
+    "Slot": 2,
+    "Stats": {
+      "SpellCritRating": 13
+    },
+    "Phase": 1
+  },
+  {
+    "ID": 24422,
+    "ItemID": 20077,
+    "Name": "Zandalar Signet of Might",
+    "Nickname": "30 Attack Power",
+    "Slot": 2,
+    "Stats": {
+      "AttackPower": 30
+    },
+    "Phase": 1
+  },
+  {
+    "ID": 24421,
+    "ItemID": 20076,
+    "Name": "Zandalar Signet of Mojo",
+    "Nickname": "18 Spell Power",
+    "Slot": 2,
+    "Stats": {
+      "SpellPower": 18
+    },
+    "Phase": 1
+  },
+  {
+    "ID": 29483,
+    "ItemID": 23548,
+    "Name": "Might of the Scourge",
+    "Nickname": "26 Attack Power, 14 Crit Rating",
+    "Slot": 2,
+    "Stats": {
+      "AttackPower": 26,
+      "CritRating": 14
+    },
+    "Phase": 1
+  },
+  {
+    "ID": 29467,
+    "ItemID": 23545,
+    "Name": "Power of the Scourge",
+    "Nickname": "15 Spell Power, 14 Spell Crit Rating",
+    "Slot": 2,
+    "Stats": {
+      "SpellPower": 15,
+      "SpellCritRating": 14
+    },
+    "Phase": 1
+  },
+  {
+    "ID": 34004,
+    "ItemID": 35432,
+    "Name": "Enchant Cloak - Greater Agility",
+    "Nickname": "12 Agility",
+    "Slot": 3,
+    "Stats": {
+      "Agility": 12
+    },
+    "Phase": 1
+  },
+  {
+    "ID": 25084,
+    "ItemID": 187800,
+    "Name": "Enchant Cloak - Subtlety",
+    "Nickname": "2% Threat Reduction",
+    "Slot": 3,
+    "Stats": {
+    },
+    "Phase": 1
+  },
+  {
+    "ID": 27960,
+    "ItemID": 35429,
+    "Name": "Enchant Chest - Exceptional Stats",
+    "Nickname": "6 Stats",
+    "Slot": 4,
+    "Stats": {
+      "Strength": 6,
+      "Agility": 6,
+      "Stamina": 6,
+      "Intellect": 6,
+      "Spirit": 6
+    },
+    "Phase": 1
+  },
+  {
+    "ID": 33992,
+    "ItemID": 35430,
+    "Name": "Enchant Chest - Major Resilience",
+    "Nickname": "15 Resilience",
+    "Slot": 4,
+    "Stats": {
+      "Resilience": 15
+    },
+    "Phase": 1
+  },
+  {
+    "ID": 27899,
+    "ItemID": 35420,
+    "Name": "Enchant Bracer - Brawn",
+    "Nickname": "12 Strength",
+    "Slot": 5,
+    "Stats": {
+      "Strength": 12
+    },
+    "Phase": 1
+  },
+  {
+    "ID": 27905,
+    "ItemID": 35426,
+    "Name": "Enchant Bracer - Stats",
+    "Nickname": "4 Stats",
+    "Slot": 5,
+    "Stats": {
+      "Strength": 4,
+      "Agility": 4,
+      "Stamina": 4,
+      "Intellect": 4,
+      "Spirit": 4
+    },
+    "Phase": 1
+  },
+  {
+    "ID": 27917,
+    "ItemID": 35425,
+    "Name": "Enchant Bracer - Spellpower",
+    "Nickname": "15 Spell Power",
+    "Slot": 5,
+    "Stats": {
+      "SpellPower": 15
+    },
+    "Phase": 1
+  },
+  {
+    "ID": 33995,
+    "ItemID": 35442,
+    "Name": "Enchant Gloves - Major Strength",
+    "Nickname": "15 Strength",
+    "Slot": 6,
+    "Stats": {
+      "Strength": 15
+    },
+    "Phase": 1
+  },
+  {
+    "ID": 33997,
+    "ItemID": 35441,
+    "Name": "Enchant Gloves - Major Spellpower",
+    "Nickname": "20 Spell Power",
+    "Slot": 6,
+    "Stats": {
+      "SpellPower": 20
+    },
+    "Phase": 1
+  },
+  {
+    "ID": 35490,
+    "ItemID": 29535,
+    "Name": "Nethercobra Leg Armor",
+    "Nickname": "50 Attack Power, 12 Crit Rating",
+    "Slot": 8,
+    "Stats": {
+      "AttackPower": 50,
+      "CritRating": 12
+    },
+    "Phase": 1
+  },
+  {
+    "ID": 35495,
+    "ItemID": 29536,
+    "Name": "Nethercleft Leg Armor",
+    "Nickname": "12 Agility, 40 Stamina",
+    "Slot": 8,
+    "Stats": {
+      "Agility": 12,
+      "Stamina": 40
+    },
+    "Phase": 1
+  },
+  {
+    "ID": 31372,
+    "ItemID": 24274,
+    "Name": "Runic Spellthread",
+    "Nickname": "35 Spell Power, 20 Stamina",
+    "Slot": 8,
+    "Stats": {
+      "SpellPower": 35,
+      "Stamina": 20
+    },
+    "Phase": 1
+  },
+  {
+    "ID": 35488,
+    "ItemID": 29533,
+    "Name": "Cobrahide Leg Armor",
+    "Nickname": "40 Attack Power, 10 Crit Rating",
+    "Slot": 8,
+    "Stats": {
+      "AttackPower": 40,
+      "CritRating": 10
+    },
+    "Phase": 1
+  },
+  {
+    "ID": 35489,
+    "ItemID": 29534,
+    "Name": "Clefthide Leg Armor",
+    "Nickname": "10 Agility, 30 Stamina",
+    "Slot": 8,
+    "Stats": {
+      "Agility": 10,
+      "Stamina": 30
+    },
+    "Phase": 1
+  },
+  {
+    "ID": 31371,
+    "ItemID": 24273,
+    "Name": "Mystic Spellthread",
+    "Nickname": "25 Spell Power, 15 Stamina",
+    "Slot": 8,
+    "Stats": {
+      "SpellPower": 25,
+      "Stamina": 15
+    },
+    "Phase": 1
+  },
+  {
+    "ID": 24160,
+    "ItemID": 19783,
+    "Name": "Syncretist\u0027s Sigil",
+    "Nickname": "10 Stamina, 10 Defense Rating, 24 Healing Power",
+    "Slot": 8,
+    "Stats": {
+      "Stamina": 10
+    },
+    "Phase": 1
+  },
+  {
+    "ID": 15397,
+    "ItemID": 11645,
+    "Name": "Lesser Arcanum of Voracity",
+    "Nickname": "8 Strength",
+    "Slot": 8,
+    "Stats": {
+      "Strength": 8
+    },
+    "Phase": 1
+  },
+  {
+    "ID": 15397,
+    "ItemID": 18329,
+    "Name": "Arcanum of Rapidity",
+    "Nickname": "10 Haste Rating",
+    "Slot": 8,
+    "Stats": {
+      "HasteRating": 10
+    },
+    "Phase": 1
+  },
+  {
+    "ID": 27951,
+    "ItemID": 35400,
+    "Name": "Enchant Boots - Dexterity",
+    "Nickname": "12 Agility",
+    "Slot": 9,
+    "Stats": {
+      "Agility": 12
+    },
+    "Phase": 1
+  },
+  {
+    "ID": 27954,
+    "ItemID": 35418,
+    "Name": "Enchant Boots - Surefooted",
+    "Nickname": "10 Hit Rating, 5% Snare/Root Resist",
+    "Slot": 9,
+    "Stats": {
+      "HitRating": 10
+    },
+    "Phase": 1
+  },
+  {
+    "ID": 34007,
+    "ItemID": 35399,
+    "Name": "Enchant Boots - Cat\u0027s Swiftness",
+    "Nickname": "6 Agility, Minor Run Speed",
+    "Slot": 9,
+    "Stats": {
+      "Agility": 6
+    },
+    "Phase": 1
+  },
+  {
+    "ID": 34008,
+    "ItemID": 35398,
+    "Name": "Enchant Boots - Boar\u0027s Speed",
+    "Nickname": "9 Stamina, Minor Run Speed",
+    "Slot": 9,
+    "Stats": {
+      "Stamina": 9
+    },
+    "Phase": 1
+  },
+  {
+    "ID": 27927,
+    "ItemID": 35446,
+    "Name": "Enchant Ring - Stats",
+    "Nickname": "4 Stats",
+    "Slot": 10,
+    "Stats": {
+      "Strength": 4,
+      "Agility": 4,
+      "Stamina": 4,
+      "Intellect": 4,
+      "Spirit": 4
+    },
+    "Phase": 3
+  },
+  {
+    "ID": 27924,
+    "ItemID": 35445,
+    "Name": "Enchant Ring - Spellpower",
+    "Nickname": "12 Spell Power",
+    "Slot": 10,
+    "Stats": {
+      "SpellPower": 12
+    },
+    "Phase": 1
+  },
+  {
+    "ID": 27920,
+    "ItemID": 35447,
+    "Name": "Enchant Ring - Striking",
+    "Nickname": "2 Weapon Damage (Useless)",
+    "Slot": 10,
+    "Stats": {
+      "WeaponDamage": 2
+    },
+    "Phase": 1
+  },
+  {
+    "ID": 27984,
+    "ItemID": 35458,
+    "Name": "Enchant Weapon - Mongoose",
+    "Nickname": "Mongoose",
+    "Slot": 13,
+    "Stats": {
+    },
+    "OnEquip": {
+      "ID": "TODO",
+      "Name": "Mongoose"
+    },
+    "Phase": 1
+  },
+  {
+    "ID": 42974,
+    "Name": "Enchant Weapon - Executioner",
+    "Nickname": "Executioner",
+    "Slot": 13,
+    "Stats": {
+    },
+    "OnEquip": {
+      "ID": "TODO",
+      "Name": "Executioner"
+    },
+    "Phase": 4
+  },
+  {
+    "ID": 46578,
+    "Name": "Enchant Weapon - Deathfrost",
+    "Nickname": "Deathfrost",
+    "Slot": 13,
+    "Stats": {
+    },
+    "OnEquip": {
+      "ID": "TODO",
+      "Name": "Deathfrost"
+    },
+    "Phase": 1
+  },
+  {
+    "ID": 27971,
+    "ItemID": 35397,
+    "Name": "Enchant 2H Weapon - Savagery",
+    "Nickname": "70 Attack Power",
+    "Slot": 13,
+    "Stats": {
+      "AttackPower": 70
+    },
+    "Phase": 1
+  },
+  {
+    "ID": 27972,
+    "ItemID": 35459,
+    "Name": "Enchant Weapon - Potency",
+    "Nickname": "20 Strength",
+    "Slot": 13,
+    "Stats": {
+      "Strength": 20
+    },
+    "Phase": 1
+  },
+  {
+    "ID": 27977,
+    "ItemID": 35396,
+    "Name": "Enchant 2H Weapon - Major Agility",
+    "Nickname": "35 Agility",
+    "Slot": 13,
+    "Stats": {
+      "Agility": 35
+    },
+    "Phase": 1
+  },
+  {
+    "ID": 27975,
+    "ItemID": 35456,
+    "Name": "Enchant Weapon - Major Spellpower",
+    "Nickname": "40 Spell Power",
+    "Slot": 13,
+    "Stats": {
+      "SpellPower": 40
+    },
+    "Phase": 1
+  }
+]
