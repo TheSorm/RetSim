@@ -1,8 +1,13 @@
-﻿using RetSim.Units.Player;
+﻿using RetSim.Simulation;
+using RetSim.Simulation.Tactics;
+using RetSim.Spells;
+using RetSim.Units.Enemy;
+using RetSim.Units.Player;
 using RetSim.Units.Player.Static;
 using RetSim.Units.UnitStats;
 using RetSimDesktop.View;
 using RetSimDesktop.ViewModel;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Windows.Controls;
 
@@ -54,6 +59,7 @@ namespace RetSimDesktop
                 Weapon = retSimUIModel.SelectedGear.SelectedWeapon,
             };
             player = new Player("Brave Hero", Races.Human, playerEquipment, SimWorker.GetSelectedTalentList(retSimUIModel));
+            FightSimulation fight = new(player, new Enemy("Magtheridon", CreatureType.Demon, ArmorCategory.Warrior), new EliteTactic(), new List<Spell>(), new List<Spell>(), 0, 0);
 
             Strength.Content = player.Stats[StatName.Strength].Value;
             AttackPower.Content = player.Stats[StatName.AttackPower].Value;
