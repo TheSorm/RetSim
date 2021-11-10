@@ -1,7 +1,13 @@
-﻿namespace RetSim.Spells;
+﻿using Newtonsoft.Json;
+
+namespace RetSim.Spells;
 
 public class Proc
 {
+    public int ID { get; set; }
+    public int SpellID { get; set; }
+
+    [JsonIgnore]
     public Spell Spell { get; set; }
     public ProcMask ProcMask { get; init; }
     public bool GuaranteedProc { get; init; } = false;

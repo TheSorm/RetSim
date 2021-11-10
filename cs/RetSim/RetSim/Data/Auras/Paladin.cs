@@ -8,15 +8,18 @@ public static partial class Auras
 {
     public static readonly Seal SealOfCommand = new()
     {
+        SealID = 1,
         Persist = 400
     };
 
     public static readonly Seal SealOfBlood = new()
     {
+        SealID = 3
     };
 
     public static readonly Seal SealOfTheCrusader = new()
     {
+        SealID = 4
     };
 
     public static readonly Aura WindfuryTotem = new()

@@ -12,7 +12,7 @@ public class Attack
 {
     private Player Player { get; init; }
     public Enemy Enemy { get; init; }
-    private DamageEffect Effect { get; init; }
+    private Damage Effect { get; init; }
     private SpellState Spell { get; init; }
 
     public AttackResult AttackResult { get; private set; }
@@ -29,7 +29,7 @@ public class Attack
         return $"{Player} attacks {Enemy} with {Spell.Spell.Name} ({AttackResult} / {DamageResult}) - {Damage} Damage";
     }
 
-    public Attack(Player player, Enemy enemy, DamageEffect effect, SpellState state)
+    public Attack(Player player, Enemy enemy, Damage effect, SpellState state)
     {
         Player = player;
         Enemy = enemy;

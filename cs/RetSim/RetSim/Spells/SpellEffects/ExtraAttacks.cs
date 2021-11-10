@@ -6,15 +6,21 @@ using RetSim.Units.UnitStats;
 
 namespace RetSim.Spells.SpellEffects;
 
-class ExtraAttacks : SpellEffect
+public class ExtraAttacks : SpellEffect
 {
-    Spell Proc { get; init; }
-    int Number { get; init; }
+    public int ProcID { get; init; }
+    public Spell Proc { get; init; }
+    public int Amount { get; init; }
 
-    public ExtraAttacks(Spell proc, int number)
+    public ExtraAttacks()
+    {
+
+    }
+
+    public ExtraAttacks(Spell proc, int amount)
     {
         Proc = proc;
-        Number = number;
+        Amount = amount;
     }
 
     public override ProcMask Resolve(FightSimulation fight, SpellState state)
@@ -24,12 +30,12 @@ class ExtraAttacks : SpellEffect
             Timestamp = fight.Timestamp,
             Mana = (int)fight.Player.Stats[StatName.Mana].Value,
             Source = Parent.Name,
-            Number = Number
+            Number = Amount
         };
 
         fight.CombatLog.Add(entry);
 
-        for (int i = 0; i < Number; i++)
+        for (int i = 0; i < Amount; i++)
         {
             fight.Queue.Add(new CastEvent(Proc, fight.Player, fight.Enemy, fight, fight.Timestamp));
         }

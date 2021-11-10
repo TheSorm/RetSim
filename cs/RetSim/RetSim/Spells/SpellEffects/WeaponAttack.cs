@@ -1,13 +1,21 @@
-﻿using RetSim.Simulation;
+﻿using Newtonsoft.Json;
+using RetSim.Simulation;
 using RetSim.Units.Player;
 using RetSim.Units.Player.State;
 using RetSim.Units.UnitStats;
+using System.ComponentModel;
 
 namespace RetSim.Spells.SpellEffects;
 
 [Serializable]
-public class WeaponDamage : DamageEffect
+public class WeaponAttack : Damage
 {
+    [JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
+    public bool Normalized { get; init; } = false;
+
+
+    [DefaultValue(1f)]
+    [JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]    
     public float Percentage { get; init; } = 1f;
 
     public override float CalculateDamage(Player player, Attack attack, SpellState state)

@@ -4,7 +4,7 @@ using RetSim.Units.Player.State;
 
 namespace RetSim.Spells.SpellEffects;
 
-class JudgementEffect : SpellEffect
+class Judgement : SpellEffect
 {
     public override ProcMask Resolve(FightSimulation fight, SpellState state)
     {

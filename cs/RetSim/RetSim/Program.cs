@@ -35,7 +35,9 @@ class Program
         var debuffs = new List<Spell> { ImprovedSealOfTheCrusader, ImprovedExposeArmor, ImprovedFaerieFire, CurseOfRecklessness, BloodFrenzy, ImprovedCurseOfTheElements, ImprovedShadowBolt, Misery, 
                                         ShadowWeaving, ImprovedScorch, ImprovedHuntersMark, ExposeWeakness };
 
-        //Data.Importer.SerializeSpells();
+        Data.Importer.SerializeSpells();
+        Data.Importer.SerializeProcs();
+        Dictionary<int, Spell> spells = Data.Importer.LoadSpells();
 
 
         Logger.Log("Press Enter to run a single, detailed sim, or any other key to run many, non-detailed sims.");

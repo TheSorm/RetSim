@@ -8,6 +8,7 @@ public static partial class Spells
     {
         ID = 25225,
         Name = "Sunder Armor",
+        Rank = 6,
         Target = SpellTarget.Enemy,
     };
 
@@ -15,6 +16,7 @@ public static partial class Spells
     {
         ID = 26866,
         Name = "Expose Armor",
+        Rank = 6,
         Target = SpellTarget.Enemy,
     };
 
@@ -22,6 +24,7 @@ public static partial class Spells
     {
         ID = 14169,
         Name = "Improved Expose Armor",
+        Rank = 6,
         Target = SpellTarget.Enemy,
     };
 
@@ -29,6 +32,7 @@ public static partial class Spells
     {
         ID = 27011,
         Name = "Faerie Fire",
+        Rank = 5,
         Target = SpellTarget.Enemy,
     };
 
@@ -36,6 +40,7 @@ public static partial class Spells
     {
         ID = 33602,
         Name = "Improved Faerie Fire",
+        Rank = 5,
         Target = SpellTarget.Enemy,
     };
 
@@ -43,6 +48,7 @@ public static partial class Spells
     {
         ID = 27226,
         Name = "Curse of Recklessness",
+        Rank = 5,
         Target = SpellTarget.Enemy
     };
 
@@ -50,6 +56,7 @@ public static partial class Spells
     {
         ID = 27228,
         Name = "Curse of the Elements",
+        Rank = 4,
         Target = SpellTarget.Enemy,
     };
 
@@ -57,6 +64,7 @@ public static partial class Spells
     {
         ID = 32484,
         Name = "Improved Curse of the Elements (Malediction)",
+        Rank = 4,
         Target = SpellTarget.Enemy,
     };
 
@@ -64,6 +72,7 @@ public static partial class Spells
     {
         ID = 27166,
         Name = "Judgement of Wisdom",
+        Rank = 4,
         Target = SpellTarget.Enemy,
     };
 
@@ -71,6 +80,7 @@ public static partial class Spells
     {
         ID = 14325,
         Name = "Improved Hunter's Mark",
+        Rank = 4,
         Target = SpellTarget.Enemy,
     };
 
@@ -78,6 +88,7 @@ public static partial class Spells
     {
         ID = 34501,
         Name = "Expose Weakness",
+        Rank = 3,
         Target = SpellTarget.Enemy,
     };
 
@@ -85,6 +96,7 @@ public static partial class Spells
     {
         ID = 30070,
         Name = "Blood Frenzy",
+        Rank = 2,
         Target = SpellTarget.Enemy,
     };
 
@@ -92,6 +104,7 @@ public static partial class Spells
     {
         ID = 17800,
         Name = "Improved Shadow Bolt",
+        Rank = 5,
         Target = SpellTarget.Enemy,
     };
 
@@ -99,6 +112,7 @@ public static partial class Spells
     {
         ID = 33200,
         Name = "Misery",
+        Rank = 5,
         Target = SpellTarget.Enemy,
     };
 
@@ -106,6 +120,7 @@ public static partial class Spells
     {
         ID = 15258,
         Name = "Shadow Weaving",
+        Rank = 5,
         Target = SpellTarget.Enemy,
     };
 
@@ -113,6 +128,7 @@ public static partial class Spells
     {
         ID = 22959,
         Name = "Improved Scorch",
+        Rank = 3,
         Target = SpellTarget.Enemy,
     };
 }

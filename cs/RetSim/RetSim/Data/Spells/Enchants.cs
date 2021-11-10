@@ -41,7 +41,7 @@ public static partial class Spells
         Name = "Deathfrost",
         Effects = new()
         {
-            new DamageEffect() 
+            new Damage() 
             {
                 School = School.Frost,
                 DefenseCategory = DefenseType.Magic,

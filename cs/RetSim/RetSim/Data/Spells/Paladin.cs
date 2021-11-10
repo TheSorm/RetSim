@@ -15,7 +15,7 @@ public static partial class Spells
 
         Effects = new()
         {
-            new WeaponDamage
+            new WeaponAttack
             {
                 School = School.Physical,
                 DefenseCategory = DefenseType.White,
@@ -37,7 +37,7 @@ public static partial class Spells
 
         Effects = new()
         {
-            new WeaponDamage
+            new WeaponAttack
             {
                 School = School.Physical,
                 DefenseCategory = DefenseType.Special,
@@ -58,13 +58,14 @@ public static partial class Spells
         Cooldown = 10000,
         Target = SpellTarget.Enemy,
 
-        Effects = new() { new JudgementEffect() }
+        Effects = new() { new RetSim.Spells.SpellEffects.Judgement() }
     };
 
     public static readonly Spell SealOfCommand = new()
     {
         ID = 27170,
         Name = "Seal of Command (Aura)",
+        Rank = 6,
         ManaCost = 280,
         GCD = new() { Category = AttackCategory.Spell }
     };
@@ -77,7 +78,7 @@ public static partial class Spells
 
         Effects = new()
         {
-            new WeaponDamage
+            new WeaponAttack
             {
                 School = School.Holy,
                 DefenseCategory = DefenseType.Special,
@@ -90,15 +91,16 @@ public static partial class Spells
         }
     };
 
-    public static readonly Judgement JudgementOfCommand = new()
+    public static readonly RetSim.Spells.Judgement JudgementOfCommand = new()
     {
         ID = 27171,
         Name = "Judgement of Command",
+        Rank = 6,
         Target = SpellTarget.Enemy,
 
         Effects = new()
         {
-            new DamageEffect
+            new Damage
             {
                 School = School.Holy,
                 DefenseCategory = DefenseType.Ranged,
@@ -128,7 +130,7 @@ public static partial class Spells
 
         Effects = new()
         {
-            new WeaponDamage
+            new WeaponAttack
             {
                 School = School.Holy,
                 DefenseCategory = DefenseType.Special,
@@ -139,7 +141,7 @@ public static partial class Spells
         }
     };
 
-    public static readonly Judgement JudgementOfBlood = new()
+    public static readonly RetSim.Spells.Judgement JudgementOfBlood = new()
     {
         ID = 31898,
         Name = "Judgement of Blood",
@@ -147,7 +149,7 @@ public static partial class Spells
 
         Effects = new()
         {
-            new DamageEffect
+            new Damage
             {
                 School = School.Holy,
                 DefenseCategory = DefenseType.Ranged,
@@ -165,6 +167,7 @@ public static partial class Spells
     {
         ID = 27158,
         Name = "Seal of the Crusader",
+        Rank = 7,
         ManaCost = 210,
         GCD = new() { Category = AttackCategory.Spell },
 
@@ -175,13 +178,15 @@ public static partial class Spells
     public static readonly Spell WindfuryTotem = new()
     {
         ID = 25580,
-        Name = "Windfury Totem"
+        Name = "Windfury Totem",
+        Rank = 5
     };
 
     public static readonly Spell WindfuryAttack = new()
     {
         ID = 25584,
-        Name = "Windfury Attack"
+        Name = "Windfury Attack",
+        Rank = 5
     };
 
     public static readonly Spell WindfuryProc = new()
@@ -192,7 +197,7 @@ public static partial class Spells
 
         Effects = new()
         {
-            new WeaponDamage
+            new WeaponAttack
             {
                 School = School.Physical,
                 DefenseCategory = DefenseType.White,

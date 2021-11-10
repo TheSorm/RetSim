@@ -1,27 +1,36 @@
-﻿using RetSim.Misc;
+﻿using Newtonsoft.Json.Converters;
+using RetSim.Misc;
 using RetSim.Spells.SpellEffects;
 using RetSim.Units.Player;
-using System.Text.Json.Serialization;
+using Newtonsoft.Json;
 
 namespace RetSim.Spells;
 
 [Serializable]
-[JsonSerializable(typeof(object))]
 public class Spell
 {
     public int ID { get; init; }
     public string Name { get; init; }
+    public int Rank { get; init; } = 0;
+    
     public int ManaCost { get; init; } = 0;
     public int Cooldown { get; init; } = 0;
     public int CastTime { get; init; } = 0;
     public SpellGCD GCD { get; init; } = null;
-    public Aura Aura { get; set; } = null;
 
-    public List<SpellEffect> Effects { get; set; } = null;
+    [JsonConverter(typeof(StringEnumConverter))]
     public SpellTarget Target { get; init; } = SpellTarget.Self;
 
+    public Aura Aura { get; set; } = null;
+    public List<SpellEffect> Effects { get; set; } = null;
+    
     [JsonIgnore]
     public Func<Player, bool> Requirements { get; init; }
+
+    public override string ToString()
+    {
+        return $"{Name} (Rank {Rank}) (ID: {ID})";
+    }
 }
 
 public class Judgement : Spell { }
@@ -40,6 +49,8 @@ public enum SpellTarget
 public class SpellGCD
 {
     public int Duration { get; init; } = Constants.Numbers.DefaultGCD;
+
+    [JsonConverter(typeof(StringEnumConverter))]
     public AttackCategory Category { get; init; } = AttackCategory.Physical;
 }
 

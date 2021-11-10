@@ -1,4 +1,6 @@
-﻿using RetSim.Misc;
+﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
+using RetSim.Misc;
 using RetSim.Simulation;
 using RetSim.Simulation.CombatLogEntries;
 using RetSim.Units.Player;
@@ -7,14 +9,24 @@ using RetSim.Units.UnitStats;
 
 namespace RetSim.Spells.SpellEffects;
 
-public class DamageEffect : SpellEffect
+public class Damage : SpellEffect
 {
+    [JsonConverter(typeof(StringEnumConverter))]
     public School School { get; init; } = School.Physical;
+
+    [JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]    
     public float Coefficient { get; init; } = 0;
+
+    [JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
+    [JsonConverter(typeof(StringEnumConverter))]
     public DefenseType DefenseCategory { get; init; } = DefenseType.Special;
+
+    [JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
+    [JsonConverter(typeof(StringEnumConverter))]
     public AttackCategory CritCategory { get; init; } = AttackCategory.Physical;
-    public bool Normalized { get; init; } = false;
+
     public bool IgnoresDefenses { get; init; } = false;
+
     public ProcMask OnCast { get; init; } = ProcMask.None;
     public ProcMask OnHit { get; init; } = ProcMask.None;
     public ProcMask OnCrit { get; init; } = ProcMask.None;

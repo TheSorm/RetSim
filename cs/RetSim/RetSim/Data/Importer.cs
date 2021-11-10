@@ -1,11 +1,11 @@
-﻿using RetSim.Items;
+﻿using Newtonsoft.Json;
+using RetSim.Data.JSON;
+using RetSim.Items;
 using RetSim.Spells;
 using RetSim.Spells.SpellEffects;
 using RetSim.Units.Player.Static;
 using System.IO;
-using System.Text.Json;
-using System.Text.Json.Serialization;
-using System.Xml;
+
 using static RetSim.Data.Items;
 
 namespace RetSim.Data;
@@ -57,150 +57,99 @@ public static class Importer
 
     public static void SerializeSpells()
     {
-        var options = new JsonSerializerOptions { 
-            WriteIndented = true, 
-            DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull,
-            Converters = { new JsonStringEnumConverter(), new SpellEffectConverterWithTypeDiscriminator() }
-        };
-
-        string serialized = JsonSerializer.Serialize(Spells.ByID.Values, options);
+        JsonSerializer serializer = new JsonSerializer();
+        //serializer.Converters.Add(new Newtonsoft.Json.Converters.StringEnumConverter());
+        serializer.Converters.Add(new SpellEffectConverter());
+        serializer.Converters.Add(new AuraConverter());
+        serializer.Converters.Add(new AuraEffectConverter());
+        serializer.NullValueHandling = NullValueHandling.Ignore;
+        serializer.DefaultValueHandling = DefaultValueHandling.Ignore;
+        serializer.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
+        serializer.MetadataPropertyHandling = MetadataPropertyHandling.Ignore; 
 
         using StreamWriter writer = new("spells.json");
+        using JsonWriter jwriter = new JsonTextWriter(writer);
+        jwriter.Formatting = Formatting.Indented;
 
-        writer.WriteLine(serialized);
+        SortedDictionary<int, Spell> sorted = new(Spells.ByID);
 
-        //using StreamReader reader = new("spells.json");
-        //List<Spell> de = JsonSerializer.Deserialize<List<Spell>>(reader.ReadToEnd(), options);
-        //Program.Logger.Log(de[0].ID.ToString());
+        serializer.Serialize(jwriter, sorted);
     }
-
-    public class SpellEffectConverterWithTypeDiscriminator : JsonConverter<SpellEffect>
+    
+    public static void SerializeProcs()
     {
-        enum TypeDiscriminator
+        JsonSerializer serializer = new JsonSerializer();
+        //serializer.Converters.Add(new Newtonsoft.Json.Converters.StringEnumConverter());
+        serializer.Converters.Add(new ProcConverter());
+        serializer.NullValueHandling = NullValueHandling.Ignore;
+        serializer.DefaultValueHandling = DefaultValueHandling.Ignore;
+        serializer.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
+        serializer.MetadataPropertyHandling = MetadataPropertyHandling.Ignore;
+
+        using StreamWriter writer = new("procs.json");
+        using JsonWriter jwriter = new JsonTextWriter(writer);
+        jwriter.Formatting = Formatting.Indented;
+
+        SortedDictionary<int, Proc> sorted = new();
+
+        foreach (Proc proc in Procs.ByID.Values)
         {
-            DamageEffect = 1,
-            ExtraAttacks = 2,
-            JudgementEffect = 3,
-            WeaponDamage = 4
+            sorted.Add(proc.ID, proc);
         }
 
-        public override bool CanConvert(Type typeToConvert) =>
-            typeof(SpellEffect).IsAssignableFrom(typeToConvert);
-
-        public override SpellEffect Read(
-    ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
-        {
-            Utf8JsonReader readerClone = reader;
-
-            if (readerClone.TokenType != JsonTokenType.StartObject)
-            {
-                throw new JsonException();
-            }
-
-            readerClone.Read();
-            if (readerClone.TokenType != JsonTokenType.PropertyName)
-            {
-                throw new JsonException();
-            }
-
-            string propertyName = readerClone.GetString();
-            if (propertyName != "TypeDiscriminator")
-            {
-                throw new JsonException();
-            }
-
-            readerClone.Read();
-            if (readerClone.TokenType != JsonTokenType.Number)
-            {
-                throw new JsonException();
-            }
-
-            TypeDiscriminator typeDiscriminator = (TypeDiscriminator)readerClone.GetInt32();
-            SpellEffect spellEffect = typeDiscriminator switch
-            {
-                TypeDiscriminator.DamageEffect => JsonSerializer.Deserialize<DamageEffect>(ref reader),
-                TypeDiscriminator.ExtraAttacks => JsonSerializer.Deserialize<ExtraAttacks>(ref reader),
-                TypeDiscriminator.JudgementEffect => JsonSerializer.Deserialize<JudgementEffect>(ref reader),
-                TypeDiscriminator.WeaponDamage => JsonSerializer.Deserialize<WeaponDamage>(ref reader),
-
-                _ => throw new JsonException()
-            };
-            return spellEffect;
-        }
-
-        public override void Write(
-            Utf8JsonWriter writer, SpellEffect spellEffect, JsonSerializerOptions options)
-        {
-            writer.WriteStartObject();
-
-            if (spellEffect is DamageEffect damageEffect)
-            {
-                writer.WriteNumber("TypeDiscriminator", (int)TypeDiscriminator.DamageEffect);
-                writer.WriteNumber("School", (int)damageEffect.School);
-                // Write every single property of DamageEffect here.
-            }
-            else if (spellEffect is ExtraAttacks extraAttacks)
-            {
-                writer.WriteNumber("TypeDiscriminator", (int)TypeDiscriminator.ExtraAttacks);
-                // Write every single property of ExtraAttacks here.
-            }
-            else if (spellEffect is JudgementEffect judgementEffect)
-            {
-                writer.WriteNumber("TypeDiscriminator", (int)TypeDiscriminator.JudgementEffect);
-                // Write every single property of JudgementEffect here.
-            }
-            else if (spellEffect is WeaponDamage weaponDamage)
-            {
-                writer.WriteNumber("TypeDiscriminator", (int)TypeDiscriminator.WeaponDamage);
-                // Write every single property of WeaponDamage here.
-            }
-
-            writer.WriteEndObject();
-        }
+        serializer.Serialize(jwriter, sorted);
     }
+
 
     public static (List<EquippableWeapon> Weapons, List<EquippableItem> Armor, List<ItemSet> Sets, List<Gem> Gems, List<MetaGem> MetaGems, List<Enchant> Enchants) LoadData()
     {
         return (LoadWeaponData(), LoadArmorData(), LoadSetData(), LoadGemData(), LoadMetaGemData(), LoadEnchantData());
     }
 
+    public static Dictionary<int, Spell> LoadSpells()
+    {
+        using StreamReader reader = new("spells.json");
+
+        return JsonConvert.DeserializeObject<Dictionary<int, Spell>>(reader.ReadToEnd(), new SpellEffectConverter(), new AuraEffectConverter() ,new AuraConverter());
+    }
+
     public static List<EquippableWeapon> LoadWeaponData()
     {
         using StreamReader reader = new("..\\..\\..\\..\\RetSimWeb\\wwwroot\\data\\weapons.json");
 
-        return JsonSerializer.Deserialize<List<EquippableWeapon>>(reader.ReadToEnd());
+        return System.Text.Json.JsonSerializer.Deserialize<List<EquippableWeapon>>(reader.ReadToEnd());
     }
 
     public static List<EquippableItem> LoadArmorData()
     {
         using StreamReader reader = new("..\\..\\..\\..\\RetSimWeb\\wwwroot\\data\\armor.json");
 
-        return JsonSerializer.Deserialize<List<EquippableItem>>(reader.ReadToEnd());
+        return System.Text.Json.JsonSerializer.Deserialize<List<EquippableItem>>(reader.ReadToEnd());
     }
     public static List<ItemSet> LoadSetData()
     {
         using StreamReader reader = new("..\\..\\..\\..\\RetSimWeb\\wwwroot\\data\\sets.json");
 
-        return JsonSerializer.Deserialize<List<ItemSet>>(reader.ReadToEnd());
+        return System.Text.Json.JsonSerializer.Deserialize<List<ItemSet>>(reader.ReadToEnd());
     }
 
     public static List<Gem> LoadGemData()
     {
         using StreamReader reader = new("..\\..\\..\\..\\RetSimWeb\\wwwroot\\data\\gems.json");
 
-        return JsonSerializer.Deserialize<List<Gem>>(reader.ReadToEnd());
+        return System.Text.Json.JsonSerializer.Deserialize<List<Gem>>(reader.ReadToEnd());
     }
     public static List<MetaGem> LoadMetaGemData()
     {
         using StreamReader reader = new("..\\..\\..\\..\\RetSimWeb\\wwwroot\\data\\metaGems.json");
 
-        return JsonSerializer.Deserialize<List<MetaGem>>(reader.ReadToEnd());
+        return System.Text.Json.JsonSerializer.Deserialize<List<MetaGem>>(reader.ReadToEnd());
     }
 
     public static List<Enchant> LoadEnchantData()
     {
         using StreamReader reader = new("..\\..\\..\\..\\RetSimWeb\\wwwroot\\data\\enchants.json");
 
-        return JsonSerializer.Deserialize<List<Enchant>>(reader.ReadToEnd());
+        return System.Text.Json.JsonSerializer.Deserialize<List<Enchant>>(reader.ReadToEnd());
     }
 }
