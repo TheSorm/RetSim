@@ -20,6 +20,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Page Update="View\WeaponSelect.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+    </Page>
     <Page Update="View\WeaponSlotSelect.xaml">
       <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
     </Page>

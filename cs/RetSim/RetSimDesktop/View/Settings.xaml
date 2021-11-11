@@ -6,48 +6,66 @@
              xmlns:local="clr-namespace:RetSimDesktop"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid Background="White" Margin="5,0,5,5">
-        <GroupBox Padding="5" VerticalAlignment="Top" HorizontalAlignment="Left" Width="200">
-            <GroupBox.Header>
-                Gems
-            </GroupBox.Header>
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="50" />
-                </Grid.ColumnDefinitions>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="*" />
-                    <RowDefinition Height="*" />
-                    <RowDefinition Height="*" />
-                    <RowDefinition Height="*" />
-                </Grid.RowDefinitions>
-                <Label Content="Set all Red Sockets: "/>
-                <Button Grid.Column="1" Width="50" Height="20" Click="RedSocketSelect_Click">...</Button>
-                <Label Grid.Row="1" Content="Set all Yellow Sockets: "/>
-                <Button Grid.Row="1" Grid.Column="1" Width="50" Height="20" Click="YellowSocketSelect_Click">...</Button>
-                <Label Grid.Row="2" Content="Set all Blue Sockets: "/>
-                <Button Grid.Row="2" Grid.Column="1" Width="50" Height="20" Click="BlueSocketSelect_Click">...</Button>
-                <Label Grid.Row="3" Content="Set all Meta Sockets: "/>
-                <Button Grid.Row="3" Grid.Column="1" Width="50" Height="20" Click="MetaSocketSelect_Click">...</Button>
-            </Grid>
-        </GroupBox>
-        <GroupBox Padding="5" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="205,0,0,0">
-            <GroupBox.Header>
-                Talents
-            </GroupBox.Header>
-            <StackPanel>
-                <CheckBox Content = "Conviction" HorizontalAlignment = "Left" IsChecked="{Binding SelectedTalents.ConvictionEnabled}" VerticalAlignment = "Top"  />
-                <CheckBox Content = "Crusade" HorizontalAlignment = "Left" IsChecked="{Binding SelectedTalents.CrusadeEnabled}" VerticalAlignment = "Top"  />
-                <CheckBox Content = "Two-Handed Weapon Specialization" HorizontalAlignment = "Left"  IsChecked="{Binding SelectedTalents.TwoHandedWeaponSpecializationEnabled}" VerticalAlignment = "Top"  />
-                <CheckBox Content = "Sanctity Aura" HorizontalAlignment = "Left" IsChecked="{Binding SelectedTalents.SanctityAuraEnabled}"  VerticalAlignment = "Top"  />
-                <CheckBox Content = "Improved Sanctity Aura" HorizontalAlignment = "Left" IsChecked="{Binding SelectedTalents.ImprovedSanctityAuraEnabled}"  VerticalAlignment = "Top"  />
-                <CheckBox Content = "Vengeance" HorizontalAlignment = "Left" IsChecked="{Binding SelectedTalents.VengeanceEnabled}" VerticalAlignment = "Top"  />
-                <CheckBox Content = "Fanaticism" HorizontalAlignment = "Left" IsChecked="{Binding SelectedTalents.FanaticismEnabled}" VerticalAlignment = "Top"  />
-                <CheckBox Content = "Sanctified Seals" HorizontalAlignment = "Left" IsChecked="{Binding SelectedTalents.SanctifiedSealsEnabled}" VerticalAlignment = "Top"  />
-                <CheckBox Content = "Precision" HorizontalAlignment = "Left" IsChecked="{Binding SelectedTalents.PrecisionEnabled}" VerticalAlignment = "Top"  />
-                <CheckBox Content = "Divine Strength" HorizontalAlignment = "Left" IsChecked="{Binding SelectedTalents.DivineStrengthEnabled}" VerticalAlignment = "Top"  />
-            </StackPanel>
-        </GroupBox>
-    </Grid>
+    <StackPanel Background="White" Margin="5,0,5,5">
+        <Expander IsExpanded="True" Margin="10" Header="Sim">
+            <WrapPanel>
+                <GroupBox Padding="5" VerticalAlignment="Top" HorizontalAlignment="Left" Width="200">
+                    <GroupBox.Header>
+                        Gems
+                    </GroupBox.Header>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="50" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+                        <Label Content="Set all Red Sockets: "/>
+                        <Button Grid.Column="1" Width="50" Height="20" Click="RedSocketSelect_Click">...</Button>
+                        <Label Grid.Row="1" Content="Set all Yellow Sockets: "/>
+                        <Button Grid.Row="1" Grid.Column="1" Width="50" Height="20" Click="YellowSocketSelect_Click">...</Button>
+                        <Label Grid.Row="2" Content="Set all Blue Sockets: "/>
+                        <Button Grid.Row="2" Grid.Column="1" Width="50" Height="20" Click="BlueSocketSelect_Click">...</Button>
+                        <Label Grid.Row="3" Content="Set all Meta Sockets: "/>
+                        <Button Grid.Row="3" Grid.Column="1" Width="50" Height="20" Click="MetaSocketSelect_Click">...</Button>
+                    </Grid>
+                </GroupBox>
+                <GroupBox Padding="5" VerticalAlignment="Top" HorizontalAlignment="Left">
+                    <GroupBox.Header>
+                        Phases
+                    </GroupBox.Header>
+                    <StackPanel>
+                        <CheckBox Content = "Phase 1" HorizontalAlignment = "Left" IsChecked="{Binding SelectedPhases.Phase1Selected}" VerticalAlignment = "Top"  />
+                        <CheckBox Content = "Phase 2" HorizontalAlignment = "Left" IsChecked="{Binding SelectedPhases.Phase2Selected}" VerticalAlignment = "Top"  />
+                        <CheckBox Content = "Phase 3" HorizontalAlignment = "Left"  IsChecked="{Binding SelectedPhases.Phase3Selected}" VerticalAlignment = "Top"  />
+                        <CheckBox Content = "Phase 4" HorizontalAlignment = "Left" IsChecked="{Binding SelectedPhases.Phase4Selected}"  VerticalAlignment = "Top"  />
+                        <CheckBox Content = "Phase 5" HorizontalAlignment = "Left" IsChecked="{Binding SelectedPhases.Phase5Selected}"  VerticalAlignment = "Top"  />
+                    </StackPanel>
+                </GroupBox>
+            </WrapPanel>
+        </Expander>
+        <Expander IsExpanded="True" Margin="10" Header="Player">
+            <GroupBox Padding="5" VerticalAlignment="Top" HorizontalAlignment="Left">
+                <GroupBox.Header>
+                    Talents
+                </GroupBox.Header>
+                <StackPanel>
+                    <CheckBox Content = "Conviction" HorizontalAlignment = "Left" IsChecked="{Binding SelectedTalents.ConvictionEnabled}" VerticalAlignment = "Top"  />
+                    <CheckBox Content = "Crusade" HorizontalAlignment = "Left" IsChecked="{Binding SelectedTalents.CrusadeEnabled}" VerticalAlignment = "Top"  />
+                    <CheckBox Content = "Two-Handed Weapon Specialization" HorizontalAlignment = "Left"  IsChecked="{Binding SelectedTalents.TwoHandedWeaponSpecializationEnabled}" VerticalAlignment = "Top"  />
+                    <CheckBox Content = "Sanctity Aura" HorizontalAlignment = "Left" IsChecked="{Binding SelectedTalents.SanctityAuraEnabled}"  VerticalAlignment = "Top"  />
+                    <CheckBox Content = "Improved Sanctity Aura" HorizontalAlignment = "Left" IsChecked="{Binding SelectedTalents.ImprovedSanctityAuraEnabled}"  VerticalAlignment = "Top"  />
+                    <CheckBox Content = "Vengeance" HorizontalAlignment = "Left" IsChecked="{Binding SelectedTalents.VengeanceEnabled}" VerticalAlignment = "Top"  />
+                    <CheckBox Content = "Fanaticism" HorizontalAlignment = "Left" IsChecked="{Binding SelectedTalents.FanaticismEnabled}" VerticalAlignment = "Top"  />
+                    <CheckBox Content = "Sanctified Seals" HorizontalAlignment = "Left" IsChecked="{Binding SelectedTalents.SanctifiedSealsEnabled}" VerticalAlignment = "Top"  />
+                    <CheckBox Content = "Precision" HorizontalAlignment = "Left" IsChecked="{Binding SelectedTalents.PrecisionEnabled}" VerticalAlignment = "Top"  />
+                    <CheckBox Content = "Divine Strength" HorizontalAlignment = "Left" IsChecked="{Binding SelectedTalents.DivineStrengthEnabled}" VerticalAlignment = "Top"  />
+                </StackPanel>
+            </GroupBox>
+        </Expander>
+    </StackPanel>
 </UserControl>

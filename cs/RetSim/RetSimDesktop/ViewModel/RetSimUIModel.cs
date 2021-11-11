@@ -1,6 +1,8 @@
 ﻿using RetSim.Items;
 using RetSimDesktop.Model;
 using System;
+using System.Collections.Generic;
+using System.Diagnostics;
 using System.Windows.Input;
 using static RetSim.Data.Items;
 
@@ -11,6 +13,9 @@ namespace RetSimDesktop.ViewModel
         private SelectedGear _SelectedGear;
         private SelectedTalents _SelectedTalents;
         private SimOutput _CurrentSimOutput;
+        private SelectedPhases _SelectedPhases;
+        private Dictionary<Slot, Dictionary<int, List<EquippableItem>>> _GearByPhases;
+        private Dictionary<WeaponType, Dictionary<int, List<EquippableWeapon>>> _WeaponsByPhases;
 
         public RetSimUIModel()
         {
@@ -53,6 +58,58 @@ namespace RetSimDesktop.ViewModel
                 TwoHandedWeaponSpecializationEnabled = true,
                 VengeanceEnabled = true
             };
+
+            _SelectedPhases = new SelectedPhases()
+            {
+                Phase1Selected = true,
+                Phase2Selected = true,
+                Phase3Selected = false,
+                Phase4Selected = false,
+                Phase5Selected = false
+            };
+
+            _GearByPhases = new();
+            _WeaponsByPhases = new();
+            foreach (var item in AllItems.Values)
+            {
+                if(item is EquippableWeapon weapon)
+                { 
+                    if (!_WeaponsByPhases.ContainsKey(weapon.Type))
+                    {
+                        _WeaponsByPhases[weapon.Type] = new();
+                    }
+                    if (!_WeaponsByPhases[weapon.Type].ContainsKey(weapon.Phase))
+                    {
+                        _WeaponsByPhases[weapon.Type][weapon.Phase] = new();
+                    }
+                    _WeaponsByPhases[weapon.Type][weapon.Phase].Add(weapon);
+                }
+                else
+                {
+                    if (!_GearByPhases.ContainsKey(item.Slot))
+                    {
+                        _GearByPhases[item.Slot] = new();
+                    }
+
+                    if (!_GearByPhases[item.Slot].ContainsKey(item.Phase))
+                    {
+                        _GearByPhases[item.Slot][item.Phase] = new();
+                    }
+
+                    _GearByPhases[item.Slot][item.Phase].Add(item);
+                }
+            }
+        }
+
+        public Dictionary<WeaponType, Dictionary<int, List<EquippableWeapon>>> WeaponsByPhases
+        {
+            get { return _WeaponsByPhases; }
+            set { _WeaponsByPhases = value; }
+        }
+        public Dictionary<Slot, Dictionary<int, List<EquippableItem>>> GearByPhases
+        {
+            get { return _GearByPhases; }
+            set { _GearByPhases = value; }
         }
 
         public SelectedGear SelectedGear
@@ -71,6 +128,12 @@ namespace RetSimDesktop.ViewModel
         {
             get { return _SelectedTalents; }
             set { _SelectedTalents = value; }
+        }
+
+        public SelectedPhases SelectedPhases
+        {
+            get { return _SelectedPhases; }
+            set { _SelectedPhases = value; }
         }
 
         private ICommand mUpdater;

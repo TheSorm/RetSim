@@ -4,6 +4,7 @@ using RetSimDesktop.View;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -16,27 +17,30 @@ namespace RetSimDesktop
     /// </summary>
     public partial class WeaponSlotSelect : UserControl
     {
-        public IEnumerable<EquippableWeapon> WeaponList
+        public List<EquippableWeapon> WeaponList
         {
-            get => (IEnumerable<EquippableWeapon>)GetValue(WeaponListProperty);
+            get => (List<EquippableWeapon>)GetValue(WeaponListProperty);
             set => SetValue(WeaponListProperty, value);
         }
 
         public static readonly DependencyProperty WeaponListProperty = DependencyProperty.Register(
             "WeaponList",
-            typeof(IEnumerable<EquippableWeapon>),
+            typeof(List<EquippableWeapon>),
             typeof(WeaponSlotSelect));
 
         public EquippableWeapon SelectedItem
         {
             get => (EquippableWeapon)GetValue(SelectedItemProperty);
-            set => SetValue(SelectedItemProperty, value);
+            set {
+                SetValue(SelectedItemProperty, value); 
+            }
         }
 
         public static readonly DependencyProperty SelectedItemProperty = DependencyProperty.Register(
             "SelectedItem",
             typeof(EquippableWeapon),
-            typeof(WeaponSlotSelect));
+            typeof(WeaponSlotSelect),
+            new PropertyMetadata(null, CheckIfSelectionIsPresent));
 
         public WeaponSlotSelect()
         {
@@ -102,8 +106,39 @@ namespace RetSimDesktop
             sHasteBinding.Converter = statConverter;
             SHasteColumn.Binding = sHasteBinding;
 
-            LevelColumn.SortDirection = ListSortDirection.Descending;
-            gearSlot.Items.SortDescriptions.Add(new SortDescription(LevelColumn.SortMemberPath, ListSortDirection.Descending));
+        }
+
+        private void CheckIfSelectionIsPresent()
+        {
+            if (!WeaponList.Contains(SelectedItem))
+            {
+                BindingOperations.ClearBinding(gearSlot, DataGrid.SelectedItemProperty);
+                gearSlot.SelectedCells.Clear();
+            }else
+            {
+                gearSlot.SelectedItem = SelectedItem;
+                gearSlot.SetBinding(DataGrid.SelectedItemProperty, new Binding("SelectedItem")
+                {
+                    Source = this,
+                    Mode = BindingMode.TwoWay
+                });
+            }
+        }
+
+        private void GearSlotSelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            SelectedItem = (EquippableWeapon)gearSlot.SelectedItem;
+            gearSlot.SetBinding(DataGrid.SelectedItemProperty, new Binding("SelectedItem")
+            {
+                Source = this,
+                Mode = BindingMode.TwoWay
+            });
+        }
+
+        private static void CheckIfSelectionIsPresent(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            WeaponSlotSelect select = d as WeaponSlotSelect;
+            select.CheckIfSelectionIsPresent();
         }
 
         private void DataGridCell_MouseDoubleClick(object sender, MouseButtonEventArgs e)
