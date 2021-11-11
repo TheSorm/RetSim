@@ -72,7 +72,7 @@ class Program
 
     static void RunOnce(Equipment equipment, List<Talent> talents, List<Spell> buffs, List<Spell> debuffs)
     {
-        FightSimulation fight = new(new Player("Brave Hero", Races.Human, equipment, talents), new Enemy("Magtheridon", CreatureType.Demon, ArmorCategory.Warrior), new EliteTactic(), buffs, debuffs, 180000, 200000);
+        FightSimulation fight = new(new Player("Brave Hero", Data.Collections.Races["Human"], equipment, talents), new Enemy("Magtheridon", CreatureType.Demon, ArmorCategory.Warrior), new EliteTactic(), buffs, debuffs, 180000, 200000);
 
         PrintStats(fight.Player.Stats.All);
 
@@ -163,7 +163,7 @@ class Program
 
         for (int i = 0; i < iterations; i++)
         {
-            FightSimulation fight = new(new Player("Brave Hero", Races.Human, equipment, talents), new Enemy("Magtheridon", CreatureType.Demon, ArmorCategory.Warrior), new EliteTactic(), buffs, debuffs, 180000, 190000);
+            FightSimulation fight = new(new Player("Brave Hero", Data.Collections.Races["Human"], equipment, talents), new Enemy("Magtheridon", CreatureType.Demon, ArmorCategory.Warrior), new EliteTactic(), buffs, debuffs, 180000, 190000);
 
             fight.Run();
 

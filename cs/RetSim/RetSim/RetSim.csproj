@@ -47,6 +47,9 @@
     <None Update="Properties\Data\Equipment\weapons.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="Properties\Data\races.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="Properties\Data\Spells\judgements.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

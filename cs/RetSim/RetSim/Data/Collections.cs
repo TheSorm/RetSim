@@ -1,4 +1,5 @@
 ﻿using RetSim.Spells;
+using RetSim.Units.Player.Static;
 
 namespace RetSim.Data
 {
@@ -11,5 +12,7 @@ namespace RetSim.Data
 
         public static readonly Dictionary<int, Proc> Procs = new();
         public static readonly Dictionary<int, Aura> Auras = new();
+
+        public static readonly Dictionary<string, Race> Races = new();
     }
 }

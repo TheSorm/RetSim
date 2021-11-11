@@ -6,12 +6,9 @@ using RetSim.Units.Player;
 using RetSim.Units.Player.Static;
 using RetSimDesktop.Model;
 using RetSimDesktop.ViewModel;
-using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Diagnostics;
 using System.Linq;
-using static RetSim.Data.Spells;
 
 namespace RetSimDesktop.View
 {
@@ -26,20 +23,19 @@ namespace RetSimDesktop.View
         {
             if (e.Argument is RetSimUIModel retSimUIModel)
             {
+                RetSim.Data.Manager.InstantiateData();
                 Equipment playerEquipment = SelectedGear.GetEquipment(retSimUIModel);
                 var numberOfSimulations = retSimUIModel.SimSettings.SimulationCount;
 
                 var talents = SelectedTalents.GetTalentList(retSimUIModel);
-                var buffs = new List<Spell> { WindfuryTotem, GreaterBlessingOfMight, GreaterBlessingOfKings, BattleShout, StrengthOfEarthTotem, GraceOfAirTotem, ManaSpringTotem, UnleashedRage,
-                                          GiftOfTheWild, PrayerOfFortitude, PrayerOfSpirit, ArcaneBrilliance, InspiringPresence };
-                var debuffs = new List<Spell> { ImprovedSealOfTheCrusader, ImprovedExposeArmor, ImprovedFaerieFire, CurseOfRecklessness, BloodFrenzy, ImprovedCurseOfTheElements, ImprovedShadowBolt, Misery,
-                                        ShadowWeaving, ImprovedScorch, ImprovedHuntersMark, ExposeWeakness };
+                var buffs = Spell.GetSpells(25580, 27141, 25898, 2048, 25528, 25359, 25570, 30811, 26991, 25392, 32999, 27127, 28878);
+                var debuffs = Spell.GetSpells(20337, 14169, 33602, 27226, 30070, 32484, 17800, 33200, 15258, 22959, 14325, 34501);
 
                 float overallDPS = 0;
                 List<FightSimulation> fightSimulations = new(numberOfSimulations);
                 for (int i = 0; i < numberOfSimulations; i++)
                 {
-                    FightSimulation fight = new(new Player("Brave Hero", Races.Human, playerEquipment, talents), new Enemy("Magtheridon", CreatureType.Demon, ArmorCategory.Warrior), new EliteTactic(), buffs, debuffs, retSimUIModel.SimSettings.MinFightDuration, retSimUIModel.SimSettings.MaxFightDuration);
+                    FightSimulation fight = new(new Player("Brave Hero", RetSim.Data.Collections.Races["Human"], playerEquipment, talents), new Enemy("Magtheridon", CreatureType.Demon, ArmorCategory.Warrior), new EliteTactic(), buffs, debuffs, retSimUIModel.SimSettings.MinFightDuration, retSimUIModel.SimSettings.MaxFightDuration);
                     fight.Run();
                     overallDPS += fight.CombatLog.DPS;
                     if (i % (numberOfSimulations / 100 + 1) == 0)

@@ -15,8 +15,16 @@ namespace RetSim.Data;
 
 public static class Manager
 {
+    private static bool instantiated = false;
+
     public static void InstantiateData()
     {
+        if (instantiated)
+            return;
+
+        else
+            instantiated = true;
+
         Dictionary<int, Proc> procs = LoadProcs();
 
         foreach (KeyValuePair<int, Proc> proc in procs)
@@ -77,7 +85,15 @@ public static class Manager
             proc.Value.Spell = spells[proc.Value.SpellID];
         }
 
-        Collections.Spells[20597].Requirements = (Player player) => player.Weapon.Type == WeaponType.Sword || player.Weapon.Type == WeaponType.Mace;
+        Dictionary<string, Race> races = LoadRaces();
+
+        foreach (KeyValuePair<string, Race> race in races)
+        {
+            Collections.Races.Add(race.Key, race.Value);
+        }
+
+        Collections.Races["Human"].Racial = Collections.Spells[Collections.Races["Human"].RacialID];
+        Collections.Races["Human"].Racial.Requirements = (Player player) => (player.Weapon.Type == WeaponType.Sword || player.Weapon.Type == WeaponType.Mace) && player.Race.Name == "Human";
     }
 
     public static Equipment GetEquipment()
@@ -143,7 +159,28 @@ public static class Manager
 
         serializer.Serialize(jwriter, sorted);
     }
-    
+
+    public static void SerializeRaces()
+    {
+        JsonSerializer serializer = new JsonSerializer();
+        //serializer.Converters.Add(new Newtonsoft.Json.Converters.StringEnumConverter());
+        serializer.Converters.Add(new SpellEffectConverter());
+        serializer.Converters.Add(new AuraConverter());
+        //serializer.Converters.Add(new AuraEffectConverter());
+        serializer.NullValueHandling = NullValueHandling.Ignore;
+        serializer.DefaultValueHandling = DefaultValueHandling.Ignore;
+        serializer.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
+        serializer.MetadataPropertyHandling = MetadataPropertyHandling.Ignore;
+
+        using StreamWriter writer = new("races.json");
+        using JsonWriter jwriter = new JsonTextWriter(writer);
+        jwriter.Formatting = Formatting.Indented;
+
+        SortedDictionary<int, Spell> sorted = new(Collections.Spells);
+
+        serializer.Serialize(jwriter, Collections.Races);
+    }
+
     public static void SerializeProcs()
     {
         JsonSerializer serializer = new JsonSerializer();
@@ -207,6 +244,13 @@ public static class Manager
         using StreamReader reader = new("Properties\\Data\\Spells\\talents.json");
 
         return JsonConvert.DeserializeObject<Dictionary<int, Talent>>(reader.ReadToEnd(), new SpellEffectConverter(), new AuraConverter());
+    }
+
+    public static Dictionary<string, Race> LoadRaces()
+    {
+        using StreamReader reader = new("Properties\\Data\\races.json");
+
+        return JsonConvert.DeserializeObject<Dictionary<string, Race>>(reader.ReadToEnd());
     }
 
     public static List<EquippableWeapon> LoadWeaponData()

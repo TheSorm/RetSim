@@ -2,7 +2,6 @@
 using RetSimDesktop.ViewModel;
 using System.Collections.Generic;
 using System.ComponentModel;
-using static RetSim.Data.Spells;
 
 namespace RetSimDesktop.Model
 {
@@ -18,6 +17,20 @@ namespace RetSimDesktop.Model
         private bool sanctifiedSealsEnabled;
         private bool precisionEnabled;
         private bool divineStrengthEnabled;
+
+        private static Dictionary<int, Talent> Talents = RetSim.Data.Collections.Talents;
+
+        private static Talent Conviction = Talents[20121];
+        private static Talent Crusade = Talents[31868];
+        private static Talent TwoHandedWeaponSpecialization = Talents[20113];
+        private static Talent SanctityAura = Talents[20218];
+        private static Talent ImprovedSanctityAura = Talents[31870];
+        private static Talent Vengeance = Talents[20059];
+        private static Talent SanctifiedSeals = Talents[35397];
+        private static Talent Fanaticism = Talents[31883];
+        private static Talent Precision = Talents[20193];
+        private static Talent DivineStrength = Talents[20266];
+        private static Talent DivineIntellect = Talents[20261];
 
         public bool ConvictionEnabled
         {
