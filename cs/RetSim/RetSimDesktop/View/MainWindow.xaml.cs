@@ -29,7 +29,7 @@ namespace RetSimDesktop
             SettingsButton.IsEnabled = true;
             StatisticsButton.IsEnabled = true;
 
-            GearSelect.WeaponSelect.gearSlot.Items.Refresh();
+            //GearSelect.WeaponSelect.AllWeaponSelect.Items.Refresh();
             GearSelect.HeadSelect.gearSlot.Items.Refresh();
             GearSelect.NeckSelect.gearSlot.Items.Refresh();
             GearSelect.ShouldersSelect.gearSlot.Items.Refresh();

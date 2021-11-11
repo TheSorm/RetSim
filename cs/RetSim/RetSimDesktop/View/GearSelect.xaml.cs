@@ -1,4 +1,10 @@
 ﻿using RetSim.Data;
+using RetSim.Items;
+using RetSimDesktop.ViewModel;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Linq;
+using System.Threading.Tasks;
 using System.Windows.Controls;
 using System.Windows.Data;
 
@@ -10,93 +16,86 @@ namespace RetSimDesktop
     /// 
     public partial class GearSelect : UserControl
     {
+        public IEnumerable<EquippableWeapon> Weapons { get; set; }
+        private Dictionary<Slot, List<GearSlotSelect>> SelectorBySlot = new();
+        public Dictionary<Slot, List<EquippableItem>> ShownGear { get; set; }
+
         public GearSelect()
         {
             InitializeComponent();
+            this.DataContextChanged += (o, e) =>
+            {
+                if (DataContext is RetSimUIModel)
+                {
+                    var viewModel = DataContext;
+                    (DataContext as RetSimUIModel).SelectedPhases.PropertyChanged += Model_PropertyChanged;
+                    Model_PropertyChanged(this, new PropertyChangedEventArgs(""));
+                }
+            };
+            ShownGear = new();
+            SelectorBySlot.Add(Slot.Head, new() { HeadSelect });
+            SelectorBySlot.Add(Slot.Neck, new() { NeckSelect });
+            SelectorBySlot.Add(Slot.Shoulders, new() { ShouldersSelect });
+            SelectorBySlot.Add(Slot.Back, new() { BackSelect });
+            SelectorBySlot.Add(Slot.Chest, new() { ChestSelect });
+            SelectorBySlot.Add(Slot.Wrists, new() { WristSelect });
+            SelectorBySlot.Add(Slot.Hands, new() { HandsSelect });
+            SelectorBySlot.Add(Slot.Waist, new() { WaistSelect });
+            SelectorBySlot.Add(Slot.Legs, new() { LegsSelect });
+            SelectorBySlot.Add(Slot.Feet, new() { FeetSelect });
+            SelectorBySlot.Add(Slot.Finger, new() { Finger1Select, Finger2Select });
+            SelectorBySlot.Add(Slot.Trinket, new() { Trinket1Select, Trinket2Select });
+            SelectorBySlot.Add(Slot.Relic, new() { RelicSelect });
 
-            WeaponSelect.SetBinding(WeaponSlotSelect.WeaponListProperty, new Binding("Values")
-            {
-                Source = Items.Weapons,
-                Mode = BindingMode.OneWay
-            });
+            Weapons = Items.Weapons.Values;
 
-            HeadSelect.SetBinding(GearSlotSelect.SlotListProperty, new Binding("Values")
+            WeaponSelect.SetBinding(WeaponSlotSelect.WeaponListProperty, new Binding("Weapons")
             {
-                Source = Items.Heads,
+                Source = this,
                 Mode = BindingMode.OneWay
             });
+        }
 
-            NeckSelect.SetBinding(GearSlotSelect.SlotListProperty, new Binding("Values")
+        private void Model_PropertyChanged(object? sender, PropertyChangedEventArgs e)
+        {
+            if (DataContext is RetSimUIModel retSimUIModel)
             {
-                Source = Items.Necks,
-                Mode = BindingMode.OneWay
-            });
+                foreach (var slot in SelectorBySlot.Keys)
+                {
+                    ShownGear[slot] = new();
+                    if (retSimUIModel.SelectedPhases.Phase1Selected && retSimUIModel.GearByPhases[slot].ContainsKey(1))
+                    {
+                        ShownGear[slot].AddRange(retSimUIModel.GearByPhases[slot][1]);
+                    }
+                    if (retSimUIModel.SelectedPhases.Phase2Selected && retSimUIModel.GearByPhases[slot].ContainsKey(2))
+                    {
+                        ShownGear[slot].AddRange(retSimUIModel.GearByPhases[slot][2]);
+                    }
+                    if (retSimUIModel.SelectedPhases.Phase3Selected && retSimUIModel.GearByPhases[slot].ContainsKey(3))
+                    {
+                        ShownGear[slot].AddRange(retSimUIModel.GearByPhases[slot][3]);
+                    }
+                    if (retSimUIModel.SelectedPhases.Phase4Selected && retSimUIModel.GearByPhases[slot].ContainsKey(4))
+                    {
+                        ShownGear[slot].AddRange(retSimUIModel.GearByPhases[slot][4]);
+                    }
+                    if (retSimUIModel.SelectedPhases.Phase5Selected && retSimUIModel.GearByPhases[slot].ContainsKey(5))
+                    {
+                        ShownGear[slot].AddRange(retSimUIModel.GearByPhases[slot][5]);
+                    }
+                    foreach(var itemSelector in SelectorBySlot[slot])
+                    {
+                        itemSelector.SetBinding(GearSlotSelect.SlotListProperty, new Binding("ShownGear["+slot+"]")
+                        {
+                            Source = this,
+                            Mode = BindingMode.OneWay
+                        });
 
-            ShouldersSelect.SetBinding(GearSlotSelect.SlotListProperty, new Binding("Values")
-            {
-                Source = Items.Shoulders,
-                Mode = BindingMode.OneWay
-            });
-            BackSelect.SetBinding(GearSlotSelect.SlotListProperty, new Binding("Values")
-            {
-                Source = Items.Cloaks,
-                Mode = BindingMode.OneWay
-            });
-            ChestSelect.SetBinding(GearSlotSelect.SlotListProperty, new Binding("Values")
-            {
-                Source = Items.Chests,
-                Mode = BindingMode.OneWay
-            });
-            WristSelect.SetBinding(GearSlotSelect.SlotListProperty, new Binding("Values")
-            {
-                Source = Items.Wrists,
-                Mode = BindingMode.OneWay
-            });
-            HandsSelect.SetBinding(GearSlotSelect.SlotListProperty, new Binding("Values")
-            {
-                Source = Items.Hands,
-                Mode = BindingMode.OneWay
-            });
-            WaistSelect.SetBinding(GearSlotSelect.SlotListProperty, new Binding("Values")
-            {
-                Source = Items.Waists,
-                Mode = BindingMode.OneWay
-            });
-            LegsSelect.SetBinding(GearSlotSelect.SlotListProperty, new Binding("Values")
-            {
-                Source = Items.Legs,
-                Mode = BindingMode.OneWay
-            });
-            FeetSelect.SetBinding(GearSlotSelect.SlotListProperty, new Binding("Values")
-            {
-                Source = Items.Legs,
-                Mode = BindingMode.OneWay
-            });
-            Finger1Select.SetBinding(GearSlotSelect.SlotListProperty, new Binding("Values")
-            {
-                Source = Items.Fingers,
-                Mode = BindingMode.OneWay
-            });
-            Finger2Select.SetBinding(GearSlotSelect.SlotListProperty, new Binding("Values")
-            {
-                Source = Items.Fingers,
-                Mode = BindingMode.OneWay
-            });
-            Trinket1Select.SetBinding(GearSlotSelect.SlotListProperty, new Binding("Values")
-            {
-                Source = Items.Trinkets,
-                Mode = BindingMode.OneWay
-            });
-            Trinket2Select.SetBinding(GearSlotSelect.SlotListProperty, new Binding("Values")
-            {
-                Source = Items.Trinkets,
-                Mode = BindingMode.OneWay
-            });
-            RelicSelect.SetBinding(GearSlotSelect.SlotListProperty, new Binding("Values")
-            {
-                Source = Items.Relics,
-                Mode = BindingMode.OneWay
-            });
+                        itemSelector.LevelColumn.SortDirection = ListSortDirection.Descending;
+                        itemSelector.gearSlot.Items.SortDescriptions.Add(new SortDescription(itemSelector.LevelColumn.SortMemberPath, ListSortDirection.Descending));
+                    }
+                }
+            }
         }
     }
 }

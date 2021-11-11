@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="Gems" Height="450" Width="800">
     <Grid>
-        <DataGrid Name="gemGrid" IsReadOnly="True" SelectionMode="Single" HeadersVisibility="Column" CanUserResizeColumns="False" CanUserResizeRows="False" AutoGenerateColumns="False">
+        <DataGrid Name="gemGrid" GridLinesVisibility="Horizontal" IsReadOnly="True" SelectionMode="Single" HeadersVisibility="Column" CanUserResizeColumns="False" CanUserResizeRows="False" AutoGenerateColumns="False">
             <DataGrid.Columns>
                 <DataGridTextColumn CanUserReorder="False" Header="Name" Binding="{Binding Name}" />
                 <DataGridTextColumn CanUserReorder="False" Header="Level" Binding="{Binding ItemLevel}" />

@@ -42,7 +42,6 @@ namespace RetSimDesktop
         {
             InitializeComponent();
 
-
             gearSlot.SetBinding(DataGrid.ItemsSourceProperty, new Binding("SlotList")
             {
                 Source = this,
@@ -102,9 +101,6 @@ namespace RetSimDesktop
             Binding sHasteBinding = new("Stats[" + StatName.SpellHasteRating + "]");
             sHasteBinding.Converter = statConverter;
             SHasteColumn.Binding = sHasteBinding;
-
-            LevelColumn.SortDirection = ListSortDirection.Descending;
-            gearSlot.Items.SortDescriptions.Add(new SortDescription(LevelColumn.SortMemberPath, ListSortDirection.Descending));
         }
 
         private void DataGridCell_MouseDoubleClick(object sender, MouseButtonEventArgs e)
