@@ -256,26 +256,26 @@ public class Equipment
             {
                 if (set.Value >= spell.RequiredCount)
                 {
-                    if (Data.Spells.ByID.ContainsKey(spell.ID))
-                        spells.Add(Data.Spells.ByID[spell.ID]);
+                    if (Data.Collections.Spells.ContainsKey(spell.ID))
+                        spells.Add(Data.Collections.Spells[spell.ID]);
                 }
             }
         }
 
         if (equipment.WeaponEnchant != null && equipment.WeaponEnchant.OnEquip != null)
-            spells.Add(Data.Spells.ByID[equipment.WeaponEnchant.OnEquip.ID]);
+            spells.Add(Data.Collections.Spells[equipment.WeaponEnchant.OnEquip.ID]);
 
         return spells;
     }
     private static void AddItemAuras(EquippableItem item, Dictionary<GemColor, int> gems, List<Spell> spells)
     {
-        if (item.OnEquip != null && Data.Spells.ByID.ContainsKey(item.OnEquip.ID))
-            spells.Add(Data.Spells.ByID[item.OnEquip.ID]);
+        if (item.OnEquip != null && Data.Collections.Spells.ContainsKey(item.OnEquip.ID))
+            spells.Add(Data.Collections.Spells[item.OnEquip.ID]);
 
         if (item.Socket1 != null && item.Socket1.IsMetaGem() is MetaGem meta && meta.IsActive(gems[GemColor.Red], gems[GemColor.Blue], gems[GemColor.Yellow]))
         {
-            if (Data.Spells.ByID.ContainsKey(meta.Spell.ID))
-                spells.Add(Data.Spells.ByID[meta.Spell.ID]);
+            if (Data.Collections.Spells.ContainsKey(meta.Spell.ID))
+                spells.Add(Data.Collections.Spells[meta.Spell.ID]);
         }
     }
 

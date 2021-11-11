@@ -6,6 +6,11 @@ namespace RetSim.Spells.AuraEffects;
 
 public class GainStats : AuraEffect
 {
+    public GainStats(StatSet stats)
+    {
+        Stats = stats;
+    }
+
     public StatSet Stats { get; init; }
 
     public override void Apply(Aura aura, Unit caster, Unit target, FightSimulation fight)

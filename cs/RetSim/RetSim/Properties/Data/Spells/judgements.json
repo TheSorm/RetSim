@@ -1,0 +1,51 @@
+{
+  "27171": {
+    "ID": 27171,
+    "Name": "Judgement of Command",
+    "Rank": 6,
+    "Target": "Enemy",
+    "Effects": [
+      {
+        "EffectType": "Damage",
+        "School": "Holy",
+        "Coefficient": 0.429,
+        "DefenseCategory": "Ranged",
+        "CritCategory": "Physical",
+        "OnCast": 0,
+        "OnHit": 192,
+        "OnCrit": 33,
+        "MinEffect": 228.0,
+        "MaxEffect": 252.0
+      }
+    ]
+  },
+  "31898": {
+    "ID": 31898,
+    "Name": "Judgement of Blood",
+    "Target": "Enemy",
+    "Effects": [
+      {
+        "EffectType": "Damage",
+        "School": "Holy",
+        "Coefficient": 0.429,
+        "DefenseCategory": "Ranged",
+        "CritCategory": "Physical",
+        "OnCast": 0,
+        "OnHit": 192,
+        "OnCrit": 33,
+        "MinEffect": 331.6,
+        "MaxEffect": 361.6
+      }
+    ]
+  },
+  "27166": {
+    "ID": 27166,
+    "Name": "Judgement of Wisdom",
+    "Rank": 4,
+    "Target": "Enemy",
+    "Aura": {
+      "AuraType": "Aura",
+      "IsDebuff": true
+    }
+  }
+}

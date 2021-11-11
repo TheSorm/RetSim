@@ -1,0 +1,198 @@
+{  
+  "20121": {
+    "ID": 20121,
+    "Name": "Conviction",
+    "Rank": 5,
+    "Aura": {
+      "AuraType": "Aura",
+      "Effects": [
+        {
+          "EffectType": "GainStats",
+          "Stats": [
+            {
+              "Stat": "CritChance",
+              "Value": 5.0
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "31868": {
+    "ID": 31868,
+    "Name": "Crusade",
+    "Rank": 3,
+    "Aura": {
+      "AuraType": "Aura",
+      "Effects": [
+        {
+          "EffectType": "ModDamageCreature",
+          "Percent": 3,
+          "SchoolMask": 127,
+          "Creatures": [
+            "Humanoid",
+            "Demon",
+            "Undead",
+            "Elemental"
+          ]
+        }
+      ]
+    }
+  },
+  "20113": {
+    "ID": 20113,
+    "Name": "Two-Handed Weapon Specialization",
+    "Rank": 3,
+    "Aura": {
+      "AuraType": "Aura",
+      "Effects": [
+        {
+          "EffectType": "ModDamageSchool",
+          "Percent": 6,
+          "SchoolMask": 1
+        }
+      ]
+    }
+  },
+  "20218": {
+    "ID": 20218,
+    "Name": "Sanctity Aura",
+    "Aura": {
+      "AuraType": "Aura",
+      "Effects": [
+        {
+          "EffectType": "ModDamageSchool",
+          "Percent": 10,
+          "SchoolMask": 2
+        }
+      ]
+    }
+  },
+  "31870": {
+    "ID": 31870,
+    "Name": "Improved Sanctity Aura",
+    "Rank": 2,
+    "Aura": {
+      "AuraType": "Aura",
+      "Effects": [
+        {
+          "EffectType": "ModDamageSchool",
+          "Percent": 2,
+          "SchoolMask": 127
+        }
+      ]
+    }
+  },
+  "20059": {
+    "ID": 20059,
+    "Name": "Vengeance",
+    "Rank": 5,
+    "Aura": {
+      "AuraType": "Aura",
+      "Effects": [
+        {
+          "EffectType": "GainProc",
+          "ProcID": 3
+        }
+      ]
+    }
+  },
+  "35397": {
+    "ID": 35397,
+    "Name": "Sanctified Seals",
+    "Rank": 3,
+    "Aura": {
+      "AuraType": "Aura",
+      "Effects": [
+        {
+          "EffectType": "GainStats",
+          "Stats": [
+            {
+              "Stat": "CritChance",
+              "Value": 3.0
+            },
+            {
+              "Stat": "SpellCrit",
+              "Value": 3.0
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "31883": {
+    "ID": 31883,
+    "Name": "Fanaticism",
+    "Rank": 5,
+    "Aura": {
+      "AuraType": "Aura",
+      "Effects": [
+        {
+          "EffectType": "ModSpellCritChance",
+          "Amount": 15,
+          "Spells": [
+            27171,
+            31898
+          ]
+        }
+      ]
+    }
+  },
+  "20193": {
+    "ID": 20193,
+    "Name": "Precision",
+    "Rank": 3,
+    "Aura": {
+      "AuraType": "Aura",
+      "Effects": [
+        {
+          "EffectType": "GainStats",
+          "Stats": [
+            {
+              "Stat": "HitChance",
+              "Value": 3.0
+            },
+            {
+              "Stat": "SpellHit",
+              "Value": 3.0
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "20266": {
+    "ID": 20266,
+    "Name": "Divine Strength",
+    "Rank": 5,
+    "Aura": {
+      "AuraType": "Aura",
+      "Effects": [
+        {
+          "EffectType": "ModStat",
+          "Percent": 10,
+          "Stats": [
+            "Strength"
+          ]
+        }
+      ]
+    }
+  },
+  "20261": {
+    "ID": 20261,
+    "Name": "Divine Intellect",
+    "Rank": 5,
+    "Aura": {
+      "AuraType": "Aura",
+      "Effects": [
+        {
+          "EffectType": "ModStat",
+          "Percent": 10,
+          "Stats": [
+            "Intellect"
+          ]
+        }
+      ]
+    }
+  }
+}

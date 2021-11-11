@@ -1,17 +1,85 @@
-﻿using Newtonsoft.Json;
-using RetSim.Data.JSON;
+﻿using RetSim.Data.JSON;
 using RetSim.Items;
 using RetSim.Spells;
-using RetSim.Spells.SpellEffects;
 using RetSim.Units.Player.Static;
+
+using Newtonsoft.Json;
+
 using System.IO;
 
 using static RetSim.Data.Items;
+using RetSim.Units.Player;
+using RetSim.Spells.SpellEffects;
 
 namespace RetSim.Data;
 
-public static class Importer
+public static class Manager
 {
+    public static void InstantiateData()
+    {
+        Dictionary<int, Proc> procs = LoadProcs();
+
+        foreach (KeyValuePair<int, Proc> proc in procs)
+        {
+            Collections.Procs[proc.Value.ID] = proc.Value;
+        }
+
+        Dictionary<int, Spell> spells = LoadSpells();
+        Dictionary<int, Spell> seals = LoadSeals();
+        Dictionary<int, Spells.Judgement> judgements = LoadJudgements();
+        Dictionary<int, Talent> talents = LoadTalents();
+
+        foreach (KeyValuePair<int, Talent> talent in talents)
+        {
+            Collections.Talents.Add(talent.Key, talent.Value);
+            spells.Add(talent.Key, talent.Value);
+        }
+
+        foreach (KeyValuePair<int, Spells.Judgement> judgement in judgements)
+        {
+            Collections.Judgements.Add(judgement.Key, judgement.Value);
+            spells.Add(judgement.Key, judgement.Value);
+        }
+
+        foreach (KeyValuePair<int, Spell> seal in seals)
+        {
+            Collections.Seals.Add(seal.Key, seal.Value);
+            spells.Add(seal.Key, seal.Value);
+        }
+
+        foreach (KeyValuePair<int, Spell> spell in spells)
+        {
+            if (spell.Value.Aura is not null)
+            {
+                Aura.Instantiate(spell.Value.Aura, spell.Value);
+
+                Collections.Auras[spell.Key] = spell.Value.Aura;
+            }
+
+            Collections.Spells[spell.Key] = spell.Value;
+
+            if (spell.Value.Effects != null)
+            {
+                foreach (SpellEffect effect in spell.Value.Effects)
+                {
+                    effect.Parent = spell.Value;
+                }
+            }
+        }
+
+        foreach (KeyValuePair<int, Spell> seal in seals)
+        {
+            Seal.Instantiate((Seal)seal.Value.Aura, seal.Value);
+        }
+
+        foreach (KeyValuePair<int, Proc> proc in procs)
+        {
+            proc.Value.Spell = spells[proc.Value.SpellID];
+        }
+
+        Collections.Spells[20597].Requirements = (Player player) => player.Weapon.Type == WeaponType.Sword || player.Weapon.Type == WeaponType.Mace;
+    }
+
     public static Equipment GetEquipment()
     {
         var data = LoadData();
@@ -71,7 +139,7 @@ public static class Importer
         using JsonWriter jwriter = new JsonTextWriter(writer);
         jwriter.Formatting = Formatting.Indented;
 
-        SortedDictionary<int, Spell> sorted = new(Spells.ByID);
+        SortedDictionary<int, Spell> sorted = new(Collections.Spells);
 
         serializer.Serialize(jwriter, sorted);
     }
@@ -92,7 +160,7 @@ public static class Importer
 
         SortedDictionary<int, Proc> sorted = new();
 
-        foreach (Proc proc in Procs.ByID.Values)
+        foreach (Proc proc in Data.Collections.Procs.Values)
         {
             sorted.Add(proc.ID, proc);
         }
@@ -106,49 +174,77 @@ public static class Importer
         return (LoadWeaponData(), LoadArmorData(), LoadSetData(), LoadGemData(), LoadMetaGemData(), LoadEnchantData());
     }
 
+    public static Dictionary<int, Proc> LoadProcs()
+    {
+        using StreamReader reader = new("Properties\\Data\\Spells\\procs.json");
+
+        return JsonConvert.DeserializeObject<Dictionary<int, Proc>>(reader.ReadToEnd(), new ProcConverter());
+    }
+
     public static Dictionary<int, Spell> LoadSpells()
     {
-        using StreamReader reader = new("spells.json");
+        using StreamReader reader = new("Properties\\Data\\Spells\\spells.json");
 
         return JsonConvert.DeserializeObject<Dictionary<int, Spell>>(reader.ReadToEnd(), new SpellEffectConverter(), new AuraConverter());
     }
 
+    public static Dictionary<int, Spell> LoadSeals()
+    {
+        using StreamReader reader = new("Properties\\Data\\Spells\\seals.json");
+
+        return JsonConvert.DeserializeObject<Dictionary<int, Spell>>(reader.ReadToEnd(), new SpellEffectConverter(), new AuraConverter());
+    }
+
+    public static Dictionary<int, RetSim.Spells.Judgement> LoadJudgements()
+    {
+        using StreamReader reader = new("Properties\\Data\\Spells\\judgements.json");
+
+        return JsonConvert.DeserializeObject<Dictionary<int, RetSim.Spells.Judgement>>(reader.ReadToEnd(), new SpellEffectConverter(), new AuraConverter());
+    }
+
+    public static Dictionary<int, Talent> LoadTalents()
+    {
+        using StreamReader reader = new("Properties\\Data\\Spells\\talents.json");
+
+        return JsonConvert.DeserializeObject<Dictionary<int, Talent>>(reader.ReadToEnd(), new SpellEffectConverter(), new AuraConverter());
+    }
+
     public static List<EquippableWeapon> LoadWeaponData()
     {
-        using StreamReader reader = new("..\\..\\..\\..\\RetSimWeb\\wwwroot\\data\\weapons.json");
+        using StreamReader reader = new("Properties\\Data\\Equipment\\weapons.json");
 
         return System.Text.Json.JsonSerializer.Deserialize<List<EquippableWeapon>>(reader.ReadToEnd());
     }
 
     public static List<EquippableItem> LoadArmorData()
     {
-        using StreamReader reader = new("..\\..\\..\\..\\RetSimWeb\\wwwroot\\data\\armor.json");
+        using StreamReader reader = new("Properties\\Data\\Equipment\\armor.json");
 
         return System.Text.Json.JsonSerializer.Deserialize<List<EquippableItem>>(reader.ReadToEnd());
     }
     public static List<ItemSet> LoadSetData()
     {
-        using StreamReader reader = new("..\\..\\..\\..\\RetSimWeb\\wwwroot\\data\\sets.json");
+        using StreamReader reader = new("Properties\\Data\\Equipment\\sets.json");
 
         return System.Text.Json.JsonSerializer.Deserialize<List<ItemSet>>(reader.ReadToEnd());
     }
 
     public static List<Gem> LoadGemData()
     {
-        using StreamReader reader = new("..\\..\\..\\..\\RetSimWeb\\wwwroot\\data\\gems.json");
+        using StreamReader reader = new("Properties\\Data\\Equipment\\gems.json");
 
         return System.Text.Json.JsonSerializer.Deserialize<List<Gem>>(reader.ReadToEnd());
     }
     public static List<MetaGem> LoadMetaGemData()
     {
-        using StreamReader reader = new("..\\..\\..\\..\\RetSimWeb\\wwwroot\\data\\metaGems.json");
+        using StreamReader reader = new("Properties\\Data\\Equipment\\metaGems.json");
 
         return System.Text.Json.JsonSerializer.Deserialize<List<MetaGem>>(reader.ReadToEnd());
     }
 
     public static List<Enchant> LoadEnchantData()
     {
-        using StreamReader reader = new("..\\..\\..\\..\\RetSimWeb\\wwwroot\\data\\enchants.json");
+        using StreamReader reader = new("Properties\\Data\\Equipment\\enchants.json");
 
         return System.Text.Json.JsonSerializer.Deserialize<List<Enchant>>(reader.ReadToEnd());
     }

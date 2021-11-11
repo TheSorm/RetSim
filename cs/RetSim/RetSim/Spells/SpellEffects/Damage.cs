@@ -1,6 +1,4 @@
-﻿using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-using RetSim.Misc;
+﻿using RetSim.Misc;
 using RetSim.Simulation;
 using RetSim.Simulation.CombatLogEntries;
 using RetSim.Units.Player;
@@ -10,26 +8,29 @@ using RetSim.Units.UnitStats;
 namespace RetSim.Spells.SpellEffects;
 
 public class Damage : SpellEffect
-{
-    [JsonConverter(typeof(StringEnumConverter))]
-    public School School { get; init; } = School.Physical;
+{    
+    public School School { get; init; }
+    public float Coefficient { get; init; }
 
-    [JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]    
-    public float Coefficient { get; init; } = 0;
+    public DefenseType DefenseCategory { get; init; }
+    public AttackCategory CritCategory { get; init; }
+    public bool IgnoresDefenses { get; init; }
 
-    [JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-    [JsonConverter(typeof(StringEnumConverter))]
-    public DefenseType DefenseCategory { get; init; } = DefenseType.Special;
+    public ProcMask OnCast { get; init; } 
+    public ProcMask OnHit { get; init; }
+    public ProcMask OnCrit { get; init; }
 
-    [JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-    [JsonConverter(typeof(StringEnumConverter))]
-    public AttackCategory CritCategory { get; init; } = AttackCategory.Physical;
-
-    public bool IgnoresDefenses { get; init; } = false;
-
-    public ProcMask OnCast { get; init; } = ProcMask.None;
-    public ProcMask OnHit { get; init; } = ProcMask.None;
-    public ProcMask OnCrit { get; init; } = ProcMask.None;
+    public Damage(float min, float max, School school, float coefficient, DefenseType defense, AttackCategory crit, bool ignoresDefense, ProcMask onCast, ProcMask onHit, ProcMask onCrit) : base(min, max)
+    {
+        School = school;
+        Coefficient = coefficient; 
+        DefenseCategory = defense;
+        CritCategory = crit;
+        IgnoresDefenses = ignoresDefense;
+        OnCast = onCast;
+        OnHit = onHit;
+        OnCrit = onCrit;
+    }
 
     public virtual float GetBaseDamage(Player player, SpellState state)
     {

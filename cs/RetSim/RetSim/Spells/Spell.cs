@@ -1,31 +1,45 @@
-﻿using Newtonsoft.Json.Converters;
-using RetSim.Misc;
+﻿using RetSim.Misc;
 using RetSim.Spells.SpellEffects;
 using RetSim.Units.Player;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
 
 namespace RetSim.Spells;
 
-[Serializable]
 public class Spell
 {
     public int ID { get; init; }
     public string Name { get; init; }
-    public int Rank { get; init; } = 0;
+    public int Rank { get; init; }
     
-    public int ManaCost { get; init; } = 0;
-    public int Cooldown { get; init; } = 0;
-    public int CastTime { get; init; } = 0;
-    public SpellGCD GCD { get; init; } = null;
+    public int ManaCost { get; init; }
+    public int Cooldown { get; init; }
+    public int CastTime { get; init; }
+    public SpellGCD GCD { get; init; }
 
-    [JsonConverter(typeof(StringEnumConverter))]
-    public SpellTarget Target { get; init; } = SpellTarget.Self;
+    public SpellTarget Target { get; init; }
 
-    public Aura Aura { get; set; } = null;
-    public List<SpellEffect> Effects { get; set; } = null;
+    public Aura Aura { get; set; }
+    public List<SpellEffect> Effects { get; set; }
     
     [JsonIgnore]
-    public Func<Player, bool> Requirements { get; init; }
+    public Func<Player, bool> Requirements { get; set; }
+
+    public static List<Spell> GetSpells(params int[] spells)
+    {
+        List<Spell> results = new();
+
+        foreach (int spell in spells)
+        {
+            if (Data.Collections.Spells[spell] is Spell s)
+                results.Add(s);
+
+            else
+                throw new Exception($"The given spell with ID {spell} was not a valid spell.");
+        }
+
+        return results;
+    }
 
     public override string ToString()
     {
@@ -35,9 +49,24 @@ public class Spell
 
 public class Judgement : Spell { }
 
-public class Talent : Spell { }
+public class Talent : Spell 
+{ 
+    public static List<Talent> GetTalents(params int[] talents)
+    {
+        List<Talent> results = new();
 
-public class Racial : Spell { }
+        foreach (int talent in talents)
+        {
+            if (Data.Collections.Talents[talent] is Talent t)
+                results.Add(t);
+
+            else
+                throw new Exception($"The given talent with ID {talent} was not a valid talent.");
+        }
+
+        return results;
+    }
+}
 
 public enum SpellTarget
 {
@@ -50,7 +79,6 @@ public class SpellGCD
 {
     public int Duration { get; init; } = Constants.Numbers.DefaultGCD;
 
-    [JsonConverter(typeof(StringEnumConverter))]
     public AttackCategory Category { get; init; } = AttackCategory.Physical;
 }
 

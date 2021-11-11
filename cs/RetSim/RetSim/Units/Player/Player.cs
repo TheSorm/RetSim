@@ -47,7 +47,7 @@ public class Player : Unit
         Procs = new Procs(this);
         GCD = new GCD();
 
-        foreach (Aura aura in Data.Auras.ByID.Values)
+        foreach (Aura aura in Data.Collections.Auras.Values)
             Auras.Add(aura);
 
         previousAttackSpeed = Weapon.EffectiveSpeed;

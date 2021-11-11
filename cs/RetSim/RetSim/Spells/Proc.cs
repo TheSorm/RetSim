@@ -14,6 +14,11 @@ public class Proc
     public int Chance { get; init; } = 0;
     public float PPM { get; init; } = 0f;
     public int Cooldown { get; init; } = 0;
+
+    public override string ToString()
+    {
+        return $"{Spell.Name} - Chance: {Chance}% / PPM: {PPM} / Cooldown: {Cooldown}";
+    }
 }
 
 [Flags]

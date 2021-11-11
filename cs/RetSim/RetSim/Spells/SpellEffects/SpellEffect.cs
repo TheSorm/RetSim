@@ -4,14 +4,18 @@ using System.Text.Json.Serialization;
 
 namespace RetSim.Spells.SpellEffects;
 
-[Serializable]
-[JsonSerializable(typeof(object))]
 public abstract class SpellEffect
 {
     [JsonIgnore]
     public Spell Parent { get; set; }
     public float MinEffect { get; init; }
     public float MaxEffect { get; init; }
+
+    public SpellEffect(float min, float max)
+    {
+        MinEffect = min;
+        MaxEffect = max;
+    }
 
     public abstract ProcMask Resolve(FightSimulation fight, SpellState state);
 

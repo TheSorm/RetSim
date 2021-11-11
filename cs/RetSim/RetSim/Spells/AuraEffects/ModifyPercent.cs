@@ -5,6 +5,11 @@ namespace RetSim.Spells.AuraEffects;
 
 abstract class ModifyPercent : AuraEffect
 {
+    public ModifyPercent(int percent) : base()
+    {
+        Percent = percent;
+    }
+
     public int Percent { get; init; }
 
     protected int CurrentMod = 100;

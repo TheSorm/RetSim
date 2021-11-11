@@ -6,6 +6,11 @@ namespace RetSim.Spells.AuraEffects;
 
 class ModStat : ModifyPercent
 {
+    public ModStat(int percent, List<StatName> stats) : base(percent)
+    {
+        Stats = stats;
+    }
+
     public List<StatName> Stats { get; init; }
 
     public override void Apply(Aura aura, Unit caster, Unit target, FightSimulation fight)

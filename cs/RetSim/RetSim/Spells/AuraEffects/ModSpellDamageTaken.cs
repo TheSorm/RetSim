@@ -5,6 +5,11 @@ namespace RetSim.Spells.AuraEffects;
 
 class ModSpellDamageTaken : ModifyFlat
 {
+    public ModSpellDamageTaken(int amount, School school) : base(amount)
+    {
+        School = school;
+    }
+
     public School School { get; init; }
 
     public override void Apply(Aura aura, Unit caster, Unit target, FightSimulation fight)

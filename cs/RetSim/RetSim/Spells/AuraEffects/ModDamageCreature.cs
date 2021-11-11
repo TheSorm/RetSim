@@ -6,14 +6,21 @@ namespace RetSim.Spells.AuraEffects;
 
 class ModDamageCreature : ModDamageSchool
 {
-    public List<CreatureType> Types { get; init; }
+    public List<CreatureType> Creatures { get; init; }
 
     protected bool MatchingType = false;
+
+    public ModDamageCreature(int percent, School schoolMask, List<CreatureType> creatures) : base(percent, schoolMask)
+    {
+        Creatures = creatures;
+    }
+
     public override void Apply(Aura aura, Unit caster, Unit target, FightSimulation fight)
     {
-        if (Types.Contains(fight.Enemy.Type))
+        if (Creatures.Contains(fight.Enemy.Type))
         {
             MatchingType = true;
+
             base.Apply(aura, caster, target, fight);
         }
     }

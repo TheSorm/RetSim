@@ -5,6 +5,10 @@ namespace RetSim.Spells.AuraEffects;
 
 class ModAttackSpeed : ModifyPercent
 {
+    public ModAttackSpeed(int percent) : base(percent)
+    {
+    }
+
     public override void Apply(Aura aura, Unit caster, Unit target, FightSimulation fight)
     {
         base.Apply(aura, caster, target, fight);

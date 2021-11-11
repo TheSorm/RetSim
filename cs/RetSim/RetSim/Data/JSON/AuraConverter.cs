@@ -2,6 +2,7 @@
 using Newtonsoft.Json.Linq;
 using RetSim.Spells;
 using RetSim.Spells.AuraEffects;
+using RetSim.Units.Enemy;
 using RetSim.Units.UnitStats;
 using System.Linq;
 
@@ -9,53 +10,175 @@ namespace RetSim.Data.JSON;
 
 public class AuraConverter : JsonConverter<Aura>
 {
-    public override Aura ReadJson(JsonReader reader, Type objectType, Aura existingValue, bool hasExistingValue, JsonSerializer serializer)
+    private List<AuraEffect> ReadAuraEffects(JObject jo)
     {
-        JObject jo = JObject.Load(reader);
+        if (jo["Effects"] == null)
+            return null;
 
-        Aura aura;
-
-        string test = (string)jo["AuraType"];
-
-        List<AuraEffect> effects = new();
-
-        if (jo["Effects"] != null)
+        else
         {
+            List<AuraEffect> effects = new();
+
             for (int i = 0; i < jo["Effects"].Count(); i++)
             {
-                switch ((string)jo["Effects"][i]["EffectType"])
+                string effectType = (string)jo["Effects"][i]["EffectType"];
+
+                switch (effectType)
                 {
+                    case "GainSeal":
+                        effects.Add(new GainSeal((int)jo["Effects"][i]["ProcID"]));
+                        break;
+
                     case "GainProc":
                         effects.Add(new GainProc((int)jo["Effects"][i]["ProcID"]));
                         break;
+
+                    case "ModAttackSpeed":
+                        effects.Add(new ModAttackSpeed((int)jo["Effects"][i]["Percent"]));
+                        break;
+
+                    case "ModDamageCreature":
+
+                        List<CreatureType> creatures = new();
+
+                        int count = jo["Effects"][i]["Creatures"].Count();
+
+                        for (int y = 0; y < count; y++)
+                        {
+                            creatures.Add(Enum.Parse<CreatureType>((string)jo["Effects"][i]["Creatures"][y]));
+                        }
+
+                        effects.Add(new ModDamageCreature((int)jo["Effects"][i]["Percent"], (School)(int)jo["Effects"][i]["SchoolMask"], creatures));
+
+                        break;
+
+                    case "ModDamageSchool":
+                        effects.Add(new ModDamageSchool((int)jo["Effects"][i]["Percent"], (School)(int)jo["Effects"][i]["SchoolMask"]));
+                        break;
+
+                    case "ModDamageSpell":
+
+                        List<int> spells = new();
+
+                        int spellCount = jo["Effects"][i]["Spells"].Count();
+
+                        for (int y = 0; y < spellCount; y++)
+                        {
+                            spells.Add((int)jo["Effects"][i]["Spells"][y]);
+                        }
+
+                        effects.Add(new ModDamageSpell((int)jo["Effects"][i]["Percent"], spells));
+
+                        break;
+
+                    case "ModDamageTaken":
+                        effects.Add(new ModDamageTaken((int)jo["Effects"][i]["Percent"], (School)(int)jo["Effects"][i]["SchoolMask"]));
+                        break;
+
+                    case "GainStats":
+
+                        StatSet stats = new();
+
+                        int statCount = jo["Effects"][i]["Stats"].Count();
+
+                        for (int y = 0; y < statCount; y++)
+                        {
+                            stats[Enum.Parse<StatName>((string)jo["Effects"][i]["Stats"][y]["Stat"])] = (float)jo["Effects"][i]["Stats"][y]["Value"];
+                        }
+
+                        effects.Add(new GainStats(stats));
+
+                        break;
+
+                    case "ModSpellCritChance":
+
+                        List<int> spellCritChance = new();
+
+                        int spellCritCount = jo["Effects"][i]["Spells"].Count();
+
+                        for (int y = 0; y < spellCritCount; y++)
+                        {
+                            spellCritChance.Add((int)jo["Effects"][i]["Spells"][y]);
+                        }
+
+                        effects.Add(new ModSpellCritChance((int)jo["Effects"][i]["Amount"], spellCritChance));
+
+                        break;
+
+                    case "ModSpellDamageTaken":
+                        effects.Add(new ModSpellDamageTaken((int)jo["Effects"][i]["Amount"], Enum.Parse<School>((string)jo["Effects"][i]["School"])));
+                        break;
+
+                    case "ModStat":
+
+                        List<StatName> statList = new();
+
+                        int statListCount = jo["Effects"][i]["Stats"].Count();
+
+                        for (int y = 0; y < statListCount; y++)
+                        {
+                            statList.Add(Enum.Parse<StatName>((string)jo["Effects"][i]["Stats"][y]));
+                        }
+
+                        effects.Add(new ModStat((int)jo["Effects"][i]["Percent"], statList));
+
+                        break;
+
+                    default:
+                        throw new Exception($"Failed to deserialize effect of type {effectType} - type not recognized");
                 }
             }
+
+            return effects;
         }
+    }
+
+    private Aura ReadAura(JObject jo, List<AuraEffect> effects)
+    {
+        Aura aura;
 
         int duration = (int)(jo["Duration"] ?? 0);
         int maxStacks = (int)(jo["MaxStacks"] ?? 1);
         bool isDebuff = (bool)(jo["IsDebuff"] ?? false);
 
-        //string test2 = (string)jo["Effects"][0]["EffectType"];
+        string auraType = (string)jo["AuraType"] ?? "Aura Type Missing";
 
-        switch ((string)jo["AuraType"])
+        switch (auraType)
         {
             case "Aura":
-                aura = new Aura(effects) { Duration =  duration, MaxStacks = maxStacks, IsDebuff = isDebuff, Effects = effects };
+                aura = new Aura(duration, maxStacks, isDebuff) { Duration = duration, MaxStacks = maxStacks, IsDebuff = isDebuff, Effects = effects };
                 break;
 
             case "Seal":
-                aura = new Seal(effects) { Duration = duration, MaxStacks = maxStacks, IsDebuff = isDebuff, Effects = effects, Persist = (int)(jo["Persist"] ?? 0), };
+                int judgement = (int)(jo["JudgementID"] ?? 0);
+                int persist = (int)(jo["Persist"] ?? 0);
+
+                List<int> exclusives = new();
+
+                int exclusivesCount = jo["Exclusives"].Count();
+
+                for (int y = 0; y < exclusivesCount; y++)
+                {
+                    exclusives.Add((int)jo["Exclusives"][y]);
+                }
+
+                aura = new Seal(judgement, exclusives, persist, duration, maxStacks, isDebuff, effects);
                 break;
 
             default:
-                throw new NotImplementedException();
-
+                throw new Exception($"Unrecognized aura type: {auraType}");
         }
 
-        aura.Effects = null;
+        return aura;
+    }
 
+    public override Aura ReadJson(JsonReader reader, Type objectType, Aura existingValue, bool hasExistingValue, JsonSerializer serializer)
+    {
+        JObject jo = JObject.Load(reader);
 
+        List<AuraEffect> effects = ReadAuraEffects(jo);
+
+        Aura aura = ReadAura(jo, effects);        
 
         return aura;
     }
@@ -63,7 +186,7 @@ public class AuraConverter : JsonConverter<Aura>
     public override void WriteJson(JsonWriter writer, Aura value, JsonSerializer serializer)
     {
         //serializer.Converters.Add(new AuraEffectConverter());
-        
+
         writer.WriteStartObject();
 
         Seal seal = null;
@@ -100,7 +223,7 @@ public class AuraConverter : JsonConverter<Aura>
 
             foreach (Seal other in seal.ExclusiveWith)
                 seals.Add(other.Parent.ID);
-            
+
             writer.WriteIntArray("Exclusives", seals.Cast<int>().ToArray());
 
             writer.WriteData("JudgementID", seal.Judgement.ID);
@@ -125,7 +248,7 @@ public class AuraConverter : JsonConverter<Aura>
 
     public void WriteAuraEffects(JsonWriter writer, AuraEffect value)
     {
-        writer.WriteStartObject();        
+        writer.WriteStartObject();
 
         if (value is GainSeal gainSeal)
         {
@@ -151,11 +274,11 @@ public class AuraConverter : JsonConverter<Aura>
             writer.WriteData("Percent", modDamageCreature.Percent);
             writer.WriteData("SchoolMask", modDamageCreature.SchoolMask);
 
-            string[] creatures = new string[modDamageCreature.Types.Count];
+            string[] creatures = new string[modDamageCreature.Creatures.Count];
 
-            for (int i = 0; i < modDamageCreature.Types.Count; i++)
+            for (int i = 0; i < modDamageCreature.Creatures.Count; i++)
             {
-                creatures[i] = modDamageCreature.Types[i].ToString();
+                creatures[i] = modDamageCreature.Creatures[i].ToString();
             }
 
             writer.WriteStringArray("Creatures", creatures);

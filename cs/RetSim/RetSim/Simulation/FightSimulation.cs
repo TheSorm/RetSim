@@ -13,6 +13,14 @@ namespace RetSim.Simulation;
 
 public class FightSimulation
 {
+
+    public override string ToString()
+    {
+        TimeSpan t = TimeSpan.FromMilliseconds(Duration);
+
+        return $"{Player.Name} fights {Enemy.Name} for {t.Minutes}m {t.Seconds}.{t.Milliseconds:D3}s";
+    }
+
     public readonly Player Player;
     public readonly Enemy Enemy;
     public readonly Tactic Tactic;

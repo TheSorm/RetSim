@@ -1,0 +1,76 @@
+{
+  "1": {
+    "ID": 1,
+    "Name": "Seal of Command",
+    "SpellID": 20424,
+    "ProcMask": 6,
+    "PPM": 7.0,
+    "Cooldown": 1000
+  },
+  "2": {
+    "ID": 2,
+    "Name": "Seal of Blood",
+    "SpellID": 31893,
+    "ProcMask": 14,
+    "GuaranteedProc": true
+  },
+  "3": {
+    "ID": 3,
+    "Name": "Vengeance",
+    "SpellID": 20055,
+    "ProcMask": 1,
+    "GuaranteedProc": true
+  },
+  "4": {
+    "ID": 4,
+    "Name": "Windfury Attack",
+    "SpellID": 25584,
+    "ProcMask": 2,
+    "Chance": 20
+  },
+  "5": {
+    "ID": 5,
+    "Name": "Lightning Speed",
+    "SpellID": 28093,
+    "ProcMask": 94,
+    "PPM": 1.0
+  },
+  "6": {
+    "ID": 6,
+    "Name": "Executioner",
+    "SpellID": 42976,
+    "ProcMask": 94,
+    "PPM": 1.0
+  },
+  "7": {
+    "ID": 7,
+    "Name": "Deathfrost",
+    "SpellID": 46579,
+    "ProcMask": 606,
+    "Chance": 50,
+    "Cooldown": 25000
+  },
+  "8": {
+    "ID": 8,
+    "Name": "Dragonspine Trophy",
+    "SpellID": 34775,
+    "ProcMask": 94,
+    "PPM": 1.0,
+    "Cooldown": 20000
+  },
+  "9": {
+    "ID": 9,
+    "Name": "Lionheart",
+    "SpellID": 34512,
+    "ProcMask": 30,
+    "PPM": 1.0,
+    "Cooldown": 1000
+  },
+  "10": {
+    "ID": 10,
+    "Name": "Justice",
+    "SpellID": 34260,
+    "ProcMask": 128,
+    "GuaranteedProc": true
+  }
+}

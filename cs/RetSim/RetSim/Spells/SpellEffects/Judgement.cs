@@ -6,6 +6,10 @@ namespace RetSim.Spells.SpellEffects;
 
 class Judgement : SpellEffect
 {
+    public Judgement() : base(0, 0)
+    {
+    }
+
     public override ProcMask Resolve(FightSimulation fight, SpellState state)
     {
         if (fight.Player.Auras.CurrentSeal != null)

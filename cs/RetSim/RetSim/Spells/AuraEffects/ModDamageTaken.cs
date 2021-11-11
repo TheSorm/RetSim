@@ -5,6 +5,11 @@ namespace RetSim.Spells.AuraEffects;
 
 class ModDamageTaken : ModifyPercent
 {
+    public ModDamageTaken(int percent, School schoolMask) : base(percent)
+    {
+        SchoolMask = schoolMask;
+    }
+
     public School SchoolMask { get; init; }
 
     public override void Apply(Aura aura, Unit caster, Unit target, FightSimulation fight)

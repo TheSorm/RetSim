@@ -1,0 +1,71 @@
+{
+  "27170": {
+    "ID": 27170,
+    "Name": "Seal of Command (Aura)",
+    "Rank": 6,
+    "ManaCost": 280,
+    "GCD": {
+      "Duration": 1500,
+      "Category": "Spell"
+    },
+    "Aura": {
+      "AuraType": "Seal",
+      "Duration": 30000,
+      "Persist": 400,
+      "Exclusives": [
+        31892,
+        27158
+      ],
+      "JudgementID": 27171,
+      "Effects": [
+        {
+          "EffectType": "GainSeal",
+          "ProcID": 1
+        }
+      ]
+    }
+  },
+  "31892": {
+    "ID": 31892,
+    "Name": "Seal of Blood (Aura)",
+    "ManaCost": 210,
+    "GCD": {
+      "Duration": 1500,
+      "Category": "Spell"
+    },
+    "Aura": {
+      "AuraType": "Seal",
+      "Duration": 30000,
+      "Exclusives": [
+        27170,
+        27158
+      ],
+      "JudgementID": 31898,
+      "Effects": [
+        {
+          "EffectType": "GainSeal",
+          "ProcID": 2
+        }
+      ]
+    }
+  },
+  "27158": {
+    "ID": 27158,
+    "Name": "Seal of the Crusader",
+    "Rank": 7,
+    "ManaCost": 210,
+    "GCD": {
+      "Duration": 1500,
+      "Category": "Spell"
+    },
+    "Aura": {
+      "AuraType": "Seal",
+      "Duration": 30000,
+      "Exclusives": [
+        27170,
+        31892
+      ],
+      "JudgementID": 27171
+    }
+  }
+}

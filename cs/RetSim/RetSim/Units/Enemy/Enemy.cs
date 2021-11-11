@@ -17,7 +17,7 @@ namespace RetSim.Units.Enemy
 
             Auras = new Auras();
 
-            foreach (Aura aura in Data.Auras.ByID.Values)
+            foreach (Aura aura in Data.Collections.Auras.Values)
                 Auras.Add(aura);
         }
 

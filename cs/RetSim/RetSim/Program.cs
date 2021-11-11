@@ -13,8 +13,6 @@ using RetSim.Units.Player.Static;
 using RetSim.Units.UnitStats;
 using System.Diagnostics;
 
-using static RetSim.Data.Spells;
-
 namespace RetSim;
 
 class Program
@@ -26,19 +24,13 @@ class Program
 
     static void Main(string[] args)
     {
-        var equipment = Data.Importer.GetEquipment();
+        Data.Manager.InstantiateData();
 
-        var talents = new List<Talent> { Conviction, Crusade, TwoHandedWeaponSpecialization, SanctityAura, ImprovedSanctityAura, Vengeance, Fanaticism, 
-                                            SanctifiedSeals, Precision, DivineStrength };
-        var buffs = new List<Spell> { WindfuryTotem, GreaterBlessingOfMight, GreaterBlessingOfKings, BattleShout, StrengthOfEarthTotem, GraceOfAirTotem, ManaSpringTotem, UnleashedRage,
-                                          GiftOfTheWild, PrayerOfFortitude, PrayerOfSpirit, ArcaneBrilliance, InspiringPresence };
-        var debuffs = new List<Spell> { ImprovedSealOfTheCrusader, ImprovedExposeArmor, ImprovedFaerieFire, CurseOfRecklessness, BloodFrenzy, ImprovedCurseOfTheElements, ImprovedShadowBolt, Misery, 
-                                        ShadowWeaving, ImprovedScorch, ImprovedHuntersMark, ExposeWeakness };
+        var equipment = Data.Manager.GetEquipment();        
 
-        Data.Importer.SerializeSpells();
-        Data.Importer.SerializeProcs();
-        Dictionary<int, Spell> spells = Data.Importer.LoadSpells();
-
+        var playerTalents = Talent.GetTalents(20121, 31868, 20113, 20218, 31870, 20059, 31883, 35397, 20193, 20266);
+        var playerBuffs = Spell.GetSpells(25580, 27141, 25898, 2048, 25528, 25359, 25570, 30811, 26991, 25392, 32999, 27127, 28878);
+        var playerDebuffs = Spell.GetSpells(20337, 14169, 33602, 27226, 30070, 32484, 17800, 33200, 15258, 22959, 14325, 34501);
 
         Logger.Log("Press Enter to run a single, detailed sim, or any other key to run many, non-detailed sims.");
 
@@ -49,12 +41,12 @@ class Program
         Logger.DisableInput();
 
         if (once)
-            RunOnce(equipment, talents, buffs, debuffs);
+            RunOnce(equipment, playerTalents, playerBuffs, playerDebuffs);
 
         else
-            RunMany(equipment, talents, buffs, debuffs);
+            RunMany(equipment, playerTalents, playerBuffs, playerDebuffs);
 
-        //TODO: Add more debuffs
+        //TODO: Add more debuffs, consumables
 
         //PrintEquipment(equipment);
 
@@ -172,7 +164,6 @@ class Program
         for (int i = 0; i < iterations; i++)
         {
             FightSimulation fight = new(new Player("Brave Hero", Races.Human, equipment, talents), new Enemy("Magtheridon", CreatureType.Demon, ArmorCategory.Warrior), new EliteTactic(), buffs, debuffs, 180000, 190000);
-            //TODO: Add human racial tho
 
             fight.Run();
 

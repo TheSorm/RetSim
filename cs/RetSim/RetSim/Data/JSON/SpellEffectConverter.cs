@@ -1,5 +1,6 @@
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using RetSim.Spells;
 using RetSim.Spells.SpellEffects;
 
 namespace RetSim.Data.JSON;
@@ -13,22 +14,48 @@ public class SpellEffectConverter : JsonConverter<SpellEffect>
 
         SpellEffect effect;
 
-        switch ((string)jo["EffectType"])
+        float min = (float)(jo["MinEffect"] ?? 0);
+        float max = (float)(jo["MaxEffect"] ?? 0);
+
+        string type = (string)jo["EffectType"];
+
+        switch (type)
         {
             case "WeaponAttack":
-                effect = new WeaponAttack();
-                break;
-
             case "Damage":
-                effect = new Damage();
+                
+                School school = Enum.Parse<School>((string)jo["School"]);
+                DefenseType defense = Enum.Parse<DefenseType>((string)jo["DefenseCategory"]);
+                AttackCategory crit = Enum.Parse<AttackCategory>((string)jo["CritCategory"]);
+
+                float coefficient = (float)(jo["Coefficient"] ?? 0);
+                bool ignoresDefense = (bool)(jo["IgnoresDefenses"] ?? false);
+
+                ProcMask onCast = (ProcMask)(int)jo["OnCast"];
+                ProcMask onHit = (ProcMask)(int)jo["OnCast"];
+                ProcMask onCrit = (ProcMask)(int)jo["OnCast"];
+
+                if (type == "Damage")
+                    effect = new Damage(min, max, school, coefficient, defense, crit, ignoresDefense, onCast, onHit, onCrit);
+
+                else
+                {
+                    bool normalized = (bool)(jo["Normalized"] ?? false);
+                    float percentage = (float)(jo["Percentage"] ?? 1);
+
+                    effect = new WeaponAttack(min, max, school, coefficient, defense, crit, ignoresDefense, onCast, onHit, onCrit, normalized, percentage);
+                }
+
                 break;
 
             case "ExtraAttacks":
-                effect = new ExtraAttacks();
+
+
+                effect = new ExtraAttacks((int)(jo["ProcID"] ?? 1), (int)(jo["Amount"] ?? 1));
                 break;
 
             case "Judgement":
-                effect = new Judgement();
+                effect = new RetSim.Spells.SpellEffects.Judgement();
                 break;
 
             default:
@@ -54,7 +81,7 @@ public class SpellEffectConverter : JsonConverter<SpellEffect>
                 writer.WriteData("Amount", extraAttacks.Amount);
         }
 
-        else if (value is Judgement judgement)
+        else if (value is RetSim.Spells.SpellEffects.Judgement judgement)
         {
             writer.WriteData("EffectType", SpellEffectType.Judgement.ToString());
         }

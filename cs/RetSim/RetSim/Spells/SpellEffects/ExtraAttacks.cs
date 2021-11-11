@@ -4,27 +4,28 @@ using RetSim.Simulation.Events;
 using RetSim.Units.Player.State;
 using RetSim.Units.UnitStats;
 
+using Newtonsoft.Json;
+
 namespace RetSim.Spells.SpellEffects;
 
 public class ExtraAttacks : SpellEffect
 {
-    public int ProcID { get; init; }
-    public Spell Proc { get; init; }
+    [JsonIgnore]
+    private Spell Proc { get; set; }
+    public int ProcID { get; init; }    
     public int Amount { get; init; }
 
-    public ExtraAttacks()
+    public ExtraAttacks(int procID, int amount) : base(0, 0)
     {
-
-    }
-
-    public ExtraAttacks(Spell proc, int amount)
-    {
-        Proc = proc;
+        ProcID = procID;
         Amount = amount;
     }
 
     public override ProcMask Resolve(FightSimulation fight, SpellState state)
     {
+        if (Proc == null)
+            Proc = Data.Collections.Spells[ProcID];
+
         var entry = new ExtraAttacksEntry
         {
             Timestamp = fight.Timestamp,

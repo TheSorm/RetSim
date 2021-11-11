@@ -7,7 +7,7 @@ public class Spellbook : Dictionary<int, SpellState>
 {
     public Spellbook()
     {
-        foreach (var spell in Data.Spells.ByID.Values)
+        foreach (var spell in Data.Collections.Spells.Values)
             Add(spell);
     }
 

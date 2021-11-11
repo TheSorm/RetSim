@@ -8,7 +8,7 @@ public static class Races
     public static readonly Race Human = new()
     {
         Name = "Human",
-        Racial = Data.Spells.HumanRacial,
+        Racial = Data.Collections.Spells[20597],
         Stats = new()
         {
             [StatName.Strength] = 126,
@@ -67,5 +67,5 @@ public class Race
 {
     public string Name { get; init; }
     public StatSet Stats { get; init; }
-    public Racial Racial { get; init; } = null;
+    public Spell Racial { get; init; } = null;
 }

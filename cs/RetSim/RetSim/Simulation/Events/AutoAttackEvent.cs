@@ -17,7 +17,7 @@ public class AutoAttackEvent : Event
 
         Fight.Queue.Add(Fight.Player.NextAutoAttack);
 
-        return Fight.Player.Cast(Data.Spells.Melee, Fight);
+        return Fight.Player.Cast(Data.Collections.Spells[1], Fight);
     }
 
     public override string ToString()

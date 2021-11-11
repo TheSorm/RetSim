@@ -11,6 +11,11 @@ abstract class ModifyFlat : AuraEffect
     protected int PreviousAmount;
     protected int Difference;
 
+    public ModifyFlat(int amount)
+    {
+        Amount = amount;
+    }
+
     public override void Apply(Aura aura, Unit caster, Unit target, FightSimulation fight)
     {
         CurrentAmount = Amount * fight.Player.Auras[aura].Stacks;

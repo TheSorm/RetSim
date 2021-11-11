@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using RetSim.Spells;
 
 namespace RetSim.Data.JSON;
@@ -7,7 +8,9 @@ public class ProcConverter : JsonConverter<Proc>
 {
     public override Proc ReadJson(JsonReader reader, Type objectType, Proc existingValue, bool hasExistingValue, JsonSerializer serializer)
     {
-        throw new NotImplementedException();
+        JObject jo = JObject.Load(reader);
+
+        return new Proc() { ID = (int)jo["ID"], SpellID = (int)jo["SpellID"], ProcMask = (ProcMask)(int)jo["ProcMask"], GuaranteedProc = (bool)(jo["GuaranteedProc"] ?? false), Chance = (int)(jo["Chance"] ?? 0), PPM = (float)(jo["PPM"] ?? 0), Cooldown = (int)(jo["Cooldown"] ?? 0)};
     }
 
     public override void WriteJson(JsonWriter writer, Proc value, JsonSerializer serializer)

@@ -5,6 +5,11 @@ namespace RetSim.Spells.AuraEffects;
 
 class ModSpellCritChance : ModifyFlat
 {
+    public ModSpellCritChance(int amount, List<int> spells) : base(amount)
+    {
+        Spells = spells;
+    }
+
     public List<int> Spells { get; init; }
 
     public override void Apply(Aura aura, Unit caster, Unit target, FightSimulation fight)

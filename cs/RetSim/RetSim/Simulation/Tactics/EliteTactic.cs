@@ -1,8 +1,5 @@
-﻿using RetSim.Data;
-using RetSim.Simulation.Events;
+﻿using RetSim.Simulation.Events;
 using RetSim.Spells;
-
-using static RetSim.Data.Spells;
 
 namespace RetSim.Simulation.Tactics;
 
@@ -11,8 +8,22 @@ public class EliteTactic : Tactic
     Spell trinket1 = null;
     Spell trinket2 = null;
 
+    Spell CrusaderStrike;
+    Spell SealOfCommand;
+    Spell SealOfBlood;
+    Spell Judgement;
+    Spell AvengingWrath;
+    Spell Heroism;    
+
     public EliteTactic()
     {
+        CrusaderStrike = Data.Collections.Spells[35395];
+        SealOfCommand = Data.Collections.Spells[27170];
+        SealOfBlood = Data.Collections.Spells[31892];
+        Heroism = Data.Collections.Spells[32182];
+        AvengingWrath = Data.Collections.Spells[31884]; 
+        Judgement = Data.Collections.Spells[20271];
+
     }
 
     public override List<Event> PreFight(FightSimulation fight)
@@ -26,11 +37,11 @@ public class EliteTactic : Tactic
                 new AutoAttackEvent(fight, 1501)
             };
 
-        if (fight.Player.Equipment.Trinket1 != null && fight.Player.Equipment.Trinket1.OnUse != null && ByID.ContainsKey(fight.Player.Equipment.Trinket1.OnUse.ID))
-            trinket1 = ByID[fight.Player.Equipment.Trinket1.OnUse.ID];
+        if (fight.Player.Equipment.Trinket1 != null && fight.Player.Equipment.Trinket1.OnUse != null && Data.Collections.Spells.ContainsKey(fight.Player.Equipment.Trinket1.OnUse.ID))
+            trinket1 = Data.Collections.Spells[fight.Player.Equipment.Trinket1.OnUse.ID];
 
-        if (fight.Player.Equipment.Trinket2 != null && fight.Player.Equipment.Trinket2.OnUse != null && ByID.ContainsKey(fight.Player.Equipment.Trinket2.OnUse.ID))
-            trinket2 = ByID[fight.Player.Equipment.Trinket2.OnUse.ID];
+        if (fight.Player.Equipment.Trinket2 != null && fight.Player.Equipment.Trinket2.OnUse != null && Data.Collections.Spells.ContainsKey(fight.Player.Equipment.Trinket2.OnUse.ID))
+            trinket2 = Data.Collections.Spells[fight.Player.Equipment.Trinket2.OnUse.ID];
 
         if (trinket1 != null)
             onStart.Add(new CastEvent(trinket1, fight.Player, fight.Player, fight, 1495));
@@ -57,22 +68,22 @@ public class EliteTactic : Tactic
             int crusaderStrikeCooldownEnd = fight.Player.Spellbook.IsOnCooldown(CrusaderStrike) ? fight.Player.Spellbook[CrusaderStrike.ID].CooldownEnd.Timestamp : start;
             int twistWindowEnd = fight.Player.TimeOfNextSwing() - 1510;
 
-            if (!fight.Player.Auras[Auras.SealOfCommand].Active && start < twistWindowEnd && crusaderStrikeCooldownEnd > fight.Player.TimeOfNextSwing())
+            if (!fight.Player.Auras[SealOfCommand.Aura].Active && start < twistWindowEnd && crusaderStrikeCooldownEnd > fight.Player.TimeOfNextSwing())
             {
-                if (!fight.Player.Spellbook.IsOnCooldown(Data.Spells.Judgement) && fight.Player.Auras[Auras.SealOfBlood].Active)
-                    return new CastEvent(Data.Spells.Judgement, fight.Player, fight.Enemy, fight, fight.Timestamp);
+                if (!fight.Player.Spellbook.IsOnCooldown(Judgement) && fight.Player.Auras[SealOfBlood.Aura].Active)
+                    return new CastEvent(Judgement, fight.Player, fight.Enemy, fight, fight.Timestamp);
                 
-                if (fight.Player.Spellbook.IsOnCooldown(Data.Spells.Judgement) && fight.Player.Spellbook[Data.Spells.Judgement.ID].CooldownEnd.Timestamp > twistWindowEnd)
+                if (fight.Player.Spellbook.IsOnCooldown(Judgement) && fight.Player.Spellbook[Judgement.ID].CooldownEnd.Timestamp > twistWindowEnd)
                     return new CastEvent(SealOfCommand, fight.Player, fight.Player, fight, start);
             }
 
-            if (!fight.Player.Auras[Auras.SealOfCommand].Active && !fight.Player.Spellbook.IsOnCooldown(CrusaderStrike))
+            if (!fight.Player.Auras[SealOfCommand.Aura].Active && !fight.Player.Spellbook.IsOnCooldown(CrusaderStrike))
             {
                 return new CastEvent(CrusaderStrike, fight.Player, fight.Player, fight, start);
             }
 
             int twistTime = fight.Player.TimeOfNextSwing() - 390;
-            if (fight.Player.Auras[Auras.SealOfCommand].Active && start < twistTime && end > twistTime)
+            if (fight.Player.Auras[SealOfCommand.Aura].Active && start < twistTime && end > twistTime)
                 return new CastEvent(SealOfBlood, fight.Player, fight.Player, fight, twistTime);
         }
 

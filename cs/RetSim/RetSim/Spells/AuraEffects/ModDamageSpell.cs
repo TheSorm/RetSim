@@ -5,6 +5,11 @@ namespace RetSim.Spells.AuraEffects;
 
 class ModDamageSpell : ModifyPercent
 {
+    public ModDamageSpell(int percent, List<int> spells) : base(percent)
+    {
+        Spells = spells;
+    }
+
     public List<int> Spells { get; init; }
 
     public override void Apply(Aura aura, Unit caster, Unit target, FightSimulation fight)

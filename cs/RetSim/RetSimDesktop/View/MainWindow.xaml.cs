@@ -12,7 +12,7 @@ namespace RetSimDesktop
         private static SimWorker simWorker = new();
         public MainWindow()
         {
-            var (Weapons, Armor, Sets, Gems, MetaGems, Enchants) = RetSim.Data.Importer.LoadData();
+            var (Weapons, Armor, Sets, Gems, MetaGems, Enchants) = RetSim.Data.Manager.LoadData();
             RetSim.Data.Items.Initialize(Weapons, Armor, Sets, Gems, MetaGems, Enchants);
             InitializeComponent();
             RetSimUIModel GM = new();
