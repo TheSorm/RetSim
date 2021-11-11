@@ -6,8 +6,10 @@ using RetSim.Units.Player;
 using RetSim.Units.Player.Static;
 using RetSimDesktop.Model;
 using RetSimDesktop.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Linq;
 using static RetSim.Data.Spells;
 
@@ -25,6 +27,7 @@ namespace RetSimDesktop.View
             if (e.Argument is RetSimUIModel retSimUIModel)
             {
                 Equipment playerEquipment = SelectedGear.GetEquipment(retSimUIModel);
+                var numberOfSimulations = retSimUIModel.SimSettings.SimulationCount;
 
                 var talents = SelectedTalents.GetTalentList(retSimUIModel);
                 var buffs = new List<Spell> { WindfuryTotem, GreaterBlessingOfMight, GreaterBlessingOfKings, BattleShout, StrengthOfEarthTotem, GraceOfAirTotem, ManaSpringTotem, UnleashedRage,
@@ -33,29 +36,36 @@ namespace RetSimDesktop.View
                                         ShadowWeaving, ImprovedScorch, ImprovedHuntersMark, ExposeWeakness };
 
                 float overallDPS = 0;
-                List<FightSimulation> fightSimulations = new(10000);
-                for (int i = 0; i < 10000; i++)
+                List<FightSimulation> fightSimulations = new(numberOfSimulations);
+                for (int i = 0; i < numberOfSimulations; i++)
                 {
-                    FightSimulation fight = new(new Player("Brave Hero", Races.Human, playerEquipment, talents), new Enemy("Magtheridon", CreatureType.Demon, ArmorCategory.Warrior), new EliteTactic(), buffs, debuffs, 180000, 200000);
+                    FightSimulation fight = new(new Player("Brave Hero", Races.Human, playerEquipment, talents), new Enemy("Magtheridon", CreatureType.Demon, ArmorCategory.Warrior), new EliteTactic(), buffs, debuffs, retSimUIModel.SimSettings.MinFightDuration, retSimUIModel.SimSettings.MaxFightDuration);
                     fight.Run();
                     overallDPS += fight.CombatLog.DPS;
-                    if (i % 100 == 0)
+                    if (i % (numberOfSimulations / 100 + 1) == 0)
                     {
-                        retSimUIModel.CurrentSimOutput.Progress = (int)(i / 10000f * 100);
-                        retSimUIModel.CurrentSimOutput.DPS = overallDPS / ((float)i);
+                        retSimUIModel.CurrentSimOutput.Progress = (int)(i / ((float)numberOfSimulations) * 100);
+                        retSimUIModel.CurrentSimOutput.DPS = overallDPS / (i + 1);
                     }
                     fightSimulations.Add(fight);
                 }
 
                 fightSimulations = fightSimulations.OrderBy(o => o.CombatLog.DPS).ToList();
+                var minSimulation = fightSimulations[0];
+                var medianSimulation = fightSimulations[(int)(numberOfSimulations / 2f)];
+                var maxSimulation = fightSimulations[numberOfSimulations - 1];
 
-                retSimUIModel.CurrentSimOutput.MinCombatLog = fightSimulations[0].CombatLog.Log;
-                retSimUIModel.CurrentSimOutput.MedianCombatLog = fightSimulations[4999].CombatLog.Log;
-                retSimUIModel.CurrentSimOutput.MaxCombatLog = fightSimulations[9999].CombatLog.Log;
+                minSimulation.CombatLog.CreateDamageBreakdown();
+                medianSimulation.CombatLog.CreateDamageBreakdown();
+                maxSimulation.CombatLog.CreateDamageBreakdown();
+
+                retSimUIModel.CurrentSimOutput.MinCombatLog = minSimulation.CombatLog;
+                retSimUIModel.CurrentSimOutput.MedianCombatLog = medianSimulation.CombatLog;
+                retSimUIModel.CurrentSimOutput.MaxCombatLog = maxSimulation.CombatLog;
                 retSimUIModel.CurrentSimOutput.Progress = 100;
-                retSimUIModel.CurrentSimOutput.DPS = overallDPS / 10000f;
-                retSimUIModel.CurrentSimOutput.Min = fightSimulations[0].CombatLog.DPS;
-                retSimUIModel.CurrentSimOutput.Max = fightSimulations[9999].CombatLog.DPS;
+                retSimUIModel.CurrentSimOutput.DPS = overallDPS / numberOfSimulations;
+                retSimUIModel.CurrentSimOutput.Min = minSimulation.CombatLog.DPS;
+                retSimUIModel.CurrentSimOutput.Max = maxSimulation.CombatLog.DPS;
             }
         }
     }

@@ -192,7 +192,7 @@ namespace RetSimDesktop
 
         public object ConvertBack(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
         {
-            return 0f;
+            throw new NotSupportedException();
         }
     }
 
@@ -205,7 +205,7 @@ namespace RetSimDesktop
 
         public object ConvertBack(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
         {
-            return 0f;
+            throw new NotSupportedException();
         }
     }
 }

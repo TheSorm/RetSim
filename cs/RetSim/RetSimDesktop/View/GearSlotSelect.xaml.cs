@@ -45,7 +45,6 @@ namespace RetSimDesktop
             {
                 Source = this,
                 Mode = BindingMode.OneWay,
-                IsAsync = true
             });
 
             gearSlot.SetBinding(DataGrid.SelectedItemProperty, new Binding("SelectedItem")
@@ -151,7 +150,7 @@ namespace RetSimDesktop
 
         public object ConvertBack(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
         {
-            return 0f;
+            throw new NotSupportedException();
         }
     }
 
@@ -174,7 +173,7 @@ namespace RetSimDesktop
 
         public object ConvertBack(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
         {
-            return new Socket();
+            throw new NotSupportedException();
         }
     }
 }

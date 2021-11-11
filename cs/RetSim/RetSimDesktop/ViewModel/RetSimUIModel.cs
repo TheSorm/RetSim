@@ -11,6 +11,7 @@ namespace RetSimDesktop.ViewModel
         private SelectedTalents _SelectedTalents;
         private SimOutput _CurrentSimOutput;
         private SelectedPhases _SelectedPhases;
+        private SimSettings _SimSettings;
         private Dictionary<Slot, Dictionary<int, List<EquippableItem>>> _GearByPhases;
         private Dictionary<WeaponType, Dictionary<int, List<EquippableWeapon>>> _WeaponsByPhases;
 
@@ -63,6 +64,13 @@ namespace RetSimDesktop.ViewModel
                 Phase3Selected = false,
                 Phase4Selected = false,
                 Phase5Selected = false
+            };
+
+            _SimSettings = new SimSettings()
+            {
+                SimulationCountSetting = "10000",
+                MinFightDurationSetting = "180000",
+                MaxFightDurationSetting = "200000",
             };
 
             _GearByPhases = new();
@@ -131,6 +139,11 @@ namespace RetSimDesktop.ViewModel
         {
             get { return _SelectedPhases; }
             set { _SelectedPhases = value; }
+        }
+        public SimSettings SimSettings
+        {
+            get { return _SimSettings; }
+            set { _SimSettings = value; }
         }
     }
 }
