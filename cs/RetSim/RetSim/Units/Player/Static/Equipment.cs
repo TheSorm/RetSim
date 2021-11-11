@@ -211,22 +211,26 @@ public class Equipment
 
     private static float CalculateStatOfPiece(StatName name, EquippableItem item, Dictionary<GemColor, int> gems)
     {
-        float passive = item.Stats[name];
-        float bonus = item.IsSocketBonusActive() ? item.SocketBonus[name] : 0;
-        float sockets = 0;
-
-        foreach (Socket socket in item.Sockets)
+        if(item != null && item.Stats != null)
         {
-            if (socket != null && socket.SocketedGem != null)
+            float passive = item.Stats[name];
+            float bonus = item.IsSocketBonusActive() ? item.SocketBonus[name] : 0;
+            float sockets = 0;
+
+            foreach (Socket socket in item.Sockets)
             {
-                if (socket.IsMetaGem() is MetaGem meta && !meta.IsActive(gems[GemColor.Red], gems[GemColor.Blue], gems[GemColor.Yellow]))
-                    continue;
+                if (socket != null && socket.SocketedGem != null)
+                {
+                    if (socket.IsMetaGem() is MetaGem meta && !meta.IsActive(gems[GemColor.Red], gems[GemColor.Blue], gems[GemColor.Yellow]))
+                        continue;
 
-                sockets += socket.SocketedGem.Stats[name];
+                    sockets += socket.SocketedGem.Stats[name];
+                }
             }
-        }
 
-        return passive + bonus + sockets;
+            return passive + bonus + sockets;
+        }
+        return 0;
     }
 
     private static List<Spell> GenerateAuraList(Equipment equipment)
