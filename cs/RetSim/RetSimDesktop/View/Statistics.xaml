@@ -6,21 +6,57 @@
              xmlns:local="clr-namespace:RetSimDesktop"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid Background="White" Margin="5,0,5,5">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="20" />
-            <RowDefinition Height="*" />
-        </Grid.RowDefinitions>
-        <ComboBox Name="CombatLogSelection" SelectedValuePath="Content" VerticalAlignment="Bottom" HorizontalAlignment="Right" SelectionChanged="CombatLogSelection_SelectionChanged">
-            <ComboBoxItem>Min</ComboBoxItem>
-            <ComboBoxItem IsSelected="True">Median</ComboBoxItem>
-            <ComboBoxItem>Max</ComboBoxItem>
-        </ComboBox>
-        <DataGrid Grid.Row="1" Name="CombatLogTable" IsReadOnly="True" SelectionMode="Single" HeadersVisibility="Column" CanUserResizeColumns="False" CanUserResizeRows="False" AutoGenerateColumns="False" ItemsSource="{Binding CurrentSimOutput.MedianCombatLog}">
-            <DataGrid.Columns>
-                <DataGridTextColumn CanUserReorder="False" Header="Timestamp" Binding="{Binding Timestamp}" />
-                <DataGridTextColumn CanUserReorder="False" Header="Event" Binding="{Binding Message}" />
-            </DataGrid.Columns>
-        </DataGrid>
-    </Grid>
+    <ScrollViewer >
+        <StackPanel Background="White">
+            <Expander IsExpanded="True" Margin="10" Header="Damage Breakdown">
+                <Grid Background="White" Height="200" Margin="5,0,5,5">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="20" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <ComboBox Name="DamageBreakdownSelection" SelectedValuePath="Content" VerticalAlignment="Bottom" HorizontalAlignment="Right" SelectionChanged="DamageBreakdownSelection_SelectionChanged">
+                        <ComboBoxItem>Min</ComboBoxItem>
+                        <ComboBoxItem IsSelected="True">Median</ComboBoxItem>
+                        <ComboBoxItem>Max</ComboBoxItem>
+                    </ComboBox>
+                    <DataGrid Grid.Row="1" Name="DamageBreakdownTable" IsReadOnly="True" SelectionMode="Single" HeadersVisibility="Column" CanUserResizeColumns="False" CanUserResizeRows="False" AutoGenerateColumns="False">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn CanUserReorder="False" Header="Ability" Binding="{Binding AbilityName}" />
+                            <DataGridTextColumn CanUserReorder="False" Header="Casts"    Binding="{Binding Casts}"/>
+                            <DataGridTextColumn CanUserReorder="False" Header="Damage"  Binding="{Binding Damage}"/>
+                            <DataGridTextColumn CanUserReorder="False" Header="DPS"     Binding="{Binding DPS}"/>
+                            <DataGridTextColumn CanUserReorder="False" Header="%"       Binding="{Binding DPSPercentage}"/>
+                            <DataGridTextColumn CanUserReorder="False" Header="Hits"    Binding="{Binding Hits}"/>
+                            <DataGridTextColumn CanUserReorder="False" Header="%"       Binding="{Binding HitPercentage}"/>
+                            <DataGridTextColumn CanUserReorder="False" Header="Crits"   Binding="{Binding Crits}"/>
+                            <DataGridTextColumn CanUserReorder="False" Header="%"       Binding="{Binding CritPercentage}"/>
+                            <DataGridTextColumn CanUserReorder="False" Header="Misses"  Binding="{Binding Misses}"/>
+                            <DataGridTextColumn CanUserReorder="False" Header="%"       Binding="{Binding MissPercentage}"/>
+                            <DataGridTextColumn CanUserReorder="False" Header="Dodges"  Binding="{Binding Dodges}"/>
+                            <DataGridTextColumn CanUserReorder="False" Header="%"       Binding="{Binding DodgePercentage}"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+            </Expander>
+            <Expander IsExpanded="False" Margin="10" Header="Combat Log">
+                <Grid Background="White" Height="200" Margin="5,0,5,5">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="20" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <ComboBox Name="CombatLogSelection" SelectedValuePath="Content" VerticalAlignment="Bottom" HorizontalAlignment="Right" SelectionChanged="CombatLogSelection_SelectionChanged">
+                        <ComboBoxItem>Min</ComboBoxItem>
+                        <ComboBoxItem IsSelected="True">Median</ComboBoxItem>
+                        <ComboBoxItem>Max</ComboBoxItem>
+                    </ComboBox>
+                    <DataGrid Grid.Row="1" Name="CombatLogTable" IsReadOnly="True" SelectionMode="Single" HeadersVisibility="Column" CanUserResizeColumns="False" CanUserResizeRows="False" AutoGenerateColumns="False" ItemsSource="{Binding CurrentSimOutput.MedianCombatLog.Log}">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn CanUserReorder="False" Header="Timestamp" Binding="{Binding Timestamp}" />
+                            <DataGridTextColumn CanUserReorder="False" Header="Event" Binding="{Binding Message}" />
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+            </Expander>
+        </StackPanel> 
+    </ScrollViewer>
 </UserControl>

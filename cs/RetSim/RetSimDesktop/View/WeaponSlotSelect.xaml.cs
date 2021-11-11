@@ -3,8 +3,6 @@ using RetSim.Units.UnitStats;
 using RetSimDesktop.View;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Diagnostics;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -31,8 +29,9 @@ namespace RetSimDesktop
         public EquippableWeapon SelectedItem
         {
             get => (EquippableWeapon)GetValue(SelectedItemProperty);
-            set {
-                SetValue(SelectedItemProperty, value); 
+            set
+            {
+                SetValue(SelectedItemProperty, value);
             }
         }
 
@@ -114,7 +113,8 @@ namespace RetSimDesktop
             {
                 BindingOperations.ClearBinding(gearSlot, DataGrid.SelectedItemProperty);
                 gearSlot.SelectedCells.Clear();
-            }else
+            }
+            else
             {
                 gearSlot.SelectedItem = SelectedItem;
                 gearSlot.SetBinding(DataGrid.SelectedItemProperty, new Binding("SelectedItem")
@@ -137,8 +137,10 @@ namespace RetSimDesktop
 
         private static void CheckIfSelectionIsPresent(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
-            WeaponSlotSelect select = d as WeaponSlotSelect;
-            select.CheckIfSelectionIsPresent();
+            if (d is WeaponSlotSelect select)
+            {
+                select.CheckIfSelectionIsPresent();
+            }
         }
 
         private void DataGridCell_MouseDoubleClick(object sender, MouseButtonEventArgs e)
@@ -190,7 +192,7 @@ namespace RetSimDesktop
 
         public object ConvertBack(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
         {
-            return 0f;
+            throw new NotSupportedException();
         }
     }
 
@@ -203,7 +205,7 @@ namespace RetSimDesktop
 
         public object ConvertBack(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
         {
-            return 0f;
+            throw new NotSupportedException();
         }
     }
 }

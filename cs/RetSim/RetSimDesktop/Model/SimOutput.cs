@@ -1,4 +1,5 @@
-﻿using RetSim.Simulation.CombatLogEntries;
+﻿using RetSim.Simulation;
+using RetSim.Simulation.CombatLogEntries;
 using System.Collections.Generic;
 using System.ComponentModel;
 
@@ -10,9 +11,9 @@ namespace RetSimDesktop.Model
         private float dps;
         private float min;
         private float max;
-        private List<LogEntry> medianCombatLog;
-        private List<LogEntry> minCombatLog;
-        private List<LogEntry> maxCombatLog;
+        private CombatLog medianCombatLog;
+        private CombatLog minCombatLog;
+        private CombatLog maxCombatLog;
 
         public int Progress
         {
@@ -51,7 +52,7 @@ namespace RetSimDesktop.Model
                 OnPropertyChanged(nameof(Max));
             }
         }
-        public List<LogEntry> MedianCombatLog
+        public CombatLog MedianCombatLog
         {
             get { return medianCombatLog; }
             set
@@ -61,7 +62,7 @@ namespace RetSimDesktop.Model
             }
         }
 
-        public List<LogEntry> MinCombatLog
+        public CombatLog MinCombatLog
         {
             get { return minCombatLog; }
             set
@@ -71,7 +72,7 @@ namespace RetSimDesktop.Model
             }
         }
 
-        public List<LogEntry> MaxCombatLog
+        public CombatLog MaxCombatLog
         {
             get { return maxCombatLog; }
             set
@@ -84,10 +85,7 @@ namespace RetSimDesktop.Model
         public event PropertyChangedEventHandler? PropertyChanged;
         private void OnPropertyChanged(string propertyName)
         {
-            if (PropertyChanged != null)
-            {
-                PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-            }
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }

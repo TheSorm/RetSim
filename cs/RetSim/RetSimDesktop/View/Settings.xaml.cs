@@ -1,8 +1,12 @@
 ﻿using RetSim.Items;
 using RetSimDesktop.View;
+using System;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Data;
 
 namespace RetSimDesktop
 {
@@ -50,5 +54,27 @@ namespace RetSimDesktop
                 }
             }
         }
+
+        private void NumberValidationTextBox(object sender, System.Windows.Input.TextCompositionEventArgs e)
+        {
+            Regex regex = new("[^0-9]+");
+            e.Handled = regex.IsMatch(e.Text);
+        }
+    }
+
+    public class StringEmptyOrZeroConverter : IValueConverter
+    {
+
+        public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
+        {
+            return string.IsNullOrEmpty((string)value) ? parameter : (((string)value).TrimStart('0').Length == 0 ? parameter : ((string)value).TrimStart('0'));
+        }
+
+        public object ConvertBack(
+              object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
+        {
+            return value;
+        }
+
     }
 }

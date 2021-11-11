@@ -1,11 +1,7 @@
-﻿using RetSim.Data;
-using RetSim.Items;
+﻿using RetSim.Items;
 using RetSimDesktop.ViewModel;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Controls;
 using System.Windows.Data;
 
@@ -26,19 +22,18 @@ namespace RetSimDesktop
             InitializeComponent();
             this.DataContextChanged += (o, e) =>
             {
-                if (DataContext is RetSimUIModel)
+                if (DataContext is RetSimUIModel retSimUIModel)
                 {
-                    var viewModel = DataContext;
-                    (DataContext as RetSimUIModel).SelectedPhases.PropertyChanged += Model_PropertyChanged;
+                    retSimUIModel.SelectedPhases.PropertyChanged += Model_PropertyChanged;
                     Model_PropertyChanged(this, new PropertyChangedEventArgs(""));
                 }
             };
             ShownWeapons = new();
             AllShownWeapons = new();
-            SelectorByType.Add(WeaponType.Sword,  SwordSelect );
-            SelectorByType.Add(WeaponType.Mace, MaceSelect );
-            SelectorByType.Add(WeaponType.Axe,  AxeSelect );
-            SelectorByType.Add(WeaponType.Polearm,  PolearmSelect );
+            SelectorByType.Add(WeaponType.Sword, SwordSelect);
+            SelectorByType.Add(WeaponType.Mace, MaceSelect);
+            SelectorByType.Add(WeaponType.Axe, AxeSelect);
+            SelectorByType.Add(WeaponType.Polearm, PolearmSelect);
         }
 
         private void Model_PropertyChanged(object? sender, PropertyChangedEventArgs e)
@@ -69,7 +64,7 @@ namespace RetSimDesktop
                         ShownWeapons[type].AddRange(retSimUIModel.WeaponsByPhases[type][5]);
                     }
 
-                    SelectorByType[type].SetBinding(WeaponSlotSelect.WeaponListProperty, new Binding("ShownWeapons[" + type +"]")
+                    SelectorByType[type].SetBinding(WeaponSlotSelect.WeaponListProperty, new Binding("ShownWeapons[" + type + "]")
                     {
                         Source = this,
                         Mode = BindingMode.OneWay

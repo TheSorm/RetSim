@@ -13,7 +13,7 @@ namespace RetSimDesktop.View
     /// </summary>
     public partial class GemPickerWindow : Window
     {
-        public Gem SelectedGem { get; set; }
+        public Gem? SelectedGem { get; set; }
         public GemPickerWindow(IEnumerable<Gem> gemList)
         {
             InitializeComponent();
