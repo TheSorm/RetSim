@@ -61,7 +61,7 @@ public static class Importer
         //serializer.Converters.Add(new Newtonsoft.Json.Converters.StringEnumConverter());
         serializer.Converters.Add(new SpellEffectConverter());
         serializer.Converters.Add(new AuraConverter());
-        serializer.Converters.Add(new AuraEffectConverter());
+        //serializer.Converters.Add(new AuraEffectConverter());
         serializer.NullValueHandling = NullValueHandling.Ignore;
         serializer.DefaultValueHandling = DefaultValueHandling.Ignore;
         serializer.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
@@ -110,7 +110,7 @@ public static class Importer
     {
         using StreamReader reader = new("spells.json");
 
-        return JsonConvert.DeserializeObject<Dictionary<int, Spell>>(reader.ReadToEnd(), new SpellEffectConverter(), new AuraEffectConverter() ,new AuraConverter());
+        return JsonConvert.DeserializeObject<Dictionary<int, Spell>>(reader.ReadToEnd(), new SpellEffectConverter(), new AuraConverter());
     }
 
     public static List<EquippableWeapon> LoadWeaponData()

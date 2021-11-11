@@ -17,7 +17,7 @@ enum AuraEffectType
     ModDamageSchool = 5,
     ModDamageSpell = 6,
     ModDamageTaken = 7,
-    ModifyStats = 8,
+    GainStats = 8,
     ModSpellCritChance = 9,
     ModSpellDamageTaken = 10,
     ModStat = 11

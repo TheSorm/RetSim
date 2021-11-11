@@ -7,6 +7,11 @@ public class GainProc : AuraEffect
 {
     public Proc Proc { get; init; }
 
+    public GainProc(int procID) : base()
+    {
+        Proc = Data.Procs.ByID[procID];
+    }
+
     public GainProc(Proc proc) : base()
     {
         Proc = proc;

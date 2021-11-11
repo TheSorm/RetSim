@@ -16,7 +16,7 @@ public static partial class Auras
         Duration = 15000,
         Effects = new()
         {
-            new ModifyStats { Stats = new() { { StatName.Agility, 120 } } },
+            new GainStats { Stats = new() { { StatName.Agility, 120 } } },
             new ModAttackSpeed { Percent = 3 }
         }
     };
@@ -28,7 +28,7 @@ public static partial class Auras
     public static readonly Aura ExecutionerProc = new()
     {
         Duration = 15000,
-        Effects = new() { new ModifyStats { Stats = new() {  { StatName.ArmorPenetration, 840 } } } }
+        Effects = new() { new GainStats { Stats = new() {  { StatName.ArmorPenetration, 840 } } } }
     };
 
     public static readonly Aura Deathfrost = new()

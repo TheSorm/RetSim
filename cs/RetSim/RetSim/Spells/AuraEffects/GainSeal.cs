@@ -3,8 +3,12 @@ using RetSim.Units;
 
 namespace RetSim.Spells.AuraEffects;
 
-class GainSeal : AuraEffect
+class GainSeal : GainProc
 {
+    public GainSeal(int procID) : base(procID)
+    {
+    }
+
     private Seal Seal { get; set; }
 
     public override void Apply(Aura aura, Unit caster, Unit target, FightSimulation fight)
@@ -24,11 +28,15 @@ class GainSeal : AuraEffect
         }
 
         target.Auras.CurrentSeal = Seal;
+
+        base.Apply(aura, caster, target, fight);
     }
 
     public override void Remove(Aura aura, Unit caster, Unit target, FightSimulation fight)
     {
         if (target.Auras.CurrentSeal != null && target.Auras.CurrentSeal == Seal)
             target.Auras.CurrentSeal = null;
+
+        base.Remove(aura, caster, target, fight);
     }
 }

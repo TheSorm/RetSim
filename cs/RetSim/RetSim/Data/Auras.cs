@@ -17,8 +17,8 @@ public static partial class Auras
 
     static Auras()
     {
-        SealOfCommand.Effects = new() { new GainProc(Procs.SealOfCommand), new GainSeal() };
-        SealOfBlood.Effects = new() { new GainProc(Procs.SealOfBlood), new GainSeal() };
+        SealOfCommand.Effects = new() { new GainSeal(1) };
+        SealOfBlood.Effects = new() { new GainSeal(2) };
         Vengeance.Effects = new() { new GainProc(Procs.Vengeance) };
 
         WindfuryTotem.Effects = new() { new GainProc(Procs.WindfuryAttack) };
@@ -42,7 +42,7 @@ public static partial class Auras
 
         ExposeWeakness.Effects = new()
         {
-             new ModifyStats { Stats = new() { { StatName.IncreasedAttackerAttackPower, Program.HunterAgility * 0.25f } } } 
+             new GainStats { Stats = new() { { StatName.IncreasedAttackerAttackPower, Program.HunterAgility * 0.25f } } } 
         };
 
         SealOfCommand.ExclusiveWith = new() { SealOfBlood, SealOfTheCrusader };

@@ -9,37 +9,37 @@ public static partial class Auras
     public static readonly Aura SunderArmor = new()
     {
         IsDebuff = true,
-        Effects = new() { new ModifyStats { Stats = new() { { StatName.Armor, -2600 } } } }
+        Effects = new() { new GainStats { Stats = new() { { StatName.Armor, -2600 } } } }
     };
 
     public static readonly Aura ExposeArmor = new()
     {
         IsDebuff = true,
-        Effects = new() { new ModifyStats { Stats = new() { { StatName.Armor, -2050 } } } }
+        Effects = new() { new GainStats { Stats = new() { { StatName.Armor, -2050 } } } }
     };
 
     public static readonly Aura ImprovedExposeArmor = new()
     {
         IsDebuff = true,
-        Effects = new() { new ModifyStats { Stats = new() { { StatName.Armor, -3075 } } } }
+        Effects = new() { new GainStats { Stats = new() { { StatName.Armor, -3075 } } } }
     };
 
     public static readonly Aura FaerieFire = new()
     {
         IsDebuff = true,
-        Effects = new() { new ModifyStats { Stats = new() { { StatName.Armor, -610 } } } }
+        Effects = new() { new GainStats { Stats = new() { { StatName.Armor, -610 } } } }
     };
 
     public static readonly Aura ImprovedFaerieFire = new()
     {
         IsDebuff = true,
-        Effects = new() { new ModifyStats { Stats = new() { { StatName.Armor, -610 }, { StatName.IncreasedAttackerHitChance, 3 } } } }
+        Effects = new() { new GainStats { Stats = new() { { StatName.Armor, -610 }, { StatName.IncreasedAttackerHitChance, 3 } } } }
     };
 
     public static readonly Aura CurseOfRecklessness = new()
     {
         IsDebuff = true,
-        Effects = new() { new ModifyStats { Stats = new() { { StatName.Armor, -800 } } } }
+        Effects = new() { new GainStats { Stats = new() { { StatName.Armor, -800 } } } }
     };
 
     public static readonly Aura CurseOfTheElements = new()
@@ -65,7 +65,7 @@ public static partial class Auras
     public static readonly Aura ImprovedHuntersMark = new()
     {
         IsDebuff = true,
-        Effects = new() { new ModifyStats { Stats = new() { { StatName.IncreasedAttackerAttackPower, 110 } } } }
+        Effects = new() { new GainStats { Stats = new() { { StatName.IncreasedAttackerAttackPower, 110 } } } }
     };
 
     public static readonly Aura ExposeWeakness = new()

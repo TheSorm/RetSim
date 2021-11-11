@@ -29,7 +29,7 @@ public static partial class Auras
     public static readonly Aura WindfuryAttack = new()
     {
         Duration = 10,
-        Effects = new() { new ModifyStats { Stats = new() { { StatName.AttackPower, 445 } } } }
+        Effects = new() { new GainStats { Stats = new() { { StatName.AttackPower, 445 } } } }
     };
 
     public static readonly Aura AvengingWrath = new()
@@ -40,6 +40,6 @@ public static partial class Auras
 
     public static readonly Aura HumanRacial = new()
     {
-        Effects = new() { new ModifyStats { Stats = new() { { StatName.Expertise, 5 } } } }
+        Effects = new() { new GainStats { Stats = new() { { StatName.Expertise, 5 } } } }
     };
 }

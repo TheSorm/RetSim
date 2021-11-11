@@ -12,7 +12,7 @@ public static partial class Auras
         IsDebuff = true,
         Effects = new()
         {
-            new ModifyStats { Stats = new() { { StatName.IncreasedAttackerCritChance, 3 } } },
+            new GainStats { Stats = new() { { StatName.IncreasedAttackerCritChance, 3 } } },
             new ModSpellDamageTaken { Amount = 219, School = School.Holy }
         }
     };
@@ -21,7 +21,7 @@ public static partial class Auras
     {
         Effects = new()
         {
-            new ModifyStats { Stats = new() { { StatName.CritChance, 5 } } }
+            new GainStats { Stats = new() { { StatName.CritChance, 5 } } }
         }
     };
 
@@ -57,7 +57,7 @@ public static partial class Auras
     {
         Effects = new()
         {
-            new ModifyStats { Stats = new() { { StatName.CritChance, 3 }, { StatName.SpellCrit, 3 } } }
+            new GainStats { Stats = new() { { StatName.CritChance, 3 }, { StatName.SpellCrit, 3 } } }
         }
     };
 
@@ -80,7 +80,7 @@ public static partial class Auras
     {
         Effects = new()
         {
-            new ModifyStats { Stats = new() { { StatName.HitChance, 3 }, { StatName.SpellHit, 3 } } }
+            new GainStats { Stats = new() { { StatName.HitChance, 3 }, { StatName.SpellHit, 3 } } }
         }
     };
 
