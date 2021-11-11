@@ -1,10 +1,7 @@
-﻿using Newtonsoft.Json;
-using RetSim.Simulation;
+﻿using RetSim.Simulation;
 using RetSim.Units;
 
 namespace RetSim.Spells.AuraEffects;
-
-[JsonConverter(typeof(Data.JSON.AuraEffectConverter))]
 
 public abstract class AuraEffect
 {

@@ -15,17 +15,38 @@ public class Aura
 
     public bool IsDebuff { get; init; } = false;
 
-    [JsonConverter(typeof(Data.JSON.AuraEffectConverter))]
     public List<AuraEffect> Effects { get; set; } = null;
 
     public override string ToString()
     {
         return Parent.Name;
     }
+
+    public Aura()
+    {
+
+    }
+
+    public Aura(List<AuraEffect> effects)
+    {
+        if (effects != null)
+        {
+            Effects = effects;
+        }
+    }
 }
 
 public class Seal : Aura
 {
+    public Seal(List<AuraEffect> effects) : base(effects)
+    {
+    }
+
+    public Seal() :base()
+    {
+
+    }
+
     public int SealID { get; init; }
     public override int Duration { get; init; } = 30000;
     public int Persist { get; init; } = 0;

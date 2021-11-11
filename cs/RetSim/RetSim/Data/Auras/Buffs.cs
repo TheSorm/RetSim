@@ -10,7 +10,7 @@ public static partial class Auras
     {
         Effects = new()
         {
-            new ModifyStats { Stats = new() { { StatName.AttackPower, 220 } } }
+            new GainStats { Stats = new() { { StatName.AttackPower, 220 } } }
         }
     };
 
@@ -26,7 +26,7 @@ public static partial class Auras
     {
         Effects = new()
         {
-            new ModifyStats { Stats = new() { { StatName.ManaPer5, 41 } } }
+            new GainStats { Stats = new() { { StatName.ManaPer5, 41 } } }
         }
     };
 
@@ -34,7 +34,7 @@ public static partial class Auras
     {
         Effects = new()
         {
-            new ModifyStats { Stats = new() { { StatName.AttackPower, 306 } } }
+            new GainStats { Stats = new() { { StatName.AttackPower, 306 } } }
         }
     };
 
@@ -42,7 +42,7 @@ public static partial class Auras
     {
         Effects = new()
         {
-            new ModifyStats { Stats = new() { { StatName.AttackPower, 125 } } }
+            new GainStats { Stats = new() { { StatName.AttackPower, 125 } } }
         }
     };
 
@@ -62,7 +62,7 @@ public static partial class Auras
     {
         Effects = new()
         {
-            new ModifyStats { Stats = new() { { StatName.Strength, 86 } } }
+            new GainStats { Stats = new() { { StatName.Strength, 86 } } }
         }
     };
 
@@ -70,7 +70,7 @@ public static partial class Auras
     {
         Effects = new()
         {
-            new ModifyStats { Stats = new() { { StatName.Agility, 77 } } }
+            new GainStats { Stats = new() { { StatName.Agility, 77 } } }
         }
     };
 
@@ -78,7 +78,7 @@ public static partial class Auras
     {
         Effects = new()
         {
-            new ModifyStats { Stats = new() { { StatName.ManaPer5, 50 } } }
+            new GainStats { Stats = new() { { StatName.ManaPer5, 50 } } }
         }
     };
 
@@ -94,7 +94,7 @@ public static partial class Auras
     {
         Effects = new()
         {
-            new ModifyStats { Stats = new() { { StatName.Armor, 340 }, { StatName.Strength, 14 }, { StatName.Agility, 14 }, { StatName.Intellect, 14 }, { StatName.Stamina, 14 } } }
+            new GainStats { Stats = new() { { StatName.Armor, 340 }, { StatName.Strength, 14 }, { StatName.Agility, 14 }, { StatName.Intellect, 14 }, { StatName.Stamina, 14 } } }
         }
     };
 
@@ -102,7 +102,7 @@ public static partial class Auras
     {
         Effects = new()
         {
-            new ModifyStats { Stats = new() { { StatName.CritChance, 5 } } }
+            new GainStats { Stats = new() { { StatName.CritChance, 5 } } }
         }
     };
 
@@ -110,7 +110,7 @@ public static partial class Auras
     {
         Effects = new()
         {
-            new ModifyStats { Stats = new() { { StatName.Stamina, 79 } } }
+            new GainStats { Stats = new() { { StatName.Stamina, 79 } } }
         }
     };
 
@@ -118,7 +118,7 @@ public static partial class Auras
     {
         Effects = new()
         {
-            new ModifyStats { Stats = new() { { StatName.SpellPower, 20 } } }
+            new GainStats { Stats = new() { { StatName.SpellPower, 20 } } }
         }
     };
 
@@ -126,7 +126,7 @@ public static partial class Auras
     {
         Effects = new()
         {
-            new ModifyStats { Stats = new() { { StatName.Intellect, 40 } } }
+            new GainStats { Stats = new() { { StatName.Intellect, 40 } } }
         }
     };
 
@@ -134,7 +134,7 @@ public static partial class Auras
     {
         Effects = new()
         {
-            new ModifyStats { Stats = new() { { StatName.HitChance, 1 } } }
+            new GainStats { Stats = new() { { StatName.HitChance, 1 } } }
         }
     };
 
@@ -142,7 +142,7 @@ public static partial class Auras
     {
         Effects = new()
         {
-            new ModifyStats { Stats = new() { { StatName.SpellHit, 1 } } }
+            new GainStats { Stats = new() { { StatName.SpellHit, 1 } } }
         }
     };
 

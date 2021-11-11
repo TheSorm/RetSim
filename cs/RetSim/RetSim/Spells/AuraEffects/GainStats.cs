@@ -4,7 +4,7 @@ using RetSim.Units.UnitStats;
 
 namespace RetSim.Spells.AuraEffects;
 
-public class ModifyStats : AuraEffect
+public class GainStats : AuraEffect
 {
     public StatSet Stats { get; init; }
 

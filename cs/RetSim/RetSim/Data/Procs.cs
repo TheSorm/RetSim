@@ -95,16 +95,16 @@ public static class Procs
 
         ByID = new()
         {
-            { Spells.SealOfCommand.ID, SealOfCommand },
-            { Spells.SealOfBlood.ID, SealOfBlood },
-            { Spells.Vengeance.ID, Vengeance },
-            { Spells.WindfuryTotem.ID, WindfuryAttack },
-            { Spells.Mongoose.ID, Mongoose },
-            { Spells.Executioner.ID, Executioner },
-            { Spells.Deathfrost.ID, Deathfrost },
-            { Spells.DragonspineTrophy.ID, DragonspineTrophy },
-            { Spells.Lionheart.ID, Lionheart },
-            { Spells.LibramOfAvengement.ID, LibramOfAvengement }
+            { SealOfCommand.ID, SealOfCommand },
+            { SealOfBlood.ID, SealOfBlood },
+            { Vengeance.ID, Vengeance },
+            { WindfuryAttack.ID, WindfuryAttack },
+            { Mongoose.ID, Mongoose },
+            { Executioner.ID, Executioner },
+            { Deathfrost.ID, Deathfrost },
+            { DragonspineTrophy.ID, DragonspineTrophy },
+            { Lionheart.ID, Lionheart },
+            { LibramOfAvengement.ID, LibramOfAvengement }
         };
     }
 }
