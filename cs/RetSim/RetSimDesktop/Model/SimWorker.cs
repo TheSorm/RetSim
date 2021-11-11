@@ -23,7 +23,6 @@ namespace RetSimDesktop.View
         {
             if (e.Argument is RetSimUIModel retSimUIModel)
             {
-                RetSim.Data.Manager.InstantiateData();
                 Equipment playerEquipment = SelectedGear.GetEquipment(retSimUIModel);
                 var numberOfSimulations = retSimUIModel.SimSettings.SimulationCount;
 

@@ -14,6 +14,7 @@ namespace RetSimDesktop
         {
             var (Weapons, Armor, Sets, Gems, MetaGems, Enchants) = RetSim.Data.Manager.LoadData();
             RetSim.Data.Items.Initialize(Weapons, Armor, Sets, Gems, MetaGems, Enchants);
+            RetSim.Data.Manager.InstantiateData();
             InitializeComponent();
             RetSimUIModel GM = new();
             DataContext = GM;

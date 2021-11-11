@@ -15,16 +15,8 @@ namespace RetSim.Data;
 
 public static class Manager
 {
-    private static bool instantiated = false;
-
     public static void InstantiateData()
     {
-        if (instantiated)
-            return;
-
-        else
-            instantiated = true;
-
         Dictionary<int, Proc> procs = LoadProcs();
 
         foreach (KeyValuePair<int, Proc> proc in procs)

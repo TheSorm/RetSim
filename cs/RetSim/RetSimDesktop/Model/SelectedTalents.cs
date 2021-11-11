@@ -2,6 +2,7 @@
 using RetSimDesktop.ViewModel;
 using System.Collections.Generic;
 using System.ComponentModel;
+using static RetSim.Data.Collections;
 
 namespace RetSimDesktop.Model
 {
@@ -17,8 +18,6 @@ namespace RetSimDesktop.Model
         private bool sanctifiedSealsEnabled;
         private bool precisionEnabled;
         private bool divineStrengthEnabled;
-
-        private static Dictionary<int, Talent> Talents = RetSim.Data.Collections.Talents;
 
         private static Talent Conviction = Talents[20121];
         private static Talent Crusade = Talents[31868];
