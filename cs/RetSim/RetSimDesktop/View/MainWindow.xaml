@@ -14,15 +14,18 @@
         <Border BorderBrush="Black" BorderThickness="1">
             <Grid Margin="0,0,0,5">
                 <Grid.RowDefinitions>
+                    <RowDefinition Height="60" />
                     <RowDefinition Height="*" />
+                    <RowDefinition Height="82" />
+
                 </Grid.RowDefinitions>
-                <StackPanel VerticalAlignment="Top" HorizontalAlignment="Center" Width="200">
+                <StackPanel Grid.Row="0" VerticalAlignment="Top" HorizontalAlignment="Center" Width="200">
                     <Button x:Name="GearButton" IsEnabled="False" Content="Gear" Click="Gear_Click"/>
                     <Button x:Name="SettingsButton" Content="Settings" Click="Settings_Click"/>
                     <Button x:Name="StatisticsButton" Content="Statistics" Click="Statistics_Click"/>
-                    <local:StatPanel Width="200"/>
                 </StackPanel>
-                <StackPanel VerticalAlignment="Bottom" HorizontalAlignment="Center" Width="100">
+                <local:StatPanel Grid.Row="1" Width="200" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                <StackPanel Grid.Row="2" VerticalAlignment="Bottom" HorizontalAlignment="Center" Width="100">
                     <Label Padding="0" HorizontalContentAlignment="Center" Content="{Binding CurrentSimOutput.Progress}" ContentStringFormat=" {0}%"/>
                     <Label Padding="0" HorizontalContentAlignment="Center" Content="{Binding CurrentSimOutput.DPS}" ContentStringFormat="DPS: {0:0.#}"/>
                     <Grid>

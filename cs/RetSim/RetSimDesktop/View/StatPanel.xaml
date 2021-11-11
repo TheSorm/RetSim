@@ -19,7 +19,6 @@
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*" />
-                    <RowDefinition Height="*" />
                 </Grid.RowDefinitions>
                 <StackPanel HorizontalAlignment="Stretch" >
                     <Label Padding="0" Content="Strength"/>

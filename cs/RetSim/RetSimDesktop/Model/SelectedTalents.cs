@@ -1,4 +1,8 @@
-﻿using System.ComponentModel;
+﻿using RetSim.Spells;
+using RetSimDesktop.ViewModel;
+using System.Collections.Generic;
+using System.ComponentModel;
+using static RetSim.Data.Spells;
 
 namespace RetSimDesktop.Model
 {
@@ -115,13 +119,57 @@ namespace RetSimDesktop.Model
             }
         }
 
+        public static List<Talent> GetTalentList(RetSimUIModel retSimUIModel)
+        {
+            List<Talent> talents = new();
+            if (retSimUIModel.SelectedTalents.ConvictionEnabled)
+            {
+                talents.Add(Conviction);
+            }
+            if (retSimUIModel.SelectedTalents.CrusadeEnabled)
+            {
+                talents.Add(Crusade);
+            }
+            if (retSimUIModel.SelectedTalents.DivineStrengthEnabled)
+            {
+                talents.Add(DivineStrength);
+            }
+            if (retSimUIModel.SelectedTalents.FanaticismEnabled)
+            {
+                talents.Add(Fanaticism);
+            }
+            if (retSimUIModel.SelectedTalents.ImprovedSanctityAuraEnabled)
+            {
+                talents.Add(ImprovedSanctityAura);
+            }
+            if (retSimUIModel.SelectedTalents.PrecisionEnabled)
+            {
+                talents.Add(Precision);
+            }
+            if (retSimUIModel.SelectedTalents.SanctifiedSealsEnabled)
+            {
+                talents.Add(SanctifiedSeals);
+            }
+            if (retSimUIModel.SelectedTalents.SanctityAuraEnabled)
+            {
+                talents.Add(SanctityAura);
+            }
+            if (retSimUIModel.SelectedTalents.TwoHandedWeaponSpecializationEnabled)
+            {
+                talents.Add(TwoHandedWeaponSpecialization);
+            }
+            if (retSimUIModel.SelectedTalents.VengeanceEnabled)
+            {
+                talents.Add(Vengeance);
+            }
+
+            return talents;
+        }
+
         public event PropertyChangedEventHandler? PropertyChanged;
         private void OnPropertyChanged(string propertyName)
         {
-            if (PropertyChanged != null)
-            {
-                PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-            }
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }

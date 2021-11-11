@@ -9,7 +9,19 @@
     <StackPanel Background="White" Margin="5,0,5,5">
         <Expander IsExpanded="True" Margin="10" Header="Sim">
             <WrapPanel>
-                <GroupBox Padding="5" VerticalAlignment="Top" HorizontalAlignment="Left" Width="200">
+                <GroupBox Margin="5" VerticalAlignment="Top" HorizontalAlignment="Left">
+                    <GroupBox.Header>
+                        Phases
+                    </GroupBox.Header>
+                    <StackPanel>
+                        <CheckBox Content = "Phase 1" HorizontalAlignment = "Left" IsChecked="{Binding SelectedPhases.Phase1Selected}" VerticalAlignment = "Top"  />
+                        <CheckBox Content = "Phase 2" HorizontalAlignment = "Left" IsChecked="{Binding SelectedPhases.Phase2Selected}" VerticalAlignment = "Top"  />
+                        <CheckBox Content = "Phase 3" HorizontalAlignment = "Left"  IsChecked="{Binding SelectedPhases.Phase3Selected}" VerticalAlignment = "Top"  />
+                        <CheckBox Content = "Phase 4" HorizontalAlignment = "Left" IsChecked="{Binding SelectedPhases.Phase4Selected}"  VerticalAlignment = "Top"  />
+                        <CheckBox Content = "Phase 5" HorizontalAlignment = "Left" IsChecked="{Binding SelectedPhases.Phase5Selected}"  VerticalAlignment = "Top"  />
+                    </StackPanel>
+                </GroupBox>
+                <GroupBox Margin="5" VerticalAlignment="Top" HorizontalAlignment="Left" Width="150">
                     <GroupBox.Header>
                         Gems
                     </GroupBox.Header>
@@ -24,32 +36,20 @@
                             <RowDefinition Height="*" />
                             <RowDefinition Height="*" />
                         </Grid.RowDefinitions>
-                        <Label Content="Set all Red Sockets: "/>
-                        <Button Grid.Column="1" Width="50" Height="20" Click="RedSocketSelect_Click">...</Button>
-                        <Label Grid.Row="1" Content="Set all Yellow Sockets: "/>
-                        <Button Grid.Row="1" Grid.Column="1" Width="50" Height="20" Click="YellowSocketSelect_Click">...</Button>
-                        <Label Grid.Row="2" Content="Set all Blue Sockets: "/>
-                        <Button Grid.Row="2" Grid.Column="1" Width="50" Height="20" Click="BlueSocketSelect_Click">...</Button>
-                        <Label Grid.Row="3" Content="Set all Meta Sockets: "/>
-                        <Button Grid.Row="3" Grid.Column="1" Width="50" Height="20" Click="MetaSocketSelect_Click">...</Button>
+                        <Label Padding="0" Content="Red Sockets: "/>
+                        <Button Padding="0" Margin="0,2,0,2" Grid.Column="1" Click="RedSocketSelect_Click">...</Button>
+                        <Label Padding="1" Grid.Row="1" Content="Yellow Sockets: "/>
+                        <Button Grid.Row="1" Margin="0,2,0,2" Grid.Column="1" Click="YellowSocketSelect_Click">...</Button>
+                        <Label Padding="1" Grid.Row="2" Content="Blue Sockets: "/>
+                        <Button Grid.Row="2" Margin="0,2,0,2" Grid.Column="1" Click="BlueSocketSelect_Click">...</Button>
+                        <Label Padding="1" Grid.Row="3" Content="Meta Sockets: "/>
+                        <Button Grid.Row="3" Margin="0,2,0,2" Grid.Column="1" Click="MetaSocketSelect_Click">...</Button>
                     </Grid>
-                </GroupBox>
-                <GroupBox Padding="5" VerticalAlignment="Top" HorizontalAlignment="Left">
-                    <GroupBox.Header>
-                        Phases
-                    </GroupBox.Header>
-                    <StackPanel>
-                        <CheckBox Content = "Phase 1" HorizontalAlignment = "Left" IsChecked="{Binding SelectedPhases.Phase1Selected}" VerticalAlignment = "Top"  />
-                        <CheckBox Content = "Phase 2" HorizontalAlignment = "Left" IsChecked="{Binding SelectedPhases.Phase2Selected}" VerticalAlignment = "Top"  />
-                        <CheckBox Content = "Phase 3" HorizontalAlignment = "Left"  IsChecked="{Binding SelectedPhases.Phase3Selected}" VerticalAlignment = "Top"  />
-                        <CheckBox Content = "Phase 4" HorizontalAlignment = "Left" IsChecked="{Binding SelectedPhases.Phase4Selected}"  VerticalAlignment = "Top"  />
-                        <CheckBox Content = "Phase 5" HorizontalAlignment = "Left" IsChecked="{Binding SelectedPhases.Phase5Selected}"  VerticalAlignment = "Top"  />
-                    </StackPanel>
                 </GroupBox>
             </WrapPanel>
         </Expander>
         <Expander IsExpanded="True" Margin="10" Header="Player">
-            <GroupBox Padding="5" VerticalAlignment="Top" HorizontalAlignment="Left">
+            <GroupBox Margin="5" VerticalAlignment="Top" HorizontalAlignment="Left">
                 <GroupBox.Header>
                     Talents
                 </GroupBox.Header>

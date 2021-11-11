@@ -19,7 +19,6 @@ namespace RetSimDesktop
             DataContext = GM;
         }
 
-
         private void Gear_Click(object sender, RoutedEventArgs e)
         {
             Settings.Visibility = Visibility.Hidden;
@@ -29,7 +28,12 @@ namespace RetSimDesktop
             SettingsButton.IsEnabled = true;
             StatisticsButton.IsEnabled = true;
 
-            //GearSelect.WeaponSelect.AllWeaponSelect.Items.Refresh();
+            GearSelect.WeaponSelect.AllWeaponSelect.gearSlot.Items.Refresh();
+            GearSelect.WeaponSelect.SwordSelect.gearSlot.Items.Refresh();
+            GearSelect.WeaponSelect.MaceSelect.gearSlot.Items.Refresh();
+            GearSelect.WeaponSelect.AxeSelect.gearSlot.Items.Refresh();
+            GearSelect.WeaponSelect.PolearmSelect.gearSlot.Items.Refresh();
+
             GearSelect.HeadSelect.gearSlot.Items.Refresh();
             GearSelect.NeckSelect.gearSlot.Items.Refresh();
             GearSelect.ShouldersSelect.gearSlot.Items.Refresh();

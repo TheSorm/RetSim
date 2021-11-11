@@ -6,21 +6,25 @@
              xmlns:local="clr-namespace:RetSimDesktop"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid Background="White" Margin="5,0,5,5">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="20" />
-            <RowDefinition Height="*" />
-        </Grid.RowDefinitions>
-        <ComboBox Name="CombatLogSelection" SelectedValuePath="Content" VerticalAlignment="Bottom" HorizontalAlignment="Right" SelectionChanged="CombatLogSelection_SelectionChanged">
-            <ComboBoxItem>Min</ComboBoxItem>
-            <ComboBoxItem IsSelected="True">Median</ComboBoxItem>
-            <ComboBoxItem>Max</ComboBoxItem>
-        </ComboBox>
-        <DataGrid Grid.Row="1" Name="CombatLogTable" IsReadOnly="True" SelectionMode="Single" HeadersVisibility="Column" CanUserResizeColumns="False" CanUserResizeRows="False" AutoGenerateColumns="False" ItemsSource="{Binding CurrentSimOutput.MedianCombatLog}">
-            <DataGrid.Columns>
-                <DataGridTextColumn CanUserReorder="False" Header="Timestamp" Binding="{Binding Timestamp}" />
-                <DataGridTextColumn CanUserReorder="False" Header="Event" Binding="{Binding Message}" />
-            </DataGrid.Columns>
-        </DataGrid>
+    <Grid Background="White">
+        <Expander IsExpanded="True" Margin="10" Header="Combat Log">
+            <Grid Background="White" Margin="5,0,5,5">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="20" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <ComboBox Name="CombatLogSelection" SelectedValuePath="Content" VerticalAlignment="Bottom" HorizontalAlignment="Right" SelectionChanged="CombatLogSelection_SelectionChanged">
+                <ComboBoxItem>Min</ComboBoxItem>
+                <ComboBoxItem IsSelected="True">Median</ComboBoxItem>
+                <ComboBoxItem>Max</ComboBoxItem>
+            </ComboBox>
+            <DataGrid Grid.Row="1" Name="CombatLogTable" IsReadOnly="True" SelectionMode="Single" HeadersVisibility="Column" CanUserResizeColumns="False" CanUserResizeRows="False" AutoGenerateColumns="False" ItemsSource="{Binding CurrentSimOutput.MedianCombatLog}">
+                <DataGrid.Columns>
+                    <DataGridTextColumn CanUserReorder="False" Header="Timestamp" Binding="{Binding Timestamp}" />
+                    <DataGridTextColumn CanUserReorder="False" Header="Event" Binding="{Binding Message}" />
+                </DataGrid.Columns>
+            </DataGrid>
+        </Grid>
+        </Expander>
     </Grid>
 </UserControl>

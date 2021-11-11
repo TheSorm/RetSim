@@ -3,7 +3,6 @@ using RetSim.Units.UnitStats;
 using RetSimDesktop.View;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -45,7 +44,8 @@ namespace RetSimDesktop
             gearSlot.SetBinding(DataGrid.ItemsSourceProperty, new Binding("SlotList")
             {
                 Source = this,
-                Mode = BindingMode.OneWay
+                Mode = BindingMode.OneWay,
+                IsAsync = true
             });
 
             gearSlot.SetBinding(DataGrid.SelectedItemProperty, new Binding("SelectedItem")
@@ -159,8 +159,7 @@ namespace RetSimDesktop
     {
         public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
         {
-            Socket socket = value as Socket;
-            if (socket == null)
+            if (value is not Socket socket)
             {
                 return "-";
             }

@@ -1,10 +1,7 @@
-﻿using RetSim.Data;
-using RetSim.Items;
+﻿using RetSim.Items;
 using RetSimDesktop.ViewModel;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Controls;
 using System.Windows.Data;
 
@@ -16,7 +13,6 @@ namespace RetSimDesktop
     /// 
     public partial class GearSelect : UserControl
     {
-        public IEnumerable<EquippableWeapon> Weapons { get; set; }
         private Dictionary<Slot, List<GearSlotSelect>> SelectorBySlot = new();
         public Dictionary<Slot, List<EquippableItem>> ShownGear { get; set; }
 
@@ -25,10 +21,9 @@ namespace RetSimDesktop
             InitializeComponent();
             this.DataContextChanged += (o, e) =>
             {
-                if (DataContext is RetSimUIModel)
+                if (DataContext is RetSimUIModel retSimUIModel)
                 {
-                    var viewModel = DataContext;
-                    (DataContext as RetSimUIModel).SelectedPhases.PropertyChanged += Model_PropertyChanged;
+                    retSimUIModel.SelectedPhases.PropertyChanged += Model_PropertyChanged;
                     Model_PropertyChanged(this, new PropertyChangedEventArgs(""));
                 }
             };
@@ -46,14 +41,6 @@ namespace RetSimDesktop
             SelectorBySlot.Add(Slot.Finger, new() { Finger1Select, Finger2Select });
             SelectorBySlot.Add(Slot.Trinket, new() { Trinket1Select, Trinket2Select });
             SelectorBySlot.Add(Slot.Relic, new() { RelicSelect });
-
-            Weapons = Items.Weapons.Values;
-
-            WeaponSelect.SetBinding(WeaponSlotSelect.WeaponListProperty, new Binding("Weapons")
-            {
-                Source = this,
-                Mode = BindingMode.OneWay
-            });
         }
 
         private void Model_PropertyChanged(object? sender, PropertyChangedEventArgs e)
@@ -83,9 +70,9 @@ namespace RetSimDesktop
                     {
                         ShownGear[slot].AddRange(retSimUIModel.GearByPhases[slot][5]);
                     }
-                    foreach(var itemSelector in SelectorBySlot[slot])
+                    foreach (var itemSelector in SelectorBySlot[slot])
                     {
-                        itemSelector.SetBinding(GearSlotSelect.SlotListProperty, new Binding("ShownGear["+slot+"]")
+                        itemSelector.SetBinding(GearSlotSelect.SlotListProperty, new Binding("ShownGear[" + slot + "]")
                         {
                             Source = this,
                             Mode = BindingMode.OneWay

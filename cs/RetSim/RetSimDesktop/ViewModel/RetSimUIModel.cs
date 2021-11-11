@@ -1,9 +1,6 @@
 ﻿using RetSim.Items;
 using RetSimDesktop.Model;
-using System;
 using System.Collections.Generic;
-using System.Diagnostics;
-using System.Windows.Input;
 using static RetSim.Data.Items;
 
 namespace RetSimDesktop.ViewModel
@@ -72,8 +69,8 @@ namespace RetSimDesktop.ViewModel
             _WeaponsByPhases = new();
             foreach (var item in AllItems.Values)
             {
-                if(item is EquippableWeapon weapon)
-                { 
+                if (item is EquippableWeapon weapon)
+                {
                     if (!_WeaponsByPhases.ContainsKey(weapon.Type))
                     {
                         _WeaponsByPhases[weapon.Type] = new();
@@ -134,40 +131,6 @@ namespace RetSimDesktop.ViewModel
         {
             get { return _SelectedPhases; }
             set { _SelectedPhases = value; }
-        }
-
-        private ICommand mUpdater;
-        public ICommand UpdateCommand
-        {
-            get
-            {
-                if (mUpdater == null)
-                    mUpdater = new Updater();
-                return mUpdater;
-            }
-            set
-            {
-                mUpdater = value;
-            }
-        }
-
-        private class Updater : ICommand
-        {
-            #region ICommand Members  
-
-            public bool CanExecute(object parameter)
-            {
-                return true;
-            }
-
-            public event EventHandler CanExecuteChanged;
-
-            public void Execute(object parameter)
-            {
-
-            }
-
-            #endregion
         }
     }
 }

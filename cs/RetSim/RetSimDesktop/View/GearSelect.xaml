@@ -8,8 +8,8 @@
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid >
         <TabControl x:Name="GearTabs">
-            <TabItem Header="Weapon" x:Name="WeaponSelect">
-                <local:WeaponSelect/>
+            <TabItem Header="Weapon">
+                <local:WeaponSelect x:Name="WeaponSelect"/>
             </TabItem>
             <TabItem Header="Head">
                 <local:GearSlotSelect x:Name="HeadSelect" SelectedItem="{Binding SelectedGear.SelectedHead, Mode=TwoWay}"/>

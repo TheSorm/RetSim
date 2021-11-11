@@ -1,4 +1,6 @@
 ﻿using RetSim.Items;
+using RetSim.Units.Player.Static;
+using RetSimDesktop.ViewModel;
 using System.ComponentModel;
 
 namespace RetSimDesktop.Model
@@ -181,13 +183,33 @@ namespace RetSimDesktop.Model
             }
         }
 
+        public static Equipment GetEquipment(RetSimUIModel retSimUIModel)
+        {
+            return new()
+            {
+                Head = retSimUIModel.SelectedGear.SelectedHead,
+                Neck = retSimUIModel.SelectedGear.SelectedNeck,
+                Shoulders = retSimUIModel.SelectedGear.SelectedShoulders,
+                Back = retSimUIModel.SelectedGear.SelectedBack,
+                Chest = retSimUIModel.SelectedGear.SelectedChest,
+                Wrists = retSimUIModel.SelectedGear.SelectedWrists,
+                Hands = retSimUIModel.SelectedGear.SelectedHands,
+                Waist = retSimUIModel.SelectedGear.SelectedWaist,
+                Legs = retSimUIModel.SelectedGear.SelectedLegs,
+                Feet = retSimUIModel.SelectedGear.SelectedFeet,
+                Finger1 = retSimUIModel.SelectedGear.SelectedFinger1,
+                Finger2 = retSimUIModel.SelectedGear.SelectedFinger2,
+                Trinket1 = retSimUIModel.SelectedGear.SelectedTrinket1,
+                Trinket2 = retSimUIModel.SelectedGear.SelectedTrinket2,
+                Relic = retSimUIModel.SelectedGear.SelectedRelic,
+                Weapon = retSimUIModel.SelectedGear.SelectedWeapon,
+            };
+        }
+
         public event PropertyChangedEventHandler? PropertyChanged;
         private void OnPropertyChanged(string propertyName)
         {
-            if (PropertyChanged != null)
-            {
-                PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-            }
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }
