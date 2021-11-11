@@ -1,4 +1,5 @@
-﻿using RetSim.Simulation;
+﻿using RetSim.Items;
+using RetSim.Simulation;
 using RetSim.Simulation.Events;
 using RetSim.Spells;
 using RetSim.Spells.SpellEffects;
@@ -30,6 +31,11 @@ public class Player : Unit
     {
         Talents = talents;
         Equipment = equipment;
+
+        if (Equipment.Weapon is null)
+            Equipment.Weapon = new EquippableWeapon() 
+            { ID = 0, Name = "Unarmed", MinDamage = 1, MaxDamage = 1, AttackSpeed = 2000, Type = WeaponType.Unarmed, ItemLevel = 0, Phase = 1, Quality = Quality.Legendary, Slot = Slot.Weapon };
+
         Race = race;
         Stats = new PlayerStats(this);
 
