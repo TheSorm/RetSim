@@ -24,39 +24,61 @@ public static class Manager
             Collections.Procs[proc.Value.ID] = proc.Value;
         }
 
-        Dictionary<int, Spell> spells = LoadSpells();
+        Dictionary<int, Spell> paladin = LoadSpells("paladin");
+        Dictionary<int, Spell> buffs = LoadSpells("buffs");
+        Dictionary<int, Spell> debuffs = LoadSpells("debuffs");
+        Dictionary<int, Spell> misc = LoadSpells("misc");
+
         Dictionary<int, Spell> seals = LoadSeals();
-        Dictionary<int, Spells.Judgement> judgements = LoadJudgements();
+        Dictionary<int, Judgement> judgements = LoadJudgements();
         Dictionary<int, Talent> talents = LoadTalents();
 
         foreach (KeyValuePair<int, Talent> talent in talents)
         {
             Collections.Talents.Add(talent.Key, talent.Value);
-            spells.Add(talent.Key, talent.Value);
+            Collections.Spells.Add(talent.Key, talent.Value);
         }
 
-        foreach (KeyValuePair<int, Spells.Judgement> judgement in judgements)
+        foreach (KeyValuePair<int, Judgement> judgement in judgements)
         {
             Collections.Judgements.Add(judgement.Key, judgement.Value);
-            spells.Add(judgement.Key, judgement.Value);
+            Collections.Spells.Add(judgement.Key, judgement.Value);
         }
 
         foreach (KeyValuePair<int, Spell> seal in seals)
         {
             Collections.Seals.Add(seal.Key, seal.Value);
-            spells.Add(seal.Key, seal.Value);
+            Collections.Spells.Add(seal.Key, seal.Value);
         }
 
-        foreach (KeyValuePair<int, Spell> spell in spells)
+        foreach (KeyValuePair<int, Spell> spell in paladin)
         {
-            if (spell.Value.Aura is not null)
+            Collections.Spells.Add(spell.Key, spell.Value);
+        }
+
+        foreach (KeyValuePair<int, Spell> buff in buffs)
+        {
+            Collections.Spells.Add(buff.Key, buff.Value);
+        }
+
+        foreach (KeyValuePair<int, Spell> debuff in debuffs)
+        {
+            Collections.Spells.Add(debuff.Key, debuff.Value);
+        }
+
+        foreach (KeyValuePair<int, Spell> spell in misc)
+        {
+            Collections.Spells.Add(spell.Key, spell.Value);
+        }
+
+        foreach (KeyValuePair<int, Spell> spell in Collections.Spells)
+        {
+            if (spell.Value.Aura != null)
             {
                 Aura.Instantiate(spell.Value.Aura, spell.Value);
 
                 Collections.Auras[spell.Key] = spell.Value.Aura;
             }
-
-            Collections.Spells[spell.Key] = spell.Value;
 
             if (spell.Value.Effects != null)
             {
@@ -74,7 +96,7 @@ public static class Manager
 
         foreach (KeyValuePair<int, Proc> proc in procs)
         {
-            proc.Value.Spell = spells[proc.Value.SpellID];
+            proc.Value.Spell = Collections.Spells[proc.Value.SpellID];
         }
 
         Dictionary<string, Race> races = LoadRaces();
@@ -84,8 +106,10 @@ public static class Manager
             Collections.Races.Add(race.Key, race.Value);
         }
 
-        Collections.Races["Human"].Racial = Collections.Spells[Collections.Races["Human"].RacialID];
-        Collections.Races["Human"].Racial.Requirements = (Player player) => (player.Weapon.Type == WeaponType.Sword || player.Weapon.Type == WeaponType.Mace) && player.Race.Name == "Human";
+        Race human = Collections.Races["Human"];
+
+        human.Racial = Collections.Spells[human.RacialID];
+        human.Racial.Requirements = (Player player) => (player.Weapon.Type == WeaponType.Sword || player.Weapon.Type == WeaponType.Mace) && player.Race.Name == Races.Human.ToString();
     }
 
     public static Equipment GetEquipment()
@@ -210,9 +234,9 @@ public static class Manager
         return JsonConvert.DeserializeObject<Dictionary<int, Proc>>(reader.ReadToEnd(), new ProcConverter());
     }
 
-    public static Dictionary<int, Spell> LoadSpells()
+    public static Dictionary<int, Spell> LoadSpells(string file)
     {
-        using StreamReader reader = new("Properties\\Data\\Spells\\spells.json");
+        using StreamReader reader = new($"Properties\\Data\\Spells\\{file}.json");
 
         return JsonConvert.DeserializeObject<Dictionary<int, Spell>>(reader.ReadToEnd(), new SpellEffectConverter(), new AuraConverter());
     }

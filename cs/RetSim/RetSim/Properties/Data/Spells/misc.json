@@ -1,0 +1,237 @@
+{
+  "28092": {
+    "ID": 28092,
+    "Name": "Mongoose",
+    "Aura": {
+      "Effects": [
+        {
+          "EffectType": "GainProc",
+          "ProcID": 5
+        }
+      ]
+    }
+  },
+
+  "28093": {
+    "ID": 28093,
+    "Name": "Lightning Speed",
+    "Aura": {
+      "Duration": 15000,
+      "Effects": [
+        {
+          "EffectType": "GainStats",
+          "Stats": [
+            {
+              "Stat": "Agility",
+              "Value": 120.0
+            }
+          ]
+        },
+        {
+          "EffectType": "ModAttackSpeed",
+          "Percent": 3
+        }
+      ]
+    }
+  },
+
+  "34258": {
+    "ID": 34258,
+    "Name": "Justice",
+    "Aura": {
+      "Effects": [
+        {
+          "EffectType": "GainProc",
+          "ProcID": 10
+        }
+      ]
+    }
+  },
+
+  "34260": {
+    "ID": 34260,
+    "Name": "Justice",
+    "Aura": {
+      "Duration": 5000,
+      "Effects": [
+        {
+          "EffectType": "GainStats",
+          "Stats": [
+            {
+              "Stat": "CritRating",
+              "Value": 53.0
+            }
+          ]
+        }
+      ]
+    }
+  },
+
+  "34512": {
+    "ID": 34512,
+    "Name": "Lionheart",
+    "Aura": {
+      "Effects": [
+        {
+          "EffectType": "GainProc",
+          "ProcID": 9
+        }
+      ]
+    }
+  },
+
+  "34513": {
+    "ID": 34513,
+    "Name": "Lionheart",
+    "Aura": {
+      "Duration": 10000,
+      "Effects": [
+        {
+          "EffectType": "GainStats",
+          "Stats": [
+            {
+              "Stat": "Strength",
+              "Value": 100.0
+            }
+          ]
+        }
+      ]
+    }
+  },
+
+  "34774": {
+    "ID": 34774,
+    "Name": "Dragonspine Trophy",
+    "Aura": {
+      "Effects": [
+        {
+          "EffectType": "GainProc",
+          "ProcID": 8
+        }
+      ]
+    }
+  },
+
+  "34775": {
+    "ID": 34775,
+    "Name": "Dragonspine Trophy",
+    "Aura": {
+      "Duration": 10000,
+      "Effects": [
+        {
+          "EffectType": "GainStats",
+          "Stats": [
+            {
+              "Stat": "HasteRating",
+              "Value": 325.0
+            }
+          ]
+        },
+        {
+          "EffectType": "ModAttackSpeed",
+          "Percent": 0
+        }
+      ]
+    }
+  },
+
+  "35166": {
+    "ID": 35166,
+    "Name": "Lust for Battle",
+    "Cooldown": 120000,
+    "Aura": {
+      "Duration": 20000,
+      "Effects": [
+        {
+          "EffectType": "GainStats",
+          "Stats": [
+            {
+              "Stat": "AttackPower",
+              "Value": 278.0
+            }
+          ]
+        }
+      ]
+    }
+  },
+
+  "39957": {
+    "ID": 39957,
+    "Name": "Increase Critical Damage 3%",
+    "Aura": {      
+      "Effects": [
+        {
+          "EffectType": "ModStat",
+          "Percent": 3,
+          "Stats": [
+            "CritDamage",
+            "SpellCritDamage"
+          ]
+        }
+      ]
+    }
+  },
+
+  "429740": {
+    "ID": 42975,
+    "Name": "Executioner",
+    "Aura": {      
+      "Effects": [
+        {
+          "EffectType": "GainProc",
+          "ProcID": 6
+        }
+      ]
+    }
+  },
+
+  "42976": {
+    "ID": 42976,
+    "Name": "Executioner",
+    "Aura": {      
+      "Duration": 15000,
+      "Effects": [
+        {
+          "EffectType": "GainStats",
+          "Stats": [
+            {
+              "Stat": "ArmorPenetration",
+              "Value": 840.0
+            }
+          ]
+        }
+      ]
+    }
+  },
+
+  "46579": {
+    "ID": 46579,
+    "Name": "Deathfrost",
+    "Effects": [
+      {
+        "EffectType": "Damage",
+        "School": "Frost",
+        "DefenseCategory": "Magic",
+        "CritCategory": "Spell",
+        "OnCast": 0,
+        "OnHit": 0,
+        "OnCrit": 1,
+        "MinEffect": 150.0,
+        "MaxEffect": 150.0
+      }
+    ]
+  },
+
+  "46662": {
+    "ID": 46662,
+    "Name": "Deathfrost",
+    "Aura": {      
+      "Effects": [
+        {
+          "EffectType": "GainProc",
+          "ProcID": 7
+        }
+      ]
+    }
+  }
+}

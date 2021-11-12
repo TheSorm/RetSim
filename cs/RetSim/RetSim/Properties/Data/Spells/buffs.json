@@ -1,0 +1,403 @@
+{
+  "2048": {
+    "ID": 2048,
+    "Name": "Battle Shout",
+    "Rank": 8,
+    "Target": "Ally",
+    "Aura": {      
+      "Effects": [
+        {
+          "EffectType": "GainStats",
+          "Stats": [
+            {
+              "Stat": "AttackPower",
+              "Value": 306.0
+            }
+          ]
+        }
+      ]
+    }
+  },
+
+  "6562": {
+    "ID": 6562,
+    "Name": "Heroic Presence",
+    "Target": "Ally",
+    "Aura": {      
+      "Effects": [
+        {
+          "EffectType": "GainStats",
+          "Stats": [
+            {
+              "Stat": "HitChance",
+              "Value": 1.0
+            }
+          ]
+        }
+      ]
+    }
+  },
+
+  "17007": {
+    "ID": 17007,
+    "Name": "Leader of the Pack",
+    "Target": "Ally",
+    "Aura": {      
+      "Effects": [
+        {
+          "EffectType": "GainStats",
+          "Stats": [
+            {
+              "Stat": "CritChance",
+              "Value": 5.0
+            }
+          ]
+        }
+      ]
+    }
+  },
+
+  "25359": {
+    "ID": 25359,
+    "Name": "Grace of Air Totem",
+    "Rank": 3,
+    "Target": "Ally",
+    "Aura": {      
+      "Effects": [
+        {
+          "EffectType": "GainStats",
+          "Stats": [
+            {
+              "Stat": "Agility",
+              "Value": 77.0
+            }
+          ]
+        }
+      ]
+    }
+  },
+
+  "25392": {
+    "ID": 25392,
+    "Name": "Prayer of Fortitude",
+    "Rank": 3,
+    "Target": "Ally",
+    "Aura": {      
+      "Effects": [
+        {
+          "EffectType": "GainStats",
+          "Stats": [
+            {
+              "Stat": "Stamina",
+              "Value": 79.0
+            }
+          ]
+        }
+      ]
+    }
+  },
+
+  "25528": {
+    "ID": 25528,
+    "Name": "Strength of Earth Totem",
+    "Rank": 6,
+    "Target": "Ally",
+    "Aura": {      
+      "Effects": [
+        {
+          "EffectType": "GainStats",
+          "Stats": [
+            {
+              "Stat": "Strength",
+              "Value": 86.0
+            }
+          ]
+        }
+      ]
+    }
+  },
+
+  "25570": {
+    "ID": 25570,
+    "Name": "Mana Spring Totem",
+    "Rank": 5,
+    "Target": "Ally",
+    "Aura": {      
+      "Effects": [
+        {
+          "EffectType": "GainStats",
+          "Stats": [
+            {
+              "Stat": "ManaPer5",
+              "Value": 50.0
+            }
+          ]
+        }
+      ]
+    }
+  },
+
+  "25580": {
+    "ID": 25580,
+    "Name": "Windfury Totem",
+    "Rank": 5,
+    "Aura": {      
+      "Effects": [
+        {
+          "EffectType": "GainProc",
+          "ProcID": 4
+        }
+      ]
+    }
+  },
+
+  "25584": {
+    "ID": 25584,
+    "Name": "Windfury Attack",
+    "Rank": 5,
+    "Aura": {      
+      "Duration": 10,
+      "Effects": [
+        {
+          "EffectType": "GainStats",
+          "Stats": [
+            {
+              "Stat": "AttackPower",
+              "Value": 445.0
+            }
+          ]
+        }
+      ]
+    },
+    "Effects": [
+      {
+        "EffectType": "ExtraAttacks",
+        "ProcID": 2
+      }
+    ]
+  },
+
+  "25898": {
+    "ID": 25898,
+    "Name": "Greater Blessing of Kings",
+    "Target": "Ally",
+    "Aura": {      
+      "Effects": [
+        {
+          "EffectType": "ModStat",
+          "Percent": 10,
+          "Stats": [
+            "Strength",
+            "Agility",
+            "Stamina",
+            "Intellect"
+          ]
+        }
+      ]
+    }
+  },
+
+  "26991": {
+    "ID": 26991,
+    "Name": "Gift of the Wild",
+    "Rank": 3,
+    "Target": "Ally",
+    "Aura": {      
+      "Effects": [
+        {
+          "EffectType": "GainStats",
+          "Stats": [
+            {
+              "Stat": "Armor",
+              "Value": 340.0
+            },
+            {
+              "Stat": "Strength",
+              "Value": 14.0
+            },
+            {
+              "Stat": "Agility",
+              "Value": 14.0
+            },
+            {
+              "Stat": "Intellect",
+              "Value": 14.0
+            },
+            {
+              "Stat": "Stamina",
+              "Value": 14.0
+            }
+          ]
+        }
+      ]
+    }
+  },
+
+  "27066": {
+    "ID": 27066,
+    "Name": "Trueshot Aura",
+    "Rank": 4,
+    "Target": "Ally",
+    "Aura": {      
+      "Effects": [
+        {
+          "EffectType": "GainStats",
+          "Stats": [
+            {
+              "Stat": "AttackPower",
+              "Value": 125.0
+            }
+          ]
+        }
+      ]
+    }
+  },
+
+  "27127": {
+    "ID": 27127,
+    "Name": "Arcane Brilliance",
+    "Rank": 2,
+    "Target": "Ally",
+    "Aura": {      
+      "Effects": [
+        {
+          "EffectType": "GainStats",
+          "Stats": [
+            {
+              "Stat": "Intellect",
+              "Value": 40.0
+            }
+          ]
+        }
+      ]
+    }
+  },
+
+  "27141": {
+    "ID": 27141,
+    "Name": "Greater Blessing of Might",
+    "Rank": 1,
+    "Target": "Ally",
+    "Aura": {      
+      "Effects": [
+        {
+          "EffectType": "GainStats",
+          "Stats": [
+            {
+              "Stat": "AttackPower",
+              "Value": 220.0
+            }
+          ]
+        }
+      ]
+    }
+  },
+
+  "27143": {
+    "ID": 27143,
+    "Name": "Greater Blessing of Wisdom",
+    "Rank": 3,
+    "Target": "Ally",
+    "Aura": {      
+      "Effects": [
+        {
+          "EffectType": "GainStats",
+          "Stats": [
+            {
+              "Stat": "ManaPer5",
+              "Value": 41.0
+            }
+          ]
+        }
+      ]
+    }
+  },
+
+  "28878": {
+    "ID": 28878,
+    "Name": "Inspiring Presence",
+    "Target": "Ally",
+    "Aura": {      
+      "Effects": [
+        {
+          "EffectType": "GainStats",
+          "Stats": [
+            {
+              "Stat": "SpellHit",
+              "Value": 1.0
+            }
+          ]
+        }
+      ]
+    }
+  },
+
+  "30811": {
+    "ID": 30811,
+    "Name": "Unleashed Rage",
+    "Rank": 5,
+    "Target": "Ally",
+    "Aura": {      
+      "Effects": [
+        {
+          "EffectType": "ModStat",
+          "Percent": 10,
+          "Stats": [
+            "AttackPower"
+          ]
+        }
+      ]
+    }
+  },
+
+  "32182": {
+    "ID": 32182,
+    "Name": "Heroism",
+    "Target": "Ally",
+    "Aura": {      
+      "Duration": 40000,
+      "Effects": [
+        {
+          "EffectType": "ModAttackSpeed",
+          "Percent": 30
+        }
+      ]
+    }
+  },
+
+  "32999": {
+    "ID": 32999,
+    "Name": "Prayer of Spirit",
+    "Rank": 2,
+    "Target": "Ally",
+    "Aura": {      
+      "Effects": [
+        {
+          "EffectType": "GainStats",
+          "Stats": [
+            {
+              "Stat": "SpellPower",
+              "Value": 20.0
+            }
+          ]
+        }
+      ]
+    }
+  },
+
+  "34460": {
+    "ID": 34460,
+    "Name": "Ferocious Inspiration",
+    "Rank": 3,
+    "Target": "Ally",
+    "Aura": {      
+      "Effects": [
+        {
+          "EffectType": "ModDamageSchool",
+          "Percent": 3,
+          "SchoolMask": 127
+        }
+      ]
+    }
+  }
+}

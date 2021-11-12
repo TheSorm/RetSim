@@ -1,10 +1,9 @@
-{  
+{
   "20121": {
     "ID": 20121,
     "Name": "Conviction",
     "Rank": 5,
     "Aura": {
-      "AuraType": "Aura",
       "Effects": [
         {
           "EffectType": "GainStats",
@@ -18,12 +17,12 @@
       ]
     }
   },
+
   "31868": {
     "ID": 31868,
     "Name": "Crusade",
     "Rank": 3,
     "Aura": {
-      "AuraType": "Aura",
       "Effects": [
         {
           "EffectType": "ModDamageCreature",
@@ -39,12 +38,12 @@
       ]
     }
   },
+
   "20113": {
     "ID": 20113,
     "Name": "Two-Handed Weapon Specialization",
     "Rank": 3,
     "Aura": {
-      "AuraType": "Aura",
       "Effects": [
         {
           "EffectType": "ModDamageSchool",
@@ -54,11 +53,11 @@
       ]
     }
   },
+
   "20218": {
     "ID": 20218,
     "Name": "Sanctity Aura",
     "Aura": {
-      "AuraType": "Aura",
       "Effects": [
         {
           "EffectType": "ModDamageSchool",
@@ -68,12 +67,12 @@
       ]
     }
   },
+
   "31870": {
     "ID": 31870,
     "Name": "Improved Sanctity Aura",
     "Rank": 2,
     "Aura": {
-      "AuraType": "Aura",
       "Effects": [
         {
           "EffectType": "ModDamageSchool",
@@ -83,12 +82,13 @@
       ]
     }
   },
+
   "20059": {
     "ID": 20059,
     "Name": "Vengeance",
     "Rank": 5,
     "Aura": {
-      "AuraType": "Aura",
+
       "Effects": [
         {
           "EffectType": "GainProc",
@@ -97,12 +97,12 @@
       ]
     }
   },
+
   "35397": {
     "ID": 35397,
     "Name": "Sanctified Seals",
     "Rank": 3,
     "Aura": {
-      "AuraType": "Aura",
       "Effects": [
         {
           "EffectType": "GainStats",
@@ -120,12 +120,12 @@
       ]
     }
   },
+
   "31883": {
     "ID": 31883,
     "Name": "Fanaticism",
     "Rank": 5,
     "Aura": {
-      "AuraType": "Aura",
       "Effects": [
         {
           "EffectType": "ModSpellCritChance",
@@ -138,12 +138,12 @@
       ]
     }
   },
+
   "20193": {
     "ID": 20193,
     "Name": "Precision",
     "Rank": 3,
     "Aura": {
-      "AuraType": "Aura",
       "Effects": [
         {
           "EffectType": "GainStats",
@@ -161,12 +161,12 @@
       ]
     }
   },
+
   "20266": {
     "ID": 20266,
     "Name": "Divine Strength",
     "Rank": 5,
     "Aura": {
-      "AuraType": "Aura",
       "Effects": [
         {
           "EffectType": "ModStat",
@@ -178,12 +178,12 @@
       ]
     }
   },
+
   "20261": {
     "ID": 20261,
     "Name": "Divine Intellect",
     "Rank": 5,
-    "Aura": {
-      "AuraType": "Aura",
+    "Aura": {      
       "Effects": [
         {
           "EffectType": "ModStat",

@@ -519,7 +519,7 @@
     "Stats": {
     },
     "OnEquip": {
-      "ID": 279840,
+      "ID": 28092,
       "Name": "Mongoose"
     },
     "Phase": 1
@@ -532,7 +532,7 @@
     "Stats": {
     },
     "OnEquip": {
-      "ID": 429740,
+      "ID": 42975,
       "Name": "Executioner"
     },
     "Phase": 4

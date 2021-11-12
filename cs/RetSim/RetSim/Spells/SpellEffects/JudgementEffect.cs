@@ -4,9 +4,9 @@ using RetSim.Units.Player.State;
 
 namespace RetSim.Spells.SpellEffects;
 
-class Judgement : SpellEffect
+class JudgementEffect : SpellEffect
 {
-    public Judgement() : base(0, 0)
+    public JudgementEffect() : base(0, 0)
     {
     }
 

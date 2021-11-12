@@ -61,7 +61,7 @@
   "9": {
     "ID": 9,
     "Name": "Lionheart",
-    "SpellID": 34512,
+    "SpellID": 34513,
     "ProcMask": 30,
     "PPM": 1.0,
     "Cooldown": 1000

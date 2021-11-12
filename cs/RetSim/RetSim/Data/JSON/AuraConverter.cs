@@ -141,33 +141,27 @@ public class AuraConverter : JsonConverter<Aura>
         int maxStacks = (int)(jo["MaxStacks"] ?? 1);
         bool isDebuff = (bool)(jo["IsDebuff"] ?? false);
 
-        string auraType = (string)jo["AuraType"] ?? "Aura Type Missing";
+        bool seal = (bool)(jo["Seal"] ?? false);
 
-        switch (auraType)
+        if (seal)
         {
-            case "Aura":
-                aura = new Aura(duration, maxStacks, isDebuff) { Duration = duration, MaxStacks = maxStacks, IsDebuff = isDebuff, Effects = effects };
-                break;
+            int judgement = (int)(jo["JudgementID"] ?? 0);
+            int persist = (int)(jo["Persist"] ?? 0);
 
-            case "Seal":
-                int judgement = (int)(jo["JudgementID"] ?? 0);
-                int persist = (int)(jo["Persist"] ?? 0);
+            List<int> exclusives = new();
 
-                List<int> exclusives = new();
+            int exclusivesCount = jo["Exclusives"].Count();
 
-                int exclusivesCount = jo["Exclusives"].Count();
+            for (int y = 0; y < exclusivesCount; y++)
+            {
+                exclusives.Add((int)jo["Exclusives"][y]);
+            }
 
-                for (int y = 0; y < exclusivesCount; y++)
-                {
-                    exclusives.Add((int)jo["Exclusives"][y]);
-                }
-
-                aura = new Seal(judgement, exclusives, persist, duration, maxStacks, isDebuff, effects);
-                break;
-
-            default:
-                throw new Exception($"Unrecognized aura type: {auraType}");
+            aura = new Seal(judgement, exclusives, persist, duration, maxStacks, isDebuff, effects);
         }
+
+        else
+            aura = new Aura(duration, maxStacks, isDebuff) { Duration = duration, MaxStacks = maxStacks, IsDebuff = isDebuff, Effects = effects };
 
         return aura;
     }

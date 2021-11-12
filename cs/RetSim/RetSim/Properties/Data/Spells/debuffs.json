@@ -1,0 +1,318 @@
+{
+  "14169": {
+    "ID": 14169,
+    "Name": "Improved Expose Armor",
+    "Rank": 6,
+    "Target": "Enemy",
+    "Aura": {      
+      "IsDebuff": true,
+      "Effects": [
+        {
+          "EffectType": "GainStats",
+          "Stats": [
+            {
+              "Stat": "Armor",
+              "Value": -3075.0
+            }
+          ]
+        }
+      ]
+    }
+  },
+
+  "14325": {
+    "ID": 14325,
+    "Name": "Improved Hunter's Mark",
+    "Rank": 4,
+    "Target": "Enemy",
+    "Aura": {      
+      "IsDebuff": true,
+      "Effects": [
+        {
+          "EffectType": "GainStats",
+          "Stats": [
+            {
+              "Stat": "IncreasedAttackerAttackPower",
+              "Value": 110.0
+            }
+          ]
+        }
+      ]
+    }
+  },
+
+  "15258": {
+    "ID": 15258,
+    "Name": "Shadow Weaving",
+    "Rank": 5,
+    "Target": "Enemy",
+    "Aura": {      
+      "IsDebuff": true,
+      "Effects": [
+        {
+          "EffectType": "ModDamageTaken",
+          "Percent": 10,
+          "SchoolMask": 32
+        }
+      ]
+    }
+  },
+
+  "17800": {
+    "ID": 17800,
+    "Name": "Improved Shadow Bolt",
+    "Rank": 5,
+    "Target": "Enemy",
+    "Aura": {      
+      "IsDebuff": true,
+      "Effects": [
+        {
+          "EffectType": "ModDamageTaken",
+          "Percent": 20,
+          "SchoolMask": 32
+        }
+      ]
+    }
+  },
+
+  "20337": {
+    "ID": 20337,
+    "Name": "Improved Seal of the Crusader",
+    "Rank": 3,
+    "Target": "Enemy",
+    "Aura": {      
+      "IsDebuff": true,
+      "Effects": [
+        {
+          "EffectType": "GainStats",
+          "Stats": [
+            {
+              "Stat": "IncreasedAttackerCritChance",
+              "Value": 3.0
+            }
+          ]
+        },
+        {
+          "EffectType": "ModSpellDamageTaken",
+          "Amount": 219,
+          "School": "Holy"
+        }
+      ]
+    }
+  },
+
+  "22959": {
+    "ID": 22959,
+    "Name": "Improved Scorch",
+    "Rank": 3,
+    "Target": "Enemy",
+    "Aura": {      
+      "IsDebuff": true,
+      "Effects": [
+        {
+          "EffectType": "ModDamageTaken",
+          "Percent": 15,
+          "SchoolMask": 4
+        }
+      ]
+    }
+  },
+
+  "25225": {
+    "ID": 25225,
+    "Name": "Sunder Armor",
+    "Rank": 6,
+    "Target": "Enemy",
+    "Aura": {      
+      "IsDebuff": true,
+      "Effects": [
+        {
+          "EffectType": "GainStats",
+          "Stats": [
+            {
+              "Stat": "Armor",
+              "Value": -2600.0
+            }
+          ]
+        }
+      ]
+    }
+  },
+
+  "26866": {
+    "ID": 26866,
+    "Name": "Expose Armor",
+    "Rank": 6,
+    "Target": "Enemy",
+    "Aura": {      
+      "IsDebuff": true,
+      "Effects": [
+        {
+          "EffectType": "GainStats",
+          "Stats": [
+            {
+              "Stat": "Armor",
+              "Value": -2050.0
+            }
+          ]
+        }
+      ]
+    }
+  },
+
+  "27011": {
+    "ID": 27011,
+    "Name": "Faerie Fire",
+    "Rank": 5,
+    "Target": "Enemy",
+    "Aura": {      
+      "IsDebuff": true,
+      "Effects": [
+        {
+          "EffectType": "GainStats",
+          "Stats": [
+            {
+              "Stat": "Armor",
+              "Value": -610.0
+            }
+          ]
+        }
+      ]
+    }
+  },
+
+  "27226": {
+    "ID": 27226,
+    "Name": "Curse of Recklessness",
+    "Rank": 5,
+    "Target": "Enemy",
+    "Aura": {      
+      "IsDebuff": true,
+      "Effects": [
+        {
+          "EffectType": "GainStats",
+          "Stats": [
+            {
+              "Stat": "Armor",
+              "Value": -800.0
+            }
+          ]
+        }
+      ]
+    }
+  },
+
+  "27228": {
+    "ID": 27228,
+    "Name": "Curse of the Elements",
+    "Rank": 4,
+    "Target": "Enemy",
+    "Aura": {      
+      "IsDebuff": true,
+      "Effects": [
+        {
+          "EffectType": "ModDamageTaken",
+          "Percent": 10,
+          "SchoolMask": 116
+        }
+      ]
+    }
+  },
+
+  "30070": {
+    "ID": 30070,
+    "Name": "Blood Frenzy",
+    "Rank": 2,
+    "Target": "Enemy",
+    "Aura": {      
+      "IsDebuff": true,
+      "Effects": [
+        {
+          "EffectType": "ModDamageTaken",
+          "Percent": 4,
+          "SchoolMask": 1
+        }
+      ]
+    }
+  },
+
+  "32484": {
+    "ID": 32484,
+    "Name": "Improved Curse of the Elements (Malediction)",
+    "Rank": 4,
+    "Target": "Enemy",
+    "Aura": {      
+      "IsDebuff": true,
+      "Effects": [
+        {
+          "EffectType": "ModDamageTaken",
+          "Percent": 13,
+          "SchoolMask": 116
+        }
+      ]
+    }
+  },
+
+  "33200": {
+    "ID": 33200,
+    "Name": "Misery",
+    "Rank": 5,
+    "Target": "Enemy",
+    "Aura": {      
+      "IsDebuff": true,
+      "Effects": [
+        {
+          "EffectType": "ModDamageTaken",
+          "Percent": 5,
+          "SchoolMask": 126
+        }
+      ]
+    }
+  },
+
+  "33602": {
+    "ID": 33602,
+    "Name": "Improved Faerie Fire",
+    "Rank": 5,
+    "Target": "Enemy",
+    "Aura": {      
+      "IsDebuff": true,
+      "Effects": [
+        {
+          "EffectType": "GainStats",
+          "Stats": [
+            {
+              "Stat": "Armor",
+              "Value": -610.0
+            },
+            {
+              "Stat": "IncreasedAttackerHitChance",
+              "Value": 3.0
+            }
+          ]
+        }
+      ]
+    }
+  },
+
+  "34501": {
+    "ID": 34501,
+    "Name": "Expose Weakness",
+    "Rank": 3,
+    "Target": "Enemy",
+    "Aura": {      
+      "IsDebuff": true,
+      "Effects": [
+        {
+          "EffectType": "GainStats",
+          "Stats": [
+            {
+              "Stat": "IncreasedAttackerAttackPower",
+              "Value": 250.0
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

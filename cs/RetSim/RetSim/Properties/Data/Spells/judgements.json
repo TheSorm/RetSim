@@ -44,7 +44,6 @@
     "Rank": 4,
     "Target": "Enemy",
     "Aura": {
-      "AuraType": "Aura",
       "IsDebuff": true
     }
   }

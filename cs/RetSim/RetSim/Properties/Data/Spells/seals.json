@@ -9,7 +9,7 @@
       "Category": "Spell"
     },
     "Aura": {
-      "AuraType": "Seal",
+      "Seal":  true,
       "Duration": 30000,
       "Persist": 400,
       "Exclusives": [
@@ -34,7 +34,7 @@
       "Category": "Spell"
     },
     "Aura": {
-      "AuraType": "Seal",
+      "Seal": true,
       "Duration": 30000,
       "Exclusives": [
         27170,
@@ -59,7 +59,7 @@
       "Category": "Spell"
     },
     "Aura": {
-      "AuraType": "Seal",
+      "Seal": true,
       "Duration": 30000,
       "Exclusives": [
         27170,

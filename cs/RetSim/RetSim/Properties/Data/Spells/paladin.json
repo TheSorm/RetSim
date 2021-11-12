@@ -1,0 +1,162 @@
+{
+  "1": {
+    "ID": 1,
+    "Name": "Melee",
+    "Target": "Enemy",
+    "Effects": [
+      {
+        "EffectType": "WeaponAttack",
+        "School": "Physical",
+        "DefenseCategory": "White",
+        "CritCategory": "Physical",
+        "OnCast": 0,
+        "OnHit": 2,
+        "OnCrit": 33
+      }
+    ]
+  },
+
+  "2": {
+    "ID": 2,
+    "Name": "Melee (Windfury)",
+    "Target": "Enemy",
+    "Effects": [
+      {
+        "EffectType": "WeaponAttack",
+        "School": "Physical",
+        "DefenseCategory": "White",
+        "CritCategory": "Physical",
+        "OnCast": 0,
+        "OnHit": 4,
+        "OnCrit": 33
+      }
+    ]
+  },  
+
+  "20055": {
+    "ID": 20055,
+    "Name": "Vengeance",
+    "Rank": 5,
+    "Aura": {      
+      "Duration": 30000,
+      "MaxStacks": 3,
+      "Effects": [
+        {
+          "EffectType": "ModDamageSchool",
+          "Percent": 5,
+          "SchoolMask": 3
+        }
+      ]
+    }
+  },
+
+  "20271": {
+    "ID": 20271,
+    "Name": "Judgement",
+    "ManaCost": 148,
+    "Cooldown": 10000,
+    "Target": "Enemy",
+    "Effects": [
+      {
+        "EffectType": "JudgementEffect"
+      }
+    ]
+  },  
+
+  "20424": {
+    "ID": 20424,
+    "Name": "Seal of Command",
+    "Target": "Enemy",
+    "Effects": [
+      {
+        "EffectType": "WeaponAttack",
+        "Percentage": 0.7,
+        "School": "Holy",
+        "Coefficient": 0.29,
+        "DefenseCategory": "Special",
+        "CritCategory": "Physical",
+        "OnCast": 0,
+        "OnHit": 8,
+        "OnCrit": 33
+      }
+    ]
+  },
+
+  "20597": {
+    "ID": 20597,
+    "Name": "Sword / Mace Specialization (Human)",
+    "Aura": {      
+      "Effects": [
+        {
+          "EffectType": "GainStats",
+          "Stats": [
+            {
+              "Stat": "Expertise",
+              "Value": 5.0
+            }
+          ]
+        }
+      ]
+    }
+  },
+
+  "31884": {
+    "ID": 31884,
+    "Name": "Avenging Wrath",
+    "ManaCost": 236,
+    "Cooldown": 180000,
+    "Aura": {      
+      "Duration": 20000,
+      "Effects": [
+        {
+          "EffectType": "ModDamageSchool",
+          "Percent": 30,
+          "SchoolMask": 127
+        }
+      ]
+    }
+  },
+
+  "31893": {
+    "ID": 31893,
+    "Name": "Seal of Blood",
+    "Target": "Enemy",
+    "Effects": [
+      {
+        "EffectType": "WeaponAttack",
+        "Percentage": 0.35,
+        "School": "Holy",
+        "DefenseCategory": "Special",
+        "CritCategory": "Physical",
+        "OnCast": 0,
+        "OnHit": 0,
+        "OnCrit": 1
+      }
+    ]
+  }, 
+
+  "35395": {
+    "ID": 35395,
+    "Name": "Crusader Strike",
+    "ManaCost": 236,
+    "Cooldown": 6000,
+    "GCD": {
+      "Duration": 1500,
+      "Category": "Physical"
+    },
+    "Target": "Enemy",
+    "Effects": [
+      {
+        "EffectType": "WeaponAttack",
+        "Percentage": 1.1,
+        "Normalized": true,
+        "School": "Physical",
+        "DefenseCategory": "Special",
+        "CritCategory": "Physical",
+        "OnCast": 0,
+        "OnHit": 16,
+        "OnCrit": 33
+      }
+    ]
+  }  
+}

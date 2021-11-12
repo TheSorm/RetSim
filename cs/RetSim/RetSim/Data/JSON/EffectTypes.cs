@@ -4,7 +4,7 @@ enum SpellEffectType
 {
     Damage = 1,
     ExtraAttacks = 2,
-    Judgement = 3,
+    JudgementEffect = 3,
     WeaponAttack = 4
 }
 

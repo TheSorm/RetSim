@@ -7,7 +7,6 @@ namespace RetSim.Data.JSON;
 
 public class SpellEffectConverter : JsonConverter<SpellEffect>
 {
-
     public override SpellEffect ReadJson(JsonReader reader, Type objectType, SpellEffect existingValue, bool hasExistingValue, JsonSerializer serializer)
     {
         JObject jo = JObject.Load(reader);
@@ -54,8 +53,8 @@ public class SpellEffectConverter : JsonConverter<SpellEffect>
                 effect = new ExtraAttacks((int)(jo["ProcID"] ?? 1), (int)(jo["Amount"] ?? 1));
                 break;
 
-            case "Judgement":
-                effect = new RetSim.Spells.SpellEffects.Judgement();
+            case "JudgementEffect":
+                effect = new JudgementEffect();
                 break;
 
             default:
@@ -81,9 +80,9 @@ public class SpellEffectConverter : JsonConverter<SpellEffect>
                 writer.WriteData("Amount", extraAttacks.Amount);
         }
 
-        else if (value is RetSim.Spells.SpellEffects.Judgement judgement)
+        else if (value is JudgementEffect judgement)
         {
-            writer.WriteData("EffectType", SpellEffectType.Judgement.ToString());
+            writer.WriteData("EffectType", SpellEffectType.JudgementEffect.ToString());
         }
 
         else if (value is WeaponAttack weaponAttack)
