@@ -38,7 +38,7 @@ namespace RetSimDesktop
             if (DataContext is RetSimUIModel retSimUIModel)
             {
                 var player = new Player("Brave Hero", RetSim.Data.Collections.Races["Human"], SelectedGear.GetEquipment(retSimUIModel), SelectedTalents.GetTalentList(retSimUIModel));
-                FightSimulation fight = new(player, new Enemy("Magtheridon", CreatureType.Demon, ArmorCategory.Warrior), new EliteTactic(), new List<Spell>(), new List<Spell>(), 0, 0);
+                FightSimulation fight = new(player, new Enemy("Magtheridon", CreatureType.Demon, ArmorCategory.Warrior), new EliteTactic(), new List<Spell>(), new List<Spell>(), new List<Spell>(), 0, 0);
 
                 Strength.Content = player.Stats[StatName.Strength].Value;
                 AttackPower.Content = player.Stats[StatName.AttackPower].Value;

@@ -1,0 +1,753 @@
+{
+  "8115": {
+    "ID": 8115,
+    "Name": "Agility",
+    "Rank": 1,
+    "Target": "Self",
+    "Aura": {
+      "Effects": [
+        {
+          "EffectType": "GainStats",
+          "Stats": [
+            {
+              "Stat": "Agility",
+              "Value": 5
+            }
+          ]
+        }
+      ]
+    }
+  },
+
+  "8116": {
+    "ID": 8116,
+    "Name": "Agility",
+    "Rank": 2,
+    "Target": "Self",
+    "Aura": {
+      "Effects": [
+        {
+          "EffectType": "GainStats",
+          "Stats": [
+            {
+              "Stat": "Agility",
+              "Value": 9
+            }
+          ]
+        }
+      ]
+    }
+  },
+
+  "8117": {
+    "ID": 8117,
+    "Name": "Agility",
+    "Rank": 3,
+    "Target": "Self",
+    "Aura": {
+      "Effects": [
+        {
+          "EffectType": "GainStats",
+          "Stats": [
+            {
+              "Stat": "Agility",
+              "Value": 13
+            }
+          ]
+        }
+      ]
+    }
+  },
+
+  "8118": {
+    "ID": 8118,
+    "Name": "Strength",
+    "Rank": 1,
+    "Target": "Self",
+    "Aura": {
+      "Effects": [
+        {
+          "EffectType": "GainStats",
+          "Stats": [
+            {
+              "Stat": "Strength",
+              "Value": 5
+            }
+          ]
+        }
+      ]
+    }
+  },
+
+  "8119": {
+    "ID": 8119,
+    "Name": "Strength",
+    "Rank": 2,
+    "Target": "Self",
+    "Aura": {
+      "Effects": [
+        {
+          "EffectType": "GainStats",
+          "Stats": [
+            {
+              "Stat": "Strength",
+              "Value": 9
+            }
+          ]
+        }
+      ]
+    }
+  },
+
+  "8120": {
+    "ID": 8120,
+    "Name": "Strength",
+    "Rank": 3,
+    "Target": "Self",
+    "Aura": {
+      "Effects": [
+        {
+          "EffectType": "GainStats",
+          "Stats": [
+            {
+              "Stat": "Strength",
+              "Value": 13
+            }
+          ]
+        }
+      ]
+    }
+  },
+
+  "11406": {
+    "ID": 11406,
+    "Name": "Elixir of Demonslaying",
+    "Target": "Self",
+    "Aura": {
+      "Effects": [
+        {
+          "EffectType": "GainStatsCreature",
+          "Stats": [
+            {
+              "Stat": "AttackPower",
+              "Value": 265.0
+            }
+          ],
+          "Creatures": [
+            "Demon"
+          ]
+        }
+      ]
+    }
+  },
+
+
+  "12174": {
+    "ID": 12174,
+    "Name": "Agility",
+    "Rank": 4,
+    "Target": "Self",
+    "Aura": {
+      "Effects": [
+        {
+          "EffectType": "GainStats",
+          "Stats": [
+            {
+              "Stat": "Agility",
+              "Value": 17
+            }
+          ]
+        }
+      ]
+    }
+  },
+
+  "12179": {
+    "ID": 12179,
+    "Name": "Strength",
+    "Rank": 4,
+    "Target": "Self",
+    "Aura": {
+      "Effects": [
+        {
+          "EffectType": "GainStats",
+          "Stats": [
+            {
+              "Stat": "Strength",
+              "Value": 17
+            }
+          ]
+        }
+      ]
+    }
+  },
+
+  "17538": {
+    "ID": 17538,
+    "Name": "Elixir of the Mongoose",
+    "Target": "Self",
+    "Aura": {
+      "Effects": [
+        {
+          "EffectType": "GainStats",
+          "Stats": [
+            {
+              "Stat": "Agility",
+              "Value": 25.0
+            },
+            {
+              "Stat": "CritRating",
+              "Value": 28.0
+            }
+          ]
+        }
+      ]
+    }
+  },
+
+  "22756": {
+    "ID": 22756,
+    "Name": "Sharpen Weapon - Critical",
+    "Target": "Self",
+    "Aura": {
+      "Effects": [
+        {
+          "EffectType": "GainStats",
+          "Stats": [
+            {
+              "Stat": "CritRating",
+              "Value": 28.0
+            }
+          ]
+        }
+      ]
+    }
+  },
+
+  "23060": {
+    "ID": 23060,
+    "Name": "Squawk",
+    "Target": "Self",
+    "Aura": {
+      "Duration": 240000,
+      "Effects": [        
+        {
+          "EffectType": "ModAttackSpeed",
+          "Percent": 5
+        }
+      ]
+    }
+  },
+
+  "24382": {
+    "ID": 24382,
+    "Name": "Spirit of Zanza",
+    "Target": "Self",
+    "Aura": {
+      "Effects": [
+        {
+          "EffectType": "GainStats",
+          "Stats": [
+            {
+              "Stat": "Stamina",
+              "Value": 25.0
+            }
+          ]
+        }
+      ]
+    }
+  },
+
+  "25122": {
+    "ID": 25122,
+    "Name": "Brilliant Wizard Oil",
+    "Target": "Self",
+    "Aura": {
+      "Effects": [
+        {
+          "EffectType": "GainStats",
+          "Stats": [
+            {
+              "Stat": "SpellPower",
+              "Value": 36.0
+            },
+            {
+              "Stat": "SpellCritRating",
+              "Value": 14.0
+            }
+          ]
+        }
+      ]
+    }
+  },
+
+  "28017": {
+    "ID": 28017,
+    "Name": "Superior Wizard Oil",
+    "Target": "Self",
+    "Aura": {
+      "Effects": [
+        {
+          "EffectType": "GainStats",
+          "Stats": [
+            {
+              "Stat": "SpellPower",
+              "Value": 42.0
+            }
+          ]
+        }
+      ]
+    }
+  },
+
+  "28490": {
+    "ID": 28490,
+    "Name": "Major Strength",
+    "Target": "Self",
+    "Aura": {
+      "Effects": [
+        {
+          "EffectType": "GainStats",
+          "Stats": [
+            {
+              "Stat": "Strength",
+              "Value": 35.0
+            }
+          ]
+        }
+      ]
+    }
+  },
+
+  "28494": {
+    "ID": 28494,
+    "Name": "Insane Strength Potion",
+    "Cooldown": 120000,
+    "Target": "Self",
+    "Aura": {
+      "Duration": 15000,
+      "Effects": [
+        {
+          "EffectType": "GainStats",
+          "Stats": [
+            {
+              "Stat": "Strength",
+              "Value": 35.0
+            }
+          ]
+        }
+      ]
+    }
+  },
+
+  "28497": {
+    "ID": 28497,
+    "Name": "Major Agility",
+    "Target": "Self",
+    "Aura": {
+      "Effects": [
+        {
+          "EffectType": "GainStats",
+          "Stats": [
+            {
+              "Stat": "Agility",
+              "Value": 35.0
+            },
+            {
+              "Stat": "CritRating",
+              "Value": 20.0
+            }
+          ]
+        }
+      ]
+    }
+  },
+
+  "28507": {
+    "ID": 28507,
+    "Name": "Haste Potion",
+    "Cooldown": 120000,
+    "Target": "Self",
+    "Aura": {
+      "Duration": 15000,
+      "Effects": [
+        {
+          "EffectType": "GainStats",
+          "Stats": [
+            {
+              "Stat": "HasteRating",
+              "Value": 400.0
+            }
+          ]
+        },
+        {
+          "EffectType": "ModAttackSpeed",
+          "Percent": 0
+        }
+      ]
+    }
+  },
+
+  "28509": {
+    "ID": 28509,
+    "Name": "Greater Mana Regeneration",
+    "Target": "Self",
+    "Aura": {
+      "Effects": [
+        {
+          "EffectType": "GainStats",
+          "Stats": [
+            {
+              "Stat": "ManaPer5",
+              "Value": 16
+            }
+          ]
+        }
+      ]
+    }
+  },
+
+  "28520": {
+    "ID": 28520,
+    "Name": "Flask of Relentless Assault",
+    "Target": "Self",
+    "Aura": {
+      "Effects": [
+        {
+          "EffectType": "GainStats",
+          "Stats": [
+            {
+              "Stat": "AttackPower",
+              "Value": 120.0
+            }
+          ]
+        }
+      ]
+    }
+  },
+
+  "29453": {
+    "ID": 29453,
+    "Name": "Sharpen Blade",
+    "Target": "Self",
+    "Aura": {
+      "Effects": [
+        {
+          "EffectType": "GainStats",
+          "Stats": [
+            {
+              "Stat": "WeaponDamage",
+              "Value": 12
+            },
+            {
+              "Stat": "CritRating",
+              "Value": 14
+            }
+          ]
+        }
+      ]
+    }
+  },
+
+  "30486": {
+    "ID": 30486,
+    "Name": "Super Sapper Charge",
+    "Cooldown": 180000,
+    "Target": "Enemy",
+    "Effects": [
+      {
+        "EffectType": "Damage",
+        "School": "Fire",
+        "DefenseCategory": "Magic",
+        "CritCategory": "Spell",
+        "OnCast": 0,
+        "OnHit": 512,
+        "OnCrit": 1,
+        "MinEffect": 900.0,
+        "MaxEffect": 1500.0
+      }
+    ]
+  },
+
+  "33077": {
+    "ID": 33077,
+    "Name": "Agility",
+    "Rank": 5,
+    "Target": "Self",
+    "Aura": {
+      "Effects": [
+        {
+          "EffectType": "GainStats",
+          "Stats": [
+            {
+              "Stat": "Agility",
+              "Value": 20
+            }
+          ]
+        }
+      ]
+    }
+  },
+
+  "33082": {
+    "ID": 33082,
+    "Name": "Strength",
+    "Rank": 5,
+    "Target": "Self",
+    "Aura": {
+      "Effects": [
+        {
+          "EffectType": "GainStats",
+          "Stats": [
+            {
+              "Stat": "Strength",
+              "Value": 20
+            }
+          ]
+        }
+      ]
+    }
+  },
+
+  "33256": {
+    "ID": 33256,
+    "Name": "Well Fed (20 Strength)",
+    "Target": "Self",
+    "Aura": {
+      "Effects": [
+        {
+          "EffectType": "GainStats",
+          "Stats": [
+            {
+              "Stat": "Strength",
+              "Value": 20
+            }
+          ]
+        }
+      ]
+    }
+  },
+
+  "33261": {
+    "ID": 33261,
+    "Name": "Well Fed (20 Agility)",
+    "Target": "Self",
+    "Aura": {
+      "Effects": [
+        {
+          "EffectType": "GainStats",
+          "Stats": [
+            {
+              "Stat": "Agility",
+              "Value": 20
+            }
+          ]
+        }
+      ]
+    }
+  },
+
+  "33263": {
+    "ID": 33263,
+    "Name": "Well Fed (23 Spell Power)",
+    "Target": "Self",
+    "Aura": {
+      "Effects": [
+        {
+          "EffectType": "GainStats",
+          "Stats": [
+            {
+              "Stat": "SpellPower",
+              "Value": 23
+            }
+          ]
+        }
+      ]
+    }
+  },
+
+  "33265": {
+    "ID": 33265,
+    "Name": "Well Fed (8 Mana per 5)",
+    "Target": "Self",
+    "Aura": {
+      "Effects": [
+        {
+          "EffectType": "GainStats",
+          "Stats": [
+            {
+              "Stat": "ManaPer5",
+              "Value": 8
+            }
+          ]
+        }
+      ]
+    }
+  },
+
+  "33726": {
+    "ID": 33726,
+    "Name": "Elixir of Mastery",
+    "Target": "Self",
+    "Aura": {
+      "Effects": [
+        {
+          "EffectType": "GainStats",
+          "Stats": [
+            {
+              "Stat": "Strength",
+              "Value": 15.0
+            },
+            {
+              "Stat": "Agility",
+              "Value": 15.0
+            },
+            {
+              "Stat": "Stamina",
+              "Value": 15.0
+            },
+            {
+              "Stat": "Intellect",
+              "Value": 15.0
+            }
+          ]
+        }
+      ]
+    }
+  },
+
+  "35475": {
+    "ID": 35475,
+    "Name": "Drums of War",
+    "Cooldown": 120000,
+    "Target": "Self",
+    "Aura": {
+      "Duration": 30000,
+      "Effects": [
+        {
+          "EffectType": "GainStats",
+          "Stats": [
+            {
+              "Stat": "AttackPower",
+              "Value": 60.0
+            },
+            {
+              "Stat": "SpellPower",
+              "Value": 30.0
+            }
+          ]
+        }
+      ]
+    }
+  },
+
+  "35476": {
+    "ID": 35476,
+    "Name": "Drums of Battle",
+    "Cooldown": 120000,
+    "Target": "Self",
+    "Aura": {
+      "Duration": 30000,
+      "Effects": [
+        {
+          "EffectType": "GainStats",
+          "Stats": [
+            {
+              "Stat": "HasteRating",
+              "Value": 80.0
+            },
+            {
+              "Stat": "SpellHasteRating",
+              "Value": 80.0
+            }
+          ]
+        },
+        {
+          "EffectType": "ModAttackSpeed",
+          "Percent": 0
+        }
+      ]
+    }
+  },
+
+  "38954": {
+    "ID": 38954,
+    "Name": "Fel Strength Elixir",
+    "Target": "Self",
+    "Aura": {
+      "Effects": [
+        {
+          "EffectType": "GainStats",
+          "Stats": [
+            {
+              "Stat": "AttackPower",
+              "Value": 90.0
+            },
+            {
+              "Stat": "Stamina",
+              "Value": -10.0
+            }
+          ]
+        }
+      ]
+    }
+  },
+
+  "39625": {
+    "ID": 39625,
+    "Name": "Elixir of Major Fortitude",
+    "Target": "Self",
+    "Aura": {
+      "Effects": [
+        {
+          "EffectType": "GainStats",
+          "Stats": [
+            {
+              "Stat": "Health",
+              "Value": 250.0
+            }
+          ]
+        }
+      ]
+    }
+  },
+
+  "39627": {
+    "ID": 39627,
+    "Name": "Elixir of Draenic Wisdom",
+    "Target": "Self",
+    "Aura": {
+      "Effects": [
+        {
+          "EffectType": "GainStats",
+          "Stats": [
+            {
+              "Stat": "Intellect",
+              "Value": 30.0
+            }
+          ]
+        }
+      ]
+    }
+  },
+
+  "43763": {
+    "ID": 43763,
+    "Name": "Well Fed (20 Hit Rating)",
+    "Target": "Self",
+    "Aura": {
+      "Effects": [
+        {
+          "EffectType": "GainStats",
+          "Stats": [
+            {
+              "Stat": "HitRating",
+              "Value": 20
+            }
+          ]
+        }
+      ]
+    }
+  }
+
+}
