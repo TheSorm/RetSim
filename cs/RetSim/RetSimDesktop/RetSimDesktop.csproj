@@ -25,6 +25,15 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Model\WeaponSim.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Model\GearSimWorker.cs">
+      <SubType>Component</SubType>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
     <Page Update="View\WeaponSelect.xaml">
       <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
     </Page>

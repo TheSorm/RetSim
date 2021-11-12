@@ -62,6 +62,7 @@ namespace RetSimDesktop.View
                 retSimUIModel.CurrentSimOutput.DPS = overallDPS / numberOfSimulations;
                 retSimUIModel.CurrentSimOutput.Min = minSimulation.CombatLog.DPS;
                 retSimUIModel.CurrentSimOutput.Max = maxSimulation.CombatLog.DPS;
+                retSimUIModel.SimButtonStatus.IsSimButtonEnabled = true;
             }
         }
     }

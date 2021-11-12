@@ -7,24 +7,24 @@ namespace RetSimDesktop.Model
 {
     public class SelectedGear : INotifyPropertyChanged
     {
-        private EquippableItem selectedHead;
-        private EquippableItem selectedNeck;
-        private EquippableItem selectedShoulders;
-        private EquippableItem selectedBack;
-        private EquippableItem selectedChest;
-        private EquippableItem selectedWrists;
-        private EquippableItem selectedHands;
-        private EquippableItem selectedWaist;
-        private EquippableItem selectedLegs;
-        private EquippableItem selectedFeet;
-        private EquippableItem selectedFinger1;
-        private EquippableItem selectedFinger2;
-        private EquippableItem selectedTrinket1;
-        private EquippableItem selectedTrinket2;
-        private EquippableItem selectedRelic;
-        private EquippableWeapon selectedWeapon;
+        private ItemDPS selectedHead;
+        private ItemDPS selectedNeck;
+        private ItemDPS selectedShoulders;
+        private ItemDPS selectedBack;
+        private ItemDPS selectedChest;
+        private ItemDPS selectedWrists;
+        private ItemDPS selectedHands;
+        private ItemDPS selectedWaist;
+        private ItemDPS selectedLegs;
+        private ItemDPS selectedFeet;
+        private ItemDPS selectedFinger1;
+        private ItemDPS selectedFinger2;
+        private ItemDPS selectedTrinket1;
+        private ItemDPS selectedTrinket2;
+        private ItemDPS selectedRelic;
+        private WeaponDPS selectedWeapon;
 
-        public EquippableItem SelectedHead
+        public ItemDPS SelectedHead
         {
             get { return selectedHead; }
             set
@@ -34,7 +34,7 @@ namespace RetSimDesktop.Model
             }
         }
 
-        public EquippableItem SelectedNeck
+        public ItemDPS SelectedNeck
         {
             get { return selectedNeck; }
             set
@@ -44,7 +44,7 @@ namespace RetSimDesktop.Model
             }
         }
 
-        public EquippableItem SelectedShoulders
+        public ItemDPS SelectedShoulders
         {
             get { return selectedShoulders; }
             set
@@ -54,7 +54,7 @@ namespace RetSimDesktop.Model
             }
         }
 
-        public EquippableItem SelectedBack
+        public ItemDPS SelectedBack
         {
             get { return selectedBack; }
             set
@@ -64,7 +64,7 @@ namespace RetSimDesktop.Model
             }
         }
 
-        public EquippableItem SelectedChest
+        public ItemDPS SelectedChest
         {
             get { return selectedChest; }
             set
@@ -74,7 +74,7 @@ namespace RetSimDesktop.Model
             }
         }
 
-        public EquippableItem SelectedWrists
+        public ItemDPS SelectedWrists
         {
             get { return selectedWrists; }
             set
@@ -84,7 +84,7 @@ namespace RetSimDesktop.Model
             }
         }
 
-        public EquippableItem SelectedHands
+        public ItemDPS SelectedHands
         {
             get { return selectedHands; }
             set
@@ -94,7 +94,7 @@ namespace RetSimDesktop.Model
             }
         }
 
-        public EquippableItem SelectedWaist
+        public ItemDPS SelectedWaist
         {
             get { return selectedWaist; }
             set
@@ -104,7 +104,7 @@ namespace RetSimDesktop.Model
             }
         }
 
-        public EquippableItem SelectedLegs
+        public ItemDPS SelectedLegs
         {
             get { return selectedLegs; }
             set
@@ -114,7 +114,7 @@ namespace RetSimDesktop.Model
             }
         }
 
-        public EquippableItem SelectedFeet
+        public ItemDPS SelectedFeet
         {
             get { return selectedFeet; }
             set
@@ -124,7 +124,7 @@ namespace RetSimDesktop.Model
             }
         }
 
-        public EquippableItem SelectedFinger1
+        public ItemDPS SelectedFinger1
         {
             get { return selectedFinger1; }
             set
@@ -134,7 +134,7 @@ namespace RetSimDesktop.Model
             }
         }
 
-        public EquippableItem SelectedFinger2
+        public ItemDPS SelectedFinger2
         {
             get { return selectedFinger2; }
             set
@@ -144,7 +144,7 @@ namespace RetSimDesktop.Model
             }
         }
 
-        public EquippableItem SelectedTrinket1
+        public ItemDPS SelectedTrinket1
         {
             get { return selectedTrinket1; }
             set
@@ -154,7 +154,7 @@ namespace RetSimDesktop.Model
             }
         }
 
-        public EquippableItem SelectedTrinket2
+        public ItemDPS SelectedTrinket2
         {
             get { return selectedTrinket2; }
             set
@@ -163,7 +163,7 @@ namespace RetSimDesktop.Model
                 OnPropertyChanged(nameof(SelectedTrinket2));
             }
         }
-        public EquippableItem SelectedRelic
+        public ItemDPS SelectedRelic
         {
             get { return selectedRelic; }
             set
@@ -173,7 +173,7 @@ namespace RetSimDesktop.Model
             }
         }
 
-        public EquippableWeapon SelectedWeapon
+        public WeaponDPS SelectedWeapon
         {
             get { return selectedWeapon; }
             set
@@ -187,22 +187,22 @@ namespace RetSimDesktop.Model
         {
             return new()
             {
-                Head = retSimUIModel.SelectedGear.SelectedHead,
-                Neck = retSimUIModel.SelectedGear.SelectedNeck,
-                Shoulders = retSimUIModel.SelectedGear.SelectedShoulders,
-                Back = retSimUIModel.SelectedGear.SelectedBack,
-                Chest = retSimUIModel.SelectedGear.SelectedChest,
-                Wrists = retSimUIModel.SelectedGear.SelectedWrists,
-                Hands = retSimUIModel.SelectedGear.SelectedHands,
-                Waist = retSimUIModel.SelectedGear.SelectedWaist,
-                Legs = retSimUIModel.SelectedGear.SelectedLegs,
-                Feet = retSimUIModel.SelectedGear.SelectedFeet,
-                Finger1 = retSimUIModel.SelectedGear.SelectedFinger1,
-                Finger2 = retSimUIModel.SelectedGear.SelectedFinger2,
-                Trinket1 = retSimUIModel.SelectedGear.SelectedTrinket1,
-                Trinket2 = retSimUIModel.SelectedGear.SelectedTrinket2,
-                Relic = retSimUIModel.SelectedGear.SelectedRelic,
-                Weapon = retSimUIModel.SelectedGear.SelectedWeapon,
+                Head = retSimUIModel.SelectedGear.SelectedHead.Item,
+                Neck = retSimUIModel.SelectedGear.SelectedNeck.Item,
+                Shoulders = retSimUIModel.SelectedGear.SelectedShoulders.Item,
+                Back = retSimUIModel.SelectedGear.SelectedBack.Item,
+                Chest = retSimUIModel.SelectedGear.SelectedChest.Item,
+                Wrists = retSimUIModel.SelectedGear.SelectedWrists.Item,
+                Hands = retSimUIModel.SelectedGear.SelectedHands.Item,
+                Waist = retSimUIModel.SelectedGear.SelectedWaist.Item,
+                Legs = retSimUIModel.SelectedGear.SelectedLegs.Item,
+                Feet = retSimUIModel.SelectedGear.SelectedFeet.Item,
+                Finger1 = retSimUIModel.SelectedGear.SelectedFinger1.Item,
+                Finger2 = retSimUIModel.SelectedGear.SelectedFinger2.Item,
+                Trinket1 = retSimUIModel.SelectedGear.SelectedTrinket1.Item,
+                Trinket2 = retSimUIModel.SelectedGear.SelectedTrinket2.Item,
+                Relic = retSimUIModel.SelectedGear.SelectedRelic.Item,
+                Weapon = retSimUIModel.SelectedGear.SelectedWeapon.Weapon,
             };
         }
 

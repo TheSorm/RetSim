@@ -1,6 +1,9 @@
 ﻿using RetSim.Items;
+using RetSim.Misc;
 using RetSim.Units.UnitStats;
+using RetSimDesktop.Model;
 using RetSimDesktop.View;
+using RetSimDesktop.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Windows;
@@ -15,20 +18,22 @@ namespace RetSimDesktop
     /// </summary>
     public partial class WeaponSlotSelect : UserControl
     {
-        public List<EquippableWeapon> WeaponList
+        private static WeaponSim weaponSimWorker = new();
+
+        public List<WeaponDPS> WeaponList
         {
-            get => (List<EquippableWeapon>)GetValue(WeaponListProperty);
+            get => (List<WeaponDPS>)GetValue(WeaponListProperty);
             set => SetValue(WeaponListProperty, value);
         }
 
         public static readonly DependencyProperty WeaponListProperty = DependencyProperty.Register(
             "WeaponList",
-            typeof(List<EquippableWeapon>),
+            typeof(List<WeaponDPS>),
             typeof(WeaponSlotSelect));
 
-        public EquippableWeapon SelectedItem
+        public WeaponDPS SelectedItem
         {
-            get => (EquippableWeapon)GetValue(SelectedItemProperty);
+            get => (WeaponDPS)GetValue(SelectedItemProperty);
             set
             {
                 SetValue(SelectedItemProperty, value);
@@ -37,7 +42,7 @@ namespace RetSimDesktop
 
         public static readonly DependencyProperty SelectedItemProperty = DependencyProperty.Register(
             "SelectedItem",
-            typeof(EquippableWeapon),
+            typeof(WeaponDPS),
             typeof(WeaponSlotSelect),
             new PropertyMetadata(null, CheckIfSelectionIsPresent));
 
@@ -59,49 +64,49 @@ namespace RetSimDesktop
 
             StatConverter statConverter = new();
 
-            Binding strBinding = new("Stats[" + StatName.Strength + "]");
+            Binding strBinding = new("Weapon.Stats[" + StatName.Strength + "]");
             strBinding.Converter = statConverter;
             StrColumn.Binding = strBinding;
-            Binding apBinding = new("Stats[" + StatName.AttackPower + "]");
+            Binding apBinding = new("Weapon.Stats[" + StatName.AttackPower + "]");
             apBinding.Converter = statConverter;
             APColumn.Binding = apBinding;
-            Binding agiBinding = new("Stats[" + StatName.Agility + "]");
+            Binding agiBinding = new("Weapon.Stats[" + StatName.Agility + "]");
             agiBinding.Converter = statConverter;
             AgiColumn.Binding = agiBinding;
-            Binding critBinding = new("Stats[" + StatName.CritRating + "]");
+            Binding critBinding = new("Weapon.Stats[" + StatName.CritRating + "]");
             critBinding.Converter = statConverter;
             CritColumn.Binding = critBinding;
-            Binding hitBinding = new("Stats[" + StatName.HitRating + "]");
+            Binding hitBinding = new("Weapon.Stats[" + StatName.HitRating + "]");
             hitBinding.Converter = statConverter;
             HitColumn.Binding = hitBinding;
-            Binding hasteBinding = new("Stats[" + StatName.HasteRating + "]");
+            Binding hasteBinding = new("Weapon.Stats[" + StatName.HasteRating + "]");
             hasteBinding.Converter = statConverter;
             HasteColumn.Binding = hasteBinding;
-            Binding expBinding = new("Stats[" + StatName.ExpertiseRating + "]");
+            Binding expBinding = new("Weapon.Stats[" + StatName.ExpertiseRating + "]");
             expBinding.Converter = statConverter;
             ExpColumn.Binding = expBinding;
-            Binding apenBinding = new("Stats[" + StatName.ArmorPenetration + "]");
+            Binding apenBinding = new("Weapon.Stats[" + StatName.ArmorPenetration + "]");
             apenBinding.Converter = statConverter;
             APenColumn.Binding = apenBinding;
-            Binding staBinding = new("Stats[" + StatName.Stamina + "]");
+            Binding staBinding = new("Weapon.Stats[" + StatName.Stamina + "]");
             staBinding.Converter = statConverter;
             StaColumn.Binding = staBinding;
-            Binding intBinding = new("Stats[" + StatName.Intellect + "]");
+            Binding intBinding = new("Weapon.Stats[" + StatName.Intellect + "]");
             intBinding.Converter = statConverter;
             IntColumn.Binding = intBinding;
-            Binding mp5Binding = new("Stats[" + StatName.ManaPer5 + "]");
+            Binding mp5Binding = new("Weapon.Stats[" + StatName.ManaPer5 + "]");
             mp5Binding.Converter = statConverter;
             MP5Column.Binding = mp5Binding;
-            Binding spBinding = new("Stats[" + StatName.SpellPower + "]");
+            Binding spBinding = new("Weapon.Stats[" + StatName.SpellPower + "]");
             spBinding.Converter = statConverter;
             SPColumn.Binding = spBinding;
-            Binding sCritBinding = new("Stats[" + StatName.SpellCritRating + "]");
+            Binding sCritBinding = new("Weapon.Stats[" + StatName.SpellCritRating + "]");
             sCritBinding.Converter = statConverter;
             SCritColumn.Binding = sCritBinding;
-            Binding sHitBinding = new("Stats[" + StatName.SpellHitRating + "]");
+            Binding sHitBinding = new("Weapon.Stats[" + StatName.SpellHitRating + "]");
             sHitBinding.Converter = statConverter;
             SHitColumn.Binding = sHitBinding;
-            Binding sHasteBinding = new("Stats[" + StatName.SpellHasteRating + "]");
+            Binding sHasteBinding = new("Weapon.Stats[" + StatName.SpellHasteRating + "]");
             sHasteBinding.Converter = statConverter;
             SHasteColumn.Binding = sHasteBinding;
 
@@ -127,7 +132,7 @@ namespace RetSimDesktop
 
         private void GearSlotSelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            SelectedItem = (EquippableWeapon)gearSlot.SelectedItem;
+            SelectedItem = (WeaponDPS)gearSlot.SelectedItem;
             gearSlot.SetBinding(DataGrid.SelectedItemProperty, new Binding("SelectedItem")
             {
                 Source = this,
@@ -151,15 +156,15 @@ namespace RetSimDesktop
             Socket? selectedSocket = null;
             if (header == "Socket 1")
             {
-                selectedSocket = SelectedItem.Socket1;
+                selectedSocket = SelectedItem.Weapon.Socket1;
             }
             else if (header == "Socket 2")
             {
-                selectedSocket = SelectedItem.Socket2;
+                selectedSocket = SelectedItem.Weapon.Socket2;
             }
             else if (header == "Socket 3")
             {
-                selectedSocket = SelectedItem.Socket3;
+                selectedSocket = SelectedItem.Weapon.Socket3;
             }
 
             if (selectedSocket != null)
@@ -179,6 +184,15 @@ namespace RetSimDesktop
                     selectedSocket.SocketedGem = gemPicker.SelectedGem;
                     gearSlot.Items.Refresh();
                 }
+            }
+        }
+
+        private void Weapon_Click(object sender, RoutedEventArgs e)
+        {
+            if (!weaponSimWorker.IsBusy && DataContext is RetSimUIModel retSimUIModel)
+            {
+                retSimUIModel.SimButtonStatus.IsGearSimButtonEnabled = false;
+                weaponSimWorker.RunWorkerAsync(new Tuple<RetSimUIModel, IEnumerable<WeaponDPS>, int>(retSimUIModel, WeaponList, Constants.EquipmentSlots.Weapon));
             }
         }
     }

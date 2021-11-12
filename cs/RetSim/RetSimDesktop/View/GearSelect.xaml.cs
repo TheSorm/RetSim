@@ -1,4 +1,5 @@
 ﻿using RetSim.Items;
+using RetSimDesktop.Model;
 using RetSimDesktop.ViewModel;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,7 +15,7 @@ namespace RetSimDesktop
     public partial class GearSelect : UserControl
     {
         private Dictionary<Slot, List<GearSlotSelect>> SelectorBySlot = new();
-        public Dictionary<Slot, List<EquippableItem>> ShownGear { get; set; }
+        public Dictionary<Slot, List<ItemDPS>> ShownGear { get; set; }
 
         public GearSelect()
         {
