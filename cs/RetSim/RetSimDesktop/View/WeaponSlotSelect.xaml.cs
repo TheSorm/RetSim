@@ -6,6 +6,7 @@ using RetSimDesktop.View;
 using RetSimDesktop.ViewModel;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -228,6 +229,23 @@ namespace RetSimDesktop
             {
                 retSimUIModel.SimButtonStatus.IsGearSimButtonEnabled = false;
                 weaponSimWorker.RunWorkerAsync(new Tuple<RetSimUIModel, IEnumerable<WeaponDPS>, int>(retSimUIModel, WeaponList, Constants.EquipmentSlots.Weapon));
+            }
+        }
+
+        private void GearSlot_PreviewMouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (ItemsControl.ContainerFromElement((DataGrid)sender, e.OriginalSource as DependencyObject) is not DataGridRow row) return;
+
+            if (row.Item is WeaponDPS weaponDps)
+            {
+                if (e.ChangedButton == MouseButton.Middle && e.ButtonState == MouseButtonState.Pressed)
+                {
+                    System.Diagnostics.Process.Start(new ProcessStartInfo
+                    {
+                        FileName = "https://tbc.wowhead.com/item=" + weaponDps.Weapon.ID,
+                        UseShellExecute = true
+                    });
+                }
             }
         }
     }

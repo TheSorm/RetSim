@@ -5,9 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RetSimDesktop.View"
         mc:Ignorable="d"
-        Title="Gems" Height="450" Width="800">
+        Title="Gems" Height="450" Width="800" WindowStartupLocation="CenterScreen">
     <Grid>
-        <DataGrid Name="gemGrid" GridLinesVisibility="Horizontal" IsReadOnly="True" SelectionMode="Single" HeadersVisibility="Column" CanUserResizeColumns="False" CanUserResizeRows="False" AutoGenerateColumns="False">
+        <DataGrid Name="gemGrid" GridLinesVisibility="Horizontal" PreviewMouseDown="GemGrid_PreviewMouseDown" IsReadOnly="True" SelectionMode="Single" HeadersVisibility="Column" CanUserResizeColumns="False" CanUserResizeRows="False" AutoGenerateColumns="False">
             <DataGrid.Columns>
                 <DataGridTextColumn CanUserReorder="False" Header="Name" Binding="{Binding Name}" />
                 <DataGridTextColumn CanUserReorder="False" Header="Level" Binding="{Binding ItemLevel}" />

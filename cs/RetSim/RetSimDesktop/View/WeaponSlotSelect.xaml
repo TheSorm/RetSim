@@ -16,7 +16,7 @@
             <RowDefinition Height="*" />
             <RowDefinition Height="30px" />
         </Grid.RowDefinitions>
-        <DataGrid Name="gearSlot" GridLinesVisibility="Horizontal" SelectionChanged="GearSlotSelectionChanged" IsReadOnly="True" SelectionMode="Single" HeadersVisibility="Column" CanUserResizeColumns="False" CanUserResizeRows="False" AutoGenerateColumns="False">
+        <DataGrid Name="gearSlot" GridLinesVisibility="Horizontal" PreviewMouseDown="GearSlot_PreviewMouseDown" SelectionChanged="GearSlotSelectionChanged" IsReadOnly="True" SelectionMode="Single" HeadersVisibility="Column" CanUserResizeColumns="False" CanUserResizeRows="False" AutoGenerateColumns="False">
             <DataGrid.Columns>
                 <DataGridTextColumn CanUserReorder="False" Header="Name" Binding="{Binding Weapon.Name}" />
                 <DataGridTextColumn CanUserReorder="False" Header="Level" x:Name="LevelColumn" Binding="{Binding Weapon.ItemLevel}" />

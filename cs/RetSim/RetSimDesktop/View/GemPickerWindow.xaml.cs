@@ -2,7 +2,9 @@
 using RetSim.Units.UnitStats;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Input;
 
@@ -76,6 +78,23 @@ namespace RetSimDesktop.View
         {
             SelectedGem = (Gem)gemGrid.SelectedItem;
             DialogResult = true;
+        }
+
+        private void GemGrid_PreviewMouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (ItemsControl.ContainerFromElement((DataGrid)sender, e.OriginalSource as DependencyObject) is not DataGridRow row) return;
+
+            if (row.Item is Gem gem)
+            {
+                if (e.ChangedButton == MouseButton.Middle && e.ButtonState == MouseButtonState.Pressed)
+                {
+                    System.Diagnostics.Process.Start(new ProcessStartInfo
+                    {
+                        FileName = "https://tbc.wowhead.com/item=" + gem.ID,
+                        UseShellExecute = true
+                    });
+                }
+            }
         }
     }
 }
