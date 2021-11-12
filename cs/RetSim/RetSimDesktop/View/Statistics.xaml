@@ -9,7 +9,7 @@
     <ScrollViewer >
         <StackPanel Background="White">
             <Expander IsExpanded="True" Margin="10" Header="Damage Breakdown">
-                <Grid Background="White" Height="200" Margin="5,0,5,5">
+                <Grid Background="White" MinHeight="100" Margin="5,0,5,5">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="20" />
                         <RowDefinition Height="*" />

@@ -32,7 +32,7 @@ namespace RetSimDesktop.View
                 var consumables = Spell.GetSpells(28520, 33256, 33082, 33077, 35476, 23060);
 
                 float overallDPS = 0;
-                List<FightSimulation> fightSimulations = new(numberOfSimulations);
+                List<CombatLog> fightSimulationCombatLogs = new(numberOfSimulations);
                 for (int i = 0; i < numberOfSimulations; i++)
                 {
                     FightSimulation fight = new(new Player("Brave Hero", RetSim.Data.Collections.Races["Human"], playerEquipment, talents), new Enemy("Magtheridon", CreatureType.Demon, ArmorCategory.Warrior), new EliteTactic(), buffs, debuffs, consumables, retSimUIModel.SimSettings.MinFightDuration, retSimUIModel.SimSettings.MaxFightDuration);
@@ -43,25 +43,25 @@ namespace RetSimDesktop.View
                         retSimUIModel.CurrentSimOutput.Progress = (int)(i / ((float)numberOfSimulations) * 100);
                         retSimUIModel.CurrentSimOutput.DPS = overallDPS / (i + 1);
                     }
-                    fightSimulations.Add(fight);
+                    fightSimulationCombatLogs.Add(fight.CombatLog);
                 }
 
-                fightSimulations = fightSimulations.OrderBy(o => o.CombatLog.DPS).ToList();
-                var minSimulation = fightSimulations[0];
-                var medianSimulation = fightSimulations[(int)(numberOfSimulations / 2f)];
-                var maxSimulation = fightSimulations[numberOfSimulations - 1];
+                fightSimulationCombatLogs = fightSimulationCombatLogs.OrderBy(o => o.DPS).ToList();
+                var minSimulation = fightSimulationCombatLogs[0];
+                var medianSimulation = fightSimulationCombatLogs[(int)(numberOfSimulations / 2f)];
+                var maxSimulation = fightSimulationCombatLogs[numberOfSimulations - 1];
 
-                minSimulation.CombatLog.CreateDamageBreakdown();
-                medianSimulation.CombatLog.CreateDamageBreakdown();
-                maxSimulation.CombatLog.CreateDamageBreakdown();
+                minSimulation.CreateDamageBreakdown();
+                medianSimulation.CreateDamageBreakdown();
+                maxSimulation.CreateDamageBreakdown();
 
-                retSimUIModel.CurrentSimOutput.MinCombatLog = minSimulation.CombatLog;
-                retSimUIModel.CurrentSimOutput.MedianCombatLog = medianSimulation.CombatLog;
-                retSimUIModel.CurrentSimOutput.MaxCombatLog = maxSimulation.CombatLog;
+                retSimUIModel.CurrentSimOutput.MinCombatLog = minSimulation;
+                retSimUIModel.CurrentSimOutput.MedianCombatLog = medianSimulation;
+                retSimUIModel.CurrentSimOutput.MaxCombatLog = maxSimulation;
                 retSimUIModel.CurrentSimOutput.Progress = 100;
                 retSimUIModel.CurrentSimOutput.DPS = overallDPS / numberOfSimulations;
-                retSimUIModel.CurrentSimOutput.Min = minSimulation.CombatLog.DPS;
-                retSimUIModel.CurrentSimOutput.Max = maxSimulation.CombatLog.DPS;
+                retSimUIModel.CurrentSimOutput.Min = minSimulation.DPS;
+                retSimUIModel.CurrentSimOutput.Max = maxSimulation.DPS;
                 retSimUIModel.SimButtonStatus.IsSimButtonEnabled = true;
             }
         }
