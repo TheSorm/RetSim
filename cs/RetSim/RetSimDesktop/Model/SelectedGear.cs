@@ -24,6 +24,18 @@ namespace RetSimDesktop.Model
         private ItemDPS selectedRelic;
         private WeaponDPS selectedWeapon;
 
+        private Enchant headEnchant;
+        private Enchant shouldersEnchant;
+        private Enchant backEnchant;
+        private Enchant chestEnchant;
+        private Enchant wristsEnchant;
+        private Enchant handsEnchant;
+        private Enchant legsEnchant;
+        private Enchant feetEnchant;
+        private Enchant finger1Enchant;
+        private Enchant finger2Enchant;
+        private Enchant weaponEnchant;
+
         public ItemDPS SelectedHead
         {
             get { return selectedHead; }
@@ -173,15 +185,27 @@ namespace RetSimDesktop.Model
             }
         }
 
-        public WeaponDPS SelectedWeapon
-        {
-            get { return selectedWeapon; }
-            set
-            {
-                selectedWeapon = value;
-                OnPropertyChanged(nameof(SelectedWeapon));
-            }
+        public WeaponDPS SelectedWeapon 
+        { 
+            get { return selectedWeapon; } 
+            set { 
+                selectedWeapon = value; 
+                OnPropertyChanged(nameof(SelectedWeapon)); 
+            } 
         }
+
+        public Enchant HeadEnchant { get { return headEnchant; } set { headEnchant = value; OnPropertyChanged(nameof(HeadEnchant)); } }
+        public Enchant ShouldersEnchant { get { return shouldersEnchant; } set { shouldersEnchant = value; OnPropertyChanged(nameof(ShouldersEnchant)); } }
+        public Enchant BackEnchant { get { return backEnchant; } set { backEnchant = value; OnPropertyChanged(nameof(BackEnchant)); } }
+        public Enchant ChestEnchant { get { return chestEnchant; } set { chestEnchant = value; OnPropertyChanged(nameof(ChestEnchant)); } }
+        public Enchant WristsEnchant { get { return wristsEnchant; } set { wristsEnchant = value; OnPropertyChanged(nameof(WristsEnchant)); } }
+        public Enchant HandsEnchant { get { return handsEnchant; } set { handsEnchant = value; OnPropertyChanged(nameof(HandsEnchant)); } }
+        public Enchant LegsEnchant { get { return legsEnchant; } set { legsEnchant = value; OnPropertyChanged(nameof(LegsEnchant)); } }
+        public Enchant FeetEnchant { get { return feetEnchant; } set { feetEnchant = value; OnPropertyChanged(nameof(FeetEnchant)); } }
+        public Enchant Finger1Enchant { get { return finger1Enchant; } set { finger1Enchant = value; OnPropertyChanged(nameof(Finger1Enchant)); } }
+        public Enchant Finger2Enchant { get { return finger2Enchant; } set { finger2Enchant = value; OnPropertyChanged(nameof(Finger2Enchant)); } }
+        public Enchant WeaponEnchant { get { return weaponEnchant; } set { weaponEnchant = value; OnPropertyChanged(nameof(WeaponEnchant)); } }
+
 
         public static Equipment GetEquipment(RetSimUIModel retSimUIModel)
         {
@@ -203,6 +227,18 @@ namespace RetSimDesktop.Model
                 Trinket2 = retSimUIModel.SelectedGear.SelectedTrinket2.Item,
                 Relic = retSimUIModel.SelectedGear.SelectedRelic.Item,
                 Weapon = retSimUIModel.SelectedGear.SelectedWeapon.Weapon,
+                HeadEnchant = retSimUIModel.SelectedGear.HeadEnchant,
+
+                ShouldersEnchant = retSimUIModel.SelectedGear.ShouldersEnchant,
+                BackEnchant = retSimUIModel.SelectedGear.BackEnchant,
+                ChestEnchant = retSimUIModel.SelectedGear.ChestEnchant,
+                WristsEnchant = retSimUIModel.SelectedGear.WristsEnchant,
+                HandsEnchant = retSimUIModel.SelectedGear.HandsEnchant,
+                LegsEnchant = retSimUIModel.SelectedGear.LegsEnchant,
+                FeetEnchant = retSimUIModel.SelectedGear.FeetEnchant,
+                Finger1Enchant = retSimUIModel.SelectedGear.Finger1Enchant,
+                Finger2Enchant = retSimUIModel.SelectedGear.Finger2Enchant,
+                WeaponEnchant = retSimUIModel.SelectedGear.WeaponEnchant,
             };
         }
 

@@ -9,6 +9,7 @@ using RetSimDesktop.Model;
 using RetSimDesktop.ViewModel;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Windows.Controls;
 
 namespace RetSimDesktop

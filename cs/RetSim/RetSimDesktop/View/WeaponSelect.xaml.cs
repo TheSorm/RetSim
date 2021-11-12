@@ -73,6 +73,12 @@ namespace RetSimDesktop
 
                     SelectorByType[type].LevelColumn.SortDirection = ListSortDirection.Descending;
                     SelectorByType[type].gearSlot.Items.SortDescriptions.Add(new SortDescription(SelectorByType[type].LevelColumn.SortMemberPath, ListSortDirection.Descending));
+
+                    SelectorByType[type].SetBinding(WeaponSlotSelect.WeaponEnchantListProperty, new Binding("EnchantsBySlot[" + Slot.Weapon + "]")
+                    {
+                        Source = DataContext,
+                        Mode = BindingMode.OneWay
+                    });
                 }
 
                 AllShownWeapons = new();
@@ -87,6 +93,12 @@ namespace RetSimDesktop
                 });
                 AllWeaponSelect.LevelColumn.SortDirection = ListSortDirection.Descending;
                 AllWeaponSelect.gearSlot.Items.SortDescriptions.Add(new SortDescription(AllWeaponSelect.LevelColumn.SortMemberPath, ListSortDirection.Descending));
+
+                AllWeaponSelect.SetBinding(WeaponSlotSelect.WeaponEnchantListProperty, new Binding("EnchantsBySlot[" + Slot.Weapon + "]")
+                {
+                    Source = DataContext,
+                    Mode = BindingMode.OneWay
+                });
             }
         }
     }

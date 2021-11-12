@@ -1,6 +1,7 @@
 ﻿using RetSim.Items;
 using RetSimDesktop.Model;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using static RetSim.Data.Items;
 
@@ -18,6 +19,7 @@ namespace RetSimDesktop.ViewModel
         private Dictionary<int, ItemDPS> _AllGear;
         private Dictionary<WeaponType, Dictionary<int, List<WeaponDPS>>> _WeaponsByPhases;
         private Dictionary<int, WeaponDPS> _AllWeapons;
+        private Dictionary<Slot, List<Enchant>> _EnchantsBySlot;
 
 
         public RetSimUIModel()
@@ -98,6 +100,17 @@ namespace RetSimDesktop.ViewModel
                 }
             }
 
+            _EnchantsBySlot = new();
+            foreach(var enchant in Enchants.Values)
+            {
+                if (!_EnchantsBySlot.ContainsKey(enchant.Slot))
+                {
+                    _EnchantsBySlot[enchant.Slot] = new();
+                    _EnchantsBySlot[enchant.Slot].Add(new() { Name = "", ID = -1, Stats = new(), Slot = enchant.Slot, ItemID = -1});
+                }
+                _EnchantsBySlot[enchant.Slot].Add(enchant);
+            }
+
             _SelectedGear = new SelectedGear
             {
                 SelectedHead = _AllGear[29073],
@@ -116,10 +129,21 @@ namespace RetSimDesktop.ViewModel
                 SelectedTrinket2 = _AllGear[28830],
                 SelectedRelic = _AllGear[27484],
                 SelectedWeapon = _AllWeapons[28429],
+
+                HeadEnchant = Enchants[35452],
+                ShouldersEnchant = Enchants[35417],
+                BackEnchant = Enchants[34004],
+                ChestEnchant = Enchants[27960],
+                WristsEnchant = Enchants[27899],
+                HandsEnchant = Enchants[33995],
+                LegsEnchant = Enchants[35490],
+                FeetEnchant = Enchants[27951],
+                Finger1Enchant = null,
+                Finger2Enchant = null,
+                WeaponEnchant = Enchants[27984]
             };
 
         }
-
 
         public Dictionary<WeaponType, Dictionary<int, List<WeaponDPS>>> WeaponsByPhases
         {
@@ -141,7 +165,13 @@ namespace RetSimDesktop.ViewModel
             get { return _AllWeapons; }
             set { _AllWeapons = value; }
         }
-        
+
+        public Dictionary<Slot, List<Enchant>> EnchantsBySlot
+        {
+            get { return _EnchantsBySlot; }
+            set { _EnchantsBySlot = value; }
+        }
+
         public SimButtonStatus SimButtonStatus
         {
             get { return _SimButtonStatus; }

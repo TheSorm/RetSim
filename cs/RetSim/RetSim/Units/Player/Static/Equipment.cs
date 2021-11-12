@@ -266,7 +266,7 @@ public class Equipment
             }
         }
 
-        if (equipment.WeaponEnchant != null && equipment.WeaponEnchant.OnEquip != null)
+        if (equipment.WeaponEnchant != null && equipment.WeaponEnchant.OnEquip != null && Data.Collections.Spells.ContainsKey(equipment.WeaponEnchant.OnEquip.ID))
             spells.Add(Data.Collections.Spells[equipment.WeaponEnchant.OnEquip.ID]);
 
         return spells;

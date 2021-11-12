@@ -3,6 +3,7 @@ using RetSimDesktop.Model;
 using RetSimDesktop.ViewModel;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Windows.Controls;
 using System.Windows.Data;
 
@@ -81,6 +82,16 @@ namespace RetSimDesktop
 
                         itemSelector.LevelColumn.SortDirection = ListSortDirection.Descending;
                         itemSelector.gearSlot.Items.SortDescriptions.Add(new SortDescription(itemSelector.LevelColumn.SortMemberPath, ListSortDirection.Descending));
+
+
+                        if(retSimUIModel.EnchantsBySlot.ContainsKey(slot))
+                        {
+                            itemSelector.SetBinding(GearSlotSelect.EnchantListProperty, new Binding("EnchantsBySlot[" + slot + "]")
+                            {
+                                Source = DataContext,
+                                Mode = BindingMode.OneWay
+                            });
+                        }
                     }
                 }
             }

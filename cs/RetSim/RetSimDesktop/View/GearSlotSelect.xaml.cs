@@ -31,6 +31,17 @@ namespace RetSimDesktop
             typeof(IEnumerable<ItemDPS>),
             typeof(GearSlotSelect));
 
+        public List<Enchant> EnchantList
+        {
+            get => (List<Enchant>)GetValue(EnchantListProperty);
+            set => SetValue(EnchantListProperty, value);
+        }
+
+        public static readonly DependencyProperty EnchantListProperty = DependencyProperty.Register(
+            "EnchantList",
+            typeof(List<Enchant>),
+            typeof(GearSlotSelect));
+
         public ItemDPS SelectedItem
         {
             get => (ItemDPS)GetValue(SelectedItemProperty);
@@ -42,10 +53,35 @@ namespace RetSimDesktop
             typeof(ItemDPS),
             typeof(GearSlotSelect));
 
+        public Enchant SelectedEnchant
+        {
+            get => (Enchant)GetValue(SelectedEnchantProperty);
+            set => SetValue(SelectedEnchantProperty, value);
+        }
+
+        public static readonly DependencyProperty SelectedEnchantProperty = DependencyProperty.Register(
+            "SelectedEnchant",
+            typeof(Enchant),
+            typeof(GearSlotSelect));
+
 
         public GearSlotSelect()
         {
             InitializeComponent();
+            this.DataContextChanged += (o, e) =>
+            {
+                if (DataContext is RetSimUIModel retSimUIModel)
+                {
+                    if(EnchantList == null)
+                    {
+                        EnchantComboBox.Visibility = Visibility.Hidden;
+                    }
+                    else
+                    {
+                        EnchantComboBox.Visibility = Visibility.Visible;
+                    }
+                }
+            };
 
             gearSlot.SetBinding(DataGrid.ItemsSourceProperty, new Binding("SlotList")
             {
@@ -54,6 +90,18 @@ namespace RetSimDesktop
             });
 
             gearSlot.SetBinding(DataGrid.SelectedItemProperty, new Binding("SelectedItem")
+            {
+                Source = this,
+                Mode = BindingMode.TwoWay
+            });
+
+            EnchantComboBox.SetBinding(ComboBox.ItemsSourceProperty, new Binding("EnchantList")
+            {
+                Source = this,
+                Mode = BindingMode.OneWay,
+            });
+
+            EnchantComboBox.SetBinding(ComboBox.SelectedItemProperty, new Binding("SelectedEnchant")
             {
                 Source = this,
                 Mode = BindingMode.TwoWay

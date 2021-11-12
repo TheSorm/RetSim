@@ -31,6 +31,17 @@ namespace RetSimDesktop
             typeof(List<WeaponDPS>),
             typeof(WeaponSlotSelect));
 
+        public List<Enchant> WeaponEnchantList
+        {
+            get => (List<Enchant>)GetValue(WeaponEnchantListProperty);
+            set => SetValue(WeaponEnchantListProperty, value);
+        }
+
+        public static readonly DependencyProperty WeaponEnchantListProperty = DependencyProperty.Register(
+            "WeaponEnchantList",
+            typeof(List<Enchant>),
+            typeof(WeaponSlotSelect));
+
         public WeaponDPS SelectedItem
         {
             get => (WeaponDPS)GetValue(SelectedItemProperty);
@@ -46,6 +57,18 @@ namespace RetSimDesktop
             typeof(WeaponSlotSelect),
             new PropertyMetadata(null, CheckIfSelectionIsPresent));
 
+        public Enchant SelectedWeaponEnchant
+        {
+            get => (Enchant)GetValue(SelectedWeaponEnchantProperty);
+            set => SetValue(SelectedWeaponEnchantProperty, value);
+        }
+
+        public static readonly DependencyProperty SelectedWeaponEnchantProperty = DependencyProperty.Register(
+            "SelectedWeaponEnchant",
+            typeof(Enchant),
+            typeof(WeaponSlotSelect));
+
+
         public WeaponSlotSelect()
         {
             InitializeComponent();
@@ -57,6 +80,18 @@ namespace RetSimDesktop
             });
 
             gearSlot.SetBinding(DataGrid.SelectedItemProperty, new Binding("SelectedItem")
+            {
+                Source = this,
+                Mode = BindingMode.TwoWay
+            });
+
+            WeaponEnchantComboBox.SetBinding(ComboBox.ItemsSourceProperty, new Binding("WeaponEnchantList")
+            {
+                Source = this,
+                Mode = BindingMode.OneWay,
+            });
+
+            WeaponEnchantComboBox.SetBinding(ComboBox.SelectedItemProperty, new Binding("SelectedWeaponEnchant")
             {
                 Source = this,
                 Mode = BindingMode.TwoWay

@@ -50,6 +50,15 @@
                 <DataGridTextColumn CanUserReorder="False" Header="DPS"    x:Name="DPSColumn" Binding="{Binding DPS}" />
             </DataGrid.Columns>
         </DataGrid>
+        <ComboBox Name="EnchantComboBox" Width="200" Grid.Row="1" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="0,0,5,5" >
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding Name}" />
+                    </StackPanel>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
         <Button Content="Sim Gear DPS" Grid.Row="1" IsEnabled="{Binding SimButtonStatus.IsGearSimButtonEnabled}" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="100" Height="20" Margin="0,0,5,5" Click="GearSim_Click" />
     </Grid>
     
