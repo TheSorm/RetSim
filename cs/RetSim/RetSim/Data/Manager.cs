@@ -27,6 +27,7 @@ public static class Manager
         Dictionary<int, Spell> paladin = LoadSpells("paladin");
         Dictionary<int, Spell> buffs = LoadSpells("buffs");
         Dictionary<int, Spell> debuffs = LoadSpells("debuffs");
+        Dictionary<int, Spell> consumables = LoadSpells("consumables");
         Dictionary<int, Spell> misc = LoadSpells("misc");
 
         Dictionary<int, Spell> seals = LoadSeals();
@@ -64,6 +65,11 @@ public static class Manager
         foreach (KeyValuePair<int, Spell> debuff in debuffs)
         {
             Collections.Spells.Add(debuff.Key, debuff.Value);
+        }
+
+        foreach (KeyValuePair<int, Spell> consumable in consumables)
+        {
+            Collections.Spells.Add(consumable.Key, consumable.Value);
         }
 
         foreach (KeyValuePair<int, Spell> spell in misc)

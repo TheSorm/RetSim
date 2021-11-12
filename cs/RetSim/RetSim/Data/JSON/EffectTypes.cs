@@ -17,10 +17,11 @@ enum AuraEffectType
     ModDamageSchool = 5,
     ModDamageSpell = 6,
     ModDamageTaken = 7,
-    GainStats = 8,
-    ModSpellCritChance = 9,
-    ModSpellDamageTaken = 10,
-    ModStat = 11
+    GainStatsCreature = 8,
+    GainStats = 9,
+    ModSpellCritChance = 10,
+    ModSpellDamageTaken = 11,
+    ModStat = 12
 }
 
 enum AuraType

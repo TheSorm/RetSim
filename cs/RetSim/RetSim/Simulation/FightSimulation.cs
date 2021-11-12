@@ -27,6 +27,7 @@ public class FightSimulation
 
     public readonly List<Spell> Buffs;
     public readonly List<Spell> Debuffs;
+    public readonly List<Spell> Consumables;
 
     public readonly CombatLog CombatLog;
     public readonly IEventQueue Queue;
@@ -35,13 +36,14 @@ public class FightSimulation
 
     public readonly int Duration;
 
-    public FightSimulation(Player player, Enemy enemy, Tactic tactic, List<Spell> buffs, List<Spell> debuffs, int minDuration, int maxDuration)
+    public FightSimulation(Player player, Enemy enemy, Tactic tactic, List<Spell> buffs, List<Spell> debuffs, List<Spell> consumables, int minDuration, int maxDuration)
     {
         Player = player;
         Enemy = enemy;
         Tactic = tactic;
         Buffs = buffs;
         Debuffs = debuffs;
+        Consumables = consumables;
 
         CombatLog = new CombatLog();
         Queue = new MinQueue();
@@ -76,20 +78,37 @@ public class FightSimulation
             Queue.Add(new CastEvent(debuff, Player, Enemy, this, Timestamp, -1));
         }
 
+        foreach (Spell consumable in Consumables)
+        {
+            Queue.Add(new CastEvent(consumable, Player, Player, this, Timestamp, -1));
+        }
+
         if (Player.Race.Racial != null && Player.Race.Racial.Requirements(Player))
             Queue.Add(new CastEvent(Player.Race.Racial, Player, Player, this, Timestamp, -1));
 
         while (!Queue.IsEmpty())
         {
             Event current = Queue.RemoveNext();
-            current.Execute();
+
+            if (current is AuraEndEvent)
+                ends.Add((AuraEndEvent)current);
+
+            else
+                current.Execute();
         }
     }
+
+    private List<AuraEndEvent> ends = new();
 
     public CombatLog Run()
     {
         Queue.AddRange(Tactic.PreFight(this));
+
+        foreach (AuraEndEvent end in ends)
+            Queue.Add(end);
+
         Queue.Add(new SimulationEndEvent(this, Duration));
+
 
         while (Ongoing)
         {

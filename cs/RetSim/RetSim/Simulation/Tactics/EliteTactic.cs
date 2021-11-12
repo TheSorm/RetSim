@@ -13,7 +13,8 @@ public class EliteTactic : Tactic
     Spell SealOfBlood;
     Spell Judgement;
     Spell AvengingWrath;
-    Spell Heroism;    
+    Spell Heroism;
+    Spell HastePotion;
 
     public EliteTactic()
     {
@@ -24,6 +25,8 @@ public class EliteTactic : Tactic
         AvengingWrath = Data.Collections.Spells[31884]; 
         Judgement = Data.Collections.Spells[20271];
 
+        HastePotion = Data.Collections.Spells[28507];
+
     }
 
     public override List<Event> PreFight(FightSimulation fight)
@@ -33,6 +36,7 @@ public class EliteTactic : Tactic
                 new CastEvent(SealOfCommand, fight.Player, fight.Player, fight, 0),
                 new CastEvent(AvengingWrath, fight.Player, fight.Player, fight, 1495),
                 new CastEvent(Heroism, fight.Player, fight.Player, fight, 1495),
+                new CastEvent(HastePotion, fight.Player, fight.Player, fight, 1495),
                 new CastEvent(SealOfBlood, fight.Player, fight.Player, fight, 1500),
                 new AutoAttackEvent(fight, 1501)
             };

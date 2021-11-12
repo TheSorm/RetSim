@@ -75,6 +75,30 @@ public class AuraConverter : JsonConverter<Aura>
                         effects.Add(new ModDamageTaken((int)jo["Effects"][i]["Percent"], (School)(int)jo["Effects"][i]["SchoolMask"]));
                         break;
 
+                    case "GainStatsCreature":
+
+                        StatSet gainStatsCreatureStats = new();
+
+                        int gainStatsCreatureCount = jo["Effects"][i]["Stats"].Count();
+
+                        for (int y = 0; y < gainStatsCreatureCount; y++)
+                        {
+                            gainStatsCreatureStats[Enum.Parse<StatName>((string)jo["Effects"][i]["Stats"][y]["Stat"])] = (float)jo["Effects"][i]["Stats"][y]["Value"];
+                        }
+
+                        List<CreatureType> gainStatsCreatureCreatures = new();
+
+                        int gainStatsCreatureCountStats = jo["Effects"][i]["Creatures"].Count();
+
+                        for (int y = 0; y < gainStatsCreatureCountStats; y++)
+                        {
+                            gainStatsCreatureCreatures.Add(Enum.Parse<CreatureType>((string)jo["Effects"][i]["Creatures"][y]));
+                        }
+
+                        effects.Add(new GainStatsCreature(gainStatsCreatureStats, gainStatsCreatureCreatures));
+
+                        break;
+
                     case "GainStats":
 
                         StatSet stats = new();
@@ -299,13 +323,13 @@ public class AuraConverter : JsonConverter<Aura>
             writer.WriteData("SchoolMask", modDamageTaken.SchoolMask);
         }
 
-        else if (value is GainStats modifyStats)
+        else if (value is GainStatsCreature gainStatsCreature)
         {
             writer.WriteData("EffectType", AuraEffectType.GainStats.ToString());
 
             Dictionary<StatName, float> stats = new();
 
-            foreach (KeyValuePair<StatName, float> stat in modifyStats.Stats)
+            foreach (KeyValuePair<StatName, float> stat in gainStatsCreature.Stats)
             {
                 if (stat.Value != 0f)
                     stats.Add(stat.Key, stat.Value);
@@ -314,7 +338,42 @@ public class AuraConverter : JsonConverter<Aura>
             List<string> names = new();
             List<float> values = new();
 
-            foreach (KeyValuePair<StatName, float> stat in modifyStats.Stats)
+            foreach (KeyValuePair<StatName, float> stat in gainStatsCreature.Stats)
+            {
+                if (stat.Value != 0f)
+                {
+                    names.Add(stat.Key.ToString());
+                    values.Add(stat.Value);
+                }
+            }
+
+            string[] creatures = new string[gainStatsCreature.Creatures.Count];
+
+            for (int i = 0; i < gainStatsCreature.Creatures.Count; i++)
+            {
+                creatures[i] = gainStatsCreature.Creatures[i].ToString();
+            }
+
+            writer.WriteDictionary("Stats", names.ToArray(), values.Cast<object>().ToArray(), "Stat", "Value");
+            writer.WriteStringArray("Creatures", creatures);
+        }
+
+        else if (value is GainStats gainStats)
+        {
+            writer.WriteData("EffectType", AuraEffectType.GainStats.ToString());
+
+            Dictionary<StatName, float> stats = new();
+
+            foreach (KeyValuePair<StatName, float> stat in gainStats.Stats)
+            {
+                if (stat.Value != 0f)
+                    stats.Add(stat.Key, stat.Value);
+            }
+
+            List<string> names = new();
+            List<float> values = new();
+
+            foreach (KeyValuePair<StatName, float> stat in gainStats.Stats)
             {
                 if (stat.Value != 0f)
                 {

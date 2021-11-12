@@ -31,6 +31,7 @@ class Program
         var playerTalents = Talent.GetTalents(20121, 31868, 20113, 20218, 31870, 20059, 31883, 35397, 20193, 20266);
         var playerBuffs = Spell.GetSpells(25580, 27141, 25898, 2048, 25528, 25359, 25570, 30811, 26991, 25392, 32999, 27127, 28878);
         var playerDebuffs = Spell.GetSpells(20337, 14169, 33602, 27226, 30070, 32484, 17800, 33200, 15258, 22959, 14325, 34501);
+        var playerConsumables = Spell.GetSpells(28520, 33256, 33082, 33077, 35476, 23060);
 
         Logger.Log("Press Enter to run a single, detailed sim, or any other key to run many, non-detailed sims.");
 
@@ -41,10 +42,10 @@ class Program
         Logger.DisableInput();
 
         if (once)
-            RunOnce(equipment, playerTalents, playerBuffs, playerDebuffs);
+            RunOnce(equipment, playerTalents, playerBuffs, playerDebuffs, playerConsumables);
 
         else
-            RunMany(equipment, playerTalents, playerBuffs, playerDebuffs);
+            RunMany(equipment, playerTalents, playerBuffs, playerDebuffs, playerConsumables);
 
         //TODO: Add more debuffs, consumables
 
@@ -70,9 +71,9 @@ class Program
         Logger.Log($"╚═══════════╩═══════╩═══════════════════════════╩══════╩═════════════════════════════════════════════════════════════╝");
     }
 
-    static void RunOnce(Equipment equipment, List<Talent> talents, List<Spell> buffs, List<Spell> debuffs)
+    static void RunOnce(Equipment equipment, List<Talent> talents, List<Spell> buffs, List<Spell> debuffs, List<Spell> consumables)
     {
-        FightSimulation fight = new(new Player("Brave Hero", Data.Collections.Races["Human"], equipment, talents), new Enemy("Magtheridon", CreatureType.Demon, ArmorCategory.Warrior), new EliteTactic(), buffs, debuffs, 180000, 200000);
+        FightSimulation fight = new(new Player("Brave Hero", Data.Collections.Races["Human"], equipment, talents), new Enemy("Magtheridon", CreatureType.Demon, ArmorCategory.Warrior), new EliteTactic(), buffs, debuffs, consumables, 180000, 200000);
 
         PrintStats(fight.Player.Stats.All);
 
@@ -81,7 +82,7 @@ class Program
         fight.Output();
     }
 
-    static void RunMany(Equipment equipment, List<Talent> talents, List<Spell> buffs, List<Spell> debuffs)
+    static void RunMany(Equipment equipment, List<Talent> talents, List<Spell> buffs, List<Spell> debuffs, List<Spell> consumables)
     {
         float iterations = 10000;
         int outerIterations = 10;
@@ -117,7 +118,7 @@ class Program
 
         for (int i = 0; i < outerIterations; i++)
         {
-            results[i] = Run(iterations, equipment, talents, buffs, debuffs, i, false);
+            results[i] = Run(iterations, equipment, talents, buffs, debuffs, consumables, i, false);
 
             dps += results[i].AverageDPS;
             time += results[i].TimeSpan;
@@ -152,7 +153,7 @@ class Program
         Logger.Log($"╚══════════════════════════════╩════════════╩══════════════════╝");
     }
 
-    static (float AverageDPS, TimeSpan span) Run(float iterations, Equipment equipment, List<Talent> talents, List<Spell> buffs, List<Spell> debuffs, int outer, bool log)
+    static (float AverageDPS, TimeSpan span) Run(float iterations, Equipment equipment, List<Talent> talents, List<Spell> buffs, List<Spell> debuffs, List<Spell> consumables, int outer, bool log)
     {
         var dps = 0f;
         var row = outer + 3;
@@ -163,7 +164,7 @@ class Program
 
         for (int i = 0; i < iterations; i++)
         {
-            FightSimulation fight = new(new Player("Brave Hero", Data.Collections.Races["Human"], equipment, talents), new Enemy("Magtheridon", CreatureType.Demon, ArmorCategory.Warrior), new EliteTactic(), buffs, debuffs, 180000, 190000);
+            FightSimulation fight = new(new Player("Brave Hero", Data.Collections.Races["Human"], equipment, talents), new Enemy("Magtheridon", CreatureType.Demon, ArmorCategory.Warrior), new EliteTactic(), buffs, debuffs, consumables, 180000, 190000);
 
             fight.Run();
 

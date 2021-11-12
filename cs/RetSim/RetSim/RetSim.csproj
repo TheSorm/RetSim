@@ -58,6 +58,9 @@
     <None Update="Properties\Data\Spells\buffs.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="Properties\Data\Spells\consumables.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="Properties\Data\Spells\debuffs.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
