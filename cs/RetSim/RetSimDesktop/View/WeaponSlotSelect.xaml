@@ -18,16 +18,16 @@
         </Grid.RowDefinitions>
         <DataGrid Name="gearSlot" GridLinesVisibility="Horizontal" SelectionChanged="GearSlotSelectionChanged" IsReadOnly="True" SelectionMode="Single" HeadersVisibility="Column" CanUserResizeColumns="False" CanUserResizeRows="False" AutoGenerateColumns="False">
             <DataGrid.Columns>
-                <DataGridTextColumn CanUserReorder="False" Header="Name" Binding="{Binding Name}" />
-                <DataGridTextColumn CanUserReorder="False" Header="Level" x:Name="LevelColumn" Binding="{Binding ItemLevel}" />
-                <DataGridTextColumn CanUserReorder="False" CanUserSort="False" Header="Socket 1" Binding="{Binding Socket1, Converter={StaticResource SocketConverter}}" />
-                <DataGridTextColumn CanUserReorder="False" CanUserSort="False" Header="Socket 2" Binding="{Binding Socket2, Converter={StaticResource SocketConverter}}" />
-                <DataGridTextColumn CanUserReorder="False" CanUserSort="False" Header="Socket 3" Binding="{Binding Socket3, Converter={StaticResource SocketConverter}}" />
-                <DataGridTextColumn CanUserReorder="False" Header="Type" Binding="{Binding Type}" />
-                <DataGridTextColumn CanUserReorder="False" Header="Min" Binding="{Binding MinDamage}" />
-                <DataGridTextColumn CanUserReorder="False" Header="Max" Binding="{Binding MaxDamage}" />
-                <DataGridTextColumn CanUserReorder="False" Header="Speed" Binding="{Binding AttackSpeed, Converter={StaticResource WeaponSpeedConverter}}" />
-                <DataGridTextColumn CanUserReorder="False" Header="DPS" Binding="{Binding DPS, Converter={StaticResource WeaponDPSConverter}}" />
+                <DataGridTextColumn CanUserReorder="False" Header="Name" Binding="{Binding Weapon.Name}" />
+                <DataGridTextColumn CanUserReorder="False" Header="Level" x:Name="LevelColumn" Binding="{Binding Weapon.ItemLevel}" />
+                <DataGridTextColumn CanUserReorder="False" CanUserSort="False" Header="Socket 1" Binding="{Binding Weapon.Socket1, Converter={StaticResource SocketConverter}}" />
+                <DataGridTextColumn CanUserReorder="False" CanUserSort="False" Header="Socket 2" Binding="{Binding Weapon.Socket2, Converter={StaticResource SocketConverter}}" />
+                <DataGridTextColumn CanUserReorder="False" CanUserSort="False" Header="Socket 3" Binding="{Binding Weapon.Socket3, Converter={StaticResource SocketConverter}}" />
+                <DataGridTextColumn CanUserReorder="False" Header="Type" Binding="{Binding Weapon.Type}" />
+                <DataGridTextColumn CanUserReorder="False" Header="Min" Binding="{Binding Weapon.MinDamage}" />
+                <DataGridTextColumn CanUserReorder="False" Header="Max" Binding="{Binding Weapon.MaxDamage}" />
+                <DataGridTextColumn CanUserReorder="False" Header="Speed" Binding="{Binding Weapon.AttackSpeed, Converter={StaticResource WeaponSpeedConverter}}" />
+                <DataGridTextColumn CanUserReorder="False" Header="DPS" Binding="{Binding Weapon.DPS, Converter={StaticResource WeaponDPSConverter}}" />
                 <DataGridTextColumn CanUserReorder="False" Header="Str"    x:Name="StrColumn" />
                 <DataGridTextColumn CanUserReorder="False" Header="AP"     x:Name="APColumn" />
                 <DataGridTextColumn CanUserReorder="False" Header="Agi"    x:Name="AgiColumn" />
@@ -43,7 +43,7 @@
                 <DataGridTextColumn CanUserReorder="False" Header="SCrit"  x:Name="SCritColumn" />
                 <DataGridTextColumn CanUserReorder="False" Header="SHit"   x:Name="SHitColumn" />
                 <DataGridTextColumn CanUserReorder="False" Header="SHaste" x:Name="SHasteColumn" />
-                <DataGridTextColumn CanUserReorder="False" Header="DPS"    x:Name="DPSColumn" />
+                <DataGridTextColumn CanUserReorder="False" Header="DPS"    x:Name="DPSColumn" Binding="{Binding DPS}" />
             </DataGrid.Columns>
             <DataGrid.Resources>
                 <Style TargetType="{x:Type DataGridCell}">
@@ -58,7 +58,7 @@
             </DataGrid.Resources>
 
         </DataGrid>
-        <Button Content="Sim Gear DPS" Grid.Row="1" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="100" Height="20" Margin="0,0,5,5" />
+        <Button Content="Sim Gear DPS" Grid.Row="1" IsEnabled="{Binding SimButtonStatus.IsGearSimButtonEnabled}" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="100" Height="20" Margin="0,0,5,5" Click="Weapon_Click" />
     </Grid>
     
 </UserControl>

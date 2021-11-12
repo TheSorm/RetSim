@@ -42,7 +42,7 @@
                         <Label Grid.Row="1" HorizontalContentAlignment="Center" Padding="1"  Content="{Binding CurrentSimOutput.Min}" ContentStringFormat="{}{0:0.#}"/>
                         <Label Grid.Row="1" Grid.Column="1" HorizontalContentAlignment="Center" Padding="1" Content="{Binding CurrentSimOutput.Max}" ContentStringFormat="{}{0:0.#}"/>
                     </Grid>
-                    <Button Content="DPS" Width="100" Click="DpsSimClick"/>
+                    <Button x:Name="SimButton" IsEnabled="{Binding SimButtonStatus.IsSimButtonEnabled}" Content="DPS" Width="100" Click="DpsSimClick"/>
                 </StackPanel>
             </Grid>
         </Border>

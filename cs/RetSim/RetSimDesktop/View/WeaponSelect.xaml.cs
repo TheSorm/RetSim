@@ -1,4 +1,5 @@
 ﻿using RetSim.Items;
+using RetSimDesktop.Model;
 using RetSimDesktop.ViewModel;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,8 +15,8 @@ namespace RetSimDesktop
     public partial class WeaponSelect : UserControl
     {
         private Dictionary<WeaponType, WeaponSlotSelect> SelectorByType = new();
-        public Dictionary<WeaponType, List<EquippableWeapon>> ShownWeapons { get; set; }
-        public List<EquippableWeapon> AllShownWeapons { get; set; }
+        public Dictionary<WeaponType, List<WeaponDPS>> ShownWeapons { get; set; }
+        public List<WeaponDPS> AllShownWeapons { get; set; }
 
         public WeaponSelect()
         {

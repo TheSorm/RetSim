@@ -1,6 +1,7 @@
 ﻿using RetSim.Items;
 using RetSimDesktop.Model;
 using System.Collections.Generic;
+using System.Linq;
 using static RetSim.Data.Items;
 
 namespace RetSimDesktop.ViewModel
@@ -12,35 +13,15 @@ namespace RetSimDesktop.ViewModel
         private SimOutput _CurrentSimOutput;
         private SelectedPhases _SelectedPhases;
         private SimSettings _SimSettings;
-        private Dictionary<Slot, Dictionary<int, List<EquippableItem>>> _GearByPhases;
-        private Dictionary<WeaponType, Dictionary<int, List<EquippableWeapon>>> _WeaponsByPhases;
+        private SimButtonStatus _SimButtonStatus;
+        private Dictionary<Slot, Dictionary<int, List<ItemDPS>>> _GearByPhases;
+        private Dictionary<int, ItemDPS> _AllGear;
+        private Dictionary<WeaponType, Dictionary<int, List<WeaponDPS>>> _WeaponsByPhases;
+        private Dictionary<int, WeaponDPS> _AllWeapons;
+
 
         public RetSimUIModel()
         {
-            Gem strength = Gems[24027];
-            Gem crit = Gems[24058];
-            Gem stamina = Gems[24054];
-
-            _SelectedGear = new SelectedGear
-            {
-                SelectedHead = EquippableItem.GetItemWithGems(29073, new Gem[] { MetaGems[32409], strength }),
-                SelectedNeck = EquippableItem.GetItemWithGems(29381, null),
-                SelectedShoulders = EquippableItem.GetItemWithGems(29075, new Gem[] { strength, crit }),
-                SelectedBack = EquippableItem.GetItemWithGems(24259, new Gem[] { strength }),
-                SelectedChest = EquippableItem.GetItemWithGems(29071, new Gem[] { strength, strength, strength }),
-                SelectedWrists = EquippableItem.GetItemWithGems(28795, new Gem[] { strength, stamina }),
-                SelectedHands = EquippableItem.GetItemWithGems(30644, null),
-                SelectedWaist = EquippableItem.GetItemWithGems(28779, new Gem[] { strength, stamina }),
-                SelectedLegs = EquippableItem.GetItemWithGems(31544, null),
-                SelectedFeet = EquippableItem.GetItemWithGems(28608, new Gem[] { strength, crit }),
-                SelectedFinger1 = EquippableItem.GetItemWithGems(30834, null),
-                SelectedFinger2 = EquippableItem.GetItemWithGems(28757, null),
-                SelectedTrinket1 = EquippableItem.GetItemWithGems(29383, null),
-                SelectedTrinket2 = EquippableItem.GetItemWithGems(28830, null),
-                SelectedRelic = EquippableItem.GetItemWithGems(27484, null),
-                SelectedWeapon = Weapons[28429],
-            };
-
             _CurrentSimOutput = new SimOutput() { Progress = 0, DPS = 0, Min = 0, Max = 0, MedianCombatLog = new(), MaxCombatLog = new(), MinCombatLog = new() };
 
             _SelectedTalents = new SelectedTalents()
@@ -73,8 +54,16 @@ namespace RetSimDesktop.ViewModel
                 MaxFightDurationSetting = "200000",
             };
 
+            _SimButtonStatus = new()
+            {
+                IsGearSimButtonEnabled = true,
+                IsSimButtonEnabled = true,
+            };
+
             _GearByPhases = new();
             _WeaponsByPhases = new();
+            _AllGear = new();
+            _AllWeapons = new();
             foreach (var item in AllItems.Values)
             {
                 if (item is EquippableWeapon weapon)
@@ -87,7 +76,9 @@ namespace RetSimDesktop.ViewModel
                     {
                         _WeaponsByPhases[weapon.Type][weapon.Phase] = new();
                     }
-                    _WeaponsByPhases[weapon.Type][weapon.Phase].Add(weapon);
+                    WeaponDPS weaponDPS = new() { Weapon = weapon, DPS = 0 };
+                    _WeaponsByPhases[weapon.Type][weapon.Phase].Add(weaponDPS);
+                    _AllWeapons.Add(weaponDPS.Weapon.ID, weaponDPS);
                 }
                 else
                 {
@@ -101,22 +92,61 @@ namespace RetSimDesktop.ViewModel
                         _GearByPhases[item.Slot][item.Phase] = new();
                     }
 
-                    _GearByPhases[item.Slot][item.Phase].Add(item);
+                    ItemDPS itemDPS = new() { Item = item, DPS = 0 };
+                    _GearByPhases[item.Slot][item.Phase].Add(itemDPS);
+                    _AllGear.Add(itemDPS.Item.ID, itemDPS);
                 }
             }
+
+            _SelectedGear = new SelectedGear
+            {
+                SelectedHead = _AllGear[29073],
+                SelectedNeck = _AllGear[29381],
+                SelectedShoulders = _AllGear[29075],
+                SelectedBack = _AllGear[24259],
+                SelectedChest = _AllGear[29071],
+                SelectedWrists = _AllGear[28795],
+                SelectedHands = _AllGear[30644],
+                SelectedWaist = _AllGear[28779],
+                SelectedLegs = _AllGear[31544],
+                SelectedFeet = _AllGear[28608],
+                SelectedFinger1 = _AllGear[30834],
+                SelectedFinger2 = _AllGear[28757],
+                SelectedTrinket1 = _AllGear[29383],
+                SelectedTrinket2 = _AllGear[28830],
+                SelectedRelic = _AllGear[27484],
+                SelectedWeapon = _AllWeapons[28429],
+            };
+
         }
 
-        public Dictionary<WeaponType, Dictionary<int, List<EquippableWeapon>>> WeaponsByPhases
+
+        public Dictionary<WeaponType, Dictionary<int, List<WeaponDPS>>> WeaponsByPhases
         {
             get { return _WeaponsByPhases; }
             set { _WeaponsByPhases = value; }
         }
-        public Dictionary<Slot, Dictionary<int, List<EquippableItem>>> GearByPhases
+        public Dictionary<Slot, Dictionary<int, List<ItemDPS>>> GearByPhases
         {
             get { return _GearByPhases; }
             set { _GearByPhases = value; }
         }
-
+        public Dictionary<int, ItemDPS> AllGear
+        {
+            get { return _AllGear; }
+            set { _AllGear = value; }
+        }
+        public Dictionary<int, WeaponDPS> AllWeapons
+        {
+            get { return _AllWeapons; }
+            set { _AllWeapons = value; }
+        }
+        
+        public SimButtonStatus SimButtonStatus
+        {
+            get { return _SimButtonStatus; }
+            set { _SimButtonStatus = value; }
+        }
         public SelectedGear SelectedGear
         {
             get { return _SelectedGear; }

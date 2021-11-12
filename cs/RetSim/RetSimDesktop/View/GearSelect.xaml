@@ -12,49 +12,49 @@
                 <local:WeaponSelect x:Name="WeaponSelect"/>
             </TabItem>
             <TabItem Header="Head">
-                <local:GearSlotSelect x:Name="HeadSelect" SelectedItem="{Binding SelectedGear.SelectedHead, Mode=TwoWay}"/>
+                <local:GearSlotSelect x:Name="HeadSelect" SlotID="0" SelectedItem="{Binding SelectedGear.SelectedHead, Mode=TwoWay}"/>
             </TabItem>
             <TabItem Header="Neck">
-                <local:GearSlotSelect x:Name="NeckSelect" SelectedItem="{Binding SelectedGear.SelectedNeck, Mode=TwoWay}"/>
+                <local:GearSlotSelect x:Name="NeckSelect" SlotID="1" SelectedItem="{Binding SelectedGear.SelectedNeck, Mode=TwoWay}"/>
             </TabItem>
             <TabItem Header="Shoulders">
-                <local:GearSlotSelect x:Name="ShouldersSelect" SelectedItem="{Binding SelectedGear.SelectedShoulders, Mode=TwoWay}"/>
+                <local:GearSlotSelect x:Name="ShouldersSelect" SlotID="2" SelectedItem="{Binding SelectedGear.SelectedShoulders, Mode=TwoWay}"/>
             </TabItem>
             <TabItem Header="Back">
-                <local:GearSlotSelect x:Name="BackSelect" SelectedItem="{Binding SelectedGear.SelectedBack, Mode=TwoWay}"/>
+                <local:GearSlotSelect x:Name="BackSelect" SlotID="3" SelectedItem="{Binding SelectedGear.SelectedBack, Mode=TwoWay}"/>
             </TabItem>
             <TabItem Header="Chest">
-                <local:GearSlotSelect x:Name="ChestSelect" SelectedItem="{Binding SelectedGear.SelectedChest, Mode=TwoWay}"/>
+                <local:GearSlotSelect x:Name="ChestSelect" SlotID="4" SelectedItem="{Binding SelectedGear.SelectedChest, Mode=TwoWay}"/>
             </TabItem>
             <TabItem Header="Wrist">
-                <local:GearSlotSelect x:Name="WristSelect" SelectedItem="{Binding SelectedGear.SelectedWrists, Mode=TwoWay}"/>
+                <local:GearSlotSelect x:Name="WristSelect" SlotID="5" SelectedItem="{Binding SelectedGear.SelectedWrists, Mode=TwoWay}"/>
             </TabItem>
             <TabItem Header="Hands">
-                <local:GearSlotSelect x:Name="HandsSelect" SelectedItem="{Binding SelectedGear.SelectedHands, Mode=TwoWay}"/>
+                <local:GearSlotSelect x:Name="HandsSelect" SlotID="6" SelectedItem="{Binding SelectedGear.SelectedHands, Mode=TwoWay}"/>
             </TabItem>
             <TabItem Header="Waist">
-                <local:GearSlotSelect x:Name="WaistSelect" SelectedItem="{Binding SelectedGear.SelectedWaist, Mode=TwoWay}"/>
+                <local:GearSlotSelect x:Name="WaistSelect" SlotID="7" SelectedItem="{Binding SelectedGear.SelectedWaist, Mode=TwoWay}"/>
             </TabItem>
             <TabItem Header="Legs">
-                <local:GearSlotSelect x:Name="LegsSelect" SelectedItem="{Binding SelectedGear.SelectedLegs, Mode=TwoWay}"/>
+                <local:GearSlotSelect x:Name="LegsSelect" SlotID="8" SelectedItem="{Binding SelectedGear.SelectedLegs, Mode=TwoWay}"/>
             </TabItem>
             <TabItem Header="Feet">
-                <local:GearSlotSelect x:Name="FeetSelect" SelectedItem="{Binding SelectedGear.SelectedFeet, Mode=TwoWay}"/>
+                <local:GearSlotSelect x:Name="FeetSelect" SlotID="9" SelectedItem="{Binding SelectedGear.SelectedFeet, Mode=TwoWay}"/>
             </TabItem>
             <TabItem Header="Finger 1">
-                <local:GearSlotSelect x:Name="Finger1Select" SelectedItem="{Binding SelectedGear.SelectedFinger1, Mode=TwoWay}"/>
+                <local:GearSlotSelect x:Name="Finger1Select" SlotID="10" SelectedItem="{Binding SelectedGear.SelectedFinger1, Mode=TwoWay}"/>
             </TabItem>
             <TabItem Header="Finger 2">
-                <local:GearSlotSelect x:Name="Finger2Select" SelectedItem="{Binding SelectedGear.SelectedFinger2, Mode=TwoWay}"/>
+                <local:GearSlotSelect x:Name="Finger2Select" SlotID="11" SelectedItem="{Binding SelectedGear.SelectedFinger2, Mode=TwoWay}"/>
             </TabItem>
             <TabItem Header="Trinket 1">
-                <local:GearSlotSelect x:Name="Trinket1Select" SelectedItem="{Binding SelectedGear.SelectedTrinket1, Mode=TwoWay}"/>
+                <local:GearSlotSelect x:Name="Trinket1Select" SlotID="12" SelectedItem="{Binding SelectedGear.SelectedTrinket1, Mode=TwoWay}"/>
             </TabItem>
             <TabItem Header="Trinket 2">
-                <local:GearSlotSelect x:Name="Trinket2Select" SelectedItem="{Binding SelectedGear.SelectedTrinket2, Mode=TwoWay}"/>
+                <local:GearSlotSelect x:Name="Trinket2Select" SlotID="13" SelectedItem="{Binding SelectedGear.SelectedTrinket2, Mode=TwoWay}"/>
             </TabItem>
             <TabItem Header="Relic">
-                <local:GearSlotSelect x:Name="RelicSelect" SelectedItem="{Binding SelectedGear.SelectedRelic, Mode=TwoWay}"/>
+                <local:GearSlotSelect x:Name="RelicSelect" SlotID="14" SelectedItem="{Binding SelectedGear.SelectedRelic, Mode=TwoWay}"/>
             </TabItem>
         </TabControl>
     </Grid>
