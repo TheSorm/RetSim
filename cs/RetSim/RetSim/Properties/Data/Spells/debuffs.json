@@ -4,7 +4,7 @@
     "Name": "Improved Expose Armor",
     "Rank": 6,
     "Target": "Enemy",
-    "Aura": {      
+    "Aura": {
       "IsDebuff": true,
       "Effects": [
         {
@@ -25,7 +25,7 @@
     "Name": "Improved Hunter's Mark",
     "Rank": 4,
     "Target": "Enemy",
-    "Aura": {      
+    "Aura": {
       "IsDebuff": true,
       "Effects": [
         {
@@ -46,7 +46,7 @@
     "Name": "Shadow Weaving",
     "Rank": 5,
     "Target": "Enemy",
-    "Aura": {      
+    "Aura": {
       "IsDebuff": true,
       "Effects": [
         {
@@ -63,7 +63,7 @@
     "Name": "Improved Shadow Bolt",
     "Rank": 5,
     "Target": "Enemy",
-    "Aura": {      
+    "Aura": {
       "IsDebuff": true,
       "Effects": [
         {
@@ -75,12 +75,29 @@
     }
   },
 
+  "27159": {
+    "ID": 27159,
+    "Name": "Judgement of the Crusader",
+    "Rank": 7,
+    "Target": "Enemy",
+    "Aura": {
+      "IsDebuff": true,
+      "Effects": [        
+        {
+          "EffectType": "ModSpellDamageTaken",
+          "Amount": 219,
+          "School": "Holy"
+        }
+      ]
+    }
+  },
+
   "20337": {
     "ID": 20337,
-    "Name": "Improved Seal of the Crusader",
+    "Name": "Improved Judgement of the Crusader",
     "Rank": 3,
     "Target": "Enemy",
-    "Aura": {      
+    "Aura": {
       "IsDebuff": true,
       "Effects": [
         {
@@ -106,7 +123,7 @@
     "Name": "Improved Scorch",
     "Rank": 3,
     "Target": "Enemy",
-    "Aura": {      
+    "Aura": {
       "IsDebuff": true,
       "Effects": [
         {
@@ -123,7 +140,7 @@
     "Name": "Sunder Armor",
     "Rank": 6,
     "Target": "Enemy",
-    "Aura": {      
+    "Aura": {
       "IsDebuff": true,
       "Effects": [
         {
@@ -144,7 +161,7 @@
     "Name": "Expose Armor",
     "Rank": 6,
     "Target": "Enemy",
-    "Aura": {      
+    "Aura": {
       "IsDebuff": true,
       "Effects": [
         {
@@ -165,7 +182,7 @@
     "Name": "Faerie Fire",
     "Rank": 5,
     "Target": "Enemy",
-    "Aura": {      
+    "Aura": {
       "IsDebuff": true,
       "Effects": [
         {
@@ -186,7 +203,7 @@
     "Name": "Curse of Recklessness",
     "Rank": 5,
     "Target": "Enemy",
-    "Aura": {      
+    "Aura": {
       "IsDebuff": true,
       "Effects": [
         {
@@ -207,7 +224,7 @@
     "Name": "Curse of the Elements",
     "Rank": 4,
     "Target": "Enemy",
-    "Aura": {      
+    "Aura": {
       "IsDebuff": true,
       "Effects": [
         {
@@ -224,7 +241,7 @@
     "Name": "Blood Frenzy",
     "Rank": 2,
     "Target": "Enemy",
-    "Aura": {      
+    "Aura": {
       "IsDebuff": true,
       "Effects": [
         {
@@ -241,7 +258,7 @@
     "Name": "Improved Curse of the Elements (Malediction)",
     "Rank": 4,
     "Target": "Enemy",
-    "Aura": {      
+    "Aura": {
       "IsDebuff": true,
       "Effects": [
         {
@@ -258,7 +275,7 @@
     "Name": "Misery",
     "Rank": 5,
     "Target": "Enemy",
-    "Aura": {      
+    "Aura": {
       "IsDebuff": true,
       "Effects": [
         {
@@ -275,7 +292,7 @@
     "Name": "Improved Faerie Fire",
     "Rank": 5,
     "Target": "Enemy",
-    "Aura": {      
+    "Aura": {
       "IsDebuff": true,
       "Effects": [
         {
@@ -300,7 +317,7 @@
     "Name": "Expose Weakness",
     "Rank": 3,
     "Target": "Enemy",
-    "Aura": {      
+    "Aura": {
       "IsDebuff": true,
       "Effects": [
         {

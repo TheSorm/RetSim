@@ -61,7 +61,7 @@ public class Player : Unit
 
         SpellState state = fight.Player.Spellbook[spell.ID];
 
-        if (spell.Cooldown > 0)
+        if (state.EffectiveCooldown > 0)
             fight.Queue.Add(new CooldownEndEvent(state, fight, fight.Timestamp + state.EffectiveCooldown));
 
         if (spell.GCD != null)

@@ -4,7 +4,7 @@
     "Name": "Battle Shout",
     "Rank": 8,
     "Target": "Ally",
-    "Aura": {      
+    "Aura": {
       "Effects": [
         {
           "EffectType": "GainStats",
@@ -19,11 +19,152 @@
     }
   },
 
+  "23563": {
+    "ID": 23563,
+    "Name": "Battle Shout (T2)",
+    "Rank": 8,
+    "Target": "Ally",
+    "Aura": {
+      "Effects": [
+        {
+          "EffectType": "GainStats",
+          "Stats": [
+            {
+              "Stat": "AttackPower",
+              "Value": 336.0
+            }
+          ]
+        }
+      ]
+    }
+  },
+
+  "37536": {
+    "ID": 37536,
+    "Name": "Battle Shout (Solarian)",
+    "Rank": 8,
+    "Target": "Ally",
+    "Aura": {
+      "Effects": [
+        {
+          "EffectType": "GainStats",
+          "Stats": [
+            {
+              "Stat": "AttackPower",
+              "Value": 376.0
+            }
+          ]
+        }
+      ]
+    }
+  },
+
+  "37537": {
+    "ID": 37537,
+    "Name": "Battle Shout (Solarian + T2)",
+    "Rank": 8,
+    "Target": "Ally",
+    "Aura": {
+      "Effects": [
+        {
+          "EffectType": "GainStats",
+          "Stats": [
+            {
+              "Stat": "AttackPower",
+              "Value": 406.0
+            }
+          ]
+        }
+      ]
+    }
+  },
+
+  "12861": {
+    "ID": 12861,
+    "Name": "Improved Battle Shout",
+    "Rank": 8,
+    "Target": "Ally",
+    "Aura": {
+      "Effects": [
+        {
+          "EffectType": "GainStats",
+          "Stats": [
+            {
+              "Stat": "AttackPower",
+              "Value": 382.5
+            }
+          ]
+        }
+      ]
+    }
+  },
+
+  "12862": {
+    "ID": 12862,
+    "Name": "Improved Battle Shout (T2)",
+    "Rank": 8,
+    "Target": "Ally",
+    "Aura": {
+      "Effects": [
+        {
+          "EffectType": "GainStats",
+          "Stats": [
+            {
+              "Stat": "AttackPower",
+              "Value": 420
+            }
+          ]
+        }
+      ]
+    }
+  },
+
+
+  "12863": {
+    "ID": 12863,
+    "Name": "Improved Battle Shout (Solarian)",
+    "Rank": 8,
+    "Target": "Ally",
+    "Aura": {
+      "Effects": [
+        {
+          "EffectType": "GainStats",
+          "Stats": [
+            {
+              "Stat": "AttackPower",
+              "Value": 470
+            }
+          ]
+        }
+      ]
+    }
+  },
+
+  "12864": {
+    "ID": 12864,
+    "Name": "Improved Battle Shout (Solarian + T2)",
+    "Rank": 8,
+    "Target": "Ally",
+    "Aura": {
+      "Effects": [
+        {
+          "EffectType": "GainStats",
+          "Stats": [
+            {
+              "Stat": "AttackPower",
+              "Value": 507.5
+            }
+          ]
+        }
+      ]
+    }
+  },
+
   "6562": {
     "ID": 6562,
     "Name": "Heroic Presence",
     "Target": "Ally",
-    "Aura": {      
+    "Aura": {
       "Effects": [
         {
           "EffectType": "GainStats",
@@ -42,7 +183,7 @@
     "ID": 17007,
     "Name": "Leader of the Pack",
     "Target": "Ally",
-    "Aura": {      
+    "Aura": {
       "Effects": [
         {
           "EffectType": "GainStats",
@@ -62,7 +203,7 @@
     "Name": "Grace of Air Totem",
     "Rank": 3,
     "Target": "Ally",
-    "Aura": {      
+    "Aura": {
       "Effects": [
         {
           "EffectType": "GainStats",
@@ -77,12 +218,32 @@
     }
   },
 
+  "25363": {
+    "ID": 25363,
+    "Name": "Improved Grace of Air Totem",
+    "Rank": 3,
+    "Target": "Ally",
+    "Aura": {
+      "Effects": [
+        {
+          "EffectType": "GainStats",
+          "Stats": [
+            {
+              "Stat": "Agility",
+              "Value": 88.55
+            }
+          ]
+        }
+      ]
+    }
+  },
+
   "25392": {
     "ID": 25392,
     "Name": "Prayer of Fortitude",
     "Rank": 3,
     "Target": "Ally",
-    "Aura": {      
+    "Aura": {
       "Effects": [
         {
           "EffectType": "GainStats",
@@ -97,12 +258,32 @@
     }
   },
 
+  "14767": {
+    "ID": 14767,
+    "Name": "Improved Prayer of Fortitude",
+    "Rank": 3,
+    "Target": "Ally",
+    "Aura": {
+      "Effects": [
+        {
+          "EffectType": "GainStats",
+          "Stats": [
+            {
+              "Stat": "Stamina",
+              "Value": 102.7
+            }
+          ]
+        }
+      ]
+    }
+  },
+
   "25528": {
     "ID": 25528,
     "Name": "Strength of Earth Totem",
     "Rank": 6,
     "Target": "Ally",
-    "Aura": {      
+    "Aura": {
       "Effects": [
         {
           "EffectType": "GainStats",
@@ -117,12 +298,32 @@
     }
   },
 
+  "25364": {
+    "ID": 25364,
+    "Name": "Improved Strength of Earth Totem",
+    "Rank": 6,
+    "Target": "Ally",
+    "Aura": {
+      "Effects": [
+        {
+          "EffectType": "GainStats",
+          "Stats": [
+            {
+              "Stat": "Strength",
+              "Value": 98.9
+            }
+          ]
+        }
+      ]
+    }
+  },
+
   "25570": {
     "ID": 25570,
     "Name": "Mana Spring Totem",
     "Rank": 5,
     "Target": "Ally",
-    "Aura": {      
+    "Aura": {
       "Effects": [
         {
           "EffectType": "GainStats",
@@ -137,11 +338,45 @@
     }
   },
 
+  "16208": {
+    "ID": 16208,
+    "Name": "Improved Mana Spring Totem",
+    "Rank": 5,
+    "Target": "Ally",
+    "Aura": {
+      "Effects": [
+        {
+          "EffectType": "GainStats",
+          "Stats": [
+            {
+              "Stat": "ManaPer5",
+              "Value": 62.5
+            }
+          ]
+        }
+      ]
+    }
+  },
+
   "25580": {
     "ID": 25580,
     "Name": "Windfury Totem",
     "Rank": 5,
-    "Aura": {      
+    "Aura": {
+      "Effects": [
+        {
+          "EffectType": "GainProc",
+          "ProcID": 4
+        }
+      ]
+    }
+  },
+
+  "29193": {
+    "ID": 29193,
+    "Name": "Improved Windfury Totem",
+    "Rank": 5,
+    "Aura": {
       "Effects": [
         {
           "EffectType": "GainProc",
@@ -155,7 +390,7 @@
     "ID": 25584,
     "Name": "Windfury Attack",
     "Rank": 5,
-    "Aura": {      
+    "Aura": {
       "Duration": 10,
       "Effects": [
         {
@@ -177,11 +412,37 @@
     ]
   },
 
+  "29192": {
+    "ID": 29192,
+    "Name": "Windfury Attack",
+    "Rank": 5,
+    "Aura": {
+      "Duration": 10,
+      "Effects": [
+        {
+          "EffectType": "GainStats",
+          "Stats": [
+            {
+              "Stat": "AttackPower",
+              "Value": 578.5
+            }
+          ]
+        }
+      ]
+    },
+    "Effects": [
+      {
+        "EffectType": "ExtraAttacks",
+        "ProcID": 2
+      }
+    ]
+  },
+
   "25898": {
     "ID": 25898,
     "Name": "Greater Blessing of Kings",
     "Target": "Ally",
-    "Aura": {      
+    "Aura": {
       "Effects": [
         {
           "EffectType": "ModStat",
@@ -202,7 +463,7 @@
     "Name": "Gift of the Wild",
     "Rank": 3,
     "Target": "Ally",
-    "Aura": {      
+    "Aura": {
       "Effects": [
         {
           "EffectType": "GainStats",
@@ -233,12 +494,48 @@
     }
   },
 
+  "17055": {
+    "ID": 17055,
+    "Name": "Improved Gift of the Wild",
+    "Rank": 3,
+    "Target": "Ally",
+    "Aura": {
+      "Effects": [
+        {
+          "EffectType": "GainStats",
+          "Stats": [
+            {
+              "Stat": "Armor",
+              "Value": 459.0
+            },
+            {
+              "Stat": "Strength",
+              "Value": 18.9
+            },
+            {
+              "Stat": "Agility",
+              "Value": 18.9
+            },
+            {
+              "Stat": "Intellect",
+              "Value": 18.9
+            },
+            {
+              "Stat": "Stamina",
+              "Value": 18.9
+            }
+          ]
+        }
+      ]
+    }
+  },
+
   "27066": {
     "ID": 27066,
     "Name": "Trueshot Aura",
     "Rank": 4,
     "Target": "Ally",
-    "Aura": {      
+    "Aura": {
       "Effects": [
         {
           "EffectType": "GainStats",
@@ -258,7 +555,7 @@
     "Name": "Arcane Brilliance",
     "Rank": 2,
     "Target": "Ally",
-    "Aura": {      
+    "Aura": {
       "Effects": [
         {
           "EffectType": "GainStats",
@@ -276,9 +573,9 @@
   "27141": {
     "ID": 27141,
     "Name": "Greater Blessing of Might",
-    "Rank": 1,
+    "Rank": 3,
     "Target": "Ally",
-    "Aura": {      
+    "Aura": {
       "Effects": [
         {
           "EffectType": "GainStats",
@@ -293,12 +590,32 @@
     }
   },
 
+  "20048": {
+    "ID": 20048,
+    "Name": "Improved Greater Blessing of Might",
+    "Rank": 3,
+    "Target": "Ally",
+    "Aura": {
+      "Effects": [
+        {
+          "EffectType": "GainStats",
+          "Stats": [
+            {
+              "Stat": "AttackPower",
+              "Value": 264.0
+            }
+          ]
+        }
+      ]
+    }
+  },
+
   "27143": {
     "ID": 27143,
     "Name": "Greater Blessing of Wisdom",
     "Rank": 3,
     "Target": "Ally",
-    "Aura": {      
+    "Aura": {
       "Effects": [
         {
           "EffectType": "GainStats",
@@ -313,11 +630,31 @@
     }
   },
 
+  "20245": {
+    "ID": 20245,
+    "Name": "Improved Greater Blessing of Wisdom",
+    "Rank": 3,
+    "Target": "Ally",
+    "Aura": {
+      "Effects": [
+        {
+          "EffectType": "GainStats",
+          "Stats": [
+            {
+              "Stat": "ManaPer5",
+              "Value": 49.2
+            }
+          ]
+        }
+      ]
+    }
+  },
+
   "28878": {
     "ID": 28878,
     "Name": "Inspiring Presence",
     "Target": "Ally",
-    "Aura": {      
+    "Aura": {
       "Effects": [
         {
           "EffectType": "GainStats",
@@ -337,7 +674,7 @@
     "Name": "Unleashed Rage",
     "Rank": 5,
     "Target": "Ally",
-    "Aura": {      
+    "Aura": {
       "Effects": [
         {
           "EffectType": "ModStat",
@@ -354,7 +691,7 @@
     "ID": 32182,
     "Name": "Heroism",
     "Target": "Ally",
-    "Aura": {      
+    "Aura": {
       "Duration": 40000,
       "Effects": [
         {
@@ -370,7 +707,7 @@
     "Name": "Prayer of Spirit",
     "Rank": 2,
     "Target": "Ally",
-    "Aura": {      
+    "Aura": {
       "Effects": [
         {
           "EffectType": "GainStats",
@@ -385,12 +722,44 @@
     }
   },
 
+  "34455": {
+    "ID": 34455,
+    "Name": "Ferocious Inspiration",
+    "Rank": 1,
+    "Target": "Ally",
+    "Aura": {
+      "Effects": [
+        {
+          "EffectType": "ModDamageSchool",
+          "Percent": 1,
+          "SchoolMask": 127
+        }
+      ]
+    }
+  },
+
+  "34459": {
+    "ID": 34459,
+    "Name": "Ferocious Inspiration",
+    "Rank": 2,
+    "Target": "Ally",
+    "Aura": {
+      "Effects": [
+        {
+          "EffectType": "ModDamageSchool",
+          "Percent": 2,
+          "SchoolMask": 127
+        }
+      ]
+    }
+  },
+
   "34460": {
     "ID": 34460,
     "Name": "Ferocious Inspiration",
     "Rank": 3,
     "Target": "Ally",
-    "Aura": {      
+    "Aura": {
       "Effects": [
         {
           "EffectType": "ModDamageSchool",

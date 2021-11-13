@@ -72,5 +72,12 @@
     "SpellID": 34260,
     "ProcMask": 128,
     "GuaranteedProc": true
+  },
+  "11": {
+    "ID": 11,
+    "Name": "Windfury Attack",
+    "SpellID": 29192,
+    "ProcMask": 2,
+    "Chance": 20
   }
 }
