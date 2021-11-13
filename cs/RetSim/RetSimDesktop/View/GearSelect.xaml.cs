@@ -16,7 +16,7 @@ namespace RetSimDesktop
     public partial class GearSelect : UserControl
     {
         private Dictionary<Slot, List<GearSlotSelect>> SelectorBySlot = new();
-        public Dictionary<Slot, List<ItemDPS>> ShownGear { get; set; }
+        public Dictionary<Slot, List<DisplayGear>> ShownGear { get; set; }
 
         public GearSelect()
         {

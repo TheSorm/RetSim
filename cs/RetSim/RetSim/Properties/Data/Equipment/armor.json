@@ -120,6 +120,9 @@
     "Socket3": {
       "Color": 4
     },
+    "SocketBonus": {
+      "DefenseRating": 4
+    },
     "Phase": 1
   },
   {
@@ -201,6 +204,9 @@
     },
     "Socket2": {
       "Color": 8
+    },
+    "SocketBonus": {
+      "ManaPer5": 1
     },
     "Phase": 1
   },
@@ -558,6 +564,9 @@
     "Socket2": {
       "Color": 8
     },
+    "SocketBonus": {
+      "DefenseRating": 3
+    },
     "Phase": 1
   },
   {
@@ -608,6 +617,9 @@
     },
     "Socket3": {
       "Color": 4
+    },
+    "SocketBonus": {
+      "DefenseRating": 4
     },
     "Phase": 1
   },
@@ -1219,6 +1231,9 @@
     "Socket1": {
       "Color": 8
     },
+    "SocketBonus": {
+      "Resilience": 2
+    },
     "Phase": 1
   },
   {
@@ -1243,6 +1258,9 @@
     "Socket2": {
       "Color": 8
     },
+    "SocketBonus": {
+      "Resilience": 3
+    },
     "Phase": 1
   },
   {
@@ -1262,6 +1280,9 @@
     "Socket1": {
       "Color": 8
     },
+    "SocketBonus": {
+      "Resilience": 2
+    },
     "Phase": 1
   },
   {
@@ -1280,6 +1301,9 @@
     "Socket1": {
       "Color": 8
     },
+    "SocketBonus": {
+      "Resilience": 2
+    },
     "Phase": 1
   },
   {
@@ -1297,6 +1321,9 @@
     },
     "Socket1": {
       "Color": 8
+    },
+    "SocketBonus": {
+      "Resilience": 2
     },
     "Phase": 1
   },
@@ -1351,6 +1378,9 @@
     "Socket1": {
       "Color": 1
     },
+    "SocketBonus": {
+      "AttackPower": 6
+    },
     "Phase": 1
   },
   {
@@ -1369,6 +1399,9 @@
     },
     "Socket1": {
       "Color": 1
+    },
+    "SocketBonus": {
+      "AttackPower": 6
     },
     "Phase": 1
   },
@@ -1508,6 +1541,9 @@
     },
     "Socket3": {
       "Color": 8
+    },
+    "SocketBonus": {
+      "AttackPower": 6
     },
     "Phase": 1
   },
@@ -1722,7 +1758,7 @@
       "ID": 39438,
       "Name": "Aura of the Crusade"
     },
-    "Phase": 2
+    "Phase": 3
   },
   {
     "ID": 31919,
@@ -1772,6 +1808,9 @@
     "Socket1": {
       "Color": 4
     },
+    "SocketBonus": {
+      "AttackPower": 4
+    },
     "Phase": 1
   },
   {
@@ -1794,6 +1833,9 @@
     },
     "Socket2": {
       "Color": 4
+    },
+    "SocketBonus": {
+      "AttackPower": 6
     },
     "Phase": 1
   },
@@ -1898,6 +1940,9 @@
     "Socket3": {
       "Color": 8
     },
+    "SocketBonus": {
+      "Resilience": 4
+    },
     "Phase": 1
   },
   {
@@ -1922,6 +1967,9 @@
     },
     "Socket3": {
       "Color": 8
+    },
+    "SocketBonus": {
+      "DefenseRating": 4
     },
     "Phase": 1
   },
@@ -1957,6 +2005,9 @@
     },
     "Socket2": {
       "Color": 2
+    },
+    "SocketBonus": {
+      "DefenseRating": 3
     },
     "Phase": 1
   },
@@ -2062,6 +2113,9 @@
     },
     "Socket2": {
       "Color": 4
+    },
+    "SocketBonus": {
+      "AttackPower": 6
     },
     "Phase": 1
   },
@@ -2414,7 +2468,7 @@
       "Color": 8
     },
     "SocketBonus": {
-      "ManaPer5": 5
+      "Agility": 2
     },
     "Phase": 1
   },
@@ -2485,6 +2539,9 @@
     "Socket2": {
       "Color": 2
     },
+    "SocketBonus": {
+      "Resilience": 4
+    },
     "Phase": 53
   },
   {
@@ -2523,6 +2580,9 @@
     "Socket2": {
       "Color": 8
     },
+    "SocketBonus": {
+      "Resilience": 3
+    },
     "Phase": 53
   },
   {
@@ -2554,7 +2614,10 @@
     "Socket1": {
       "Color": 4
     },
-    "Phase": 3
+    "SocketBonus": {
+      "AttackPower": 4
+    },
+    "Phase": 2
   },
   {
     "ID": 32648,
@@ -2577,7 +2640,7 @@
     "SocketBonus": {
       "Strength": 3
     },
-    "Phase": 53
+    "Phase": 2
   },
   {
     "ID": 32656,
@@ -2600,7 +2663,7 @@
     "SocketBonus": {
       "Intellect": 3
     },
-    "Phase": 3
+    "Phase": 2
   },
   {
     "ID": 32770,
@@ -2680,6 +2743,9 @@
     "Socket3": {
       "Color": 4
     },
+    "SocketBonus": {
+      "AttackPower": 8
+    },
     "Phase": 1
   },
   {
@@ -2703,6 +2769,9 @@
     },
     "Socket2": {
       "Color": 8
+    },
+    "SocketBonus": {
+      "AttackPower": 6
     },
     "Phase": 1
   },
@@ -2872,7 +2941,7 @@
       "Color": 8
     },
     "SocketBonus": {
-      "ManaPer5": 7
+      "Agility": 4
     },
     "Phase": 1
   },
@@ -3287,7 +3356,7 @@
       "Color": 4
     },
     "SocketBonus": {
-      "ManaPer5": 4
+      "AttackPower": 8
     },
     "Phase": 1
   },
@@ -3311,6 +3380,9 @@
     },
     "Socket3": {
       "Color": 8
+    },
+    "SocketBonus": {
+      "AttackPower": 8
     },
     "Phase": 1
   },
@@ -3832,7 +3904,7 @@
       "Color": 8
     },
     "SocketBonus": {
-      "ManaPer5": 6
+      "AttackPower": 8
     },
     "Phase": 1
   },
@@ -4136,6 +4208,9 @@
     "Socket3": {
       "Color": 8
     },
+    "SocketBonus": {
+      "AttackPower": 8
+    },
     "Phase": 5
   },
   {
@@ -4310,6 +4385,9 @@
     "Socket2": {
       "Color": 8
     },
+    "SocketBonus": {
+      "AttackPower": 6
+    },
     "Phase": 1
   },
   {
@@ -4336,6 +4414,9 @@
     },
     "Socket3": {
       "Color": 8
+    },
+    "SocketBonus": {
+      "AttackPower": 8
     },
     "Phase": 1
   },
@@ -4662,6 +4743,9 @@
     "Socket1": {
       "Color": 8
     },
+    "SocketBonus": {
+      "Resilience": 2
+    },
     "Phase": 1
   },
   {
@@ -4681,6 +4765,9 @@
     "Socket1": {
       "Color": 8
     },
+    "SocketBonus": {
+      "Resilience": 2
+    },
     "Phase": 1
   },
   {
@@ -4698,6 +4785,9 @@
     },
     "Socket1": {
       "Color": 8
+    },
+    "SocketBonus": {
+      "Resilience": 2
     },
     "Phase": 1
   },
@@ -4717,6 +4807,9 @@
     },
     "Socket1": {
       "Color": 8
+    },
+    "SocketBonus": {
+      "Resilience": 2
     },
     "Phase": 1
   },
@@ -4744,6 +4837,9 @@
     },
     "Socket3": {
       "Color": 4
+    },
+    "SocketBonus": {
+      "Stamina": 6
     },
     "Phase": 1
   },
@@ -4867,7 +4963,7 @@
       "Color": 4
     },
     "SocketBonus": {
-      "ManaPer5": 0
+      "Agility": 3
     },
     "Phase": 1
   },
@@ -5078,6 +5174,9 @@
     },
     "Socket2": {
       "Color": 8
+    },
+    "SocketBonus": {
+      "ParryRating": 3
     },
     "Phase": 1
   },
@@ -5300,6 +5399,9 @@
     "Socket3": {
       "Color": 8
     },
+    "SocketBonus": {
+      "BlockValue": 6
+    },
     "Phase": 1
   },
   {
@@ -5325,6 +5427,9 @@
     "Socket2": {
       "Color": 2
     },
+    "SocketBonus": {
+      "Resilience": 3
+    },
     "Phase": 1
   },
   {
@@ -5348,6 +5453,9 @@
     },
     "Socket2": {
       "Color": 8
+    },
+    "SocketBonus": {
+      "DefenseRating": 3
     },
     "Phase": 1
   },
@@ -5386,6 +5494,9 @@
     },
     "Socket3": {
       "Color": 4
+    },
+    "SocketBonus": {
+      "DefenseRating": 4
     },
     "Phase": 1
   },
@@ -5436,6 +5547,9 @@
     },
     "Socket2": {
       "Color": 8
+    },
+    "SocketBonus": {
+      "DefenseRating": 3
     },
     "Phase": 1
   },
@@ -5533,6 +5647,9 @@
     "Socket2": {
       "Color": 8
     },
+    "SocketBonus": {
+      "Resilience": 3
+    },
     "Phase": 1
   },
   {
@@ -5623,6 +5740,9 @@
     },
     "Socket2": {
       "Color": 2
+    },
+    "SocketBonus": {
+      "ParryRating": 3
     },
     "Phase": 1
   },
@@ -5774,6 +5894,9 @@
     "Socket2": {
       "Color": 8
     },
+    "SocketBonus": {
+      "DefenseRating": 3
+    },
     "Phase": 1
   },
   {
@@ -5793,6 +5916,9 @@
     },
     "Socket2": {
       "Color": 8
+    },
+    "SocketBonus": {
+      "DefenseRating": 3
     },
     "Phase": 1
   },
@@ -5868,6 +5994,9 @@
     "Socket3": {
       "Color": 4
     },
+    "SocketBonus": {
+      "Resilience": 4
+    },
     "Phase": 1
   },
   {
@@ -5903,6 +6032,9 @@
     },
     "Socket2": {
       "Color": 4
+    },
+    "SocketBonus": {
+      "ParryRating": 3
     },
     "Phase": 1
   },
@@ -6186,6 +6318,9 @@
     "Socket2": {
       "Color": 8
     },
+    "SocketBonus": {
+      "DefenseRating": 3
+    },
     "Phase": 1
   },
   {
@@ -6245,6 +6380,9 @@
     },
     "Socket2": {
       "Color": 4
+    },
+    "SocketBonus": {
+      "Resilience": 3
     },
     "Phase": 1
   },
@@ -6335,6 +6473,9 @@
     "Socket2": {
       "Color": 8
     },
+    "SocketBonus": {
+      "Resilience": 4
+    },
     "Phase": 1
   },
   {
@@ -6389,6 +6530,9 @@
     "Socket3": {
       "Color": 4
     },
+    "SocketBonus": {
+      "DefenseRating": 4
+    },
     "Phase": 1
   },
   {
@@ -6416,6 +6560,9 @@
     },
     "Socket3": {
       "Color": 4
+    },
+    "SocketBonus": {
+      "DefenseRating": 4
     },
     "Phase": 1
   },
@@ -6484,7 +6631,7 @@
       "Color": 8
     },
     "SocketBonus": {
-      "ManaPer5": 5
+      "AttackPower": 8
     },
     "Phase": 1
   },
@@ -6509,6 +6656,9 @@
     },
     "Socket2": {
       "Color": 4
+    },
+    "SocketBonus": {
+      "AttackPower": 8
     },
     "Phase": 1
   },
@@ -6987,6 +7137,9 @@
     "Socket2": {
       "Color": 4
     },
+    "SocketBonus": {
+      "Resilience": 3
+    },
     "Phase": 1
   },
   {
@@ -7070,6 +7223,9 @@
     },
     "Socket2": {
       "Color": 8
+    },
+    "SocketBonus": {
+      "DefenseRating": 4
     },
     "Phase": 1
   },
@@ -7222,6 +7378,9 @@
     "Socket2": {
       "Color": 8
     },
+    "SocketBonus": {
+      "ParryRating": 3
+    },
     "Phase": 1
   },
   {
@@ -7270,6 +7429,9 @@
     },
     "Socket3": {
       "Color": 8
+    },
+    "SocketBonus": {
+      "DefenseRating": 4
     },
     "Phase": 1
   },
@@ -7345,6 +7507,9 @@
     },
     "Socket2": {
       "Color": 8
+    },
+    "SocketBonus": {
+      "AttackPower": 6
     },
     "Phase": 1
   },
@@ -7544,6 +7709,9 @@
     "Socket2": {
       "Color": 2
     },
+    "SocketBonus": {
+      "Resilience": 4
+    },
     "Phase": 1
   },
   {
@@ -7589,6 +7757,9 @@
     },
     "Socket2": {
       "Color": 8
+    },
+    "SocketBonus": {
+      "Resilience": 3
     },
     "Phase": 1
   },
@@ -7670,6 +7841,9 @@
     "Socket3": {
       "Color": 4
     },
+    "SocketBonus": {
+      "DefenseRating": 4
+    },
     "Phase": 1
   },
   {
@@ -7689,6 +7863,9 @@
     },
     "Socket2": {
       "Color": 8
+    },
+    "SocketBonus": {
+      "DefenseRating": 3
     },
     "Phase": 1
   },
@@ -7749,6 +7926,9 @@
     },
     "Socket2": {
       "Color": 4
+    },
+    "SocketBonus": {
+      "ParryRating": 3
     },
     "Phase": 1
   },
@@ -7878,6 +8058,9 @@
     "Socket2": {
       "Color": 2
     },
+    "SocketBonus": {
+      "Resilience": 4
+    },
     "Phase": 1
   },
   {
@@ -7923,6 +8106,9 @@
     },
     "Socket2": {
       "Color": 8
+    },
+    "SocketBonus": {
+      "Resilience": 3
     },
     "Phase": 1
   },
@@ -8383,7 +8569,7 @@
       "Name": "Weapon Damage"
     },
     "UniqueEquipped": true,
-    "Phase": 1
+    "Phase": 2
   },
   {
     "ID": 32665,
@@ -8397,7 +8583,7 @@
       "Stamina": 15,
       "HasteRating": 26
     },
-    "Phase": 1
+    "Phase": 2
   },
   {
     "ID": 32769,
@@ -8563,6 +8749,9 @@
     },
     "Socket1": {
       "Color": 4
+    },
+    "SocketBonus": {
+      "AttackPower": 4
     },
     "Phase": 5
   },
@@ -8749,6 +8938,9 @@
     "Socket2": {
       "Color": 2
     },
+    "SocketBonus": {
+      "Resilience": 4
+    },
     "Phase": 1
   },
   {
@@ -8794,6 +8986,9 @@
     },
     "Socket2": {
       "Color": 8
+    },
+    "SocketBonus": {
+      "Resilience": 3
     },
     "Phase": 1
   },
@@ -9228,6 +9423,9 @@
     "Socket2": {
       "Color": 2
     },
+    "SocketBonus": {
+      "Resilience": 4
+    },
     "Phase": 1
   },
   {
@@ -9273,6 +9471,9 @@
     },
     "Socket2": {
       "Color": 8
+    },
+    "SocketBonus": {
+      "Resilience": 3
     },
     "Phase": 1
   },
@@ -9828,6 +10029,9 @@
     "Socket1": {
       "Color": 8
     },
+    "SocketBonus": {
+      "Resilience": 2
+    },
     "Phase": 2
   },
   {
@@ -9846,6 +10050,9 @@
     },
     "Socket1": {
       "Color": 8
+    },
+    "SocketBonus": {
+      "Resilience": 2
     },
     "Phase": 2
   },
@@ -9877,7 +10084,7 @@
       "Color": 8
     },
     "SocketBonus": {
-      "ManaPer5": 9
+      "Agility": 4
     },
     "Phase": 1
   },
@@ -10069,7 +10276,7 @@
       "Color": 4
     },
     "SocketBonus": {
-      "ManaPer5": 4
+      "AttackPower": 6
     },
     "Phase": 2
   },
@@ -10087,6 +10294,9 @@
     },
     "Socket1": {
       "Color": 4
+    },
+    "SocketBonus": {
+      "AttackPower": 4
     },
     "Phase": 2
   },
@@ -10567,6 +10777,9 @@
     "Socket3": {
       "Color": 8
     },
+    "SocketBonus": {
+      "AttackPower": 8
+    },
     "Phase": 2
   },
   {
@@ -10692,6 +10905,9 @@
     },
     "Socket1": {
       "Color": 4
+    },
+    "SocketBonus": {
+      "AttackPower": 4
     },
     "Phase": 4
   },
@@ -11054,6 +11270,9 @@
     },
     "Socket2": {
       "Color": 8
+    },
+    "SocketBonus": {
+      "AttackPower": 6
     },
     "Phase": 4
   },
@@ -11449,6 +11668,9 @@
     "Socket3": {
       "Color": 8
     },
+    "SocketBonus": {
+      "AttackPower": 8
+    },
     "Phase": 4
   },
   {
@@ -11471,6 +11693,9 @@
     },
     "Socket3": {
       "Color": 8
+    },
+    "SocketBonus": {
+      "AttackPower": 8
     },
     "Phase": 4
   },
@@ -11645,6 +11870,9 @@
     "Socket2": {
       "Color": 2
     },
+    "SocketBonus": {
+      "Resilience": 4
+    },
     "Phase": 2
   },
   {
@@ -11690,6 +11918,9 @@
     },
     "Socket2": {
       "Color": 8
+    },
+    "SocketBonus": {
+      "Resilience": 3
     },
     "Phase": 2
   },
@@ -12220,6 +12451,9 @@
     },
     "Socket3": {
       "Color": 8
+    },
+    "SocketBonus": {
+      "AttackPower": 8
     },
     "Phase": 3
   },
@@ -12804,6 +13038,9 @@
     "Socket1": {
       "Color": 8
     },
+    "SocketBonus": {
+      "Resilience": 2
+    },
     "Phase": 3
   },
   {
@@ -12944,6 +13181,9 @@
     "Socket1": {
       "Color": 8
     },
+    "SocketBonus": {
+      "AttackPower": 4
+    },
     "Phase": 5
   },
   {
@@ -13078,6 +13318,9 @@
     "Socket2": {
       "Color": 4
     },
+    "SocketBonus": {
+      "DefenseRating": 3
+    },
     "Phase": 3
   },
   {
@@ -13196,6 +13439,9 @@
     "Socket1": {
       "Color": 4
     },
+    "SocketBonus": {
+      "AttackPower": 4
+    },
     "Phase": 5
   },
   {
@@ -13226,7 +13472,7 @@
       "Color": 8
     },
     "SocketBonus": {
-      "ManaPer5": 0
+      "Agility": 4
     },
     "Phase": 1
   },
@@ -13259,7 +13505,7 @@
     "SocketBonus": {
       "CritRating": 4
     },
-    "Phase": 3
+    "Phase": 2
   },
   {
     "ID": 30982,
@@ -13340,6 +13586,10 @@
     "Socket3": {
       "Color": 8
     },
+    "SocketBonus": {
+      "SpellPower": 5,
+      "HealingPower": 5
+    },
     "Phase": 3
   },
   {
@@ -13390,6 +13640,10 @@
     },
     "Socket2": {
       "Color": 8
+    },
+    "SocketBonus": {
+      "SpellPower": 4,
+      "HealingPower": 4
     },
     "Phase": 3
   },
@@ -13474,6 +13728,9 @@
     "Socket2": {
       "Color": 2
     },
+    "SocketBonus": {
+      "Resilience": 4
+    },
     "Phase": 3
   },
   {
@@ -13520,6 +13777,9 @@
     },
     "Socket2": {
       "Color": 8
+    },
+    "SocketBonus": {
+      "Resilience": 3
     },
     "Phase": 3
   },
@@ -13654,6 +13914,9 @@
     },
     "Socket3": {
       "Color": 8
+    },
+    "SocketBonus": {
+      "AttackPower": 8
     },
     "Phase": 3
   },
@@ -14006,6 +14269,9 @@
     "Socket1": {
       "Color": 8
     },
+    "SocketBonus": {
+      "Resilience": 2
+    },
     "Phase": 5
   },
   {
@@ -14030,6 +14296,9 @@
     },
     "Socket3": {
       "Color": 8
+    },
+    "SocketBonus": {
+      "AttackPower": 8
     },
     "Phase": 5
   },
@@ -14206,6 +14475,9 @@
     "Socket3": {
       "Color": 8
     },
+    "SocketBonus": {
+      "AttackPower": 8
+    },
     "Phase": 5
   },
   {
@@ -14329,6 +14601,9 @@
     "Socket1": {
       "Color": 8
     },
+    "SocketBonus": {
+      "AttackPower": 4
+    },
     "Phase": 5
   },
   {
@@ -14369,6 +14644,9 @@
     },
     "Socket3": {
       "Color": 8
+    },
+    "SocketBonus": {
+      "AttackPower": 8
     },
     "Phase": 5
   },
@@ -14420,6 +14698,9 @@
     "Socket3": {
       "Color": 2
     },
+    "SocketBonus": {
+      "AttackPower": 8
+    },
     "Phase": 5
   },
   {
@@ -14441,6 +14722,9 @@
     },
     "Socket2": {
       "Color": 8
+    },
+    "SocketBonus": {
+      "AttackPower": 6
     },
     "Phase": 5
   },
@@ -14650,6 +14934,9 @@
     "Socket3": {
       "Color": 8
     },
+    "SocketBonus": {
+      "AttackPower": 8
+    },
     "Phase": 5
   },
   {
@@ -14815,6 +15102,9 @@
     "Socket2": {
       "Color": 2
     },
+    "SocketBonus": {
+      "Resilience": 4
+    },
     "Phase": 5
   },
   {
@@ -14861,6 +15151,9 @@
     },
     "Socket2": {
       "Color": 8
+    },
+    "SocketBonus": {
+      "Resilience": 3
     },
     "Phase": 5
   },
@@ -14941,6 +15234,9 @@
     },
     "Socket1": {
       "Color": 8
+    },
+    "SocketBonus": {
+      "AttackPower": 4
     },
     "Phase": 5
   },

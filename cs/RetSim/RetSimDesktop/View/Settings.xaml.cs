@@ -1,5 +1,6 @@
 ﻿using RetSim.Items;
 using RetSimDesktop.View;
+using RetSimDesktop.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -37,21 +38,36 @@ namespace RetSimDesktop
             SelectGemForSocketColor(SocketColor.Meta, RetSim.Data.Items.MetaGems.Values);
         }
 
-        private static void SelectGemForSocketColor(SocketColor color, IEnumerable<Gem> gemList)
+        private void SelectGemForSocketColor(SocketColor color, IEnumerable<Gem> gemList)
         {
             GemPickerWindow gemPicker = new(gemList);
+            if(DataContext is RetSimUIModel retSimUIModel)
             if (gemPicker.ShowDialog() == true)
             {
-                foreach (var item in RetSim.Data.Items.AllItems.Values)
+                foreach (var displayItem in retSimUIModel.AllGear.Values)
                 {
-                    for (int i = 0; i < item.Sockets.Length; i++)
+                    for (int i = 0; i < displayItem.Item.Sockets.Length; i++)
                     {
-                        if (item.Sockets[i] != null && item.Sockets[i].Color == color)
+                        if (displayItem.Item.Sockets[i] != null && displayItem.Item.Sockets[i].Color == color)
                         {
-                            item.Sockets[i].SocketedGem = gemPicker.SelectedGem;
+                                displayItem.Item.Sockets[i].SocketedGem = gemPicker.SelectedGem;
+                                displayItem.OnPropertyChanged("");
                         }
                     }
                 }
+                foreach (var displayWeapon in retSimUIModel.AllWeapons.Values)
+                {
+                    for (int i = 0; i < displayWeapon.Weapon.Sockets.Length; i++)
+                    {
+                        if (displayWeapon.Weapon.Sockets[i] != null && displayWeapon.Weapon.Sockets[i].Color == color)
+                        {
+                            displayWeapon.Weapon.Sockets[i].SocketedGem = gemPicker.SelectedGem;
+                            displayWeapon.OnPropertyChanged("");
+                        }
+                    }
+                }
+
+                retSimUIModel.SelectedGear.OnPropertyChanged("");
             }
         }
 

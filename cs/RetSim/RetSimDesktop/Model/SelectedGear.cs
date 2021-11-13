@@ -7,22 +7,22 @@ namespace RetSimDesktop.Model
 {
     public class SelectedGear : INotifyPropertyChanged
     {
-        private ItemDPS selectedHead;
-        private ItemDPS selectedNeck;
-        private ItemDPS selectedShoulders;
-        private ItemDPS selectedBack;
-        private ItemDPS selectedChest;
-        private ItemDPS selectedWrists;
-        private ItemDPS selectedHands;
-        private ItemDPS selectedWaist;
-        private ItemDPS selectedLegs;
-        private ItemDPS selectedFeet;
-        private ItemDPS selectedFinger1;
-        private ItemDPS selectedFinger2;
-        private ItemDPS selectedTrinket1;
-        private ItemDPS selectedTrinket2;
-        private ItemDPS selectedRelic;
-        private WeaponDPS selectedWeapon;
+        private DisplayGear selectedHead;
+        private DisplayGear selectedNeck;
+        private DisplayGear selectedShoulders;
+        private DisplayGear selectedBack;
+        private DisplayGear selectedChest;
+        private DisplayGear selectedWrists;
+        private DisplayGear selectedHands;
+        private DisplayGear selectedWaist;
+        private DisplayGear selectedLegs;
+        private DisplayGear selectedFeet;
+        private DisplayGear selectedFinger1;
+        private DisplayGear selectedFinger2;
+        private DisplayGear selectedTrinket1;
+        private DisplayGear selectedTrinket2;
+        private DisplayGear selectedRelic;
+        private DisplayWeapon selectedWeapon;
 
         private Enchant headEnchant;
         private Enchant shouldersEnchant;
@@ -36,7 +36,7 @@ namespace RetSimDesktop.Model
         private Enchant finger2Enchant;
         private Enchant weaponEnchant;
 
-        public ItemDPS SelectedHead
+        public DisplayGear SelectedHead
         {
             get { return selectedHead; }
             set
@@ -46,7 +46,7 @@ namespace RetSimDesktop.Model
             }
         }
 
-        public ItemDPS SelectedNeck
+        public DisplayGear SelectedNeck
         {
             get { return selectedNeck; }
             set
@@ -56,7 +56,7 @@ namespace RetSimDesktop.Model
             }
         }
 
-        public ItemDPS SelectedShoulders
+        public DisplayGear SelectedShoulders
         {
             get { return selectedShoulders; }
             set
@@ -66,7 +66,7 @@ namespace RetSimDesktop.Model
             }
         }
 
-        public ItemDPS SelectedBack
+        public DisplayGear SelectedBack
         {
             get { return selectedBack; }
             set
@@ -76,7 +76,7 @@ namespace RetSimDesktop.Model
             }
         }
 
-        public ItemDPS SelectedChest
+        public DisplayGear SelectedChest
         {
             get { return selectedChest; }
             set
@@ -86,7 +86,7 @@ namespace RetSimDesktop.Model
             }
         }
 
-        public ItemDPS SelectedWrists
+        public DisplayGear SelectedWrists
         {
             get { return selectedWrists; }
             set
@@ -96,7 +96,7 @@ namespace RetSimDesktop.Model
             }
         }
 
-        public ItemDPS SelectedHands
+        public DisplayGear SelectedHands
         {
             get { return selectedHands; }
             set
@@ -106,7 +106,7 @@ namespace RetSimDesktop.Model
             }
         }
 
-        public ItemDPS SelectedWaist
+        public DisplayGear SelectedWaist
         {
             get { return selectedWaist; }
             set
@@ -116,7 +116,7 @@ namespace RetSimDesktop.Model
             }
         }
 
-        public ItemDPS SelectedLegs
+        public DisplayGear SelectedLegs
         {
             get { return selectedLegs; }
             set
@@ -126,7 +126,7 @@ namespace RetSimDesktop.Model
             }
         }
 
-        public ItemDPS SelectedFeet
+        public DisplayGear SelectedFeet
         {
             get { return selectedFeet; }
             set
@@ -136,7 +136,7 @@ namespace RetSimDesktop.Model
             }
         }
 
-        public ItemDPS SelectedFinger1
+        public DisplayGear SelectedFinger1
         {
             get { return selectedFinger1; }
             set
@@ -146,7 +146,7 @@ namespace RetSimDesktop.Model
             }
         }
 
-        public ItemDPS SelectedFinger2
+        public DisplayGear SelectedFinger2
         {
             get { return selectedFinger2; }
             set
@@ -156,7 +156,7 @@ namespace RetSimDesktop.Model
             }
         }
 
-        public ItemDPS SelectedTrinket1
+        public DisplayGear SelectedTrinket1
         {
             get { return selectedTrinket1; }
             set
@@ -166,7 +166,7 @@ namespace RetSimDesktop.Model
             }
         }
 
-        public ItemDPS SelectedTrinket2
+        public DisplayGear SelectedTrinket2
         {
             get { return selectedTrinket2; }
             set
@@ -175,7 +175,7 @@ namespace RetSimDesktop.Model
                 OnPropertyChanged(nameof(SelectedTrinket2));
             }
         }
-        public ItemDPS SelectedRelic
+        public DisplayGear SelectedRelic
         {
             get { return selectedRelic; }
             set
@@ -185,7 +185,7 @@ namespace RetSimDesktop.Model
             }
         }
 
-        public WeaponDPS SelectedWeapon 
+        public DisplayWeapon SelectedWeapon 
         { 
             get { return selectedWeapon; } 
             set { 
@@ -243,7 +243,7 @@ namespace RetSimDesktop.Model
         }
 
         public event PropertyChangedEventHandler? PropertyChanged;
-        private void OnPropertyChanged(string propertyName)
+        public void OnPropertyChanged(string propertyName)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }

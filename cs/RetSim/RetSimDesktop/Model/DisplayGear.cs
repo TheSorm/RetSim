@@ -2,16 +2,18 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace RetSimDesktop.Model
 {
-    public class WeaponDPS : INotifyPropertyChanged
+    public class DisplayGear : INotifyPropertyChanged
     {
         private float dps;
-        private EquippableWeapon weapon;
+        private bool enabledForGearSim;
+        private EquippableItem item;
 
         public float DPS
         {
@@ -22,18 +24,29 @@ namespace RetSimDesktop.Model
                 OnPropertyChanged(nameof(DPS));
             }
         }
-        public EquippableWeapon Weapon
+        public bool EnabledForGearSim
         {
-            get { return weapon; }
+            get { return enabledForGearSim; }
             set
             {
-                weapon = value;
-                OnPropertyChanged(nameof(Weapon));
+                enabledForGearSim = value;
+                OnPropertyChanged(nameof(EnabledForGearSim));
             }
         }
 
+        public EquippableItem Item
+        {
+            get { return item; }
+            set
+            {
+                item = value;
+                OnPropertyChanged(nameof(Item));
+            }
+        }
+
+       
         public event PropertyChangedEventHandler? PropertyChanged;
-        private void OnPropertyChanged(string propertyName)
+        public void OnPropertyChanged(string propertyName)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }

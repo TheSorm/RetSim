@@ -23,11 +23,15 @@ namespace RetSimDesktop.View
 
         static void BackgroundWorker_DoWork(object? sender, DoWorkEventArgs e)
         {
-            if (e.Argument is (RetSimUIModel, List<WeaponDPS>, int))
+            if (e.Argument is (RetSimUIModel, List<DisplayWeapon>, int))
             {
-                Tuple<RetSimUIModel, IEnumerable<WeaponDPS>, int> input = (Tuple<RetSimUIModel, IEnumerable<WeaponDPS>, int>) e.Argument;
+                Tuple<RetSimUIModel, IEnumerable<DisplayWeapon>, int> input = (Tuple<RetSimUIModel, IEnumerable<DisplayWeapon>, int>) e.Argument;
                 foreach (var item in input.Item2)
                 {
+                    if (!item.EnabledForGearSim)
+                    {
+                        continue;
+                    }
                     Equipment playerEquipment = SelectedGear.GetEquipment(input.Item1);
 
                     playerEquipment.PlayerEquipment[input.Item3] = item.Weapon;

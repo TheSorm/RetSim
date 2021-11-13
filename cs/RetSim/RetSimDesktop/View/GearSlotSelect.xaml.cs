@@ -22,15 +22,15 @@ namespace RetSimDesktop
         private static GearSim gearSimWorker = new();
 
         public int SlotID { get; set; }
-        public IEnumerable<ItemDPS> SlotList
+        public IEnumerable<DisplayGear> SlotList
         {
-            get => (IEnumerable<ItemDPS>)GetValue(SlotListProperty);
+            get => (IEnumerable<DisplayGear>)GetValue(SlotListProperty);
             set => SetValue(SlotListProperty, value);
         }
 
         public static readonly DependencyProperty SlotListProperty = DependencyProperty.Register(
             "SlotList",
-            typeof(IEnumerable<ItemDPS>),
+            typeof(IEnumerable<DisplayGear>),
             typeof(GearSlotSelect));
 
         public List<Enchant> EnchantList
@@ -44,15 +44,15 @@ namespace RetSimDesktop
             typeof(List<Enchant>),
             typeof(GearSlotSelect));
 
-        public ItemDPS SelectedItem
+        public DisplayGear SelectedItem
         {
-            get => (ItemDPS)GetValue(SelectedItemProperty);
+            get => (DisplayGear)GetValue(SelectedItemProperty);
             set => SetValue(SelectedItemProperty, value);
         }
 
         public static readonly DependencyProperty SelectedItemProperty = DependencyProperty.Register(
             "SelectedItem",
-            typeof(ItemDPS),
+            typeof(DisplayGear),
             typeof(GearSlotSelect));
 
         public Enchant SelectedEnchant
@@ -192,7 +192,11 @@ namespace RetSimDesktop
                 if (gemPicker.ShowDialog() == true)
                 {
                     selectedSocket.SocketedGem = gemPicker.SelectedGem;
-                    gearSlot.Items.Refresh();
+                    if(DataContext is RetSimUIModel retSimUIModel)
+                    {
+                        retSimUIModel.SelectedGear.OnPropertyChanged("");
+                        SelectedItem.OnPropertyChanged("");
+                    }
                 }
             }
         }
@@ -202,7 +206,7 @@ namespace RetSimDesktop
             if (!gearSimWorker.IsBusy && DataContext is RetSimUIModel retSimUIModel)
             {
                 retSimUIModel.SimButtonStatus.IsGearSimButtonEnabled = false;
-                gearSimWorker.RunWorkerAsync(new Tuple<RetSimUIModel, IEnumerable<ItemDPS>, int>(retSimUIModel, SlotList, SlotID));
+                gearSimWorker.RunWorkerAsync(new Tuple<RetSimUIModel, IEnumerable<DisplayGear>, int>(retSimUIModel, SlotList, SlotID));
             }
         }
 
@@ -210,7 +214,7 @@ namespace RetSimDesktop
         {
             if (ItemsControl.ContainerFromElement((DataGrid)sender, e.OriginalSource as DependencyObject) is not DataGridRow row) return;
 
-            if (row.Item is ItemDPS itemDps)
+            if (row.Item is DisplayGear itemDps)
             {
                 if (e.ChangedButton == MouseButton.Middle && e.ButtonState == MouseButtonState.Pressed)
                 {
@@ -222,7 +226,53 @@ namespace RetSimDesktop
                 }
             }
         }
+
+        private void ChkSelectAll_Checked(object sender, RoutedEventArgs e)
+        {
+            if(SlotList != null)
+            {
+                foreach (var displayItem in SlotList)
+                {
+                    displayItem.EnabledForGearSim = true;
+                }
+            }
+        }
+
+        private void ChkSelectAll_Unchecked(object sender, RoutedEventArgs e)
+        {
+            if (SlotList != null)
+            {
+                foreach (var displayItem in SlotList)
+                {
+                    displayItem.EnabledForGearSim = false;
+                }
+            }
+        }
     }
+    public class QualityToBrushConverter : IValueConverter
+    {
+        public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
+        {
+            var input = (Quality)value;
+            return input switch
+            {
+                Quality.Poor => new SolidColorBrush(Color.FromRgb(  157, 157, 157 )),
+                Quality.Common => new SolidColorBrush(Color.FromRgb( 0, 0, 0)),
+                Quality.Uncommon => new SolidColorBrush(Color.FromRgb(30, 255, 0)),
+                Quality.Rare => new SolidColorBrush(Color.FromRgb( 0, 112,  221 )),
+                Quality.Epic => new SolidColorBrush(Color.FromRgb( 163, 53,  238)),
+                Quality.Legendary => new SolidColorBrush(Color.FromRgb( 255,  128, 0)),
+                Quality.Artifact => new SolidColorBrush(Color.FromRgb( 230,  204,  128)),
+                _ => Brushes.Red,
+            };
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
+        {
+            throw new NotSupportedException();
+        }
+    }
+
     public class StatConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)

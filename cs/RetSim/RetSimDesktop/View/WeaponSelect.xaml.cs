@@ -15,8 +15,8 @@ namespace RetSimDesktop
     public partial class WeaponSelect : UserControl
     {
         private Dictionary<WeaponType, WeaponSlotSelect> SelectorByType = new();
-        public Dictionary<WeaponType, List<WeaponDPS>> ShownWeapons { get; set; }
-        public List<WeaponDPS> AllShownWeapons { get; set; }
+        public Dictionary<WeaponType, List<DisplayWeapon>> ShownWeapons { get; set; }
+        public List<DisplayWeapon> AllShownWeapons { get; set; }
 
         public WeaponSelect()
         {

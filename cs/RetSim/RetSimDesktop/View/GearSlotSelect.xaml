@@ -22,11 +22,23 @@
                             <Setter Property="Background" Value="#0078d7" />
                             <Setter Property="BorderBrush" Value="#0078d7" />
                         </Trigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsMouseOver" Value="True"/>
+                                <Condition Property="IsReadOnly" Value="False"/>
+                            </MultiTrigger.Conditions>
+                            <Setter Property="IsEditing" Value="True" />
+                        </MultiTrigger>
                     </Style.Triggers>
                     <EventSetter Event="MouseDoubleClick" Handler="DataGridCell_MouseDoubleClick"/>
                 </Style>
             </DataGrid.Resources>
             <DataGrid.Columns>
+                <DataGridCheckBoxColumn CanUserSort="False" IsReadOnly="False" IsThreeState="False" Binding="{Binding EnabledForGearSim, UpdateSourceTrigger=PropertyChanged}" >
+                    <DataGridCheckBoxColumn.Header>
+                        <CheckBox Name="chkSelectAll" IsChecked="True" Checked="ChkSelectAll_Checked" Unchecked="ChkSelectAll_Unchecked"></CheckBox>
+                    </DataGridCheckBoxColumn.Header>
+                </DataGridCheckBoxColumn>
                 <DataGridTextColumn CanUserReorder="False" Header="Name" Binding="{Binding Item.Name}" />
                 <DataGridTextColumn CanUserReorder="False" Header="Level" x:Name="LevelColumn" Binding="{Binding Item.ItemLevel}" />
                 <DataGridTextColumn CanUserReorder="False" CanUserSort="False" Header="Socket 1" Binding="{Binding Item.Socket1, Converter={StaticResource SocketConverter}}" />

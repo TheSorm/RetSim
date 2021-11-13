@@ -10,6 +10,7 @@
 
   <ItemGroup>
     <None Remove="View\GearSlotSelect.xaml.cs~RF16209c.TMP" />
+    <None Remove="View\GearSlotSelect.xaml~RF944546.TMP" />
   </ItemGroup>
 
   <ItemGroup>

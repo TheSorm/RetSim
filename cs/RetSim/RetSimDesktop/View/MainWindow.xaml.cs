@@ -30,28 +30,6 @@ namespace RetSimDesktop
             GearButton.IsEnabled = false;
             SettingsButton.IsEnabled = true;
             StatisticsButton.IsEnabled = true;
-
-            GearSelect.WeaponSelect.AllWeaponSelect.gearSlot.Items.Refresh();
-            GearSelect.WeaponSelect.SwordSelect.gearSlot.Items.Refresh();
-            GearSelect.WeaponSelect.MaceSelect.gearSlot.Items.Refresh();
-            GearSelect.WeaponSelect.AxeSelect.gearSlot.Items.Refresh();
-            GearSelect.WeaponSelect.PolearmSelect.gearSlot.Items.Refresh();
-
-            GearSelect.HeadSelect.gearSlot.Items.Refresh();
-            GearSelect.NeckSelect.gearSlot.Items.Refresh();
-            GearSelect.ShouldersSelect.gearSlot.Items.Refresh();
-            GearSelect.BackSelect.gearSlot.Items.Refresh();
-            GearSelect.ChestSelect.gearSlot.Items.Refresh();
-            GearSelect.WristSelect.gearSlot.Items.Refresh();
-            GearSelect.HandsSelect.gearSlot.Items.Refresh();
-            GearSelect.WaistSelect.gearSlot.Items.Refresh();
-            GearSelect.LegsSelect.gearSlot.Items.Refresh();
-            GearSelect.FeetSelect.gearSlot.Items.Refresh();
-            GearSelect.Finger1Select.gearSlot.Items.Refresh();
-            GearSelect.Finger2Select.gearSlot.Items.Refresh();
-            GearSelect.Trinket1Select.gearSlot.Items.Refresh();
-            GearSelect.Trinket2Select.gearSlot.Items.Refresh();
-            GearSelect.RelicSelect.gearSlot.Items.Refresh();
         }
 
         private void Settings_Click(object sender, RoutedEventArgs e)

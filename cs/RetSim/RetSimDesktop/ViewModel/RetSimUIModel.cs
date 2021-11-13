@@ -15,10 +15,10 @@ namespace RetSimDesktop.ViewModel
         private SelectedPhases _SelectedPhases;
         private SimSettings _SimSettings;
         private SimButtonStatus _SimButtonStatus;
-        private Dictionary<Slot, Dictionary<int, List<ItemDPS>>> _GearByPhases;
-        private Dictionary<int, ItemDPS> _AllGear;
-        private Dictionary<WeaponType, Dictionary<int, List<WeaponDPS>>> _WeaponsByPhases;
-        private Dictionary<int, WeaponDPS> _AllWeapons;
+        private Dictionary<Slot, Dictionary<int, List<DisplayGear>>> _GearByPhases;
+        private Dictionary<int, DisplayGear> _AllGear;
+        private Dictionary<WeaponType, Dictionary<int, List<DisplayWeapon>>> _WeaponsByPhases;
+        private Dictionary<int, DisplayWeapon> _AllWeapons;
         private Dictionary<Slot, List<Enchant>> _EnchantsBySlot;
 
 
@@ -68,6 +68,13 @@ namespace RetSimDesktop.ViewModel
             _AllWeapons = new();
             foreach (var item in AllItems.Values)
             {
+                if(item.Socket1 != null)
+                {
+                    if(item.SocketBonus == null)
+                    {
+                        Trace.WriteLine(item.Name + ": " + item.ID);
+                    }
+                }
                 if (item is EquippableWeapon weapon)
                 {
                     if (!_WeaponsByPhases.ContainsKey(weapon.Type))
@@ -78,9 +85,9 @@ namespace RetSimDesktop.ViewModel
                     {
                         _WeaponsByPhases[weapon.Type][weapon.Phase] = new();
                     }
-                    WeaponDPS weaponDPS = new() { Weapon = weapon, DPS = 0 };
-                    _WeaponsByPhases[weapon.Type][weapon.Phase].Add(weaponDPS);
-                    _AllWeapons.Add(weaponDPS.Weapon.ID, weaponDPS);
+                    DisplayWeapon displayWeapon = new() { Weapon = weapon, EnabledForGearSim=true, DPS = 0 };
+                    _WeaponsByPhases[weapon.Type][weapon.Phase].Add(displayWeapon);
+                    _AllWeapons.Add(displayWeapon.Weapon.ID, displayWeapon);
                 }
                 else
                 {
@@ -94,9 +101,9 @@ namespace RetSimDesktop.ViewModel
                         _GearByPhases[item.Slot][item.Phase] = new();
                     }
 
-                    ItemDPS itemDPS = new() { Item = item, DPS = 0 };
-                    _GearByPhases[item.Slot][item.Phase].Add(itemDPS);
-                    _AllGear.Add(itemDPS.Item.ID, itemDPS);
+                    DisplayGear displayGear = new() { Item = item, EnabledForGearSim = true , DPS = 0 };
+                    _GearByPhases[item.Slot][item.Phase].Add(displayGear);
+                    _AllGear.Add(displayGear.Item.ID, displayGear);
                 }
             }
 
@@ -145,22 +152,22 @@ namespace RetSimDesktop.ViewModel
 
         }
 
-        public Dictionary<WeaponType, Dictionary<int, List<WeaponDPS>>> WeaponsByPhases
+        public Dictionary<WeaponType, Dictionary<int, List<DisplayWeapon>>> WeaponsByPhases
         {
             get { return _WeaponsByPhases; }
             set { _WeaponsByPhases = value; }
         }
-        public Dictionary<Slot, Dictionary<int, List<ItemDPS>>> GearByPhases
+        public Dictionary<Slot, Dictionary<int, List<DisplayGear>>> GearByPhases
         {
             get { return _GearByPhases; }
             set { _GearByPhases = value; }
         }
-        public Dictionary<int, ItemDPS> AllGear
+        public Dictionary<int, DisplayGear> AllGear
         {
             get { return _AllGear; }
             set { _AllGear = value; }
         }
-        public Dictionary<int, WeaponDPS> AllWeapons
+        public Dictionary<int, DisplayWeapon> AllWeapons
         {
             get { return _AllWeapons; }
             set { _AllWeapons = value; }

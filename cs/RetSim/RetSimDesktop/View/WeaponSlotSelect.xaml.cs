@@ -21,15 +21,15 @@ namespace RetSimDesktop
     {
         private static WeaponSim weaponSimWorker = new();
 
-        public List<WeaponDPS> WeaponList
+        public List<DisplayWeapon> WeaponList
         {
-            get => (List<WeaponDPS>)GetValue(WeaponListProperty);
+            get => (List<DisplayWeapon>)GetValue(WeaponListProperty);
             set => SetValue(WeaponListProperty, value);
         }
 
         public static readonly DependencyProperty WeaponListProperty = DependencyProperty.Register(
             "WeaponList",
-            typeof(List<WeaponDPS>),
+            typeof(List<DisplayWeapon>),
             typeof(WeaponSlotSelect));
 
         public List<Enchant> WeaponEnchantList
@@ -43,9 +43,9 @@ namespace RetSimDesktop
             typeof(List<Enchant>),
             typeof(WeaponSlotSelect));
 
-        public WeaponDPS SelectedItem
+        public DisplayWeapon SelectedItem
         {
-            get => (WeaponDPS)GetValue(SelectedItemProperty);
+            get => (DisplayWeapon)GetValue(SelectedItemProperty);
             set
             {
                 SetValue(SelectedItemProperty, value);
@@ -54,7 +54,7 @@ namespace RetSimDesktop
 
         public static readonly DependencyProperty SelectedItemProperty = DependencyProperty.Register(
             "SelectedItem",
-            typeof(WeaponDPS),
+            typeof(DisplayWeapon),
             typeof(WeaponSlotSelect),
             new PropertyMetadata(null, CheckIfSelectionIsPresent));
 
@@ -168,7 +168,7 @@ namespace RetSimDesktop
 
         private void GearSlotSelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            SelectedItem = (WeaponDPS)gearSlot.SelectedItem;
+            SelectedItem = (DisplayWeapon)gearSlot.SelectedItem;
             gearSlot.SetBinding(DataGrid.SelectedItemProperty, new Binding("SelectedItem")
             {
                 Source = this,
@@ -218,7 +218,11 @@ namespace RetSimDesktop
                 if (gemPicker.ShowDialog() == true)
                 {
                     selectedSocket.SocketedGem = gemPicker.SelectedGem;
-                    gearSlot.Items.Refresh();
+                    if (DataContext is RetSimUIModel retSimUIModel)
+                    {
+                        retSimUIModel.SelectedGear.OnPropertyChanged("");
+                        SelectedItem.OnPropertyChanged("");
+                    }
                 }
             }
         }
@@ -228,7 +232,29 @@ namespace RetSimDesktop
             if (!weaponSimWorker.IsBusy && DataContext is RetSimUIModel retSimUIModel)
             {
                 retSimUIModel.SimButtonStatus.IsGearSimButtonEnabled = false;
-                weaponSimWorker.RunWorkerAsync(new Tuple<RetSimUIModel, IEnumerable<WeaponDPS>, int>(retSimUIModel, WeaponList, Constants.EquipmentSlots.Weapon));
+                weaponSimWorker.RunWorkerAsync(new Tuple<RetSimUIModel, IEnumerable<DisplayWeapon>, int>(retSimUIModel, WeaponList, Constants.EquipmentSlots.Weapon));
+            }
+        }
+
+        private void ChkSelectAll_Checked(object sender, RoutedEventArgs e)
+        {
+            if (WeaponList != null)
+            {
+                foreach (var displayItem in WeaponList)
+                {
+                    displayItem.EnabledForGearSim = true;
+                }
+            }
+        }
+
+        private void ChkSelectAll_Unchecked(object sender, RoutedEventArgs e)
+        {
+            if (WeaponList != null)
+            {
+                foreach (var displayItem in WeaponList)
+                {
+                    displayItem.EnabledForGearSim = false;
+                }
             }
         }
 
@@ -236,7 +262,7 @@ namespace RetSimDesktop
         {
             if (ItemsControl.ContainerFromElement((DataGrid)sender, e.OriginalSource as DependencyObject) is not DataGridRow row) return;
 
-            if (row.Item is WeaponDPS weaponDps)
+            if (row.Item is DisplayWeapon weaponDps)
             {
                 if (e.ChangedButton == MouseButton.Middle && e.ButtonState == MouseButtonState.Pressed)
                 {
