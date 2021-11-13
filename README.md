@@ -11,7 +11,7 @@ A WoW TBC Classic Retribution Paladin Simulator
   * Periodic spells
     * Create CastEvents for every tick (but this "sounds wrong")    
 * Spell Effects
-  Add the "Modify Effectiveness of Other Spell" spell effect, f.e. for Judgement of the Crusader.
+  * Add the "Modify Effectiveness of Other Spell" spell effect, f.e. for Judgement of the Crusader.
 * Gear 
   * Implement auras / procs
   * Remove trash
