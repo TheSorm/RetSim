@@ -15,6 +15,11 @@ public class Gem
     public StatSet Stats { get; init; }
     public bool UniqueEquipped { get; set; }
     public int Phase { get; set; }
+
+    public override string ToString()
+    {
+        return $"{Name} ({Color})";
+    }
 }
 
 public class MetaGem : Gem

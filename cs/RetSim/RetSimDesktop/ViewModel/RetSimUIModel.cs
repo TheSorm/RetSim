@@ -106,29 +106,29 @@ namespace RetSimDesktop.ViewModel
                 if (!_EnchantsBySlot.ContainsKey(enchant.Slot))
                 {
                     _EnchantsBySlot[enchant.Slot] = new();
-                    _EnchantsBySlot[enchant.Slot].Add(new() { Name = "", ID = -1, Stats = new(), Slot = enchant.Slot, ItemID = -1});
+                    _EnchantsBySlot[enchant.Slot].Add(new() { Name = "Unenchanted", ID = -1, Stats = new(), Slot = enchant.Slot, ItemID = -1});
                 }
                 _EnchantsBySlot[enchant.Slot].Add(enchant);
             }
 
             _SelectedGear = new SelectedGear
             {
-                SelectedHead = _AllGear[29073],
-                SelectedNeck = _AllGear[29381],
+                SelectedHead = _AllGear[32461],
+                SelectedNeck = _AllGear[30022],
                 SelectedShoulders = _AllGear[29075],
-                SelectedBack = _AllGear[24259],
-                SelectedChest = _AllGear[29071],
+                SelectedBack = _AllGear[30098],
+                SelectedChest = _AllGear[30129],
                 SelectedWrists = _AllGear[28795],
-                SelectedHands = _AllGear[30644],
-                SelectedWaist = _AllGear[28779],
-                SelectedLegs = _AllGear[31544],
-                SelectedFeet = _AllGear[28608],
+                SelectedHands = _AllGear[29947],
+                SelectedWaist = _AllGear[30032],
+                SelectedLegs = _AllGear[30257],
+                SelectedFeet = _AllGear[29951],
                 SelectedFinger1 = _AllGear[30834],
-                SelectedFinger2 = _AllGear[28757],
+                SelectedFinger2 = _AllGear[28730],
                 SelectedTrinket1 = _AllGear[29383],
                 SelectedTrinket2 = _AllGear[28830],
                 SelectedRelic = _AllGear[27484],
-                SelectedWeapon = _AllWeapons[28429],
+                SelectedWeapon = _AllWeapons[29993],
 
                 HeadEnchant = Enchants[35452],
                 ShouldersEnchant = Enchants[35417],

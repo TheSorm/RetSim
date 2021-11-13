@@ -1784,6 +1784,9 @@
     "Socket3": {
       "Color": 8
     },
+    "SocketBonus": {
+      "AttackPower": 8
+    },
     "Phase": 2
   },
   {

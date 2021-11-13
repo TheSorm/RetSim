@@ -36,6 +36,13 @@ public class Socket
         else
             return SocketedGem as MetaGem;
     }
+
+    public override string ToString()
+    {
+        string gem = socketedGem == null ? "None" : $"{socketedGem}";
+
+        return $"Color: {Color} - Gem: {gem} - Active: {IsActive()}";
+    }
 }
 
 [Flags]
