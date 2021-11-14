@@ -1,8 +1,6 @@
 ﻿using RetSim.Items;
 using RetSimDesktop.Model;
 using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
 using static RetSim.Data.Items;
 
 namespace RetSimDesktop.ViewModel
@@ -11,6 +9,7 @@ namespace RetSimDesktop.ViewModel
     {
         private SelectedGear _SelectedGear;
         private SelectedTalents _SelectedTalents;
+        private SelectedConsumables _SelectedConsumables;
         private SimOutput _CurrentSimOutput;
         private SelectedPhases _SelectedPhases;
         private SimSettings _SimSettings;
@@ -20,7 +19,6 @@ namespace RetSimDesktop.ViewModel
         private Dictionary<WeaponType, Dictionary<int, List<DisplayWeapon>>> _WeaponsByPhases;
         private Dictionary<int, DisplayWeapon> _AllWeapons;
         private Dictionary<Slot, List<Enchant>> _EnchantsBySlot;
-
 
         public RetSimUIModel()
         {
@@ -38,6 +36,24 @@ namespace RetSimDesktop.ViewModel
                 SanctityAuraEnabled = true,
                 TwoHandedWeaponSpecializationEnabled = true,
                 VengeanceEnabled = true
+            };
+
+            _SelectedConsumables = new SelectedConsumables()
+            {
+                SelectedBattleElixir = BattleElixir.FlaskofRelentlessAssault,
+                SelectedGuardianElixir = GuardianElixir.None,
+                SelectedTemporaryWeaponEnchantment = TemporaryWeaponEnchantment.None,
+                SelectedFood = Food.Strength20Food,
+                SelectedPrimaryPotion = PrimaryPotion.HastePotion,
+                SelectedSecondaryPotion = SecondaryPotion.DemonicDarkRune,
+                ScrollOfStrengthEnabled = true,
+                SelectedScrollOfStrength = ScrollOfStrength.ScrollofStrengthV,
+                ScrollOfAgilityEnabled = true,
+                SelectedScrollOfAgility = ScrollOfAgility.ScrollOfAgilityV,
+                DrumEnabled = true,
+                SelectedDrum = Drum.DrumsOfBattle,
+                SuperSapperChargeEnabled = true,
+                GnomishBattleChickenEnabled = true,
             };
 
             _SelectedPhases = new SelectedPhases()
@@ -68,13 +84,6 @@ namespace RetSimDesktop.ViewModel
             _AllWeapons = new();
             foreach (var item in AllItems.Values)
             {
-                if(item.Socket1 != null)
-                {
-                    if(item.SocketBonus == null)
-                    {
-                        Trace.WriteLine(item.Name + ": " + item.ID);
-                    }
-                }
                 if (item is EquippableWeapon weapon)
                 {
                     if (!_WeaponsByPhases.ContainsKey(weapon.Type))
@@ -85,7 +94,7 @@ namespace RetSimDesktop.ViewModel
                     {
                         _WeaponsByPhases[weapon.Type][weapon.Phase] = new();
                     }
-                    DisplayWeapon displayWeapon = new() { Weapon = weapon, EnabledForGearSim=true, DPS = 0 };
+                    DisplayWeapon displayWeapon = new() { Weapon = weapon, EnabledForGearSim = true, DPS = 0 };
                     _WeaponsByPhases[weapon.Type][weapon.Phase].Add(displayWeapon);
                     _AllWeapons.Add(displayWeapon.Weapon.ID, displayWeapon);
                 }
@@ -101,19 +110,19 @@ namespace RetSimDesktop.ViewModel
                         _GearByPhases[item.Slot][item.Phase] = new();
                     }
 
-                    DisplayGear displayGear = new() { Item = item, EnabledForGearSim = true , DPS = 0 };
+                    DisplayGear displayGear = new() { Item = item, EnabledForGearSim = true, DPS = 0 };
                     _GearByPhases[item.Slot][item.Phase].Add(displayGear);
                     _AllGear.Add(displayGear.Item.ID, displayGear);
                 }
             }
 
             _EnchantsBySlot = new();
-            foreach(var enchant in Enchants.Values)
+            foreach (var enchant in Enchants.Values)
             {
                 if (!_EnchantsBySlot.ContainsKey(enchant.Slot))
                 {
                     _EnchantsBySlot[enchant.Slot] = new();
-                    _EnchantsBySlot[enchant.Slot].Add(new() { Name = "Unenchanted", ID = -1, Stats = new(), Slot = enchant.Slot, ItemID = -1});
+                    _EnchantsBySlot[enchant.Slot].Add(new() { Name = "Unenchanted", ID = -1, Stats = new(), Slot = enchant.Slot, ItemID = -1 });
                 }
                 _EnchantsBySlot[enchant.Slot].Add(enchant);
             }
@@ -195,7 +204,11 @@ namespace RetSimDesktop.ViewModel
             get { return _CurrentSimOutput; }
             set { _CurrentSimOutput = value; }
         }
-
+        public SelectedConsumables SelectedConsumables
+        {
+            get { return _SelectedConsumables; }
+            set { _SelectedConsumables = value; }
+        }
         public SelectedTalents SelectedTalents
         {
             get { return _SelectedTalents; }

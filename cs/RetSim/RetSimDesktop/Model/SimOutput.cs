@@ -1,6 +1,4 @@
 ﻿using RetSim.Simulation;
-using RetSim.Simulation.CombatLogEntries;
-using System.Collections.Generic;
 using System.ComponentModel;
 
 namespace RetSimDesktop.Model

@@ -1,8 +1,6 @@
 ﻿using RetSimDesktop.View;
 using RetSimDesktop.ViewModel;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
 
 namespace RetSimDesktop
 {
@@ -57,7 +55,7 @@ namespace RetSimDesktop
             if (!simWorker.IsBusy)
             {
                 simWorker.RunWorkerAsync(DataContext);
-                if(DataContext is RetSimUIModel retSimUIModel)
+                if (DataContext is RetSimUIModel retSimUIModel)
                 {
                     retSimUIModel.SimButtonStatus.IsSimButtonEnabled = false;
                 }

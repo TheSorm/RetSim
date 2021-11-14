@@ -185,13 +185,14 @@ namespace RetSimDesktop.Model
             }
         }
 
-        public DisplayWeapon SelectedWeapon 
-        { 
-            get { return selectedWeapon; } 
-            set { 
-                selectedWeapon = value; 
-                OnPropertyChanged(nameof(SelectedWeapon)); 
-            } 
+        public DisplayWeapon SelectedWeapon
+        {
+            get { return selectedWeapon; }
+            set
+            {
+                selectedWeapon = value;
+                OnPropertyChanged(nameof(SelectedWeapon));
+            }
         }
 
         public Enchant HeadEnchant { get { return headEnchant; } set { headEnchant = value; OnPropertyChanged(nameof(HeadEnchant)); } }

@@ -1,5 +1,4 @@
 ﻿using RetSim.Spells;
-using RetSimDesktop.ViewModel;
 using System.Collections.Generic;
 using System.ComponentModel;
 using static RetSim.Data.Collections;
@@ -131,46 +130,46 @@ namespace RetSimDesktop.Model
             }
         }
 
-        public static List<Talent> GetTalentList(RetSimUIModel retSimUIModel)
+        public List<Talent> GetTalentList()
         {
             List<Talent> talents = new();
-            if (retSimUIModel.SelectedTalents.ConvictionEnabled)
+            if (convictionEnabled)
             {
                 talents.Add(Conviction);
             }
-            if (retSimUIModel.SelectedTalents.CrusadeEnabled)
+            if (crusadeEnabled)
             {
                 talents.Add(Crusade);
             }
-            if (retSimUIModel.SelectedTalents.DivineStrengthEnabled)
+            if (divineStrengthEnabled)
             {
                 talents.Add(DivineStrength);
             }
-            if (retSimUIModel.SelectedTalents.FanaticismEnabled)
+            if (fanaticismEnabled)
             {
                 talents.Add(Fanaticism);
             }
-            if (retSimUIModel.SelectedTalents.ImprovedSanctityAuraEnabled)
+            if (improvedSanctityAuraEnabled)
             {
                 talents.Add(ImprovedSanctityAura);
             }
-            if (retSimUIModel.SelectedTalents.PrecisionEnabled)
+            if (precisionEnabled)
             {
                 talents.Add(Precision);
             }
-            if (retSimUIModel.SelectedTalents.SanctifiedSealsEnabled)
+            if (sanctifiedSealsEnabled)
             {
                 talents.Add(SanctifiedSeals);
             }
-            if (retSimUIModel.SelectedTalents.SanctityAuraEnabled)
+            if (sanctityAuraEnabled)
             {
                 talents.Add(SanctityAura);
             }
-            if (retSimUIModel.SelectedTalents.TwoHandedWeaponSpecializationEnabled)
+            if (twoHandedWeaponSpecializationEnabled)
             {
                 talents.Add(TwoHandedWeaponSpecialization);
             }
-            if (retSimUIModel.SelectedTalents.VengeanceEnabled)
+            if (vengeanceEnabled)
             {
                 talents.Add(Vengeance);
             }

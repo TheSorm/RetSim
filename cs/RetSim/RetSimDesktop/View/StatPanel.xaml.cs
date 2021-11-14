@@ -3,13 +3,11 @@ using RetSim.Simulation.Tactics;
 using RetSim.Spells;
 using RetSim.Units.Enemy;
 using RetSim.Units.Player;
-using RetSim.Units.Player.Static;
 using RetSim.Units.UnitStats;
 using RetSimDesktop.Model;
 using RetSimDesktop.ViewModel;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Diagnostics;
 using System.Windows.Controls;
 
 namespace RetSimDesktop
@@ -38,7 +36,7 @@ namespace RetSimDesktop
         {
             if (DataContext is RetSimUIModel retSimUIModel)
             {
-                var player = new Player("Brave Hero", RetSim.Data.Collections.Races["Human"], SelectedGear.GetEquipment(retSimUIModel), SelectedTalents.GetTalentList(retSimUIModel));
+                var player = new Player("Brave Hero", RetSim.Data.Collections.Races["Human"], SelectedGear.GetEquipment(retSimUIModel), retSimUIModel.SelectedTalents.GetTalentList());
                 FightSimulation fight = new(player, new Enemy("Magtheridon", CreatureType.Demon, ArmorCategory.Warrior), new EliteTactic(), new List<Spell>(), new List<Spell>(), new List<Spell>(), 0, 0);
 
                 Strength.Content = player.Stats[StatName.Strength].Value;

@@ -3,7 +3,6 @@ using RetSimDesktop.View;
 using RetSimDesktop.ViewModel;
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Controls;
@@ -41,40 +40,53 @@ namespace RetSimDesktop
         private void SelectGemForSocketColor(SocketColor color, IEnumerable<Gem> gemList)
         {
             GemPickerWindow gemPicker = new(gemList);
-            if(DataContext is RetSimUIModel retSimUIModel)
-            if (gemPicker.ShowDialog() == true)
-            {
-                foreach (var displayItem in retSimUIModel.AllGear.Values)
+            if (DataContext is RetSimUIModel retSimUIModel)
+                if (gemPicker.ShowDialog() == true)
                 {
-                    for (int i = 0; i < displayItem.Item.Sockets.Length; i++)
+                    foreach (var displayItem in retSimUIModel.AllGear.Values)
                     {
-                        if (displayItem.Item.Sockets[i] != null && displayItem.Item.Sockets[i].Color == color)
+                        for (int i = 0; i < displayItem.Item.Sockets.Length; i++)
                         {
+                            if (displayItem.Item.Sockets[i] != null && displayItem.Item.Sockets[i].Color == color)
+                            {
                                 displayItem.Item.Sockets[i].SocketedGem = gemPicker.SelectedGem;
                                 displayItem.OnPropertyChanged("");
+                            }
                         }
                     }
-                }
-                foreach (var displayWeapon in retSimUIModel.AllWeapons.Values)
-                {
-                    for (int i = 0; i < displayWeapon.Weapon.Sockets.Length; i++)
+                    foreach (var displayWeapon in retSimUIModel.AllWeapons.Values)
                     {
-                        if (displayWeapon.Weapon.Sockets[i] != null && displayWeapon.Weapon.Sockets[i].Color == color)
+                        for (int i = 0; i < displayWeapon.Weapon.Sockets.Length; i++)
                         {
-                            displayWeapon.Weapon.Sockets[i].SocketedGem = gemPicker.SelectedGem;
-                            displayWeapon.OnPropertyChanged("");
+                            if (displayWeapon.Weapon.Sockets[i] != null && displayWeapon.Weapon.Sockets[i].Color == color)
+                            {
+                                displayWeapon.Weapon.Sockets[i].SocketedGem = gemPicker.SelectedGem;
+                                displayWeapon.OnPropertyChanged("");
+                            }
                         }
                     }
-                }
 
-                retSimUIModel.SelectedGear.OnPropertyChanged("");
-            }
+                    retSimUIModel.SelectedGear.OnPropertyChanged("");
+                }
         }
 
         private void NumberValidationTextBox(object sender, System.Windows.Input.TextCompositionEventArgs e)
         {
             Regex regex = new("[^0-9]+");
             e.Handled = regex.IsMatch(e.Text);
+        }
+    }
+
+    public class ComparisonConverter : IValueConverter
+    {
+        public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
+        {
+            return value?.Equals(parameter);
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
+        {
+            return value?.Equals(true) == true ? parameter : Binding.DoNothing;
         }
     }
 

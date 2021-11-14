@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel;
 
 namespace RetSimDesktop.Model
 {
-   public  class SimButtonStatus : INotifyPropertyChanged
+    public class SimButtonStatus : INotifyPropertyChanged
     {
         private bool isSimButtonEnabled;
         private bool isGearSimButtonEnabled;

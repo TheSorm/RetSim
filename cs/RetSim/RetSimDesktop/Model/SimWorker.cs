@@ -26,10 +26,10 @@ namespace RetSimDesktop.View
                 Equipment playerEquipment = SelectedGear.GetEquipment(retSimUIModel);
                 var numberOfSimulations = retSimUIModel.SimSettings.SimulationCount;
 
-                var talents = SelectedTalents.GetTalentList(retSimUIModel);
+                var talents = retSimUIModel.SelectedTalents.GetTalentList();
                 var buffs = Spell.GetSpells(25580, 27141, 25898, 2048, 25528, 25359, 25570, 30811, 26991, 25392, 32999, 27127, 28878);
                 var debuffs = Spell.GetSpells(20337, 14169, 33602, 27226, 30070, 32484, 17800, 33200, 15258, 22959, 14325, 34501);
-                var consumables = Spell.GetSpells(28520, 33256, 33082, 33077, 35476, 23060);
+                var consumables = retSimUIModel.SelectedConsumables.GetConsumables();
 
                 float overallDPS = 0;
                 List<CombatLog> fightSimulationCombatLogs = new(numberOfSimulations);

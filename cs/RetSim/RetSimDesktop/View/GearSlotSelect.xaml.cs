@@ -74,7 +74,7 @@ namespace RetSimDesktop
             {
                 if (DataContext is RetSimUIModel retSimUIModel)
                 {
-                    if(EnchantList == null)
+                    if (EnchantList == null)
                     {
                         EnchantComboBox.Visibility = Visibility.Hidden;
                     }
@@ -192,7 +192,7 @@ namespace RetSimDesktop
                 if (gemPicker.ShowDialog() == true)
                 {
                     selectedSocket.SocketedGem = gemPicker.SelectedGem;
-                    if(DataContext is RetSimUIModel retSimUIModel)
+                    if (DataContext is RetSimUIModel retSimUIModel)
                     {
                         retSimUIModel.SelectedGear.OnPropertyChanged("");
                         SelectedItem.OnPropertyChanged("");
@@ -229,7 +229,7 @@ namespace RetSimDesktop
 
         private void ChkSelectAll_Checked(object sender, RoutedEventArgs e)
         {
-            if(SlotList != null)
+            if (SlotList != null)
             {
                 foreach (var displayItem in SlotList)
                 {
@@ -256,13 +256,13 @@ namespace RetSimDesktop
             var input = (Quality)value;
             return input switch
             {
-                Quality.Poor => new SolidColorBrush(Color.FromRgb(  157, 157, 157 )),
-                Quality.Common => new SolidColorBrush(Color.FromRgb( 0, 0, 0)),
+                Quality.Poor => new SolidColorBrush(Color.FromRgb(157, 157, 157)),
+                Quality.Common => new SolidColorBrush(Color.FromRgb(0, 0, 0)),
                 Quality.Uncommon => new SolidColorBrush(Color.FromRgb(30, 255, 0)),
-                Quality.Rare => new SolidColorBrush(Color.FromRgb( 0, 112,  221 )),
-                Quality.Epic => new SolidColorBrush(Color.FromRgb( 163, 53,  238)),
-                Quality.Legendary => new SolidColorBrush(Color.FromRgb( 255,  128, 0)),
-                Quality.Artifact => new SolidColorBrush(Color.FromRgb( 230,  204,  128)),
+                Quality.Rare => new SolidColorBrush(Color.FromRgb(0, 112, 221)),
+                Quality.Epic => new SolidColorBrush(Color.FromRgb(163, 53, 238)),
+                Quality.Legendary => new SolidColorBrush(Color.FromRgb(255, 128, 0)),
+                Quality.Artifact => new SolidColorBrush(Color.FromRgb(230, 204, 128)),
                 _ => Brushes.Red,
             };
         }

@@ -4,9 +4,7 @@ using RetSim.Simulation.CombatLogEntries;
 using RetSimDesktop.ViewModel;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Diagnostics;
 using System.Windows.Controls;
-using System.Windows.Data;
 
 namespace RetSimDesktop
 {
@@ -159,7 +157,8 @@ namespace RetSimDesktop
         }
         private void CombatLogSelection_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (DataContext is RetSimUIModel retSimUIModel) { 
+            if (DataContext is RetSimUIModel retSimUIModel)
+            {
                 if (CombatLogSelection.SelectedValue != null)
                 {
                     var value = CombatLogSelection.SelectedValue.ToString();
