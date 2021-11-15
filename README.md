@@ -19,6 +19,4 @@ A WoW TBC Classic Retribution Paladin Simulator
   * Add ranks
 * Proc
   * Should Prio on ProcEvents should be higher than on normal cast events?
-
-** BUGS **
-* Seal of Command procs if you cast it on the same timestamp as an auto attack, and SoB also procs
+  * Seperate active procs from proc cooldwons (Currently if a proc is removed from the active procs, the cooldown is also removed)

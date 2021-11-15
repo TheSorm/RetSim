@@ -75,7 +75,10 @@ public class Procs : Dictionary<Proc, ProcCooldownEndEvent>
 
     public void EndCooldown(Proc proc)
     {
-        this[proc] = null;
+        if (ContainsKey(proc))
+        {
+            this[proc] = null;
+        }
     }
 
     public bool IsOnCooldown(Proc proc)
