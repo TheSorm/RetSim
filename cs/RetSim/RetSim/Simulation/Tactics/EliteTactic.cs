@@ -86,9 +86,25 @@ public class EliteTactic : Tactic
                 return new CastEvent(CrusaderStrike, fight.Player, fight.Player, fight, start);
             }
 
-            int twistTime = fight.Player.TimeOfNextSwing() - 390;
-            if (fight.Player.Auras[SealOfCommand.Aura].Active && start < twistTime && end > twistTime)
-                return new CastEvent(SealOfBlood, fight.Player, fight.Player, fight, twistTime);
+            int sobTwistWindowStart = fight.Player.TimeOfNextSwing() - 390;
+            int sobTwistWindowEnd = fight.Player.TimeOfNextSwing() - 1;
+
+            /** 
+            //Cast SoC At the last possible moment before the swing
+            if (fight.Player.Auras[SealOfCommand.Aura].Active && end >= sobTwistWindowEnd && start <= sobTwistWindowEnd) 
+                return new CastEvent(SealOfBlood, fight.Player, fight.Player, fight, sobTwistWindowEnd);
+            */
+            
+            // Cast SoB at the start of the tactic window where the next event is the auto attack
+            if (fight.Player.Auras[SealOfCommand.Aura].Active && end >= sobTwistWindowEnd && start <= sobTwistWindowEnd)
+                return new CastEvent(SealOfBlood, fight.Player, fight.Player, fight, Math.Max(start, sobTwistWindowStart));
+            
+            /**
+            // Cast SoB as early as possible (Can lead to missed twists due to haste changes before auto attack)
+            if (fight.Player.Auras[SealOfCommand.Aura].Active && end >= sobTwistWindowEnd && start <= sobTwistWindowEnd || end >= sobTwistWindowStart && start <= sobTwistWindowEnd)
+                return new CastEvent(SealOfBlood, fight.Player, fight.Player, fight, Math.Max(start, sobTwistWindowStart));
+            */                   
+
         }
 
         //if (!player.IsOnGCD())
@@ -104,5 +120,5 @@ public class EliteTactic : Tactic
         //    return new CastEvent(Spells.CrusaderStrike, fight, fight.Timestamp);
 
         return null;
-    }
+}
 }
