@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:RetSimDesktop"
              xmlns:model="clr-namespace:RetSimDesktop.Model"
              mc:Ignorable="d" 
-             d:DesignHeight="750" d:DesignWidth="900">
+             d:DesignHeight="1000" d:DesignWidth="900">
     <UserControl.Resources>
         <local:StringEmptyOrZeroConverter x:Key="StringEmptyConverter" />
         <local:ComparisonConverter x:Key="ComparisonConverter" />

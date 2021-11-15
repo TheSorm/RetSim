@@ -32,6 +32,10 @@
                     </Style.Triggers>
                     <EventSetter Event="MouseDoubleClick" Handler="DataGridCell_MouseDoubleClick"/>
                 </Style>
+                <Style TargetType="{x:Type DataGridRow}">
+                    <EventSetter Event="MouseEnter" Handler="DataGridRow_MouseEnter"/>
+                    <EventSetter Event="MouseLeave" Handler="DataGridRow_MouseLeave"/>
+                </Style>
             </DataGrid.Resources>
             <DataGrid.Columns>
                 <DataGridCheckBoxColumn CanUserSort="False" IsReadOnly="False" IsThreeState="False" Binding="{Binding EnabledForGearSim, UpdateSourceTrigger=PropertyChanged}" >

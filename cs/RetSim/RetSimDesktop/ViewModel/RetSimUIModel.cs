@@ -14,6 +14,7 @@ namespace RetSimDesktop.ViewModel
         private SelectedPhases _SelectedPhases;
         private SimSettings _SimSettings;
         private SimButtonStatus _SimButtonStatus;
+        private TooltipSettings _TooltipSettings;
         private Dictionary<Slot, Dictionary<int, List<DisplayGear>>> _GearByPhases;
         private Dictionary<int, DisplayGear> _AllGear;
         private Dictionary<WeaponType, Dictionary<int, List<DisplayWeapon>>> _WeaponsByPhases;
@@ -159,6 +160,11 @@ namespace RetSimDesktop.ViewModel
                 WeaponEnchant = Enchants[27984]
             };
 
+
+            _TooltipSettings = new()
+            {
+                HoverItemID = 0,
+            };
         }
 
         public Dictionary<WeaponType, Dictionary<int, List<DisplayWeapon>>> WeaponsByPhases
@@ -224,6 +230,12 @@ namespace RetSimDesktop.ViewModel
         {
             get { return _SimSettings; }
             set { _SimSettings = value; }
+        }
+
+        public TooltipSettings TooltipSettings
+        {
+            get { return _TooltipSettings; }
+            set { _TooltipSettings = value; }
         }
     }
 }

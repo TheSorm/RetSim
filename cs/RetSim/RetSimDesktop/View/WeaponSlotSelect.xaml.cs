@@ -274,6 +274,34 @@ namespace RetSimDesktop
                 }
             }
         }
+
+        private void DataGridRow_MouseEnter(object sender, MouseEventArgs e)
+        {
+            if(sender is DataGridRow row)
+            {
+                if (row.Item is DisplayWeapon weaponDps)
+                {
+                    if (DataContext is RetSimUIModel retSimUIModel)
+                    {
+                        retSimUIModel.TooltipSettings.HoverItemID = weaponDps.Weapon.ID;
+                    }
+                }
+            }
+        }
+
+        private void DataGridRow_MouseLeave(object sender, MouseEventArgs e)
+        {
+            if (sender is DataGridRow row)
+            {
+                if (row.Item is DisplayWeapon weaponDps)
+                {
+                    if (DataContext is RetSimUIModel retSimUIModel)
+                    {
+                        retSimUIModel.TooltipSettings.HoverItemID = 0;
+                    }
+                }
+            }
+        }
     }
 
     public class WeaponSpeedConverter : IValueConverter
