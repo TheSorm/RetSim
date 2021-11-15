@@ -20,3 +20,5 @@ A WoW TBC Classic Retribution Paladin Simulator
 * Proc
   * Should Prio on ProcEvents should be higher than on normal cast events?
   * Seperate active procs from proc cooldwons (Currently if a proc is removed from the active procs, the cooldown is also removed)
+* UI
+  * Add Tooltips to gems

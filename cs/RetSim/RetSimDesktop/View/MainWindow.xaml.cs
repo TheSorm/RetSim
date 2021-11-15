@@ -21,6 +21,7 @@ namespace RetSimDesktop
             RetSimUIModel GM = new();
             DataContext = GM;
             InitializeAsync();
+            GM.TooltipSettings.PropertyChanged += TooltipSettings_PropertyChanged;
         }
 
         async void InitializeAsync()
@@ -29,6 +30,15 @@ namespace RetSimDesktop
             browser.DefaultBackgroundColor = System.Drawing.Color.Transparent;
             browser.NavigateToString(@"<head><script>const whTooltips = {colorLinks: true, iconizeLinks: false, renameLinks: false};</script><script src=""https://wow.zamimg.com/widgets/power.js""></script></head><body><script>function test(xPos, yPos) {const event = new MouseEvent('mouseover', {view: window,bubbles: true,cancelable: true, clientX : xPos, clientY : yPos});const cb = document.getElementById('placeholder');const cancelled = !cb.dispatchEvent(event);}</script><a id=""placeholder"" href=""https://tbc.wowhead.com/item=28830""></a></body>");
             await browser.ExecuteScriptAsync("document.querySelector('body').style.overflow='hidden'");
+        }
+
+        private void TooltipSettings_PropertyChanged(object? sender, System.ComponentModel.PropertyChangedEventArgs e)
+        {
+            if (DataContext is RetSimUIModel retSimUIModel)
+            {
+                TooltipPopUp.IsOpen = retSimUIModel.TooltipSettings.HoverItemID != 0;
+                UpdateTooltip(retSimUIModel, true);
+            }
         }
 
         private void popup_MouseMove(object sender, MouseEventArgs e)

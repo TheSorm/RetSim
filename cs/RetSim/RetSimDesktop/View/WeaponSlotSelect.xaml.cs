@@ -214,12 +214,13 @@ namespace RetSimDesktop
                 {
                     gemPicker = new(RetSim.Data.Items.Gems.Values);
                 }
-
-                if (gemPicker.ShowDialog() == true)
+                if (DataContext is RetSimUIModel retSimUIModel)
                 {
-                    selectedSocket.SocketedGem = gemPicker.SelectedGem;
-                    if (DataContext is RetSimUIModel retSimUIModel)
+                    retSimUIModel.TooltipSettings.HoverItemID = 0;
+                    if (gemPicker.ShowDialog() == true)
                     {
+                        selectedSocket.SocketedGem = gemPicker.SelectedGem;
+
                         retSimUIModel.SelectedGear.OnPropertyChanged("");
                         SelectedItem.OnPropertyChanged("");
                     }
@@ -277,7 +278,7 @@ namespace RetSimDesktop
 
         private void DataGridRow_MouseEnter(object sender, MouseEventArgs e)
         {
-            if(sender is DataGridRow row)
+            if (sender is DataGridRow row)
             {
                 if (row.Item is DisplayWeapon weaponDps)
                 {
