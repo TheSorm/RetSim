@@ -22,3 +22,4 @@ A WoW TBC Classic Retribution Paladin Simulator
   * Seperate active procs from proc cooldwons (Currently if a proc is removed from the active procs, the cooldown is also removed)
 * UI
   * Add Tooltips to gems
+  * Select all gems without changing the selected items
