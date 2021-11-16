@@ -79,5 +79,19 @@
     "SpellID": 29192,
     "ProcMask": 2,
     "Chance": 20
+  },
+  "12": {
+    "ID": 12,
+    "Name": "Devastation",
+    "SpellID": 36470,
+    "ProcMask": 94,
+    "Chance": 25
+  },
+  "13": {
+    "ID": 13,
+    "Name": "Singing Crystal Axe",
+    "SpellID": 38281,
+    "ProcMask": 94,
+    "PPM": 1.0
   }
 }

@@ -155,10 +155,73 @@
     }
   },
 
+  "36470": {
+    "ID": 36479,
+    "Name": "Devastation",
+    "Aura": {
+      "Effects": [
+        {
+          "EffectType": "GainProc",
+          "ProcID": 12
+        }
+      ]
+    }
+  },
+
+  "36479": {
+    "ID": 36470,
+    "Name": "Speed Infusion",
+    "Aura": {
+      "Duration": 30000,
+      "Effects": [
+        {
+          "EffectType": "ModAttackSpeed",
+          "Percent": 20
+        }
+      ]
+    }
+  },
+
+  "38281": {
+    "ID": 38282,
+    "Name": "Singing Crystal Axe",
+    "Aura": {
+      "Effects": [
+        {
+          "EffectType": "GainProc",
+          "ProcID": 13
+        }
+      ]
+    }
+  },
+
+  "38282": {
+    "ID": 38281,
+    "Name": "The Blade\u0027s Song",
+    "Aura": {
+      "Duration": 10000,
+      "Effects": [
+        {
+          "EffectType": "GainStats",
+          "Stats": [
+            {
+              "Stat": "HasteRating",
+              "Value": 400.0
+            }
+          ]
+        },
+        {
+          "EffectType": "ModAttackSpeed",
+          "Percent": 0
+        }
+      ]
+    }
+  },
+
   "39957": {
     "ID": 39957,
     "Name": "Increase Critical Damage 3%",
-    "Aura": {      
+    "Aura": {
       "Effects": [
         {
           "EffectType": "ModStat",
@@ -175,7 +238,7 @@
   "429740": {
     "ID": 42975,
     "Name": "Executioner",
-    "Aura": {      
+    "Aura": {
       "Effects": [
         {
           "EffectType": "GainProc",
@@ -188,7 +251,7 @@
   "42976": {
     "ID": 42976,
     "Name": "Executioner",
-    "Aura": {      
+    "Aura": {
       "Duration": 15000,
       "Effects": [
         {
@@ -225,7 +288,7 @@
   "46662": {
     "ID": 46662,
     "Name": "Deathfrost",
-    "Aura": {      
+    "Aura": {
       "Effects": [
         {
           "EffectType": "GainProc",
