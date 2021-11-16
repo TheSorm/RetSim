@@ -13,7 +13,6 @@ namespace RetSim.Simulation;
 
 public class FightSimulation
 {
-
     public override string ToString()
     {
         TimeSpan t = TimeSpan.FromMilliseconds(Duration);

@@ -61,7 +61,7 @@
   "9": {
     "ID": 9,
     "Name": "Lionheart",
-    "SpellID": 34513,
+    "SpellID": 34512,
     "ProcMask": 30,
     "PPM": 1.0,
     "Cooldown": 1000
@@ -104,8 +104,30 @@
   "15": {
     "ID": 15,
     "Name": "Despair",
-    "SpellID": 34581,
+    "SpellID": 34580,
     "ProcMask": 94,
     "PPM": 0.5
+  },
+  "16": {
+    "ID": 16,
+    "Name": "Glaive of the Pit",
+    "SpellID": 34695,
+    "ProcMask": 94,
+    "PPM": 1.5
+  },
+  "17": {
+    "ID": 17,
+    "Name": "World Breaker",
+    "SpellID": 36112,
+    "ProcMask": 94,
+    "PPM": 1
+  },
+  "18": {
+    "ID": 18,
+    "Name": "World Breaker Cancel",
+    "SpellID": 36113,
+    "ProcMask": 94,
+    "GuaranteedProc": true
   }
+
 }

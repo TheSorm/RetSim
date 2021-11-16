@@ -48,8 +48,6 @@ public class SpellEffectConverter : JsonConverter<SpellEffect>
                 break;
 
             case "ExtraAttacks":
-
-
                 effect = new ExtraAttacks((int)(jo["ProcID"] ?? 1), (int)(jo["Amount"] ?? 1));
                 break;
 
@@ -57,8 +55,12 @@ public class SpellEffectConverter : JsonConverter<SpellEffect>
                 effect = new JudgementEffect();
                 break;
 
+            case "CancelAura":
+                effect = new CancelAura();
+                break;
+
             default:
-                throw new NotImplementedException();
+                throw new Exception($"The specified spell effect \"{type}\" does not exist.");
 
         }
 
@@ -129,6 +131,11 @@ public class SpellEffectConverter : JsonConverter<SpellEffect>
             writer.WriteData("OnCast", (int)damageEffect.OnCast);
             writer.WriteData("OnHit", (int)damageEffect.OnHit);
             writer.WriteData("OnCrit", (int)damageEffect.OnCrit);
+        }
+
+        else if (value is CancelAura cancelaura)
+        {
+            writer.WriteData("EffectType", SpellEffectType.CancelAura.ToString());
         }
 
         if (value.MinEffect != 0)

@@ -5,7 +5,8 @@ enum SpellEffectType
     Damage = 1,
     ExtraAttacks = 2,
     JudgementEffect = 3,
-    WeaponAttack = 4
+    WeaponAttack = 4,
+    CancelAura = 5
 }
 
 enum AuraEffectType

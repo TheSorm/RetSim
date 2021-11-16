@@ -98,6 +98,7 @@ public enum School
 
 public enum AttackCategory
 {
+    None = 0,
     Physical = 1,
     Spell = 2
 }

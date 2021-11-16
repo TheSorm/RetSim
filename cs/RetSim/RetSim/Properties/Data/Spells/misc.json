@@ -101,7 +101,7 @@
   },
 
   "34512": {
-    "ID": 34512,
+    "ID": 34513,
     "Name": "Lionheart",
     "Aura": {
       "Effects": [
@@ -114,7 +114,7 @@
   },
 
   "34513": {
-    "ID": 34513,
+    "ID": 34512,
     "Name": "Lionheart",
     "Aura": {
       "Duration": 10000,
@@ -132,6 +132,26 @@
     }
   },
 
+  "34579": {
+    "ID": 34579,
+    "Name": "Impale",
+    "Target": "Enemy",
+    "Effects": [
+      {
+        "EffectType": "Damage",
+        "School": "Physical",
+        "DefenseCategory": "None",
+        "CritCategory": "Physical",
+        "IgnoresDefenses": true,
+        "OnCast": 0,
+        "OnHit": 16,
+        "OnCrit": 1,
+        "MinEffect": 600,
+        "MaxEffect": 600
+      }
+    ]
+  },
+
   "34580": {
     "ID": 34580,
     "Name": "Despair",
@@ -145,24 +165,36 @@
     }
   },
 
-  "34581": {
-    "ID": 34581,
-    "Name": "Impale",
+  "34695": {
+    "ID": 34695,
+    "Name": "Drain Life",
     "Target": "Enemy",
     "Effects": [
       {
         "EffectType": "Damage",
-        "School": "Physical",
-        "DefenseCategory": "Special",
-        "CritCategory": "Physical",
-        "IgnoresDefenses": true,
+        "School": "Shadow",
+        "DefenseCategory": "Magic",
+        "CritCategory": "None",
         "OnCast": 0,
-        "OnHit": 16,
-        "OnCrit": 1,
-        "MinEffect": 600,
-        "MaxEffect": 600
+        "OnHit": 512,
+        "OnCrit": 0,
+        "MinEffect": 285,
+        "MaxEffect": 315
       }
-    ]  
+    ]
+  },
+
+  "34696": {
+    "ID": 34696,
+    "Name": "Glaive of the Pit",
+    "Aura": {
+      "Effects": [
+        {
+          "EffectType": "GainProc",
+          "ProcID": 16
+        }
+      ]
+    }
   },
 
   "34774": {
@@ -221,6 +253,53 @@
     }
   },
 
+  "36111": {
+    "ID": 36111,
+    "Name": "World Breaker",
+    "Aura": {
+      "Effects": [
+        {
+          "EffectType": "GainProc",
+          "ProcID": 17
+        }
+      ]
+    }
+  },
+
+  "36112": {
+    "ID": 36112,
+    "Name": "World Breaker",
+    "Aura": {
+      "Duration": 4000,
+      "Effects": [
+        {
+          "EffectType": "GainStats",
+          "Stats": [
+            {
+              "Stat": "CritRating",
+              "Value": 900.09
+            }
+          ]
+        },
+        {
+          "EffectType": "GainProc",
+          "ProcID": 18
+        }
+      ]
+    }
+  },
+
+  "36113": {
+    "ID": 36113,
+    "Name": "World Breaker Cancel",
+    "Effects": [
+      {
+        "EffectType": "CancelAura",
+        "MinEffect":  36112.0
+      }
+    ]
+  },
+
   "36470": {
     "ID": 36479,
     "Name": "Devastation",
@@ -243,6 +322,28 @@
         {
           "EffectType": "ModAttackSpeed",
           "Percent": 20
+        }
+      ]
+    }
+  },
+
+  "37652": {
+    "ID": 37652,
+    "Name": "Demon Slaying 150",
+    "Target": "Self",
+    "Aura": {
+      "Effects": [
+        {
+          "EffectType": "GainStatsCreature",
+          "Stats": [
+            {
+              "Stat": "AttackPower",
+              "Value": 150.0
+            }
+          ],
+          "Creatures": [
+            "Demon"
+          ]
         }
       ]
     }

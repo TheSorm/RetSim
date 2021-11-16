@@ -52,7 +52,12 @@ public class Attack
         var result = GetAttackResult(Effect.DefenseCategory, miss, dodge, crit);
 
         AttackResult = result.Attack;
-        DamageResult = result.Damage;
+
+        if (Effect.CritCategory == AttackCategory.None && result.Damage == DamageResult.Crit)
+            DamageResult = DamageResult.None;
+
+        else
+            DamageResult = result.Damage;
     }
 
     public void ResolveDamage()
