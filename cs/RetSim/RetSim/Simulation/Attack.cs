@@ -61,7 +61,7 @@ public class Attack
 
         Glancing = DamageResult == DamageResult.Glancing ? (1 - DamageResultMultiplier) * 100 : 0f;
 
-        float mitigation = GetMitigation(Player, Enemy, Effect.School);
+        float mitigation = Effect.IgnoresDefenses ? 1f : GetMitigation(Player, Enemy, Effect.School);
 
         float playerDamage = Effect.CalculateDamage(Player, this, Spell);
         float bonusSpellPower = Effect.Coefficient == 0 ? 0 : Enemy.Modifiers.BonusSpellDamageTaken[Effect.School] * Effect.Coefficient;
@@ -216,11 +216,15 @@ public class Attack
 
     public static float GetArmorDR(Player player, Enemy enemy)
     {
-        int effective = enemy.GetEffectiveArmor((int)player.Stats[StatName.ArmorPenetration].Value);
+        float effective = Math.Max(enemy.Stats[StatName.Armor].Value - player.Stats[StatName.ArmorPenetration].Value, 0f);
 
         float reduction = effective / (effective + Constants.Boss.ArmorMagicNumber);
 
-        return reduction > 1f ? 0f : 1 - reduction;
+        if (reduction > 1f)
+            return 0f;
+
+        else
+            return 1 - reduction;
     }
 }
 

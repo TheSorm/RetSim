@@ -1,4 +1,37 @@
 {
+
+  "16916": {
+    "ID": 16916,
+    "Name": "Khorium Champion",
+    "Aura": {
+      "Effects": [
+        {
+          "EffectType": "GainProc",
+          "ProcID": 14
+        }
+      ]
+    }
+  },
+
+  "16915": {
+    "ID": 28095,
+    "Name": "Strength of the Champion",
+    "Aura": {
+      "Duration": 30000,
+      "Effects": [
+        {
+          "EffectType": "GainStats",
+          "Stats": [
+            {
+              "Stat": "Strength",
+              "Value": 120.0
+            }
+          ]
+        }
+      ]
+    }
+  },
+
   "28092": {
     "ID": 28092,
     "Name": "Mongoose",
@@ -97,6 +130,39 @@
         }
       ]
     }
+  },
+
+  "34580": {
+    "ID": 34580,
+    "Name": "Despair",
+    "Aura": {
+      "Effects": [
+        {
+          "EffectType": "GainProc",
+          "ProcID": 15
+        }
+      ]
+    }
+  },
+
+  "34581": {
+    "ID": 34581,
+    "Name": "Impale",
+    "Target": "Enemy",
+    "Effects": [
+      {
+        "EffectType": "Damage",
+        "School": "Physical",
+        "DefenseCategory": "Special",
+        "CritCategory": "Physical",
+        "IgnoresDefenses": true,
+        "OnCast": 0,
+        "OnHit": 16,
+        "OnCrit": 1,
+        "MinEffect": 600,
+        "MaxEffect": 600
+      }
+    ]  
   },
 
   "34774": {

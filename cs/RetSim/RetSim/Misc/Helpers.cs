@@ -11,7 +11,13 @@ public static class Helpers
     {
         //return (int)((decimal)input % 1 * 100);
 
-        return (int)(input * 100 - input);
+        float upgradedFraction = input * 100;
+
+        int upgradedInteger = (int)input * 100;
+
+        int result = (int)(upgradedFraction - upgradedInteger);
+
+        return result;
     }
 
     /// <summary>

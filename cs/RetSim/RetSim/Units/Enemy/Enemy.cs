@@ -1,6 +1,5 @@
 ﻿using RetSim.Spells;
 using RetSim.Units.Player.State;
-using RetSim.Units.UnitStats;
 
 namespace RetSim.Units.Enemy
 {
@@ -19,13 +18,6 @@ namespace RetSim.Units.Enemy
 
             foreach (Aura aura in Data.Collections.Auras.Values)
                 Auras.Add(aura);
-        }
-
-        public int GetEffectiveArmor(int penetration)
-        {
-            int armor = (int)Stats[StatName.Armor].Value;
-
-            return Math.Max(armor - penetration, 0);
         }
 
         public override string ToString()

@@ -93,5 +93,19 @@
     "SpellID": 38281,
     "ProcMask": 94,
     "PPM": 1.0
+  },
+  "14": {
+    "ID": 14,
+    "Name": "Khorium Champion",
+    "SpellID": 16915,
+    "ProcMask": 94,
+    "PPM": 1.0
+  },
+  "15": {
+    "ID": 15,
+    "Name": "Despair",
+    "SpellID": 34581,
+    "ProcMask": 94,
+    "PPM": 0.5
   }
 }
