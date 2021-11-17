@@ -10,6 +10,8 @@ namespace RetSimDesktop.ViewModel
         private SelectedGear _SelectedGear;
         private SelectedTalents _SelectedTalents;
         private SelectedConsumables _SelectedConsumables;
+        private SelectedBuffs _SelectedBuffs;
+        private SelectedDebuffs _SelectedDebuffs;
         private SimOutput _CurrentSimOutput;
         private SelectedPhases _SelectedPhases;
         private SimSettings _SimSettings;
@@ -55,6 +57,60 @@ namespace RetSimDesktop.ViewModel
                 SelectedDrum = Drum.DrumsOfBattle,
                 SuperSapperChargeEnabled = true,
                 GnomishBattleChickenEnabled = true,
+            };
+
+            _SelectedBuffs = new()
+            {
+                BattleShoutEnabled = true,
+                TrueshotAuraEnabled = true,
+                FerociousInspirationEnabled = true,
+                EarthTotemEnabled = true,
+                AirTotem1Enabled = true,
+                AirTotem2Enabled = true,
+                WaterTotemEnabled = true,
+                UnleashedRageEnabled = true,
+                HeroismEnabled = true,
+                LeaderofthePackEnabled = true,
+                HeroicPresenceEnabled = true,
+                InspiringPresenceEnabled = true,
+                BlessingofMightEnabled = true,
+                BlessingofKingsEnabled = true,
+                BlessingofWisdomEnabled = true,
+                MarkoftheWildEnabled = true,
+                PowerWordFortitudeEnabled = true,
+                DivineSpiritEnabled = true,
+                ArcaneIntellectEnabled = true,
+                SelectedBattleShout = BattleShout.ImpBattleShoutSolarianAndT2,
+                SelectedEarthTotem = EarthTotem.ImpStrengthOfEarthTotem,
+                SelectedAirTotem1 = AirTotem1.ImpWindfuryTotem,
+                SelectedAirTotem2 = AirTotem2.ImpGraceOfAirTotem,
+                SelectedWaterTotem = WaterTotem.ImpManaSpringTotem,
+                SelectedBlessingofMight = BlessingofMight.ImpBlessingofMight,
+                SelectedBlessingofWisdom = BlessingofWisdom.ImpBlessingofWisdom,
+                SelectedMarkoftheWild = MarkoftheWild.ImpMarkoftheWild,
+                SelectedPowerWordFortitude = PowerWordFortitude.ImpPowerWordFortitude,
+                SelectedDivineSpirit = DivineSpirit.ImpDivineSpirit,
+            };
+
+            _SelectedDebuffs = new()
+            {
+                JudgementoftheCrusaderEnabled = true,
+                JudgementofWisdomEnabled = true,
+                ArmorDebuffEnabled = true,
+                BloodFrenzyEnabled = true,
+                HuntersMarkEnabled = true,
+                ExposeWeaknessEnabled = true,
+                FaerieFireEnabled = true,
+                CurseofRecklessnessEnabled = true,
+                CurseoftheElementsEnabled = true,
+                ImprovedShadowBoltEnabled = true,
+                MiseryEnabled = true,
+                ShadowWeavingEnabled = true,
+                ImprovedScorchEnabled = true,
+                SelectedJudgementoftheCrusader = JudgementoftheCrusader.ImpJudgementoftheCrusader,
+                SelectedArmorDebuff = ArmorDebuff.ImpExposeArmor,
+                SelectedFaerieFire = FaerieFire.ImpFaerieFire,
+                SelectedCurseoftheElements = CurseoftheElements.Malediction,  
             };
 
             _SelectedPhases = new SelectedPhases()
@@ -236,6 +292,15 @@ namespace RetSimDesktop.ViewModel
         {
             get { return _TooltipSettings; }
             set { _TooltipSettings = value; }
+        }
+
+        public SelectedBuffs SelectedBuffs { 
+            get => _SelectedBuffs; 
+            set => _SelectedBuffs = value; 
+        }
+        public SelectedDebuffs SelectedDebuffs { 
+            get => _SelectedDebuffs;
+            set => _SelectedDebuffs = value;
         }
     }
 }

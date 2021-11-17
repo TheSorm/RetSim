@@ -27,8 +27,8 @@ namespace RetSimDesktop.View
                 var numberOfSimulations = retSimUIModel.SimSettings.SimulationCount;
 
                 var talents = retSimUIModel.SelectedTalents.GetTalentList();
-                var buffs = Spell.GetSpells(25580, 27141, 25898, 2048, 25528, 25359, 25570, 30811, 26991, 25392, 32999, 27127, 28878);
-                var debuffs = Spell.GetSpells(20337, 14169, 33602, 27226, 30070, 32484, 17800, 33200, 15258, 22959, 14325, 34501);
+                var buffs = retSimUIModel.SelectedBuffs.GetBuffs();
+                var debuffs = retSimUIModel.SelectedDebuffs.GetDebuffs();
                 var consumables = retSimUIModel.SelectedConsumables.GetConsumables();
 
                 float overallDPS = 0;

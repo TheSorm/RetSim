@@ -135,7 +135,6 @@ namespace RetSimDesktop.Model
             }
         }
 
-
         public bool DrumEnabled
         {
             get { return drumEnabled; }

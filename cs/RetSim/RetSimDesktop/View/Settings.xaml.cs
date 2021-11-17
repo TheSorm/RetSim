@@ -75,6 +75,24 @@ namespace RetSimDesktop
             Regex regex = new("[^0-9]+");
             e.Handled = regex.IsMatch(e.Text);
         }
+
+        private void AirTotem1_Checked(object sender, RoutedEventArgs e)
+        {
+            if(DataContext is RetSimUIModel retSimUIModel)
+            {
+                retSimUIModel.SelectedConsumables.SelectedTemporaryWeaponEnchantment = Model.TemporaryWeaponEnchantment.None;
+            }
+        }
+        private void TemporaryWeaponEnchantment_Checked(object sender, RoutedEventArgs e)
+        {
+            if (DataContext is RetSimUIModel retSimUIModel)
+            {
+                if(retSimUIModel.SelectedConsumables.SelectedTemporaryWeaponEnchantment != Model.TemporaryWeaponEnchantment.None)
+                {
+                    retSimUIModel.SelectedBuffs.AirTotem1Enabled = false;
+                }
+            }
+        }
     }
 
     public class ComparisonConverter : IValueConverter
