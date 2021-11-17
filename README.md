@@ -19,7 +19,7 @@ A WoW TBC Classic Retribution Paladin Simulator
 * Make it prettier
 
 ## SIM
-* Implement stat weight support
+* Add boss selection
 * Spell Effects
   * Add the "Modify Effectiveness of Other Spell" spell effect, f.e. for Judgement of the Crusader.
 * Talents
