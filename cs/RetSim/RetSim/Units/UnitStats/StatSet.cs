@@ -22,6 +22,20 @@ public class StatSet : Dictionary<StatName, float>
                 Add(key, value);
         }
     }
+
+    public static StatSet operator +(StatSet first, StatSet second)
+    {
+        foreach (KeyValuePair<StatName, float> stat in second)
+        {
+            if (first.ContainsKey(stat.Key))
+                first[stat.Key] += stat.Value;
+
+            else
+                first[stat.Key] = stat.Value;
+        }
+
+        return first;
+    }
 }
 
 public enum StatName

@@ -8,13 +8,19 @@ public class PlayerStats : Stats
 {
     private Player Player { get; init; }
 
-    public PlayerStats(Player player) : base(player)
+    public PlayerStats(Player player, StatSet weights = null) : base(player)
     {
         Player = player;
         var equipment = Player.Equipment;
         var race = Player.Race;
 
-        StatSet gear = Equipment.CalculateStats(equipment);
+        StatSet gear;
+
+        if (weights == null)
+            gear = Equipment.CalculateStats(equipment);
+
+        else
+            gear = Equipment.CalculateStats(equipment) + weights;
 
         All = new Stat[Enum.GetNames(typeof(StatName)).Length];
 

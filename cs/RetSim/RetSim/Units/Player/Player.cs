@@ -27,7 +27,7 @@ public class Player : Unit
 
     private float previousAttackSpeed;
 
-    public Player(string name, Race race, Equipment equipment, List<Talent> talents) : base(name, CreatureType.Humanoid)
+    public Player(string name, Race race, Equipment equipment, List<Talent> talents, StatSet weights = null) : base(name, CreatureType.Humanoid)
     {
         Talents = talents;
         Equipment = equipment;
@@ -37,7 +37,7 @@ public class Player : Unit
             { ID = 0, Name = "Unarmed", MinDamage = 1, MaxDamage = 1, AttackSpeed = 2000, Type = WeaponType.Unarmed, ItemLevel = 0, Phase = 1, Quality = Quality.Legendary, Slot = Slot.Weapon };
 
         Race = race;
-        Stats = new PlayerStats(this);
+        Stats = new PlayerStats(this, weights);
 
         Spellbook = new Spellbook();
         Modifiers = new Modifiers();
