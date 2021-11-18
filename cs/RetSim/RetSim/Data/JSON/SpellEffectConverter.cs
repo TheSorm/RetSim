@@ -13,8 +13,8 @@ public class SpellEffectConverter : JsonConverter<SpellEffect>
 
         SpellEffect effect;
 
-        float min = (float)(jo["MinEffect"] ?? 0);
-        float max = (float)(jo["MaxEffect"] ?? 0);
+        float value = (float)(jo["Value"] ?? 0);
+        float dieSides = (float)(jo["DieSides"] ?? 0);
 
         string type = (string)jo["EffectType"];
 
@@ -35,14 +35,13 @@ public class SpellEffectConverter : JsonConverter<SpellEffect>
                 ProcMask onCrit = (ProcMask)(int)jo["OnCast"];
 
                 if (type == "Damage")
-                    effect = new Damage(min, max, school, coefficient, defense, crit, ignoresDefense, onCast, onHit, onCrit);
+                    effect = new Damage(value, dieSides, school, coefficient, defense, crit, ignoresDefense, onCast, onHit, onCrit);
 
                 else
                 {
                     bool normalized = (bool)(jo["Normalized"] ?? false);
-                    float percentage = (float)(jo["Percentage"] ?? 1);
 
-                    effect = new WeaponAttack(min, max, school, coefficient, defense, crit, ignoresDefense, onCast, onHit, onCrit, normalized, percentage);
+                    effect = new WeaponAttack(value, dieSides, school, coefficient, defense, crit, ignoresDefense, onCast, onHit, onCrit, normalized);
                 }
 
                 break;
@@ -56,7 +55,7 @@ public class SpellEffectConverter : JsonConverter<SpellEffect>
                 break;
 
             case "CancelAura":
-                effect = new CancelAura();
+                effect = new CancelAura(value);
                 break;
 
             default:
@@ -75,24 +74,18 @@ public class SpellEffectConverter : JsonConverter<SpellEffect>
 
         if (value is ExtraAttacks extraAttacks)
         {
-            writer.WriteData("EffectType", SpellEffectType.ExtraAttacks.ToString());
+            writer.WriteData("EffectType", "ExtraAttacks");
             writer.WriteData("ProcID", extraAttacks.ProcID);
-
-            if (extraAttacks.Amount != 1)
-                writer.WriteData("Amount", extraAttacks.Amount);
         }
 
-        else if (value is JudgementEffect judgement)
+        else if (value is JudgementEffect)
         {
-            writer.WriteData("EffectType", SpellEffectType.JudgementEffect.ToString());
+            writer.WriteData("EffectType", "JudgementEffect");
         }
 
         else if (value is WeaponAttack weaponAttack)
         {
-            writer.WriteData("EffectType", SpellEffectType.WeaponAttack.ToString());
-
-            if (weaponAttack.Percentage != 1)
-                writer.WriteData("Percentage", weaponAttack.Percentage);
+            writer.WriteData("EffectType", "WeaponAttack");
 
             if (weaponAttack.Normalized)
                 writer.WriteData("Normalized", weaponAttack.Normalized);
@@ -113,36 +106,35 @@ public class SpellEffectConverter : JsonConverter<SpellEffect>
             writer.WriteData("OnCrit", (int)weaponAttack.OnCrit);
         }
 
-        else if (value is Damage damageEffect)
+        else if (value is Damage damage)
         {
+            writer.WriteData("EffectType", "Damage");
+            writer.WriteData("School", damage.School.ToString());
 
-            writer.WriteData("EffectType", SpellEffectType.Damage.ToString());
-            writer.WriteData("School", damageEffect.School.ToString());
+            if (damage.Coefficient != 0)
+                writer.WriteData("Coefficient", damage.Coefficient);
 
-            if (damageEffect.Coefficient != 0)
-                writer.WriteData("Coefficient", damageEffect.Coefficient);
+            writer.WriteData("DefenseCategory", damage.DefenseCategory.ToString());
+            writer.WriteData("CritCategory", damage.CritCategory.ToString());
 
-            writer.WriteData("DefenseCategory", damageEffect.DefenseCategory.ToString());
-            writer.WriteData("CritCategory", damageEffect.CritCategory.ToString());
+            if (damage.IgnoresDefenses)
+                writer.WriteData("IgnoresDefenses", damage.IgnoresDefenses);
 
-            if (damageEffect.IgnoresDefenses)
-                writer.WriteData("IgnoresDefenses", damageEffect.IgnoresDefenses);
-
-            writer.WriteData("OnCast", (int)damageEffect.OnCast);
-            writer.WriteData("OnHit", (int)damageEffect.OnHit);
-            writer.WriteData("OnCrit", (int)damageEffect.OnCrit);
+            writer.WriteData("OnCast", (int)damage.OnCast);
+            writer.WriteData("OnHit", (int)damage.OnHit);
+            writer.WriteData("OnCrit", (int)damage.OnCrit);
         }
 
-        else if (value is CancelAura cancelaura)
+        else if (value is CancelAura)
         {
-            writer.WriteData("EffectType", SpellEffectType.CancelAura.ToString());
+            writer.WriteData("EffectType", "CancelAura");
         }
 
-        if (value.MinEffect != 0)
-            writer.WriteData("MinEffect", value.MinEffect);
+        if (value.Value != 0)
+            writer.WriteData("Value", value.Value);
 
-        if (value.MaxEffect != 0)
-            writer.WriteData("MaxEffect", value.MaxEffect);
+        if (value.DieSides != 0)
+            writer.WriteData("DieSides", value.DieSides);
 
         writer.WriteEnd();
     }

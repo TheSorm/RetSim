@@ -11,7 +11,8 @@
         "CritCategory": "Physical",
         "OnCast": 0,
         "OnHit": 2,
-        "OnCrit": 33
+        "OnCrit": 33,
+        "Value": 1
       }
     ]
   },
@@ -28,7 +29,8 @@
         "CritCategory": "Physical",
         "OnCast": 0,
         "OnHit": 4,
-        "OnCrit": 33
+        "OnCrit": 33,
+        "Value": 1
       }
     ]
   },
@@ -42,9 +44,9 @@
       "MaxStacks": 3,
       "Effects": [
         {
-          "EffectType": "ModDamageSchool",
-          "Percent": 1,
-          "SchoolMask": 3
+          "EffectType": "ModDamageDone",
+          "SchoolMask": 3,
+          "Value": 1
         }
       ]
     }
@@ -59,9 +61,9 @@
       "MaxStacks": 3,
       "Effects": [
         {
-          "EffectType": "ModDamageSchool",
-          "Percent": 2,
-          "SchoolMask": 3
+          "EffectType": "ModDamageDone",
+          "SchoolMask": 3,
+          "Value": 2
         }
       ]
     }
@@ -76,9 +78,9 @@
       "MaxStacks": 3,
       "Effects": [
         {
-          "EffectType": "ModDamageSchool",
-          "Percent": 3,
-          "SchoolMask": 3
+          "EffectType": "ModDamageDone",
+          "SchoolMask": 3,
+          "Value": 3
         }
       ]
     }
@@ -93,9 +95,9 @@
       "MaxStacks": 3,
       "Effects": [
         {
-          "EffectType": "ModDamageSchool",
-          "Percent": 4,
-          "SchoolMask": 3
+          "EffectType": "ModDamageDone",
+          "SchoolMask": 3,
+          "Value": 4
         }
       ]
     }
@@ -110,9 +112,9 @@
       "MaxStacks": 3,
       "Effects": [
         {
-          "EffectType": "ModDamageSchool",
-          "Percent": 5,
-          "SchoolMask": 3
+          "EffectType": "ModDamageDone",
+          "SchoolMask": 3,
+          "Value": 5
         }
       ]
     }
@@ -138,14 +140,14 @@
     "Effects": [
       {
         "EffectType": "WeaponAttack",
-        "Percentage": 0.7,
         "School": "Holy",
         "Coefficient": 0.29,
         "DefenseCategory": "Special",
         "CritCategory": "Physical",
         "OnCast": 0,
         "OnHit": 8,
-        "OnCrit": 33
+        "OnCrit": 33,
+        "Value": 0.7
       }
     ]
   },
@@ -156,13 +158,11 @@
     "Aura": {
       "Effects": [
         {
-          "EffectType": "GainStats",
+          "EffectType": "ModStat",
           "Stats": [
-            {
-              "Stat": "Expertise",
-              "Value": 5.0
-            }
-          ]
+            "Expertise"
+          ],
+          "Value": 5.0
         }
       ]
     }
@@ -177,9 +177,9 @@
       "Duration": 20000,
       "Effects": [
         {
-          "EffectType": "ModDamageSchool",
-          "Percent": 30,
-          "SchoolMask": 127
+          "EffectType": "ModDamageDone",
+          "SchoolMask": 127,
+          "Value": 30
         }
       ]
     }
@@ -192,13 +192,13 @@
     "Effects": [
       {
         "EffectType": "WeaponAttack",
-        "Percentage": 0.35,
         "School": "Holy",
         "DefenseCategory": "Special",
         "CritCategory": "Physical",
         "OnCast": 0,
         "OnHit": 0,
-        "OnCrit": 1
+        "OnCrit": 1,
+        "Value": 0.35
       }
     ]
   },
@@ -216,14 +216,14 @@
     "Effects": [
       {
         "EffectType": "WeaponAttack",
-        "Percentage": 1.1,
         "Normalized": true,
         "School": "Physical",
         "DefenseCategory": "Special",
         "CritCategory": "Physical",
         "OnCast": 0,
         "OnHit": 16,
-        "OnCrit": 33
+        "OnCrit": 33,
+        "Value": 1.1
       }
     ]
   }

@@ -14,8 +14,8 @@
         "OnCast": 0,
         "OnHit": 192,
         "OnCrit": 33,
-        "MinEffect": 228.0,
-        "MaxEffect": 252.0
+        "Value": 228,
+        "DieSides": 24
       }
     ]
   },
@@ -33,8 +33,8 @@
         "OnCast": 0,
         "OnHit": 192,
         "OnCrit": 33,
-        "MinEffect": 331.6,
-        "MaxEffect": 361.6
+        "Value": 331.6,
+        "DieSides": 30
       }
     ]
   },
@@ -42,9 +42,6 @@
     "ID": 27166,
     "Name": "Judgement of Wisdom",
     "Rank": 4,
-    "Target": "Enemy",
-    "Aura": {
-      "IsDebuff": true
-    }
+    "Target": "Enemy"
   }
 }

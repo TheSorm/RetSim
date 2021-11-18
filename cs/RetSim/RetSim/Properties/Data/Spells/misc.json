@@ -7,26 +7,64 @@
       "Effects": [
         {
           "EffectType": "GainProc",
-          "ProcID": 18
+          "Value": 18
         }
       ]
     }
   },
 
   "16915": {
-    "ID": 28095,
+    "ID": 16915,
     "Name": "Strength of the Champion",
     "Aura": {
       "Duration": 30000,
       "Effects": [
         {
-          "EffectType": "GainStats",
+          "EffectType": "ModStat",
           "Stats": [
-            {
-              "Stat": "Strength",
-              "Value": 120.0
-            }
-          ]
+            "Strength"
+          ],
+          "Value": 120
+        }
+      ]
+    }
+  },
+
+  "28866": {
+    "ID": 28866,
+    "Name": "Kiss of the Spider",
+    "Cooldown": 120000,
+    "Aura": {
+      "Duration": 15000,
+      "Effects": [
+        {
+          "EffectType": "ModStat",
+          "Stats": [
+            "HasteRating"
+          ],
+          "Value": 200
+        },
+        {
+          "EffectType": "ModAttackSpeed",
+          "Value": 0
+        }
+      ]
+    }
+  },
+
+  "28777": {
+    "ID": 28777,
+    "Name": "Slayer's Crest",
+    "Cooldown": 120000,
+    "Aura": {
+      "Duration": 20000,
+      "Effects": [
+        {
+          "EffectType": "ModStat",
+          "Stats": [
+            "AttackPower"
+          ],
+          "Value": 260
         }
       ]
     }
@@ -39,7 +77,7 @@
       "Effects": [
         {
           "EffectType": "GainProc",
-          "ProcID": 10
+          "Value": 10
         }
       ]
     }
@@ -52,17 +90,106 @@
       "Duration": 15000,
       "Effects": [
         {
-          "EffectType": "GainStats",
+          "EffectType": "ModStat",
           "Stats": [
-            {
-              "Stat": "Agility",
-              "Value": 120.0
-            }
-          ]
+            "Agility"
+          ],
+          "Value": 120
         },
         {
           "EffectType": "ModAttackSpeed",
-          "Percent": 3
+          "Value": 3
+        }
+      ]
+    }
+  },
+
+
+  "29112": {
+    "ID": 29112,
+    "Name": "Champion of the Dawn",
+    "Aura": {
+      "Effects": [
+        {
+          "EffectType": "ModStatCreature",
+          "Creatures": [
+            "Demon",
+            "Undead"
+          ],
+          "Stats": [
+            "AttackPower"
+          ],
+          "Value": 150
+        }
+      ]
+    }
+  },
+
+  "33648": {
+    "ID": 33648,
+    "Name": "Hourglass of the Unraveller",
+    "Aura": {
+      "Effects": [
+        {
+          "EffectType": "GainProc",
+          "Value": 28
+        }
+      ]
+    }
+  },
+
+  "33649": {
+    "ID": 33649,
+    "Name": "Rage of  the Unraveller",
+    "Aura": {
+      "Duration": 10000,
+      "Effects": [
+        {
+          "EffectType": "ModStat",
+          "Stats": [
+            "AttackPower"
+          ],
+          "Value": 300
+        }
+      ]
+    }
+  },
+
+  "33667": {
+    "ID": 33667,
+    "Name": "Ferocity",
+    "Cooldown": 90000,
+    "Aura": {
+      "Duration": 15000,
+      "Effects": [
+        {
+          "EffectType": "ModStat",
+          "Stats": [
+            "AttackPower"
+          ],
+          "Value": 200
+        }
+      ]
+    }
+  },
+
+  "33807": {
+    "ID": 33807,
+    "Name": "Haste",
+    "Cooldown": 120000,
+    "Aura": {
+      "Duration": 10000,
+      "Effects": [
+        {
+          "EffectType": "ModStat",
+          "Stats": [
+            "HasteRating"
+          ],
+          "Value": 260
+        },
+        {
+          "EffectType": "ModAttackSpeed",
+          "Value": 0
         }
       ]
     }
@@ -75,7 +202,7 @@
       "Effects": [
         {
           "EffectType": "GainProc",
-          "ProcID": 15
+          "Value": 15
         }
       ]
     }
@@ -88,45 +215,41 @@
       "Duration": 5000,
       "Effects": [
         {
-          "EffectType": "GainStats",
+          "EffectType": "ModStat",
           "Stats": [
-            {
-              "Stat": "CritRating",
-              "Value": 53.0
-            }
-          ]
-        }
-      ]
-    }
-  },
-
-  "34512": {
-    "ID": 34513,
-    "Name": "Lionheart",
-    "Aura": {
-      "Effects": [
-        {
-          "EffectType": "GainProc",
-          "ProcID": 14
+            "CritRating"
+          ],
+          "Value": 53
         }
       ]
     }
   },
 
   "34513": {
+    "ID": 34513,
+    "Name": "Lionheart",
+    "Aura": {
+      "Effects": [
+        {
+          "EffectType": "GainProc",
+          "Value": 14
+        }
+      ]
+    }
+  },
+
+  "34512": {
     "ID": 34512,
     "Name": "Lionheart",
     "Aura": {
       "Duration": 10000,
       "Effects": [
         {
-          "EffectType": "GainStats",
+          "EffectType": "ModStat",
           "Stats": [
-            {
-              "Stat": "Strength",
-              "Value": 100.0
-            }
-          ]
+            "Strength"
+          ],
+          "Value": 100
         }
       ]
     }
@@ -146,8 +269,7 @@
         "OnCast": 0,
         "OnHit": 16,
         "OnCrit": 1,
-        "MinEffect": 600,
-        "MaxEffect": 600
+        "Value": 600
       }
     ]
   },
@@ -159,7 +281,7 @@
       "Effects": [
         {
           "EffectType": "GainProc",
-          "ProcID": 19
+          "Value": 19
         }
       ]
     }
@@ -178,8 +300,8 @@
         "OnCast": 0,
         "OnHit": 512,
         "OnCrit": 0,
-        "MinEffect": 285,
-        "MaxEffect": 315
+        "Value": 285,
+        "DieSides": 30
       }
     ]
   },
@@ -191,7 +313,7 @@
       "Effects": [
         {
           "EffectType": "GainProc",
-          "ProcID": 20
+          "Value": 20
         }
       ]
     }
@@ -204,7 +326,7 @@
       "Effects": [
         {
           "EffectType": "GainProc",
-          "ProcID": 13
+          "Value": 13
         }
       ]
     }
@@ -217,17 +339,15 @@
       "Duration": 10000,
       "Effects": [
         {
-          "EffectType": "GainStats",
+          "EffectType": "ModStat",
           "Stats": [
-            {
-              "Stat": "HasteRating",
-              "Value": 325.0
-            }
-          ]
+            "HasteRating"
+          ],
+          "Value": 325
         },
         {
           "EffectType": "ModAttackSpeed",
-          "Percent": 0
+          "Value": 0
         }
       ]
     }
@@ -241,13 +361,29 @@
       "Duration": 20000,
       "Effects": [
         {
-          "EffectType": "GainStats",
+          "EffectType": "ModStat",
           "Stats": [
-            {
-              "Stat": "AttackPower",
-              "Value": 278.0
-            }
-          ]
+            "AttackPower"
+          ],
+          "Value": 278
+        }
+      ]
+    }
+  },
+
+  "35733": {
+    "ID": 35733,
+    "Name": "Ancient Power",
+    "Cooldown": 120000,
+    "Aura": {
+      "Duration": 20000,
+      "Effects": [
+        {
+          "EffectType": "ModStat",
+          "Stats": [
+            "AttackPower"
+          ],
+          "Value": 200
         }
       ]
     }
@@ -260,7 +396,7 @@
       "Effects": [
         {
           "EffectType": "GainProc",
-          "ProcID": 21
+          "Value": 21
         }
       ]
     }
@@ -273,17 +409,15 @@
       "Duration": 4000,
       "Effects": [
         {
-          "EffectType": "GainStats",
+          "EffectType": "ModStat",
           "Stats": [
-            {
-              "Stat": "CritRating",
-              "Value": 900.09
-            }
-          ]
+            "CritRating"
+          ],
+          "Value": 900
         },
         {
           "EffectType": "GainProc",
-          "ProcID": 22
+          "Value": 22
         }
       ]
     }
@@ -295,7 +429,7 @@
     "Effects": [
       {
         "EffectType": "CancelAura",
-        "MinEffect":  36112.0
+        "Value": 36112
       }
     ]
   },
@@ -307,7 +441,7 @@
       "Effects": [
         {
           "EffectType": "GainProc",
-          "ProcID": 16
+          "Value": 16
         }
       ]
     }
@@ -321,7 +455,7 @@
       "Effects": [
         {
           "EffectType": "ModAttackSpeed",
-          "Percent": 20
+          "Value": 20
         }
       ]
     }
@@ -334,52 +468,101 @@
     "Aura": {
       "Effects": [
         {
-          "EffectType": "GainStatsCreature",
+          "EffectType": "ModStatCreature",
           "Stats": [
-            {
-              "Stat": "AttackPower",
-              "Value": 150.0
-            }
+            "AttackPower"
           ],
           "Creatures": [
             "Demon"
-          ]
-        }
-      ]
-    }
-  },
-
-  "38281": {
-    "ID": 38282,
-    "Name": "Singing Crystal Axe",
-    "Aura": {
-      "Effects": [
-        {
-          "EffectType": "GainProc",
-          "ProcID": 17
+          ],
+          "Value": 150
         }
       ]
     }
   },
 
   "38282": {
+    "ID": 38282,
+    "Name": "Singing Crystal Axe",
+    "Aura": {
+      "Effects": [
+        {
+          "EffectType": "GainProc",
+          "Value": 17
+        }
+      ]
+    }
+  },
+
+  "38281": {
     "ID": 38281,
     "Name": "The Blade\u0027s Song",
     "Aura": {
       "Duration": 10000,
       "Effects": [
         {
-          "EffectType": "GainStats",
+          "EffectType": "ModStat",
           "Stats": [
-            {
-              "Stat": "HasteRating",
-              "Value": 400.0
-            }
-          ]
+            "HasteRating"
+          ],
+          "Value": 400
         },
         {
           "EffectType": "ModAttackSpeed",
-          "Percent": 0
+          "Value": 0
+        }
+      ]
+    }
+  },
+
+  "39438": {
+    "ID": 39438,
+    "Name": "Aura of the Crusade",
+    "Aura": {
+      "Effects": [
+        {
+          "EffectType": "GainProc",
+          "Value": 25
+        },
+        {
+          "EffectType": "GainProc",
+          "Value": 26
+        }
+      ]
+    }
+  },
+
+  "39439": {
+    "ID": 39439,
+    "Name": "Aura of the Crusader (AP)",
+    "Aura": {
+      "Duration": 10000,
+      "MaxStacks": 20,
+      "Effects": [
+        {
+          "EffectType": "ModStat",
+          "Stats": [
+            "AttackPower"
+          ],
+          "Value": 6
+        }
+      ]
+    }
+  },
+
+  "39441": {
+    "ID": 39441,
+    "Name": "Aura of the Crusader (SP)",
+    "Aura": {
+      "Duration": 10000,
+      "MaxStacks": 10,
+      "Effects": [
+        {
+          "EffectType": "ModStat",
+          "Stats": [
+            "SpellPower"
+          ],
+          "Value": 8
         }
       ]
     }
@@ -391,25 +574,85 @@
     "Aura": {
       "Effects": [
         {
-          "EffectType": "ModStat",
-          "Percent": 3,
+          "EffectType": "ModStatPercent",
           "Stats": [
             "CritDamage",
             "SpellCritDamage"
-          ]
+          ],
+          "Value": 3
         }
       ]
     }
   },
 
-  "429740": {
+  "40475": {
+    "ID": 40475,
+    "Name": "Madness of the Betrayer",
+    "Aura": {
+      "Effects": [
+        {
+          "EffectType": "GainProc",
+          "Value": 27
+        }
+      ]
+    }
+  },
+
+  "40477": {
+    "ID": 40477,
+    "Name": "Forceful Strike",
+    "Aura": {
+      "Duration": 10000,
+      "Effects": [
+        {
+          "EffectType": "ModStat",
+          "Stats": [
+            "ArmorPenetration"
+          ],
+          "Value": 300
+        }
+      ]
+    }
+  },
+
+  "42083": {
+    "ID": 42083,
+    "Name": "Tsunami Talisman",
+    "Aura": {
+      "Effects": [
+        {
+          "EffectType": "GainProc",
+          "Value": 23
+        }
+      ]
+    }
+  },
+
+  "42084": {
+    "ID": 42084,
+    "Name": "Fury of the Crashing Waves",
+    "Aura": {
+      "Duration": 10000,
+      "Effects": [
+        {
+          "EffectType": "ModStat",
+          "Stats": [
+            "AttackPower"
+          ],
+          "Value": 340
+        }
+      ]
+    }
+  },
+
+  "42975": {
     "ID": 42975,
     "Name": "Executioner",
     "Aura": {
       "Effects": [
         {
           "EffectType": "GainProc",
-          "ProcID": 11
+          "Value": 11
         }
       ]
     }
@@ -422,13 +665,59 @@
       "Duration": 15000,
       "Effects": [
         {
-          "EffectType": "GainStats",
+          "EffectType": "ModStat",
           "Stats": [
-            {
-              "Stat": "ArmorPenetration",
-              "Value": 840.0
-            }
-          ]
+            "ArmorPenetration"
+          ],
+          "Value": 840
+        }
+      ]
+    }
+  },
+
+  "43716": {
+    "ID": 43716,
+    "Name": "Call of the Berserker",
+    "Cooldown": 120000,
+    "Aura": {
+      "Duration": 20000,
+      "Effects": [
+        {
+          "EffectType": "ModStat",
+          "Stats": [
+            "AttackPower"
+          ],
+          "Value": 360
+        }
+      ]
+    }
+  },
+
+  "45354": {
+    "ID": 45354,
+    "Name": "Shard of Contempt",
+    "Aura": {
+      "Effects": [
+        {
+          "EffectType": "GainProc",
+          "Value": 24
+        }
+      ]
+    }
+  },
+
+  "45053": {
+    "ID": 45053,
+    "Name": "Disdain",
+    "Aura": {
+      "Duration": 20000,
+      "Effects": [
+        {
+          "EffectType": "ModStat",
+          "Stats": [
+            "AttackPower"
+          ],
+          "Value": 230
         }
       ]
     }
@@ -446,8 +735,7 @@
         "OnCast": 0,
         "OnHit": 0,
         "OnCrit": 1,
-        "MinEffect": 150.0,
-        "MaxEffect": 150.0
+        "Value": 150
       }
     ]
   },
@@ -459,7 +747,43 @@
       "Effects": [
         {
           "EffectType": "GainProc",
-          "ProcID": 12
+          "Value": 12
+        }
+      ]
+    }
+  },
+
+  "46784": {
+    "ID": 46784,
+    "Name": "Shadowsong Panther",
+    "Cooldown": 90000,
+    "Aura": {
+      "Duration": 15000,
+      "Effects": [
+        {
+          "EffectType": "ModStat",
+          "Stats": [
+            "AttackPower"
+          ],
+          "Value": 320
+        }
+      ]
+    }
+  },
+
+  "51955": {
+    "ID": 51955,
+    "Name": "Dire Drunkard",
+    "Cooldown": 120000,
+    "Aura": {
+      "Duration": 20000,
+      "Effects": [
+        {
+          "EffectType": "ModStat",
+          "Stats": [
+            "AttackPower"
+          ],
+          "Value": 278
         }
       ]
     }

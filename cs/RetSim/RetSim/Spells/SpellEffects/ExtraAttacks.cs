@@ -12,13 +12,11 @@ public class ExtraAttacks : SpellEffect
 {
     [JsonIgnore]
     private Spell Proc { get; set; }
-    public int ProcID { get; init; }    
-    public int Amount { get; init; }
+    public int ProcID { get; init; }
 
-    public ExtraAttacks(int procID, int amount) : base(0, 0)
+    public ExtraAttacks(int value, int procID) : base(value, 0)
     {
         ProcID = procID;
-        Amount = amount;
     }
 
     public override ProcMask Resolve(FightSimulation fight, SpellState state)
@@ -31,12 +29,12 @@ public class ExtraAttacks : SpellEffect
             Timestamp = fight.Timestamp,
             Mana = (int)fight.Player.Stats[StatName.Mana].Value,
             Source = Parent.Name,
-            Number = Amount
+            Number = (int)Value
         };
 
         fight.CombatLog.Add(entry);
 
-        for (int i = 0; i < Amount; i++)
+        for (int i = 0; i < Value; i++)
         {
             fight.Queue.Add(new CastEvent(Proc, fight.Player, fight.Enemy, fight, fight.Timestamp));
         }

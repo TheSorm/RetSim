@@ -6,13 +6,11 @@
     "Aura": {
       "Effects": [
         {
-          "EffectType": "GainStats",
+          "EffectType": "ModStat",
           "Stats": [
-            {
-              "Stat": "CritChance",
-              "Value": 1.0
-            }
-          ]
+            "CritChance"
+          ],
+          "Value": 1
         }
       ]
     }
@@ -25,13 +23,11 @@
     "Aura": {
       "Effects": [
         {
-          "EffectType": "GainStats",
+          "EffectType": "ModStat",
           "Stats": [
-            {
-              "Stat": "CritChance",
-              "Value": 2.0
-            }
-          ]
+            "CritChance"
+          ],
+          "Value": 2
         }
       ]
     }
@@ -44,13 +40,11 @@
     "Aura": {
       "Effects": [
         {
-          "EffectType": "GainStats",
+          "EffectType": "ModStat",
           "Stats": [
-            {
-              "Stat": "CritChance",
-              "Value": 3.0
-            }
-          ]
+            "CritChance"
+          ],
+          "Value": 3
         }
       ]
     }
@@ -63,13 +57,11 @@
     "Aura": {
       "Effects": [
         {
-          "EffectType": "GainStats",
+          "EffectType": "ModStat",
           "Stats": [
-            {
-              "Stat": "CritChance",
-              "Value": 4.0
-            }
-          ]
+            "CritChance"
+          ],
+          "Value": 4
         }
       ]
     }
@@ -82,13 +74,11 @@
     "Aura": {
       "Effects": [
         {
-          "EffectType": "GainStats",
+          "EffectType": "ModStat",
           "Stats": [
-            {
-              "Stat": "CritChance",
-              "Value": 5.0
-            }
-          ]
+            "CritChance"
+          ],
+          "Value": 5
         }
       ]
     }
@@ -101,15 +91,15 @@
     "Aura": {
       "Effects": [
         {
-          "EffectType": "ModDamageCreature",
-          "Percent": 1,
+          "EffectType": "ModDamageDoneCreature",
           "SchoolMask": 127,
           "Creatures": [
             "Humanoid",
             "Demon",
             "Undead",
             "Elemental"
-          ]
+          ],
+          "Value": 1
         }
       ]
     }
@@ -122,15 +112,15 @@
     "Aura": {
       "Effects": [
         {
-          "EffectType": "ModDamageCreature",
-          "Percent": 2,
+          "EffectType": "ModDamageDoneCreature",
           "SchoolMask": 127,
           "Creatures": [
             "Humanoid",
             "Demon",
             "Undead",
             "Elemental"
-          ]
+          ],
+          "Value": 2
         }
       ]
     }
@@ -143,15 +133,15 @@
     "Aura": {
       "Effects": [
         {
-          "EffectType": "ModDamageCreature",
-          "Percent": 3,
+          "EffectType": "ModDamageDoneCreature",
           "SchoolMask": 127,
           "Creatures": [
             "Humanoid",
             "Demon",
             "Undead",
             "Elemental"
-          ]
+          ],
+          "Value": 3
         }
       ]
     }
@@ -164,9 +154,9 @@
     "Aura": {
       "Effects": [
         {
-          "EffectType": "ModDamageSchool",
-          "Percent": 2,
-          "SchoolMask": 1
+          "EffectType": "ModDamageDone",
+          "SchoolMask": 1,
+          "Value": 2
         }
       ]
     }
@@ -179,9 +169,9 @@
     "Aura": {
       "Effects": [
         {
-          "EffectType": "ModDamageSchool",
-          "Percent": 4,
-          "SchoolMask": 1
+          "EffectType": "ModDamageDone",
+          "SchoolMask": 1,
+          "Value": 4
         }
       ]
     }
@@ -194,9 +184,9 @@
     "Aura": {
       "Effects": [
         {
-          "EffectType": "ModDamageSchool",
-          "Percent": 6,
-          "SchoolMask": 1
+          "EffectType": "ModDamageDone",
+          "SchoolMask": 1,
+          "Value": 6
         }
       ]
     }
@@ -208,9 +198,9 @@
     "Aura": {
       "Effects": [
         {
-          "EffectType": "ModDamageSchool",
-          "Percent": 10,
-          "SchoolMask": 2
+          "EffectType": "ModDamageDone",
+          "SchoolMask": 2,
+          "Value": 10
         }
       ]
     }
@@ -223,9 +213,9 @@
     "Aura": {
       "Effects": [
         {
-          "EffectType": "ModDamageSchool",
-          "Percent": 1,
-          "SchoolMask": 127
+          "EffectType": "ModDamageDone",
+          "SchoolMask": 127,
+          "Value": 1
         }
       ]
     }
@@ -238,9 +228,9 @@
     "Aura": {
       "Effects": [
         {
-          "EffectType": "ModDamageSchool",
-          "Percent": 2,
-          "SchoolMask": 127
+          "EffectType": "ModDamageDone",
+          "SchoolMask": 127,
+          "Value": 2
         }
       ]
     }
@@ -255,7 +245,7 @@
       "Effects": [
         {
           "EffectType": "GainProc",
-          "ProcID": 3
+          "Value": 3
         }
       ]
     }
@@ -270,7 +260,7 @@
       "Effects": [
         {
           "EffectType": "GainProc",
-          "ProcID": 4
+          "Value": 4
         }
       ]
     }
@@ -285,7 +275,7 @@
       "Effects": [
         {
           "EffectType": "GainProc",
-          "ProcID": 5
+          "Value": 5
         }
       ]
     }
@@ -300,7 +290,7 @@
       "Effects": [
         {
           "EffectType": "GainProc",
-          "ProcID": 6
+          "Value": 6
         }
       ]
     }
@@ -315,7 +305,7 @@
       "Effects": [
         {
           "EffectType": "GainProc",
-          "ProcID": 7
+          "Value": 7
         }
       ]
     }
@@ -328,17 +318,12 @@
     "Aura": {
       "Effects": [
         {
-          "EffectType": "GainStats",
+          "EffectType": "ModStat",
           "Stats": [
-            {
-              "Stat": "CritChance",
-              "Value": 1.0
-            },
-            {
-              "Stat": "SpellCrit",
-              "Value": 1.0
-            }
-          ]
+            "CritChance",
+            "SpellCrit"
+          ],
+          "Value": 1
         }
       ]
     }
@@ -351,17 +336,12 @@
     "Aura": {
       "Effects": [
         {
-          "EffectType": "GainStats",
+          "EffectType": "ModStat",
           "Stats": [
-            {
-              "Stat": "CritChance",
-              "Value": 2.0
-            },
-            {
-              "Stat": "SpellCrit",
-              "Value": 2.0
-            }
-          ]
+            "CritChance",
+            "SpellCrit"
+          ],
+          "Value": 2
         }
       ]
     }
@@ -375,17 +355,12 @@
     "Aura": {
       "Effects": [
         {
-          "EffectType": "GainStats",
+          "EffectType": "ModStat",
           "Stats": [
-            {
-              "Stat": "CritChance",
-              "Value": 3.0
-            },
-            {
-              "Stat": "SpellCrit",
-              "Value": 3.0
-            }
-          ]
+            "CritChance",
+            "SpellCrit"
+          ],
+          "Value": 3
         }
       ]
     }
@@ -398,12 +373,12 @@
     "Aura": {
       "Effects": [
         {
-          "EffectType": "ModSpellCritChance",
-          "Amount": 3,
+          "EffectType": "ModSpell",
           "Spells": [
             27171,
             31898
-          ]
+          ],
+          "Value": 3
         }
       ]
     }
@@ -416,12 +391,12 @@
     "Aura": {
       "Effects": [
         {
-          "EffectType": "ModSpellCritChance",
-          "Amount": 6,
+          "EffectType": "ModSpell",
           "Spells": [
             27171,
             31898
-          ]
+          ],
+          "Value": 6
         }
       ]
     }
@@ -434,12 +409,12 @@
     "Aura": {
       "Effects": [
         {
-          "EffectType": "ModSpellCritChance",
-          "Amount": 9,
+          "EffectType": "ModSpell",
           "Spells": [
             27171,
             31898
-          ]
+          ],
+          "Value": 9
         }
       ]
     }
@@ -452,12 +427,12 @@
     "Aura": {
       "Effects": [
         {
-          "EffectType": "ModSpellCritChance",
-          "Amount": 12,
+          "EffectType": "ModSpell",
           "Spells": [
             27171,
             31898
-          ]
+          ],
+          "Value": 12
         }
       ]
     }
@@ -470,12 +445,12 @@
     "Aura": {
       "Effects": [
         {
-          "EffectType": "ModSpellCritChance",
-          "Amount": 15,
+          "EffectType": "ModSpell",
           "Spells": [
             27171,
             31898
-          ]
+          ],
+          "Value": 15
         }
       ]
     }
@@ -488,17 +463,12 @@
     "Aura": {
       "Effects": [
         {
-          "EffectType": "GainStats",
+          "EffectType": "ModStat",
           "Stats": [
-            {
-              "Stat": "HitChance",
-              "Value": 1.0
-            },
-            {
-              "Stat": "SpellHit",
-              "Value": 1.0
-            }
-          ]
+            "HitChance",
+            "SpellHit"
+          ],
+          "Value": 1
         }
       ]
     }
@@ -511,17 +481,12 @@
     "Aura": {
       "Effects": [
         {
-          "EffectType": "GainStats",
+          "EffectType": "ModStat",
           "Stats": [
-            {
-              "Stat": "HitChance",
-              "Value": 2.0
-            },
-            {
-              "Stat": "SpellHit",
-              "Value": 2.0
-            }
-          ]
+            "HitChance",
+            "SpellHit"
+          ],
+          "Value": 2
         }
       ]
     }
@@ -534,17 +499,12 @@
     "Aura": {
       "Effects": [
         {
-          "EffectType": "GainStats",
+          "EffectType": "ModStat",
           "Stats": [
-            {
-              "Stat": "HitChance",
-              "Value": 3.0
-            },
-            {
-              "Stat": "SpellHit",
-              "Value": 3.0
-            }
-          ]
+            "HitChance",
+            "SpellHit"
+          ],
+          "Value": 3
         }
       ]
     }
@@ -557,11 +517,11 @@
     "Aura": {
       "Effects": [
         {
-          "EffectType": "ModStat",
-          "Percent": 2,
+          "EffectType": "ModStatPercent",
           "Stats": [
             "Strength"
-          ]
+          ],
+          "Value": 2
         }
       ]
     }
@@ -574,11 +534,11 @@
     "Aura": {
       "Effects": [
         {
-          "EffectType": "ModStat",
-          "Percent": 4,
+          "EffectType": "ModStatPercent",
           "Stats": [
             "Strength"
-          ]
+          ],
+          "Value": 4
         }
       ]
     }
@@ -591,11 +551,11 @@
     "Aura": {
       "Effects": [
         {
-          "EffectType": "ModStat",
-          "Percent": 6,
+          "EffectType": "ModStatPercent",
           "Stats": [
             "Strength"
-          ]
+          ],
+          "Value": 6
         }
       ]
     }
@@ -608,11 +568,11 @@
     "Aura": {
       "Effects": [
         {
-          "EffectType": "ModStat",
-          "Percent": 8,
+          "EffectType": "ModStatPercent",
           "Stats": [
             "Strength"
-          ]
+          ],
+          "Value": 8
         }
       ]
     }
@@ -625,11 +585,11 @@
     "Aura": {
       "Effects": [
         {
-          "EffectType": "ModStat",
-          "Percent": 10,
+          "EffectType": "ModStatPercent",
           "Stats": [
             "Strength"
-          ]
+          ],
+          "Value": 10
         }
       ]
     }
@@ -642,11 +602,11 @@
     "Aura": {
       "Effects": [
         {
-          "EffectType": "ModStat",
-          "Percent": 2,
+          "EffectType": "ModStatPercent",
           "Stats": [
             "Intellect"
-          ]
+          ],
+          "Value": 2
         }
       ]
     }
@@ -659,11 +619,11 @@
     "Aura": {
       "Effects": [
         {
-          "EffectType": "ModStat",
-          "Percent": 4,
+          "EffectType": "ModStatPercent",
           "Stats": [
             "Intellect"
-          ]
+          ],
+          "Value": 4
         }
       ]
     }
@@ -676,11 +636,11 @@
     "Aura": {
       "Effects": [
         {
-          "EffectType": "ModStat",
-          "Percent": 6,
+          "EffectType": "ModStatPercent",
           "Stats": [
             "Intellect"
-          ]
+          ],
+          "Value": 6
         }
       ]
     }
@@ -693,11 +653,11 @@
     "Aura": {
       "Effects": [
         {
-          "EffectType": "ModStat",
-          "Percent": 8,
+          "EffectType": "ModStatPercent",
           "Stats": [
             "Intellect"
-          ]
+          ],
+          "Value": 8
         }
       ]
     }
@@ -710,11 +670,11 @@
     "Aura": {
       "Effects": [
         {
-          "EffectType": "ModStat",
-          "Percent": 10,
+          "EffectType": "ModStatPercent",
           "Stats": [
             "Intellect"
-          ]
+          ],
+          "Value": 10
         }
       ]
     }

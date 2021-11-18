@@ -5,11 +5,9 @@ namespace RetSim.Spells.AuraEffects;
 
 class GainSeal : GainProc
 {
-    public GainSeal(int procID) : base(procID)
-    {
-    }
-
     private Seal Seal { get; set; }
+
+    public GainSeal(float seal) : base(seal) { }
 
     public override void Apply(Aura aura, Unit caster, Unit target, FightSimulation fight)
     {

@@ -22,22 +22,23 @@ public class AuraConverter : JsonConverter<Aura>
             for (int i = 0; i < jo["Effects"].Count(); i++)
             {
                 string effectType = (string)jo["Effects"][i]["EffectType"];
+                float value = (float)jo["Effects"][i]["Value"];
 
                 switch (effectType)
                 {
                     case "GainSeal":
-                        effects.Add(new GainSeal((int)jo["Effects"][i]["ProcID"]));
+                        effects.Add(new GainSeal(value));
                         break;
 
                     case "GainProc":
-                        effects.Add(new GainProc((int)jo["Effects"][i]["ProcID"]));
+                        effects.Add(new GainProc(value));
                         break;
 
                     case "ModAttackSpeed":
-                        effects.Add(new ModAttackSpeed((int)jo["Effects"][i]["Percent"]));
+                        effects.Add(new ModAttackSpeed(value));
                         break;
 
-                    case "ModDamageCreature":
+                    case "ModDamageDoneCreature":
 
                         List<CreatureType> creatures = new();
 
@@ -48,73 +49,23 @@ public class AuraConverter : JsonConverter<Aura>
                             creatures.Add(Enum.Parse<CreatureType>((string)jo["Effects"][i]["Creatures"][y]));
                         }
 
-                        effects.Add(new ModDamageCreature((int)jo["Effects"][i]["Percent"], (School)(int)jo["Effects"][i]["SchoolMask"], creatures));
+                        effects.Add(new ModDamageDoneCreature(value, (School)(int)jo["Effects"][i]["SchoolMask"], creatures));
 
                         break;
 
-                    case "ModDamageSchool":
-                        effects.Add(new ModDamageSchool((int)jo["Effects"][i]["Percent"], (School)(int)jo["Effects"][i]["SchoolMask"]));
-                        break;
-
-                    case "ModDamageSpell":
-
-                        List<int> spells = new();
-
-                        int spellCount = jo["Effects"][i]["Spells"].Count();
-
-                        for (int y = 0; y < spellCount; y++)
-                        {
-                            spells.Add((int)jo["Effects"][i]["Spells"][y]);
-                        }
-
-                        effects.Add(new ModDamageSpell((int)jo["Effects"][i]["Percent"], spells));
-
+                    case "ModDamageDone":
+                        effects.Add(new ModDamageDone(value, (School)(int)jo["Effects"][i]["SchoolMask"]));
                         break;
 
                     case "ModDamageTaken":
-                        effects.Add(new ModDamageTaken((int)jo["Effects"][i]["Percent"], (School)(int)jo["Effects"][i]["SchoolMask"]));
+                        effects.Add(new ModDamageTaken(value, Enum.Parse<School>((string)jo["Effects"][i]["School"])));
                         break;
 
-                    case "GainStatsCreature":
-
-                        StatSet gainStatsCreatureStats = new();
-
-                        int gainStatsCreatureCount = jo["Effects"][i]["Stats"].Count();
-
-                        for (int y = 0; y < gainStatsCreatureCount; y++)
-                        {
-                            gainStatsCreatureStats[Enum.Parse<StatName>((string)jo["Effects"][i]["Stats"][y]["Stat"])] = (float)jo["Effects"][i]["Stats"][y]["Value"];
-                        }
-
-                        List<CreatureType> gainStatsCreatureCreatures = new();
-
-                        int gainStatsCreatureCountStats = jo["Effects"][i]["Creatures"].Count();
-
-                        for (int y = 0; y < gainStatsCreatureCountStats; y++)
-                        {
-                            gainStatsCreatureCreatures.Add(Enum.Parse<CreatureType>((string)jo["Effects"][i]["Creatures"][y]));
-                        }
-
-                        effects.Add(new GainStatsCreature(gainStatsCreatureStats, gainStatsCreatureCreatures));
-
+                    case "ModDamageTakenPercent":
+                        effects.Add(new ModDamageTakenPercent(value, (School)(int)jo["Effects"][i]["SchoolMask"]));
                         break;
 
-                    case "GainStats":
-
-                        StatSet stats = new();
-
-                        int statCount = jo["Effects"][i]["Stats"].Count();
-
-                        for (int y = 0; y < statCount; y++)
-                        {
-                            stats[Enum.Parse<StatName>((string)jo["Effects"][i]["Stats"][y]["Stat"])] = (float)jo["Effects"][i]["Stats"][y]["Value"];
-                        }
-
-                        effects.Add(new GainStats(stats));
-
-                        break;
-
-                    case "ModSpellCritChance":
+                    case "ModSpell":
 
                         List<int> spellCritChance = new();
 
@@ -125,26 +76,57 @@ public class AuraConverter : JsonConverter<Aura>
                             spellCritChance.Add((int)jo["Effects"][i]["Spells"][y]);
                         }
 
-                        effects.Add(new ModSpellCritChance((int)jo["Effects"][i]["Amount"], spellCritChance));
+                        effects.Add(new ModSpell(value, spellCritChance)); //TODO: Add all spell state changes possible
 
                         break;
 
-                    case "ModSpellDamageTaken":
-                        effects.Add(new ModSpellDamageTaken((int)jo["Effects"][i]["Amount"], Enum.Parse<School>((string)jo["Effects"][i]["School"])));
+                    case "ModStatCreature":
+
+                        List<StatName> mscStats = new();
+                        int mscStatsCount = jo["Effects"][i]["Stats"].Count();
+
+                        for (int j = 0; j < mscStatsCount; j++)
+                        {
+                            mscStats.Add(Enum.Parse<StatName>((string)jo["Effects"][i]["Stats"][j]));
+                        }
+
+                        List<CreatureType> mscCreatures = new();
+                        int mscCreaturesCount = jo["Effects"][i]["Creatures"].Count();
+
+                        for (int y = 0; y < mscCreaturesCount; y++)
+                        {
+                            mscCreatures.Add(Enum.Parse<CreatureType>((string)jo["Effects"][i]["Creatures"][y]));
+                        }
+
+                        effects.Add(new ModStatCreature(value, mscStats, mscCreatures));
+
                         break;
 
                     case "ModStat":
 
-                        List<StatName> statList = new();
+                        List<StatName> msStats = new();
+                        int msStatsCount = jo["Effects"][i]["Stats"].Count();
 
-                        int statListCount = jo["Effects"][i]["Stats"].Count();
-
-                        for (int y = 0; y < statListCount; y++)
+                        for (int j = 0; j < msStatsCount; j++)
                         {
-                            statList.Add(Enum.Parse<StatName>((string)jo["Effects"][i]["Stats"][y]));
+                            msStats.Add(Enum.Parse<StatName>((string)jo["Effects"][i]["Stats"][j]));
                         }
 
-                        effects.Add(new ModStat((int)jo["Effects"][i]["Percent"], statList));
+                        effects.Add(new ModStat(value, msStats));
+
+                        break;   
+                    
+                    case "ModStatPercent":
+
+                        List<StatName> mspStats = new();
+                        int mspStatsCount = jo["Effects"][i]["Stats"].Count();
+
+                        for (int j = 0; j < mspStatsCount; j++)
+                        {
+                            mspStats.Add(Enum.Parse<StatName>((string)jo["Effects"][i]["Stats"][j]));
+                        }
+
+                        effects.Add(new ModStatPercent(value, mspStats));
 
                         break;
 
@@ -268,151 +250,76 @@ public class AuraConverter : JsonConverter<Aura>
     {
         writer.WriteStartObject();
 
-        if (value is GainSeal gainSeal)
+        if (value is GainSeal)
         {
-            writer.WriteData("EffectType", AuraEffectType.GainSeal.ToString());
-            writer.WriteData("ProcID", gainSeal.Proc.ID);
+            writer.WriteData("EffectType", "GainSeal");
         }
 
-        else if (value is GainProc gainProc)
+        else if (value is GainProc)
         {
-            writer.WriteData("EffectType", AuraEffectType.GainProc.ToString());
-            writer.WriteData("ProcID", gainProc.Proc.ID);
+            writer.WriteData("EffectType", "GainProc");
         }
 
-        else if (value is ModAttackSpeed modAttackSpeed)
+        else if (value is ModAttackSpeed)
         {
-            writer.WriteData("EffectType", AuraEffectType.ModAttackSpeed.ToString());
-            writer.WriteData("Percent", modAttackSpeed.Percent);
+            writer.WriteData("EffectType", "ModAttackSpeed");
         }
 
-        else if (value is ModDamageCreature modDamageCreature)
+        else if (value is ModDamageDoneCreature modDamageDoneCreature)
         {
-            writer.WriteData("EffectType", AuraEffectType.ModDamageCreature.ToString());
-            writer.WriteData("Percent", modDamageCreature.Percent);
-            writer.WriteData("SchoolMask", modDamageCreature.SchoolMask);
+            writer.WriteData("EffectType", "ModDamageDoneCreature");
+            writer.WriteData("SchoolMask", modDamageDoneCreature.SchoolMask);
 
-            string[] creatures = new string[modDamageCreature.Creatures.Count];
-
-            for (int i = 0; i < modDamageCreature.Creatures.Count; i++)
-            {
-                creatures[i] = modDamageCreature.Creatures[i].ToString();
-            }
-
-            writer.WriteStringArray("Creatures", creatures);
+            writer.WriteStringArray("Creatures", modDamageDoneCreature.Creatures.Cast<string>().ToArray());
         }
 
-        else if (value is ModDamageSchool modDamageSchool)
+        else if (value is ModDamageDone modDamageDone)
         {
-            writer.WriteData("EffectType", AuraEffectType.ModDamageSchool.ToString());
-            writer.WriteData("Percent", modDamageSchool.Percent);
-            writer.WriteData("SchoolMask", modDamageSchool.SchoolMask);
+            writer.WriteData("EffectType", "ModDamageDone");
+            writer.WriteData("SchoolMask", modDamageDone.SchoolMask);
         }
 
-        else if (value is ModDamageSpell modDamageSpell)
+        else if (value is ModDamageTakenPercent modDamageTakenPercent)
         {
-            writer.WriteData("EffectType", AuraEffectType.ModDamageSpell.ToString());
-            writer.WriteData("Percent", modDamageSpell.Percent);
-            writer.WriteIntArray("Spells", modDamageSpell.Spells.Cast<int>().ToArray());
+            writer.WriteData("EffectType", "ModDamageTakenPercent");
+            writer.WriteData("SchoolMask", modDamageTakenPercent.SchoolMask);
         }
 
-        else if (value is ModDamageTaken modDamageTaken)
+        else if (value is ModStatCreature modStatCreature)
         {
-            writer.WriteData("EffectType", AuraEffectType.ModDamageTaken.ToString());
-            writer.WriteData("Percent", modDamageTaken.Percent);
-            writer.WriteData("SchoolMask", modDamageTaken.SchoolMask);
-        }
+            writer.WriteData("EffectType", "ModStatCreature");
 
-        else if (value is GainStatsCreature gainStatsCreature)
-        {
-            writer.WriteData("EffectType", AuraEffectType.GainStats.ToString());
-
-            Dictionary<StatName, float> stats = new();
-
-            foreach (KeyValuePair<StatName, float> stat in gainStatsCreature.Stats)
-            {
-                if (stat.Value != 0f)
-                    stats.Add(stat.Key, stat.Value);
-            }
-
-            List<string> names = new();
-            List<float> values = new();
-
-            foreach (KeyValuePair<StatName, float> stat in gainStatsCreature.Stats)
-            {
-                if (stat.Value != 0f)
-                {
-                    names.Add(stat.Key.ToString());
-                    values.Add(stat.Value);
-                }
-            }
-
-            string[] creatures = new string[gainStatsCreature.Creatures.Count];
-
-            for (int i = 0; i < gainStatsCreature.Creatures.Count; i++)
-            {
-                creatures[i] = gainStatsCreature.Creatures[i].ToString();
-            }
-
-            writer.WriteDictionary("Stats", names.ToArray(), values.Cast<object>().ToArray(), "Stat", "Value");
-            writer.WriteStringArray("Creatures", creatures);
-        }
-
-        else if (value is GainStats gainStats)
-        {
-            writer.WriteData("EffectType", AuraEffectType.GainStats.ToString());
-
-            Dictionary<StatName, float> stats = new();
-
-            foreach (KeyValuePair<StatName, float> stat in gainStats.Stats)
-            {
-                if (stat.Value != 0f)
-                    stats.Add(stat.Key, stat.Value);
-            }
-
-            List<string> names = new();
-            List<float> values = new();
-
-            foreach (KeyValuePair<StatName, float> stat in gainStats.Stats)
-            {
-                if (stat.Value != 0f)
-                {
-                    names.Add(stat.Key.ToString());
-                    values.Add(stat.Value);
-                }
-            }
-
-            writer.WriteDictionary("Stats", names.ToArray(), values.Cast<object>().ToArray(), "Stat", "Value");
-        }
-
-        else if (value is ModSpellCritChance modSpellCritChance)
-        {
-            writer.WriteData("EffectType", AuraEffectType.ModSpellCritChance.ToString());
-            writer.WriteData("Amount", modSpellCritChance.Amount);
-            writer.WriteIntArray("Spells", modSpellCritChance.Spells.Cast<int>().ToArray());
-        }
-
-        else if (value is ModSpellDamageTaken modSpellDamageTaken)
-        {
-            writer.WriteData("EffectType", AuraEffectType.ModSpellDamageTaken.ToString());
-            writer.WriteData("Amount", modSpellDamageTaken.Amount);
-            writer.WriteData("School", modSpellDamageTaken.School.ToString());
+            writer.WriteStringArray("Stats", modStatCreature.Stats.Cast<string>().ToArray());
+            writer.WriteStringArray("Creatures", modStatCreature.Creatures.Cast<string>().ToArray());
         }
 
         else if (value is ModStat modStat)
         {
-            writer.WriteData("EffectType", AuraEffectType.ModStat.ToString());
-            writer.WriteData("Percent", modStat.Percent);
+            writer.WriteData("EffectType", "ModStat");
 
-            List<string> stats = new();
-
-            foreach (StatName stat in modStat.Stats)
-            {
-                stats.Add(stat.ToString());
-            }
-
-            writer.WriteStringArray("Stats", stats.Cast<string>().ToArray());
+            writer.WriteStringArray("Stats", modStat.Stats.Cast<string>().ToArray());
         }
+
+        else if (value is ModSpell modSpell)
+        {
+            writer.WriteData("EffectType", "ModSpell");
+            writer.WriteIntArray("Spells", modSpell.Spells.Cast<int>().ToArray());
+        }
+
+        else if (value is ModDamageTaken modDamageTaken)
+        {
+            writer.WriteData("EffectType", "ModDamageTaken");
+            writer.WriteData("School", modDamageTaken.School.ToString());
+        }
+
+        else if (value is ModStatPercent modStatPercent)
+        {
+            writer.WriteData("EffectType", "ModStatPercent");
+
+            writer.WriteStringArray("Stats", modStatPercent.Stats.Cast<string>().ToArray());
+        }
+
+        writer.WriteData("Value", value.Value);
 
         writer.WriteEnd();
     }

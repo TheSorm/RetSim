@@ -5,28 +5,24 @@ namespace RetSim.Spells.AuraEffects;
 
 abstract class ModifyPercent : AuraEffect
 {
-    public ModifyPercent(int percent) : base()
-    {
-        Percent = percent;
-    }
+    protected float Current = 100;
+    protected float Previous;
+    protected float Difference;
 
-    public int Percent { get; init; }
+    public ModifyPercent(float percent) : base(percent) { }
 
-    protected int CurrentMod = 100;
-    protected float PreviousMod;
-    protected float RelativeDifference;
 
     public override void Apply(Aura aura, Unit caster, Unit target, FightSimulation fight)
     {
-        CurrentMod = 100 + Percent * target.Auras[aura].Stacks;
-        PreviousMod = CurrentMod - Percent;
-        RelativeDifference = CurrentMod / PreviousMod;
+        Current = 100 + Value * target.Auras[aura].Stacks;
+        Previous = Current - Value;
+        Difference = Current / Previous;
     }
 
     public override void Remove(Aura aura, Unit caster, Unit target, FightSimulation fight)
     {
-        CurrentMod = (int)PreviousMod;
-        PreviousMod -= Percent;
-        RelativeDifference = CurrentMod / PreviousMod;
+        Current = (int)Previous;
+        Previous -= Value;
+        Difference = Current / Previous;
     }
 }

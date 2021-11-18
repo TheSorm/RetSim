@@ -8,13 +8,11 @@
       "IsDebuff": true,
       "Effects": [
         {
-          "EffectType": "GainStats",
+          "EffectType": "ModStat",
           "Stats": [
-            {
-              "Stat": "Armor",
-              "Value": -3075.0
-            }
-          ]
+            "Armor"
+          ],
+          "Value": -3075
         }
       ]
     }
@@ -29,13 +27,11 @@
       "IsDebuff": true,
       "Effects": [
         {
-          "EffectType": "GainStats",
+          "EffectType": "ModStat",
           "Stats": [
-            {
-              "Stat": "IncreasedAttackerAttackPower",
-              "Value": 110.0
-            }
-          ]
+            "IncreasedAttackerAttackPower"
+          ],
+          "Value": 110
         }
       ]
     }
@@ -50,9 +46,9 @@
       "IsDebuff": true,
       "Effects": [
         {
-          "EffectType": "ModDamageTaken",
-          "Percent": 10,
-          "SchoolMask": 32
+          "EffectType": "ModDamageTakenPercent",
+          "SchoolMask": 32,
+          "Value": 10
         }
       ]
     }
@@ -67,9 +63,9 @@
       "IsDebuff": true,
       "Effects": [
         {
-          "EffectType": "ModDamageTaken",
-          "Percent": 20,
-          "SchoolMask": 32
+          "EffectType": "ModDamageTakenPercent",
+          "SchoolMask": 32,
+          "Value": 20
         }
       ]
     }
@@ -82,11 +78,11 @@
     "Target": "Enemy",
     "Aura": {
       "IsDebuff": true,
-      "Effects": [        
+      "Effects": [
         {
-          "EffectType": "ModSpellDamageTaken",
-          "Amount": 219,
-          "School": "Holy"
+          "EffectType": "ModDamageTaken",
+          "School": "Holy",
+          "Value": 219
         }
       ]
     }
@@ -101,18 +97,16 @@
       "IsDebuff": true,
       "Effects": [
         {
-          "EffectType": "GainStats",
+          "EffectType": "ModStat",
           "Stats": [
-            {
-              "Stat": "IncreasedAttackerCritChance",
-              "Value": 3.0
-            }
-          ]
+            "IncreasedAttackerCritChance"
+          ],
+          "Value": 3.0
         },
         {
-          "EffectType": "ModSpellDamageTaken",
-          "Amount": 219,
-          "School": "Holy"
+          "EffectType": "ModDamageTaken",
+          "School": "Holy",
+          "Value": 219
         }
       ]
     }
@@ -127,9 +121,9 @@
       "IsDebuff": true,
       "Effects": [
         {
-          "EffectType": "ModDamageTaken",
-          "Percent": 15,
-          "SchoolMask": 4
+          "EffectType": "ModDamageTakenPercent",
+          "SchoolMask": 4,
+          "Value": 15
         }
       ]
     }
@@ -144,13 +138,11 @@
       "IsDebuff": true,
       "Effects": [
         {
-          "EffectType": "GainStats",
+          "EffectType": "ModStat",
           "Stats": [
-            {
-              "Stat": "Armor",
-              "Value": -2600.0
-            }
-          ]
+            "Armor"
+          ],
+          "Value": -2600
         }
       ]
     }
@@ -165,13 +157,11 @@
       "IsDebuff": true,
       "Effects": [
         {
-          "EffectType": "GainStats",
+          "EffectType": "ModStat",
           "Stats": [
-            {
-              "Stat": "Armor",
-              "Value": -2050.0
-            }
-          ]
+            "Armor"
+          ],
+          "Value": -2050
         }
       ]
     }
@@ -186,13 +176,11 @@
       "IsDebuff": true,
       "Effects": [
         {
-          "EffectType": "GainStats",
+          "EffectType": "ModStat",
           "Stats": [
-            {
-              "Stat": "Armor",
-              "Value": -610.0
-            }
-          ]
+            "Armor"
+          ],
+          "Value": -610
         }
       ]
     }
@@ -207,13 +195,11 @@
       "IsDebuff": true,
       "Effects": [
         {
-          "EffectType": "GainStats",
+          "EffectType": "ModStat",
           "Stats": [
-            {
-              "Stat": "Armor",
-              "Value": -800.0
-            }
-          ]
+            "Armor"
+          ],
+          "Value": -800
         }
       ]
     }
@@ -228,9 +214,9 @@
       "IsDebuff": true,
       "Effects": [
         {
-          "EffectType": "ModDamageTaken",
-          "Percent": 10,
-          "SchoolMask": 116
+          "EffectType": "ModDamageTakenPercent",
+          "SchoolMask": 116,
+          "Value": 10
         }
       ]
     }
@@ -245,9 +231,9 @@
       "IsDebuff": true,
       "Effects": [
         {
-          "EffectType": "ModDamageTaken",
-          "Percent": 4,
-          "SchoolMask": 1
+          "EffectType": "ModDamageTakenPercent",
+          "SchoolMask": 1,
+          "Value": 4
         }
       ]
     }
@@ -262,9 +248,9 @@
       "IsDebuff": true,
       "Effects": [
         {
-          "EffectType": "ModDamageTaken",
-          "Percent": 13,
-          "SchoolMask": 116
+          "EffectType": "ModDamageTakenPercent",
+          "SchoolMask": 116,
+          "Value": 13
         }
       ]
     }
@@ -279,9 +265,9 @@
       "IsDebuff": true,
       "Effects": [
         {
-          "EffectType": "ModDamageTaken",
-          "Percent": 5,
-          "SchoolMask": 126
+          "EffectType": "ModDamageTakenPercent",
+          "SchoolMask": 126,
+          "Value": 5
         }
       ]
     }
@@ -296,17 +282,18 @@
       "IsDebuff": true,
       "Effects": [
         {
-          "EffectType": "GainStats",
+          "EffectType": "ModStat",
           "Stats": [
-            {
-              "Stat": "Armor",
-              "Value": -610.0
-            },
-            {
-              "Stat": "IncreasedAttackerHitChance",
-              "Value": 3.0
-            }
-          ]
+            "Armor"
+          ],
+          "Value": -610
+        },
+        {
+          "EffectType": "ModStat",
+          "Stats": [
+            "IncreasedAttackerHitChance"
+          ],
+          "Value": 3
         }
       ]
     }
@@ -321,13 +308,11 @@
       "IsDebuff": true,
       "Effects": [
         {
-          "EffectType": "GainStats",
+          "EffectType": "ModStat",
           "Stats": [
-            {
-              "Stat": "IncreasedAttackerAttackPower",
-              "Value": 250.0
-            }
-          ]
+            "IncreasedAttackerAttackPower"
+          ],
+          "Value": 250.0
         }
       ]
     }

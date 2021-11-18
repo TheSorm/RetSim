@@ -7,15 +7,15 @@ namespace RetSim.Spells.SpellEffects;
 
 class CancelAura : SpellEffect
 {
-    public CancelAura() : base(0, 0)
+    public CancelAura(float value) : base(value, 0)
     {
     }
 
     public override ProcMask Resolve(FightSimulation fight, SpellState state)
     {
-        if (Collections.Auras.ContainsKey((int)MinEffect))
+        if (Collections.Auras.ContainsKey((int)Value))
         {
-            var aura = Collections.Auras[(int)MinEffect];
+            var aura = Collections.Auras[(int)Value];
 
             if (fight.Player.Auras.IsActive(aura))
             {
@@ -29,12 +29,19 @@ class CancelAura : SpellEffect
             }
 
             else 
-                throw new Exception($"The given aura (ID: {MinEffect}, Name: {aura.Parent.Name}) was not active.");
+                throw new Exception($"The given aura (ID: {Value}, Name: {aura.Parent.Name}) was not active.");
         }
 
         else
-            throw new Exception($"The given aura (ID: {MinEffect}) does not exist.");
+            throw new Exception($"The given aura (ID: {Value}) does not exist.");
         
         return ProcMask.None;
     }
+}
+
+public class JsonSettings
+{
+    private int convictionRank = 1;
+
+    public int ConvictionRank { get { return convictionRank; }  set { convictionRank = value; } }
 }

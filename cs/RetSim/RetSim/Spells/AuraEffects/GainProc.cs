@@ -7,14 +7,9 @@ public class GainProc : AuraEffect
 {
     public Proc Proc { get; init; }
 
-    public GainProc(int procID) : base()
+    public GainProc(float proc) : base(proc)
     {
-        Proc = Data.Collections.Procs[procID];
-    }
-
-    public GainProc(Proc proc) : base()
-    {
-        Proc = proc;
+        Proc = Data.Collections.Procs[(int)proc];
     }
 
     public override void Apply(Aura aura, Unit caster, Unit target, FightSimulation fight)

@@ -7,13 +7,11 @@
     "Aura": {
       "Effects": [
         {
-          "EffectType": "GainStats",
-          "Stats": [
-            {
-              "Stat": "AttackPower",
-              "Value": 306.0
-            }
-          ]
+          "EffectType": "ModStat",
+          "Stats": [            
+              "AttackPower"            
+          ],
+          "Value": 306
         }
       ]
     }
@@ -27,13 +25,11 @@
     "Aura": {
       "Effects": [
         {
-          "EffectType": "GainStats",
+          "EffectType": "ModStat",
           "Stats": [
-            {
-              "Stat": "AttackPower",
-              "Value": 336.0
-            }
-          ]
+            "AttackPower"
+          ],
+          "Value": 336
         }
       ]
     }
@@ -47,13 +43,11 @@
     "Aura": {
       "Effects": [
         {
-          "EffectType": "GainStats",
+          "EffectType": "ModStat",
           "Stats": [
-            {
-              "Stat": "AttackPower",
-              "Value": 376.0
-            }
-          ]
+            "AttackPower"
+          ],
+          "Value": 376
         }
       ]
     }
@@ -67,13 +61,11 @@
     "Aura": {
       "Effects": [
         {
-          "EffectType": "GainStats",
+          "EffectType": "ModStat",
           "Stats": [
-            {
-              "Stat": "AttackPower",
-              "Value": 406.0
-            }
-          ]
+            "AttackPower"
+          ],
+          "Value": 406
         }
       ]
     }
@@ -87,13 +79,11 @@
     "Aura": {
       "Effects": [
         {
-          "EffectType": "GainStats",
+          "EffectType": "ModStat",
           "Stats": [
-            {
-              "Stat": "AttackPower",
-              "Value": 382.5
-            }
-          ]
+            "AttackPower"
+          ],
+          "Value": 382.5
         }
       ]
     }
@@ -107,13 +97,11 @@
     "Aura": {
       "Effects": [
         {
-          "EffectType": "GainStats",
+          "EffectType": "ModStat",
           "Stats": [
-            {
-              "Stat": "AttackPower",
-              "Value": 420
-            }
-          ]
+            "AttackPower"
+          ],
+          "Value": 420
         }
       ]
     }
@@ -128,13 +116,11 @@
     "Aura": {
       "Effects": [
         {
-          "EffectType": "GainStats",
+          "EffectType": "ModStat",
           "Stats": [
-            {
-              "Stat": "AttackPower",
-              "Value": 470
-            }
-          ]
+            "AttackPower"
+          ],
+          "Value": 470
         }
       ]
     }
@@ -148,13 +134,11 @@
     "Aura": {
       "Effects": [
         {
-          "EffectType": "GainStats",
+          "EffectType": "ModStat",
           "Stats": [
-            {
-              "Stat": "AttackPower",
-              "Value": 507.5
-            }
-          ]
+            "AttackPower"
+          ],
+          "Value": 507.5
         }
       ]
     }
@@ -167,13 +151,11 @@
     "Aura": {
       "Effects": [
         {
-          "EffectType": "GainStats",
+          "EffectType": "ModStat",
           "Stats": [
-            {
-              "Stat": "HitChance",
-              "Value": 1.0
-            }
-          ]
+            "HitChance"
+          ],
+          "Value": 1
         }
       ]
     }
@@ -186,13 +168,11 @@
     "Aura": {
       "Effects": [
         {
-          "EffectType": "GainStats",
+          "EffectType": "ModStat",
           "Stats": [
-            {
-              "Stat": "CritChance",
-              "Value": 5.0
-            }
-          ]
+            "CritChance"
+          ],
+          "Value": 5
         }
       ]
     }
@@ -206,13 +186,11 @@
     "Aura": {
       "Effects": [
         {
-          "EffectType": "GainStats",
+          "EffectType": "ModStat",
           "Stats": [
-            {
-              "Stat": "Agility",
-              "Value": 77.0
-            }
-          ]
+            "Agility"
+          ],
+          "Value": 77
         }
       ]
     }
@@ -226,13 +204,11 @@
     "Aura": {
       "Effects": [
         {
-          "EffectType": "GainStats",
+          "EffectType": "ModStat",
           "Stats": [
-            {
-              "Stat": "Agility",
-              "Value": 88.55
-            }
-          ]
+            "Agility"
+          ],
+          "Value": 88.55
         }
       ]
     }
@@ -246,13 +222,11 @@
     "Aura": {
       "Effects": [
         {
-          "EffectType": "GainStats",
+          "EffectType": "ModStat",
           "Stats": [
-            {
-              "Stat": "Stamina",
-              "Value": 79.0
-            }
-          ]
+            "Stamina"
+          ],
+          "Value": 79
         }
       ]
     }
@@ -266,13 +240,11 @@
     "Aura": {
       "Effects": [
         {
-          "EffectType": "GainStats",
+          "EffectType": "ModStat",
           "Stats": [
-            {
-              "Stat": "Stamina",
-              "Value": 102.7
-            }
-          ]
+            "Stamina"
+          ],
+          "Value": 102.7
         }
       ]
     }
@@ -286,13 +258,11 @@
     "Aura": {
       "Effects": [
         {
-          "EffectType": "GainStats",
+          "EffectType": "ModStat",
           "Stats": [
-            {
-              "Stat": "Strength",
-              "Value": 86.0
-            }
-          ]
+            "Strength"
+          ],
+          "Value": 86
         }
       ]
     }
@@ -306,13 +276,11 @@
     "Aura": {
       "Effects": [
         {
-          "EffectType": "GainStats",
+          "EffectType": "ModStat",
           "Stats": [
-            {
-              "Stat": "Strength",
-              "Value": 98.9
-            }
-          ]
+            "Strength"
+          ],
+          "Value": 98.9
         }
       ]
     }
@@ -326,13 +294,11 @@
     "Aura": {
       "Effects": [
         {
-          "EffectType": "GainStats",
+          "EffectType": "ModStat",
           "Stats": [
-            {
-              "Stat": "ManaPer5",
-              "Value": 50.0
-            }
-          ]
+            "ManaPer5"
+          ],
+          "Value": 50
         }
       ]
     }
@@ -346,13 +312,11 @@
     "Aura": {
       "Effects": [
         {
-          "EffectType": "GainStats",
+          "EffectType": "ModStat",
           "Stats": [
-            {
-              "Stat": "ManaPer5",
-              "Value": 62.5
-            }
-          ]
+            "ManaPer5"
+          ],
+          "Value": 62.5
         }
       ]
     }
@@ -366,7 +330,7 @@
       "Effects": [
         {
           "EffectType": "GainProc",
-          "ProcID": 8
+          "Value": 8
         }
       ]
     }
@@ -380,7 +344,7 @@
       "Effects": [
         {
           "EffectType": "GainProc",
-          "ProcID": 9
+          "Value": 9
         }
       ]
     }
@@ -394,20 +358,19 @@
       "Duration": 10,
       "Effects": [
         {
-          "EffectType": "GainStats",
+          "EffectType": "ModStat",
           "Stats": [
-            {
-              "Stat": "AttackPower",
-              "Value": 445.0
-            }
-          ]
+            "AttackPower"
+          ],
+          "Value": 445
         }
       ]
     },
     "Effects": [
       {
         "EffectType": "ExtraAttacks",
-        "ProcID": 2
+        "ProcID": 2,
+        "Value": 1
       }
     ]
   },
@@ -420,20 +383,19 @@
       "Duration": 10,
       "Effects": [
         {
-          "EffectType": "GainStats",
+          "EffectType": "ModStat",
           "Stats": [
-            {
-              "Stat": "AttackPower",
-              "Value": 578.5
-            }
-          ]
+            "AttackPower"
+          ],
+          "Value": 578.5
         }
       ]
     },
     "Effects": [
       {
         "EffectType": "ExtraAttacks",
-        "ProcID": 2
+        "ProcID": 2,
+        "Value": 1
       }
     ]
   },
@@ -445,14 +407,14 @@
     "Aura": {
       "Effects": [
         {
-          "EffectType": "ModStat",
-          "Percent": 10,
+          "EffectType": "ModStatPercent",
           "Stats": [
             "Strength",
             "Agility",
             "Stamina",
             "Intellect"
-          ]
+          ],
+          "Value": 10
         }
       ]
     }
@@ -466,29 +428,21 @@
     "Aura": {
       "Effects": [
         {
-          "EffectType": "GainStats",
+          "EffectType": "ModStat",
           "Stats": [
-            {
-              "Stat": "Armor",
-              "Value": 340.0
-            },
-            {
-              "Stat": "Strength",
-              "Value": 14.0
-            },
-            {
-              "Stat": "Agility",
-              "Value": 14.0
-            },
-            {
-              "Stat": "Intellect",
-              "Value": 14.0
-            },
-            {
-              "Stat": "Stamina",
-              "Value": 14.0
-            }
-          ]
+            "Armor"
+          ],
+          "Value": 340
+        },
+        {
+          "EffectType": "ModStat",
+          "Stats": [
+            "Strength",
+            "Agility",
+            "Stamina",
+            "Intellect"
+          ],
+          "Value": 14
         }
       ]
     }
@@ -502,29 +456,21 @@
     "Aura": {
       "Effects": [
         {
-          "EffectType": "GainStats",
+          "EffectType": "ModStat",
           "Stats": [
-            {
-              "Stat": "Armor",
-              "Value": 459.0
-            },
-            {
-              "Stat": "Strength",
-              "Value": 18.9
-            },
-            {
-              "Stat": "Agility",
-              "Value": 18.9
-            },
-            {
-              "Stat": "Intellect",
-              "Value": 18.9
-            },
-            {
-              "Stat": "Stamina",
-              "Value": 18.9
-            }
-          ]
+            "Armor"
+          ],
+          "Value": 459
+        },
+        {
+          "EffectType": "ModStat",
+          "Stats": [
+            "Strength",
+            "Agility",
+            "Stamina",
+            "Intellect"
+          ],
+          "Value": 18.9
         }
       ]
     }
@@ -538,13 +484,11 @@
     "Aura": {
       "Effects": [
         {
-          "EffectType": "GainStats",
+          "EffectType": "ModStat",
           "Stats": [
-            {
-              "Stat": "AttackPower",
-              "Value": 125.0
-            }
-          ]
+            "AttackPower"
+          ],
+          "Value": 125
         }
       ]
     }
@@ -558,13 +502,11 @@
     "Aura": {
       "Effects": [
         {
-          "EffectType": "GainStats",
+          "EffectType": "ModStat",
           "Stats": [
-            {
-              "Stat": "Intellect",
-              "Value": 40.0
-            }
-          ]
+            "Intellect"
+          ],
+          "Value": 40
         }
       ]
     }
@@ -578,13 +520,11 @@
     "Aura": {
       "Effects": [
         {
-          "EffectType": "GainStats",
+          "EffectType": "ModStat",
           "Stats": [
-            {
-              "Stat": "AttackPower",
-              "Value": 220.0
-            }
-          ]
+            "AttackPower"
+          ],
+          "Value": 220
         }
       ]
     }
@@ -598,13 +538,11 @@
     "Aura": {
       "Effects": [
         {
-          "EffectType": "GainStats",
+          "EffectType": "ModStat",
           "Stats": [
-            {
-              "Stat": "AttackPower",
-              "Value": 264.0
-            }
-          ]
+            "AttackPower"
+          ],
+          "Value": 264
         }
       ]
     }
@@ -618,13 +556,11 @@
     "Aura": {
       "Effects": [
         {
-          "EffectType": "GainStats",
+          "EffectType": "ModStat",
           "Stats": [
-            {
-              "Stat": "ManaPer5",
-              "Value": 41.0
-            }
-          ]
+            "ManaPer5"
+          ],
+          "Value": 41
         }
       ]
     }
@@ -638,13 +574,11 @@
     "Aura": {
       "Effects": [
         {
-          "EffectType": "GainStats",
+          "EffectType": "ModStat",
           "Stats": [
-            {
-              "Stat": "ManaPer5",
-              "Value": 49.2
-            }
-          ]
+            "ManaPer5"
+          ],
+          "Value": 49.2
         }
       ]
     }
@@ -657,13 +591,11 @@
     "Aura": {
       "Effects": [
         {
-          "EffectType": "GainStats",
+          "EffectType": "ModStat",
           "Stats": [
-            {
-              "Stat": "SpellHit",
-              "Value": 1.0
-            }
-          ]
+            "SpellHit"
+          ],
+          "Value": 1
         }
       ]
     }
@@ -677,11 +609,11 @@
     "Aura": {
       "Effects": [
         {
-          "EffectType": "ModStat",
-          "Percent": 10,
+          "EffectType": "ModStatPercent",
           "Stats": [
             "AttackPower"
-          ]
+          ],
+          "Value": 10
         }
       ]
     }
@@ -696,7 +628,7 @@
       "Effects": [
         {
           "EffectType": "ModAttackSpeed",
-          "Percent": 30
+          "Value": 30
         }
       ]
     }
@@ -710,13 +642,11 @@
     "Aura": {
       "Effects": [
         {
-          "EffectType": "GainStats",
+          "EffectType": "ModStat",
           "Stats": [
-            {
-              "Stat": "SpellPower",
-              "Value": 20.0
-            }
-          ]
+            "SpellPower"
+          ],
+          "Value": 20
         }
       ]
     }
@@ -730,9 +660,9 @@
     "Aura": {
       "Effects": [
         {
-          "EffectType": "ModDamageSchool",
-          "Percent": 1,
-          "SchoolMask": 127
+          "EffectType": "ModDamageDone",
+          "SchoolMask": 127,
+          "Value": 1
         }
       ]
     }
@@ -746,9 +676,9 @@
     "Aura": {
       "Effects": [
         {
-          "EffectType": "ModDamageSchool",
-          "Percent": 2,
-          "SchoolMask": 127
+          "EffectType": "ModDamageDone",
+          "SchoolMask": 127,
+          "Value": 2
         }
       ]
     }
@@ -762,9 +692,9 @@
     "Aura": {
       "Effects": [
         {
-          "EffectType": "ModDamageSchool",
-          "Percent": 3,
-          "SchoolMask": 127
+          "EffectType": "ModDamageDone",
+          "SchoolMask": 127,
+          "Value": 3
         }
       ]
     }

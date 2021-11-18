@@ -15,8 +15,8 @@ public class SpellState
     public float ManaCostReductionPercent { get; set; }
     public int EffectiveManaCost => (int)(Spell.ManaCost * (2 - ManaCostReductionPercent)) - ManaCostReduction;
 
-    public int EffectBonus { get; set; }
-    public float EffectBonusPercent { get; set; }
+    public EffectBonus[] EffectBonuses { get; set; }
+    public EffectBonus[] AuraBonuses { get; set; }
 
     public int BonusSpellPower { get; set; }
     public float BonusCritChance { get; set; }
@@ -31,15 +31,44 @@ public class SpellState
         ManaCostReduction = 0;
         ManaCostReductionPercent = 1f;
 
-        EffectBonus = 0;
-        EffectBonusPercent = 1f;
-
         BonusSpellPower = 0;
         BonusCritChance = 0f;
+
+        if (spell.Effects != null)
+        {
+            EffectBonuses = new EffectBonus[spell.Effects.Count];
+
+            for (int i = 0; i < EffectBonuses.Length; i++)
+            {
+                EffectBonuses[i] = new EffectBonus();
+            }
+        }
+
+        if (spell.Aura != null)
+        { 
+            AuraBonuses = new EffectBonus[spell.Aura.Effects.Count];
+
+            for (int i = 0; i < AuraBonuses.Length; i++)
+            {
+                AuraBonuses[i] = new EffectBonus();
+            }
+        }
     }
 
     public override string ToString()
     {
         return Spell.Name;
+    }
+}
+
+public class EffectBonus
+{
+    public int Flat { get; set; }
+    public float Percent { get; set; }
+
+    public EffectBonus()
+    {
+        Flat = 0;
+        Percent = 1;
     }
 }

@@ -133,7 +133,7 @@
   "19": {
     "ID": 19,
     "Name": "Despair",
-    "SpellID": 34580,
+    "SpellID": 34579,
     "ProcMask": 94,
     "PPM": 0.5
   },
@@ -157,5 +157,51 @@
     "SpellID": 36113,
     "ProcMask": 94,
     "GuaranteedProc": true
+  },
+  "23": {
+    "ID": 23,
+    "Name": "Tsunami Talisman",
+    "SpellID": 42084,
+    "ProcMask": 32,
+    "Chance": 10,
+    "Cooldown": 45000
+  },
+  "24": {
+    "ID": 24,
+    "Name": "Shard of Contempt",
+    "SpellID": 45053,
+    "ProcMask": 94,
+    "Chance": 10,
+    "Cooldown": 45000
+  },
+  "25": {
+    "ID": 25,
+    "Name": "Darkmoon Card: Crusade (AP)",
+    "SpellID": 39439,
+    "ProcMask": 94,
+    "GuaranteedProc": true
+  },
+  "26": {
+    "ID": 26,
+    "Name": "Darkmoon Card: Crusade (SP)",
+    "SpellID": 39441,
+    "ProcMask": 640,
+    "GuaranteedProc": true
+  },
+  "27": {
+    "ID": 27,
+    "Name": "Madness of the Betrayer",
+    "SpellID": 40477,
+    "ProcMask": 94,
+    "PPM": 1
+  },
+  "28": {
+    "ID": 28,
+    "Name": "Hourglass of the Unraveler",
+    "SpellID": 33649,
+    "ProcMask": 32,
+    "Chance": 10,
+    "Cooldown": 50000
   }
 }
+

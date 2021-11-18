@@ -69,9 +69,9 @@ public class Attack
         float mitigation = Effect.IgnoresDefenses ? 1f : GetMitigation(Player, Enemy, Effect.School);
 
         float playerDamage = Effect.CalculateDamage(Player, this, Spell);
-        float bonusSpellPower = Effect.Coefficient == 0 ? 0 : Enemy.Modifiers.BonusSpellDamageTaken[Effect.School] * Effect.Coefficient;
+        float bonusSpellPower = Effect.Coefficient == 0 ? 0 : Enemy.Modifiers.DamageTakenFlat[Effect.School] * Effect.Coefficient;
 
-        BaseDamage = (playerDamage + bonusSpellPower) * Enemy.Modifiers.SchoolDamageTaken.GetModifier(Effect.School);
+        BaseDamage = (playerDamage + bonusSpellPower) * Enemy.Modifiers.DamageTaken.GetModifier(Effect.School);
 
         Damage = RNG.RollDamage(BaseDamage * DamageResultMultiplier * mitigation);
 

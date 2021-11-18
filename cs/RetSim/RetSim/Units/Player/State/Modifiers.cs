@@ -4,21 +4,21 @@ namespace RetSim.Units.Player.State;
 
 public class Modifiers
 {
-    public SchoolModifiers SchoolDamageDone { get; init; } = new SchoolModifiers();
-    public SchoolModifiers SchoolDamageTaken { get; init; } = new SchoolModifiers();
-    public SchoolBonuses BonusSpellDamageTaken { get; init; } = new SchoolBonuses();
+    public ModifiersPercent DamageDone { get; init; } = new ModifiersPercent();
+    public ModifiersPercent DamageTaken { get; init; } = new ModifiersPercent();
+    public ModifiersFlat DamageTakenFlat { get; init; } = new ModifiersFlat();
 
     public float AttackSpeed { get; set; } = 1f;
     public float CastSpeed { get; set; } = 1f;
     public float WeaponDamage { get; set; } = 1f;
 }
 
-public class SchoolModifiers
+public class ModifiersPercent
 {
     protected readonly static float Default = 1f;
     protected Dictionary<School, float> map; //TODO: Turn into array?
 
-    public SchoolModifiers()
+    public ModifiersPercent()
     {
         map = new();
     }
@@ -64,11 +64,11 @@ public class SchoolModifiers
     }
 }
 
-public class SchoolBonuses
+public class ModifiersFlat
 {
     protected int[] Values;
 
-    public SchoolBonuses()
+    public ModifiersFlat()
     {
         Values = new int[(int)School.All + 1];
 

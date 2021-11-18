@@ -8,13 +8,14 @@ public abstract class SpellEffect
 {
     [JsonIgnore]
     public Spell Parent { get; set; }
-    public float MinEffect { get; init; }
-    public float MaxEffect { get; init; }
 
-    public SpellEffect(float min, float max)
+    public float Value { get; init; }
+    public float DieSides { get; init; }
+
+    public SpellEffect(float value, float dieSides)
     {
-        MinEffect = min;
-        MaxEffect = max;
+        Value = value;
+        DieSides = dieSides;
     }
 
     public abstract ProcMask Resolve(FightSimulation fight, SpellState state);

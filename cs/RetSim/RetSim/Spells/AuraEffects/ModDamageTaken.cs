@@ -3,30 +3,30 @@ using RetSim.Units;
 
 namespace RetSim.Spells.AuraEffects;
 
-class ModDamageTaken : ModifyPercent
+class ModDamageTaken : ModifyFlat
 {
-    public ModDamageTaken(int percent, School schoolMask) : base(percent)
+    public ModDamageTaken(float amount, School school) : base(amount)
     {
-        SchoolMask = schoolMask;
+        School = school;
     }
 
-    public School SchoolMask { get; init; }
+    public School School { get; init; }
 
     public override void Apply(Aura aura, Unit caster, Unit target, FightSimulation fight)
     {
         base.Apply(aura, caster, target, fight);
 
-        target.Modifiers.SchoolDamageTaken[SchoolMask] *= RelativeDifference;
+        target.Modifiers.DamageTakenFlat[School] += (int)Difference;
 
         //Program.Logger.Log($"{fight.Timestamp} - {caster.Name}'s {aura.Parent.Name} increased {target.Name}'s {SchoolMask} damage taken to {target.Modifiers.SchoolDamageTaken[SchoolMask]}");
     }
 
     public override void Remove(Aura aura, Unit caster, Unit target, FightSimulation fight)
     {
-        target.Modifiers.SchoolDamageTaken[SchoolMask] /= RelativeDifference;
+        target.Modifiers.DamageTakenFlat[School] -= (int)Difference;
 
         //Program.Logger.Log($"{fight.Timestamp} - {caster.Name}'s {aura.Parent.Name} decreased {target.Name}'s {SchoolMask} damage taken to {target.Modifiers.SchoolDamageTaken[SchoolMask]}");
-
+        
         base.Remove(aura, caster, target, fight);
     }
 }

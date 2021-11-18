@@ -1,17 +1,16 @@
 ﻿using RetSim.Simulation;
 using RetSim.Units;
 using RetSim.Units.Enemy;
-using RetSim.Units.UnitStats;
 
 namespace RetSim.Spells.AuraEffects;
 
-class GainStatsCreature : GainStats
+class ModDamageDoneCreature : ModDamageDone
 {
     public List<CreatureType> Creatures { get; init; }
 
     protected bool MatchingType = false;
 
-    public GainStatsCreature(StatSet stats, List<CreatureType> creatures) : base(stats)
+    public ModDamageDoneCreature(float percent, School schoolMask, List<CreatureType> creatures) : base(percent, schoolMask)
     {
         Creatures = creatures;
     }

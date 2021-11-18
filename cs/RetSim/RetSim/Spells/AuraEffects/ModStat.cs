@@ -4,22 +4,21 @@ using RetSim.Units.UnitStats;
 
 namespace RetSim.Spells.AuraEffects;
 
-class ModStat : ModifyPercent
+public class ModStat : AuraEffect
 {
-    public ModStat(int percent, List<StatName> stats) : base(percent)
+    public List<StatName> Stats { get; init; }
+
+    public ModStat(float amount, List<StatName> stats) : base(amount) 
     {
         Stats = stats;
     }
 
-    public List<StatName> Stats { get; init; }
-
     public override void Apply(Aura aura, Unit caster, Unit target, FightSimulation fight)
     {
-        base.Apply(aura, caster, target, fight);
-
         foreach (StatName stat in Stats)
         {
-            target.Stats[stat].Modifier *= RelativeDifference;
+            target.Stats[stat].Bonus += Value;
+            //Program.Logger.Log($"{fight.Timestamp} - {target.Name}'s {stat.Key} was set to {target.Stats[stat.Key].Value} (previous: {target.Stats[stat.Key].Value - stat.Value})");
         }
     }
 
@@ -27,9 +26,8 @@ class ModStat : ModifyPercent
     {
         foreach (StatName stat in Stats)
         {
-            target.Stats[stat].Modifier /= RelativeDifference;
+            target.Stats[stat].Bonus -= Value;
+            //Program.Logger.Log($"{fight.Timestamp} - {target.Name}'s {stat.Key} was set to {target.Stats[stat.Key].Value} (previous: {target.Stats[stat.Key].Value + stat.Value})");
         }
-
-        base.Remove(aura, caster, target, fight);
     }
 }

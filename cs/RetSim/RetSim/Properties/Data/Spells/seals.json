@@ -20,7 +20,7 @@
       "Effects": [
         {
           "EffectType": "GainSeal",
-          "ProcID": 1
+          "Value": 1
         }
       ]
     }
@@ -44,7 +44,7 @@
       "Effects": [
         {
           "EffectType": "GainSeal",
-          "ProcID": 2
+          "Value": 2
         }
       ]
     }
@@ -65,7 +65,13 @@
         27170,
         31892
       ],
-      "JudgementID": 27171
+      "JudgementID": 27171,
+      "Effects": [
+        {
+          "EffectType": "GainSeal",
+          "Value": 2
+        }
+      ]
     }
   }
 }

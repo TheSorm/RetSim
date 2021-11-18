@@ -5,28 +5,23 @@ namespace RetSim.Spells.AuraEffects;
 
 abstract class ModifyFlat : AuraEffect
 {
-    public int Amount { get; init; }
+    protected float CurrentAmount;
+    protected float PreviousAmount;
+    protected float Difference;
 
-    protected int CurrentAmount;
-    protected int PreviousAmount;
-    protected int Difference;
-
-    public ModifyFlat(int amount)
-    {
-        Amount = amount;
-    }
+    public ModifyFlat(float amount) : base(amount) { }
 
     public override void Apply(Aura aura, Unit caster, Unit target, FightSimulation fight)
     {
-        CurrentAmount = Amount * fight.Player.Auras[aura].Stacks;
-        PreviousAmount = CurrentAmount - Amount;
+        CurrentAmount = Value * fight.Player.Auras[aura].Stacks;
+        PreviousAmount = CurrentAmount - Value;
         Difference = CurrentAmount - PreviousAmount;
     }
 
     public override void Remove(Aura aura, Unit caster, Unit target, FightSimulation fight)
     {
         CurrentAmount = PreviousAmount;
-        PreviousAmount -= Amount;
+        PreviousAmount -= Value;
         Difference = CurrentAmount - PreviousAmount;
     }
 }

@@ -1,32 +1,33 @@
 ﻿using RetSim.Simulation;
 using RetSim.Units;
+using RetSim.Units.UnitStats;
 
 namespace RetSim.Spells.AuraEffects;
 
-class ModDamageSpell : ModifyPercent
+class ModStatPercent : ModifyPercent
 {
-    public ModDamageSpell(int percent, List<int> spells) : base(percent)
+    public ModStatPercent(float percent, List<StatName> stats) : base(percent)
     {
-        Spells = spells;
+        Stats = stats;
     }
 
-    public List<int> Spells { get; init; }
+    public List<StatName> Stats { get; init; }
 
     public override void Apply(Aura aura, Unit caster, Unit target, FightSimulation fight)
     {
         base.Apply(aura, caster, target, fight);
 
-        foreach (int spell in Spells)
+        foreach (StatName stat in Stats)
         {
-            fight.Player.Spellbook[spell].EffectBonusPercent *= RelativeDifference;
+            target.Stats[stat].Modifier *= Difference;
         }
     }
 
     public override void Remove(Aura aura, Unit caster, Unit target, FightSimulation fight)
     {
-        foreach (int spell in Spells)
+        foreach (StatName stat in Stats)
         {
-            fight.Player.Spellbook[spell].EffectBonusPercent /= RelativeDifference;
+            target.Stats[stat].Modifier /= Difference;
         }
 
         base.Remove(aura, caster, target, fight);

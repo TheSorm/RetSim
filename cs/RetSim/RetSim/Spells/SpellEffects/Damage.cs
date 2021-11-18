@@ -20,7 +20,7 @@ public class Damage : SpellEffect
     public ProcMask OnHit { get; init; }
     public ProcMask OnCrit { get; init; }
 
-    public Damage(float min, float max, School school, float coefficient, DefenseType defense, AttackCategory crit, bool ignoresDefense, ProcMask onCast, ProcMask onHit, ProcMask onCrit) : base(min, max)
+    public Damage(float value, float dieSides, School school, float coefficient, DefenseType defense, AttackCategory crit, bool ignoresDefense, ProcMask onCast, ProcMask onHit, ProcMask onCrit) : base(value, dieSides)
     {
         School = school;
         Coefficient = coefficient; 
@@ -34,7 +34,7 @@ public class Damage : SpellEffect
 
     public virtual float GetBaseDamage(Player player, SpellState state)
     {
-        return RNG.RollRange(MinEffect, MaxEffect);
+        return RNG.RollRange(Value, Value + DieSides);
     }
 
     public virtual float GetSpellPowerBonus(Player player, SpellState state)
@@ -53,9 +53,11 @@ public class Damage : SpellEffect
         if (CritCategory == AttackCategory.Physical)
             school |= School.Physical;
 
-        float schoolMultiplier = player.Modifiers.SchoolDamageDone.GetModifier(school);
+        float schoolMultiplier = player.Modifiers.DamageDone.GetModifier(school);
 
-        return ((GetBaseDamage(player, state) + GetSpellPowerBonus(player, state)) * state.EffectBonusPercent + state.EffectBonus) * schoolMultiplier;
+        EffectBonus bonus = state.EffectBonuses[state.Spell.Effects.IndexOf(this)];
+
+        return ((GetBaseDamage(player, state) + GetSpellPowerBonus(player, state)) * bonus.Percent + bonus.Flat) * schoolMultiplier;
     }
 
     public override ProcMask Resolve(FightSimulation fight, SpellState state)
