@@ -16,118 +16,146 @@
   },
   "3": {
     "ID": 3,
-    "Name": "Vengeance",
-    "SpellID": 20055,
+    "Name": "Vengeance (Rank 1)",
+    "SpellID": 20050,
     "ProcMask": 1,
     "GuaranteedProc": true
   },
   "4": {
     "ID": 4,
+    "Name": "Vengeance (Rank 2)",
+    "SpellID": 20052,
+    "ProcMask": 1,
+    "GuaranteedProc": true
+  },
+  "5": {
+    "ID": 5,
+    "Name": "Vengeance (Rank 3)",
+    "SpellID": 20053,
+    "ProcMask": 1,
+    "GuaranteedProc": true
+  },
+  "6": {
+    "ID": 6,
+    "Name": "Vengeance (Rank 4)",
+    "SpellID": 20054,
+    "ProcMask": 1,
+    "GuaranteedProc": true
+  },
+  "7": {
+    "ID": 7,
+    "Name": "Vengeance (Rank 5)",
+    "SpellID": 20055,
+    "ProcMask": 1,
+    "GuaranteedProc": true
+  },
+  "8": {
+    "ID": 8,
     "Name": "Windfury Attack",
     "SpellID": 25584,
     "ProcMask": 2,
     "Chance": 20
   },
-  "5": {
-    "ID": 5,
+  "9": {
+    "ID": 9,
+    "Name": "Improved Windfury Attack",
+    "SpellID": 29192,
+    "ProcMask": 2,
+    "Chance": 20
+  },
+  "10": {
+    "ID": 10,
     "Name": "Lightning Speed",
     "SpellID": 28093,
     "ProcMask": 94,
     "PPM": 1.0
   },
-  "6": {
-    "ID": 6,
+  "11": {
+    "ID": 11,
     "Name": "Executioner",
     "SpellID": 42976,
     "ProcMask": 94,
     "PPM": 1.0
   },
-  "7": {
-    "ID": 7,
+  "12": {
+    "ID": 12,
     "Name": "Deathfrost",
     "SpellID": 46579,
     "ProcMask": 606,
     "Chance": 50,
     "Cooldown": 25000
   },
-  "8": {
-    "ID": 8,
+  "13": {
+    "ID": 13,
     "Name": "Dragonspine Trophy",
     "SpellID": 34775,
     "ProcMask": 94,
     "PPM": 1.0,
     "Cooldown": 20000
   },
-  "9": {
-    "ID": 9,
+  "14": {
+    "ID": 14,
     "Name": "Lionheart",
     "SpellID": 34512,
     "ProcMask": 30,
     "PPM": 1.0,
     "Cooldown": 1000
   },
-  "10": {
-    "ID": 10,
+  "15": {
+    "ID": 15,
     "Name": "Justice",
     "SpellID": 34260,
     "ProcMask": 128,
     "GuaranteedProc": true
   },
-  "11": {
-    "ID": 11,
-    "Name": "Windfury Attack",
-    "SpellID": 29192,
-    "ProcMask": 2,
-    "Chance": 20
-  },
-  "12": {
-    "ID": 12,
+
+  "16": {
+    "ID": 16,
     "Name": "Devastation",
     "SpellID": 36470,
     "ProcMask": 94,
     "Chance": 25
   },
-  "13": {
-    "ID": 13,
+  "17": {
+    "ID": 17,
     "Name": "Singing Crystal Axe",
     "SpellID": 38281,
     "ProcMask": 94,
     "PPM": 1.0
   },
-  "14": {
-    "ID": 14,
+  "18": {
+    "ID": 18,
     "Name": "Khorium Champion",
     "SpellID": 16915,
     "ProcMask": 94,
     "PPM": 1.0
   },
-  "15": {
-    "ID": 15,
+  "19": {
+    "ID": 19,
     "Name": "Despair",
     "SpellID": 34580,
     "ProcMask": 94,
     "PPM": 0.5
   },
-  "16": {
-    "ID": 16,
+  "20": {
+    "ID": 20,
     "Name": "Glaive of the Pit",
     "SpellID": 34695,
     "ProcMask": 94,
     "PPM": 1.5
   },
-  "17": {
-    "ID": 17,
+  "21": {
+    "ID": 21,
     "Name": "World Breaker",
     "SpellID": 36112,
     "ProcMask": 94,
     "PPM": 1
   },
-  "18": {
-    "ID": 18,
+  "22": {
+    "ID": 22,
     "Name": "World Breaker Cancel",
     "SpellID": 36113,
     "ProcMask": 94,
     "GuaranteedProc": true
   }
-
 }

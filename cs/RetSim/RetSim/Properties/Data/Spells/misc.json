@@ -7,7 +7,7 @@
       "Effects": [
         {
           "EffectType": "GainProc",
-          "ProcID": 14
+          "ProcID": 18
         }
       ]
     }
@@ -39,7 +39,7 @@
       "Effects": [
         {
           "EffectType": "GainProc",
-          "ProcID": 5
+          "ProcID": 10
         }
       ]
     }
@@ -75,7 +75,7 @@
       "Effects": [
         {
           "EffectType": "GainProc",
-          "ProcID": 10
+          "ProcID": 15
         }
       ]
     }
@@ -107,7 +107,7 @@
       "Effects": [
         {
           "EffectType": "GainProc",
-          "ProcID": 9
+          "ProcID": 14
         }
       ]
     }
@@ -159,7 +159,7 @@
       "Effects": [
         {
           "EffectType": "GainProc",
-          "ProcID": 15
+          "ProcID": 19
         }
       ]
     }
@@ -191,7 +191,7 @@
       "Effects": [
         {
           "EffectType": "GainProc",
-          "ProcID": 16
+          "ProcID": 20
         }
       ]
     }
@@ -204,7 +204,7 @@
       "Effects": [
         {
           "EffectType": "GainProc",
-          "ProcID": 8
+          "ProcID": 13
         }
       ]
     }
@@ -260,7 +260,7 @@
       "Effects": [
         {
           "EffectType": "GainProc",
-          "ProcID": 17
+          "ProcID": 21
         }
       ]
     }
@@ -283,7 +283,7 @@
         },
         {
           "EffectType": "GainProc",
-          "ProcID": 18
+          "ProcID": 22
         }
       ]
     }
@@ -307,7 +307,7 @@
       "Effects": [
         {
           "EffectType": "GainProc",
-          "ProcID": 12
+          "ProcID": 16
         }
       ]
     }
@@ -356,7 +356,7 @@
       "Effects": [
         {
           "EffectType": "GainProc",
-          "ProcID": 13
+          "ProcID": 17
         }
       ]
     }
@@ -409,7 +409,7 @@
       "Effects": [
         {
           "EffectType": "GainProc",
-          "ProcID": 6
+          "ProcID": 11
         }
       ]
     }
@@ -459,7 +459,7 @@
       "Effects": [
         {
           "EffectType": "GainProc",
-          "ProcID": 7
+          "ProcID": 12
         }
       ]
     }

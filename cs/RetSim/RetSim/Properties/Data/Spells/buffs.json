@@ -366,7 +366,7 @@
       "Effects": [
         {
           "EffectType": "GainProc",
-          "ProcID": 4
+          "ProcID": 8
         }
       ]
     }
@@ -380,7 +380,7 @@
       "Effects": [
         {
           "EffectType": "GainProc",
-          "ProcID": 4
+          "ProcID": 9
         }
       ]
     }

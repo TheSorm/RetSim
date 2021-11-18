@@ -31,13 +31,81 @@
         "OnCrit": 33
       }
     ]
-  },  
+  },
+
+  "20050": {
+    "ID": 20050,
+    "Name": "Vengeance",
+    "Rank": 1,
+    "Aura": {
+      "Duration": 30000,
+      "MaxStacks": 3,
+      "Effects": [
+        {
+          "EffectType": "ModDamageSchool",
+          "Percent": 1,
+          "SchoolMask": 3
+        }
+      ]
+    }
+  },
+
+  "20052": {
+    "ID": 20052,
+    "Name": "Vengeance",
+    "Rank": 2,
+    "Aura": {
+      "Duration": 30000,
+      "MaxStacks": 3,
+      "Effects": [
+        {
+          "EffectType": "ModDamageSchool",
+          "Percent": 2,
+          "SchoolMask": 3
+        }
+      ]
+    }
+  },
+
+  "20053": {
+    "ID": 20053,
+    "Name": "Vengeance",
+    "Rank": 3,
+    "Aura": {
+      "Duration": 30000,
+      "MaxStacks": 3,
+      "Effects": [
+        {
+          "EffectType": "ModDamageSchool",
+          "Percent": 3,
+          "SchoolMask": 3
+        }
+      ]
+    }
+  },
+
+  "20054": {
+    "ID": 20054,
+    "Name": "Vengeance",
+    "Rank": 4,
+    "Aura": {
+      "Duration": 30000,
+      "MaxStacks": 3,
+      "Effects": [
+        {
+          "EffectType": "ModDamageSchool",
+          "Percent": 4,
+          "SchoolMask": 3
+        }
+      ]
+    }
+  },
 
   "20055": {
     "ID": 20055,
     "Name": "Vengeance",
     "Rank": 5,
-    "Aura": {      
+    "Aura": {
       "Duration": 30000,
       "MaxStacks": 3,
       "Effects": [
@@ -61,7 +129,7 @@
         "EffectType": "JudgementEffect"
       }
     ]
-  },  
+  },
 
   "20424": {
     "ID": 20424,
@@ -85,7 +153,7 @@
   "20597": {
     "ID": 20597,
     "Name": "Sword / Mace Specialization (Human)",
-    "Aura": {      
+    "Aura": {
       "Effects": [
         {
           "EffectType": "GainStats",
@@ -105,7 +173,7 @@
     "Name": "Avenging Wrath",
     "ManaCost": 236,
     "Cooldown": 180000,
-    "Aura": {      
+    "Aura": {
       "Duration": 20000,
       "Effects": [
         {
@@ -133,7 +201,7 @@
         "OnCrit": 1
       }
     ]
-  }, 
+  },
 
   "35395": {
     "ID": 35395,
@@ -158,5 +226,5 @@
         "OnCrit": 33
       }
     ]
-  }  
+  }
 }
