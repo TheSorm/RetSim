@@ -1,0 +1,233 @@
+[
+  {
+    "ID": 0,
+    "Name": "Target Dummy",
+    "CreatureType": "Mechanical",
+    "ArmorCategory": "Warrior",
+    "Raid": "Karazhan"
+  },
+  {
+    "ID": 1,
+    "Name": "Attumen the Huntsman",
+    "CreatureType": "Undead",
+    "ArmorCategory": "Warrior",
+    "Raid": "Karazhan"
+  },
+  {
+    "ID": 2,
+    "Name": "Moroes",
+    "CreatureType": "Undead",
+    "ArmorCategory": "Warrior",
+    "Raid": "Karazhan"
+  },
+  {
+    "ID": 3,
+    "Name": "Maiden of Virtue",
+    "CreatureType": "Uncategorized",
+    "ArmorCategory": "Paladin",
+    "Raid": "Karazhan"
+  },
+  {
+    "ID": 4,
+    "Name": "The Crone",
+    "CreatureType": "Humanoid",
+    "ArmorCategory": "Paladin",
+    "Raid": "Karazhan"
+  },
+  {
+    "ID": 5,
+    "Name": "The Big Bad Wolf",
+    "CreatureType": "Humanoid",
+    "ArmorCategory": "Warrior",
+    "Raid": "Karazhan"
+  },
+  {
+    "ID": 6,
+    "Name": "Romulo",
+    "CreatureType": "Undead",
+    "ArmorCategory": "Warrior",
+    "Raid": "Karazhan"
+  },
+  {
+    "ID": 7,
+    "Name": "Julianne",
+    "CreatureType": "Undead",
+    "ArmorCategory": "Paladin",
+    "Raid": "Karazhan"
+  },
+  {
+    "ID": 8,
+    "Name": "Nightbane",
+    "CreatureType": "Undead",
+    "ArmorCategory": "Warrior",
+    "Raid": "Karazhan"
+  },
+  {
+    "ID": 9,
+    "Name": "The Curator",
+    "CreatureType": "Mechanical",
+    "ArmorCategory": "Paladin",
+    "Raid": "Karazhan"
+  },
+  {
+    "ID": 10,
+    "Name": "Terestian Illhoof",
+    "CreatureType": "Demon",
+    "ArmorCategory": "Demon",
+    "Raid": "Karazhan"
+  },
+  {
+    "ID": 11,
+    "Name": "Shade of Aran",
+    "CreatureType": "Undead",
+    "ArmorCategory": "Mage",
+    "Raid": "Karazhan"
+  },
+  {
+    "ID": 12,
+    "Name": "Netherspite",
+    "CreatureType": "Dragonkin",
+    "ArmorCategory": "Netherspite",
+    "Raid": "Karazhan"
+  },
+  {
+    "ID": 13,
+    "Name": "Prince Malchezaar",
+    "CreatureType": "Demon",
+    "ArmorCategory": "Warrior",
+    "Raid": "Karazhan"
+  },
+  {
+    "ID": 14,
+    "Name": "High King Maulgar",
+    "CreatureType": "Humanoid",
+    "ArmorCategory": "Warrior",
+    "Raid": "Gruul's Lair"
+  },
+  {
+    "ID": 15,
+    "Name": "High King Maulgar's Advisors",
+    "CreatureType": "Humanoid",
+    "ArmorCategory": "Paladin",
+    "Raid": "Gruul's Lair"
+  },
+  {
+    "ID": 16,
+    "Name": "Gruul the Dragonkiller",
+    "CreatureType": "Humanoid",
+    "ArmorCategory": "Warrior",
+    "Raid": "Gruul's Lair"
+  },
+  {
+    "ID": 17,
+    "Name": "Magtheridon",
+    "CreatureType": "Demon",
+    "ArmorCategory": "Warrior",
+    "Raid": "Magtheridon's Lair"
+  },
+  {
+    "ID": 18,
+    "Name": "Hydross the Unstable",
+    "CreatureType": "Elemental",
+    "ArmorCategory": "Warrior",
+    "Raid": "Serpentshrine Cavern"
+  },
+  {
+    "ID": 19,
+    "Name": "The Lurker Below",
+    "CreatureType": "Beast",
+    "ArmorCategory": "Warrior",
+    "Raid": "Serpentshrine Cavern"
+  },
+  {
+    "ID": 20,
+    "Name": "Leotheras the Blind",
+    "CreatureType": "Humanoid",
+    "ArmorCategory": "Warrior",
+    "Raid": "Serpentshrine Cavern"
+  },
+  {
+    "ID": 21,
+    "Name": "Fathom-Lord Karathress",
+    "CreatureType": "Humanoid",
+    "ArmorCategory": "Paladin",
+    "Raid": "Serpentshrine Cavern"
+  },
+  {
+    "ID": 22,
+    "Name": "Morogrim Tidewalker",
+    "CreatureType": "Giant",
+    "ArmorCategory": "Warrior",
+    "Raid": "Serpentshrine Cavern"
+  },
+  {
+    "ID": 23,
+    "Name": "Lady Vashj",
+    "CreatureType": "Humanoid",
+    "ArmorCategory": "Paladin",
+    "Raid": "Serpentshrine Cavern"
+  },
+  {
+    "ID": 24,
+    "Name": "Al'ar",
+    "CreatureType": "Elemental",
+    "ArmorCategory": "Warrior",
+    "Raid": "Tempest Keep"
+  },
+  {
+    "ID": 25,
+    "Name": "Void Reaver",
+    "CreatureType": "Mechanical",
+    "ArmorCategory": "VoidReaver",
+    "Raid": "Tempest Keep"
+  },
+  {
+    "ID": 26,
+    "Name": "High Astromancer Solarian",
+    "CreatureType": "Humanoid",
+    "ArmorCategory": "Paladin",
+    "Raid": "Tempest Keep"
+  },
+  {
+    "ID": 27,
+    "Name": "High Astromancer Solarian (Voidwalker)",
+    "CreatureType": "Humanoid",
+    "ArmorCategory": "Warrior",
+    "Raid": "Tempest Keep"
+  },
+  {
+    "ID": 28,
+    "Name": "Thaladred the Darkener",
+    "CreatureType": "Humanoid",
+    "ArmorCategory": "Warrior",
+    "Raid": "Tempest Keep"
+  },
+  {
+    "ID": 29,
+    "Name": "Lord Sanguinar",
+    "CreatureType": "Humanoid",
+    "ArmorCategory": "Warrior",
+    "Raid": "Tempest Keep"
+  },
+  {
+    "ID": 30,
+    "Name": "Grand Astromancer Capernian",
+    "CreatureType": "Humanoid",
+    "ArmorCategory": "Mage",
+    "Raid": "Tempest Keep"
+  },
+  {
+    "ID": 31,
+    "Name": "Master Engineer Telonicus",
+    "CreatureType": "Humanoid",
+    "ArmorCategory": "Paladin",
+    "Raid": "Tempest Keep"
+  },
+  {
+    "ID": 32,
+    "Name": "Kael'thas Sunstrider",
+    "CreatureType": "Humanoid",
+    "ArmorCategory": "Paladin",
+    "Raid": "Tempest Keep"
+  }
+]

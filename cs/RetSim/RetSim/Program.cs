@@ -1,6 +1,6 @@
 ﻿global using System;
 global using System.Collections.Generic;
-
+using RetSim.Data;
 using RetSim.Items;
 using RetSim.Misc;
 using RetSim.Misc.Loggers;
@@ -24,9 +24,9 @@ class Program
 
     static void Main(string[] args)
     {
-        Data.Manager.InstantiateData();
+        Manager.InstantiateData();
 
-        var equipment = Data.Manager.GetEquipment();        
+        var equipment = Manager.GetEquipment();        
 
         var playerTalents = Talent.GetTalents(20121, 31868, 20113, 20218, 31870, 20059, 31883, 35397, 20193, 20266);
         var playerBuffs = Spell.GetSpells(25580, 27141, 25898, 2048, 25528, 25359, 25570, 30811, 26991, 25392, 32999, 27127, 28878);
@@ -73,7 +73,7 @@ class Program
 
     static void RunOnce(Equipment equipment, List<Talent> talents, List<Spell> buffs, List<Spell> debuffs, List<Spell> consumables)
     {
-        FightSimulation fight = new(new Player("Brave Hero", Data.Collections.Races["Human"], equipment, talents, null), new Enemy("Magtheridon", CreatureType.Demon, ArmorCategory.Warrior), new EliteTactic(), buffs, debuffs, consumables, 180000, 200000);
+        FightSimulation fight = new(new Player("Brave Hero", Collections.Races["Human"], equipment, talents, null), new Enemy(Collections.Bosses[17]), new EliteTactic(), buffs, debuffs, consumables, 180000, 200000);
 
         PrintStats(fight.Player.Stats.All);
 
@@ -164,7 +164,7 @@ class Program
 
         for (int i = 0; i < iterations; i++)
         {
-            FightSimulation fight = new(new Player("Brave Hero", Data.Collections.Races["Human"], equipment, talents), new Enemy("Magtheridon", CreatureType.Demon, ArmorCategory.Warrior), new EliteTactic(), buffs, debuffs, consumables, 180000, 190000);
+            FightSimulation fight = new(new Player("Brave Hero", Data.Collections.Races["Human"], equipment, talents), new Enemy(Collections.Bosses[17]), new EliteTactic(), buffs, debuffs, consumables, 180000, 190000);
 
             fight.Run();
 

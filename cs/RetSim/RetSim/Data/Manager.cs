@@ -1,6 +1,9 @@
 ﻿using RetSim.Data.JSON;
 using RetSim.Items;
 using RetSim.Spells;
+using RetSim.Spells.SpellEffects;
+using RetSim.Units.Enemy;
+using RetSim.Units.Player;
 using RetSim.Units.Player.Static;
 
 using Newtonsoft.Json;
@@ -8,8 +11,6 @@ using Newtonsoft.Json;
 using System.IO;
 
 using static RetSim.Data.Items;
-using RetSim.Units.Player;
-using RetSim.Spells.SpellEffects;
 
 namespace RetSim.Data;
 
@@ -116,6 +117,11 @@ public static class Manager
 
         human.Racial = Collections.Spells[human.RacialID];
         human.Racial.Requirements = (Player player) => (player.Weapon.Type == WeaponType.Sword || player.Weapon.Type == WeaponType.Mace) && player.Race.Name == Races.Human.ToString();
+
+        Boss[] bosses = LoadBosses();
+
+        foreach (Boss boss in bosses)
+            Collections.Bosses[boss.ID] = boss;
     }
 
     public static Equipment GetEquipment()
@@ -258,7 +264,7 @@ public static class Manager
     {
         using StreamReader reader = new("Properties\\Data\\Spells\\judgements.json");
 
-        return JsonConvert.DeserializeObject<Dictionary<int, RetSim.Spells.Judgement>>(reader.ReadToEnd(), new SpellEffectConverter(), new AuraConverter());
+        return JsonConvert.DeserializeObject<Dictionary<int, Judgement>>(reader.ReadToEnd(), new SpellEffectConverter(), new AuraConverter());
     }
 
     public static Dictionary<int, Talent> LoadTalents()
@@ -273,6 +279,13 @@ public static class Manager
         using StreamReader reader = new("Properties\\Data\\races.json");
 
         return JsonConvert.DeserializeObject<Dictionary<string, Race>>(reader.ReadToEnd());
+    }
+
+    public static Boss[] LoadBosses()
+    {
+        using StreamReader reader = new("Properties\\Data\\bosses.json");
+
+        return JsonConvert.DeserializeObject<Boss[]>(reader.ReadToEnd());
     }
 
     public static List<EquippableWeapon> LoadWeaponData()

@@ -5,11 +5,11 @@ namespace RetSim.Units.Enemy
 {
     public class Enemy : Unit
     {
-        public ArmorCategory ArmorCategory { get; init; }
+        public Boss Boss { get; init; }
 
-        public Enemy(string name, CreatureType type, ArmorCategory armor) : base(name, type)
+        public Enemy(Boss boss) : base(boss.Name, boss.CreatureType)
         {
-            ArmorCategory = armor;
+            Boss = boss;
 
             Stats = new EnemyStats(this);
             Modifiers = new Modifiers();
@@ -22,17 +22,15 @@ namespace RetSim.Units.Enemy
 
         public override string ToString()
         {
-            return Name;
+            return Boss.ToString();
         }
     }
-
 
     public enum ArmorCategory
     {
         None = 0,
         Mage = 3878,
         Netherspite = 5474,
-        Level71 = 5714,
         Paladin = 6193,
         Demon = 6792,
         Warrior = 7684,

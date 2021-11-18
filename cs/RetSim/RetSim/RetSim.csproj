@@ -34,6 +34,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="Properties\Data\bosses.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="Properties\Data\Equipment\armor.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

@@ -1,4 +1,5 @@
 ﻿using RetSim;
+using RetSim.Data;
 using RetSim.Items;
 using RetSim.Simulation;
 using RetSim.Simulation.Tactics;
@@ -26,7 +27,7 @@ namespace RetSimWeb
         public async Task<bool> InitAsync(string httpBaseAdress)
         {
             HttpClient.BaseAddress = new Uri(httpBaseAdress);
-            RetSim.Data.Items.Initialize(await LoadWeponDataAsync(), await LoadArmorDataAsync(), await LoadSetDataAsync(), await LoadGemDataAsync(), await LoadMetaGemDataAsync());
+            Items.Initialize(await LoadWeponDataAsync(), await LoadArmorDataAsync(), await LoadSetDataAsync(), await LoadGemDataAsync(), await LoadMetaGemDataAsync(), await LoadEnchantDataAsync());
             return await Task.Run(() => true);
         }
 
@@ -37,7 +38,7 @@ namespace RetSimWeb
             Console.WriteLine(System.DateTime.Now.ToString());
 			for (int i = 0; i < iterations; i++)
 			{
-				FightSimulation fight = new(new Player("Brave Hero", Races.Human, new() { Weapon = RetSim.Data.Items.Weapons[28429] }, new()), new Enemy("Magtheridon", CreatureType.Demon, ArmorCategory.Warrior), new EliteTactic(), new(), new(), 180000, 190000);
+				FightSimulation fight = new(new Player("Brave Hero", Collections.Races["Human"], new() { Weapon = Items.Weapons[28429] }, new()), new Enemy(Collections.Bosses[17]), new EliteTactic(), null, null, null, 180000, 190000);
                 fight.Run();
 
 				localDps += fight.CombatLog.DPS;
@@ -70,6 +71,11 @@ namespace RetSimWeb
         public async Task<List<MetaGem>> LoadMetaGemDataAsync()
         {
             return JsonSerializer.Deserialize<List<MetaGem>>(await HttpClient.GetStringAsync("/data/metaGems.json"));
+        }
+
+        public async Task<List<Enchant>> LoadEnchantDataAsync()
+        {
+            return JsonSerializer.Deserialize<List<Enchant>>(await HttpClient.GetStringAsync("/data/enchants.json"));
         }
     }
 }

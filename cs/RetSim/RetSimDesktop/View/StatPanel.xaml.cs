@@ -1,4 +1,5 @@
-﻿using RetSim.Simulation;
+﻿using RetSim.Data;
+using RetSim.Simulation;
 using RetSim.Simulation.Tactics;
 using RetSim.Spells;
 using RetSim.Units.Enemy;
@@ -36,8 +37,8 @@ namespace RetSimDesktop
         {
             if (DataContext is RetSimUIModel retSimUIModel)
             {
-                var player = new Player("Brave Hero", RetSim.Data.Collections.Races["Human"], SelectedGear.GetEquipment(retSimUIModel), retSimUIModel.SelectedTalents.GetTalentList());
-                FightSimulation fight = new(player, new Enemy("Magtheridon", CreatureType.Demon, ArmorCategory.Warrior), new EliteTactic(), new List<Spell>(), new List<Spell>(), new List<Spell>(), 0, 0);
+                var player = new Player("Brave Hero", Collections.Races["Human"], SelectedGear.GetEquipment(retSimUIModel), retSimUIModel.SelectedTalents.GetTalentList());
+                FightSimulation fight = new(player, new Enemy(Collections.Bosses[17]), new EliteTactic(), new List<Spell>(), new List<Spell>(), new List<Spell>(), 0, 0);
 
                 Strength.Content = player.Stats[StatName.Strength].Value;
                 AttackPower.Content = player.Stats[StatName.AttackPower].Value;

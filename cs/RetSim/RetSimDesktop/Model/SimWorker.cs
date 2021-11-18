@@ -1,4 +1,5 @@
-﻿using RetSim.Simulation;
+﻿using RetSim.Data;
+using RetSim.Simulation;
 using RetSim.Simulation.Tactics;
 using RetSim.Spells;
 using RetSim.Units.Enemy;
@@ -35,7 +36,7 @@ namespace RetSimDesktop.View
                 List<CombatLog> fightSimulationCombatLogs = new(numberOfSimulations);
                 for (int i = 0; i < numberOfSimulations; i++)
                 {
-                    FightSimulation fight = new(new Player("Brave Hero", RetSim.Data.Collections.Races["Human"], playerEquipment, talents), new Enemy("Magtheridon", CreatureType.Demon, ArmorCategory.Warrior), new EliteTactic(), buffs, debuffs, consumables, retSimUIModel.SimSettings.MinFightDuration, retSimUIModel.SimSettings.MaxFightDuration);
+                    FightSimulation fight = new(new Player("Brave Hero", Collections.Races["Human"], playerEquipment, talents), new Enemy(Collections.Bosses[17]), new EliteTactic(), buffs, debuffs, consumables, retSimUIModel.SimSettings.MinFightDuration, retSimUIModel.SimSettings.MaxFightDuration);
                     fight.Run();
                     overallDPS += fight.CombatLog.DPS;
                     if (i % (numberOfSimulations / 100 + 1) == 0)
