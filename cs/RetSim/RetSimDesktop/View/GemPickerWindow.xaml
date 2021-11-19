@@ -4,6 +4,8 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RetSimDesktop.View"
+        xmlns:viewmodel="clr-namespace:RetSimDesktop.ViewModel"
+        d:DataContext="{d:DesignInstance viewmodel:RetSimUIModel}"
         mc:Ignorable="d"
         Title="Gems" Height="450" Width="800" WindowStartupLocation="CenterScreen">
     <Grid>

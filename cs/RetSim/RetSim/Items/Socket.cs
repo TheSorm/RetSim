@@ -14,7 +14,9 @@ public class Socket
 
         set
         {
-            if (Color != SocketColor.Meta || value.Color == GemColor.Meta)
+            if (value == null) 
+                socketedGem = null;
+            else if (Color != SocketColor.Meta || value.Color == GemColor.Meta)
                 socketedGem = value;
         }
     }

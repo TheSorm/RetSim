@@ -1,7 +1,6 @@
 ﻿using RetSim.Data;
 using RetSim.Simulation;
 using RetSim.Simulation.Tactics;
-using RetSim.Spells;
 using RetSim.Units.Enemy;
 using RetSim.Units.Player;
 using RetSim.Units.Player.Static;

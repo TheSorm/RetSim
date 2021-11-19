@@ -7,48 +7,48 @@ namespace RetSimDesktop.Model
 {
     public class SelectedBuffs : INotifyPropertyChanged
     {
-        private bool battleShoutEnabled;
-        private BattleShout selectedBattleShout;
+        private bool battleShoutEnabled = true;
+        private BattleShout selectedBattleShout = BattleShout.ImpBattleShoutSolarianAndT2;
 
-        private bool trueshotAuraEnabled;
-        private bool ferociousInspirationEnabled;
+        private bool trueshotAuraEnabled = true;
+        private bool ferociousInspirationEnabled = true;
 
-        private bool earthTotemEnabled;
-        private EarthTotem selectedEarthTotem;
+        private bool earthTotemEnabled = true;
+        private EarthTotem selectedEarthTotem = EarthTotem.ImpStrengthOfEarthTotem;
 
-        private bool airTotem1Enabled;
-        private AirTotem1 selectedAirTotem1;
+        private bool airTotem1Enabled = true;
+        private AirTotem1 selectedAirTotem1 = AirTotem1.ImpWindfuryTotem;
 
-        private bool airTotem2Enabled;
-        private AirTotem2 selectedAirTotem2;
+        private bool airTotem2Enabled = true;
+        private AirTotem2 selectedAirTotem2 = AirTotem2.ImpGraceOfAirTotem;
 
-        private bool waterTotemEnabled;
-        private WaterTotem selectedWaterTotem;
+        private bool waterTotemEnabled = true;
+        private WaterTotem selectedWaterTotem = WaterTotem.ImpManaSpringTotem;
 
-        private bool unleashedRageEnabled;
-        private bool heroismEnabled;
-        private bool leaderofthePackEnabled;
-        private bool heroicPresenceEnabled;
-        private bool inspiringPresenceEnabled;
+        private bool unleashedRageEnabled = true;
+        private bool heroismEnabled = true;
+        private bool leaderofthePackEnabled = true;
+        private bool heroicPresenceEnabled = true;
+        private bool inspiringPresenceEnabled = true;
 
-        private bool blessingofMightEnabled;
-        private BlessingofMight selectedBlessingofMight;
+        private bool blessingofMightEnabled = true;
+        private BlessingofMight selectedBlessingofMight = BlessingofMight.ImpBlessingofMight;
 
-        private bool blessingofKingsEnabled;
+        private bool blessingofKingsEnabled = true;
 
-        private bool blessingofWisdomEnabled;
-        private BlessingofWisdom selectedBlessingofWisdom;
+        private bool blessingofWisdomEnabled = true;
+        private BlessingofWisdom selectedBlessingofWisdom = BlessingofWisdom.ImpBlessingofWisdom;
 
-        private bool markoftheWildEnabled;
-        private MarkoftheWild selectedMarkoftheWild;
+        private bool markoftheWildEnabled = true;
+        private MarkoftheWild selectedMarkoftheWild = MarkoftheWild.ImpMarkoftheWild;
 
-        private bool powerWordFortitudeEnabled;
-        private PowerWordFortitude selectedPowerWordFortitude;
+        private bool powerWordFortitudeEnabled = true;
+        private PowerWordFortitude selectedPowerWordFortitude = PowerWordFortitude.ImpPowerWordFortitude;
 
-        private bool divineSpiritEnabled;
-        private DivineSpirit selectedDivineSpirit;
+        private bool divineSpiritEnabled = true;
+        private DivineSpirit selectedDivineSpirit = DivineSpirit.ImpDivineSpirit;
 
-        private bool arcaneIntellectEnabled;
+        private bool arcaneIntellectEnabled = true;
 
         public bool BattleShoutEnabled { get => battleShoutEnabled; set { battleShoutEnabled = value; OnPropertyChanged(nameof(BattleShoutEnabled)); } }
         public BattleShout SelectedBattleShout { get => selectedBattleShout; set { selectedBattleShout = value; OnPropertyChanged(nameof(SelectedBattleShout)); } }
@@ -90,7 +90,7 @@ namespace RetSimDesktop.Model
             }
             if (trueshotAuraEnabled && Spells.ContainsKey(27066))
             {
-                result.Add(Spells[27066] );
+                result.Add(Spells[27066]);
             }
             if (ferociousInspirationEnabled && Spells.ContainsKey(34460))
             {

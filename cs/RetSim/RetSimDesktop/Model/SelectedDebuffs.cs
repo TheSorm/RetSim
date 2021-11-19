@@ -1,40 +1,36 @@
 ﻿using RetSim.Spells;
-using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using static RetSim.Data.Collections;
 
 namespace RetSimDesktop.Model
 {
     public class SelectedDebuffs : INotifyPropertyChanged
     {
-        private bool judgementoftheCrusaderEnabled;
-        private JudgementoftheCrusader selectedJudgementoftheCrusader;
+        private bool judgementoftheCrusaderEnabled = true;
+        private JudgementoftheCrusader selectedJudgementoftheCrusader = JudgementoftheCrusader.ImpJudgementoftheCrusader;
 
-        private bool judgementofWisdomEnabled;
+        private bool judgementofWisdomEnabled = true;
 
-        private bool armorDebuffEnabled;
-        private ArmorDebuff selectedArmorDebuff;
+        private bool armorDebuffEnabled = true;
+        private ArmorDebuff selectedArmorDebuff = ArmorDebuff.ImpExposeArmor;
 
-        private bool bloodFrenzyEnabled;
-        private bool huntersMarkEnabled;
-        private bool exposeWeaknessEnabled;
+        private bool bloodFrenzyEnabled = true;
+        private bool huntersMarkEnabled = true;
+        private bool exposeWeaknessEnabled = true;
 
-        private bool faerieFireEnabled;
-        private FaerieFire selectedFaerieFire;
+        private bool faerieFireEnabled = true;
+        private FaerieFire selectedFaerieFire = FaerieFire.ImpFaerieFire;
 
-        private bool curseofRecklessnessEnabled;
+        private bool curseofRecklessnessEnabled = true;
 
-        private bool curseoftheElementsEnabled;
-        private CurseoftheElements selectedCurseoftheElements;
+        private bool curseoftheElementsEnabled = true;
+        private CurseoftheElements selectedCurseoftheElements = CurseoftheElements.Malediction;
 
-        private bool improvedShadowBoltEnabled;
-        private bool miseryEnabled;
-        private bool shadowWeavingEnabled;
-        private bool improvedScorchEnabled;
+        private bool improvedShadowBoltEnabled = true;
+        private bool miseryEnabled = true;
+        private bool shadowWeavingEnabled = true;
+        private bool improvedScorchEnabled = true;
 
         public bool JudgementoftheCrusaderEnabled { get => judgementoftheCrusaderEnabled; set { judgementoftheCrusaderEnabled = value; OnPropertyChanged(nameof(JudgementoftheCrusaderEnabled)); } }
         public JudgementoftheCrusader SelectedJudgementoftheCrusader { get => selectedJudgementoftheCrusader; set { selectedJudgementoftheCrusader = value; OnPropertyChanged(nameof(SelectedJudgementoftheCrusader)); } }

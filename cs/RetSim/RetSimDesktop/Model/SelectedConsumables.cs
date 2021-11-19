@@ -9,24 +9,24 @@ namespace RetSimDesktop.Model
     {
         private static readonly HashSet<BattleElixir> flasks = new() { BattleElixir.FlaskofRelentlessAssault };
 
-        private BattleElixir selectedBattleElixir;
-        private GuardianElixir selectedGuardianElixir;
-        private TemporaryWeaponEnchantment selectedTemporaryWeaponEnchantment;
-        private Food selectedFood;
-        private PrimaryPotion selectedPrimaryPotion;
-        private SecondaryPotion selectedSecondaryPotion;
+        private BattleElixir selectedBattleElixir = BattleElixir.FlaskofRelentlessAssault;
+        private GuardianElixir selectedGuardianElixir = GuardianElixir.None;
+        private TemporaryWeaponEnchantment selectedTemporaryWeaponEnchantment = TemporaryWeaponEnchantment.None;
+        private Food selectedFood = Food.Strength20Food;
+        private PrimaryPotion selectedPrimaryPotion = PrimaryPotion.HastePotion;
+        private SecondaryPotion selectedSecondaryPotion = SecondaryPotion.DemonicDarkRune;
 
-        private bool scrollOfStrengthEnabled;
-        private ScrollOfStrength selectedScrollOfStrength;
+        private bool scrollOfStrengthEnabled = true;
+        private ScrollOfStrength selectedScrollOfStrength = ScrollOfStrength.ScrollofStrengthV;
 
-        private bool scrollOfAgilityEnabled;
-        private ScrollOfAgility selectedScrollOfAgility;
+        private bool scrollOfAgilityEnabled = true;
+        private ScrollOfAgility selectedScrollOfAgility = ScrollOfAgility.ScrollOfAgilityV;
 
-        private bool drumEnabled;
-        private Drum selectedDrum;
+        private bool drumEnabled = true;
+        private Drum selectedDrum = Drum.DrumsOfBattle;
 
-        private bool superSapperChargeEnabled;
-        private bool gnomishBattleChickenEnabled;
+        private bool superSapperChargeEnabled = true;
+        private bool gnomishBattleChickenEnabled = true;
 
         public BattleElixir SelectedBattleElixir
         {

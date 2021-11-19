@@ -194,7 +194,7 @@ namespace RetSimDesktop
                     if (gemPicker.ShowDialog() == true)
                     {
                         selectedSocket.SocketedGem = gemPicker.SelectedGem;
-                    
+
                         retSimUIModel.SelectedGear.OnPropertyChanged("");
                         SelectedItem.OnPropertyChanged("");
                     }

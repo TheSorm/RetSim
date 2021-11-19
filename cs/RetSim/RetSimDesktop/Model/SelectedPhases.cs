@@ -4,11 +4,11 @@ namespace RetSimDesktop.Model
 {
     public class SelectedPhases : INotifyPropertyChanged
     {
-        private bool phase1Selected;
-        private bool phase2Selected;
-        private bool phase3Selected;
-        private bool phase4Selected;
-        private bool phase5Selected;
+        private bool phase1Selected = true;
+        private bool phase2Selected = true;
+        private bool phase3Selected = false;
+        private bool phase4Selected = false;
+        private bool phase5Selected = false;
 
         public bool Phase1Selected
         {

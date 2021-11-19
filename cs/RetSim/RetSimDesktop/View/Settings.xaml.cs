@@ -78,7 +78,7 @@ namespace RetSimDesktop
 
         private void AirTotem1_Checked(object sender, RoutedEventArgs e)
         {
-            if(DataContext is RetSimUIModel retSimUIModel)
+            if (DataContext is RetSimUIModel retSimUIModel)
             {
                 retSimUIModel.SelectedConsumables.SelectedTemporaryWeaponEnchantment = Model.TemporaryWeaponEnchantment.None;
             }
@@ -87,7 +87,7 @@ namespace RetSimDesktop
         {
             if (DataContext is RetSimUIModel retSimUIModel)
             {
-                if(retSimUIModel.SelectedConsumables.SelectedTemporaryWeaponEnchantment != Model.TemporaryWeaponEnchantment.None)
+                if (retSimUIModel.SelectedConsumables.SelectedTemporaryWeaponEnchantment != Model.TemporaryWeaponEnchantment.None)
                 {
                     retSimUIModel.SelectedBuffs.AirTotem1Enabled = false;
                 }

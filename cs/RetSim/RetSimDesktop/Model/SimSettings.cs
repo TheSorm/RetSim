@@ -5,9 +5,9 @@ namespace RetSimDesktop.Model
 {
     public class SimSettings : INotifyPropertyChanged
     {
-        private string simulationCount;
-        private string minFightDuration;
-        private string maxFightDuration;
+        private string simulationCount = "10000";
+        private string minFightDuration = "180000";
+        private string maxFightDuration = "200000";
 
         public string SimulationCountSetting
         {

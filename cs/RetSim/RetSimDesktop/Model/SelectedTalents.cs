@@ -7,16 +7,16 @@ namespace RetSimDesktop.Model
 {
     public class SelectedTalents : INotifyPropertyChanged
     {
-        private bool convictionEnabled;
-        private bool crusadeEnabled;
-        private bool twoHandedWeaponSpecializationEnabled;
-        private bool sanctityAuraEnabled;
-        private bool improvedSanctityAuraEnabled;
-        private bool vengeanceEnabled;
-        private bool fanaticismEnabled;
-        private bool sanctifiedSealsEnabled;
-        private bool precisionEnabled;
-        private bool divineStrengthEnabled;
+        private bool convictionEnabled = true;
+        private bool crusadeEnabled = true;
+        private bool twoHandedWeaponSpecializationEnabled = true;
+        private bool sanctityAuraEnabled = true;
+        private bool improvedSanctityAuraEnabled = true;
+        private bool vengeanceEnabled = true;
+        private bool fanaticismEnabled = true;
+        private bool sanctifiedSealsEnabled = true;
+        private bool precisionEnabled = true;
+        private bool divineStrengthEnabled = true;
 
         private static Talent Conviction = Talents[20121];
         private static Talent Crusade = Talents[31868];

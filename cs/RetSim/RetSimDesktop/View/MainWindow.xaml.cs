@@ -1,6 +1,5 @@
 ﻿using RetSimDesktop.View;
 using RetSimDesktop.ViewModel;
-using System.Diagnostics;
 using System.Windows;
 using System.Windows.Input;
 
@@ -18,7 +17,7 @@ namespace RetSimDesktop
             RetSim.Data.Items.Initialize(Weapons, Armor, Sets, Gems, MetaGems, Enchants);
             RetSim.Data.Manager.InstantiateData();
             InitializeComponent();
-            RetSimUIModel GM = new();
+            RetSimUIModel GM = RetSimUIModel.Load();
             DataContext = GM;
             InitializeAsync();
             GM.TooltipSettings.PropertyChanged += TooltipSettings_PropertyChanged;
@@ -43,7 +42,7 @@ namespace RetSimDesktop
 
         private void popup_MouseMove(object sender, MouseEventArgs e)
         {
-            if(DataContext is RetSimUIModel retSimUIModel)
+            if (DataContext is RetSimUIModel retSimUIModel)
             {
                 TooltipPopUp.IsOpen = retSimUIModel.TooltipSettings.HoverItemID != 0;
 
@@ -73,7 +72,7 @@ namespace RetSimDesktop
             }
             else
             {
-                await browser.ExecuteScriptAsync("test(30, "+ TooltipPopUp.Height + ");");
+                await browser.ExecuteScriptAsync("test(30, " + TooltipPopUp.Height + ");");
             }
         }
 
@@ -116,6 +115,14 @@ namespace RetSimDesktop
                 {
                     retSimUIModel.SimButtonStatus.IsSimButtonEnabled = false;
                 }
+            }
+        }
+
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            if (DataContext is RetSimUIModel retSimUIModel)
+            {
+                retSimUIModel.Save();
             }
         }
     }

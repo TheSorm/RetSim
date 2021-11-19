@@ -5,6 +5,8 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:RetSimDesktop"
              xmlns:model="clr-namespace:RetSimDesktop.Model"
+             xmlns:viewmodel="clr-namespace:RetSimDesktop.ViewModel"
+             d:DataContext="{d:DesignInstance viewmodel:RetSimUIModel}"
              mc:Ignorable="d" 
              d:DesignHeight="1200" d:DesignWidth="900">
     <UserControl.Resources>

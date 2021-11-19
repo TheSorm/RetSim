@@ -4,9 +4,11 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RetSimDesktop"
+        xmlns:viewmodel="clr-namespace:RetSimDesktop.ViewModel"
+        d:DataContext="{d:DesignInstance viewmodel:RetSimUIModel}"
         xmlns:wv2="clr-namespace:Microsoft.Web.WebView2.Wpf;assembly=Microsoft.Web.WebView2.Wpf"
         mc:Ignorable="d"
-        Title="RetSim" Name="Window" Height="550" Width="1100" MinHeight="550" MinWidth="700" MouseMove="popup_MouseMove">
+        Title="RetSim" Name="Window" Height="550" Width="1100" MinHeight="550" MinWidth="700" MouseMove="popup_MouseMove" Closing="Window_Closing">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="200" />
