@@ -13,6 +13,7 @@ A WoW TBC Classic Retribution Paladin Simulator
 * Stats Panel
   * Add missing stats (health, mana)
   * Move ratings etc to helpful tooltips
+* Reset Button in Settings
 * Make it prettier
 
 ## SIM
