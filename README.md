@@ -25,6 +25,8 @@ A WoW TBC Classic Retribution Paladin Simulator
   * Remove trash
 * Mutually exclusive spells
 * Tactic for Heroism, drums, potions etc - temporary buffs
+  * Option 1: Have a cooldown grp based system 
+  * Option 2: Set Heroism time and pop other cooldwons based on that
 * Spell cast speed & spell GCD
 * Uptime simulation (player / buffs like Expose Weakness)
 
@@ -42,3 +44,4 @@ A WoW TBC Classic Retribution Paladin Simulator
     * (Player State casting -> OnCast spell with cast time -> casting = spell, new CastEvent(castTime, spell))  
 * Proc
   * Should Prio on ProcEvents should be higher than on normal cast events?
+* Test how much DPS is effected by CS delay. If its highly effected, build a UI page to sim that.
