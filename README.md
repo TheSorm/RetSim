@@ -2,9 +2,6 @@
 A WoW TBC Classic Retribution Paladin Simulator
 
 ## DESKTOP VERSION
-* User Config
-  * Store user settings on exit
-  * Defaults if user config file is corrupt or missing
 * Stat weights screen
 * Multi-threading
 * Gear Select Screen
