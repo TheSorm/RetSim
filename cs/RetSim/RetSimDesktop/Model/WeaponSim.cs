@@ -63,6 +63,13 @@ namespace RetSimDesktop.View
                     threads[freeThread] = new(new ThreadStart(simExecuter[freeThread].Execute));
                     threads[freeThread].Start();
                 }
+
+                foreach (var thread in threads)
+                {
+                    if (thread != null)
+                        thread.Join();
+                }
+
                 input.Item1.SimButtonStatus.IsSimButtonEnabled = true;
                 input.Item1.SimButtonStatus.IsGearSimButtonEnabled = true;
             }

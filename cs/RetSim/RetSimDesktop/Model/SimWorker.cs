@@ -84,14 +84,18 @@ namespace RetSimDesktop.View
                             damage += combatLogs[j].DPS;
                         }
                     }
-                    retSimUIModel.CurrentSimOutput.Progress = (int)(finishedSimulationCount / ((float)numberOfSimulations) * 100);
-                    retSimUIModel.CurrentSimOutput.DPS = (damage / ((float)finishedSimulationCount));
+                    if(finishedSimulationCount > 0)
+                    {
+                        retSimUIModel.CurrentSimOutput.Progress = (int)(finishedSimulationCount / ((float)numberOfSimulations) * 100);
+                        retSimUIModel.CurrentSimOutput.DPS = (damage / ((float)finishedSimulationCount));
+                    }
                     Thread.Sleep(100);
                 }
 
                 foreach (var thread in threads)
                 {
-                    thread.Join();
+                    if (thread != null)
+                        thread.Join();
                 }
 
                 Array.Sort(combatLogs, (x, y) => (int)(x.DPS - y.DPS));
