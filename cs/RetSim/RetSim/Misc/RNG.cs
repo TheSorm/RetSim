@@ -2,7 +2,26 @@
 
 public static class RNG
 {
-    private static readonly Random generator = new();
+    private static readonly Random global = new();
+
+    [ThreadStatic]
+    private static Random local;
+
+    private static int Generate(int min, int max)
+    {
+        Random instance = local;
+
+        if (instance == null)
+        {
+            int seed;
+
+            lock (global) seed = global.Next();
+
+            local = instance = new Random(seed);
+        }
+
+        return instance.Next(min, max);
+    }
 
     private static bool Roll(int input, int limit)
     {
@@ -13,7 +32,7 @@ public static class RNG
             return true;
 
         else
-            return generator.Next(0, limit) < input;
+            return Generate(0, limit) < input;
     }
 
     public static bool Roll100(int input)
@@ -67,7 +86,7 @@ public static class RNG
 
     public static int RollRange(int min, int max)
     {
-        return generator.Next(min, max + 1);
+        return Generate(min, max + 1);
     }
 
     public static float RollRange(float min, float max)

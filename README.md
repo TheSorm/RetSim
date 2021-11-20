@@ -2,9 +2,6 @@
 A WoW TBC Classic Retribution Paladin Simulator
 
 ## DESKTOP VERSION
-* User Config
-  * Store user settings on exit
-  * Defaults if user config file is corrupt or missing
 * Stat weights screen
 * Multi-threading
 * Gear Select Screen
@@ -16,6 +13,7 @@ A WoW TBC Classic Retribution Paladin Simulator
 * Stats Panel
   * Add missing stats (health, mana)
   * Move ratings etc to helpful tooltips
+* Reset Button in Settings
 * Make it prettier
 
 ## SIM
@@ -28,6 +26,8 @@ A WoW TBC Classic Retribution Paladin Simulator
   * Remove trash
 * Mutually exclusive spells
 * Tactic for Heroism, drums, potions etc - temporary buffs
+  * Option 1: Have a cooldown grp based system 
+  * Option 2: Set Heroism time and pop other cooldwons based on that
 * Spell cast speed & spell GCD
 * Uptime simulation (player / buffs like Expose Weakness)
 
@@ -45,3 +45,4 @@ A WoW TBC Classic Retribution Paladin Simulator
     * (Player State casting -> OnCast spell with cast time -> casting = spell, new CastEvent(castTime, spell))  
 * Proc
   * Should Prio on ProcEvents should be higher than on normal cast events?
+* Test how much DPS is effected by CS delay. If its highly effected, build a UI page to sim that.
