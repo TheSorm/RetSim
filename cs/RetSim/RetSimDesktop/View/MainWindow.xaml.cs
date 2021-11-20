@@ -113,6 +113,7 @@ namespace RetSimDesktop
                 simWorker.RunWorkerAsync(DataContext);
                 if (DataContext is RetSimUIModel retSimUIModel)
                 {
+                    retSimUIModel.SimButtonStatus.IsGearSimButtonEnabled = false;
                     retSimUIModel.SimButtonStatus.IsSimButtonEnabled = false;
                 }
             }

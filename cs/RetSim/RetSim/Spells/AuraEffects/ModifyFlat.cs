@@ -20,8 +20,8 @@ abstract class ModifyFlat : AuraEffect
 
     public override void Remove(Aura aura, Unit caster, Unit target, FightSimulation fight)
     {
-        CurrentAmount = PreviousAmount;
-        PreviousAmount -= Value;
+        CurrentAmount = Value * (target.Auras[aura].Stacks - 1);
+        PreviousAmount = CurrentAmount - Value;
         Difference = CurrentAmount - PreviousAmount;
     }
 }

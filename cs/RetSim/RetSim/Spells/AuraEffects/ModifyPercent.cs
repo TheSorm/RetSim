@@ -21,8 +21,8 @@ abstract class ModifyPercent : AuraEffect
 
     public override void Remove(Aura aura, Unit caster, Unit target, FightSimulation fight)
     {
-        Current = (int)Previous;
-        Previous -= Value;
+        Current = 100 + Value * (target.Auras[aura].Stacks - 1);
+        Previous = Current - Value;
         Difference = Current / Previous;
     }
 }

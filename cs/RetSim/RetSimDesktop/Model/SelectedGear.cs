@@ -213,38 +213,38 @@ namespace RetSimDesktop.Model
         public Enchant? WeaponEnchant { get { return weaponEnchant; } set { weaponEnchant = value; OnPropertyChanged(nameof(WeaponEnchant)); } }
 
 
-        public static Equipment GetEquipment(RetSimUIModel retSimUIModel)
+        public Equipment GetEquipment()
         {
             return new()
             {
-                Head = retSimUIModel.SelectedGear.SelectedHead.Item,
-                Neck = retSimUIModel.SelectedGear.SelectedNeck.Item,
-                Shoulders = retSimUIModel.SelectedGear.SelectedShoulders.Item,
-                Back = retSimUIModel.SelectedGear.SelectedBack.Item,
-                Chest = retSimUIModel.SelectedGear.SelectedChest.Item,
-                Wrists = retSimUIModel.SelectedGear.SelectedWrists.Item,
-                Hands = retSimUIModel.SelectedGear.SelectedHands.Item,
-                Waist = retSimUIModel.SelectedGear.SelectedWaist.Item,
-                Legs = retSimUIModel.SelectedGear.SelectedLegs.Item,
-                Feet = retSimUIModel.SelectedGear.SelectedFeet.Item,
-                Finger1 = retSimUIModel.SelectedGear.SelectedFinger1.Item,
-                Finger2 = retSimUIModel.SelectedGear.SelectedFinger2.Item,
-                Trinket1 = retSimUIModel.SelectedGear.SelectedTrinket1.Item,
-                Trinket2 = retSimUIModel.SelectedGear.SelectedTrinket2.Item,
-                Relic = retSimUIModel.SelectedGear.SelectedRelic.Item,
-                Weapon = retSimUIModel.SelectedGear.SelectedWeapon.Weapon,
+                Head = SelectedHead.Item,
+                Neck = SelectedNeck.Item,
+                Shoulders = SelectedShoulders.Item,
+                Back = SelectedBack.Item,
+                Chest = SelectedChest.Item,
+                Wrists = SelectedWrists.Item,
+                Hands = SelectedHands.Item,
+                Waist = SelectedWaist.Item,
+                Legs = SelectedLegs.Item,
+                Feet = SelectedFeet.Item,
+                Finger1 = SelectedFinger1.Item,
+                Finger2 = SelectedFinger2.Item,
+                Trinket1 = SelectedTrinket1.Item,
+                Trinket2 = SelectedTrinket2.Item,
+                Relic = SelectedRelic.Item,
+                Weapon = SelectedWeapon.Weapon,
 
-                HeadEnchant = retSimUIModel.SelectedGear.HeadEnchant,
-                ShouldersEnchant = retSimUIModel.SelectedGear.ShouldersEnchant,
-                BackEnchant = retSimUIModel.SelectedGear.BackEnchant,
-                ChestEnchant = retSimUIModel.SelectedGear.ChestEnchant,
-                WristsEnchant = retSimUIModel.SelectedGear.WristsEnchant,
-                HandsEnchant = retSimUIModel.SelectedGear.HandsEnchant,
-                LegsEnchant = retSimUIModel.SelectedGear.LegsEnchant,
-                FeetEnchant = retSimUIModel.SelectedGear.FeetEnchant,
-                Finger1Enchant = retSimUIModel.SelectedGear.Finger1Enchant,
-                Finger2Enchant = retSimUIModel.SelectedGear.Finger2Enchant,
-                WeaponEnchant = retSimUIModel.SelectedGear.WeaponEnchant,
+                HeadEnchant = HeadEnchant,
+                ShouldersEnchant = ShouldersEnchant,
+                BackEnchant = BackEnchant,
+                ChestEnchant = ChestEnchant,
+                WristsEnchant = WristsEnchant,
+                HandsEnchant = HandsEnchant,
+                LegsEnchant = LegsEnchant,
+                FeetEnchant = FeetEnchant,
+                Finger1Enchant = Finger1Enchant,
+                Finger2Enchant = Finger2Enchant,
+                WeaponEnchant = WeaponEnchant,
             };
         }
 
