@@ -11,7 +11,6 @@ abstract class ModifyPercent : AuraEffect
 
     public ModifyPercent(float percent) : base(percent) { }
 
-
     public override void Apply(Aura aura, Unit caster, Unit target, FightSimulation fight)
     {
         Current = 100 + Value * target.Auras[aura].Stacks;
