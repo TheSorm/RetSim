@@ -3,7 +3,6 @@ A WoW TBC Classic Retribution Paladin Simulator
 
 ## DESKTOP VERSION
 * Stat weights screen
-* Multi-threading
 * Gear Select Screen
   * Add Tooltips to gems
   * Select all gems without changing the selected items

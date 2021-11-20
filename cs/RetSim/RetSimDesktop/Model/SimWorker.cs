@@ -5,12 +5,10 @@ using RetSim.Spells;
 using RetSim.Units.Enemy;
 using RetSim.Units.Player;
 using RetSim.Units.Player.Static;
-using RetSimDesktop.Model;
 using RetSimDesktop.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Diagnostics;
 using System.Threading;
 
 namespace RetSimDesktop.View
@@ -72,13 +70,13 @@ namespace RetSimDesktop.View
                     damage = 0;
                     for (int i = 0; i < simExecuter.Length; i++)
                     {
-                        if(simExecuter[i] == null)
+                        if (simExecuter[i] == null)
                         {
                             break;
                         }
                         for (int j = simExecuter[i].startIndex; j < simExecuter[i].startIndex + simExecuter[i].length; j++)
                         {
-                            if(combatLogs[j] == null)
+                            if (combatLogs[j] == null)
                             {
                                 break;
                             }
@@ -86,7 +84,7 @@ namespace RetSimDesktop.View
                             damage += combatLogs[j].DPS;
                         }
                     }
-                    retSimUIModel.CurrentSimOutput.Progress = (int) (finishedSimulationCount / ((float)numberOfSimulations) * 100);
+                    retSimUIModel.CurrentSimOutput.Progress = (int)(finishedSimulationCount / ((float)numberOfSimulations) * 100);
                     retSimUIModel.CurrentSimOutput.DPS = (damage / ((float)finishedSimulationCount));
                     Thread.Sleep(100);
                 }

@@ -5,7 +5,6 @@ using RetSim.Spells;
 using RetSim.Units.Enemy;
 using RetSim.Units.Player;
 using RetSim.Units.UnitStats;
-using RetSimDesktop.Model;
 using RetSimDesktop.ViewModel;
 using System.Collections.Generic;
 using System.ComponentModel;

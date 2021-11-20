@@ -1,6 +1,5 @@
 ﻿using RetSim.Items;
 using RetSim.Units.Player.Static;
-using RetSimDesktop.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

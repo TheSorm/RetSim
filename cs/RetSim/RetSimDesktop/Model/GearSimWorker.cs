@@ -50,7 +50,7 @@ namespace RetSimDesktop.View
                     {
                         for (int i = 0; i < threads.Length; i++)
                         {
-                            if(threads[i] == null || !threads[i].IsAlive)
+                            if (threads[i] == null || !threads[i].IsAlive)
                             {
                                 freeThread = i;
                                 break;
@@ -59,7 +59,7 @@ namespace RetSimDesktop.View
                     }
 
                     simExecuter[freeThread] = new(playerEquipment, talents, buffs, debuffs, consumables,
-                                input.Item1.SimSettings.MinFightDuration, input.Item1.SimSettings.MaxFightDuration, numberOfSimulations , item);
+                                input.Item1.SimSettings.MinFightDuration, input.Item1.SimSettings.MaxFightDuration, numberOfSimulations, item);
                     threads[freeThread] = new(new ThreadStart(simExecuter[freeThread].Execute));
                     threads[freeThread].Start();
                 }
