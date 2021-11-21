@@ -65,7 +65,7 @@ public class AuraConverter : JsonConverter<Aura>
                         effects.Add(new ModDamageTakenPercent(value, (School)(int)jo["Effects"][i]["SchoolMask"]));
                         break;
 
-                    case "ModSpell":
+                    case "ModSpellCritChance":
 
                         List<int> spellCritChance = new();
 
@@ -76,7 +76,7 @@ public class AuraConverter : JsonConverter<Aura>
                             spellCritChance.Add((int)jo["Effects"][i]["Spells"][y]);
                         }
 
-                        effects.Add(new ModSpell(value, spellCritChance)); //TODO: Add all spell state changes possible
+                        effects.Add(new ModSpellCritChance(value, spellCritChance));
 
                         break;
 
@@ -300,9 +300,9 @@ public class AuraConverter : JsonConverter<Aura>
             writer.WriteStringArray("Stats", modStat.Stats.Cast<string>().ToArray());
         }
 
-        else if (value is ModSpell modSpell)
+        else if (value is ModSpellCritChance modSpell)
         {
-            writer.WriteData("EffectType", "ModSpell");
+            writer.WriteData("EffectType", "ModSpellCritChance");
             writer.WriteIntArray("Spells", modSpell.Spells.Cast<int>().ToArray());
         }
 

@@ -373,7 +373,7 @@
     "Aura": {
       "Effects": [
         {
-          "EffectType": "ModSpell",
+          "EffectType": "ModSpellCritChance",
           "Spells": [
             27171,
             31898
@@ -391,7 +391,7 @@
     "Aura": {
       "Effects": [
         {
-          "EffectType": "ModSpell",
+          "EffectType": "ModSpellCritChance",
           "Spells": [
             27171,
             31898
@@ -409,7 +409,7 @@
     "Aura": {
       "Effects": [
         {
-          "EffectType": "ModSpell",
+          "EffectType": "ModSpellCritChance",
           "Spells": [
             27171,
             31898
@@ -427,7 +427,7 @@
     "Aura": {
       "Effects": [
         {
-          "EffectType": "ModSpell",
+          "EffectType": "ModSpellCritChance",
           "Spells": [
             27171,
             31898
@@ -445,7 +445,7 @@
     "Aura": {
       "Effects": [
         {
-          "EffectType": "ModSpell",
+          "EffectType": "ModSpellCritChance",
           "Spells": [
             27171,
             31898

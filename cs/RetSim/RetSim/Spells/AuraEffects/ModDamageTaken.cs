@@ -3,7 +3,7 @@ using RetSim.Units;
 
 namespace RetSim.Spells.AuraEffects;
 
-class ModDamageTaken : ModifyFlat
+class ModDamageTaken : AuraEffect
 {
     public ModDamageTaken(float amount, School school) : base(amount)
     {
