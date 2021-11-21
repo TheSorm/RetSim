@@ -14,11 +14,9 @@ class ModSpell : ModifyFlat
 
     public override void Apply(Aura aura, Unit caster, Unit target, FightSimulation fight)
     {
-        base.Apply(aura, caster, target, fight);
-
         foreach (int spell in Spells)
         {
-            fight.Player.Spellbook[spell].BonusCritChance += Difference;
+            fight.Player.Spellbook[spell].BonusCritChance += Value;
         }
     }
 
@@ -26,9 +24,7 @@ class ModSpell : ModifyFlat
     {
         foreach (int spell in Spells)
         {
-            fight.Player.Spellbook[spell].BonusCritChance -= Difference;
+            fight.Player.Spellbook[spell].BonusCritChance -= Value;
         }
-
-        base.Remove(aura, caster, target, fight);
     }
 }

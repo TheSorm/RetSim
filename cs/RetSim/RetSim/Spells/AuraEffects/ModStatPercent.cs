@@ -15,11 +15,9 @@ class ModStatPercent : ModifyPercent
 
     public override void Apply(Aura aura, Unit caster, Unit target, FightSimulation fight)
     {
-        base.Apply(aura, caster, target, fight);
-
         foreach (StatName stat in Stats)
         {
-            target.Stats[stat].Modifier *= Difference;
+            target.Stats[stat].Modifier *= GetDifference(Value, target.Auras[aura].Stacks);
         }
     }
 
@@ -27,9 +25,7 @@ class ModStatPercent : ModifyPercent
     {
         foreach (StatName stat in Stats)
         {
-            target.Stats[stat].Modifier /= Difference;
+            target.Stats[stat].Modifier /= GetDifference(Value, target.Auras[aura].Stacks);
         }
-
-        base.Remove(aura, caster, target, fight);
     }
 }

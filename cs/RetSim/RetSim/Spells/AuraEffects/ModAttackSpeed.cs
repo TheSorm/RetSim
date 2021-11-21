@@ -9,18 +9,14 @@ class ModAttackSpeed : ModifyPercent
 
     public override void Apply(Aura aura, Unit caster, Unit target, FightSimulation fight)
     {
-        base.Apply(aura, caster, target, fight);
-
-        fight.Player.Modifiers.AttackSpeed *= Difference;
+        fight.Player.Modifiers.AttackSpeed *= GetDifference(Value, target.Auras[aura].Stacks);
 
         fight.Player.RecalculateAttack(fight);
     }
 
     public override void Remove(Aura aura, Unit caster, Unit target, FightSimulation fight)
     {
-        fight.Player.Modifiers.AttackSpeed /= Difference;
-
-        base.Remove(aura, caster, target, fight);
+        fight.Player.Modifiers.AttackSpeed /= GetDifference(Value, target.Auras[aura].Stacks);
 
         fight.Player.RecalculateAttack(fight);
     }
