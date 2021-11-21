@@ -10,7 +10,6 @@ A WoW TBC Classic Retribution Paladin Simulator
   * Encounter selection
   * Reset Button
 * Stats Panel
-  * Add missing stats (health, mana)
   * Move ratings etc to helpful tooltips
 * Make it prettier
 

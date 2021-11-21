@@ -39,6 +39,8 @@ namespace RetSimDesktop
                 var player = new Player("Brave Hero", Collections.Races["Human"], retSimUIModel.SelectedGear.GetEquipment(), retSimUIModel.SelectedTalents.GetTalentList());
                 FightSimulation fight = new(player, new Enemy(Collections.Bosses[17]), new EliteTactic(), new List<Spell>(), new List<Spell>(), new List<Spell>(), 0, 0);
 
+                Health.Content = player.Stats[StatName.Health].Value;
+                Mana.Content = player.Stats[StatName.Mana].Value;
                 Strength.Content = player.Stats[StatName.Strength].Value;
                 AttackPower.Content = player.Stats[StatName.AttackPower].Value;
                 Agility.Content = player.Stats[StatName.Agility].Value;
@@ -52,17 +54,12 @@ namespace RetSimDesktop
                 Intellect.Content = player.Stats[StatName.Intellect].Value;
                 ManaPer5.Content = player.Stats[StatName.ManaPer5].Value;
                 SpellPower.Content = player.Stats[StatName.SpellPower].Value;
-                SpellCrit.Content = player.Stats[StatName.SpellCritRating].Value;
-                SpellHit.Content = player.Stats[StatName.SpellHitRating].Value;
-                SpellHaste.Content = player.Stats[StatName.SpellHasteRating].Value;
 
                 CritPercentage.Content = player.Stats[StatName.CritChance].Value.ToString("0.0") + "%";
                 HitPercentage.Content = player.Stats[StatName.HitChance].Value.ToString("0.0") + "%";
                 HastePercentage.Content = player.Stats[StatName.Haste].Value.ToString("0.0") + "%";
                 ExpertisePercentage.Content = player.Stats[StatName.Expertise].Value.ToString("0.0") + "%";
-                SpellCritPercentage.Content = player.Stats[StatName.SpellCrit].Value.ToString("0.0") + "%";
-                SpellHitPercentage.Content = player.Stats[StatName.SpellHit].Value.ToString("0.0") + "%";
-                SpellHastePercentage.Content = player.Stats[StatName.SpellHaste].Value.ToString("0.0") + "%";
+                
             }
         }
     }
