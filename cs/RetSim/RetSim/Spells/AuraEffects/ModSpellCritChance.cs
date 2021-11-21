@@ -3,9 +3,9 @@ using RetSim.Units;
 
 namespace RetSim.Spells.AuraEffects;
 
-class ModSpell : ModifyFlat
+class ModSpellCritChance : AuraEffect
 {
-    public ModSpell(float amount, List<int> spells) : base(amount)
+    public ModSpellCritChance(float amount, List<int> spells) : base(amount)
     {
         Spells = spells;
     }
