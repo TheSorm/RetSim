@@ -147,15 +147,6 @@ namespace RetSimDesktop
             Binding spBinding = new("Item.Stats[" + StatName.SpellPower + "]");
             spBinding.Converter = statConverter;
             SPColumn.Binding = spBinding;
-            Binding sCritBinding = new("Item.Stats[" + StatName.SpellCritRating + "]");
-            sCritBinding.Converter = statConverter;
-            SCritColumn.Binding = sCritBinding;
-            Binding sHitBinding = new("Item.Stats[" + StatName.SpellHitRating + "]");
-            sHitBinding.Converter = statConverter;
-            SHitColumn.Binding = sHitBinding;
-            Binding sHasteBinding = new("Item.Stats[" + StatName.SpellHasteRating + "]");
-            sHasteBinding.Converter = statConverter;
-            SHasteColumn.Binding = sHasteBinding;
         }
 
         private void DataGridCell_MouseDoubleClick(object sender, MouseButtonEventArgs e)
@@ -212,21 +203,40 @@ namespace RetSimDesktop
             }
         }
 
-        private void GearSlot_PreviewMouseDown(object sender, MouseButtonEventArgs e)
+        private void DataGridCell_PreviewMouseDown(object sender, MouseButtonEventArgs e)
         {
-            if (ItemsControl.ContainerFromElement((DataGrid)sender, e.OriginalSource as DependencyObject) is not DataGridRow row) return;
-
-            if (row.Item is DisplayGear itemDps)
+            if (sender is DataGridCell cell)
             {
-                if (e.ChangedButton == MouseButton.Middle && e.ButtonState == MouseButtonState.Pressed)
+                if (DataContext is RetSimUIModel retSimUIModel && DataGridRow.GetRowContainingElement(cell).Item is DisplayGear displayItem)
                 {
-                    System.Diagnostics.Process.Start(new ProcessStartInfo
+                    if (e.ChangedButton == MouseButton.Middle && e.ButtonState == MouseButtonState.Pressed)
                     {
-                        FileName = "https://tbc.wowhead.com/item=" + itemDps.Item.ID,
-                        UseShellExecute = true
-                    });
+                        System.Diagnostics.Process.Start(new ProcessStartInfo
+                        {
+                            FileName = "https://tbc.wowhead.com/item=" + displayItem.Item.ID,
+                            UseShellExecute = true
+                        });
+                    }
+                    else if (e.ChangedButton == MouseButton.Right && e.ButtonState == MouseButtonState.Pressed)
+                    {
+                        var header = cell.Column.Header.ToString();
+                        if (header == "Socket 1" && displayItem.Item.Socket1 != null)
+                        {
+                            displayItem.Item.Socket1.SocketedGem = null; 
+                        }
+                        else if (header == "Socket 2" && displayItem.Item.Socket2 != null)
+                        {
+                            displayItem.Item.Socket2.SocketedGem = null;
+                        }
+                        else if (header == "Socket 3" && displayItem.Item.Socket3 != null)
+                        {
+                            displayItem.Item.Socket3.SocketedGem = null;
+                        }
+                        displayItem.OnPropertyChanged("");
+                        DataGridCell_MouseEnter(cell, null);
+                    }
                 }
-            }
+            }          
         }
 
         private void ChkSelectAll_Checked(object sender, RoutedEventArgs e)
@@ -250,32 +260,39 @@ namespace RetSimDesktop
                 }
             }
         }
-
-        private void DataGridRow_MouseEnter(object sender, MouseEventArgs e)
+        private void DataGridCell_MouseEnter(object sender, MouseEventArgs e)
         {
-            if (sender is DataGridRow row)
+            if (sender is DataGridCell cell)
             {
-                if (row.Item is DisplayGear displayGear)
+                if (DataContext is RetSimUIModel retSimUIModel && DataGridRow.GetRowContainingElement(cell).Item is DisplayGear displayItem)
                 {
-                    if (DataContext is RetSimUIModel retSimUIModel)
+                    var header = cell.Column.Header.ToString();
+
+                    if (header == "Socket 1" && displayItem.Item.Socket1 != null && displayItem.Item.Socket1.SocketedGem != null)
                     {
-                        retSimUIModel.TooltipSettings.HoverItemID = displayGear.Item.ID;
+                        retSimUIModel.TooltipSettings.HoverItemID = displayItem.Item.Socket1.SocketedGem.ID;
+                    }
+                    else if (header == "Socket 2" && displayItem.Item.Socket2 != null && displayItem.Item.Socket2.SocketedGem != null)
+                    {
+                        retSimUIModel.TooltipSettings.HoverItemID = displayItem.Item.Socket2.SocketedGem.ID;
+                    }
+                    else if (header == "Socket 3" && displayItem.Item.Socket3 != null && displayItem.Item.Socket3.SocketedGem != null)
+                    {
+                        retSimUIModel.TooltipSettings.HoverItemID = displayItem.Item.Socket3.SocketedGem.ID;
+                    }
+                    else if(retSimUIModel.TooltipSettings.HoverItemID != displayItem.Item.ID)
+                    {
+                        retSimUIModel.TooltipSettings.HoverItemID = displayItem.Item.ID;
                     }
                 }
             }
         }
 
-        private void DataGridRow_MouseLeave(object sender, MouseEventArgs e)
+        private void DataGridCell_MouseLeave(object sender, MouseEventArgs e)
         {
-            if (sender is DataGridRow row)
+            if (DataContext is RetSimUIModel retSimUIModel)
             {
-                if (row.Item is DisplayGear displayGear)
-                {
-                    if (DataContext is RetSimUIModel retSimUIModel)
-                    {
-                        retSimUIModel.TooltipSettings.HoverItemID = 0;
-                    }
-                }
+                retSimUIModel.TooltipSettings.HoverItemID = 0;
             }
         }
     }
@@ -295,6 +312,23 @@ namespace RetSimDesktop
                 Quality.Artifact => new SolidColorBrush(Color.FromRgb(230, 204, 128)),
                 _ => Brushes.Red,
             };
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
+        {
+            throw new NotSupportedException();
+        }
+    }
+
+    public class SocketBonusConverter : IValueConverter
+    {
+        public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
+        {
+            if(value is EquippableItem item && item.Socket1 != null)
+            {
+                return item.IsSocketBonusActive() ? "✓" : "✗";
+            }
+            return "";
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
@@ -327,7 +361,7 @@ namespace RetSimDesktop
 
             if (socket.SocketedGem != null)
             {
-                return socket.SocketedGem.ID.ToString();
+                return "[" + socket.Color.ToString() + "]";
             }
 
             return socket.Color.ToString();

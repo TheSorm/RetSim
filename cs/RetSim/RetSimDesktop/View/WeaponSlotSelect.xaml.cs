@@ -136,16 +136,6 @@ namespace RetSimDesktop
             Binding spBinding = new("Weapon.Stats[" + StatName.SpellPower + "]");
             spBinding.Converter = statConverter;
             SPColumn.Binding = spBinding;
-            Binding sCritBinding = new("Weapon.Stats[" + StatName.SpellCritRating + "]");
-            sCritBinding.Converter = statConverter;
-            SCritColumn.Binding = sCritBinding;
-            Binding sHitBinding = new("Weapon.Stats[" + StatName.SpellHitRating + "]");
-            sHitBinding.Converter = statConverter;
-            SHitColumn.Binding = sHitBinding;
-            Binding sHasteBinding = new("Weapon.Stats[" + StatName.SpellHasteRating + "]");
-            sHasteBinding.Converter = statConverter;
-            SHasteColumn.Binding = sHasteBinding;
-
         }
 
         private void CheckIfSelectionIsPresent()
@@ -260,48 +250,75 @@ namespace RetSimDesktop
             }
         }
 
-        private void GearSlot_PreviewMouseDown(object sender, MouseButtonEventArgs e)
+        private void DataGridCell_PreviewMouseDown(object sender, MouseButtonEventArgs e)
         {
-            if (ItemsControl.ContainerFromElement((DataGrid)sender, e.OriginalSource as DependencyObject) is not DataGridRow row) return;
-
-            if (row.Item is DisplayWeapon weaponDps)
+            if (sender is DataGridCell cell)
             {
-                if (e.ChangedButton == MouseButton.Middle && e.ButtonState == MouseButtonState.Pressed)
+                if (DataContext is RetSimUIModel retSimUIModel && DataGridRow.GetRowContainingElement(cell).Item is DisplayWeapon displayWeapon)
                 {
-                    System.Diagnostics.Process.Start(new ProcessStartInfo
+                    if (e.ChangedButton == MouseButton.Middle && e.ButtonState == MouseButtonState.Pressed)
                     {
-                        FileName = "https://tbc.wowhead.com/item=" + weaponDps.Weapon.ID,
-                        UseShellExecute = true
-                    });
-                }
-            }
-        }
-
-        private void DataGridRow_MouseEnter(object sender, MouseEventArgs e)
-        {
-            if (sender is DataGridRow row)
-            {
-                if (row.Item is DisplayWeapon weaponDps)
-                {
-                    if (DataContext is RetSimUIModel retSimUIModel)
+                        System.Diagnostics.Process.Start(new ProcessStartInfo
+                        {
+                            FileName = "https://tbc.wowhead.com/item=" + displayWeapon.Weapon.ID,
+                            UseShellExecute = true
+                        });
+                    }
+                    else if (e.ChangedButton == MouseButton.Right && e.ButtonState == MouseButtonState.Pressed)
                     {
-                        retSimUIModel.TooltipSettings.HoverItemID = weaponDps.Weapon.ID;
+                        var header = cell.Column.Header.ToString();
+                        if (header == "Socket 1" && displayWeapon.Weapon.Socket1 != null)
+                        {
+                            displayWeapon.Weapon.Socket1.SocketedGem = null;
+                        }
+                        else if (header == "Socket 2" && displayWeapon.Weapon.Socket2 != null)
+                        {
+                            displayWeapon.Weapon.Socket2.SocketedGem = null;
+                        }
+                        else if (header == "Socket 3" && displayWeapon.Weapon.Socket3 != null)
+                        {
+                            displayWeapon.Weapon.Socket3.SocketedGem = null;
+                        }
+                        displayWeapon.OnPropertyChanged("");
+                        DataGridCell_MouseEnter(cell, null);
                     }
                 }
             }
         }
 
-        private void DataGridRow_MouseLeave(object sender, MouseEventArgs e)
+        private void DataGridCell_MouseEnter(object sender, MouseEventArgs e)
         {
-            if (sender is DataGridRow row)
+            if (sender is DataGridCell cell)
             {
-                if (row.Item is DisplayWeapon weaponDps)
+                if (DataContext is RetSimUIModel retSimUIModel && DataGridRow.GetRowContainingElement(cell).Item is DisplayWeapon displayWeapon)
                 {
-                    if (DataContext is RetSimUIModel retSimUIModel)
+                    var header = cell.Column.Header.ToString();
+
+                    if (header == "Socket 1" && displayWeapon.Weapon.Socket1 != null && displayWeapon.Weapon.Socket1.SocketedGem != null)
                     {
-                        retSimUIModel.TooltipSettings.HoverItemID = 0;
+                        retSimUIModel.TooltipSettings.HoverItemID = displayWeapon.Weapon.Socket1.SocketedGem.ID;
+                    }
+                    else if (header == "Socket 2" && displayWeapon.Weapon.Socket2 != null && displayWeapon.Weapon.Socket2.SocketedGem != null)
+                    {
+                        retSimUIModel.TooltipSettings.HoverItemID = displayWeapon.Weapon.Socket2.SocketedGem.ID;
+                    }
+                    else if (header == "Socket 3" && displayWeapon.Weapon.Socket3 != null && displayWeapon.Weapon.Socket3.SocketedGem != null)
+                    {
+                        retSimUIModel.TooltipSettings.HoverItemID = displayWeapon.Weapon.Socket3.SocketedGem.ID;
+                    }
+                    else if (retSimUIModel.TooltipSettings.HoverItemID != displayWeapon.Weapon.ID)
+                    {
+                        retSimUIModel.TooltipSettings.HoverItemID = displayWeapon.Weapon.ID;
                     }
                 }
+            }
+        }
+
+        private void DataGridCell_MouseLeave(object sender, MouseEventArgs e)
+        {
+            if (DataContext is RetSimUIModel retSimUIModel)
+            {
+                retSimUIModel.TooltipSettings.HoverItemID = 0;
             }
         }
     }

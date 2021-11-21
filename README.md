@@ -3,16 +3,15 @@ A WoW TBC Classic Retribution Paladin Simulator
 
 ## DESKTOP VERSION
 * Stat weights screen
-* Gear Select Screen
-  * Add Tooltips to gems
+* Settings
   * Select all gems without changing the selected items
-  * Display socket bonuses (boni for Sulis) -- tooltips for now
-  * Remove useless stats
-  * Move spell power before stamina
+  * Enhance Talent selection
+  * Race Selection
+  * Encounter selection
+  * Reset Button
 * Stats Panel
   * Add missing stats (health, mana)
   * Move ratings etc to helpful tooltips
-* Reset Button in Settings
 * Make it prettier
 
 ## SIM

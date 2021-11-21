@@ -12,13 +12,14 @@
         <local:SocketConverter x:Key="SocketConverter" />
         <local:WeaponSpeedConverter x:Key="WeaponSpeedConverter" />
         <local:WeaponDPSConverter x:Key="WeaponDPSConverter" />
+        <local:SocketBonusConverter x:Key="SocketBonusConverter" />
     </UserControl.Resources>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
             <RowDefinition Height="30px" />
         </Grid.RowDefinitions>
-        <DataGrid Name="gearSlot" GridLinesVisibility="Horizontal" PreviewMouseDown="GearSlot_PreviewMouseDown" SelectionChanged="GearSlotSelectionChanged" IsReadOnly="True" SelectionMode="Single" HeadersVisibility="Column" CanUserResizeColumns="False" CanUserResizeRows="False" AutoGenerateColumns="False">
+        <DataGrid Name="gearSlot" GridLinesVisibility="Horizontal" SelectionChanged="GearSlotSelectionChanged" IsReadOnly="True" SelectionMode="Single" HeadersVisibility="Column" CanUserResizeColumns="False" CanUserResizeRows="False" AutoGenerateColumns="False">
             <DataGrid.Columns>
                 <DataGridCheckBoxColumn CanUserSort="False" IsReadOnly="False" IsThreeState="False" Binding="{Binding EnabledForGearSim, UpdateSourceTrigger=PropertyChanged}" >
                     <DataGridCheckBoxColumn.Header>
@@ -30,6 +31,7 @@
                 <DataGridTextColumn CanUserReorder="False" CanUserSort="False" Header="Socket 1" Binding="{Binding Weapon.Socket1, Converter={StaticResource SocketConverter}}" />
                 <DataGridTextColumn CanUserReorder="False" CanUserSort="False" Header="Socket 2" Binding="{Binding Weapon.Socket2, Converter={StaticResource SocketConverter}}" />
                 <DataGridTextColumn CanUserReorder="False" CanUserSort="False" Header="Socket 3" Binding="{Binding Weapon.Socket3, Converter={StaticResource SocketConverter}}" />
+                <DataGridTextColumn CanUserReorder="False" CanUserSort="False" Header="Bonus" Binding="{Binding Weapon, Converter={StaticResource SocketBonusConverter}}" />
                 <DataGridTextColumn CanUserReorder="False" Header="Type" Binding="{Binding Weapon.Type}" />
                 <DataGridTextColumn CanUserReorder="False" Header="Min" Binding="{Binding Weapon.MinDamage}" />
                 <DataGridTextColumn CanUserReorder="False" Header="Max" Binding="{Binding Weapon.MaxDamage}" />
@@ -43,13 +45,10 @@
                 <DataGridTextColumn CanUserReorder="False" Header="Haste"  x:Name="HasteColumn" />
                 <DataGridTextColumn CanUserReorder="False" Header="Exp"    x:Name="ExpColumn" />
                 <DataGridTextColumn CanUserReorder="False" Header="APen"   x:Name="APenColumn" />
+                <DataGridTextColumn CanUserReorder="False" Header="SP"     x:Name="SPColumn" />
                 <DataGridTextColumn CanUserReorder="False" Header="Sta"    x:Name="StaColumn" />
                 <DataGridTextColumn CanUserReorder="False" Header="Int"    x:Name="IntColumn" />
                 <DataGridTextColumn CanUserReorder="False" Header="MP5"    x:Name="MP5Column" />
-                <DataGridTextColumn CanUserReorder="False" Header="SP"     x:Name="SPColumn" />
-                <DataGridTextColumn CanUserReorder="False" Header="SCrit"  x:Name="SCritColumn" />
-                <DataGridTextColumn CanUserReorder="False" Header="SHit"   x:Name="SHitColumn" />
-                <DataGridTextColumn CanUserReorder="False" Header="SHaste" x:Name="SHasteColumn" />
                 <DataGridTextColumn CanUserReorder="False" Header="DPS"    x:Name="DPSColumn" Binding="{Binding DPS}" />
             </DataGrid.Columns>
             <DataGrid.Resources>
@@ -68,10 +67,9 @@
                         </MultiTrigger>
                     </Style.Triggers>
                     <EventSetter Event="MouseDoubleClick" Handler="DataGridCell_MouseDoubleClick"/>
-                </Style>
-                <Style TargetType="{x:Type DataGridRow}">
-                    <EventSetter Event="MouseEnter" Handler="DataGridRow_MouseEnter"/>
-                    <EventSetter Event="MouseLeave" Handler="DataGridRow_MouseLeave"/>
+                    <EventSetter Event="MouseEnter" Handler="DataGridCell_MouseEnter"/>
+                    <EventSetter Event="MouseLeave" Handler="DataGridCell_MouseLeave"/>
+                    <EventSetter Event="PreviewMouseDown" Handler="DataGridCell_PreviewMouseDown"/>
                 </Style>
             </DataGrid.Resources>
 
