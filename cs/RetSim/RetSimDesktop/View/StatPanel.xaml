@@ -38,15 +38,10 @@
                             <ColumnDefinition Width="*" />
                             <ColumnDefinition Width="*" />
                         </Grid.ColumnDefinitions>
-                        <Label Grid.Column="0" Padding="0" Content="Health"/>
-                        <Label Grid.Column="2" HorizontalContentAlignment="Right" Padding="0" Content="0" x:Name="Health"/>
+                        <Label Grid.Column="0" Padding="0" Content="Stamina"/>
+                        <Label Grid.Column="2" HorizontalContentAlignment="Right" Padding="0" Content="0" x:Name="Stamina"/>
                     </Grid>
                     <Separator/>
-                    <StackPanel.ToolTip>
-                        <ToolTip>
-                            <TextBlock Text="TEST" TextTrimming="CharacterEllipsis" TextWrapping="Wrap" />
-                        </ToolTip>
-                    </StackPanel.ToolTip>
                 </StackPanel>
                 <StackPanel Grid.Row="1" ToolTipService.InitialShowDelay="0">
                     <Grid>
@@ -55,208 +50,12 @@
                             <ColumnDefinition Width="*" />
                             <ColumnDefinition Width="*" />
                         </Grid.ColumnDefinitions>
-                        <Label Grid.Column="0" Padding="0" Content="Mana"/>
-                        <Label Grid.Column="2" HorizontalContentAlignment="Right" Padding="0" Content="0" x:Name="Mana"/>
+                        <Label Grid.Column="0" Padding="0" Content="Health"/>
+                        <Label Grid.Column="2" HorizontalContentAlignment="Right" Padding="0" Content="0" x:Name="Health"/>
                     </Grid>
                     <Separator/>
-                    <StackPanel.ToolTip>
-                        <ToolTip>
-                            <TextBlock Text="TEST" TextTrimming="CharacterEllipsis" TextWrapping="Wrap" />
-                        </ToolTip>
-                    </StackPanel.ToolTip>
-                </StackPanel>
+                </StackPanel>                
                 <StackPanel Grid.Row="2" ToolTipService.InitialShowDelay="0">
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="2.5*" />
-                            <ColumnDefinition Width="*" />
-                            <ColumnDefinition Width="*" />
-                        </Grid.ColumnDefinitions>
-                        <Label Grid.Column="0" Padding="0" Content="Strength"/>
-                        <Label Grid.Column="2" HorizontalContentAlignment="Right" Padding="0" Content="0" x:Name="Strength"/>
-                    </Grid>
-                    <Separator/>
-                    <StackPanel.ToolTip>
-                        <ToolTip>
-                            <TextBlock Text="TEST" TextTrimming="CharacterEllipsis" TextWrapping="Wrap" />
-                        </ToolTip>
-                    </StackPanel.ToolTip>
-                </StackPanel>
-                <StackPanel Grid.Row="3" ToolTipService.InitialShowDelay="0">
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="2.5*" />
-                            <ColumnDefinition Width="*" />
-                            <ColumnDefinition Width="*" />
-                        </Grid.ColumnDefinitions>
-                        <Label Grid.Column="0" Padding="0" Content="Attack Power"/>
-                        <Label Grid.Column="2" HorizontalContentAlignment="Right" Padding="0" Content="0" x:Name="AttackPower"/>
-                    </Grid>
-                    <Separator/>
-                    <StackPanel.ToolTip>
-                        <ToolTip>
-                            <TextBlock Text="TEST" TextTrimming="CharacterEllipsis" TextWrapping="Wrap" />
-                        </ToolTip>
-                    </StackPanel.ToolTip>
-                </StackPanel>
-                <StackPanel Grid.Row="4" ToolTipService.InitialShowDelay="0">
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="2.5*" />
-                            <ColumnDefinition Width="*" />
-                            <ColumnDefinition Width="*" />
-                        </Grid.ColumnDefinitions>
-                        <Label Grid.Column="0" Padding="0" Content="Agility"/>
-                        <Label Grid.Column="2" HorizontalContentAlignment="Right" Padding="0" Content="0" x:Name="Agility"/>
-                    </Grid>
-                    <Separator/>
-                    <StackPanel.ToolTip>
-                        <ToolTip>
-                            <TextBlock Text="TEST" TextTrimming="CharacterEllipsis" TextWrapping="Wrap" />
-                        </ToolTip>
-                    </StackPanel.ToolTip>
-                </StackPanel>
-                <StackPanel Grid.Row="5" ToolTipService.InitialShowDelay="0">
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="2.5*" />
-                            <ColumnDefinition Width="*" />
-                            <ColumnDefinition Width="*" />
-                        </Grid.ColumnDefinitions>
-                        <Label Grid.Column="0" Padding="0" Content="Crit"/>
-                        <Label Grid.Column="1" HorizontalContentAlignment="Right" Padding="0" Content="0" x:Name="CritPercentage"/>
-                        <Label Grid.Column="2" HorizontalContentAlignment="Right" Padding="0" Content="0" x:Name="Crit"/>
-                    </Grid>
-                    <Separator/>
-                    <StackPanel.ToolTip>
-                        <ToolTip>
-                            <TextBlock Text="TEST" TextTrimming="CharacterEllipsis" TextWrapping="Wrap" />
-                        </ToolTip>
-                    </StackPanel.ToolTip>
-                </StackPanel>
-                <StackPanel Grid.Row="6" ToolTipService.InitialShowDelay="0">
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="2.5*" />
-                            <ColumnDefinition Width="*" />
-                            <ColumnDefinition Width="*" />
-                        </Grid.ColumnDefinitions>
-                        <Label Grid.Column="0" Padding="0" Content="Hit"/>
-                        <Label Grid.Column="1" HorizontalContentAlignment="Right" Padding="0" Content="0" x:Name="HitPercentage"/>
-                        <Label Grid.Column="2" HorizontalContentAlignment="Right" Padding="0" Content="0" x:Name="Hit"/>
-                    </Grid>
-                    <Separator/>
-                    <StackPanel.ToolTip>
-                        <ToolTip>
-                            <TextBlock Text="TEST" TextTrimming="CharacterEllipsis" TextWrapping="Wrap" />
-                        </ToolTip>
-                    </StackPanel.ToolTip>
-                </StackPanel>
-                <StackPanel Grid.Row="7" ToolTipService.InitialShowDelay="0">
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="2.5*" />
-                            <ColumnDefinition Width="*" />
-                            <ColumnDefinition Width="*" />
-                        </Grid.ColumnDefinitions>
-                        <Label Grid.Column="0" Padding="0" Content="Haste"/>
-                        <Label Grid.Column="1" HorizontalContentAlignment="Right" Padding="0" Content="0" x:Name="HastePercentage"/>
-                        <Label Grid.Column="2" HorizontalContentAlignment="Right" Padding="0" Content="0" x:Name="Haste"/>
-                    </Grid>
-                    <Separator/>
-                    <StackPanel.ToolTip>
-                        <ToolTip>
-                            <TextBlock Text="TEST" TextTrimming="CharacterEllipsis" TextWrapping="Wrap" />
-                        </ToolTip>
-                    </StackPanel.ToolTip>
-                </StackPanel>
-                <StackPanel Grid.Row="8" ToolTipService.InitialShowDelay="0">
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="2.5*" />
-                            <ColumnDefinition Width="*" />
-                            <ColumnDefinition Width="*" />
-                        </Grid.ColumnDefinitions>
-                        <Label Grid.Column="0" Padding="0" Content="Expertise"/>
-                        <Label Grid.Column="1" HorizontalContentAlignment="Right" Padding="0" Content="0" x:Name="ExpertisePercentage"/>
-                        <Label Grid.Column="2" HorizontalContentAlignment="Right" Padding="0" Content="0" x:Name="Expertise"/>
-                    </Grid>
-                    <Separator/>
-                    <StackPanel.ToolTip>
-                        <ToolTip>
-                            <TextBlock Text="TEST" TextTrimming="CharacterEllipsis" TextWrapping="Wrap" />
-                        </ToolTip>
-                    </StackPanel.ToolTip>
-                </StackPanel>
-                <StackPanel Grid.Row="9" ToolTipService.InitialShowDelay="0">
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="2.5*" />
-                            <ColumnDefinition Width="*" />
-                            <ColumnDefinition Width="*" />
-                        </Grid.ColumnDefinitions>
-                        <Label Grid.Column="0" Padding="0" Content="Armor Penetration"/>
-                        <Label Grid.Column="2" HorizontalContentAlignment="Right" Padding="0" Content="0" x:Name="ArmorPenetration"/>
-                    </Grid>
-                    <Separator/>
-                    <StackPanel.ToolTip>
-                        <ToolTip>
-                            <TextBlock Text="TEST" TextTrimming="CharacterEllipsis" TextWrapping="Wrap" />
-                        </ToolTip>
-                    </StackPanel.ToolTip>
-                </StackPanel>
-                <StackPanel Grid.Row="10" ToolTipService.InitialShowDelay="0">
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="2.5*" />
-                            <ColumnDefinition Width="*" />
-                            <ColumnDefinition Width="*" />
-                        </Grid.ColumnDefinitions>
-                        <Label Grid.Column="0" Padding="0" Content="Weapon Damage"/>
-                        <Label Grid.Column="2" HorizontalContentAlignment="Right" Padding="0" Content="0" x:Name="WeaponDamage"/>
-                    </Grid>
-                    <Separator/>
-                    <StackPanel.ToolTip>
-                        <ToolTip>
-                            <TextBlock Text="TEST" TextTrimming="CharacterEllipsis" TextWrapping="Wrap" />
-                        </ToolTip>
-                    </StackPanel.ToolTip>
-                </StackPanel>
-                <StackPanel Grid.Row="11" ToolTipService.InitialShowDelay="0">
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="2.5*" />
-                            <ColumnDefinition Width="*" />
-                            <ColumnDefinition Width="*" />
-                        </Grid.ColumnDefinitions>
-                        <Label Grid.Column="0" Padding="0" Content="Spell Power"/>
-                        <Label Grid.Column="2" HorizontalContentAlignment="Right" Padding="0" Content="0" x:Name="SpellPower"/>
-                    </Grid>
-                    <Separator/>
-                    <StackPanel.ToolTip>
-                        <ToolTip>
-                            <TextBlock Text="TEST" TextTrimming="CharacterEllipsis" TextWrapping="Wrap" />
-                        </ToolTip>
-                    </StackPanel.ToolTip>
-                </StackPanel>
-                <StackPanel Grid.Row="12" ToolTipService.InitialShowDelay="0">
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="2.5*" />
-                            <ColumnDefinition Width="*" />
-                            <ColumnDefinition Width="*" />
-                        </Grid.ColumnDefinitions>
-                        <Label Grid.Column="0" Padding="0" Content="Stamina"/>
-                        <Label Grid.Column="2" HorizontalContentAlignment="Right" Padding="0" Content="0" x:Name="Stamina"/>
-                    </Grid>
-                    <Separator/>
-                    <StackPanel.ToolTip>
-                        <ToolTip>
-                            <TextBlock Text="TEST" TextTrimming="CharacterEllipsis" TextWrapping="Wrap" />
-                        </ToolTip>
-                    </StackPanel.ToolTip>
-                </StackPanel>
-                <StackPanel Grid.Row="13" ToolTipService.InitialShowDelay="0">
                     <Grid>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="2.5*" />
@@ -267,13 +66,20 @@
                         <Label Grid.Column="2" HorizontalContentAlignment="Right" Padding="0" Content="0" x:Name="Intellect"/>
                     </Grid>
                     <Separator/>
-                    <StackPanel.ToolTip>
-                        <ToolTip>
-                            <TextBlock Text="TEST" TextTrimming="CharacterEllipsis" TextWrapping="Wrap" />
-                        </ToolTip>
-                    </StackPanel.ToolTip>
                 </StackPanel>
-                <StackPanel Grid.Row="14" ToolTipService.InitialShowDelay="0">
+                <StackPanel Grid.Row="3" ToolTipService.InitialShowDelay="0">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="2.5*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Column="0" Padding="0" Content="Mana"/>
+                        <Label Grid.Column="2" HorizontalContentAlignment="Right" Padding="0" Content="0" x:Name="Mana"/>
+                    </Grid>
+                    <Separator/>
+                </StackPanel>
+                <StackPanel Grid.Row="4" ToolTipService.InitialShowDelay="0">
                     <Grid>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="2.5*" />
@@ -283,12 +89,133 @@
                         <Label Grid.Column="0" Padding="0" Content="Mana Per 5"/>
                         <Label Grid.Column="2" HorizontalContentAlignment="Right" Padding="0" Content="0" x:Name="ManaPer5"/>
                     </Grid>
+                    <Separator/>
+                </StackPanel>
+                <StackPanel Grid.Row="5" ToolTipService.InitialShowDelay="0">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="2.5*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Column="0" Padding="0" Content="Strength"/>
+                        <Label Grid.Column="2" HorizontalContentAlignment="Right" Padding="0" Content="0" x:Name="Strength"/>
+                    </Grid>
+                    <Separator/>
+                </StackPanel>
+                
+                <StackPanel Grid.Row="6" ToolTipService.InitialShowDelay="0">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="2.5*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Column="0" Padding="0" Content="Attack Power"/>
+                        <Label Grid.Column="2" HorizontalContentAlignment="Right" Padding="0" Content="0" x:Name="AttackPower"/>
+                    </Grid>
+                    <Separator/>
+                </StackPanel>
+                <StackPanel Grid.Row="7" ToolTipService.InitialShowDelay="0">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="2.5*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Column="0" Padding="0" Content="Agility"/>
+                        <Label Grid.Column="2" HorizontalContentAlignment="Right" Padding="0" Content="0" x:Name="Agility"/>
+                    </Grid>
+                    <Separator/>
+                </StackPanel>
+                <StackPanel Grid.Row="8" ToolTipService.InitialShowDelay="0">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="2.5*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Column="0" Padding="0" Content="Crit"/>
+                        <Label Grid.Column="2" HorizontalContentAlignment="Right" Padding="0" Content="0" x:Name="CritPercentage"/>
+                    </Grid>
+                    <Separator/>
+                </StackPanel>
+                <StackPanel Grid.Row="9" ToolTipService.InitialShowDelay="0">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="2.5*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Column="0" Padding="0" Content="Hit"/>
+                        <Label Grid.Column="2" HorizontalContentAlignment="Right" Padding="0" Content="0" x:Name="HitPercentage"/>
+                    </Grid>
+                    <Separator/>
+                </StackPanel>
+                <StackPanel Grid.Row="10" ToolTipService.InitialShowDelay="0">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="2.5*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Column="0" Padding="0" Content="Haste"/>
+                        <Label Grid.Column="2" HorizontalContentAlignment="Right" Padding="0" Content="0" x:Name="HastePercentage"/>
+                    </Grid>
+                    <Separator/>
+                </StackPanel>
+                <StackPanel Grid.Row="11" ToolTipService.InitialShowDelay="0">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="2.5*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Column="0" Padding="0" Content="Expertise"/>
+                        <Label Grid.Column="2" HorizontalContentAlignment="Right" Padding="0" Content="0" x:Name="ExpertisePercentage"/>
+                    </Grid>
+                    <Separator/>
+                </StackPanel>
+                <StackPanel Grid.Row="12" ToolTipService.InitialShowDelay="0">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="2.5*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Column="0" Padding="0" Content="Armor Penetration"/>
+                        <Label Grid.Column="2" HorizontalContentAlignment="Right" Padding="0" Content="0" x:Name="ArmorPenetration"/>
+                    </Grid>
+                    <Separator/>
+                </StackPanel>
+                <StackPanel Grid.Row="13" ToolTipService.InitialShowDelay="0">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="2.5*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Column="0" Padding="0" Content="Weapon Damage"/>
+                        <Label Grid.Column="2" HorizontalContentAlignment="Right" Padding="0" Content="0" x:Name="WeaponDamage"/>
+                    </Grid>
+                    <Separator/>
+                </StackPanel>
+                <StackPanel Grid.Row="14" ToolTipService.InitialShowDelay="0">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="2.5*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Column="0" Padding="0" Content="Spell Power"/>
+                        <Label Grid.Column="2" HorizontalContentAlignment="Right" Padding="0" Content="0" x:Name="SpellPower"/>
+                    </Grid>
                     <StackPanel.ToolTip>
                         <ToolTip>
                             <TextBlock Text="TEST" TextTrimming="CharacterEllipsis" TextWrapping="Wrap" />
                         </ToolTip>
                     </StackPanel.ToolTip>
-                </StackPanel>
+                </StackPanel>                
             </Grid>
         </GroupBox>
     </Grid>

@@ -213,15 +213,15 @@ public class Attack
     {
         return school switch
         {
-            School.Physical => GetArmorDR(player, enemy),
+            School.Physical => GetArmorDR(player.Stats[StatName.ArmorPenetration].Value, enemy.Stats[StatName.Armor].Value),
             School.Typeless => 1f,
             _ => RNG.RollPartialResist()
         };
     }
 
-    public static float GetArmorDR(Player player, Enemy enemy)
+    public static float GetArmorDR(float armorPenetration, float armor)
     {
-        float effective = Math.Max(enemy.Stats[StatName.Armor].Value - player.Stats[StatName.ArmorPenetration].Value, 0f);
+        float effective = Math.Max(armor - armorPenetration, 0f);
 
         float reduction = effective / (effective + Constants.Boss.ArmorMagicNumber);
 
