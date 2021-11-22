@@ -19,63 +19,8 @@ namespace RetSimDesktop
             InitializeComponent();
             RetSimUIModel GM = RetSimUIModel.Load();
             DataContext = GM;
-            InitializeAsync();
-            GM.TooltipSettings.PropertyChanged += TooltipSettings_PropertyChanged;
         }
-
-        async void InitializeAsync()
-        {
-            await browser.EnsureCoreWebView2Async(null);
-            browser.DefaultBackgroundColor = System.Drawing.Color.Transparent;
-            browser.NavigateToString(@"<head><script>const whTooltips = {colorLinks: true, iconizeLinks: false, renameLinks: false};</script><script src=""https://wow.zamimg.com/widgets/power.js""></script></head><body><script>function test(xPos, yPos) {const event = new MouseEvent('mouseover', {view: window,bubbles: true,cancelable: true, clientX : xPos, clientY : yPos});const cb = document.getElementById('placeholder');const cancelled = !cb.dispatchEvent(event);}</script><a id=""placeholder"" href=""https://tbc.wowhead.com/item=28830""></a></body>");
-            await browser.ExecuteScriptAsync("document.querySelector('body').style.overflow='hidden'");
-        }
-
-        private void TooltipSettings_PropertyChanged(object? sender, System.ComponentModel.PropertyChangedEventArgs e)
-        {
-            if (DataContext is RetSimUIModel retSimUIModel)
-            {
-                TooltipPopUp.IsOpen = retSimUIModel.TooltipSettings.HoverItemID != 0;
-                UpdateTooltip(retSimUIModel, true);
-            }
-        }
-
-        private void popup_MouseMove(object sender, MouseEventArgs e)
-        {
-            if (DataContext is RetSimUIModel retSimUIModel)
-            {
-                TooltipPopUp.IsOpen = retSimUIModel.TooltipSettings.HoverItemID != 0;
-
-                var mousePosition = e.GetPosition(Window);
-                if (mousePosition.Y > Window.Height / 2 + TooltipPopUp.Height / 2)
-                {
-                    this.TooltipPopUp.HorizontalOffset = mousePosition.X - 30;
-                    this.TooltipPopUp.VerticalOffset = mousePosition.Y - TooltipPopUp.Height - 1;
-                    UpdateTooltip(retSimUIModel, true);
-                }
-                else
-                {
-                    this.TooltipPopUp.HorizontalOffset = mousePosition.X + 1;
-                    this.TooltipPopUp.VerticalOffset = mousePosition.Y + 1;
-                    UpdateTooltip(retSimUIModel, false);
-                }
-            }
-        }
-
-        private async void UpdateTooltip(RetSimUIModel retSimUIModel, bool bottom)
-        {
-            await browser.EnsureCoreWebView2Async(null);
-            await browser.ExecuteScriptAsync(@"document.getElementById('placeholder').href = ""https://tbc.wowhead.com/item=" + retSimUIModel.TooltipSettings.HoverItemID + @""";");
-            if (!bottom)
-            {
-                await browser.ExecuteScriptAsync("test(30, 0);");
-            }
-            else
-            {
-                await browser.ExecuteScriptAsync("test(30, " + TooltipPopUp.Height + ");");
-            }
-        }
-
+      
         private void Gear_Click(object sender, RoutedEventArgs e)
         {
             Settings.Visibility = Visibility.Hidden;

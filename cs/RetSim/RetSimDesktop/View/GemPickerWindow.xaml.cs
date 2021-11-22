@@ -1,5 +1,6 @@
 ﻿using RetSim.Items;
 using RetSim.Units.UnitStats;
+using RetSimDesktop.ViewModel;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
@@ -8,7 +9,7 @@ using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Input;
 
-namespace RetSimDesktop.View
+namespace RetSimDesktop
 {
     /// <summary>
     /// Interaction logic for GemPickerWindow.xaml
@@ -16,11 +17,12 @@ namespace RetSimDesktop.View
     public partial class GemPickerWindow : Window
     {
         public Gem? SelectedGem { get; set; }
-        public GemPickerWindow(IEnumerable<Gem> gemList)
+        public GemPickerWindow(IEnumerable<Gem> gemList, Gem selectedGem)
         {
             InitializeComponent();
 
             gemGrid.ItemsSource = gemList;
+            gemGrid.SelectedItem = selectedGem;
 
             StatConverter statConverter = new();
 
@@ -39,15 +41,6 @@ namespace RetSimDesktop.View
             Binding hitBinding = new("Stats[" + StatName.HitRating + "]");
             hitBinding.Converter = statConverter;
             HitColumn.Binding = hitBinding;
-            Binding hasteBinding = new("Stats[" + StatName.HasteRating + "]");
-            hasteBinding.Converter = statConverter;
-            HasteColumn.Binding = hasteBinding;
-            Binding expBinding = new("Stats[" + StatName.ExpertiseRating + "]");
-            expBinding.Converter = statConverter;
-            ExpColumn.Binding = expBinding;
-            Binding apenBinding = new("Stats[" + StatName.ArmorPenetration + "]");
-            apenBinding.Converter = statConverter;
-            APenColumn.Binding = apenBinding;
             Binding staBinding = new("Stats[" + StatName.Stamina + "]");
             staBinding.Converter = statConverter;
             StaColumn.Binding = staBinding;
@@ -59,17 +52,7 @@ namespace RetSimDesktop.View
             MP5Column.Binding = mp5Binding;
             Binding spBinding = new("Stats[" + StatName.SpellPower + "]");
             spBinding.Converter = statConverter;
-            SPColumn.Binding = spBinding;
-            Binding sCritBinding = new("Stats[" + StatName.SpellCritRating + "]");
-            sCritBinding.Converter = statConverter;
-            SCritColumn.Binding = sCritBinding;
-            Binding sHitBinding = new("Stats[" + StatName.SpellHitRating + "]");
-            sHitBinding.Converter = statConverter;
-            SHitColumn.Binding = sHitBinding;
-            Binding sHasteBinding = new("Stats[" + StatName.SpellHasteRating + "]");
-            sHasteBinding.Converter = statConverter;
-            SHasteColumn.Binding = sHasteBinding;
-
+            
             ColorColumn.SortDirection = ListSortDirection.Ascending;
             gemGrid.Items.SortDescriptions.Add(new SortDescription(ColorColumn.SortMemberPath, ListSortDirection.Ascending));
         }
@@ -88,13 +71,33 @@ namespace RetSimDesktop.View
             {
                 if (e.ChangedButton == MouseButton.Middle && e.ButtonState == MouseButtonState.Pressed)
                 {
-                    System.Diagnostics.Process.Start(new ProcessStartInfo
+                    Process.Start(new ProcessStartInfo
                     {
                         FileName = "https://tbc.wowhead.com/item=" + gem.ID,
                         UseShellExecute = true
                     });
                 }
             }
+        }
+
+        private void DataGridCell_MouseEnter(object sender, MouseEventArgs e)
+        {
+            if (sender is DataGridCell cell)
+            {
+                if (DataGridRow.GetRowContainingElement(cell).Item is Gem gem)
+                {
+                    Tooltip.ItemId = gem.ID;
+                    WoWTooltip.TooltipSettings_PropertyChanged(Tooltip, new DependencyPropertyChangedEventArgs());
+                }
+            }
+        }
+
+        private void DataGridCell_MouseLeave(object sender, MouseEventArgs e)
+        {
+
+            Tooltip.ItemId = 0;
+            WoWTooltip.TooltipSettings_PropertyChanged(Tooltip, new DependencyPropertyChangedEventArgs());
+            
         }
     }
 }

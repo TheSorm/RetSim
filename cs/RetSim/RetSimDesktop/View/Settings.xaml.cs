@@ -39,8 +39,9 @@ namespace RetSimDesktop
 
         private void SelectGemForSocketColor(SocketColor color, IEnumerable<Gem> gemList)
         {
-            GemPickerWindow gemPicker = new(gemList);
             if (DataContext is RetSimUIModel retSimUIModel)
+            {
+                GemPickerWindow gemPicker = new(gemList, null);
                 if (gemPicker.ShowDialog() == true)
                 {
                     foreach (var displayItem in retSimUIModel.AllGear.Values)
@@ -68,6 +69,7 @@ namespace RetSimDesktop
 
                     retSimUIModel.SelectedGear.OnPropertyChanged("");
                 }
+            }
         }
 
         private void NumberValidationTextBox(object sender, System.Windows.Input.TextCompositionEventArgs e)

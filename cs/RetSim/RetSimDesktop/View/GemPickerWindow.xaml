@@ -1,14 +1,15 @@
-﻿<Window x:Class="RetSimDesktop.View.GemPickerWindow"
+﻿<Window x:Class="RetSimDesktop.GemPickerWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:RetSimDesktop.View"
+        xmlns:local="clr-namespace:RetSimDesktop"
         xmlns:viewmodel="clr-namespace:RetSimDesktop.ViewModel"
         d:DataContext="{d:DesignInstance viewmodel:RetSimUIModel}"
         mc:Ignorable="d"
-        Title="Gems" Height="450" Width="800" WindowStartupLocation="CenterScreen">
+        Title="Gems" Height="450" Width="525" Name="GemPicker" WindowStartupLocation="CenterScreen">
     <Grid>
+        <local:WoWTooltip x:Name="Tooltip" PlacementTarget="{Binding ElementName=GemPicker}"/>
         <DataGrid Name="gemGrid" GridLinesVisibility="Horizontal" PreviewMouseDown="GemGrid_PreviewMouseDown" IsReadOnly="True" SelectionMode="Single" HeadersVisibility="Column" CanUserResizeColumns="False" CanUserResizeRows="False" AutoGenerateColumns="False">
             <DataGrid.Columns>
                 <DataGridTextColumn CanUserReorder="False" Header="Name" Binding="{Binding Name}" />
@@ -19,20 +20,22 @@
                 <DataGridTextColumn CanUserReorder="False" Header="Agi"    x:Name="AgiColumn" />
                 <DataGridTextColumn CanUserReorder="False" Header="Crit"   x:Name="CritColumn" />
                 <DataGridTextColumn CanUserReorder="False" Header="Hit"    x:Name="HitColumn" />
-                <DataGridTextColumn CanUserReorder="False" Header="Haste"  x:Name="HasteColumn" />
-                <DataGridTextColumn CanUserReorder="False" Header="Exp"    x:Name="ExpColumn" />
-                <DataGridTextColumn CanUserReorder="False" Header="APen"   x:Name="APenColumn" />
                 <DataGridTextColumn CanUserReorder="False" Header="Sta"    x:Name="StaColumn" />
                 <DataGridTextColumn CanUserReorder="False" Header="Int"    x:Name="IntColumn" />
                 <DataGridTextColumn CanUserReorder="False" Header="MP5"    x:Name="MP5Column" />
-                <DataGridTextColumn CanUserReorder="False" Header="SP"     x:Name="SPColumn" />
-                <DataGridTextColumn CanUserReorder="False" Header="SCrit"  x:Name="SCritColumn" />
-                <DataGridTextColumn CanUserReorder="False" Header="SHit"   x:Name="SHitColumn" />
-                <DataGridTextColumn CanUserReorder="False" Header="SHaste" x:Name="SHasteColumn" />
             </DataGrid.Columns>
             <DataGrid.Resources>
                 <Style TargetType="{x:Type DataGridCell}">
+                    <Style.Triggers>
+                        <Trigger Property="DataGridCell.IsSelected" Value="True">
+                            <Setter Property="Background" Value="#0078d7" />
+                            <Setter Property="BorderBrush" Value="#0078d7" />
+                        </Trigger>
+                    </Style.Triggers>
                     <EventSetter Event="MouseDoubleClick" Handler="DataGridCell_MouseDoubleClick"/>
+                    <EventSetter Event="MouseEnter" Handler="DataGridCell_MouseEnter"/>
+                    <EventSetter Event="MouseLeave" Handler="DataGridCell_MouseLeave"/>
+
                 </Style>
             </DataGrid.Resources>
         </DataGrid>

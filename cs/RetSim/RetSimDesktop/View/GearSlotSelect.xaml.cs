@@ -170,17 +170,18 @@ namespace RetSimDesktop
 
             if (selectedSocket != null)
             {
-                GemPickerWindow gemPicker;
-                if (selectedSocket.Color == SocketColor.Meta)
-                {
-                    gemPicker = new(RetSim.Data.Items.MetaGems.Values);
-                }
-                else
-                {
-                    gemPicker = new(RetSim.Data.Items.Gems.Values);
-                }
                 if (DataContext is RetSimUIModel retSimUIModel)
                 {
+                    GemPickerWindow gemPicker;
+                    if (selectedSocket.Color == SocketColor.Meta)
+                    {
+                        gemPicker = new(RetSim.Data.Items.MetaGems.Values, selectedSocket.SocketedGem);
+                    }
+                    else
+                    {
+                        gemPicker = new(RetSim.Data.Items.Gems.Values, selectedSocket.SocketedGem);
+                    }
+                
                     retSimUIModel.TooltipSettings.HoverItemID = 0;
                     if (gemPicker.ShowDialog() == true)
                     {

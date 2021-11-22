@@ -11,6 +11,8 @@ A WoW TBC Classic Retribution Paladin Simulator
   * Reset Button
 * Stats Panel
   * Move ratings etc to helpful tooltips
+* Item Tooltip
+  * Change browser size dinamic to tooltipsize
 * Make it prettier
 
 ## SIM
