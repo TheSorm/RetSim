@@ -148,11 +148,10 @@ namespace RetSimDesktop
 
                 ArmorPenetration.ToolTip = new ToolTip { Content = $"{armorPenResult}\n{armorPenResult2}\n\n{armorPenResult3}" };
 
-                var weaponDamageBonus = $"Bonus: {player.Stats[StatName.WeaponDamage].Gear + player.Stats[StatName.WeaponDamage].Bonus}";
                 var weaponDamageWarning = "This stat is nearly useless.";
                 var weaponDamageWarning2 = "You can ignore it.";
 
-                WeaponDamage.ToolTip = new ToolTip { Content = $"{weaponDamageBonus}\n\n{weaponDamageWarning}\n{weaponDamageWarning2}" };
+                WeaponDamage.ToolTip = new ToolTip { Content = $"{weaponDamageWarning}\n{weaponDamageWarning2}" };
 
             }
         }
