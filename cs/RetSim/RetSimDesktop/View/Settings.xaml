@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:sys="clr-namespace:System;assembly=mscorlib"
              xmlns:local="clr-namespace:RetSimDesktop"
              xmlns:model="clr-namespace:RetSimDesktop.Model"
              xmlns:viewmodel="clr-namespace:RetSimDesktop.ViewModel"
@@ -78,24 +79,297 @@
                     </GroupBox>
                 </WrapPanel>
             </Expander>
-            <Expander IsExpanded="False" Margin="10" Header="Player">
-                <GroupBox Margin="5" VerticalAlignment="Top" HorizontalAlignment="Left">
-                    <GroupBox.Header>
-                        Talents
-                    </GroupBox.Header>
-                    <StackPanel>
-                        <CheckBox Content = "Conviction" HorizontalAlignment = "Left" IsChecked="{Binding SelectedTalents.ConvictionEnabled}" VerticalAlignment = "Top"  />
-                        <CheckBox Content = "Crusade" HorizontalAlignment = "Left" IsChecked="{Binding SelectedTalents.CrusadeEnabled}" VerticalAlignment = "Top"  />
-                        <CheckBox Content = "Two-Handed Weapon Specialization" HorizontalAlignment = "Left"  IsChecked="{Binding SelectedTalents.TwoHandedWeaponSpecializationEnabled}" VerticalAlignment = "Top"  />
-                        <CheckBox Content = "Sanctity Aura" HorizontalAlignment = "Left" IsChecked="{Binding SelectedTalents.SanctityAuraEnabled}"  VerticalAlignment = "Top"  />
-                        <CheckBox Content = "Improved Sanctity Aura" HorizontalAlignment = "Left" IsChecked="{Binding SelectedTalents.ImprovedSanctityAuraEnabled}"  VerticalAlignment = "Top"  />
-                        <CheckBox Content = "Vengeance" HorizontalAlignment = "Left" IsChecked="{Binding SelectedTalents.VengeanceEnabled}" VerticalAlignment = "Top"  />
-                        <CheckBox Content = "Fanaticism" HorizontalAlignment = "Left" IsChecked="{Binding SelectedTalents.FanaticismEnabled}" VerticalAlignment = "Top"  />
-                        <CheckBox Content = "Sanctified Seals" HorizontalAlignment = "Left" IsChecked="{Binding SelectedTalents.SanctifiedSealsEnabled}" VerticalAlignment = "Top"  />
-                        <CheckBox Content = "Precision" HorizontalAlignment = "Left" IsChecked="{Binding SelectedTalents.PrecisionEnabled}" VerticalAlignment = "Top"  />
-                        <CheckBox Content = "Divine Strength" HorizontalAlignment = "Left" IsChecked="{Binding SelectedTalents.DivineStrengthEnabled}" VerticalAlignment = "Top"  />
-                    </StackPanel>
-                </GroupBox>
+            <Expander IsExpanded="True" Margin="10" Header="Talents">
+                <WrapPanel>
+                    <GroupBox Margin="5" Width="230" Height="295" VerticalAlignment="Top" HorizontalAlignment="Left">
+                        <GroupBox.Header>
+                            Holy
+                        </GroupBox.Header>
+                        <StackPanel>
+                            <CheckBox Margin="0,2,0,2" VerticalContentAlignment="Center" HorizontalContentAlignment="Stretch" IsChecked="{Binding SelectedTalents.DivineStrengthEnabled}">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="10"/>
+                                        <ColumnDefinition Width="40"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Label Margin="0" Padding="0" VerticalAlignment="Center" Content="Divine Strength"/>
+                                    <ComboBox Grid.Column="2" SelectedItem="{Binding SelectedTalents.DivineStrengthRank}">
+                                        <ComboBox.ItemsSource>
+                                            <x:Array Type="{x:Type sys:Int32}">
+                                                <sys:Int32>1</sys:Int32>
+                                                <sys:Int32>2</sys:Int32>
+                                                <sys:Int32>3</sys:Int32>
+                                                <sys:Int32>4</sys:Int32>
+                                                <sys:Int32>5</sys:Int32>
+                                            </x:Array>
+                                        </ComboBox.ItemsSource>
+                                    </ComboBox>
+                                </Grid>
+                             </CheckBox>
+                            <CheckBox Margin="0,0,0,2" VerticalContentAlignment="Center" HorizontalContentAlignment="Stretch" IsChecked="{Binding SelectedTalents.DivineIntellectEnabled}">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="10"/>
+                                        <ColumnDefinition Width="40"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Label Margin="0" Padding="0" VerticalAlignment="Center" Content="Divine Intellect"/>
+                                    <ComboBox Grid.Column="2" SelectedItem="{Binding SelectedTalents.DivineIntellectRank}">
+                                        <ComboBox.ItemsSource>
+                                            <x:Array Type="{x:Type sys:Int32}">
+                                                <sys:Int32>1</sys:Int32>
+                                                <sys:Int32>2</sys:Int32>
+                                                <sys:Int32>3</sys:Int32>
+                                                <sys:Int32>4</sys:Int32>
+                                                <sys:Int32>5</sys:Int32>
+                                            </x:Array>
+                                        </ComboBox.ItemsSource>
+                                    </ComboBox>
+                                </Grid>
+                            </CheckBox>
+                        </StackPanel>
+                    </GroupBox>
+                    <GroupBox Margin="5" Width="230" Height="295" VerticalAlignment="Top" HorizontalAlignment="Left">
+                        <GroupBox.Header>
+                            Protection
+                        </GroupBox.Header>
+                        <StackPanel>
+                            <CheckBox Margin="0,2,0,2" VerticalContentAlignment="Center" HorizontalContentAlignment="Stretch" IsChecked="{Binding SelectedTalents.PrecisionEnabled}">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="10"/>
+                                        <ColumnDefinition Width="40"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Label Margin="0" Padding="0" VerticalAlignment="Center" Content="Precision"/>
+                                    <ComboBox Grid.Column="2" SelectedItem="{Binding SelectedTalents.PrecisionRank}">
+                                        <ComboBox.ItemsSource>
+                                            <x:Array Type="{x:Type sys:Int32}">
+                                                <sys:Int32>1</sys:Int32>
+                                                <sys:Int32>2</sys:Int32>
+                                                <sys:Int32>3</sys:Int32>
+                                            </x:Array>
+                                        </ComboBox.ItemsSource>
+                                    </ComboBox>
+                                </Grid>
+                            </CheckBox>
+                        </StackPanel>
+                    </GroupBox>
+                    <GroupBox Margin="5" Width="230" Height="295" VerticalAlignment="Top" HorizontalAlignment="Left">
+                        <GroupBox.Header>
+                            Retribution
+                        </GroupBox.Header>
+                        <StackPanel>
+                            <CheckBox Margin="0,2,0,2" VerticalContentAlignment="Center" HorizontalContentAlignment="Stretch" IsChecked="{Binding SelectedTalents.BenedictionEnabled}">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="10"/>
+                                        <ColumnDefinition Width="40"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Label Margin="0" Padding="0" VerticalAlignment="Center" Content="Benediction"/>
+                                    <ComboBox Grid.Column="2" SelectedItem="{Binding SelectedTalents.BenedictionRank}">
+                                        <ComboBox.ItemsSource>
+                                            <x:Array Type="{x:Type sys:Int32}">
+                                                <sys:Int32>1</sys:Int32>
+                                                <sys:Int32>2</sys:Int32>
+                                                <sys:Int32>3</sys:Int32>
+                                                <sys:Int32>4</sys:Int32>
+                                                <sys:Int32>5</sys:Int32>
+                                            </x:Array>
+                                        </ComboBox.ItemsSource>
+                                    </ComboBox>
+                                </Grid>
+                            </CheckBox>
+                            <CheckBox Margin="0,2,0,2" VerticalContentAlignment="Center" HorizontalContentAlignment="Stretch" IsChecked="{Binding SelectedTalents.ImprovedJudgementEnabled}">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="10"/>
+                                        <ColumnDefinition Width="40"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Label Margin="0" Padding="0" VerticalAlignment="Center" Content="Improved Judgement"/>
+                                    <ComboBox Grid.Column="2" SelectedItem="{Binding SelectedTalents.ImprovedJudgementRank}">
+                                        <ComboBox.ItemsSource>
+                                            <x:Array Type="{x:Type sys:Int32}">
+                                                <sys:Int32>1</sys:Int32>
+                                                <sys:Int32>2</sys:Int32>
+                                            </x:Array>
+                                        </ComboBox.ItemsSource>
+                                    </ComboBox>
+                                </Grid>
+                            </CheckBox>
+                            <CheckBox Margin="0,2,0,2" VerticalContentAlignment="Center" HorizontalContentAlignment="Stretch" IsChecked="{Binding SelectedTalents.ConvictionEnabled}">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="10"/>
+                                        <ColumnDefinition Width="40"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Label Margin="0" Padding="0" VerticalAlignment="Center" Content="Conviction"/>
+                                    <ComboBox Grid.Column="2" SelectedItem="{Binding SelectedTalents.ConvictionRank}">
+                                        <ComboBox.ItemsSource>
+                                            <x:Array Type="{x:Type sys:Int32}">
+                                                <sys:Int32>1</sys:Int32>
+                                                <sys:Int32>2</sys:Int32>
+                                                <sys:Int32>3</sys:Int32>
+                                                <sys:Int32>4</sys:Int32>
+                                                <sys:Int32>5</sys:Int32>
+                                            </x:Array>
+                                        </ComboBox.ItemsSource>
+                                    </ComboBox>
+                                </Grid>
+                            </CheckBox>
+                            <CheckBox Margin="0,2,0,2" VerticalContentAlignment="Center" HorizontalContentAlignment="Stretch" IsChecked="{Binding SelectedTalents.CrusadeEnabled}">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="10"/>
+                                        <ColumnDefinition Width="40"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Label Margin="0" Padding="0" VerticalAlignment="Center" Content="Crusade"/>
+                                    <ComboBox Grid.Column="2" SelectedItem="{Binding SelectedTalents.CrusadeRank}">
+                                        <ComboBox.ItemsSource>
+                                            <x:Array Type="{x:Type sys:Int32}">
+                                                <sys:Int32>1</sys:Int32>
+                                                <sys:Int32>2</sys:Int32>
+                                                <sys:Int32>3</sys:Int32>
+                                            </x:Array>
+                                        </ComboBox.ItemsSource>
+                                    </ComboBox>
+                                </Grid>
+                            </CheckBox>
+                            <CheckBox Margin="0,2,0,2" VerticalContentAlignment="Center" HorizontalContentAlignment="Stretch" IsChecked="{Binding SelectedTalents.TwoHandedWeaponSpecializationEnabled}">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="10"/>
+                                        <ColumnDefinition Width="40"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Label Margin="0" Padding="0" VerticalAlignment="Center" Content="Two-Handed Weapon Spec."/>
+                                    <ComboBox Grid.Column="2" SelectedItem="{Binding SelectedTalents.TwoHandedWeaponSpecializationRank}">
+                                        <ComboBox.ItemsSource>
+                                            <x:Array Type="{x:Type sys:Int32}">
+                                                <sys:Int32>1</sys:Int32>
+                                                <sys:Int32>2</sys:Int32>
+                                                <sys:Int32>3</sys:Int32>
+                                            </x:Array>
+                                        </ComboBox.ItemsSource>
+                                    </ComboBox>
+                                </Grid>
+                            </CheckBox>
+                            <CheckBox Margin="0,4,0,4" VerticalContentAlignment="Center" HorizontalContentAlignment="Stretch" IsChecked="{Binding SelectedTalents.SanctityAuraEnabled}">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="10"/>
+                                        <ColumnDefinition Width="40"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Label Margin="0" Padding="0" VerticalAlignment="Center" Content="Sanctity Aura"/>
+                                </Grid>
+                            </CheckBox>
+                            <CheckBox Margin="0,2,0,2" VerticalContentAlignment="Center" HorizontalContentAlignment="Stretch" IsChecked="{Binding SelectedTalents.ImprovedSanctityAuraEnabled}">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="10"/>
+                                        <ColumnDefinition Width="40"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Label Margin="0" Padding="0" VerticalAlignment="Center" Content="Improved Sanctity Aura"/>
+                                    <ComboBox Grid.Column="2" SelectedItem="{Binding SelectedTalents.ImprovedSanctityAuraRank}">
+                                        <ComboBox.ItemsSource>
+                                            <x:Array Type="{x:Type sys:Int32}">
+                                                <sys:Int32>1</sys:Int32>
+                                                <sys:Int32>2</sys:Int32>
+                                            </x:Array>
+                                        </ComboBox.ItemsSource>
+                                    </ComboBox>
+                                </Grid>
+                            </CheckBox>
+                            <CheckBox Margin="0,2,0,2" VerticalContentAlignment="Center" HorizontalContentAlignment="Stretch" IsChecked="{Binding SelectedTalents.VengeanceEnabled}">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="10"/>
+                                        <ColumnDefinition Width="40"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Label Margin="0" Padding="0" VerticalAlignment="Center" Content="Vengeance"/>
+                                    <ComboBox Grid.Column="2" SelectedItem="{Binding SelectedTalents.VengeanceRank}">
+                                        <ComboBox.ItemsSource>
+                                            <x:Array Type="{x:Type sys:Int32}">
+                                                <sys:Int32>1</sys:Int32>
+                                                <sys:Int32>2</sys:Int32>
+                                                <sys:Int32>3</sys:Int32>
+                                                <sys:Int32>4</sys:Int32>
+                                                <sys:Int32>5</sys:Int32>
+                                            </x:Array>
+                                        </ComboBox.ItemsSource>
+                                    </ComboBox>
+                                </Grid>
+                            </CheckBox>
+                            <CheckBox Margin="0,2,0,2" VerticalContentAlignment="Center" HorizontalContentAlignment="Stretch" IsChecked="{Binding SelectedTalents.SanctifiedJudgementEnabled}">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="10"/>
+                                        <ColumnDefinition Width="40"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Label Margin="0" Padding="0" VerticalAlignment="Center" Content="Sanctified Judgement"/>
+                                    <ComboBox Grid.Column="2" SelectedItem="{Binding SelectedTalents.SanctifiedJudgementRank}">
+                                        <ComboBox.ItemsSource>
+                                            <x:Array Type="{x:Type sys:Int32}">
+                                                <sys:Int32>1</sys:Int32>
+                                                <sys:Int32>2</sys:Int32>
+                                                <sys:Int32>3</sys:Int32>
+                                            </x:Array>
+                                        </ComboBox.ItemsSource>
+                                    </ComboBox>
+                                </Grid>
+                            </CheckBox>
+                            <CheckBox Margin="0,2,0,2" VerticalContentAlignment="Center" HorizontalContentAlignment="Stretch" IsChecked="{Binding SelectedTalents.SanctifiedSealsEnabled}">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="10"/>
+                                        <ColumnDefinition Width="40"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Label Margin="0" Padding="0" VerticalAlignment="Center" Content="Sanctified Seals"/>
+                                    <ComboBox Grid.Column="2" SelectedItem="{Binding SelectedTalents.SanctifiedSealsRank}">
+                                        <ComboBox.ItemsSource>
+                                            <x:Array Type="{x:Type sys:Int32}">
+                                                <sys:Int32>1</sys:Int32>
+                                                <sys:Int32>2</sys:Int32>
+                                                <sys:Int32>3</sys:Int32>
+                                            </x:Array>
+                                        </ComboBox.ItemsSource>
+                                    </ComboBox>
+                                </Grid>
+                            </CheckBox>
+                            <CheckBox Margin="0,2,0,2" VerticalContentAlignment="Center" HorizontalContentAlignment="Stretch" IsChecked="{Binding SelectedTalents.FanaticismEnabled}">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="10"/>
+                                        <ColumnDefinition Width="40"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Label Margin="0" Padding="0" VerticalAlignment="Center" Content="Fanaticism"/>
+                                    <ComboBox Grid.Column="2" SelectedItem="{Binding SelectedTalents.FanaticismRank}">
+                                        <ComboBox.ItemsSource>
+                                            <x:Array Type="{x:Type sys:Int32}">
+                                                <sys:Int32>1</sys:Int32>
+                                                <sys:Int32>2</sys:Int32>
+                                                <sys:Int32>3</sys:Int32>
+                                                <sys:Int32>4</sys:Int32>
+                                                <sys:Int32>5</sys:Int32>
+                                            </x:Array>
+                                        </ComboBox.ItemsSource>
+                                    </ComboBox>
+                                </Grid>
+                            </CheckBox>
+                        </StackPanel>
+                    </GroupBox>
+                </WrapPanel>
             </Expander>
             <Expander IsExpanded="True" Margin="10" Header="Consumables">
                 <WrapPanel>
