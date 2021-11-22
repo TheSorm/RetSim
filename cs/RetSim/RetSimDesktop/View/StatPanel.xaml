@@ -210,11 +210,6 @@
                         <Label Grid.Column="0" Padding="0" Content="Spell Power"/>
                         <Label Grid.Column="2" HorizontalContentAlignment="Right" Padding="0" Content="0" x:Name="SpellPower"/>
                     </Grid>
-                    <StackPanel.ToolTip>
-                        <ToolTip>
-                            <TextBlock Text="TEST" TextTrimming="CharacterEllipsis" TextWrapping="Wrap" />
-                        </ToolTip>
-                    </StackPanel.ToolTip>
                 </StackPanel>                
             </Grid>
         </GroupBox>
