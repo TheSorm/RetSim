@@ -1,6 +1,5 @@
 ﻿using RetSim.Items;
 using RetSim.Units.UnitStats;
-using RetSimDesktop.ViewModel;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
@@ -52,13 +51,15 @@ namespace RetSimDesktop
             MP5Column.Binding = mp5Binding;
             Binding spBinding = new("Stats[" + StatName.SpellPower + "]");
             spBinding.Converter = statConverter;
-            
+
             ColorColumn.SortDirection = ListSortDirection.Ascending;
             gemGrid.Items.SortDescriptions.Add(new SortDescription(ColorColumn.SortMemberPath, ListSortDirection.Ascending));
         }
 
         private void DataGridCell_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
+            Tooltip.Browser.Visibility = Visibility.Collapsed;
+            Tooltip.Browser = null;
             SelectedGem = (Gem)gemGrid.SelectedItem;
             DialogResult = true;
         }
@@ -82,12 +83,15 @@ namespace RetSimDesktop
 
         private void DataGridCell_MouseEnter(object sender, MouseEventArgs e)
         {
-            if (sender is DataGridCell cell)
+            if (SelectedGem == null)
             {
-                if (DataGridRow.GetRowContainingElement(cell).Item is Gem gem)
+                if (sender is DataGridCell cell)
                 {
-                    Tooltip.ItemId = gem.ID;
-                    WoWTooltip.TooltipSettings_PropertyChanged(Tooltip, new DependencyPropertyChangedEventArgs());
+                    if (DataGridRow.GetRowContainingElement(cell).Item is Gem gem)
+                    {
+                        Tooltip.ItemId = gem.ID;
+                        WoWTooltip.TooltipSettings_PropertyChanged(Tooltip, new DependencyPropertyChangedEventArgs());
+                    }
                 }
             }
         }
@@ -97,7 +101,7 @@ namespace RetSimDesktop
 
             Tooltip.ItemId = 0;
             WoWTooltip.TooltipSettings_PropertyChanged(Tooltip, new DependencyPropertyChangedEventArgs());
-            
+
         }
     }
 }

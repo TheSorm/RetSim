@@ -59,7 +59,7 @@ namespace RetSimDesktop
                 HitPercentage.Content = player.Stats[StatName.HitChance].Value.ToString("0.0") + "%";
                 HastePercentage.Content = player.Stats[StatName.Haste].Value.ToString("0.0") + "%";
                 ExpertisePercentage.Content = player.Stats[StatName.Expertise].Value.ToString("0.0") + "%";
-                
+
             }
         }
     }

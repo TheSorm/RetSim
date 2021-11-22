@@ -1,5 +1,4 @@
 ﻿using RetSim.Items;
-using RetSimDesktop.View;
 using RetSimDesktop.ViewModel;
 using System;
 using System.Collections.Generic;

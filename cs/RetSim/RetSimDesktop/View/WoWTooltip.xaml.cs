@@ -1,24 +1,12 @@
-﻿using RetSimDesktop.ViewModel;
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace RetSimDesktop
 {
     public partial class WoWTooltip : UserControl
     {
+
         public Window PlacementTarget
         {
             get => (Window)GetValue(PlacementTargetProperty);
@@ -76,22 +64,25 @@ namespace RetSimDesktop
 
         private async void UpdateTooltip(int itemId)
         {
-            await Browser.EnsureCoreWebView2Async(null);
-            await Browser.ExecuteScriptAsync(@"document.getElementById('placeholder').href = ""https://tbc.wowhead.com/item=" + itemId + @""";");
-            //var heightString = await Browser.ExecuteScriptAsync(@"document.getElementsByClassName(""wowhead-tooltip"")[0].clientHeight");
-            //var widthString = await Browser.ExecuteScriptAsync(@"document.getElementsByClassName(""wowhead-tooltip"")[0].clientWidth");
-            await Browser.ExecuteScriptAsync("test(35, 0);");
-            await Browser.ExecuteScriptAsync("document.querySelector('body').style.overflow='hidden'");
+            if (Browser != null)
+            {
+                await Browser.EnsureCoreWebView2Async(null);
+                await Browser.ExecuteScriptAsync(@"document.getElementById('placeholder').href = ""https://tbc.wowhead.com/item=" + itemId + @""";");
+                //var heightString = await Browser.ExecuteScriptAsync(@"document.getElementsByClassName(""wowhead-tooltip"")[0].clientHeight");
+                //var widthString = await Browser.ExecuteScriptAsync(@"document.getElementsByClassName(""wowhead-tooltip"")[0].clientWidth");
+                await Browser.ExecuteScriptAsync("test(35, 0);");
+                await Browser.ExecuteScriptAsync("document.querySelector('body').style.overflow='hidden'");
+            }
         }
 
         private void Parent_MouseMove(object sender, MouseEventArgs e)
         {
             TooltipPopUp.IsOpen = ItemId != 0;
-                
+
             var mousePosition = e.GetPosition(PlacementTarget);
 
             TooltipPopUp.HorizontalOffset = mousePosition.X + 1;
-            TooltipPopUp.VerticalOffset = mousePosition.Y + 1;          
+            TooltipPopUp.VerticalOffset = mousePosition.Y + 1;
         }
     }
 }

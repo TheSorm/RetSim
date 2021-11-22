@@ -181,7 +181,7 @@ namespace RetSimDesktop
                     {
                         gemPicker = new(RetSim.Data.Items.Gems.Values, selectedSocket.SocketedGem);
                     }
-                
+
                     retSimUIModel.TooltipSettings.HoverItemID = 0;
                     if (gemPicker.ShowDialog() == true)
                     {
@@ -223,7 +223,7 @@ namespace RetSimDesktop
                         var header = cell.Column.Header.ToString();
                         if (header == "Socket 1" && displayItem.Item.Socket1 != null)
                         {
-                            displayItem.Item.Socket1.SocketedGem = null; 
+                            displayItem.Item.Socket1.SocketedGem = null;
                         }
                         else if (header == "Socket 2" && displayItem.Item.Socket2 != null)
                         {
@@ -237,7 +237,7 @@ namespace RetSimDesktop
                         DataGridCell_MouseEnter(cell, null);
                     }
                 }
-            }          
+            }
         }
 
         private void ChkSelectAll_Checked(object sender, RoutedEventArgs e)
@@ -281,7 +281,7 @@ namespace RetSimDesktop
                     {
                         retSimUIModel.TooltipSettings.HoverItemID = displayItem.Item.Socket3.SocketedGem.ID;
                     }
-                    else if(retSimUIModel.TooltipSettings.HoverItemID != displayItem.Item.ID)
+                    else if (retSimUIModel.TooltipSettings.HoverItemID != displayItem.Item.ID)
                     {
                         retSimUIModel.TooltipSettings.HoverItemID = displayItem.Item.ID;
                     }
@@ -325,7 +325,7 @@ namespace RetSimDesktop
     {
         public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
         {
-            if(value is EquippableItem item && item.Socket1 != null)
+            if (value is EquippableItem item && item.Socket1 != null)
             {
                 return item.IsSocketBonusActive() ? "✓" : "✗";
             }

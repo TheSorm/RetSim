@@ -1,7 +1,6 @@
 ﻿using RetSimDesktop.View;
 using RetSimDesktop.ViewModel;
 using System.Windows;
-using System.Windows.Input;
 
 namespace RetSimDesktop
 {
@@ -20,7 +19,7 @@ namespace RetSimDesktop
             RetSimUIModel GM = RetSimUIModel.Load();
             DataContext = GM;
         }
-      
+
         private void Gear_Click(object sender, RoutedEventArgs e)
         {
             Settings.Visibility = Visibility.Hidden;

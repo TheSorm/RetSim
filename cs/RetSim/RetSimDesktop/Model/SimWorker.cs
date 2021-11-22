@@ -84,7 +84,7 @@ namespace RetSimDesktop.View
                             damage += combatLogs[j].DPS;
                         }
                     }
-                    if(finishedSimulationCount > 0)
+                    if (finishedSimulationCount > 0)
                     {
                         retSimUIModel.CurrentSimOutput.Progress = (int)(finishedSimulationCount / ((float)numberOfSimulations) * 100);
                         retSimUIModel.CurrentSimOutput.DPS = (damage / ((float)finishedSimulationCount));

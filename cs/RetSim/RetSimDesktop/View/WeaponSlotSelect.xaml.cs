@@ -206,7 +206,7 @@ namespace RetSimDesktop
                     {
                         gemPicker = new(RetSim.Data.Items.Gems.Values, selectedSocket.SocketedGem);
                     }
-                
+
                     retSimUIModel.TooltipSettings.HoverItemID = 0;
                     if (gemPicker.ShowDialog() == true)
                     {
