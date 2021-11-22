@@ -27,7 +27,13 @@ namespace RetSimDesktop.View
         {
             if (e.Argument is RetSimUIModel retSimUIModel)
             {
+                var race = retSimUIModel.PlayerSettings.SelectedRace;
+                var encounterID = retSimUIModel.EncounterSettings.EncounterID;
+
                 var numberOfSimulations = retSimUIModel.SimSettings.SimulationCount;
+
+                var minDuration = retSimUIModel.EncounterSettings.MinFightDuration;
+                var maxDuration = retSimUIModel.EncounterSettings.MaxFightDuration;
 
                 Equipment playerEquipment = retSimUIModel.SelectedGear.GetEquipment();
                 var talents = retSimUIModel.SelectedTalents.GetTalentList();
@@ -45,15 +51,15 @@ namespace RetSimDesktop.View
                     {
                         if (simulationsDistributed + simulationsPerThread <= numberOfSimulations)
                         {
-                            simExecuter[i] = new(playerEquipment, talents, buffs, debuffs, consumables,
-                                retSimUIModel.SimSettings.MinFightDuration, retSimUIModel.SimSettings.MaxFightDuration,
+                            simExecuter[i] = new(Collections.Races[race.ToString()], Collections.Bosses[encounterID], playerEquipment, talents, buffs, debuffs, consumables,
+                                minDuration, maxDuration,
                                 combatLogs, simulationsDistributed, simulationsPerThread);
                             simulationsDistributed += simulationsPerThread;
                         }
                         else
                         {
-                            simExecuter[i] = new(playerEquipment, talents, buffs, debuffs, consumables,
-                                retSimUIModel.SimSettings.MinFightDuration, retSimUIModel.SimSettings.MaxFightDuration,
+                            simExecuter[i] = new(Collections.Races[race.ToString()], Collections.Bosses[encounterID], playerEquipment, talents, buffs, debuffs, consumables,
+                                minDuration, maxDuration,
                                 combatLogs, simulationsDistributed, numberOfSimulations - simulationsDistributed);
                             simulationsDistributed += numberOfSimulations - simulationsDistributed;
                         }
@@ -124,6 +130,8 @@ namespace RetSimDesktop.View
 
     public class SimExecuter
     {
+        private readonly Race race;
+        private readonly Boss encounter;
         private readonly Equipment playerEquipment;
         private readonly List<Talent> talents;
         private readonly List<Spell> buffs;
@@ -135,8 +143,10 @@ namespace RetSimDesktop.View
         public readonly int startIndex;
         public readonly int length;
 
-        public SimExecuter(Equipment playerEquipment, List<Talent> talents, List<Spell> buffs, List<Spell> debuffs, List<Spell> consumables, int minFightDuration, int maxFightDuration, CombatLog[] combatLogs, int startIndex, int length)
+        public SimExecuter(Race race, Boss encounter, Equipment playerEquipment, List<Talent> talents, List<Spell> buffs, List<Spell> debuffs, List<Spell> consumables, int minFightDuration, int maxFightDuration, CombatLog[] combatLogs, int startIndex, int length)
         {
+            this.race = race;
+            this.encounter = encounter;
             this.playerEquipment = playerEquipment;
             this.talents = talents;
             this.buffs = buffs;
@@ -153,7 +163,7 @@ namespace RetSimDesktop.View
         {
             for (int i = startIndex; i < startIndex + length; i++)
             {
-                FightSimulation fight = new(new Player("Brave Hero", Collections.Races["Human"], playerEquipment, talents), new Enemy(Collections.Bosses[17]), new EliteTactic(), buffs, debuffs, consumables, minFightDuration, maxFightDuration);
+                FightSimulation fight = new(new Player("Brave Hero", race, playerEquipment, talents), new Enemy(encounter), new EliteTactic(), buffs, debuffs, consumables, minFightDuration, maxFightDuration);
                 fight.Run();
                 combatLogs[i] = fight.CombatLog;
             }

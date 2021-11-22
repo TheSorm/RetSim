@@ -29,7 +29,13 @@ namespace RetSimDesktop.View
             {
                 Tuple<RetSimUIModel, IEnumerable<DisplayGear>, int> input = (Tuple<RetSimUIModel, IEnumerable<DisplayGear>, int>)e.Argument;
 
+                var race = input.Item1.PlayerSettings.SelectedRace;
+                var encounterID = input.Item1.EncounterSettings.EncounterID;
+
                 var numberOfSimulations = input.Item1.SimSettings.SimulationCount;
+
+                var minDuration = input.Item1.EncounterSettings.MinFightDuration;
+                var maxDuration = input.Item1.EncounterSettings.MaxFightDuration;
 
                 var talents = input.Item1.SelectedTalents.GetTalentList();
                 var buffs = input.Item1.SelectedBuffs.GetBuffs();
@@ -58,8 +64,8 @@ namespace RetSimDesktop.View
                         }
                     }
 
-                    simExecuter[freeThread] = new(playerEquipment, talents, buffs, debuffs, consumables,
-                                input.Item1.SimSettings.MinFightDuration, input.Item1.SimSettings.MaxFightDuration, numberOfSimulations, item);
+                    simExecuter[freeThread] = new(Collections.Races[race.ToString()], Collections.Bosses[encounterID], playerEquipment, talents, buffs, debuffs, consumables,
+                                minDuration, maxDuration, numberOfSimulations, item);
                     threads[freeThread] = new(new ThreadStart(simExecuter[freeThread].Execute));
                     threads[freeThread].Start();
                 }
@@ -78,6 +84,8 @@ namespace RetSimDesktop.View
 
     public class GearSimExecuter
     {
+        private readonly Race race;
+        private readonly Boss encounter;
         private readonly Equipment playerEquipment;
         private readonly List<Talent> talents;
         private readonly List<Spell> buffs;
@@ -88,8 +96,10 @@ namespace RetSimDesktop.View
         public readonly int numberOfSimulations;
         private readonly DisplayGear item;
 
-        public GearSimExecuter(Equipment playerEquipment, List<Talent> talents, List<Spell> buffs, List<Spell> debuffs, List<Spell> consumables, int minFightDuration, int maxFightDuration, int numberOfSimulations, DisplayGear item)
+        public GearSimExecuter(Race race, Boss encounter, Equipment playerEquipment, List<Talent> talents, List<Spell> buffs, List<Spell> debuffs, List<Spell> consumables, int minFightDuration, int maxFightDuration, int numberOfSimulations, DisplayGear item)
         {
+            this.race = race;
+            this.encounter = encounter;
             this.playerEquipment = playerEquipment;
             this.talents = talents;
             this.buffs = buffs;
@@ -106,7 +116,7 @@ namespace RetSimDesktop.View
             float overallDPS = 0;
             for (int i = 0; i < numberOfSimulations; i++)
             {
-                FightSimulation fight = new(new Player("Brave Hero", Collections.Races["Human"], playerEquipment, talents), new Enemy(Collections.Bosses[17]), new EliteTactic(), buffs, debuffs, consumables, minFightDuration, maxFightDuration);
+                FightSimulation fight = new(new Player("Brave Hero", race, playerEquipment, talents), new Enemy(encounter), new EliteTactic(), buffs, debuffs, consumables, minFightDuration, maxFightDuration);
                 fight.Run();
                 overallDPS += fight.CombatLog.DPS;
                 item.DPS = overallDPS / (i + 1);

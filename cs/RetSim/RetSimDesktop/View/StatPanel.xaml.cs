@@ -26,6 +26,8 @@ namespace RetSimDesktop
                 {
                     retSimUIModel.SelectedGear.PropertyChanged += Model_PropertyChanged;
                     retSimUIModel.SelectedTalents.PropertyChanged += Model_PropertyChanged;
+                    retSimUIModel.PlayerSettings.PropertyChanged += Model_PropertyChanged;
+                    retSimUIModel.EncounterSettings.PropertyChanged += Model_PropertyChanged;
 
                     Model_PropertyChanged(this, new PropertyChangedEventArgs(""));
                 }
@@ -37,8 +39,9 @@ namespace RetSimDesktop
         {
             if (DataContext is RetSimUIModel retSimUIModel)
             {
-                var player = new Player("Brave Hero", Collections.Races["Human"], retSimUIModel.SelectedGear.GetEquipment(), retSimUIModel.SelectedTalents.GetTalentList());
-                FightSimulation fight = new(player, new Enemy(Collections.Bosses[17]), new EliteTactic(), new List<Spell>(), new List<Spell>(), new List<Spell>(), 0, 0);
+                var player = new Player("Brave Hero", Collections.Races[retSimUIModel.PlayerSettings.SelectedRace.ToString()],
+                    retSimUIModel.SelectedGear.GetEquipment(), retSimUIModel.SelectedTalents.GetTalentList());
+                FightSimulation fight = new(player, new Enemy(Collections.Bosses[retSimUIModel.EncounterSettings.EncounterID]), new EliteTactic(), new List<Spell>(), new List<Spell>(), new List<Spell>(), 0, 0);
 
 
                 Stamina.Content = player.Stats[StatName.Stamina].Value;
@@ -82,7 +85,7 @@ namespace RetSimDesktop
 
                 Mana.ToolTip = new ToolTip { Content = $"{manaBase}\n{manaBonus}\n{manaIntellect}" };
 
-                var manaPer5Bonus = $"Mana regenerated over the fight's duration: ~{((retSimUIModel.SimSettings.MinFightDuration + retSimUIModel.SimSettings.MaxFightDuration) / 10000) * player.Stats[StatName.ManaPer5].Value}";
+                var manaPer5Bonus = $"Mana regenerated over the fight's duration: ~{((retSimUIModel.EncounterSettings.MinFightDuration + retSimUIModel.EncounterSettings.MaxFightDuration) / 10000) * player.Stats[StatName.ManaPer5].Value}";
 
                 ManaPer5.ToolTip = new ToolTip { Content = $"{manaPer5Bonus}" };
 

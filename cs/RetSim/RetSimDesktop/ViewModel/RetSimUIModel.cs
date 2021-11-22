@@ -11,6 +11,8 @@ namespace RetSimDesktop.ViewModel
 {
     public class RetSimUIModel : IJsonOnDeserialized
     {
+        private PlayerSettings _PlayerSettings;
+        private EncounterSettings _EncounterSettings;
         private SelectedGear _SelectedGear;
         private SelectedTalents _SelectedTalents;
         private SelectedConsumables _SelectedConsumables;
@@ -30,6 +32,10 @@ namespace RetSimDesktop.ViewModel
 
         public RetSimUIModel()
         {
+            _PlayerSettings = new();
+
+            _EncounterSettings = new();
+
             _CurrentSimOutput = new SimOutput() { Progress = 0, DPS = 0, Min = 0, Max = 0, MedianCombatLog = new(), MaxCombatLog = new(), MinCombatLog = new() };
 
             _SelectedTalents = new();
@@ -185,6 +191,17 @@ namespace RetSimDesktop.ViewModel
             set { _SimButtonStatus = value; }
         }
 
+        public PlayerSettings PlayerSettings
+        {
+            get { return _PlayerSettings; }
+            set { _PlayerSettings = value; }
+        }
+
+        public EncounterSettings EncounterSettings
+        {
+            get { return _EncounterSettings; }
+            set { _EncounterSettings = value; }
+        }
         public SelectedGear SelectedGear
         {
             get { return _SelectedGear; }
@@ -197,6 +214,7 @@ namespace RetSimDesktop.ViewModel
             get { return _CurrentSimOutput; }
             set { _CurrentSimOutput = value; }
         }
+
         public SelectedConsumables SelectedConsumables
         {
             get { return _SelectedConsumables; }

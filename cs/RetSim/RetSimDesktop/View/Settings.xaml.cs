@@ -1,4 +1,6 @@
-﻿using RetSim.Items;
+﻿using RetSim.Data;
+using RetSim.Items;
+using RetSim.Units.Enemy;
 using RetSimDesktop.ViewModel;
 using System;
 using System.Collections.Generic;
@@ -16,7 +18,17 @@ namespace RetSimDesktop
     {
         public Settings()
         {
+            Initialized += Setup;
+            
             InitializeComponent();
+        }
+
+        private void Setup(object? sender, EventArgs e)
+        {
+            foreach (var boss in Collections.Bosses)
+            {
+                BossesComboBox.Items.Add(boss);
+            }
         }
 
         private void RedSocketSelect_Click(object sender, RoutedEventArgs e)
@@ -93,6 +105,27 @@ namespace RetSimDesktop
                     retSimUIModel.SelectedBuffs.AirTotem1Enabled = false;
                 }
             }
+        }
+    }
+
+    public class BossToIDConverter : IValueConverter
+    {
+        public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
+        {
+            if (value is int bossID)
+            {
+                return Collections.Bosses[bossID];
+            }
+            return Collections.Bosses[0];
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
+        {
+            if (value is Boss boss)
+            {
+                return boss.ID;
+            }
+            return 0;
         }
     }
 
