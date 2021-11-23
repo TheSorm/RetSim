@@ -8,6 +8,7 @@ A WoW TBC Classic Retribution Paladin Simulator
 * Make it prettier
 
 ## SIM
+* Better way of handling Surv Hunter Agility for Expose Weakness
 * Gear 
   * Implement armor auras / procs
   * Remove trash
