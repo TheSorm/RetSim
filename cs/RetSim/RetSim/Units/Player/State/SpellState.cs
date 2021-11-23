@@ -63,7 +63,7 @@ public class SpellState
 
 public class EffectBonus
 {
-    public int Flat { get; set; }
+    public float Flat { get; set; }
     public float Percent { get; set; }
 
     public EffectBonus()

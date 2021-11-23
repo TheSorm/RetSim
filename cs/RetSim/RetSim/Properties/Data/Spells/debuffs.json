@@ -2,17 +2,15 @@
   "14169": {
     "ID": 14169,
     "Name": "Improved Expose Armor",
-    "Rank": 6,
-    "Target": "Enemy",
+    "Rank": 2,
     "Aura": {
-      "IsDebuff": true,
       "Effects": [
         {
-          "EffectType": "ModStat",
-          "Stats": [
-            "Armor"
+          "EffectType": "ModSpellPercent",
+          "Spells": [
+            26866
           ],
-          "Value": -3075
+          "AuraEffect1": 50
         }
       ]
     }
@@ -83,6 +81,13 @@
           "EffectType": "ModDamageTaken",
           "School": "Holy",
           "Value": 219
+        },
+        {
+          "EffectType": "ModStat",
+          "Stats": [
+            "IncreasedAttackerCritChance"
+          ],
+          "Value": 0
         }
       ]
     }
@@ -90,23 +95,16 @@
 
   "20337": {
     "ID": 20337,
-    "Name": "Improved Judgement of the Crusader",
+    "Name": "Improved Seal of the Crusader",
     "Rank": 3,
-    "Target": "Enemy",
     "Aura": {
-      "IsDebuff": true,
       "Effects": [
         {
-          "EffectType": "ModStat",
-          "Stats": [
-            "IncreasedAttackerCritChance"
+          "EffectType": "ModSpell",
+          "Spells": [
+            27159
           ],
-          "Value": 3.0
-        },
-        {
-          "EffectType": "ModDamageTaken",
-          "School": "Holy",
-          "Value": 219
+          "AuraEffect2": 3
         }
       ]
     }
@@ -167,8 +165,8 @@
     }
   },
 
-  "27011": {
-    "ID": 27011,
+  "26993": {
+    "ID": 26993,
     "Name": "Faerie Fire",
     "Rank": 5,
     "Target": "Enemy",
@@ -181,6 +179,13 @@
             "Armor"
           ],
           "Value": -610
+        },
+        {
+          "EffectType": "ModStat",
+          "Stats": [
+            "IncreasedAttackerHitChance"
+          ],
+          "Value": 0
         }
       ]
     }
@@ -241,16 +246,16 @@
 
   "32484": {
     "ID": 32484,
-    "Name": "Improved Curse of the Elements (Malediction)",
-    "Rank": 4,
-    "Target": "Enemy",
+    "Name": "Malediction (Improved Curse of the Elements)",
+    "Rank": 3,
     "Aura": {
-      "IsDebuff": true,
       "Effects": [
         {
-          "EffectType": "ModDamageTakenPercent",
-          "SchoolMask": 116,
-          "Value": 13
+          "EffectType": "ModSpell",
+          "Spells": [
+            27228
+          ],
+          "AuraEffect1": 3
         }
       ]
     }
@@ -276,24 +281,15 @@
   "33602": {
     "ID": 33602,
     "Name": "Improved Faerie Fire",
-    "Rank": 5,
-    "Target": "Enemy",
+    "Rank": 3,
     "Aura": {
-      "IsDebuff": true,
       "Effects": [
         {
-          "EffectType": "ModStat",
-          "Stats": [
-            "Armor"
+          "EffectType": "ModSpell",
+          "Spells": [
+            26993
           ],
-          "Value": -610
-        },
-        {
-          "EffectType": "ModStat",
-          "Stats": [
-            "IncreasedAttackerHitChance"
-          ],
-          "Value": 3
+          "AuraEffect2": 3
         }
       ]
     }
@@ -312,7 +308,7 @@
           "Stats": [
             "IncreasedAttackerAttackPower"
           ],
-          "Value": 250.0
+          "Value": 250
         }
       ]
     }

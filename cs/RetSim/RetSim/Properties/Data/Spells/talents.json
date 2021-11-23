@@ -1,4 +1,138 @@
 {
+  "20101": {
+    "ID": 20101,
+    "Name": "Benediction",
+    "Rank": 1,
+    "Aura": {
+      "Effects": [
+        {
+          "EffectType": "ModSpellPercent",
+          "Spells": [
+            20271,
+            27170,
+            31892,
+            27158
+          ],
+          "ManaCost": 3
+        }
+      ]
+    }
+  },
+
+  "20102": {
+    "ID": 20102,
+    "Name": "Benediction",
+    "Rank": 2,
+    "Aura": {
+      "Effects": [
+        {
+          "EffectType": "ModSpellPercent",
+          "Spells": [
+            20271,
+            27170,
+            31892,
+            27158
+          ],
+          "ManaCost": 6
+        }
+      ]
+    }
+  },
+
+  "20103": {
+    "ID": 20103,
+    "Name": "Benediction",
+    "Rank": 3,
+    "Aura": {
+      "Effects": [
+        {
+          "EffectType": "ModSpellPercent",
+          "Spells": [
+            20271,
+            27170,
+            31892,
+            27158
+          ],
+          "ManaCost": 9
+        }
+      ]
+    }
+  },
+
+  "20104": {
+    "ID": 20104,
+    "Name": "Benediction",
+    "Rank": 4,
+    "Aura": {
+      "Effects": [
+        {
+          "EffectType": "ModSpellPercent",
+          "Spells": [
+            20271,
+            27170,
+            31892,
+            27158
+          ],
+          "ManaCost": 12
+        }
+      ]
+    }
+  },
+
+  "20105": {
+    "ID": 20105,
+    "Name": "Benediction",
+    "Rank": 5,
+    "Aura": {
+      "Effects": [
+        {
+          "EffectType": "ModSpellPercent",
+          "Spells": [
+            20271,
+            27170,
+            31892,
+            27158
+          ],
+          "ManaCost": 15
+        }
+      ]
+    }
+  },
+
+  "25956": {
+    "ID": 25956,
+    "Name": "Improved Judgement",
+    "Rank": 1,
+    "Aura": {
+      "Effects": [
+        {
+          "EffectType": "ModSpell",
+          "Spells": [
+            20271
+          ],
+          "Cooldown": 1000
+        }
+      ]
+    }
+  },
+
+  "25957": {
+    "ID": 25957,
+    "Name": "Improved Judgement",
+    "Rank": 2,
+    "Aura": {
+      "Effects": [
+        {
+          "EffectType": "ModSpell",
+          "Spells": [
+            20271
+          ],
+          "Cooldown": 2000
+        }
+      ]
+    }
+  },
+
   "20117": {
     "ID": 20117,
     "Name": "Conviction",
@@ -373,12 +507,12 @@
     "Aura": {
       "Effects": [
         {
-          "EffectType": "ModSpellCritChance",
+          "EffectType": "ModSpell",
           "Spells": [
             27171,
             31898
           ],
-          "Value": 3
+          "CritChance": 3
         }
       ]
     }
@@ -391,12 +525,12 @@
     "Aura": {
       "Effects": [
         {
-          "EffectType": "ModSpellCritChance",
+          "EffectType": "ModSpell",
           "Spells": [
             27171,
             31898
           ],
-          "Value": 6
+          "CritChance": 6
         }
       ]
     }
@@ -409,12 +543,12 @@
     "Aura": {
       "Effects": [
         {
-          "EffectType": "ModSpellCritChance",
+          "EffectType": "ModSpell",
           "Spells": [
             27171,
             31898
           ],
-          "Value": 9
+          "CritChance": 9
         }
       ]
     }
@@ -427,12 +561,12 @@
     "Aura": {
       "Effects": [
         {
-          "EffectType": "ModSpellCritChance",
+          "EffectType": "ModSpell",
           "Spells": [
             27171,
             31898
           ],
-          "Value": 12
+          "CritChance": 12
         }
       ]
     }
@@ -445,12 +579,12 @@
     "Aura": {
       "Effects": [
         {
-          "EffectType": "ModSpellCritChance",
+          "EffectType": "ModSpell",
           "Spells": [
             27171,
             31898
           ],
-          "Value": 15
+          "CritChance": 15
         }
       ]
     }

@@ -28,9 +28,9 @@ class Program
 
         var equipment = Manager.GetEquipment();        
 
-        var playerTalents = Talent.GetTalents(20121, 31868, 20113, 20218, 31870, 20059, 31883, 35397, 20193, 20266);
-        var playerBuffs = Spell.GetSpells(25580, 27141, 25898, 2048, 25528, 25359, 25570, 30811, 26991, 25392, 32999, 27127, 28878);
-        var playerDebuffs = Spell.GetSpells(20337, 14169, 33602, 27226, 30070, 32484, 17800, 33200, 15258, 22959, 14325, 34501);
+        var playerTalents = Talent.GetTalents(20105, 25957, 20121, 31868, 20113, 20218, 31870, 20059, 35397, 31883, 20193, 20266);
+        var playerBuffs = Spell.GetSpells(25392, 14767, 25570, 27127, 32999, 26991, 17055, 28878, 30811, 27141, 20048, 25898, 25580, 29193, 25359, 25528, 16295, 2048, 12861);
+        var playerDebuffs = Spell.GetSpells(22959, 17800, 15258, 27228, 32484, 33200, 34501, 14325, 30070, 27159, 20337, 26993, 33602, 27226, 26866, 14169);
         var playerConsumables = Spell.GetSpells(28520, 33256, 33082, 33077, 35476, 23060);
 
         Logger.Log("Press Enter to run a single, detailed sim, or any other key to run many, non-detailed sims.");
@@ -46,8 +46,6 @@ class Program
 
         else
             RunMany(equipment, playerTalents, playerBuffs, playerDebuffs, playerConsumables);
-
-        //TODO: Add more debuffs, consumables
 
         //PrintEquipment(equipment);
 

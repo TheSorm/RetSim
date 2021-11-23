@@ -56,13 +56,6 @@
     "ProcMask": 2,
     "Chance": 20
   },
-  "9": {
-    "ID": 9,
-    "Name": "Improved Windfury Attack",
-    "SpellID": 29192,
-    "ProcMask": 2,
-    "Chance": 20
-  },
   "10": {
     "ID": 10,
     "Name": "Lightning Speed",

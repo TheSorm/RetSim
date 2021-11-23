@@ -22,7 +22,7 @@ public class AuraConverter : JsonConverter<Aura>
             for (int i = 0; i < jo["Effects"].Count(); i++)
             {
                 string effectType = (string)jo["Effects"][i]["EffectType"];
-                float value = (float)jo["Effects"][i]["Value"];
+                float value = (float)(jo["Effects"][i]["Value"] ?? 0);
 
                 switch (effectType)
                 {
@@ -65,18 +65,55 @@ public class AuraConverter : JsonConverter<Aura>
                         effects.Add(new ModDamageTakenPercent(value, (School)(int)jo["Effects"][i]["SchoolMask"]));
                         break;
 
-                    case "ModSpellCritChance":
+                    case "ModSpell":
 
-                        List<int> spellCritChance = new();
+                        List<int> msSpells = new();
 
-                        int spellCritCount = jo["Effects"][i]["Spells"].Count();
+                        int msCount = jo["Effects"][i]["Spells"].Count();
 
-                        for (int y = 0; y < spellCritCount; y++)
+                        for (int y = 0; y < msCount; y++)
                         {
-                            spellCritChance.Add((int)jo["Effects"][i]["Spells"][y]);
+                            msSpells.Add((int)jo["Effects"][i]["Spells"][y]);
                         }
 
-                        effects.Add(new ModSpellCritChance(value, spellCritChance));
+                        int cooldown = (int)(jo["Effects"][i]["Cooldown"] ?? 0);
+                        int manaCost = (int)(jo["Effects"][i]["ManaCost"] ?? 0);
+                        float critChance = (float)(jo["Effects"][i]["CritChance"] ?? 0);
+
+                        float effect1 = (float)(jo["Effects"][i]["Effect1"] ?? 0);
+                        float effect2 = (float)(jo["Effects"][i]["Effect2"] ?? 0);
+                        float effect3 = (float)(jo["Effects"][i]["Effect3"] ?? 0);
+
+                        float auraEffect1 = (float)(jo["Effects"][i]["AuraEffect1"] ?? 0);
+                        float auraEffect2 = (float)(jo["Effects"][i]["AuraEffect2"] ?? 0);
+                        float auraEffect3 = (float)(jo["Effects"][i]["AuraEffect3"] ?? 0);
+
+                        effects.Add(new ModSpell(0, cooldown, manaCost, critChance, effect1, effect2, effect3, auraEffect1, auraEffect2, auraEffect3, msSpells));
+
+                        break;
+
+                    case "ModSpellPercent":
+
+                        List<int> mspSpells = new();
+
+                        int mspCount = jo["Effects"][i]["Spells"].Count();
+
+                        for (int y = 0; y < mspCount; y++)
+                        {
+                            mspSpells.Add((int)jo["Effects"][i]["Spells"][y]);
+                        }
+
+                        int manaCostPercent = (int)(jo["Effects"][i]["ManaCost"] ?? 0);
+
+                        float effect1Percent = (float)(jo["Effects"][i]["Effect1"] ?? 0);
+                        float effect2Percent = (float)(jo["Effects"][i]["Effect2"] ?? 0);
+                        float effect3Percent = (float)(jo["Effects"][i]["Effect3"] ?? 0);
+
+                        float auraEffect1Percent = (float)(jo["Effects"][i]["AuraEffect1"] ?? 0);
+                        float auraEffect2Percent = (float)(jo["Effects"][i]["AuraEffect2"] ?? 0);
+                        float auraEffect3Percent = (float)(jo["Effects"][i]["AuraEffect3"] ?? 0);
+
+                        effects.Add(new ModSpellPercent(0, manaCostPercent, effect1Percent, effect2Percent, effect3Percent, auraEffect1Percent, auraEffect2Percent, auraEffect3Percent, mspSpells));
 
                         break;
 
@@ -114,8 +151,8 @@ public class AuraConverter : JsonConverter<Aura>
 
                         effects.Add(new ModStat(value, msStats));
 
-                        break;   
-                    
+                        break;
+
                     case "ModStatPercent":
 
                         List<StatName> mspStats = new();
@@ -178,7 +215,7 @@ public class AuraConverter : JsonConverter<Aura>
 
         List<AuraEffect> effects = ReadAuraEffects(jo);
 
-        Aura aura = ReadAura(jo, effects);        
+        Aura aura = ReadAura(jo, effects);
 
         return aura;
     }
@@ -300,10 +337,66 @@ public class AuraConverter : JsonConverter<Aura>
             writer.WriteStringArray("Stats", modStat.Stats.Cast<string>().ToArray());
         }
 
-        else if (value is ModSpellCritChance modSpell)
+        else if (value is ModSpell modSpell)
         {
-            writer.WriteData("EffectType", "ModSpellCritChance");
+            writer.WriteData("EffectType", "ModSpell");
             writer.WriteIntArray("Spells", modSpell.Spells.Cast<int>().ToArray());
+
+            if (modSpell.Cooldown != 0)
+                writer.WriteData("Cooldown", modSpell.Cooldown);
+
+            if (modSpell.ManaCost != 0)
+                writer.WriteData("ManaCost", modSpell.ManaCost);
+
+            if (modSpell.CritChance != 0)
+                writer.WriteData("CritChance", modSpell.CritChance);
+
+            if (modSpell.Effect1 != 0)
+                writer.WriteData("Effect1", modSpell.Effect1);
+
+            if (modSpell.Effect2 != 0)
+                writer.WriteData("Effect2", modSpell.Effect2);
+
+            if (modSpell.Effect3 != 0)
+                writer.WriteData("Effect3", modSpell.Effect3);
+
+            if (modSpell.AuraEffect1 != 0)
+                writer.WriteData("AuraEffect1", modSpell.AuraEffect1);
+
+            if (modSpell.AuraEffect2 != 0)
+                writer.WriteData("AuraEffect2", modSpell.AuraEffect2);
+
+            if (modSpell.AuraEffect3 != 0)
+                writer.WriteData("AuraEffect3", modSpell.AuraEffect3);
+
+        }
+
+        else if (value is ModSpellPercent modSpellPercent)
+        {
+            writer.WriteData("EffectType", "ModSpellPercent");
+            writer.WriteIntArray("Spells", modSpellPercent.Spells.Cast<int>().ToArray());
+
+            if (modSpellPercent.ManaCost != 0)
+                writer.WriteData("ManaCost", modSpellPercent.ManaCost);
+
+            if (modSpellPercent.Effect1 != 0)
+                writer.WriteData("Effect1", modSpellPercent.Effect1);
+
+            if (modSpellPercent.Effect2 != 0)
+                writer.WriteData("Effect2", modSpellPercent.Effect2);
+
+            if (modSpellPercent.Effect3 != 0)
+                writer.WriteData("Effect3", modSpellPercent.Effect3);
+
+            if (modSpellPercent.AuraEffect1 != 0)
+                writer.WriteData("AuraEffect1", modSpellPercent.AuraEffect1);
+
+            if (modSpellPercent.AuraEffect2 != 0)
+                writer.WriteData("AuraEffect2", modSpellPercent.AuraEffect2);
+
+            if (modSpellPercent.AuraEffect3 != 0)
+                writer.WriteData("AuraEffect3", modSpellPercent.AuraEffect3);
+
         }
 
         else if (value is ModDamageTaken modDamageTaken)

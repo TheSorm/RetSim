@@ -1,5 +1,7 @@
 ﻿using RetSim.Simulation;
 using RetSim.Units;
+using RetSim.Units.Enemy;
+using RetSim.Units.Player.State;
 using RetSim.Units.UnitStats;
 
 namespace RetSim.Spells.AuraEffects;
@@ -17,8 +19,15 @@ public class ModStat : AuraEffect
     {
         foreach (StatName stat in Stats)
         {
-            target.Stats[stat].Bonus += Value;
-            //Program.Logger.Log($"{fight.Timestamp} - {target.Name}'s {stat.Key} was set to {target.Stats[stat.Key].Value} (previous: {target.Stats[stat.Key].Value - stat.Value})");
+            SpellState state = fight.Player.Spellbook[aura.Parent.ID];
+
+            int index = aura.Effects.IndexOf(this);
+
+            EffectBonus bonuses = state.AuraBonuses[index];
+
+            target.Stats[stat].Bonus += (Value + bonuses.Flat) * bonuses.Percent;
+
+            //Program.Logger.Log($"{fight.Timestamp} - {target.Name} gains {(Value + bonuses.Flat) * bonuses.Percent} {stat} from {aura.Parent.Name}. Current: {target.Stats[stat].Value}");
         }
     }
 
@@ -26,8 +35,15 @@ public class ModStat : AuraEffect
     {
         foreach (StatName stat in Stats)
         {
-            target.Stats[stat].Bonus -= Value;
-            //Program.Logger.Log($"{fight.Timestamp} - {target.Name}'s {stat.Key} was set to {target.Stats[stat.Key].Value} (previous: {target.Stats[stat.Key].Value + stat.Value})");
+            SpellState state = fight.Player.Spellbook[aura.Parent.ID];
+
+            int index = aura.Effects.IndexOf(this);
+
+            EffectBonus bonuses = state.AuraBonuses[index];
+
+            target.Stats[stat].Bonus -= (Value + bonuses.Flat) * bonuses.Percent;
+
+            //Program.Logger.Log($"{fight.Timestamp} - {target.Name} loses {(Value + bonuses.Flat) * bonuses.Percent} {stat} from {aura.Parent.Name}. Current: {target.Stats[stat].Value}");
         }
     }
 }

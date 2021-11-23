@@ -2,38 +2,38 @@
   "Human": {
     "Name": "Human",
     "Stats": {
-      "Strength": 126.0,
-      "Agility": 77.0,
-      "Intellect": 83.0,
-      "Stamina": 120.0
+      "Strength": 126,
+      "Agility": 77,
+      "Intellect": 83,
+      "Stamina": 120
     },    
     "RacialID": 20597
   },
   "Dwarf": {
     "Name": "Dwarf",
     "Stats": {
-      "Strength": 128.0,
-      "Agility": 73.0,
-      "Intellect": 82.0,
-      "Stamina": 123.0
+      "Strength": 128,
+      "Agility": 73,
+      "Intellect": 82,
+      "Stamina": 123
     }
   },
   "Draenei": {
     "Name": "Draenei",
     "Stats": {
-      "Strength": 127.0,
-      "Agility": 74.0,
-      "Intellect": 84.0,
-      "Stamina": 119.0
+      "Strength": 127,
+      "Agility": 74,
+      "Intellect": 84,
+      "Stamina": 119
     }
   },
   "BloodElf": {
     "Name": "Blood Elf",
     "Stats": {
-      "Strength": 123.0,
-      "Agility": 79.0,
-      "Intellect": 87.0,
-      "Stamina": 118.0
+      "Strength": 123,
+      "Agility": 79,
+      "Intellect": 87,
+      "Stamina": 118
     }
   }
 }

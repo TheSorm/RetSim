@@ -8,8 +8,8 @@
       "Effects": [
         {
           "EffectType": "ModStat",
-          "Stats": [            
-              "AttackPower"            
+          "Stats": [
+            "AttackPower"
           ],
           "Value": 306
         }
@@ -19,17 +19,16 @@
 
   "23563": {
     "ID": 23563,
-    "Name": "Battle Shout (T2)",
-    "Rank": 8,
+    "Name": "Enhanced Battle Shout (Tier 2)",
     "Target": "Ally",
     "Aura": {
       "Effects": [
         {
-          "EffectType": "ModStat",
-          "Stats": [
-            "AttackPower"
+          "EffectType": "ModSpell",
+          "Spells": [
+            2048
           ],
-          "Value": 336
+          "AuraEffect1": 30
         }
       ]
     }
@@ -37,35 +36,16 @@
 
   "37536": {
     "ID": 37536,
-    "Name": "Battle Shout (Solarian)",
-    "Rank": 8,
+    "Name": "Improved Battle Shout (Solarian's Sapphire)'",
     "Target": "Ally",
     "Aura": {
       "Effects": [
         {
-          "EffectType": "ModStat",
-          "Stats": [
-            "AttackPower"
+          "EffectType": "ModSpell",
+          "Spells": [
+            2048
           ],
-          "Value": 376
-        }
-      ]
-    }
-  },
-
-  "37537": {
-    "ID": 37537,
-    "Name": "Battle Shout (Solarian + T2)",
-    "Rank": 8,
-    "Target": "Ally",
-    "Aura": {
-      "Effects": [
-        {
-          "EffectType": "ModStat",
-          "Stats": [
-            "AttackPower"
-          ],
-          "Value": 406
+          "AuraEffect1": 70
         }
       ]
     }
@@ -73,72 +53,17 @@
 
   "12861": {
     "ID": 12861,
-    "Name": "Improved Battle Shout",
-    "Rank": 8,
+    "Name": "Commanding Presence (Talent)",
+    "Rank": 5,
     "Target": "Ally",
     "Aura": {
       "Effects": [
         {
-          "EffectType": "ModStat",
-          "Stats": [
-            "AttackPower"
+          "EffectType": "ModSpellPercent",
+          "Spells": [
+            2048
           ],
-          "Value": 382.5
-        }
-      ]
-    }
-  },
-
-  "12862": {
-    "ID": 12862,
-    "Name": "Improved Battle Shout (T2)",
-    "Rank": 8,
-    "Target": "Ally",
-    "Aura": {
-      "Effects": [
-        {
-          "EffectType": "ModStat",
-          "Stats": [
-            "AttackPower"
-          ],
-          "Value": 420
-        }
-      ]
-    }
-  },
-
-
-  "12863": {
-    "ID": 12863,
-    "Name": "Improved Battle Shout (Solarian)",
-    "Rank": 8,
-    "Target": "Ally",
-    "Aura": {
-      "Effects": [
-        {
-          "EffectType": "ModStat",
-          "Stats": [
-            "AttackPower"
-          ],
-          "Value": 470
-        }
-      ]
-    }
-  },
-
-  "12864": {
-    "ID": 12864,
-    "Name": "Improved Battle Shout (Solarian + T2)",
-    "Rank": 8,
-    "Target": "Ally",
-    "Aura": {
-      "Effects": [
-        {
-          "EffectType": "ModStat",
-          "Stats": [
-            "AttackPower"
-          ],
-          "Value": 507.5
+          "AuraEffect1": 25
         }
       ]
     }
@@ -196,19 +121,20 @@
     }
   },
 
-  "25363": {
-    "ID": 25363,
-    "Name": "Improved Grace of Air Totem",
-    "Rank": 3,
+  "16295": {
+    "ID": 16295,
+    "Name": "Enhancing Totems",
+    "Rank": 2,
     "Target": "Ally",
     "Aura": {
       "Effects": [
         {
-          "EffectType": "ModStat",
-          "Stats": [
-            "Agility"
+          "EffectType": "ModSpellPercent",
+          "Spells": [
+            25359,
+            25528
           ],
-          "Value": 88.55
+          "AuraEffect1": 15
         }
       ]
     }
@@ -234,17 +160,17 @@
 
   "14767": {
     "ID": 14767,
-    "Name": "Improved Prayer of Fortitude",
-    "Rank": 3,
+    "Name": "Improved Power Word: Fortitude",
+    "Rank": 2,
     "Target": "Ally",
     "Aura": {
       "Effects": [
         {
-          "EffectType": "ModStat",
-          "Stats": [
-            "Stamina"
+          "EffectType": "ModSpellPercent",
+          "Spells": [
+            25392
           ],
-          "Value": 102.7
+          "AuraEffect1": 30
         }
       ]
     }
@@ -263,24 +189,6 @@
             "Strength"
           ],
           "Value": 86
-        }
-      ]
-    }
-  },
-
-  "25364": {
-    "ID": 25364,
-    "Name": "Improved Strength of Earth Totem",
-    "Rank": 6,
-    "Target": "Ally",
-    "Aura": {
-      "Effects": [
-        {
-          "EffectType": "ModStat",
-          "Stats": [
-            "Strength"
-          ],
-          "Value": 98.9
         }
       ]
     }
@@ -306,17 +214,17 @@
 
   "16208": {
     "ID": 16208,
-    "Name": "Improved Mana Spring Totem",
+    "Name": "Restorative Totems",
     "Rank": 5,
     "Target": "Ally",
     "Aura": {
       "Effects": [
         {
-          "EffectType": "ModStat",
-          "Stats": [
-            "ManaPer5"
+          "EffectType": "ModSpellPercent",
+          "Spells": [
+            25570
           ],
-          "Value": 62.5
+          "AuraEffect1": 25
         }
       ]
     }
@@ -338,13 +246,16 @@
 
   "29193": {
     "ID": 29193,
-    "Name": "Improved Windfury Totem",
-    "Rank": 5,
+    "Name": "Improved Weapon Totems",
+    "Rank": 2,
     "Aura": {
       "Effects": [
         {
-          "EffectType": "GainProc",
-          "Value": 9
+          "EffectType": "ModSpellPercent",
+          "Spells": [
+            25584
+          ],
+          "AuraEffect1": 30
         }
       ]
     }
@@ -363,31 +274,6 @@
             "AttackPower"
           ],
           "Value": 445
-        }
-      ]
-    },
-    "Effects": [
-      {
-        "EffectType": "ExtraAttacks",
-        "ProcID": 2,
-        "Value": 1
-      }
-    ]
-  },
-
-  "29192": {
-    "ID": 29192,
-    "Name": "Windfury Attack",
-    "Rank": 5,
-    "Aura": {
-      "Duration": 10,
-      "Effects": [
-        {
-          "EffectType": "ModStat",
-          "Stats": [
-            "AttackPower"
-          ],
-          "Value": 578.5
         }
       ]
     },
@@ -450,27 +336,18 @@
 
   "17055": {
     "ID": 17055,
-    "Name": "Improved Gift of the Wild",
-    "Rank": 3,
+    "Name": "Improved Mark of the Wild",
+    "Rank": 5,
     "Target": "Ally",
     "Aura": {
       "Effects": [
         {
-          "EffectType": "ModStat",
-          "Stats": [
-            "Armor"
+          "EffectType": "ModSpellPercent",
+          "Spells": [
+            26991
           ],
-          "Value": 459
-        },
-        {
-          "EffectType": "ModStat",
-          "Stats": [
-            "Strength",
-            "Agility",
-            "Stamina",
-            "Intellect"
-          ],
-          "Value": 18.9
+          "AuraEffect1": 35,
+          "AuraEffect2": 35
         }
       ]
     }
@@ -538,11 +415,11 @@
     "Aura": {
       "Effects": [
         {
-          "EffectType": "ModStat",
-          "Stats": [
-            "AttackPower"
+          "EffectType": "ModSpellPercent",
+          "Spells": [
+            27141
           ],
-          "Value": 264
+          "AuraEffect1": 20
         }
       ]
     }
@@ -574,11 +451,11 @@
     "Aura": {
       "Effects": [
         {
-          "EffectType": "ModStat",
-          "Stats": [
-            "ManaPer5"
+          "EffectType": "ModSpellPercent",
+          "Spells": [
+            27143
           ],
-          "Value": 49.2
+          "AuraEffect1": 20
         }
       ]
     }
