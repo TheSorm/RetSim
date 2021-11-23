@@ -4,6 +4,7 @@ using RetSim.Simulation.CombatLogEntries;
 using RetSimDesktop.ViewModel;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Windows.Controls;
 
 namespace RetSimDesktop
@@ -140,19 +141,25 @@ namespace RetSimDesktop
             {
                 var value = DamageBreakdownSelection.SelectedValue.ToString();
 
-                if (value == "Min")
+                if (value == "Min" && DamageBreakdownMinLog.Count > 0)
                 {
-                    DamageBreakdownTable.ItemsSource = DamageBreakdownMinLog;
+                    DamageBreakdownTable.ItemsSource = DamageBreakdownMinLog.GetRange(0, DamageBreakdownMinLog.Count - 1);
+                    DamageBreakdownTotalTable.ItemsSource = DamageBreakdownMinLog.GetRange(DamageBreakdownMinLog.Count - 1, 1);
+                    Trace.WriteLine(DamageBreakdownMinLog[DamageBreakdownMinLog.Count - 1].Crits);
                 }
-                else if (value == "Median")
+                else if (value == "Median" && DamageBreakdownMedianLog.Count > 0)
                 {
-                    DamageBreakdownTable.ItemsSource = DamageBreakdownMedianLog;
+                    DamageBreakdownTable.ItemsSource = DamageBreakdownMedianLog.GetRange(0, DamageBreakdownMedianLog.Count - 1);
+                    DamageBreakdownTotalTable.ItemsSource = DamageBreakdownMedianLog.GetRange(DamageBreakdownMedianLog.Count - 1, 1);
                 }
-                else if (value == "Max")
+                else if (value == "Max" && DamageBreakdownMaxLog.Count > 0)
                 {
-                    DamageBreakdownTable.ItemsSource = DamageBreakdownMaxLog;
+                    DamageBreakdownTable.ItemsSource = DamageBreakdownMaxLog.GetRange(0, DamageBreakdownMaxLog.Count - 1);
+                    DamageBreakdownTotalTable.ItemsSource = DamageBreakdownMaxLog.GetRange(DamageBreakdownMaxLog.Count - 1, 1);
                 }
                 DamageBreakdownTable.Items.Refresh();
+                DamageBreakdownDamageColumn.SortDirection = ListSortDirection.Descending;
+                DamageBreakdownTable.Items.SortDescriptions.Add(new SortDescription(DamageBreakdownDamageColumn.SortMemberPath, ListSortDirection.Descending));
             }
         }
         private void CombatLogSelection_SelectionChanged(object sender, SelectionChangedEventArgs e)
