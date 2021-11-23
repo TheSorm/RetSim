@@ -8,7 +8,7 @@ using RetSim.Units.UnitStats;
 namespace RetSim.Spells.SpellEffects;
 
 public class Damage : SpellEffect
-{    
+{
     public School School { get; init; }
     public float Coefficient { get; init; }
 
@@ -16,14 +16,14 @@ public class Damage : SpellEffect
     public AttackCategory CritCategory { get; init; }
     public bool IgnoresDefenses { get; init; }
 
-    public ProcMask OnCast { get; init; } 
+    public ProcMask OnCast { get; init; }
     public ProcMask OnHit { get; init; }
     public ProcMask OnCrit { get; init; }
 
     public Damage(float value, float dieSides, School school, float coefficient, DefenseType defense, AttackCategory crit, bool ignoresDefense, ProcMask onCast, ProcMask onHit, ProcMask onCrit) : base(value, dieSides)
     {
         School = school;
-        Coefficient = coefficient; 
+        Coefficient = coefficient;
         DefenseCategory = defense;
         CritCategory = crit;
         IgnoresDefenses = ignoresDefense;
@@ -41,7 +41,7 @@ public class Damage : SpellEffect
     {
         if (Coefficient == 0)
             return 0;
-        
+
         else
             return Coefficient * (player.Stats[StatName.SpellPower].Value + state.BonusSpellPower);
     }

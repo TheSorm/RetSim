@@ -1,7 +1,7 @@
-﻿using RetSim.Misc;
+﻿using Newtonsoft.Json;
+using RetSim.Misc;
 using RetSim.Spells.SpellEffects;
 using RetSim.Units.Player;
-using Newtonsoft.Json;
 
 namespace RetSim.Spells;
 
@@ -10,7 +10,7 @@ public class Spell
     public int ID { get; init; }
     public string Name { get; init; }
     public int Rank { get; init; }
-    
+
     public int ManaCost { get; init; }
     public int Cooldown { get; init; }
     public int CastTime { get; init; }
@@ -20,7 +20,7 @@ public class Spell
 
     public Aura Aura { get; set; }
     public List<SpellEffect> Effects { get; set; }
-    
+
     [JsonIgnore]
     public Func<Player, bool> Requirements { get; set; }
 
@@ -48,8 +48,8 @@ public class Spell
 
 public class Judgement : Spell { }
 
-public class Talent : Spell 
-{ 
+public class Talent : Spell
+{
     public static List<Talent> GetTalents(params int[] talents)
     {
         List<Talent> results = new();

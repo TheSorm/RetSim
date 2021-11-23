@@ -114,8 +114,8 @@ public class AuraConverter : JsonConverter<Aura>
 
                         effects.Add(new ModStat(value, msStats));
 
-                        break;   
-                    
+                        break;
+
                     case "ModStatPercent":
 
                         List<StatName> mspStats = new();
@@ -178,7 +178,7 @@ public class AuraConverter : JsonConverter<Aura>
 
         List<AuraEffect> effects = ReadAuraEffects(jo);
 
-        Aura aura = ReadAura(jo, effects);        
+        Aura aura = ReadAura(jo, effects);
 
         return aura;
     }

@@ -18,7 +18,7 @@ public class Enchant
         if (string.IsNullOrEmpty(Nickname))
             return Name;
 
-        else 
+        else
             return Nickname;
     }
 }

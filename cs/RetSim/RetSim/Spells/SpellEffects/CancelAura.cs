@@ -28,13 +28,13 @@ class CancelAura : SpellEffect
                     fight.Queue.Add(new AuraEndEvent(aura, fight.Player, fight.Enemy, fight, fight.Timestamp + 1));
             }
 
-            else 
+            else
                 throw new Exception($"The given aura (ID: {Value}, Name: {aura.Parent.Name}) was not active.");
         }
 
         else
             throw new Exception($"The given aura (ID: {Value}) does not exist.");
-        
+
         return ProcMask.None;
     }
 }
@@ -43,5 +43,5 @@ public class JsonSettings
 {
     private int convictionRank = 1;
 
-    public int ConvictionRank { get { return convictionRank; }  set { convictionRank = value; } }
+    public int ConvictionRank { get { return convictionRank; } set { convictionRank = value; } }
 }

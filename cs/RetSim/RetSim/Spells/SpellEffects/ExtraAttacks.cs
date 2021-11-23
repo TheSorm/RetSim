@@ -1,10 +1,9 @@
-﻿using RetSim.Simulation;
+﻿using Newtonsoft.Json;
+using RetSim.Simulation;
 using RetSim.Simulation.CombatLogEntries;
 using RetSim.Simulation.Events;
 using RetSim.Units.Player.State;
 using RetSim.Units.UnitStats;
-
-using Newtonsoft.Json;
 
 namespace RetSim.Spells.SpellEffects;
 

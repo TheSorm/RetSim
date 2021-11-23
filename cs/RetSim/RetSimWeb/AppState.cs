@@ -1,7 +1,7 @@
-﻿using System;
-using RetSim.Items;
+﻿using RetSim.Items;
 using RetSim.Misc;
 using RetSim.Units.Player.Static;
+using System;
 
 namespace RetSimWeb
 {

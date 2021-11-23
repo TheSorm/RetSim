@@ -34,7 +34,7 @@ public static class JSONExtensions
         writer.WriteStartArray();
 
         for (int i = 0; i < array.Length; i++)
-        {            
+        {
             writer.WriteValue(array[i]);
         }
 

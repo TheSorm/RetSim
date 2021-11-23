@@ -45,7 +45,7 @@ public class SpellState
         }
 
         if (spell.Aura != null)
-        { 
+        {
             AuraBonuses = new EffectBonus[spell.Aura.Effects.Count];
 
             for (int i = 0; i < AuraBonuses.Length; i++)

@@ -22,7 +22,7 @@ public class SpellEffectConverter : JsonConverter<SpellEffect>
         {
             case "WeaponAttack":
             case "Damage":
-                
+
                 School school = Enum.Parse<School>((string)jo["School"]);
                 DefenseType defense = Enum.Parse<DefenseType>((string)jo["DefenseCategory"]);
                 AttackCategory crit = Enum.Parse<AttackCategory>((string)jo["CritCategory"]);

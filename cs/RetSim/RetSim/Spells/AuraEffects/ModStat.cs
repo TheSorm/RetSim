@@ -8,7 +8,7 @@ public class ModStat : AuraEffect
 {
     public List<StatName> Stats { get; init; }
 
-    public ModStat(float amount, List<StatName> stats) : base(amount) 
+    public ModStat(float amount, List<StatName> stats) : base(amount)
     {
         Stats = stats;
     }

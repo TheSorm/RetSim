@@ -13,7 +13,7 @@
             <ColumnDefinition Width="200" />
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
-        <local:WoWTooltip PlacementTarget="{Binding ElementName=Window}" ItemId="{Binding TooltipSettings.HoverItemID}"/>
+        <local:WoWTooltip PlacementTarget="{Binding ElementName=Window}" XOffset="200" YOffset="80" ItemId="{Binding TooltipSettings.HoverItemID}"/>
         <Border BorderBrush="Gray" BorderThickness="0,0,1,0" Margin="0,0,2,0">
             <Grid Margin="0,0,0,5">
                 <Grid.RowDefinitions>

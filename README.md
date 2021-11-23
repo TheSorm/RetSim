@@ -5,8 +5,6 @@ A WoW TBC Classic Retribution Paladin Simulator
 * Stat weights screen
 * Settings
   * Select all gems without changing the selected items
-* Item Tooltip
-  * Change browser size dinamic to tooltipsize
 * Make it prettier
 
 ## SIM

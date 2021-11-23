@@ -1,5 +1,8 @@
-﻿using System.Windows;
+﻿using System;
+using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Controls.Primitives;
+using System.Windows.Data;
 using System.Windows.Input;
 
 namespace RetSimDesktop
@@ -31,10 +34,41 @@ namespace RetSimDesktop
             typeof(WoWTooltip),
             new PropertyMetadata(new PropertyChangedCallback(TooltipSettings_PropertyChanged)));
 
+        public int XOffset
+        {
+            get => (int)GetValue(XOffsetProperty);
+            set => SetValue(XOffsetProperty, value);
+        }
+
+        public static readonly DependencyProperty XOffsetProperty = DependencyProperty.Register(
+            "XOffset",
+            typeof(int),
+            typeof(WoWTooltip));
+
+        public int YOffset
+        {
+            get => (int)GetValue(YOffsetProperty);
+            set => SetValue(YOffsetProperty, value);
+        }
+
+        public static readonly DependencyProperty YOffsetProperty = DependencyProperty.Register(
+            "YOffset",
+            typeof(int),
+            typeof(WoWTooltip));
+
         public WoWTooltip()
         {
             InitializeComponent();
             InitializeAsync();
+
+            TooltipPopUp.SetBinding(Popup.HorizontalOffsetProperty, new Binding("XOffset")
+            {
+                Source = this,
+            });
+            TooltipPopUp.SetBinding(Popup.VerticalOffsetProperty, new Binding("YOffset")
+            {
+                Source = this,
+            });
         }
 
         private async void InitializeAsync()
@@ -50,6 +84,9 @@ namespace RetSimDesktop
             if (d is WoWTooltip wowTooltip)
             {
                 wowTooltip.PlacementTarget.MouseMove += wowTooltip.Parent_MouseMove;
+                wowTooltip.PlacementTarget.SizeChanged += wowTooltip.Parent_SizeChanged;
+                wowTooltip.Browser.Height = Math.Max(wowTooltip.PlacementTarget.ActualWidth - wowTooltip.TooltipPopUp.HorizontalOffset - 20, 0);
+                wowTooltip.Browser.Width = Math.Max(wowTooltip.PlacementTarget.ActualHeight - wowTooltip.TooltipPopUp.HorizontalOffset + 40, 0);
             }
         }
 
@@ -62,6 +99,13 @@ namespace RetSimDesktop
             }
         }
 
+
+        private void Parent_SizeChanged(object sender, SizeChangedEventArgs e)
+        {
+            Browser.Width = Math.Max(PlacementTarget.ActualWidth - TooltipPopUp.HorizontalOffset - 20, 0);
+            Browser.Height = Math.Max(PlacementTarget.ActualHeight - TooltipPopUp.HorizontalOffset + 40, 0);
+        }
+
         private async void UpdateTooltip(int itemId)
         {
             if (Browser != null)
@@ -70,8 +114,17 @@ namespace RetSimDesktop
                 await Browser.ExecuteScriptAsync(@"document.getElementById('placeholder').href = ""https://tbc.wowhead.com/item=" + itemId + @""";");
                 //var heightString = await Browser.ExecuteScriptAsync(@"document.getElementsByClassName(""wowhead-tooltip"")[0].clientHeight");
                 //var widthString = await Browser.ExecuteScriptAsync(@"document.getElementsByClassName(""wowhead-tooltip"")[0].clientWidth");
-                await Browser.ExecuteScriptAsync("test(35, 0);");
+                //await Browser.ExecuteScriptAsync("test(35, 0);");
                 await Browser.ExecuteScriptAsync("document.querySelector('body').style.overflow='hidden'");
+            }
+        }
+
+        private async void UpdateTooltipPosition(Point position)
+        {
+            if (Browser != null)
+            {
+                await Browser.EnsureCoreWebView2Async(null);
+                await Browser.ExecuteScriptAsync("test(" + (position.X - TooltipPopUp.HorizontalOffset) + ", " + (position.Y - TooltipPopUp.VerticalOffset) + ");");
             }
         }
 
@@ -79,10 +132,7 @@ namespace RetSimDesktop
         {
             TooltipPopUp.IsOpen = ItemId != 0;
 
-            var mousePosition = e.GetPosition(PlacementTarget);
-
-            TooltipPopUp.HorizontalOffset = mousePosition.X + 1;
-            TooltipPopUp.VerticalOffset = mousePosition.Y + 1;
+            UpdateTooltipPosition(e.GetPosition(PlacementTarget));
         }
     }
 }

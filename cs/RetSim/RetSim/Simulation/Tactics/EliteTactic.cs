@@ -22,7 +22,7 @@ public class EliteTactic : Tactic
         SealOfCommand = Data.Collections.Spells[27170];
         SealOfBlood = Data.Collections.Spells[31892];
         Heroism = Data.Collections.Spells[32182];
-        AvengingWrath = Data.Collections.Spells[31884]; 
+        AvengingWrath = Data.Collections.Spells[31884];
         Judgement = Data.Collections.Spells[20271];
 
         HastePotion = Data.Collections.Spells[28507];
@@ -76,7 +76,7 @@ public class EliteTactic : Tactic
             {
                 if (!fight.Player.Spellbook.IsOnCooldown(Judgement) && fight.Player.Auras[SealOfBlood.Aura].Active)
                     return new CastEvent(Judgement, fight.Player, fight.Enemy, fight, fight.Timestamp);
-                
+
                 if (fight.Player.Spellbook.IsOnCooldown(Judgement) && fight.Player.Spellbook[Judgement.ID].CooldownEnd.Timestamp > twistWindowEnd)
                     return new CastEvent(SealOfCommand, fight.Player, fight.Player, fight, start);
             }
@@ -94,16 +94,16 @@ public class EliteTactic : Tactic
             if (fight.Player.Auras[SealOfCommand.Aura].Active && end >= sobTwistWindowEnd && start <= sobTwistWindowEnd) 
                 return new CastEvent(SealOfBlood, fight.Player, fight.Player, fight, sobTwistWindowEnd);
             */
-            
+
             // Cast SoB at the start of the tactic window where the next event is the auto attack
             if (fight.Player.Auras[SealOfCommand.Aura].Active && end >= sobTwistWindowEnd && start <= sobTwistWindowEnd)
                 return new CastEvent(SealOfBlood, fight.Player, fight.Player, fight, Math.Max(start, sobTwistWindowStart));
-            
+
             /**
             // Cast SoB as early as possible (Can lead to missed twists due to haste changes before auto attack)
             if (fight.Player.Auras[SealOfCommand.Aura].Active && end >= sobTwistWindowEnd && start <= sobTwistWindowEnd || end >= sobTwistWindowStart && start <= sobTwistWindowEnd)
                 return new CastEvent(SealOfBlood, fight.Player, fight.Player, fight, Math.Max(start, sobTwistWindowStart));
-            */                   
+            */
 
         }
 
@@ -120,5 +120,5 @@ public class EliteTactic : Tactic
         //    return new CastEvent(Spells.CrusaderStrike, fight, fight.Timestamp);
 
         return null;
-}
+    }
 }
