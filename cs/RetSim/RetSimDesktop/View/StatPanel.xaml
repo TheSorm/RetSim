@@ -41,7 +41,7 @@
                         <Label Grid.Column="0" Padding="0" Content="Stamina"/>
                         <Label Grid.Column="2" ToolTipService.InitialShowDelay="0" HorizontalContentAlignment="Right" Padding="0" Content="0" x:Name="Stamina"/>
                     </Grid>
-                    <Separator/>
+                    <Separator Height="1"/>
                 </StackPanel>
                 <StackPanel Grid.Row="1">
                     <Grid>
@@ -53,7 +53,7 @@
                         <Label Grid.Column="0" Padding="0" Content="Health"/>
                         <Label Grid.Column="2" ToolTipService.InitialShowDelay="0" HorizontalContentAlignment="Right" Padding="0" Content="0" x:Name="Health"/>
                     </Grid>
-                    <Separator/>
+                    <Separator Height="1"/>
                 </StackPanel>                
                 <StackPanel Grid.Row="2" >
                     <Grid>
@@ -65,7 +65,7 @@
                         <Label Grid.Column="0" Padding="0" Content="Intellect"/>
                         <Label Grid.Column="2" ToolTipService.InitialShowDelay="0" HorizontalContentAlignment="Right" Padding="0" Content="0" x:Name="Intellect"/>
                     </Grid>
-                    <Separator/>
+                    <Separator Height="1"/>
                 </StackPanel>
                 <StackPanel Grid.Row="3" >
                     <Grid>
@@ -77,7 +77,7 @@
                         <Label Grid.Column="0" Padding="0" Content="Mana"/>
                         <Label Grid.Column="2" ToolTipService.InitialShowDelay="0" HorizontalContentAlignment="Right" Padding="0" Content="0" x:Name="Mana"/>
                     </Grid>
-                    <Separator/>
+                    <Separator Height="1"/>
                 </StackPanel>
                 <StackPanel Grid.Row="4" >
                     <Grid>
@@ -89,7 +89,7 @@
                         <Label Grid.Column="0" Padding="0" Content="Mana Per 5"/>
                         <Label Grid.Column="2" ToolTipService.InitialShowDelay="0" HorizontalContentAlignment="Right" Padding="0" Content="0" x:Name="ManaPer5"/>
                     </Grid>
-                    <Separator/>
+                    <Separator Height="1"/>
                 </StackPanel>
                 <StackPanel Grid.Row="5" >
                     <Grid>
@@ -101,7 +101,7 @@
                         <Label Grid.Column="0" Padding="0" Content="Strength"/>
                         <Label Grid.Column="2" ToolTipService.InitialShowDelay="0" HorizontalContentAlignment="Right" Padding="0" Content="0" x:Name="Strength"/>
                     </Grid>
-                    <Separator/>
+                    <Separator Height="1"/>
                 </StackPanel>
                 
                 <StackPanel Grid.Row="6" >
@@ -114,7 +114,7 @@
                         <Label Grid.Column="0" Padding="0" Content="Attack Power"/>
                         <Label Grid.Column="2" ToolTipService.InitialShowDelay="0" HorizontalContentAlignment="Right" Padding="0" Content="0" x:Name="AttackPower"/>
                     </Grid>
-                    <Separator/>
+                    <Separator Height="1"/>
                 </StackPanel>
                 <StackPanel Grid.Row="7" >
                     <Grid>
@@ -126,7 +126,7 @@
                         <Label Grid.Column="0" Padding="0" Content="Agility"/>
                         <Label Grid.Column="2" ToolTipService.InitialShowDelay="0" HorizontalContentAlignment="Right" Padding="0" Content="0" x:Name="Agility"/>
                     </Grid>
-                    <Separator/>
+                    <Separator Height="1"/>
                 </StackPanel>
                 <StackPanel Grid.Row="8" >
                     <Grid>
@@ -138,7 +138,7 @@
                         <Label Grid.Column="0" Padding="0" Content="Crit"/>
                         <Label Grid.Column="2" ToolTipService.InitialShowDelay="0" HorizontalContentAlignment="Right" Padding="0" Content="0" x:Name="CritPercentage"/>
                     </Grid>
-                    <Separator/>
+                    <Separator Height="1"/>
                 </StackPanel>
                 <StackPanel Grid.Row="9" >
                     <Grid>
@@ -150,7 +150,7 @@
                         <Label Grid.Column="0" Padding="0" Content="Hit"/>
                         <Label Grid.Column="2" ToolTipService.InitialShowDelay="0" HorizontalContentAlignment="Right" Padding="0" Content="0" x:Name="HitPercentage"/>
                     </Grid>
-                    <Separator/>
+                    <Separator Height="1"/>
                 </StackPanel>
                 <StackPanel Grid.Row="10" >
                     <Grid>
@@ -162,7 +162,7 @@
                         <Label Grid.Column="0" Padding="0" Content="Haste"/>
                         <Label Grid.Column="2" ToolTipService.InitialShowDelay="0" HorizontalContentAlignment="Right" Padding="0" Content="0" x:Name="HastePercentage"/>
                     </Grid>
-                    <Separator/>
+                    <Separator Height="1"/>
                 </StackPanel>
                 <StackPanel Grid.Row="11" >
                     <Grid>
@@ -174,7 +174,7 @@
                         <Label Grid.Column="0" Padding="0" Content="Expertise"/>
                         <Label Grid.Column="2" ToolTipService.InitialShowDelay="0" HorizontalContentAlignment="Right" Padding="0" Content="0" x:Name="ExpertisePercentage"/>
                     </Grid>
-                    <Separator/>
+                    <Separator Height="1"/>
                 </StackPanel>
                 <StackPanel Grid.Row="12" >
                     <Grid>
@@ -186,7 +186,7 @@
                         <Label Grid.Column="0" Padding="0" Content="Armor Penetration"/>
                         <Label Grid.Column="2" ToolTipService.InitialShowDelay="0" HorizontalContentAlignment="Right" Padding="0" Content="0" x:Name="ArmorPenetration"/>
                     </Grid>
-                    <Separator/>
+                    <Separator Height="1"/>
                 </StackPanel>
                 <StackPanel Grid.Row="13" >
                     <Grid>
@@ -198,7 +198,7 @@
                         <Label Grid.Column="0" Padding="0" Content="Weapon Damage"/>
                         <Label Grid.Column="2" ToolTipService.InitialShowDelay="0" HorizontalContentAlignment="Right" Padding="0" Content="0" x:Name="WeaponDamage"/>
                     </Grid>
-                    <Separator/>
+                    <Separator Height="1"/>
                 </StackPanel>
                 <StackPanel Grid.Row="14" >
                     <Grid>
