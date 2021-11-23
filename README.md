@@ -8,7 +8,6 @@ A WoW TBC Classic Retribution Paladin Simulator
 * Make it prettier
 
 ## SIM
-* Add JC neck aura
 * Gear 
   * Implement armor auras / procs
   * Remove trash
