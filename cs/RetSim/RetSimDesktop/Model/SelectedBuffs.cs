@@ -49,6 +49,10 @@ namespace RetSimDesktop.Model
         private DivineSpirit selectedDivineSpirit = DivineSpirit.ImpDivineSpirit;
 
         private bool arcaneIntellectEnabled = true;
+        private bool braidedEterniumChainEnabled = true;
+        private bool embraceoftheDawnEnabled = true;
+        private bool eyeoftheNightEnabled = true;
+
 
         public bool BattleShoutEnabled { get => battleShoutEnabled; set { battleShoutEnabled = value; OnPropertyChanged(nameof(BattleShoutEnabled)); } }
         public BattleShout SelectedBattleShout { get => selectedBattleShout; set { selectedBattleShout = value; OnPropertyChanged(nameof(SelectedBattleShout)); } }
@@ -113,7 +117,9 @@ namespace RetSimDesktop.Model
         public bool DivineSpiritEnabled { get => divineSpiritEnabled; set { divineSpiritEnabled = value; OnPropertyChanged(nameof(BattleShoutEnabled)); } }
         public DivineSpirit SelectedDivineSpirit { get => selectedDivineSpirit; set { selectedDivineSpirit = value; OnPropertyChanged(nameof(SelectedDivineSpirit)); } }
         public bool ArcaneIntellectEnabled { get => arcaneIntellectEnabled; set { arcaneIntellectEnabled = value; OnPropertyChanged(nameof(ArcaneIntellectEnabled)); } }
-
+        public bool BraidedEterniumChainEnabled { get => braidedEterniumChainEnabled; set { braidedEterniumChainEnabled = value; OnPropertyChanged(nameof(BraidedEterniumChainEnabled)); } }
+        public bool EmbraceoftheDawnEnabled { get => embraceoftheDawnEnabled; set { embraceoftheDawnEnabled = value; OnPropertyChanged(nameof(EmbraceoftheDawnEnabled)); } }
+        public bool EyeoftheNightEnabled { get => eyeoftheNightEnabled; set { eyeoftheNightEnabled = value; OnPropertyChanged(nameof(EyeoftheNightEnabled)); } }
 
         public List<Spell> GetBuffs()
         {
@@ -233,6 +239,18 @@ namespace RetSimDesktop.Model
             if (arcaneIntellectEnabled && Spells.ContainsKey(27127))
             {
                 result.Add(Spells[27127]);
+            }
+            if (braidedEterniumChainEnabled && Spells.ContainsKey(31025))
+            {
+                result.Add(Spells[31025]);
+            }
+            if (embraceoftheDawnEnabled && Spells.ContainsKey(31026))
+            {
+                result.Add(Spells[31026]);
+            }
+            if (eyeoftheNightEnabled && Spells.ContainsKey(31033))
+            {
+                result.Add(Spells[31033]);
             }
             return new List<Spell>(result);
         }
