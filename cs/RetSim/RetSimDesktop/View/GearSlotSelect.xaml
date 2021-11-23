@@ -17,7 +17,7 @@
             <RowDefinition Height="*" />
             <RowDefinition Height="30px" />
         </Grid.RowDefinitions>
-        <DataGrid Name="gearSlot" GridLinesVisibility="Horizontal" IsReadOnly="True" SelectionMode="Single" HeadersVisibility="Column" CanUserResizeColumns="False" CanUserResizeRows="False" AutoGenerateColumns="False">
+        <DataGrid Name="gearSlot" ColumnWidth="*" GridLinesVisibility="Horizontal" IsReadOnly="True" SelectionMode="Single" HeadersVisibility="Column" CanUserResizeColumns="False" CanUserResizeRows="False" AutoGenerateColumns="False">
             <DataGrid.Resources>
                 <Style TargetType="{x:Type DataGridCell}">
                     <Style.Triggers>
@@ -40,30 +40,228 @@
                 </Style>
             </DataGrid.Resources>
             <DataGrid.Columns>
-                <DataGridCheckBoxColumn CanUserSort="False" IsReadOnly="False" IsThreeState="False" Binding="{Binding EnabledForGearSim, UpdateSourceTrigger=PropertyChanged}" >
+                <DataGridCheckBoxColumn MinWidth="27" Width="27" MaxWidth="27" CanUserSort="False" IsReadOnly="False" IsThreeState="False" Binding="{Binding EnabledForGearSim, UpdateSourceTrigger=PropertyChanged}" >
                     <DataGridCheckBoxColumn.Header>
                         <CheckBox Name="chkSelectAll" IsChecked="True" Checked="ChkSelectAll_Checked" Unchecked="ChkSelectAll_Unchecked"></CheckBox>
                     </DataGridCheckBoxColumn.Header>
                 </DataGridCheckBoxColumn>
-                <DataGridTextColumn CanUserReorder="False" Header="Name" Binding="{Binding Item.Name}" />
-                <DataGridTextColumn CanUserReorder="False" Header="Level" x:Name="LevelColumn" Binding="{Binding Item.ItemLevel}" />
-                <DataGridTextColumn CanUserReorder="False" CanUserSort="False" Header="Socket 1" Binding="{Binding Item.Socket1, Converter={StaticResource SocketConverter}}" />
-                <DataGridTextColumn CanUserReorder="False" CanUserSort="False" Header="Socket 2" Binding="{Binding Item.Socket2, Converter={StaticResource SocketConverter}}" />
-                <DataGridTextColumn CanUserReorder="False" CanUserSort="False" Header="Socket 3" Binding="{Binding Item.Socket3, Converter={StaticResource SocketConverter}}" />
-                <DataGridTextColumn CanUserReorder="False" CanUserSort="False" Header="Bonus" Binding="{Binding Item, Converter={StaticResource SocketBonusConverter}}" />
-                <DataGridTextColumn CanUserReorder="False" Header="Str"    x:Name="StrColumn" />
-                <DataGridTextColumn CanUserReorder="False" Header="AP"     x:Name="APColumn" />
-                <DataGridTextColumn CanUserReorder="False" Header="Agi"    x:Name="AgiColumn" />
-                <DataGridTextColumn CanUserReorder="False" Header="Crit"   x:Name="CritColumn" />
-                <DataGridTextColumn CanUserReorder="False" Header="Hit"    x:Name="HitColumn" />
-                <DataGridTextColumn CanUserReorder="False" Header="Haste"  x:Name="HasteColumn" />
-                <DataGridTextColumn CanUserReorder="False" Header="Exp"    x:Name="ExpColumn" />
-                <DataGridTextColumn CanUserReorder="False" Header="APen"   x:Name="APenColumn" />
-                <DataGridTextColumn CanUserReorder="False" Header="SP"     x:Name="SPColumn" />
-                <DataGridTextColumn CanUserReorder="False" Header="Sta"    x:Name="StaColumn" />
-                <DataGridTextColumn CanUserReorder="False" Header="Int"    x:Name="IntColumn" />
-                <DataGridTextColumn CanUserReorder="False" Header="MP5"    x:Name="MP5Column" />
-                <DataGridTextColumn CanUserReorder="False" Header="DPS"    x:Name="DPSColumn" Binding="{Binding DPS}" />
+                <DataGridTextColumn MinWidth="240" CanUserReorder="False" Header="Name" Binding="{Binding Item.Name}" />
+                <DataGridTextColumn MinWidth="38" CanUserReorder="False" Header="Level" x:Name="LevelColumn" Binding="{Binding Item.ItemLevel}" >
+                    <DataGridTextColumn.HeaderStyle>
+                        <Style TargetType="DataGridColumnHeader">
+                            <Setter Property="HorizontalContentAlignment" Value="Center" />
+                        </Style>
+                    </DataGridTextColumn.HeaderStyle>
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="TextAlignment" Value="Center" />
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn MinWidth="55" CanUserReorder="False" CanUserSort="False" Header="Socket 1" Binding="{Binding Item.Socket1, Converter={StaticResource SocketConverter}}" >
+                    <DataGridTextColumn.HeaderStyle>
+                        <Style TargetType="DataGridColumnHeader">
+                            <Setter Property="HorizontalContentAlignment" Value="Center" />
+                        </Style>
+                    </DataGridTextColumn.HeaderStyle>
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="TextAlignment" Value="Center" />
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn MinWidth="55" CanUserReorder="False" CanUserSort="False" Header="Socket 2" Binding="{Binding Item.Socket2, Converter={StaticResource SocketConverter}}" >
+                    <DataGridTextColumn.HeaderStyle>
+                        <Style TargetType="DataGridColumnHeader">
+                            <Setter Property="HorizontalContentAlignment" Value="Center" />
+                        </Style>
+                    </DataGridTextColumn.HeaderStyle>
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="TextAlignment" Value="Center" />
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn MinWidth="55" CanUserReorder="False" CanUserSort="False" Header="Socket 3" Binding="{Binding Item.Socket3, Converter={StaticResource SocketConverter}}" >
+                    <DataGridTextColumn.HeaderStyle>
+                        <Style TargetType="DataGridColumnHeader">
+                            <Setter Property="HorizontalContentAlignment" Value="Center" />
+                        </Style>
+                    </DataGridTextColumn.HeaderStyle>
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="TextAlignment" Value="Center" />
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn MinWidth="45" CanUserReorder="False" CanUserSort="False" Header="Bonus" Binding="{Binding Item, Converter={StaticResource SocketBonusConverter}}" >
+                    <DataGridTextColumn.HeaderStyle>
+                        <Style TargetType="DataGridColumnHeader">
+                            <Setter Property="HorizontalContentAlignment" Value="Center" />
+                        </Style>
+                    </DataGridTextColumn.HeaderStyle>
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="TextAlignment" Value="Center" />
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn MinWidth="38" CanUserReorder="False" Header="Str"    x:Name="StrColumn" >
+                    <DataGridTextColumn.HeaderStyle>
+                        <Style TargetType="DataGridColumnHeader">
+                            <Setter Property="HorizontalContentAlignment" Value="Center" />
+                        </Style>
+                    </DataGridTextColumn.HeaderStyle>
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="TextAlignment" Value="Center" />
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn MinWidth="38" CanUserReorder="False" Header="AP"     x:Name="APColumn" >
+                    <DataGridTextColumn.HeaderStyle>
+                        <Style TargetType="DataGridColumnHeader">
+                            <Setter Property="HorizontalContentAlignment" Value="Center" />
+                        </Style>
+                    </DataGridTextColumn.HeaderStyle>
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="TextAlignment" Value="Center" />
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn MinWidth="38" CanUserReorder="False" Header="Agi"    x:Name="AgiColumn" >
+                    <DataGridTextColumn.HeaderStyle>
+                        <Style TargetType="DataGridColumnHeader">
+                            <Setter Property="HorizontalContentAlignment" Value="Center" />
+                        </Style>
+                    </DataGridTextColumn.HeaderStyle>
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="TextAlignment" Value="Center" />
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn MinWidth="38" CanUserReorder="False" Header="Crit"   x:Name="CritColumn" >
+                    <DataGridTextColumn.HeaderStyle>
+                        <Style TargetType="DataGridColumnHeader">
+                            <Setter Property="HorizontalContentAlignment" Value="Center" />
+                        </Style>
+                    </DataGridTextColumn.HeaderStyle>
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="TextAlignment" Value="Center" />
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn MinWidth="38" CanUserReorder="False" Header="Hit"    x:Name="HitColumn" >
+                    <DataGridTextColumn.HeaderStyle>
+                        <Style TargetType="DataGridColumnHeader">
+                            <Setter Property="HorizontalContentAlignment" Value="Center" />
+                        </Style>
+                    </DataGridTextColumn.HeaderStyle>
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="TextAlignment" Value="Center" />
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn MinWidth="40" CanUserReorder="False" Header="Haste"  x:Name="HasteColumn" >
+                    <DataGridTextColumn.HeaderStyle>
+                        <Style TargetType="DataGridColumnHeader">
+                            <Setter Property="HorizontalContentAlignment" Value="Center" />
+                        </Style>
+                    </DataGridTextColumn.HeaderStyle>
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="TextAlignment" Value="Center" />
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn MinWidth="38" CanUserReorder="False" Header="Exp"    x:Name="ExpColumn" >
+                    <DataGridTextColumn.HeaderStyle>
+                        <Style TargetType="DataGridColumnHeader">
+                            <Setter Property="HorizontalContentAlignment" Value="Center" />
+                        </Style>
+                    </DataGridTextColumn.HeaderStyle>
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="TextAlignment" Value="Center" />
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn MinWidth="38" CanUserReorder="False" Header="APen"   x:Name="APenColumn" >
+                    <DataGridTextColumn.HeaderStyle>
+                        <Style TargetType="DataGridColumnHeader">
+                            <Setter Property="HorizontalContentAlignment" Value="Center" />
+                        </Style>
+                    </DataGridTextColumn.HeaderStyle>
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="TextAlignment" Value="Center" />
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn MinWidth="38" CanUserReorder="False" Header="SP"     x:Name="SPColumn" >
+                    <DataGridTextColumn.HeaderStyle>
+                        <Style TargetType="DataGridColumnHeader">
+                            <Setter Property="HorizontalContentAlignment" Value="Center" />
+                        </Style>
+                    </DataGridTextColumn.HeaderStyle>
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="TextAlignment" Value="Center" />
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn MinWidth="38" CanUserReorder="False" Header="Sta"    x:Name="StaColumn" >
+                    <DataGridTextColumn.HeaderStyle>
+                        <Style TargetType="DataGridColumnHeader">
+                            <Setter Property="HorizontalContentAlignment" Value="Center" />
+                        </Style>
+                    </DataGridTextColumn.HeaderStyle>
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="TextAlignment" Value="Center" />
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn MinWidth="38" CanUserReorder="False" Header="Int"    x:Name="IntColumn" >
+                    <DataGridTextColumn.HeaderStyle>
+                        <Style TargetType="DataGridColumnHeader">
+                            <Setter Property="HorizontalContentAlignment" Value="Center" />
+                        </Style>
+                    </DataGridTextColumn.HeaderStyle>
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="TextAlignment" Value="Center" />
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn MinWidth="38" CanUserReorder="False" Header="MP5"    x:Name="MP5Column" >
+                    <DataGridTextColumn.HeaderStyle>
+                        <Style TargetType="DataGridColumnHeader">
+                            <Setter Property="HorizontalContentAlignment" Value="Center" />
+                        </Style>
+                    </DataGridTextColumn.HeaderStyle>
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="TextAlignment" Value="Center" />
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn MinWidth="60" CanUserReorder="False" Header="DPS" x:Name="DPSColumn" Binding="{Binding DPS}" >
+                    <DataGridTextColumn.HeaderStyle>
+                        <Style TargetType="DataGridColumnHeader">
+                            <Setter Property="HorizontalContentAlignment" Value="Center" />
+                        </Style>
+                    </DataGridTextColumn.HeaderStyle>
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="TextAlignment" Value="Center" />
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
             </DataGrid.Columns>
         </DataGrid>
         <ComboBox Name="EnchantComboBox" Width="200" Grid.Row="1" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="0,0,5,5" >
