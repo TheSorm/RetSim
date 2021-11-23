@@ -57,7 +57,7 @@ public class Damage : SpellEffect
 
         EffectBonus bonus = state.EffectBonuses[state.Spell.Effects.IndexOf(this)];
 
-        return ((GetBaseDamage(player, state) + GetSpellPowerBonus(player, state)) * bonus.Percent + bonus.Flat) * schoolMultiplier;
+        return (GetBaseDamage(player, state) + GetSpellPowerBonus(player, state) + bonus.Flat) * bonus.Percent * schoolMultiplier;
     }
 
     public override ProcMask Resolve(FightSimulation fight, SpellState state)

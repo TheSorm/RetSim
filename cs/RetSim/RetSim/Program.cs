@@ -71,7 +71,7 @@ class Program
 
     static void RunOnce(Equipment equipment, List<Talent> talents, List<Spell> buffs, List<Spell> debuffs, List<Spell> consumables)
     {
-        FightSimulation fight = new(new Player("Brave Hero", Collections.Races["Human"], equipment, talents, null), new Enemy(Collections.Bosses[17]), new EliteTactic(), buffs, debuffs, consumables, 180000, 200000);
+        FightSimulation fight = new(new Player("Brave Hero", Collections.Races["Human"], ShattrathFaction.Aldor, equipment, talents, null), new Enemy(Collections.Bosses[17]), new EliteTactic(), buffs, debuffs, consumables, 180000, 200000);
 
         PrintStats(fight.Player.Stats.All);
 
@@ -162,7 +162,7 @@ class Program
 
         for (int i = 0; i < iterations; i++)
         {
-            FightSimulation fight = new(new Player("Brave Hero", Data.Collections.Races["Human"], equipment, talents), new Enemy(Collections.Bosses[17]), new EliteTactic(), buffs, debuffs, consumables, 180000, 190000);
+            FightSimulation fight = new(new Player("Brave Hero", Data.Collections.Races["Human"], ShattrathFaction.Aldor, equipment, talents), new Enemy(Collections.Bosses[17]), new EliteTactic(), buffs, debuffs, consumables, 180000, 190000);
 
             fight.Run();
 

@@ -560,6 +560,10 @@
         {
           "EffectType": "ModAttackSpeed",
           "Value": 30
+        },
+        {
+          "EffectType": "ModCastSpeed",
+          "Value": 30
         }
       ]
     }

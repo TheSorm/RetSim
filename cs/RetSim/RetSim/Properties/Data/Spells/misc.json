@@ -30,6 +30,23 @@
     }
   },
 
+  "23300": {
+    "ID": 23300,
+    "Name": "Seal of the Crusader Judgement Increase (Gloves)",
+    "Target": "Ally",
+    "Aura": {
+      "Effects": [
+        {
+          "EffectType": "ModSpell",
+          "Spells": [
+            27159
+          ],
+          "AuraEffect1": 20
+        }
+      ]
+    }
+  },
+
   "28866": {
     "ID": 28866,
     "Name": "Kiss of the Spider",
@@ -125,6 +142,30 @@
     }
   },
 
+  "33557": {
+    "ID": 33557,
+    "Name": "Improved Seal of the Crusader (Libram of Zeal)",
+    "Target": "Ally",
+    "Aura": {
+      "Effects": [
+        {
+          "EffectType": "ModSpell",
+          "Spells": [
+            27158
+          ],
+          "AuraEffect2": 68
+        },
+        {
+          "EffectType": "ModSpell",
+          "Spells": [
+            27159
+          ],
+          "AuraEffect1": 47
+        }
+      ]
+    }
+  },
+
   "33648": {
     "ID": 33648,
     "Name": "Hourglass of the Unraveller",
@@ -195,6 +236,30 @@
     }
   },
 
+  //TODO: Uncomment when Consecration is implemented
+
+  //"37763": {
+  //  "ID": 37763,
+  //  "Name": "Improved Consecration (Libram of Eternal Rest)",
+  //  "Target": "Ally",
+  //  "Aura": {
+  //    "Effects": [
+  //      {
+  //        "EffectType": "ModSpell",
+  //        "Spells": [
+  //          26573,
+  //          20116,
+  //          20922,
+  //          20923,
+  //          20924,
+  //          27173
+  //        ],
+  //        "Effect1": 47
+  //      }
+  //    ]
+  //  }
+  //},
+
   "34258": {
     "ID": 34258,
     "Name": "Justice",
@@ -225,18 +290,31 @@
     }
   },
 
-  "34513": {
-    "ID": 34513,
-    "Name": "Lionheart",
+  "34511": {
+    "ID": 34511,
+    "Name": "Valor",
+    "Cooldown": 180000,
     "Aura": {
+      "Duration": 15000,
       "Effects": [
         {
-          "EffectType": "GainProc",
-          "Value": 14
+          "EffectType": "ModStat",
+          "Stats": [
+            "Strength"
+          ],
+          "Value": 150
+        },
+        {
+          "EffectType": "ModStat",
+          "Stats": [
+            "Health"
+          ],
+          "Value": 1500
         }
       ]
     }
   },
+
 
   "34512": {
     "ID": 34512,
@@ -250,6 +328,19 @@
             "Strength"
           ],
           "Value": 100
+        }
+      ]
+    }
+  },
+
+  "34513": {
+    "ID": 34513,
+    "Name": "Lionheart",
+    "Aura": {
+      "Effects": [
+        {
+          "EffectType": "GainProc",
+          "Value": 14
         }
       ]
     }
@@ -348,6 +439,36 @@
         {
           "EffectType": "ModAttackSpeed",
           "Value": 0
+        }
+      ]
+    }
+  },
+
+  "35080": {
+    "ID": 35080,
+    "Name": "Band of the Eternal Champion",
+    "Aura": {
+      "Effects": [
+        {
+          "EffectType": "GainProc",
+          "Value": 33
+        }
+      ]
+    }
+  },
+
+  "35081": {
+    "ID": 35081,
+    "Name": "Band of the Eternal Champion",
+    "Aura": {
+      "Duration": 10000,
+      "Effects": [
+        {
+          "EffectType": "ModStat",
+          "Stats": [
+            "AttackPower"
+          ],
+          "Value": 160
         }
       ]
     }
@@ -481,6 +602,23 @@
     }
   },
 
+  "37763": {
+    "ID": 37763,
+    "Name": "Improved Crusader Strike Damage (Libram of Righteous Power)",
+    "Target": "Ally",
+    "Aura": {
+      "Effects": [
+        {
+          "EffectType": "ModSpell",
+          "Spells": [
+            35395
+          ],
+          "Effect1": 33
+        }
+      ]
+    }
+  },
+
   "38282": {
     "ID": 38282,
     "Name": "Singing Crystal Axe",
@@ -580,6 +718,24 @@
             "SpellCritDamage"
           ],
           "Value": 3
+        }
+      ]
+    }
+  },
+
+  "40724": {
+    "ID": 40724,
+    "Name": "Valor",
+    "Cooldown": 60000,
+    "Aura": {
+      "Duration": 10000,
+      "Effects": [
+        {
+          "EffectType": "ModStat",
+          "Stats": [
+            "AttackPower"
+          ],
+          "Value": 216
         }
       ]
     }
@@ -693,6 +849,92 @@
     }
   },
 
+  "43745": {
+    "ID": 43745,
+    "Name": "Libram of Divine Judgement",
+    "Aura": {
+      "Effects": [
+        {
+          "EffectType": "GainProc",
+          "Value": 9
+        }
+      ]
+    }
+  },
+
+  "43747": {
+    "ID": 43747,
+    "Name": "Crusader's Command",
+    "Aura": {
+      "Duration": 10000,
+      "Effects": [
+        {
+          "EffectType": "ModStat",
+          "Stats": [
+            "AttackPower"
+          ],
+          "Value": 200
+        }
+      ]
+    }
+  },
+
+  "44300": {
+    "ID": 44300,
+    "Name": "Improved Crusader Strike (Gloves)",
+    "Target": "Ally",
+    "Aura": {
+      "Effects": [
+        {
+          "EffectType": "ModSpellPercent",
+          "Spells": [
+            35395
+          ],
+          "Effect1": 5
+        }
+      ]
+    }
+  },
+
+  "45040": {
+    "ID": 45040,
+    "Name": "Battle Trance",
+    "Aura": {
+      "Duration": 20000,
+      "Effects": [
+        {
+          "EffectType": "GainProc",
+          "Value": 35
+        },
+        {
+          "EffectType": "CancelAuraOnRemove",
+          "Spells": [
+            45041
+          ]
+        }
+      ]
+    }
+  },
+
+
+  "45041": {
+    "ID": 45041,
+    "Name": "Combat Insight",
+    "Aura": {
+      "Duration": 20000,
+      "MaxStacks": 10,
+      "Effects": [
+        {
+          "EffectType": "ModStat",
+          "Stats": [
+            "AttackPower"
+          ],
+          "Value": 44
+        }
+      ]
+    }
+  },
+
   "45354": {
     "ID": 45354,
     "Name": "Shard of Contempt",
@@ -701,6 +943,19 @@
         {
           "EffectType": "GainProc",
           "Value": 24
+        }
+      ]
+    }
+  },
+
+  "45355": {
+    "ID": 45355,
+    "Name": "Blackened Naaru Sliver",
+    "Aura": {
+      "Effects": [
+        {
+          "EffectType": "GainProc",
+          "Value": 34
         }
       ]
     }
@@ -718,6 +973,104 @@
             "AttackPower"
           ],
           "Value": 230
+        }
+      ]
+    }
+  },
+
+  "45428": {
+    "ID": 45428,
+    "Name": "Arcane Strike",
+    "Effects": [
+      {
+        "EffectType": "Damage",
+        "School": "Arcane",
+        "DefenseCategory": "Ranged",
+        "CritCategory": "Physical",
+        "OnCast": 0,
+        "OnHit": 16,
+        "OnCrit": 1,
+        "Value": 333,
+        "DieSides": 34
+      }
+    ]
+  },
+
+  "45431": {
+    "ID": 45431,
+    "Name": "Arcane Insight",
+    "Aura": {
+      "Duration": 10000,
+      "Effects": [
+        {
+          "EffectType": "ModStat",
+          "Stats": [
+            "ExpertiseRating"
+          ],
+          "Value": 100
+        }
+      ]
+    }
+  },
+
+  "45432": {
+    "ID": 45432,
+    "Name": "Light's Ward'",
+    "Aura": {
+      "Duration": 10000,
+      "Effects": [
+        {
+          "EffectType": "ModStat",
+          "Stats": [
+            "ExpertiseRating"
+          ],
+          "Value": 0
+        }
+      ]
+    }
+  },
+
+  "45480": {
+    "ID": 45480,
+    "Name": "Light's Strength",
+    "Aura": {
+      "Duration": 10000,
+      "Effects": [
+        {
+          "EffectType": "ModStat",
+          "Stats": [
+            "AttackPower"
+          ],
+          "Value": 200
+        }
+      ]
+    }
+  },
+
+  "45482": {
+    "ID": 45482,
+    "Name": "Sunwell Exalted Melee Neck",
+    "Aura": {
+      "Effects": [
+        {
+          "EffectType": "GainProcFaction",
+          "Aldor": 29,
+          "Scryer": 30
+        }
+      ]
+    }
+  },
+
+
+  "45483": {
+    "ID": 45483,
+    "Name": "Sunwell Exalted Tank Neck",
+    "Aura": {
+      "Effects": [
+        {
+          "EffectType": "GainProcFaction",
+          "Aldor": 31,
+          "Scryer": 32
         }
       ]
     }

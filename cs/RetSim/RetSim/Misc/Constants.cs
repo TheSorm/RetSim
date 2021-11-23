@@ -92,6 +92,7 @@ public static class Constants
     public static class Numbers
     {
         public const int DefaultGCD = 1500;
+        public const int MinimumGCD = 1000;
         public const int MillisecondsPerSec = 1000;
 
         public const string MillisecondFormatter = "{0:00:00:000}";

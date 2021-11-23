@@ -69,30 +69,6 @@
     }
   },
 
-  "27159": {
-    "ID": 27159,
-    "Name": "Judgement of the Crusader",
-    "Rank": 7,
-    "Target": "Enemy",
-    "Aura": {
-      "IsDebuff": true,
-      "Effects": [
-        {
-          "EffectType": "ModDamageTaken",
-          "School": "Holy",
-          "Value": 219
-        },
-        {
-          "EffectType": "ModStat",
-          "Stats": [
-            "IncreasedAttackerCritChance"
-          ],
-          "Value": 0
-        }
-      ]
-    }
-  },
-
   "20337": {
     "ID": 20337,
     "Name": "Improved Seal of the Crusader",

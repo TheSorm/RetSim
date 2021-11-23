@@ -9,16 +9,19 @@ public class GainProc : AuraEffect
 
     public GainProc(float proc) : base(proc)
     {
-        Proc = Data.Collections.Procs[(int)proc];
+        if (proc != 0)
+            Proc = Data.Collections.Procs[(int)proc];
     }
 
     public override void Apply(Aura aura, Unit caster, Unit target, FightSimulation fight)
     {
-        fight.Player.Procs.Add(Proc);
+        if (Proc != null)
+            fight.Player.Procs.Add(Proc);
     }
 
     public override void Remove(Aura aura, Unit caster, Unit target, FightSimulation fight)
     {
-        fight.Player.Procs.Remove(Proc);
+        if (Proc != null)
+            fight.Player.Procs.Remove(Proc);
     }
 }

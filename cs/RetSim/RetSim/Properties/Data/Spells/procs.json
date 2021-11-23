@@ -56,6 +56,13 @@
     "ProcMask": 2,
     "Chance": 20
   },
+  "9": {
+    "ID": 9,
+    "Name": "Crusader's Command",
+    "SpellID": 43747,
+    "ProcMask": 1024,
+    "Chance": 40
+  },
   "10": {
     "ID": 10,
     "Name": "Lightning Speed",
@@ -195,6 +202,61 @@
     "ProcMask": 32,
     "Chance": 10,
     "Cooldown": 50000
+  },
+  "29": {
+    "ID": 29,
+    "Name": "Sunwell Melee Neck - Aldor",
+    "SpellID": 45480,
+    "ProcMask": 94,
+    "Chance": 15,
+    "Cooldown": 45000
+  },
+  "30": {
+    "ID": 30,
+    "Name": "Sunwell Melee Neck - Scryer",
+    "SpellID": 45428,
+    "ProcMask": 94,
+    "Chance": 15,
+    "Cooldown": 45000
+  },
+  "31": {
+    "ID": 31,
+    "Name": "Sunwell Tank Neck - Aldor",
+    "SpellID": 45432,
+    "ProcMask": 94,
+    "Chance": 15,
+    "Cooldown": 45000
+  },
+  "32": {
+    "ID": 32,
+    "Name": "Sunwell Tank Neck - Scryer",
+    "SpellID": 45431,
+    "ProcMask": 94,
+    "Chance": 15,
+    "Cooldown": 45000
+  },
+  "33": {
+    "ID": 33,
+    "Name": "Band of the Eternal Champion",
+    "SpellID": 35081,
+    "ProcMask": 94,
+    "PPM": 1,
+    "Cooldown": 60000
+  },
+  "34": {
+    "ID": 34,
+    "Name": "Battle Trance",
+    "SpellID": 45040,
+    "ProcMask": 94,
+    "Chance": 10,
+    "Cooldown": 45000
+  },
+  "35": {
+    "ID": 35,
+    "Name": "Combat Insight",
+    "SpellID": 45041,
+    "ProcMask": 94,
+    "GuaranteedProc": true
   }
 }
 

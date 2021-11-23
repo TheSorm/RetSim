@@ -1,4 +1,5 @@
 ﻿using RetSim.Items;
+using RetSim.Misc;
 using RetSim.Simulation;
 using RetSim.Simulation.Events;
 using RetSim.Spells;
@@ -15,6 +16,7 @@ public class Player : Unit
     public Equipment Equipment { get; init; }
     public Weapon Weapon { get; init; }
     public Race Race { get; init; }
+    public ShattrathFaction Faction { get; init; }
 
     public Spellbook Spellbook { get; init; }
     public Procs Procs { get; init; }
@@ -27,7 +29,7 @@ public class Player : Unit
 
     private float previousAttackSpeed;
 
-    public Player(string name, Race race, Equipment equipment, List<Talent> talents, StatSet weights = null) : base(name, CreatureType.Humanoid)
+    public Player(string name, Race race, ShattrathFaction faction, Equipment equipment, List<Talent> talents, StatSet weights = null) : base(name, CreatureType.Humanoid)
     {
         Talents = talents;
         Equipment = equipment;
@@ -37,6 +39,7 @@ public class Player : Unit
             { ID = 0, Name = "Unarmed", MinDamage = 1, MaxDamage = 1, AttackSpeed = 2000, Type = WeaponType.Unarmed, ItemLevel = 0, Phase = 1, Quality = Quality.Legendary, Slot = Slot.Weapon };
 
         Race = race;
+        Faction = faction;
         Stats = new PlayerStats(this, weights);
 
         Spellbook = new Spellbook();
@@ -65,7 +68,13 @@ public class Player : Unit
             fight.Queue.Add(new CooldownEndEvent(state, fight, fight.Timestamp + state.EffectiveCooldown));
 
         if (spell.GCD != null)
-            fight.Queue.Add(new GCDEndEvent(fight, fight.Timestamp + spell.GCD.Duration));
+        {
+            if (spell.GCD.Category == AttackCategory.Spell)
+                fight.Queue.Add(new GCDEndEvent(fight, fight.Timestamp + Math.Max((int)(spell.GCD.Duration / fight.Player.Stats.EffectiveCastSpeed), Constants.Numbers.MinimumGCD)));
+
+            else
+                fight.Queue.Add(new GCDEndEvent(fight, fight.Timestamp + spell.GCD.Duration));
+        }
 
         if (spell.Aura != null)
             target.Auras.Apply(spell.Aura, this, target, fight);
@@ -123,4 +132,11 @@ public class Player : Unit
     {
         return Name;
     }
+}
+
+public enum ShattrathFaction
+{
+    None = 0,
+    Aldor = 1,
+    Scryer = 2
 }

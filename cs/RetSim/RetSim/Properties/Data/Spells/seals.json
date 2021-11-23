@@ -65,11 +65,22 @@
         27170,
         31892
       ],
-      "JudgementID": 27171,
+      "JudgementID": 27159,
       "Effects": [
         {
           "EffectType": "GainSeal",
-          "Value": 2
+          "Value": 0
+        },
+        {
+          "EffectType": "ModStat",
+          "Stats": [
+            "AttackPower"
+          ],
+          "Value": 495
+        },
+        {
+          "EffectType": "ModAttackSpeed",
+          "Value": 40
         }
       ]
     }
