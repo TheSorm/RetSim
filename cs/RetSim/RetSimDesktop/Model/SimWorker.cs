@@ -163,7 +163,7 @@ namespace RetSimDesktop.View
         {
             for (int i = startIndex; i < startIndex + length; i++)
             {
-                FightSimulation fight = new(new Player("Brave Hero", race, playerEquipment, talents), new Enemy(encounter), new EliteTactic(), buffs, debuffs, consumables, minFightDuration, maxFightDuration);
+                FightSimulation fight = new(new Player("Brave Hero", race, ShattrathFaction.Aldor, playerEquipment, talents), new Enemy(encounter), new EliteTactic(), buffs, debuffs, consumables, minFightDuration, maxFightDuration);
                 fight.Run();
                 combatLogs[i] = fight.CombatLog;
             }

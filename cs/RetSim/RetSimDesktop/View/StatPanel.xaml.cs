@@ -39,7 +39,7 @@ namespace RetSimDesktop
         {
             if (DataContext is RetSimUIModel retSimUIModel)
             {
-                var player = new Player("Brave Hero", Collections.Races[retSimUIModel.PlayerSettings.SelectedRace.ToString()],
+                var player = new Player("Brave Hero", Collections.Races[retSimUIModel.PlayerSettings.SelectedRace.ToString()], ShattrathFaction.Aldor,
                     retSimUIModel.SelectedGear.GetEquipment(), retSimUIModel.SelectedTalents.GetTalentList());
                 FightSimulation fight = new(player, new Enemy(Collections.Bosses[retSimUIModel.EncounterSettings.EncounterID]), new EliteTactic(), new List<Spell>(), new List<Spell>(), new List<Spell>(), 0, 0);
 
