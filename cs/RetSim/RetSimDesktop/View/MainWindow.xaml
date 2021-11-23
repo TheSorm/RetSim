@@ -29,7 +29,7 @@
                 <local:StatPanel Grid.Row="1" Width="200" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                 <Border BorderBrush="LightGray" BorderThickness="1" CornerRadius="2" Grid.Row="2" Margin="5" Padding="2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
                     <StackPanel >
-                        
+
                         <Grid>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="*"/>
@@ -37,15 +37,21 @@
                                 <ColumnDefinition Width="*"/>
                             </Grid.ColumnDefinitions>
                             <Label Grid.Column="1" Padding="0" FontSize="22" Content="{Binding CurrentSimOutput.DPS}" ContentStringFormat=" {0:0.0}"/>
-                            <Label Grid.Column="2" Padding="0" VerticalAlignment="Bottom" HorizontalAlignment="Left" Content="DPS"/>
+                            <Label Grid.Column="2" Padding="0" VerticalAlignment="Bottom" HorizontalAlignment="Left" Content="DPS" Grid.ColumnSpan="2" Margin="2,0,0,2"/>
                         </Grid>
                         <Grid Width="130">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="*" />
                                 <ColumnDefinition Width="*" />
                             </Grid.ColumnDefinitions>
-                            <Label FontSize="12" HorizontalContentAlignment="Center" Padding="1"  Content="{Binding CurrentSimOutput.Min}" ContentStringFormat="{}{0:0.#} min"/>
-                            <Label FontSize="12" Grid.Column="1" HorizontalContentAlignment="Center" Padding="1" Content="{Binding CurrentSimOutput.Max}" ContentStringFormat="{}{0:0.#} max"/>
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                <Label FontSize="12" HorizontalContentAlignment="Center" Padding="1"  Content="{Binding CurrentSimOutput.Min}" ContentStringFormat="{}{0:0.#}"/>
+                                <Label FontSize="9" Padding="0" HorizontalContentAlignment="Center" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="1,0,0,1.9" Content="MIN"/>
+                            </StackPanel>
+                            <StackPanel  Grid.Column="1" HorizontalAlignment="Center" Orientation="Horizontal">
+                                <Label FontSize="12" Grid.Column="1" HorizontalContentAlignment="Center" Padding="1" Content="{Binding CurrentSimOutput.Max}" ContentStringFormat="{}{0:0.#}"/>
+                                <Label FontSize="9" Padding="0" HorizontalContentAlignment="Center" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="1,0,0,1.9" Content="MAX"/>
+                            </StackPanel>
                         </Grid>
                         <Label x:Name="SimTimeTaken" FontSize="9" HorizontalContentAlignment="Center" Padding="0" Content="0" ContentStringFormat="{}{0:0.0} s"/>
                         <Button x:Name="SimButton" IsEnabledChanged="SimButton_IsEnabledChanged" IsEnabled="{Binding SimButtonStatus.IsSimButtonEnabled}" Content="DPS" Width="100" Click="DpsSimClick"/>

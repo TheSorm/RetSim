@@ -53,18 +53,31 @@ namespace RetSimDesktop.Model
 
         public List<Spell> GetDebuffs()
         {
-            List<Spell> result = new();
-            if (judgementoftheCrusaderEnabled && Spells.ContainsKey((int)selectedJudgementoftheCrusader))
+            HashSet<Spell> result = new();
+            if (judgementoftheCrusaderEnabled && Spells.ContainsKey((int)JudgementoftheCrusader.JudgementoftheCrusader) && Spells.ContainsKey((int)selectedJudgementoftheCrusader))
             {
+                result.Add(Spells[(int)JudgementoftheCrusader.JudgementoftheCrusader]);
                 result.Add(Spells[(int)selectedJudgementoftheCrusader]);
             }
             if (judgementofWisdomEnabled && Spells.ContainsKey(20354))
             {
                 result.Add(Spells[20354]);
             }
-            if (armorDebuffEnabled && Spells.ContainsKey((int)selectedArmorDebuff))
+            if (armorDebuffEnabled)
             {
-                result.Add(Spells[(int)selectedArmorDebuff]);
+                switch (selectedArmorDebuff)
+                {
+                    case ArmorDebuff.ExposeArmor:
+                        result.Add(Spells[(int)ArmorDebuff.ExposeArmor]);
+                        break;
+                    case ArmorDebuff.SunderArmor:
+                        result.Add(Spells[(int)ArmorDebuff.SunderArmor]);
+                        break;
+                    case ArmorDebuff.ImpExposeArmor:
+                        result.Add(Spells[(int)ArmorDebuff.ExposeArmor]);
+                        result.Add(Spells[(int)ArmorDebuff.ImpExposeArmor]);
+                        break;
+                }
             }
             if (bloodFrenzyEnabled && Spells.ContainsKey(30070))
             {
@@ -78,16 +91,18 @@ namespace RetSimDesktop.Model
             {
                 result.Add(Spells[34501]);
             }
-            if (faerieFireEnabled && Spells.ContainsKey((int)selectedFaerieFire))
+            if (faerieFireEnabled && Spells.ContainsKey((int)FaerieFire.FaerieFire) && Spells.ContainsKey((int)selectedFaerieFire))
             {
+                result.Add(Spells[(int)FaerieFire.FaerieFire]);
                 result.Add(Spells[(int)selectedFaerieFire]);
             }
             if (curseofRecklessnessEnabled && Spells.ContainsKey(27226))
             {
                 result.Add(Spells[27226]);
             }
-            if (curseoftheElementsEnabled && Spells.ContainsKey((int)selectedCurseoftheElements))
+            if (curseoftheElementsEnabled && Spells.ContainsKey((int)CurseoftheElements.CurseoftheElements) && Spells.ContainsKey((int)selectedCurseoftheElements))
             {
+                result.Add(Spells[(int)CurseoftheElements.CurseoftheElements]);
                 result.Add(Spells[(int)selectedCurseoftheElements]);
             }
             if (improvedShadowBoltEnabled && Spells.ContainsKey(17800))
@@ -107,7 +122,7 @@ namespace RetSimDesktop.Model
                 result.Add(Spells[22959]);
             }
 
-            return result;
+            return new List<Spell>(result);
         }
 
         public event PropertyChangedEventHandler? PropertyChanged;
@@ -131,7 +146,7 @@ namespace RetSimDesktop.Model
 
     public enum FaerieFire
     {
-        FaerieFire = 27011,
+        FaerieFire = 26993,
         ImpFaerieFire = 33602
     }
 

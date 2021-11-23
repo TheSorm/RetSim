@@ -11,7 +11,7 @@
              xmlns:viewmodel="clr-namespace:RetSimDesktop.ViewModel"
              d:DataContext="{d:DesignInstance viewmodel:RetSimUIModel}"
              mc:Ignorable="d" 
-             d:DesignHeight="1200" d:DesignWidth="900" d:Background="White">
+             d:DesignHeight="1500" d:DesignWidth="900" d:Background="White">
     <UserControl.Resources>
         <local:StringEmptyOrZeroConverter x:Key="StringEmptyConverter" />
         <local:ComparisonConverter x:Key="ComparisonConverter" />
@@ -575,7 +575,7 @@
             </Expander>
             <Expander IsExpanded="True" Margin="10" Header="Buffs &amp; Debuffs">
                 <WrapPanel>
-                    <GroupBox Margin="5" Padding="0,4,0,0" Width="240" Height="340" VerticalAlignment="Top" HorizontalAlignment="Left">
+                    <GroupBox Margin="5" Padding="0,4,0,0" Width="240" Height="385" VerticalAlignment="Top" HorizontalAlignment="Left">
                         <GroupBox.Header>
                             Group Buffs
                         </GroupBox.Header>
@@ -630,9 +630,15 @@
                             </CheckBox>
                             <CheckBox Margin="0,4,0,4" x:Name="InspiringPresence" Content="Inspiring Presence" IsChecked="{Binding SelectedBuffs.InspiringPresenceEnabled}">
                             </CheckBox>
+                            <CheckBox Margin="0,4,0,4" x:Name="BraidedEterniumChain" Content="Braided Eternium Chain" IsChecked="{Binding SelectedBuffs.BraidedEterniumChainEnabled}">
+                            </CheckBox>
+                            <CheckBox Margin="0,4,0,4" x:Name="EmbraceoftheDawn" Content="Embrace of the Dawn" IsChecked="{Binding SelectedBuffs.EmbraceoftheDawnEnabled}">
+                            </CheckBox>
+                            <CheckBox Margin="0,4,0,4" x:Name="EyeoftheNight" Content="Eye of the Night" IsChecked="{Binding SelectedBuffs.EyeoftheNightEnabled}">
+                            </CheckBox>
                         </StackPanel>
                     </GroupBox>
-                    <GroupBox Margin="5" Padding="0,4,0,0" Width="240" Height="340" VerticalAlignment="Top" HorizontalAlignment="Left">
+                    <GroupBox Margin="5" Padding="0,4,0,0" Width="240" Height="385" VerticalAlignment="Top" HorizontalAlignment="Left">
                         <GroupBox.Header>
                             Raid Buffs
                         </GroupBox.Header>
@@ -673,7 +679,7 @@
                             </CheckBox>
                         </StackPanel>
                     </GroupBox>
-                    <GroupBox Margin="5" Padding="0,4,0,0" Width="240" Height="340" VerticalAlignment="Top" HorizontalAlignment="Left">
+                    <GroupBox Margin="5" Padding="0,4,0,0" Width="240" Height="385" VerticalAlignment="Top" HorizontalAlignment="Left">
                         <GroupBox.Header>
                             Raid Debuffs
                         </GroupBox.Header>
