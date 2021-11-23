@@ -157,12 +157,6 @@ namespace RetSimDesktop.ViewModel
                 property.SetValue(_SelectedDebuffs, property.GetValue(defaultSelectedDebuffs, null), null);
             }
 
-            var defaultSelectedPhases = new SelectedPhases();
-            foreach (PropertyInfo property in typeof(SelectedPhases).GetProperties().Where(p => p.CanWrite))
-            {
-                property.SetValue(_SelectedPhases, property.GetValue(defaultSelectedPhases, null), null);
-            }
-
             var defaultSimSettings = new SimSettings();
             foreach (PropertyInfo property in typeof(SimSettings).GetProperties().Where(p => p.CanWrite))
             {

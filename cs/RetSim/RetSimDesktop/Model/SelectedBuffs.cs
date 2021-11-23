@@ -55,11 +55,45 @@ namespace RetSimDesktop.Model
         public bool TrueshotAuraEnabled { get => trueshotAuraEnabled; set { trueshotAuraEnabled = value; OnPropertyChanged(nameof(TrueshotAuraEnabled)); } }
         public bool FerociousInspirationEnabled { get => ferociousInspirationEnabled; set { ferociousInspirationEnabled = value; OnPropertyChanged(nameof(FerociousInspirationEnabled)); } }
         public bool EarthTotemEnabled { get => earthTotemEnabled; set { earthTotemEnabled = value; OnPropertyChanged(nameof(EarthTotemEnabled)); } }
-        public EarthTotem SelectedEarthTotem { get => selectedEarthTotem; set { selectedEarthTotem = value; OnPropertyChanged(nameof(SelectedEarthTotem)); } }
+        public EarthTotem SelectedEarthTotem
+        {
+            get => selectedEarthTotem;
+            set
+            {
+                selectedEarthTotem = value;
+                if (value == EarthTotem.ImpStrengthOfEarthTotem)
+                {
+                    selectedAirTotem2 = AirTotem2.ImpGraceOfAirTotem;
+                }
+                else
+                {
+                    selectedAirTotem2 = AirTotem2.GraceOfAirTotem;
+                }
+                OnPropertyChanged(nameof(SelectedAirTotem2));
+                OnPropertyChanged(nameof(SelectedEarthTotem));
+            }
+        }
         public bool AirTotem1Enabled { get => airTotem1Enabled; set { airTotem1Enabled = value; OnPropertyChanged(nameof(AirTotem1Enabled)); } }
         public AirTotem1 SelectedAirTotem1 { get => selectedAirTotem1; set { selectedAirTotem1 = value; OnPropertyChanged(nameof(SelectedAirTotem1)); } }
         public bool AirTotem2Enabled { get => airTotem2Enabled; set { airTotem2Enabled = value; OnPropertyChanged(nameof(AirTotem2Enabled)); } }
-        public AirTotem2 SelectedAirTotem2 { get => selectedAirTotem2; set { selectedAirTotem2 = value; OnPropertyChanged(nameof(SelectedAirTotem2)); } }
+        public AirTotem2 SelectedAirTotem2
+        {
+            get => selectedAirTotem2;
+            set
+            {
+                selectedAirTotem2 = value;
+                if (value == AirTotem2.ImpGraceOfAirTotem)
+                {
+                    selectedEarthTotem = EarthTotem.ImpStrengthOfEarthTotem;
+                }
+                else
+                {
+                    selectedEarthTotem = EarthTotem.StrengthOfEarthTotem;
+                }
+                OnPropertyChanged(nameof(SelectedEarthTotem));
+                OnPropertyChanged(nameof(SelectedAirTotem2));
+            }
+        }
         public bool WaterTotemEnabled { get => waterTotemEnabled; set { waterTotemEnabled = value; OnPropertyChanged(nameof(WaterTotemEnabled)); } }
         public WaterTotem SelectedWaterTotem { get => selectedWaterTotem; set { selectedWaterTotem = value; OnPropertyChanged(nameof(SelectedWaterTotem)); } }
         public bool UnleashedRageEnabled { get => unleashedRageEnabled; set { unleashedRageEnabled = value; OnPropertyChanged(nameof(UnleashedRageEnabled)); } }
@@ -83,10 +117,41 @@ namespace RetSimDesktop.Model
 
         public List<Spell> GetBuffs()
         {
-            List<Spell> result = new();
-            if (battleShoutEnabled && Spells.ContainsKey((int)selectedBattleShout))
+            HashSet<Spell> result = new();
+            if (battleShoutEnabled && Spells.ContainsKey((int)BattleShout.BattleShout))
             {
-                result.Add(Spells[(int)selectedBattleShout]);
+                result.Add(Spells[(int)BattleShout.BattleShout]);
+                switch (selectedBattleShout)
+                {
+                    case BattleShout.BattleShout:
+                        break;
+                    case BattleShout.BattleShoutT2:
+                        result.Add(Spells[23563]);
+                        break;
+                    case BattleShout.BattleShoutSolarian:
+                        result.Add(Spells[37536]);
+                        break;
+                    case BattleShout.BattleShoutSolarianAndT2:
+                        result.Add(Spells[23563]);
+                        result.Add(Spells[37536]);
+                        break;
+                    case BattleShout.ImpBattleShout:
+                        result.Add(Spells[12861]);
+                        break;
+                    case BattleShout.ImpBattleShoutT2:
+                        result.Add(Spells[12861]);
+                        result.Add(Spells[23563]);
+                        break;
+                    case BattleShout.ImpBattleShoutSolarian:
+                        result.Add(Spells[12861]);
+                        result.Add(Spells[37536]);
+                        break;
+                    case BattleShout.ImpBattleShoutSolarianAndT2:
+                        result.Add(Spells[12861]);
+                        result.Add(Spells[37536]);
+                        result.Add(Spells[23563]);
+                        break;
+                }
             }
             if (trueshotAuraEnabled && Spells.ContainsKey(27066))
             {
@@ -96,20 +161,24 @@ namespace RetSimDesktop.Model
             {
                 result.Add(Spells[34460]);
             }
-            if (earthTotemEnabled && Spells.ContainsKey((int)selectedEarthTotem))
+            if (earthTotemEnabled && Spells.ContainsKey((int)EarthTotem.StrengthOfEarthTotem) && Spells.ContainsKey((int)selectedEarthTotem))
             {
+                result.Add(Spells[(int)EarthTotem.StrengthOfEarthTotem]);
                 result.Add(Spells[(int)selectedEarthTotem]);
             }
-            if (airTotem1Enabled && Spells.ContainsKey((int)selectedAirTotem1))
+            if (airTotem1Enabled && Spells.ContainsKey((int)AirTotem1.WindfuryTotem) && Spells.ContainsKey((int)selectedAirTotem1))
             {
+                result.Add(Spells[(int)AirTotem1.WindfuryTotem]);
                 result.Add(Spells[(int)selectedAirTotem1]);
             }
-            if (airTotem2Enabled && Spells.ContainsKey((int)selectedAirTotem2))
+            if (airTotem2Enabled && Spells.ContainsKey((int)AirTotem2.GraceOfAirTotem) && Spells.ContainsKey((int)selectedAirTotem2))
             {
+                result.Add(Spells[(int)AirTotem2.GraceOfAirTotem]);
                 result.Add(Spells[(int)selectedAirTotem2]);
             }
-            if (waterTotemEnabled && Spells.ContainsKey((int)selectedWaterTotem))
+            if (waterTotemEnabled && Spells.ContainsKey((int)WaterTotem.ManaSpringTotem) && Spells.ContainsKey((int)selectedWaterTotem))
             {
+                result.Add(Spells[(int)WaterTotem.ManaSpringTotem]);
                 result.Add(Spells[(int)selectedWaterTotem]);
             }
             if (unleashedRageEnabled && Spells.ContainsKey(30811))
@@ -132,35 +201,40 @@ namespace RetSimDesktop.Model
             {
                 result.Add(Spells[28878]);
             }
-            if (blessingofMightEnabled && Spells.ContainsKey((int)selectedBlessingofMight))
+            if (blessingofMightEnabled && Spells.ContainsKey((int)BlessingofMight.BlessingofMight) && Spells.ContainsKey((int)selectedBlessingofMight))
             {
+                result.Add(Spells[(int)BlessingofMight.BlessingofMight]);
                 result.Add(Spells[(int)selectedBlessingofMight]);
             }
             if (blessingofKingsEnabled && Spells.ContainsKey(25898))
             {
                 result.Add(Spells[25898]);
             }
-            if (blessingofWisdomEnabled && Spells.ContainsKey((int)selectedBlessingofWisdom))
+            if (blessingofWisdomEnabled && Spells.ContainsKey((int)BlessingofWisdom.BlessingofWisdom) && Spells.ContainsKey((int)selectedBlessingofWisdom))
             {
+                result.Add(Spells[(int)BlessingofWisdom.BlessingofWisdom]);
                 result.Add(Spells[(int)selectedBlessingofWisdom]);
             }
-            if (markoftheWildEnabled && Spells.ContainsKey((int)selectedMarkoftheWild))
+            if (markoftheWildEnabled && Spells.ContainsKey((int)MarkoftheWild.MarkoftheWild) && Spells.ContainsKey((int)selectedMarkoftheWild))
             {
+                result.Add(Spells[(int)MarkoftheWild.MarkoftheWild]);
                 result.Add(Spells[(int)selectedMarkoftheWild]);
             }
-            if (powerWordFortitudeEnabled && Spells.ContainsKey((int)selectedPowerWordFortitude))
+            if (powerWordFortitudeEnabled && Spells.ContainsKey((int)PowerWordFortitude.PowerWordFortitude) && Spells.ContainsKey((int)selectedPowerWordFortitude))
             {
+                result.Add(Spells[(int)PowerWordFortitude.PowerWordFortitude]);
                 result.Add(Spells[(int)selectedPowerWordFortitude]);
             }
-            if (divineSpiritEnabled && Spells.ContainsKey((int)selectedDivineSpirit))
+            if (divineSpiritEnabled && Spells.ContainsKey((int)DivineSpirit.DivineSpirit) && Spells.ContainsKey((int)selectedDivineSpirit))
             {
+                result.Add(Spells[(int)DivineSpirit.DivineSpirit]);
                 result.Add(Spells[(int)selectedDivineSpirit]);
             }
             if (arcaneIntellectEnabled && Spells.ContainsKey(27127))
             {
                 result.Add(Spells[27127]);
             }
-            return result;
+            return new List<Spell>(result);
         }
 
         public event PropertyChangedEventHandler? PropertyChanged;
@@ -185,7 +259,7 @@ namespace RetSimDesktop.Model
     public enum EarthTotem
     {
         StrengthOfEarthTotem = 25528,
-        ImpStrengthOfEarthTotem = 25364
+        ImpStrengthOfEarthTotem = 16295
     }
 
     public enum AirTotem1
@@ -197,7 +271,7 @@ namespace RetSimDesktop.Model
     public enum AirTotem2
     {
         GraceOfAirTotem = 25359,
-        ImpGraceOfAirTotem = 25363
+        ImpGraceOfAirTotem = 16295
     }
 
     public enum WaterTotem
