@@ -84,7 +84,7 @@ public static class Constants
             { 0.25f, 1 }, //75% resist, 1% chance
             { 0.5f, 5 }, //50% resist, 4% chance
             { 0.75f, 18 }, //25% resist, 13% chance
-          //{ 1f, 82 }
+                           //{ 1f, 82 }
         };
 
     }

@@ -9,9 +9,9 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800" >
     <Grid Background="White">
-        <GroupBox Margin="5">
+        <GroupBox Margin="5" >
             <GroupBox.Header>
-                Level 70 Human Paladin
+                <Label Padding="0" x:Name="StatPanelBoxHeader">Level 70 Human Paladin</Label>
             </GroupBox.Header>
             <Grid>
                 <Grid.RowDefinitions>

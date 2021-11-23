@@ -170,7 +170,7 @@ public class Equipment
         set => Enchants[Constants.EquipmentSlots.Weapon] = value;
     }
 
-#endregion
+    #endregion
 
     public static StatSet CalculateStats(Equipment equipment)
     {
@@ -211,7 +211,7 @@ public class Equipment
 
     private static float CalculateStatOfPiece(StatName name, EquippableItem item, Dictionary<GemColor, int> gems)
     {
-        if(item != null && item.Stats != null)
+        if (item != null && item.Stats != null)
         {
             float passive = item.Stats[name];
             float bonus = item.IsSocketBonusActive() ? item.SocketBonus[name] : 0;

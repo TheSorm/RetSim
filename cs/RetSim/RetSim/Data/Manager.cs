@@ -1,15 +1,12 @@
-﻿using RetSim.Data.JSON;
+﻿using Newtonsoft.Json;
+using RetSim.Data.JSON;
 using RetSim.Items;
 using RetSim.Spells;
 using RetSim.Spells.SpellEffects;
 using RetSim.Units.Enemy;
 using RetSim.Units.Player;
 using RetSim.Units.Player.Static;
-
-using Newtonsoft.Json;
-
 using System.IO;
-
 using static RetSim.Data.Items;
 
 namespace RetSim.Data;
@@ -177,7 +174,7 @@ public static class Manager
         serializer.NullValueHandling = NullValueHandling.Ignore;
         serializer.DefaultValueHandling = DefaultValueHandling.Ignore;
         serializer.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
-        serializer.MetadataPropertyHandling = MetadataPropertyHandling.Ignore; 
+        serializer.MetadataPropertyHandling = MetadataPropertyHandling.Ignore;
 
         using StreamWriter writer = new("spells.json");
         using JsonWriter jwriter = new JsonTextWriter(writer);

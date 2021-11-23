@@ -5,7 +5,7 @@ namespace RetSim.Simulation;
 public class CombatLog
 {
     public int Duration { get; private set; }
-    public int Damage { get; private set; }    
+    public int Damage { get; private set; }
     public float DPS { get; private set; }
 
     public Dictionary<string, List<DamageEntry>> DamageBreakdown { get; init; }

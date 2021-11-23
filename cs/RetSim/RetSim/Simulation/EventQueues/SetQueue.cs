@@ -55,7 +55,7 @@ namespace RetSim.Simulation.EventQueues
             public int Compare(Event x, Event y)
             {
                 int result = x.CompareTo(y);
-                if (result == 0) 
+                if (result == 0)
                     return x.GetHashCode().CompareTo(y.GetHashCode());
                 return result;
             }

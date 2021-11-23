@@ -7,7 +7,7 @@ public abstract class AuraEffect
 {
     public float Value { get; init; }
 
-    public AuraEffect(float value) 
+    public AuraEffect(float value)
     {
         Value = value;
     }

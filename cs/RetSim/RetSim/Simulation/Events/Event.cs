@@ -35,7 +35,7 @@ public abstract class Event : IComparable<Event>
     public int CompareTo(Event other)
     {
         int result = Timestamp - other.Timestamp;
-        if (result == 0) 
+        if (result == 0)
             return Priority - other.Priority;
         return result;
     }

@@ -34,7 +34,7 @@ public class ModifiersPercent
                 return Default;
         }
 
-        set 
+        set
         {
             if (map.ContainsKey(school))
             {
@@ -47,7 +47,7 @@ public class ModifiersPercent
 
             else
                 map.Add(school, value);
-        }    
+        }
     }
 
     public float GetModifier(School school)

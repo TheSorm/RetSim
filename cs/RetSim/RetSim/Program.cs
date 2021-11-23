@@ -26,7 +26,7 @@ class Program
     {
         Manager.InstantiateData();
 
-        var equipment = Manager.GetEquipment();        
+        var equipment = Manager.GetEquipment();
 
         var playerTalents = Talent.GetTalents(20105, 25957, 20121, 31868, 20113, 20218, 31870, 20059, 35397, 31883, 20193, 20266);
         var playerBuffs = Spell.GetSpells(25392, 14767, 25570, 27127, 32999, 26991, 17055, 28878, 30811, 27141, 20048, 25898, 25580, 29193, 25359, 25528, 16295, 2048, 12861);

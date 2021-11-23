@@ -7,22 +7,132 @@
         xmlns:viewmodel="clr-namespace:RetSimDesktop.ViewModel"
         d:DataContext="{d:DesignInstance viewmodel:RetSimUIModel}"
         mc:Ignorable="d"
-        Title="Gems" Height="450" Width="525" Name="GemPicker" WindowStartupLocation="CenterScreen">
+        Title="Gems" Height="388" Width="600" ResizeMode="NoResize" Name="GemPicker" WindowStartupLocation="CenterScreen">
     <Grid>
         <local:WoWTooltip x:Name="Tooltip" PlacementTarget="{Binding ElementName=GemPicker}"/>
-        <DataGrid Name="gemGrid" GridLinesVisibility="Horizontal" PreviewMouseDown="GemGrid_PreviewMouseDown" IsReadOnly="True" SelectionMode="Single" HeadersVisibility="Column" CanUserResizeColumns="False" CanUserResizeRows="False" AutoGenerateColumns="False">
+        <DataGrid Name="gemGrid" ColumnWidth="*" GridLinesVisibility="Horizontal" PreviewMouseDown="GemGrid_PreviewMouseDown" IsReadOnly="True" SelectionMode="Single" HeadersVisibility="Column" CanUserResizeColumns="False" CanUserResizeRows="False" AutoGenerateColumns="False">
             <DataGrid.Columns>
-                <DataGridTextColumn CanUserReorder="False" Header="Name" Binding="{Binding Name}" />
-                <DataGridTextColumn CanUserReorder="False" Header="Level" Binding="{Binding ItemLevel}" />
-                <DataGridTextColumn CanUserReorder="False" Header="Color" x:Name="ColorColumn" Binding="{Binding Color}" />
-                <DataGridTextColumn CanUserReorder="False" Header="Str"    x:Name="StrColumn" />
-                <DataGridTextColumn CanUserReorder="False" Header="AP"     x:Name="APColumn" />
-                <DataGridTextColumn CanUserReorder="False" Header="Agi"    x:Name="AgiColumn" />
-                <DataGridTextColumn CanUserReorder="False" Header="Crit"   x:Name="CritColumn" />
-                <DataGridTextColumn CanUserReorder="False" Header="Hit"    x:Name="HitColumn" />
-                <DataGridTextColumn CanUserReorder="False" Header="Sta"    x:Name="StaColumn" />
-                <DataGridTextColumn CanUserReorder="False" Header="Int"    x:Name="IntColumn" />
-                <DataGridTextColumn CanUserReorder="False" Header="MP5"    x:Name="MP5Column" />
+                <DataGridTextColumn MinWidth="220" CanUserReorder="False" Header="Name" Binding="{Binding Name}" />
+                <DataGridTextColumn CanUserReorder="False" Header="Level" Binding="{Binding ItemLevel}" >
+                    <DataGridTextColumn.HeaderStyle>
+                        <Style TargetType="DataGridColumnHeader">
+                            <Setter Property="HorizontalContentAlignment" Value="Center" />
+                        </Style>
+                    </DataGridTextColumn.HeaderStyle>
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="TextAlignment" Value="Center" />
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn MinWidth="50" CanUserReorder="False" Header="Color" x:Name="ColorColumn" Binding="{Binding Color}" >
+                    <DataGridTextColumn.HeaderStyle>
+                        <Style TargetType="DataGridColumnHeader">
+                            <Setter Property="HorizontalContentAlignment" Value="Center" />
+                        </Style>
+                    </DataGridTextColumn.HeaderStyle>
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="TextAlignment" Value="Center" />
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn CanUserReorder="False" Header="Str"    x:Name="StrColumn" >
+                    <DataGridTextColumn.HeaderStyle>
+                        <Style TargetType="DataGridColumnHeader">
+                            <Setter Property="HorizontalContentAlignment" Value="Center" />
+                        </Style>
+                    </DataGridTextColumn.HeaderStyle>
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="TextAlignment" Value="Center" />
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn CanUserReorder="False" Header="AP"     x:Name="APColumn" >
+                    <DataGridTextColumn.HeaderStyle>
+                        <Style TargetType="DataGridColumnHeader">
+                            <Setter Property="HorizontalContentAlignment" Value="Center" />
+                        </Style>
+                    </DataGridTextColumn.HeaderStyle>
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="TextAlignment" Value="Center" />
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn CanUserReorder="False" Header="Agi"    x:Name="AgiColumn" >
+                    <DataGridTextColumn.HeaderStyle>
+                        <Style TargetType="DataGridColumnHeader">
+                            <Setter Property="HorizontalContentAlignment" Value="Center" />
+                        </Style>
+                    </DataGridTextColumn.HeaderStyle>
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="TextAlignment" Value="Center" />
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn CanUserReorder="False" Header="Crit"   x:Name="CritColumn" >
+                    <DataGridTextColumn.HeaderStyle>
+                        <Style TargetType="DataGridColumnHeader">
+                            <Setter Property="HorizontalContentAlignment" Value="Center" />
+                        </Style>
+                    </DataGridTextColumn.HeaderStyle>
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="TextAlignment" Value="Center" />
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn CanUserReorder="False" Header="Hit"    x:Name="HitColumn" >
+                    <DataGridTextColumn.HeaderStyle>
+                        <Style TargetType="DataGridColumnHeader">
+                            <Setter Property="HorizontalContentAlignment" Value="Center" />
+                        </Style>
+                    </DataGridTextColumn.HeaderStyle>
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="TextAlignment" Value="Center" />
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn CanUserReorder="False" Header="Sta"    x:Name="StaColumn" >
+                    <DataGridTextColumn.HeaderStyle>
+                        <Style TargetType="DataGridColumnHeader">
+                            <Setter Property="HorizontalContentAlignment" Value="Center" />
+                        </Style>
+                    </DataGridTextColumn.HeaderStyle>
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="TextAlignment" Value="Center" />
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn CanUserReorder="False" Header="Int"    x:Name="IntColumn" >
+                    <DataGridTextColumn.HeaderStyle>
+                        <Style TargetType="DataGridColumnHeader">
+                            <Setter Property="HorizontalContentAlignment" Value="Center" />
+                        </Style>
+                    </DataGridTextColumn.HeaderStyle>
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="TextAlignment" Value="Center" />
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn CanUserReorder="False" Header="MP5"    x:Name="MP5Column" >
+                    <DataGridTextColumn.HeaderStyle>
+                        <Style TargetType="DataGridColumnHeader">
+                            <Setter Property="HorizontalContentAlignment" Value="Center" />
+                        </Style>
+                    </DataGridTextColumn.HeaderStyle>
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="TextAlignment" Value="Center" />
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
             </DataGrid.Columns>
             <DataGrid.Resources>
                 <Style TargetType="{x:Type DataGridCell}">

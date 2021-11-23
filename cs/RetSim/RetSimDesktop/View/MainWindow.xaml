@@ -13,7 +13,7 @@
             <ColumnDefinition Width="200" />
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
-        <local:WoWTooltip PlacementTarget="{Binding ElementName=Window}" ItemId="{Binding TooltipSettings.HoverItemID}"/>
+        <local:WoWTooltip PlacementTarget="{Binding ElementName=Window}" XOffset="200" YOffset="80" ItemId="{Binding TooltipSettings.HoverItemID}"/>
         <Border BorderBrush="Gray" BorderThickness="0,0,1,0" Margin="0,0,2,0">
             <Grid Margin="0,0,0,5">
                 <Grid.RowDefinitions>
@@ -22,9 +22,9 @@
                     <RowDefinition Height="100" />
                 </Grid.RowDefinitions>
                 <StackPanel Grid.Row="0" VerticalAlignment="Top" HorizontalAlignment="Center" Width="200">
-                    <Button x:Name="GearButton" IsEnabled="False" Content="Gear" Click="Gear_Click"/>
-                    <Button x:Name="SettingsButton" Content="Settings" Click="Settings_Click"/>
-                    <Button x:Name="StatisticsButton" Content="Statistics" Click="Statistics_Click"/>
+                    <Button BorderThickness="1,1,0,1" x:Name="GearButton" IsEnabled="False" Content="Gear" Click="Gear_Click"/>
+                    <Button BorderThickness="1,0,0,1" x:Name="SettingsButton" Content="Settings" Click="Settings_Click"/>
+                    <Button BorderThickness="1,0,0,1" x:Name="StatisticsButton" Content="Statistics" Click="Statistics_Click"/>
                 </StackPanel>
                 <local:StatPanel Grid.Row="1" Width="200" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                 <Border BorderBrush="LightGray" BorderThickness="1" CornerRadius="2" Grid.Row="2" Margin="5" Padding="2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">

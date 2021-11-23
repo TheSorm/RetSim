@@ -40,7 +40,7 @@ public class EquippableItem
 
         return item;
     }
-    
+
     public bool IsSocketBonusActive()
     {
         if (SocketBonus == null)
@@ -98,7 +98,7 @@ public class EquippableItem
             }
         }
 
-        return $"║ {Slot, -9} ║ {ID, -5} ║ {Name, -25} ║ {gems.Count}    ║ {gems2, -59} ║";
+        return $"║ {Slot,-9} ║ {ID,-5} ║ {Name,-25} ║ {gems.Count}    ║ {gems2,-59} ║";
     }
 }
 
