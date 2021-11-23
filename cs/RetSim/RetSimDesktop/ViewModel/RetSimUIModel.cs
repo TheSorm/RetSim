@@ -3,6 +3,8 @@ using RetSimDesktop.Model;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
+using System.Reflection;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using static RetSim.Data.Items;
@@ -115,6 +117,57 @@ namespace RetSimDesktop.ViewModel
                 HoverItemID = 0,
             };
 
+        }
+
+        public void Reset()
+        {
+            var defaultPlayerSettings = new PlayerSettings();
+            foreach (PropertyInfo property in typeof(PlayerSettings).GetProperties().Where(p => p.CanWrite))
+            {
+                property.SetValue(_PlayerSettings, property.GetValue(defaultPlayerSettings, null), null);
+            }
+
+            var defaultEncounterSettings = new EncounterSettings();
+            foreach (PropertyInfo property in typeof(EncounterSettings).GetProperties().Where(p => p.CanWrite))
+            {
+                property.SetValue(_EncounterSettings, property.GetValue(defaultEncounterSettings, null), null);
+            }
+
+            var defaultSelectedTalents = new SelectedTalents();
+            foreach (PropertyInfo property in typeof(SelectedTalents).GetProperties().Where(p => p.CanWrite))
+            {
+                property.SetValue(_SelectedTalents, property.GetValue(defaultSelectedTalents, null), null);
+            }
+
+            var defaultSelectedConsumables = new SelectedConsumables();
+            foreach (PropertyInfo property in typeof(SelectedConsumables).GetProperties().Where(p => p.CanWrite))
+            {
+                property.SetValue(_SelectedConsumables, property.GetValue(defaultSelectedConsumables, null), null);
+            }
+
+            var defaultSelectedBuffs = new SelectedBuffs();
+            foreach (PropertyInfo property in typeof(SelectedBuffs).GetProperties().Where(p => p.CanWrite))
+            {
+                property.SetValue(_SelectedBuffs, property.GetValue(defaultSelectedBuffs, null), null);
+            }
+
+            var defaultSelectedDebuffs = new SelectedDebuffs();
+            foreach (PropertyInfo property in typeof(SelectedDebuffs).GetProperties().Where(p => p.CanWrite))
+            {
+                property.SetValue(_SelectedDebuffs, property.GetValue(defaultSelectedDebuffs, null), null);
+            }
+
+            var defaultSelectedPhases = new SelectedPhases();
+            foreach (PropertyInfo property in typeof(SelectedPhases).GetProperties().Where(p => p.CanWrite))
+            {
+                property.SetValue(_SelectedPhases, property.GetValue(defaultSelectedPhases, null), null);
+            }
+
+            var defaultSimSettings = new SimSettings();
+            foreach (PropertyInfo property in typeof(SimSettings).GetProperties().Where(p => p.CanWrite))
+            {
+                property.SetValue(_SimSettings, property.GetValue(defaultSimSettings, null), null);
+            }
         }
 
         private void ConnectSelectedGearToListOfItems()

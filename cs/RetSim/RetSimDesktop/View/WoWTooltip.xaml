@@ -11,7 +11,7 @@
              d:DesignHeight="450" d:DesignWidth="800">
     <Popup Name="TooltipPopUp" IsOpen="False" Placement="Relative" AllowsTransparency="True" HorizontalOffset="0" VerticalOffset="0" PlacementTarget="{Binding RelativeSource={RelativeSource Self}, Path=PlacementTarget}">
         <Grid>
-            <wv2:WebView2 Width="500" Height="400" Name="Browser" ></wv2:WebView2>
+            <wv2:WebView2 Width="500" Height="400" Name="Browser" Source="https://github.com/TheSorm/RetSim" ></wv2:WebView2>
         </Grid>
     </Popup>
 </UserControl>

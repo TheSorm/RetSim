@@ -83,7 +83,7 @@ namespace RetSimDesktop.Model
         public List<Talent> GetTalentList()
         {
             List<Talent> talents = new();
-            if(divineStrengthEnabled && Talents.ContainsKey(divineStrengthID + divineStrengthRank - 1))
+            if (divineStrengthEnabled && Talents.ContainsKey(divineStrengthID + divineStrengthRank - 1))
             {
                 talents.Add(Talents[divineStrengthID + divineStrengthRank - 1]);
             }

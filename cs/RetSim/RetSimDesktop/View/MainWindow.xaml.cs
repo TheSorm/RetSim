@@ -1,6 +1,10 @@
 ﻿using RetSimDesktop.View;
 using RetSimDesktop.ViewModel;
+using System;
+using System.Diagnostics;
 using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Threading;
 
 namespace RetSimDesktop
 {
@@ -10,6 +14,9 @@ namespace RetSimDesktop
     public partial class MainWindow : Window
     {
         private static SimWorker simWorker = new();
+
+        private DispatcherTimer timer = new DispatcherTimer();
+        private Stopwatch timeTaken = new();
         public MainWindow()
         {
             var (Weapons, Armor, Sets, Gems, MetaGems, Enchants) = RetSim.Data.Manager.LoadData();
@@ -18,6 +25,9 @@ namespace RetSimDesktop
             InitializeComponent();
             RetSimUIModel GM = RetSimUIModel.Load();
             DataContext = GM;
+
+            timer.Interval = TimeSpan.FromMilliseconds(1);
+            timer.Tick += OnTick;
         }
 
         private void Gear_Click(object sender, RoutedEventArgs e)
@@ -60,6 +70,10 @@ namespace RetSimDesktop
                     retSimUIModel.SimButtonStatus.IsGearSimButtonEnabled = false;
                     retSimUIModel.SimButtonStatus.IsSimButtonEnabled = false;
                 }
+                SimButton.SetBinding(Button.ContentProperty, "CurrentSimOutput.Progress");
+                SimButton.ContentStringFormat = "{0}%";
+                timer.Start();
+                timeTaken.Restart();
             }
         }
 
@@ -68,6 +82,22 @@ namespace RetSimDesktop
             if (DataContext is RetSimUIModel retSimUIModel)
             {
                 retSimUIModel.Save();
+            }
+        }
+
+        private void OnTick(object? sender, EventArgs e)
+        {
+            SimTimeTaken.Content = timeTaken.ElapsedMilliseconds / 1000f;
+        }
+
+        private void SimButton_IsEnabledChanged(object sender, DependencyPropertyChangedEventArgs e)
+        {
+            if (SimButton.IsEnabled)
+            {
+                SimButton.Content = "Sim";
+                SimButton.ContentStringFormat = "";
+                timer.Stop();
+                timeTaken.Stop();
             }
         }
     }

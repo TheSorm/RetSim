@@ -6,7 +6,7 @@ namespace RetSimDesktop.Model
     public class SimSettings : INotifyPropertyChanged
     {
         private string simulationCount = "10000";
-       
+
 
         public string SimulationCountSetting
         {

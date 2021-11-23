@@ -1,11 +1,5 @@
-﻿using RetSim.Units.Enemy;
-using System;
-using System.Collections.Generic;
+﻿using System;
 using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using RetSim.Data;
 
 namespace RetSimDesktop.Model
 {

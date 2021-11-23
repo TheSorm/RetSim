@@ -1,10 +1,5 @@
 ﻿using RetSim.Units.Player.Static;
-using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace RetSimDesktop.Model
 {
@@ -12,8 +7,9 @@ namespace RetSimDesktop.Model
     {
         private Races selectedRace = Races.Human;
 
-        public Races SelectedRace { 
-            get => selectedRace; 
+        public Races SelectedRace
+        {
+            get => selectedRace;
             set
             {
                 selectedRace = value;

@@ -11,14 +11,17 @@
              xmlns:viewmodel="clr-namespace:RetSimDesktop.ViewModel"
              d:DataContext="{d:DesignInstance viewmodel:RetSimUIModel}"
              mc:Ignorable="d" 
-             d:DesignHeight="1200" d:DesignWidth="900">
+             d:DesignHeight="1200" d:DesignWidth="900" d:Background="White">
     <UserControl.Resources>
         <local:StringEmptyOrZeroConverter x:Key="StringEmptyConverter" />
         <local:ComparisonConverter x:Key="ComparisonConverter" />
         <local:BossToIDConverter x:Key="BossToIDConverter" />
     </UserControl.Resources>
     <ScrollViewer>
-        <StackPanel Background="White" Margin="5,0,5,5">
+        <StackPanel Margin="5,5,5,5">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                <Button Width="80" Content="Reset" Click="ResetButton_Click"></Button>
+            </StackPanel>
             <Expander IsExpanded="True" Margin="10" Header="Sim">
                 <WrapPanel>
                     <GroupBox Margin="5" Height="110" VerticalAlignment="Top" HorizontalAlignment="Left">

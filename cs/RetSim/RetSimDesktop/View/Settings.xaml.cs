@@ -19,7 +19,7 @@ namespace RetSimDesktop
         public Settings()
         {
             Initialized += Setup;
-            
+
             InitializeComponent();
         }
 
@@ -104,6 +104,14 @@ namespace RetSimDesktop
                 {
                     retSimUIModel.SelectedBuffs.AirTotem1Enabled = false;
                 }
+            }
+        }
+
+        private void ResetButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (DataContext is RetSimUIModel retSimUIModel)
+            {
+                retSimUIModel.Reset();
             }
         }
     }
