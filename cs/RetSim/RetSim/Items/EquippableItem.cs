@@ -98,7 +98,7 @@ public class EquippableItem
             }
         }
 
-        return $"║ {Slot,-9} ║ {ID,-5} ║ {Name,-25} ║ {gems.Count}    ║ {gems2,-59} ║";
+        return $"║ {Slot,-9} ║ {ID,-5} ║ {Name,-29} ║ {gems.Count} ║ {gems2,-63} ║";
     }
 }
 
