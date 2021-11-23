@@ -8,10 +8,6 @@ A WoW TBC Classic Retribution Paladin Simulator
 * Make it prettier
 
 ## SIM
-* Spell Effects
-  * Add the "Modify Effectiveness of Other Spell" spell effect, f.e. for Judgement of the Crusader.
-* Talents
-  * Add Improved Blessing of Might, Benediction, Improved Judgement, Improved Seal of the Crusader, Sanctified Judgement
 * Gear 
   * Implement armor auras / procs
   * Remove trash
