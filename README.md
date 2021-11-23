@@ -8,6 +8,7 @@ A WoW TBC Classic Retribution Paladin Simulator
 * Make it prettier
 
 ## SIM
+* Better way of handling Surv Hunter Agility for Expose Weakness
 * Gear 
   * Implement armor auras / procs
   * Remove trash
@@ -15,7 +16,6 @@ A WoW TBC Classic Retribution Paladin Simulator
 * Tactic for Heroism, drums, potions etc - temporary buffs
   * Option 1: Have a cooldown grp based system 
   * Option 2: Set Heroism time and pop other cooldwons based on that
-* Spell cast speed & spell GCD
 * Uptime simulation (player / buffs like Expose Weakness)
 
 ## LOW PRIORITY / THOUGHTS / DESIGN CONSIDERATIONS

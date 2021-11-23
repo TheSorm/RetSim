@@ -496,6 +496,60 @@
     }
   },
 
+  "31025": {
+    "ID": 31025,
+    "Name": "Braided Eternium Chain",
+    "Target": "Ally",
+    "Aura": {
+      "Effects": [
+        {
+          "EffectType": "ModStat",
+          "Stats": [
+            "CritRating"
+          ],
+          "Value": 28
+        }
+      ]
+    }
+  },
+
+  "31026": {
+    "ID": 31026,
+    "Name": "Embrace of the Dawn",
+    "Target": "Ally",
+    "Aura": {
+      "Effects": [
+        {
+          "EffectType": "ModStat",
+          "Stats": [
+            "Strength",
+            "Agility",
+            "Stamina",
+            "Intellect"
+          ],
+          "Value": 10
+        }
+      ]
+    }
+  },
+
+  "31033": {
+    "ID": 31033,
+    "Name": "Eye of the Night",
+    "Target": "Ally",
+    "Aura": {
+      "Effects": [
+        {
+          "EffectType": "ModStat",
+          "Stats": [
+            "SpellPower"
+          ],
+          "Value": 34
+        }
+      ]
+    }
+  },
+
   "32182": {
     "ID": 32182,
     "Name": "Heroism",
