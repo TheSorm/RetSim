@@ -26,7 +26,7 @@ namespace RetSimDesktop
             RetSimUIModel GM = RetSimUIModel.Load();
             DataContext = GM;
 
-            timer.Interval = TimeSpan.FromMilliseconds(1);
+            timer.Interval = TimeSpan.FromMilliseconds(100);
             timer.Tick += OnTick;
         }
 
