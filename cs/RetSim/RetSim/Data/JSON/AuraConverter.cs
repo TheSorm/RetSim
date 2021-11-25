@@ -30,12 +30,25 @@ public class AuraConverter : JsonConverter<Aura>
                         effects.Add(new GainSeal(value));
                         break;
 
+                    case "GainProcFaction":
+
+                        int aldor = (int)jo["Effects"][i]["Aldor"];
+                        int scryer = (int)jo["Effects"][i]["Scryer"];
+
+                        effects.Add(new GainProcFaction(aldor, scryer));
+
+                        break;
+
                     case "GainProc":
                         effects.Add(new GainProc(value));
                         break;
 
                     case "ModAttackSpeed":
                         effects.Add(new ModAttackSpeed(value));
+                        break;
+
+                    case "ModCastSpeed":
+                        effects.Add(new ModCastSpeed(value));
                         break;
 
                     case "ModDamageDoneCreature":
@@ -167,6 +180,22 @@ public class AuraConverter : JsonConverter<Aura>
 
                         break;
 
+
+                    case "CancelAuraOnRemove":
+
+                        List<int> caorSpells = new();
+
+                        int caorCount = jo["Effects"][i]["Spells"].Count();
+
+                        for (int y = 0; y < caorCount; y++)
+                        {
+                            caorSpells.Add((int)jo["Effects"][i]["Spells"][y]);
+                        }
+
+                        effects.Add(new CancelAuraOnRemove(caorSpells));
+
+                        break;
+
                     default:
                         throw new Exception($"Failed to deserialize effect of type {effectType} - type not recognized");
                 }
@@ -292,6 +321,13 @@ public class AuraConverter : JsonConverter<Aura>
             writer.WriteData("EffectType", "GainSeal");
         }
 
+        else if (value is GainProcFaction gainProcFaction)
+        {
+            writer.WriteData("EffectType", "GainProcFaction");
+            writer.WriteData("Aldor", gainProcFaction.Aldor);
+            writer.WriteData("Scryer", gainProcFaction.Scryer);
+        }
+
         else if (value is GainProc)
         {
             writer.WriteData("EffectType", "GainProc");
@@ -300,6 +336,11 @@ public class AuraConverter : JsonConverter<Aura>
         else if (value is ModAttackSpeed)
         {
             writer.WriteData("EffectType", "ModAttackSpeed");
+        }
+
+        else if (value is ModCastSpeed)
+        {
+            writer.WriteData("EffectType", "ModCastSpeed");
         }
 
         else if (value is ModDamageDoneCreature modDamageDoneCreature)
@@ -410,6 +451,12 @@ public class AuraConverter : JsonConverter<Aura>
             writer.WriteData("EffectType", "ModStatPercent");
 
             writer.WriteStringArray("Stats", modStatPercent.Stats.Cast<string>().ToArray());
+        }
+
+        else if (value is CancelAuraOnRemove cancelAuraOnRemove)
+        {
+            writer.WriteData("EffectType", "CancelAuraOnRemove");
+            writer.WriteIntArray("Spells", cancelAuraOnRemove.Spells.ToArray());
         }
 
         writer.WriteData("Value", value.Value);

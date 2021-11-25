@@ -35,4 +35,6 @@ public class Stats
     public float EffectiveDodgeChance => Math.Max(Constants.Boss.DodgeChance - DodgeChanceReduction, 0);
 
     public float EffectiveAttackSpeed => (1 + this[StatName.Haste].Value * 0.01f) * Parent.Modifiers.AttackSpeed;
+
+    public float EffectiveCastSpeed => (1 + this[StatName.SpellHaste].Value * 0.01f) * Parent.Modifiers.CastSpeed;
 }

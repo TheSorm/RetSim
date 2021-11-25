@@ -28,6 +28,6 @@ public class WeaponAttack : Damage
 
         EffectBonus bonus = state.EffectBonuses[state.Spell.Effects.IndexOf(this)];
 
-        return ((weapon + GetSpellPowerBonus(player, state)) * Value * bonus.Percent + bonus.Flat) * schoolMultiplier;
+        return (weapon + GetSpellPowerBonus(player, state) + bonus.Flat) * Value * bonus.Percent * schoolMultiplier;
     }
 }

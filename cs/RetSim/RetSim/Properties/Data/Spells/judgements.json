@@ -12,7 +12,7 @@
         "DefenseCategory": "Ranged",
         "CritCategory": "Physical",
         "OnCast": 0,
-        "OnHit": 192,
+        "OnHit": 1216,
         "OnCrit": 33,
         "Value": 228,
         "DieSides": 24
@@ -38,6 +38,31 @@
       }
     ]
   },
+
+  "27159": {
+    "ID": 27159,
+    "Name": "Judgement of the Crusader",
+    "Rank": 7,
+    "Target": "Enemy",
+    "Aura": {
+      "IsDebuff": true,
+      "Effects": [
+        {
+          "EffectType": "ModDamageTaken",
+          "School": "Holy",
+          "Value": 219
+        },
+        {
+          "EffectType": "ModStat",
+          "Stats": [
+            "IncreasedAttackerCritChance"
+          ],
+          "Value": 0
+        }
+      ]
+    }
+  },
+
   "27166": {
     "ID": 27166,
     "Name": "Judgement of Wisdom",
