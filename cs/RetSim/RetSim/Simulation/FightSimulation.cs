@@ -120,7 +120,9 @@ public class FightSimulation
                 Timestamp = curent.Timestamp;
 
                 ProcMask mask = curent.Execute();
-                Player.CheckForProcs(mask, this);
+
+                if (mask != ProcMask.None)
+                    Player.CheckForProcs(mask, this);
 
                 //Logger.Log(Timestamp + ": Event: " + curent.ToString());
 
