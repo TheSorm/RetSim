@@ -1,4 +1,5 @@
 ﻿using RetSim.Misc;
+using RetSim.Spells;
 
 namespace RetSim.Units.UnitStats;
 
@@ -37,4 +38,6 @@ public class Stats
     public float EffectiveAttackSpeed => (1 + this[StatName.Haste].Value * 0.01f) * Parent.Modifiers.AttackSpeed;
 
     public float EffectiveCastSpeed => (1 + this[StatName.SpellHaste].Value * 0.01f) * Parent.Modifiers.CastSpeed;
+
+    public int EffectiveGCD(Spell spell) => Math.Max((int)(spell.GCD.Duration / EffectiveCastSpeed), Constants.Numbers.MinimumGCD);
 }

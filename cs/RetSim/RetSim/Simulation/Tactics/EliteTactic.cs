@@ -70,7 +70,7 @@ public class EliteTactic : Tactic
         if (!fight.Player.GCD.Active)
         {
             int crusaderStrikeCooldownEnd = fight.Player.Spellbook.IsOnCooldown(CrusaderStrike) ? fight.Player.Spellbook[CrusaderStrike.ID].CooldownEnd.Timestamp : start;
-            int twistWindowEnd = fight.Player.TimeOfNextSwing() - 1510;
+            int twistWindowEnd = fight.Player.TimeOfNextSwing() - fight.Player.Stats.EffectiveGCD(SealOfBlood) + 1;
 
             if (!fight.Player.Auras[SealOfCommand.Aura].Active && start < twistWindowEnd && crusaderStrikeCooldownEnd > fight.Player.TimeOfNextSwing())
             {

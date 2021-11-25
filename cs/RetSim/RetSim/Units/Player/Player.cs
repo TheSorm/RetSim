@@ -70,7 +70,7 @@ public class Player : Unit
         if (spell.GCD != null)
         {
             if (spell.GCD.Category == AttackCategory.Spell)
-                fight.Queue.Add(new GCDEndEvent(fight, fight.Timestamp + Math.Max((int)(spell.GCD.Duration / fight.Player.Stats.EffectiveCastSpeed), Constants.Numbers.MinimumGCD)));
+                fight.Queue.Add(new GCDEndEvent(fight, fight.Timestamp + fight.Player.Stats.EffectiveGCD(spell)));
 
             else
                 fight.Queue.Add(new GCDEndEvent(fight, fight.Timestamp + spell.GCD.Duration));
