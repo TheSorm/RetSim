@@ -32,6 +32,7 @@ public abstract class Event : IComparable<Event>
         Fight.Queue.UpdateAdd(this);
     }
 
+    // Currently NOT used by MinQueue
     public int CompareTo(Event other)
     {
         int result = Timestamp - other.Timestamp;

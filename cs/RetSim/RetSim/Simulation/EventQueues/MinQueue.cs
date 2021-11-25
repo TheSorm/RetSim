@@ -4,16 +4,23 @@ namespace RetSim.Simulation.EventQueues
 {
     public class MinQueue : List<Event>, IEventQueue
     {
+        private bool dirty = false;
         public new void Add(Event e)
         {
             if (e != null)
+            {
                 base.Add(e);
+                dirty = true;
+            }
         }
 
         public void AddRange(List<Event> events)
         {
             foreach (Event e in events)
+            {
                 Add(e);
+                dirty = true;
+            }
         }
 
         public Event GetNext()
@@ -25,18 +32,23 @@ namespace RetSim.Simulation.EventQueues
         {
             Event next = this[Count - 1];
             RemoveAt(Count - 1);
+            dirty = true;
             return next;
         }
 
         public void EnsureSorting()
         {
-            if (Count > 0)
+            if (Count > 0 && dirty)
             {
                 Event min = this[0];
                 int minPos = 0;
                 for (int i = 1; i < Count; i++)
                 {
-                    if (min.CompareTo(this[i]) > 0)
+                    int comparison = min.Timestamp - this[i].Timestamp;
+                    if (comparison == 0)
+                        comparison = min.Priority - this[i].Priority;
+
+                    if (comparison > 0)
                     {
                         min = this[i];
                         minPos = i;
