@@ -347,49 +347,93 @@ namespace RetSimDesktop.Model
                 result.SelectedWeapon = new() { Weapon = Weapons[properties["SelectedWeapon"]], DPS = 0, EnabledForGearSim = true };
             }
 
-            if (properties.ContainsKey("HeadEnchant"))
+            if (properties.ContainsKey("HeadEnchant") && properties["HeadEnchant"] != -1)
             {
                 result.HeadEnchant = Enchants[properties["HeadEnchant"]];
             }
-            if (properties.ContainsKey("ShouldersEnchant"))
+            else if(properties["HeadEnchant"] == -1)
+            {
+                result.HeadEnchant = null;
+            }
+            if (properties.ContainsKey("ShouldersEnchant") && properties["ShouldersEnchant"] != -1)
             {
                 result.ShouldersEnchant = Enchants[properties["ShouldersEnchant"]];
             }
-            if (properties.ContainsKey("BackEnchant"))
+            else if (properties["ShouldersEnchant"] == -1)
+            {
+                result.ShouldersEnchant = null;
+            }
+            if (properties.ContainsKey("BackEnchant") && properties["BackEnchant"] != -1)
             {
                 result.BackEnchant = Enchants[properties["BackEnchant"]];
             }
-            if (properties.ContainsKey("ChestEnchant"))
+            else if (properties["BackEnchant"] == -1)
+            {
+                result.BackEnchant = null;
+            }
+            if (properties.ContainsKey("ChestEnchant") && properties["ChestEnchant"] != -1)
             {
                 result.ChestEnchant = Enchants[properties["ChestEnchant"]];
             }
-            if (properties.ContainsKey("WristsEnchant"))
+            else if (properties["ChestEnchant"] == -1)
+            {
+                result.ChestEnchant = null;
+            }
+            if (properties.ContainsKey("WristsEnchant") && properties["WristsEnchant"] != -1)
             {
                 result.WristsEnchant = Enchants[properties["WristsEnchant"]];
             }
-            if (properties.ContainsKey("HandsEnchant"))
+            else if (properties["WristsEnchant"] == -1)
+            {
+                result.WristsEnchant = null;
+            }
+            if (properties.ContainsKey("HandsEnchant") && properties["HandsEnchant"] != -1)
             {
                 result.HandsEnchant = Enchants[properties["HandsEnchant"]];
             }
-            if (properties.ContainsKey("LegsEnchant"))
+            else if (properties["HandsEnchant"] == -1)
+            {
+                result.HandsEnchant = null;
+            }
+            if (properties.ContainsKey("LegsEnchant") && properties["LegsEnchant"] != -1)
             {
                 result.LegsEnchant = Enchants[properties["LegsEnchant"]];
             }
-            if (properties.ContainsKey("FeetEnchant"))
+            else if (properties["LegsEnchant"] == -1)
+            {
+                result.LegsEnchant = null;
+            }
+            if (properties.ContainsKey("FeetEnchant") && properties["FeetEnchant"] != -1)
             {
                 result.FeetEnchant = Enchants[properties["FeetEnchant"]];
             }
-            if (properties.ContainsKey("Finger1Enchant"))
+            else if (properties["FeetEnchant"] == -1)
+            {
+                result.FeetEnchant = null;
+            }
+            if (properties.ContainsKey("Finger1Enchant") && properties["Finger1Enchant"] != -1)
             {
                 result.Finger1Enchant = Enchants[properties["Finger1Enchant"]];
             }
-            if (properties.ContainsKey("Finger2Enchant"))
+            else if (properties["Finger1Enchant"] == -1)
+            {
+                result.Finger1Enchant = null;
+            }
+            if (properties.ContainsKey("Finger2Enchant") && properties["Finger2Enchant"] != -1)
             {
                 result.Finger2Enchant = Enchants[properties["Finger2Enchant"]];
             }
-            if (properties.ContainsKey("WeaponEnchant"))
+            else if (properties["Finger2Enchant"] == -1)
+            {
+                result.Finger2Enchant = null;
+            }
+            if (properties.ContainsKey("WeaponEnchant") && properties["WeaponEnchant"] != -1)
             {
                 result.WeaponEnchant = Enchants[properties["WeaponEnchant"]];
+            }
+            else if (properties["WeaponEnchant"] == -1)
+            {
+                result.WeaponEnchant = null;
             }
 
             return result;

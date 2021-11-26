@@ -182,17 +182,17 @@ namespace RetSimDesktop.ViewModel
             _SelectedGear.SelectedTrinket2 = _SelectedGear.SelectedTrinket2 != null ? _AllGear[_SelectedGear.SelectedTrinket2.Item.ID] : null;
             _SelectedGear.SelectedRelic = _SelectedGear.SelectedRelic != null ? _AllGear[_SelectedGear.SelectedRelic.Item.ID] : null;
             _SelectedGear.SelectedWeapon = _SelectedGear.SelectedWeapon != null ? _AllWeapons[_SelectedGear.SelectedWeapon.Weapon.ID] : null;
-            _SelectedGear.HeadEnchant = _SelectedGear.HeadEnchant != null ? Enchants[_SelectedGear.HeadEnchant.ID] : null;
-            _SelectedGear.ShouldersEnchant = _SelectedGear.ShouldersEnchant != null ? Enchants[_SelectedGear.ShouldersEnchant.ID] : null;
-            _SelectedGear.BackEnchant = _SelectedGear.BackEnchant != null ? Enchants[_SelectedGear.BackEnchant.ID] : null;
-            _SelectedGear.ChestEnchant = _SelectedGear.ChestEnchant != null ? Enchants[_SelectedGear.ChestEnchant.ID] : null;
-            _SelectedGear.WristsEnchant = _SelectedGear.WristsEnchant != null ? Enchants[_SelectedGear.WristsEnchant.ID] : null;
-            _SelectedGear.HandsEnchant = _SelectedGear.HandsEnchant != null ? Enchants[_SelectedGear.HandsEnchant.ID] : null;
-            _SelectedGear.LegsEnchant = _SelectedGear.LegsEnchant != null ? Enchants[_SelectedGear.LegsEnchant.ID] : null;
-            _SelectedGear.FeetEnchant = _SelectedGear.FeetEnchant != null ? Enchants[_SelectedGear.FeetEnchant.ID] : null;
-            _SelectedGear.Finger1Enchant = _SelectedGear.Finger1Enchant != null ? Enchants[_SelectedGear.Finger1Enchant.ID] : null;
-            _SelectedGear.Finger2Enchant = _SelectedGear.Finger2Enchant != null ? Enchants[_SelectedGear.Finger2Enchant.ID] : null;
-            _SelectedGear.WeaponEnchant = _SelectedGear.WeaponEnchant != null ? Enchants[_SelectedGear.WeaponEnchant.ID] : null;
+            _SelectedGear.HeadEnchant = _SelectedGear.HeadEnchant != null ? Enchants[_SelectedGear.HeadEnchant.ID] : _EnchantsBySlot[Slot.Head].Where(e => e.ID == -1).First();
+            _SelectedGear.ShouldersEnchant = _SelectedGear.ShouldersEnchant != null ? Enchants[_SelectedGear.ShouldersEnchant.ID] : _EnchantsBySlot[Slot.Shoulders].Where(e => e.ID == -1).First();
+            _SelectedGear.BackEnchant = _SelectedGear.BackEnchant != null ? Enchants[_SelectedGear.BackEnchant.ID] : _EnchantsBySlot[Slot.Back].Where(e => e.ID == -1).First();
+            _SelectedGear.ChestEnchant = _SelectedGear.ChestEnchant != null ? Enchants[_SelectedGear.ChestEnchant.ID] : _EnchantsBySlot[Slot.Chest].Where(e => e.ID == -1).First();
+            _SelectedGear.WristsEnchant = _SelectedGear.WristsEnchant != null ? Enchants[_SelectedGear.WristsEnchant.ID] : _EnchantsBySlot[Slot.Wrists].Where(e => e.ID == -1).First();
+            _SelectedGear.HandsEnchant = _SelectedGear.HandsEnchant != null ? Enchants[_SelectedGear.HandsEnchant.ID] : _EnchantsBySlot[Slot.Hands].Where(e => e.ID == -1).First();
+            _SelectedGear.LegsEnchant = _SelectedGear.LegsEnchant != null ? Enchants[_SelectedGear.LegsEnchant.ID] : _EnchantsBySlot[Slot.Legs].Where(e => e.ID == -1).First();
+            _SelectedGear.FeetEnchant = _SelectedGear.FeetEnchant != null ? Enchants[_SelectedGear.FeetEnchant.ID] : _EnchantsBySlot[Slot.Feet].Where(e => e.ID == -1).First();
+            _SelectedGear.Finger1Enchant = _SelectedGear.Finger1Enchant != null ? Enchants[_SelectedGear.Finger1Enchant.ID] : _EnchantsBySlot[Slot.Finger].Where(e => e.ID == -1).First();
+            _SelectedGear.Finger2Enchant = _SelectedGear.Finger2Enchant != null ? Enchants[_SelectedGear.Finger2Enchant.ID] : _EnchantsBySlot[Slot.Finger].Where(e => e.ID == -1).First();
+            _SelectedGear.WeaponEnchant = _SelectedGear.WeaponEnchant != null ? Enchants[_SelectedGear.WeaponEnchant.ID] : _EnchantsBySlot[Slot.Weapon].Where(e => e.ID == -1).First();
         }
 
 
