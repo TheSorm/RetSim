@@ -145,7 +145,6 @@ namespace RetSimDesktop
                 {
                     DamageBreakdownTable.ItemsSource = DamageBreakdownMinLog.GetRange(0, DamageBreakdownMinLog.Count - 1);
                     DamageBreakdownTotalTable.ItemsSource = DamageBreakdownMinLog.GetRange(DamageBreakdownMinLog.Count - 1, 1);
-                    Trace.WriteLine(DamageBreakdownMinLog[DamageBreakdownMinLog.Count - 1].Crits);
                 }
                 else if (value == "Median" && DamageBreakdownMedianLog.Count > 0)
                 {
