@@ -5,10 +5,10 @@ namespace RetSimDesktop.Model
 {
     public class SimSettings : INotifyPropertyChanged
     {
-        private string simulationCount = "10000";
+        private int simulationCount = 10000;
 
 
-        public string SimulationCountSetting
+        public int SimulationCountSetting
         {
             get { return simulationCount; }
             set
@@ -19,7 +19,7 @@ namespace RetSimDesktop.Model
         }
         public int SimulationCount
         {
-            get { return Int32.Parse(simulationCount); }
+            get { return simulationCount; }
         }
 
         public event PropertyChangedEventHandler? PropertyChanged;

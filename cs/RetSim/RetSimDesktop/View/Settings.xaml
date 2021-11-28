@@ -709,8 +709,16 @@
                                 </CheckBox>
                                 <CheckBox Margin="0,4,0,4" x:Name="HuntersMark" Content="Improved Hunter's Mark" IsChecked="{Binding SelectedDebuffs.HuntersMarkEnabled}">
                                 </CheckBox>
-                                <CheckBox Margin="0,4,0,4" x:Name="ExposeWeakness" Content="Expose Weakness" IsChecked="{Binding SelectedDebuffs.ExposeWeaknessEnabled}">
-                                </CheckBox>
+                                <Grid Margin="0,2,0,2">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="10"/>
+                                        <ColumnDefinition Width="40"/>
+                                    </Grid.ColumnDefinitions>
+                                    <CheckBox Margin="0,2,0,2" x:Name="ExposeWeakness" Content="Expose Weakness" IsChecked="{Binding SelectedDebuffs.ExposeWeaknessEnabled}">
+                                    </CheckBox>
+                                    <TextBox Grid.Column="2" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" ToolTipService.InitialShowDelay="0" ToolTip="Hunter Agility" PreviewTextInput="NumberValidationTextBox" Text="{Binding SelectedDebuffs.HunterAgility, Converter={StaticResource StringEmptyConverter}, ConverterParameter='4'}" />
+                                </Grid>
                                 <CheckBox x:Name="FaerieFire" Margin="0,2,0,2" VerticalContentAlignment="Center" IsChecked="{Binding SelectedDebuffs.FaerieFireEnabled}">
                                     <ComboBox Width="200">
                                         <ComboBoxItem IsSelected="{Binding Path=SelectedDebuffs.SelectedFaerieFire, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:FaerieFire.FaerieFire}}">Faerie Fire</ComboBoxItem>

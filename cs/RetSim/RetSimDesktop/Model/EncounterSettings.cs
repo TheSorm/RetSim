@@ -5,8 +5,8 @@ namespace RetSimDesktop.Model
 {
     public class EncounterSettings : INotifyPropertyChanged
     {
-        private string minFightDuration = "180000";
-        private string maxFightDuration = "200000";
+        private int minFightDuration = 180000;
+        private int maxFightDuration = 200000;
         private int encounterID = 0;
 
         public int EncounterID
@@ -19,7 +19,7 @@ namespace RetSimDesktop.Model
             }
         }
 
-        public string MinFightDurationSetting
+        public int MinFightDurationSetting
         {
             get { return minFightDuration; }
             set
@@ -31,10 +31,10 @@ namespace RetSimDesktop.Model
 
         public int MinFightDuration
         {
-            get { return Int32.Parse(minFightDuration); }
+            get { return minFightDuration; }
         }
 
-        public string MaxFightDurationSetting
+        public int MaxFightDurationSetting
         {
             get { return maxFightDuration; }
             set
@@ -46,7 +46,7 @@ namespace RetSimDesktop.Model
 
         public int MaxFightDuration
         {
-            get { return Int32.Parse(maxFightDuration); }
+            get { return maxFightDuration; }
         }
 
 
