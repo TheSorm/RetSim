@@ -351,7 +351,7 @@ namespace RetSimDesktop.Model
             {
                 result.HeadEnchant = Enchants[properties["HeadEnchant"]];
             }
-            else if (properties["HeadEnchant"] == -1)
+            else if (properties.ContainsKey("HeadEnchant") && properties["HeadEnchant"] == -1)
             {
                 result.HeadEnchant = null;
             }
@@ -359,7 +359,7 @@ namespace RetSimDesktop.Model
             {
                 result.ShouldersEnchant = Enchants[properties["ShouldersEnchant"]];
             }
-            else if (properties["ShouldersEnchant"] == -1)
+            else if (properties.ContainsKey("ShouldersEnchant") && properties["ShouldersEnchant"] == -1)
             {
                 result.ShouldersEnchant = null;
             }
@@ -367,7 +367,7 @@ namespace RetSimDesktop.Model
             {
                 result.BackEnchant = Enchants[properties["BackEnchant"]];
             }
-            else if (properties["BackEnchant"] == -1)
+            else if (properties.ContainsKey("BackEnchant") && properties["BackEnchant"] == -1)
             {
                 result.BackEnchant = null;
             }
@@ -375,7 +375,7 @@ namespace RetSimDesktop.Model
             {
                 result.ChestEnchant = Enchants[properties["ChestEnchant"]];
             }
-            else if (properties["ChestEnchant"] == -1)
+            else if (properties.ContainsKey("ChestEnchant") && properties["ChestEnchant"] == -1)
             {
                 result.ChestEnchant = null;
             }
@@ -383,7 +383,7 @@ namespace RetSimDesktop.Model
             {
                 result.WristsEnchant = Enchants[properties["WristsEnchant"]];
             }
-            else if (properties["WristsEnchant"] == -1)
+            else if (properties.ContainsKey("WristsEnchant") && properties["WristsEnchant"] == -1)
             {
                 result.WristsEnchant = null;
             }
@@ -391,7 +391,7 @@ namespace RetSimDesktop.Model
             {
                 result.HandsEnchant = Enchants[properties["HandsEnchant"]];
             }
-            else if (properties["HandsEnchant"] == -1)
+            else if (properties.ContainsKey("HandsEnchant") && properties["HandsEnchant"] == -1)
             {
                 result.HandsEnchant = null;
             }
@@ -399,7 +399,7 @@ namespace RetSimDesktop.Model
             {
                 result.LegsEnchant = Enchants[properties["LegsEnchant"]];
             }
-            else if (properties["LegsEnchant"] == -1)
+            else if (properties.ContainsKey("LegsEnchant") && properties["LegsEnchant"] == -1)
             {
                 result.LegsEnchant = null;
             }
@@ -407,7 +407,7 @@ namespace RetSimDesktop.Model
             {
                 result.FeetEnchant = Enchants[properties["FeetEnchant"]];
             }
-            else if (properties["FeetEnchant"] == -1)
+            else if (properties.ContainsKey("FeetEnchant") && properties["FeetEnchant"] == -1)
             {
                 result.FeetEnchant = null;
             }
@@ -415,7 +415,7 @@ namespace RetSimDesktop.Model
             {
                 result.Finger1Enchant = Enchants[properties["Finger1Enchant"]];
             }
-            else if (properties["Finger1Enchant"] == -1)
+            else if (properties.ContainsKey("Finger1Enchant") && properties["Finger1Enchant"] == -1)
             {
                 result.Finger1Enchant = null;
             }
@@ -423,7 +423,7 @@ namespace RetSimDesktop.Model
             {
                 result.Finger2Enchant = Enchants[properties["Finger2Enchant"]];
             }
-            else if (properties["Finger2Enchant"] == -1)
+            else if (properties.ContainsKey("Finger2Enchant") && properties["Finger2Enchant"] == -1)
             {
                 result.Finger2Enchant = null;
             }
@@ -431,7 +431,7 @@ namespace RetSimDesktop.Model
             {
                 result.WeaponEnchant = Enchants[properties["WeaponEnchant"]];
             }
-            else if (properties["WeaponEnchant"] == -1)
+            else if (properties.ContainsKey("WeaponEnchant") && properties["WeaponEnchant"] == -1)
             {
                 result.WeaponEnchant = null;
             }
