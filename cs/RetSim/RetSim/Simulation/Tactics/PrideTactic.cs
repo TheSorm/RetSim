@@ -42,6 +42,7 @@ public class PrideTactic : Tactic
                 firstAutoAttack,
             };
         fight.Player.NextAutoAttack = firstAutoAttack;
+        fight.Player.PreviousAutoAttack = firstAutoAttack.Timestamp - fight.Player.Weapon.BaseSpeed;
 
         if (fight.Player.Equipment.Trinket1 != null && fight.Player.Equipment.Trinket1.OnUse != null && Data.Collections.Spells.ContainsKey(fight.Player.Equipment.Trinket1.OnUse.ID))
             trinket1 = Data.Collections.Spells[fight.Player.Equipment.Trinket1.OnUse.ID];
@@ -76,8 +77,8 @@ public class PrideTactic : Tactic
         {
             if (!fight.Player.Spellbook.IsOnCooldown(Judgement)
                 && fight.Player.Auras[SealOfBlood.Aura].Active
-                && fight.Player.Spellbook.IsOnCooldown(CrusaderStrike) && fight.Player.Spellbook[CrusaderStrike.ID].CooldownEnd.Timestamp > fight.Player.TimeOfNextSwing()
-                && fight.Player.GCD.GetEnd + hasteLeeway < fight.Player.TimeOfNextSwing())
+                && fight.Player.Spellbook.IsOnCooldown(CrusaderStrike) && fight.Player.Spellbook[CrusaderStrike.ID].CooldownEnd.Timestamp > fight.Player.TimeOfNextSwing() - hasteLeeway
+                && fight.Player.GCD.GetEnd < fight.Player.TimeOfNextSwing() - hasteLeeway)
             {
                 return new CastEvent(Judgement, fight.Player, fight.Enemy, fight, start);
             }
@@ -86,22 +87,26 @@ public class PrideTactic : Tactic
         {
             if (fight.Player.Auras[SealOfCommand.Aura].Active)
             {
-                int sobTwistWindowStart = fight.Player.TimeOfNextSwing() - 380;
+                int sobTwistWindowStart = fight.Player.TimeOfNextSwing() - 399;
                 int sobTwistWindowEnd = fight.Player.TimeOfNextSwing() - 1;
                 if (end >= sobTwistWindowEnd && start <= sobTwistWindowEnd)
                     return new CastEvent(SealOfBlood, fight.Player, fight.Player, fight, Math.Max(start, sobTwistWindowStart));
             }else
             {
                 if (fight.Player.Spellbook.IsOnCooldown(CrusaderStrike)
-                && fight.Player.TimeOfNextSwing()  < fight.Player.Spellbook[CrusaderStrike.ID].CooldownEnd.Timestamp + maxCSDelay)
+                && !(fight.Player.Spellbook[CrusaderStrike.ID].CooldownEnd.Timestamp < fight.Player.TimeOfNextSwing() - hasteLeeway
+                     && fight.Player.TimeOfNextSwing() - hasteLeeway - 400 + fight.Player.Stats.EffectiveGCD(SealOfBlood) > fight.Player.Spellbook[CrusaderStrike.ID].CooldownEnd.Timestamp + maxCSDelay))            
                 {
-                    if (start + hasteLeeway +  fight.Player.Stats.EffectiveGCD(SealOfBlood) < fight.Player.TimeOfNextSwing())
+                    if (start + fight.Player.Stats.EffectiveGCD(SealOfBlood) < fight.Player.TimeOfNextSwing() - hasteLeeway)
                     {
-                        if (!fight.Player.Spellbook.IsOnCooldown(Judgement) && fight.Player.Auras[SealOfBlood.Aura].Active)
+
+                        if(fight.Player.Auras[SealOfBlood.Aura].Active && !fight.Player.Spellbook.IsOnCooldown(Judgement))
                         {
-                            return new CastEvent(Judgement, fight.Player, fight.Enemy, fight, fight.Timestamp);
+                            return new CastEvent(Judgement, fight.Player, fight.Enemy, fight, start);
                         }
-                        else if (!fight.Player.Auras[SealOfCommand.Aura].Active)
+                        else if (!fight.Player.Auras[SealOfCommand.Aura].Active 
+                            && (!fight.Player.Auras[SealOfBlood.Aura].Active 
+                            || (fight.Player.Spellbook.IsOnCooldown(Judgement) && fight.Player.Spellbook[Judgement.ID].CooldownEnd.Timestamp + fight.Player.Stats.EffectiveGCD(SealOfBlood) > fight.Player.TimeOfNextSwing() - hasteLeeway)))
                         {
                             return new CastEvent(SealOfCommand, fight.Player, fight.Enemy, fight, start);
                         }
@@ -110,9 +115,9 @@ public class PrideTactic : Tactic
                     {
                         if (!fight.Player.Auras[SealOfBlood.Aura].Active)
                         {
-                            return new CastEvent(SealOfBlood, fight.Player, fight.Enemy, fight, fight.Timestamp);
+                            return new CastEvent(SealOfBlood, fight.Player, fight.Enemy, fight, start);
                         }
-                        else if (!fight.Player.Spellbook.IsOnCooldown(Judgement) && start + hasteLeeway < fight.Player.TimeOfNextSwing())
+                        else if (!fight.Player.Spellbook.IsOnCooldown(Judgement) && start < fight.Player.TimeOfNextSwing() - hasteLeeway)
                         {
                             return new CastEvent(Judgement, fight.Player, fight.Enemy, fight, start);
                         }
@@ -120,7 +125,7 @@ public class PrideTactic : Tactic
                 }
                 else if (!fight.Player.Spellbook.IsOnCooldown(CrusaderStrike))
                 {
-                    if (fight.Player.Auras[SealOfBlood.Aura].Active || start + fight.Player.Stats.EffectiveGCD(CrusaderStrike) + hasteLeeway < fight.Player.TimeOfNextSwing())
+                    if (fight.Player.Auras[SealOfBlood.Aura].Active || start + fight.Player.Stats.EffectiveGCD(CrusaderStrike)  < fight.Player.TimeOfNextSwing() - hasteLeeway)
                     {
                         return new CastEvent(CrusaderStrike, fight.Player, fight.Enemy, fight, start);
                     }
