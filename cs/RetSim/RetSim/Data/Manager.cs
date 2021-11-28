@@ -13,6 +13,11 @@ namespace RetSim.Data;
 
 public static class Manager
 {
+    public static void RecalculateExposeWeakness(int agility)
+    {
+        Collections.Spells[34501].Aura.Effects[0].Value = agility * 0.25f;
+    }
+
     public static void InstantiateData()
     {
         Dictionary<int, Proc> procs = LoadProcs();
@@ -119,6 +124,8 @@ public static class Manager
 
         foreach (Boss boss in bosses)
             Collections.Bosses[boss.ID] = boss;
+
+        RecalculateExposeWeakness(1000);
     }
 
     public static Equipment GetEquipment()

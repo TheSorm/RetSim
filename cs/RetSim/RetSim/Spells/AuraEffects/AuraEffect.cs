@@ -5,7 +5,7 @@ namespace RetSim.Spells.AuraEffects;
 
 public abstract class AuraEffect
 {
-    public float Value { get; init; }
+    public float Value { get; set; }
 
     public AuraEffect(float value)
     {

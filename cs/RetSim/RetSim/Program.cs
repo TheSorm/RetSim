@@ -19,8 +19,7 @@ class Program
 {
     public static AbstractLogger Logger = new ConsoleLogger();
 
-    public static int HunterAgility = 1000;
-    //TODO: Find a better way to handle this
+
 
     static void Main(string[] args)
     {
