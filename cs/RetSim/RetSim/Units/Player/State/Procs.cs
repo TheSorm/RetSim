@@ -24,7 +24,7 @@ public class Procs : Dictionary<Proc, ProcCooldownEndEvent>
     {
         foreach (var proc in Keys)
         {
-            if ((proc.ProcMask & mask) != ProcMask.None && !IsOnCooldown(proc) &&  RollProc(proc, player))
+            if ((proc.ProcMask & mask) != ProcMask.None && !IsOnCooldown(proc) && RollProc(proc, player))
             {
                 if (proc.Cooldown > 0)
                     fight.Queue.Add(new ProcCooldownEndEvent(proc, fight, fight.Timestamp + proc.Cooldown));

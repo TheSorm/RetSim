@@ -1,5 +1,4 @@
-﻿using System;
-using System.ComponentModel;
+﻿using System.ComponentModel;
 
 namespace RetSimDesktop.Model
 {
@@ -19,36 +18,25 @@ namespace RetSimDesktop.Model
             }
         }
 
-        public int MinFightDurationSetting
+        public int MinFightDuration
         {
             get { return minFightDuration; }
             set
             {
                 minFightDuration = value;
-                OnPropertyChanged(nameof(MinFightDurationSetting));
-            }
-        }
-
-        public int MinFightDuration
-        {
-            get { return minFightDuration; }
-        }
-
-        public int MaxFightDurationSetting
-        {
-            get { return maxFightDuration; }
-            set
-            {
-                maxFightDuration = value;
-                OnPropertyChanged(nameof(MaxFightDurationSetting));
+                OnPropertyChanged(nameof(MinFightDuration));
             }
         }
 
         public int MaxFightDuration
         {
             get { return maxFightDuration; }
+            set
+            {
+                maxFightDuration = value;
+                OnPropertyChanged(nameof(MaxFightDuration));
+            }
         }
-
 
         public event PropertyChangedEventHandler? PropertyChanged;
         private void OnPropertyChanged(string propertyName)

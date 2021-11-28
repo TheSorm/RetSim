@@ -1,5 +1,4 @@
 ﻿using RetSim.Items;
-using RetSim.Misc;
 using RetSim.Simulation;
 using RetSim.Simulation.Events;
 using RetSim.Spells;

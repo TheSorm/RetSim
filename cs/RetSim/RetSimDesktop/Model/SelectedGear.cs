@@ -351,7 +351,7 @@ namespace RetSimDesktop.Model
             {
                 result.HeadEnchant = Enchants[properties["HeadEnchant"]];
             }
-            else if(properties["HeadEnchant"] == -1)
+            else if (properties["HeadEnchant"] == -1)
             {
                 result.HeadEnchant = null;
             }

@@ -1,5 +1,4 @@
-﻿using System;
-using System.ComponentModel;
+﻿using System.ComponentModel;
 
 namespace RetSimDesktop.Model
 {
@@ -8,18 +7,14 @@ namespace RetSimDesktop.Model
         private int simulationCount = 10000;
 
 
-        public int SimulationCountSetting
+        public int SimulationCount
         {
             get { return simulationCount; }
             set
             {
                 simulationCount = value;
-                OnPropertyChanged(nameof(SimulationCountSetting));
+                OnPropertyChanged(nameof(SimulationCount));
             }
-        }
-        public int SimulationCount
-        {
-            get { return simulationCount; }
         }
 
         public event PropertyChangedEventHandler? PropertyChanged;

@@ -2,7 +2,6 @@
 using RetSim.Spells;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Diagnostics;
 using static RetSim.Data.Collections;
 
 namespace RetSimDesktop.Model
@@ -43,13 +42,15 @@ namespace RetSimDesktop.Model
         public bool BloodFrenzyEnabled { get => bloodFrenzyEnabled; set { bloodFrenzyEnabled = value; OnPropertyChanged(nameof(BloodFrenzyEnabled)); } }
         public bool HuntersMarkEnabled { get => huntersMarkEnabled; set { huntersMarkEnabled = value; OnPropertyChanged(nameof(HuntersMarkEnabled)); } }
         public bool ExposeWeaknessEnabled { get => exposeWeaknessEnabled; set { exposeWeaknessEnabled = value; OnPropertyChanged(nameof(ExposeWeaknessEnabled)); } }
-        public int HunterAgility {
+        public int HunterAgility
+        {
             get => hunterAgility;
-            set {
+            set
+            {
                 hunterAgility = value;
                 Manager.RecalculateExposeWeakness(HunterAgility);
-                OnPropertyChanged(nameof(HunterAgility)); 
-            } 
+                OnPropertyChanged(nameof(HunterAgility));
+            }
         }
         public bool FaerieFireEnabled { get => faerieFireEnabled; set { faerieFireEnabled = value; OnPropertyChanged(nameof(FaerieFireEnabled)); } }
         public FaerieFire SelectedFaerieFire { get => selectedFaerieFire; set { selectedFaerieFire = value; OnPropertyChanged(nameof(SelectedFaerieFire)); } }

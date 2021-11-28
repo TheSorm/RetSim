@@ -1,6 +1,5 @@
 ﻿using RetSim.Simulation;
 using RetSim.Units;
-using RetSim.Units.Enemy;
 using RetSim.Units.Player.State;
 using RetSim.Units.UnitStats;
 
