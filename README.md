@@ -3,6 +3,8 @@ A WoW TBC Classic Retribution Paladin Simulator
 
 ## DESKTOP VERSION
 * Stat weights screen
+* Add hunter agility input field that calls Data.Manager.RecalculateExposeWeakness(value)
+* Add Shattrath faction selection
 * Settings
   * Select all gems without changing the selected items
 * Make it prettier
@@ -17,7 +19,6 @@ A WoW TBC Classic Retribution Paladin Simulator
   * Option 2: Set Heroism time and pop other cooldowns based on that
 
 ## LOW PRIORITY / THOUGHTS / DESIGN CONSIDERATIONS
-* Better way of handling Surv Hunter Agility for Expose Weakness
 * Uptime simulation (player / buffs like Expose Weakness)
 * More tactics  
 * Mana
@@ -33,3 +34,4 @@ A WoW TBC Classic Retribution Paladin Simulator
 * Proc
   * Should Prio on ProcEvents should be higher than on normal cast events?
 * Test how much DPS is effected by CS delay. If its highly effected, build a UI page to sim that.
+* Test haste leeway settings
