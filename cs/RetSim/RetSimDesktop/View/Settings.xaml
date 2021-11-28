@@ -7,6 +7,7 @@
              xmlns:local="clr-namespace:RetSimDesktop"
              xmlns:ret="clr-namespace:RetSim.Units.Player.Static;assembly=RetSim"
              xmlns:ret2="clr-namespace:RetSim.Data;assembly=RetSim"
+             xmlns:ret3="clr-namespace:RetSim.Units.Player;assembly=RetSim"
              xmlns:model="clr-namespace:RetSimDesktop.Model"
              xmlns:viewmodel="clr-namespace:RetSimDesktop.ViewModel"
              d:DataContext="{d:DesignInstance viewmodel:RetSimUIModel}"
@@ -40,6 +41,10 @@
                                     <ComboBoxItem IsSelected="{Binding Path=PlayerSettings.SelectedRace, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static ret:Races.BloodElf}}">Blood Elf</ComboBoxItem>
                                 </ComboBox>
                             </Grid>
+                            <StackPanel>
+                                <RadioButton Margin="0,2,0,2" x:Name="Aldor" Content="Aldor" GroupName="ShattrathFaction" IsChecked="{Binding Path=PlayerSettings.SelectedShattrathFaction, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static ret3:ShattrathFaction.Aldor}}"/>
+                                <RadioButton Margin="0,2,0,2" x:Name="Scryer" Content="Scryer" GroupName="ShattrathFaction" IsChecked="{Binding Path=PlayerSettings.SelectedShattrathFaction, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static ret3:ShattrathFaction.Scryer}}"/>
+                            </StackPanel>
                         </StackPanel>
                     </GroupBox>
                     <GroupBox Margin="5" Height="110">

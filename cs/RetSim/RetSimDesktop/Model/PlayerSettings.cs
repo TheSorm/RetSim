@@ -1,4 +1,5 @@
-﻿using RetSim.Units.Player.Static;
+﻿using RetSim.Units.Player;
+using RetSim.Units.Player.Static;
 using System.ComponentModel;
 
 namespace RetSimDesktop.Model
@@ -6,6 +7,7 @@ namespace RetSimDesktop.Model
     public class PlayerSettings : INotifyPropertyChanged
     {
         private Races selectedRace = Races.Human;
+        private ShattrathFaction selectedShattrathFaction = ShattrathFaction.Aldor;
 
         public Races SelectedRace
         {
@@ -14,6 +16,15 @@ namespace RetSimDesktop.Model
             {
                 selectedRace = value;
                 OnPropertyChanged(nameof(SelectedRace));
+            }
+        }
+        public ShattrathFaction SelectedShattrathFaction
+        {
+            get => selectedShattrathFaction;
+            set
+            {
+                selectedShattrathFaction = value;
+                OnPropertyChanged(nameof(SelectedShattrathFaction));
             }
         }
 

@@ -30,6 +30,7 @@ namespace RetSimDesktop.View
                 Tuple<RetSimUIModel, IEnumerable<DisplayWeapon>, int> input = (Tuple<RetSimUIModel, IEnumerable<DisplayWeapon>, int>)e.Argument;
 
                 var race = input.Item1.PlayerSettings.SelectedRace;
+                var shattrathFaction = input.Item1.PlayerSettings.SelectedShattrathFaction;
                 var encounterID = input.Item1.EncounterSettings.EncounterID;
 
                 var numberOfSimulations = input.Item1.SimSettings.SimulationCount;
@@ -64,7 +65,7 @@ namespace RetSimDesktop.View
                         }
                     }
 
-                    simExecuter[freeThread] = new(Collections.Races[race.ToString()], Collections.Bosses[encounterID], playerEquipment, talents, buffs, debuffs, consumables,
+                    simExecuter[freeThread] = new(Collections.Races[race.ToString()], shattrathFaction, Collections.Bosses[encounterID], playerEquipment, talents, buffs, debuffs, consumables,
                                 minDuration, maxDuration, numberOfSimulations, item);
                     threads[freeThread] = new(new ThreadStart(simExecuter[freeThread].Execute));
                     threads[freeThread].Start();
@@ -85,6 +86,7 @@ namespace RetSimDesktop.View
     public class WeaponSimExecuter
     {
         private readonly Race race;
+        private readonly ShattrathFaction shattrathFaction;
         private readonly Boss encounter;
         private readonly Equipment playerEquipment;
         private readonly List<Talent> talents;
@@ -96,9 +98,10 @@ namespace RetSimDesktop.View
         public readonly int numberOfSimulations;
         private readonly DisplayWeapon item;
 
-        public WeaponSimExecuter(Race race, Boss encounter, Equipment playerEquipment, List<Talent> talents, List<Spell> buffs, List<Spell> debuffs, List<Spell> consumables, int minFightDuration, int maxFightDuration, int numberOfSimulations, DisplayWeapon item)
+        public WeaponSimExecuter(Race race, ShattrathFaction shattrathFaction, Boss encounter, Equipment playerEquipment, List<Talent> talents, List<Spell> buffs, List<Spell> debuffs, List<Spell> consumables, int minFightDuration, int maxFightDuration, int numberOfSimulations, DisplayWeapon item)
         {
             this.race = race;
+            this.shattrathFaction = shattrathFaction;
             this.encounter = encounter;
             this.playerEquipment = playerEquipment;
             this.talents = talents;
@@ -116,7 +119,7 @@ namespace RetSimDesktop.View
             float overallDPS = 0;
             for (int i = 0; i < numberOfSimulations; i++)
             {
-                FightSimulation fight = new(new Player("Brave Hero", race, ShattrathFaction.Aldor, playerEquipment, talents), new Enemy(encounter), new EliteTactic(), buffs, debuffs, consumables, minFightDuration, maxFightDuration);
+                FightSimulation fight = new(new Player("Brave Hero", race, shattrathFaction, playerEquipment, talents), new Enemy(encounter), new EliteTactic(), buffs, debuffs, consumables, minFightDuration, maxFightDuration);
                 fight.Run();
                 overallDPS += fight.CombatLog.DPS;
                 item.DPS = overallDPS / (i + 1);

@@ -28,6 +28,7 @@ namespace RetSimDesktop.View
             if (e.Argument is RetSimUIModel retSimUIModel)
             {
                 var race = retSimUIModel.PlayerSettings.SelectedRace;
+                var shattrathFaction = retSimUIModel.PlayerSettings.SelectedShattrathFaction;
                 var encounterID = retSimUIModel.EncounterSettings.EncounterID;
 
                 var numberOfSimulations = retSimUIModel.SimSettings.SimulationCount;
@@ -51,14 +52,14 @@ namespace RetSimDesktop.View
                     {
                         if (simulationsDistributed + simulationsPerThread <= numberOfSimulations)
                         {
-                            simExecuter[i] = new(Collections.Races[race.ToString()], Collections.Bosses[encounterID], playerEquipment, talents, buffs, debuffs, consumables,
+                            simExecuter[i] = new(Collections.Races[race.ToString()], shattrathFaction, Collections.Bosses[encounterID], playerEquipment, talents, buffs, debuffs, consumables,
                                 minDuration, maxDuration,
                                 combatLogs, simulationsDistributed, simulationsPerThread);
                             simulationsDistributed += simulationsPerThread;
                         }
                         else
                         {
-                            simExecuter[i] = new(Collections.Races[race.ToString()], Collections.Bosses[encounterID], playerEquipment, talents, buffs, debuffs, consumables,
+                            simExecuter[i] = new(Collections.Races[race.ToString()], shattrathFaction, Collections.Bosses[encounterID], playerEquipment, talents, buffs, debuffs, consumables,
                                 minDuration, maxDuration,
                                 combatLogs, simulationsDistributed, numberOfSimulations - simulationsDistributed);
                             simulationsDistributed += numberOfSimulations - simulationsDistributed;
@@ -131,6 +132,7 @@ namespace RetSimDesktop.View
     public class SimExecuter
     {
         private readonly Race race;
+        private readonly ShattrathFaction shattrathFaction;
         private readonly Boss encounter;
         private readonly Equipment playerEquipment;
         private readonly List<Talent> talents;
@@ -143,9 +145,10 @@ namespace RetSimDesktop.View
         public readonly int startIndex;
         public readonly int length;
 
-        public SimExecuter(Race race, Boss encounter, Equipment playerEquipment, List<Talent> talents, List<Spell> buffs, List<Spell> debuffs, List<Spell> consumables, int minFightDuration, int maxFightDuration, CombatLog[] combatLogs, int startIndex, int length)
+        public SimExecuter(Race race, ShattrathFaction shattrathFaction, Boss encounter, Equipment playerEquipment, List<Talent> talents, List<Spell> buffs, List<Spell> debuffs, List<Spell> consumables, int minFightDuration, int maxFightDuration, CombatLog[] combatLogs, int startIndex, int length)
         {
             this.race = race;
+            this.shattrathFaction = shattrathFaction;
             this.encounter = encounter;
             this.playerEquipment = playerEquipment;
             this.talents = talents;
@@ -163,7 +166,7 @@ namespace RetSimDesktop.View
         {
             for (int i = startIndex; i < startIndex + length; i++)
             {
-                FightSimulation fight = new(new Player("Brave Hero", race, ShattrathFaction.Aldor, playerEquipment, talents), new Enemy(encounter), new EliteTactic(), buffs, debuffs, consumables, minFightDuration, maxFightDuration);
+                FightSimulation fight = new(new Player("Brave Hero", race, shattrathFaction, playerEquipment, talents), new Enemy(encounter), new EliteTactic(), buffs, debuffs, consumables, minFightDuration, maxFightDuration);
                 fight.Run();
                 combatLogs[i] = fight.CombatLog;
             }

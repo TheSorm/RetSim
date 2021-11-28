@@ -4,7 +4,6 @@ A WoW TBC Classic Retribution Paladin Simulator
 ## DESKTOP VERSION
 * Stat weights screen
 * Add hunter agility input field that calls Data.Manager.RecalculateExposeWeakness(value)
-* Add Shattrath faction selection
 * Settings
   * Select all gems without changing the selected items
 * Make it prettier
