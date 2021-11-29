@@ -5,17 +5,6 @@ namespace RetSimDesktop.Model
     public class SimButtonStatus : INotifyPropertyChanged
     {
         private bool isSimButtonEnabled;
-        private bool isGearSimButtonEnabled;
-
-        public bool IsGearSimButtonEnabled
-        {
-            get { return isGearSimButtonEnabled; }
-            set
-            {
-                isGearSimButtonEnabled = value;
-                OnPropertyChanged(nameof(IsGearSimButtonEnabled));
-            }
-        }
 
         public bool IsSimButtonEnabled
         {

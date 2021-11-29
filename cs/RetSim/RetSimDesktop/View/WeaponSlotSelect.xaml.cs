@@ -223,7 +223,6 @@ namespace RetSimDesktop
         {
             if (!weaponSimWorker.IsBusy && DataContext is RetSimUIModel retSimUIModel)
             {
-                retSimUIModel.SimButtonStatus.IsGearSimButtonEnabled = false;
                 retSimUIModel.SimButtonStatus.IsSimButtonEnabled = false;
                 weaponSimWorker.RunWorkerAsync(new Tuple<RetSimUIModel, IEnumerable<DisplayWeapon>, int>(retSimUIModel, WeaponList, Constants.EquipmentSlots.Weapon));
             }

@@ -17,13 +17,14 @@
         <Border BorderBrush="Gray" BorderThickness="0,0,1,0" Margin="0,0,2,0">
             <Grid Margin="0,0,0,5">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="60" />
+                    <RowDefinition Height="80" />
                     <RowDefinition Height="*" />
                     <RowDefinition Height="100" />
                 </Grid.RowDefinitions>
                 <StackPanel Grid.Row="0" VerticalAlignment="Top" HorizontalAlignment="Center" Width="200">
                     <Button BorderThickness="1,1,0,1" x:Name="GearButton" IsEnabled="False" Content="Gear" Click="Gear_Click"/>
                     <Button BorderThickness="1,0,0,1" x:Name="SettingsButton" Content="Settings" Click="Settings_Click"/>
+                    <Button BorderThickness="1,0,0,1" x:Name="StatWeightsButton" Content="Stat Weights" Click="StatWeights_Click"/>
                     <Button BorderThickness="1,0,0,1" x:Name="StatisticsButton" Content="Statistics" Click="Statistics_Click"/>
                 </StackPanel>
                 <local:StatPanel Grid.Row="1" Width="200" VerticalAlignment="Center" HorizontalAlignment="Center"/>
@@ -61,6 +62,7 @@
         </Border>
         <local:GearSelect x:Name="GearSelect"  Grid.Column="1"/>
         <local:Settings Visibility="Hidden" x:Name="Settings" Grid.Column="1"/>
+        <local:StatWeights Visibility="Hidden" x:Name="StatWeights" Grid.Column="1"/>
         <local:Statistics Visibility="Hidden" x:Name="Statistics" Grid.Column="1"/>
     </Grid>
 </Window>

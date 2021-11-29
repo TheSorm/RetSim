@@ -5,7 +5,7 @@ public static class RNG
     private static readonly Random global = new();
 
     [ThreadStatic]
-    private static Random local;
+    public static Random local;
 
     private static int Generate(int min, int max)
     {
