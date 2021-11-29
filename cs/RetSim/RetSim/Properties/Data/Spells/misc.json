@@ -55,15 +55,8 @@
       "Duration": 15000,
       "Effects": [
         {
-          "EffectType": "ModStat",
-          "Stats": [
-            "HasteRating"
-          ],
-          "Value": 200
-        },
-        {
           "EffectType": "ModAttackSpeed",
-          "Value": 0
+          "HasteRating": 200
         }
       ]
     }
@@ -220,17 +213,10 @@
     "Cooldown": 120000,
     "Aura": {
       "Duration": 10000,
-      "Effects": [
-        {
-          "EffectType": "ModStat",
-          "Stats": [
-            "HasteRating"
-          ],
-          "Value": 260
-        },
+      "Effects": [        
         {
           "EffectType": "ModAttackSpeed",
-          "Value": 0
+          "HasteRating": 260
         }
       ]
     }
@@ -428,17 +414,10 @@
     "Name": "Dragonspine Trophy",
     "Aura": {
       "Duration": 10000,
-      "Effects": [
-        {
-          "EffectType": "ModStat",
-          "Stats": [
-            "HasteRating"
-          ],
-          "Value": 325
-        },
+      "Effects": [        
         {
           "EffectType": "ModAttackSpeed",
-          "Value": 0
+          "HasteRating": 325
         }
       ]
     }
@@ -637,17 +616,10 @@
     "Name": "The Blade\u0027s Song",
     "Aura": {
       "Duration": 10000,
-      "Effects": [
-        {
-          "EffectType": "ModStat",
-          "Stats": [
-            "HasteRating"
-          ],
-          "Value": 400
-        },
+      "Effects": [        
         {
           "EffectType": "ModAttackSpeed",
-          "Value": 0
+          "HasteRating": 400
         }
       ]
     }

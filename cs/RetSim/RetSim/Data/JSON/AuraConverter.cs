@@ -44,7 +44,10 @@ public class AuraConverter : JsonConverter<Aura>
                         break;
 
                     case "ModAttackSpeed":
-                        effects.Add(new ModAttackSpeed(value));
+
+                        int hasteRating = (int)(jo["Effects"][i]["HasteRating"] ?? 0);
+
+                        effects.Add(new ModAttackSpeed(value, hasteRating));
                         break;
 
                     case "ModCastSpeed":
@@ -160,6 +163,9 @@ public class AuraConverter : JsonConverter<Aura>
                         for (int j = 0; j < msStatsCount; j++)
                         {
                             msStats.Add(Enum.Parse<StatName>((string)jo["Effects"][i]["Stats"][j]));
+
+                            if (msStats[j] == StatName.HasteRating)
+                                throw new Exception("NOOO WHY IS THERE HASTE HERE");
                         }
 
                         effects.Add(new ModStat(value, msStats));

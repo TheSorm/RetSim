@@ -345,17 +345,10 @@
     "Target": "Self",
     "Aura": {
       "Duration": 15000,
-      "Effects": [
-        {
-          "EffectType": "ModStat",
-          "Stats": [
-            "HasteRating"
-          ],
-          "Value": 400
-        },
+      "Effects": [        
         {
           "EffectType": "ModAttackSpeed",
-          "Value": 0
+          "HasteRating": 400
         }
       ]
     }
@@ -598,16 +591,15 @@
       "Duration": 30000,
       "Effects": [
         {
+          "EffectType": "ModAttackSpeed",
+          "HasteRating": 80
+        },
+        {
           "EffectType": "ModStat",
           "Stats": [
-            "HasteRating",
             "SpellHasteRating"
           ],
           "Value": 80
-        },
-        {
-          "EffectType": "ModAttackSpeed",
-          "Value": 0
         }
       ]
     }
