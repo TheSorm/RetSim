@@ -2,7 +2,7 @@
 
 public static class RNG
 {
-    private static readonly Random global = new();
+    public static readonly Random global = new();
 
     [ThreadStatic]
     public static Random local;

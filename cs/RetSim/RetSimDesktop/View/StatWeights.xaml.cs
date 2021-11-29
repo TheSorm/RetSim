@@ -28,6 +28,28 @@ namespace RetSimDesktop
             InitializeComponent();
         }
 
+        private void ChkSelectAll_Checked(object sender, RoutedEventArgs e)
+        {
+            if (DataContext is RetSimUIModel retSimUIModel)
+            {
+                foreach (var displayStatWeight in retSimUIModel.DisplayStatWeights)
+                {
+                    displayStatWeight.EnabledForStatWeight = true;
+                }
+            }
+        }
+
+        private void ChkSelectAll_Unchecked(object sender, RoutedEventArgs e)
+        {
+            if (DataContext is RetSimUIModel retSimUIModel)
+            {
+                foreach (var displayStatWeight in retSimUIModel.DisplayStatWeights)
+                {
+                    displayStatWeight.EnabledForStatWeight = false;
+                }
+            }
+        }
+
         private void StatWeightSimButton_Click(object sender, RoutedEventArgs e)
         {
             if (!statWeightWorker.IsBusy && DataContext is RetSimUIModel retSimUIModel)

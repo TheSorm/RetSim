@@ -13,7 +13,7 @@
             <RowDefinition Height="*" />
             <RowDefinition Height="30px" />
         </Grid.RowDefinitions>
-        <DataGrid Name="statWightsGrid" ItemsSource="{Binding DisplayStatWeights}" ColumnWidth="*" GridLinesVisibility="Horizontal" IsReadOnly="True" SelectionMode="Single" HeadersVisibility="Column" CanUserResizeColumns="False" CanUserResizeRows="False" AutoGenerateColumns="False">
+        <DataGrid Name="statWightsGrid" ItemsSource="{Binding DisplayStatWeights}" ColumnWidth="*" GridLinesVisibility="Horizontal" IsReadOnly="True" HeadersVisibility="Column" CanUserResizeColumns="False" CanUserResizeRows="False" AutoGenerateColumns="False">
             <DataGrid.Resources>
                 <Style TargetType="{x:Type DataGridCell}">
                     <Style.Triggers>
@@ -21,10 +21,22 @@
                             <Setter Property="Background" Value="#0078d7" />
                             <Setter Property="BorderBrush" Value="#0078d7" />
                         </Trigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsMouseOver" Value="True"/>
+                                <Condition Property="IsReadOnly" Value="False"/>
+                            </MultiTrigger.Conditions>
+                            <Setter Property="IsEditing" Value="True" />
+                        </MultiTrigger>
                     </Style.Triggers>
                 </Style>
             </DataGrid.Resources>
             <DataGrid.Columns>
+                <DataGridCheckBoxColumn MinWidth="27" Width="27" MaxWidth="27" CanUserSort="False" IsReadOnly="False" IsThreeState="False" Binding="{Binding EnabledForStatWeight, UpdateSourceTrigger=PropertyChanged}" >
+                    <DataGridCheckBoxColumn.Header>
+                        <CheckBox Name="chkSelectAll" IsChecked="True" Checked="ChkSelectAll_Checked" Unchecked="ChkSelectAll_Unchecked"></CheckBox>
+                    </DataGridCheckBoxColumn.Header>
+                </DataGridCheckBoxColumn>
                 <DataGridTextColumn MinWidth="240" CanUserReorder="False" Header="Name" Binding="{Binding Name}" />
                 <DataGridTextColumn MinWidth="55" MaxWidth="300" CanUserReorder="False" Header="DPS Delta" Binding="{Binding DpsDelta}" >
                     <DataGridTextColumn.HeaderStyle>
