@@ -1,4 +1,5 @@
 ﻿using RetSim.Items;
+using RetSim.Units.UnitStats;
 using RetSimDesktop.Model;
 using System;
 using System.Collections.Generic;
@@ -26,6 +27,7 @@ namespace RetSimDesktop.ViewModel
         private SimSettings _SimSettings;
         private SimButtonStatus _SimButtonStatus;
         private TooltipSettings _TooltipSettings;
+        private List<DisplayStatWeights> _DisplayStatWeights;
         private Dictionary<Slot, Dictionary<int, List<DisplayGear>>> _GearByPhases;
         private Dictionary<int, DisplayGear> _AllGear;
         private Dictionary<WeaponType, Dictionary<int, List<DisplayWeapon>>> _WeaponsByPhases;
@@ -54,9 +56,24 @@ namespace RetSimDesktop.ViewModel
 
             _SimSettings = new();
 
+            _DisplayStatWeights = new();
+
+            _DisplayStatWeights.Add(new DisplayStatWeights() { Stat = StatName.Stamina, EnabledForStatWeight=true, IncreasedAmount = 0, Name = "Base", DpsDelta = 0, StatPerDps = 0 });
+            _DisplayStatWeights.Add(new DisplayStatWeights() { Stat = StatName.Strength, EnabledForStatWeight = true, IncreasedAmount = 25, Name = "Strength", DpsDelta = 0, StatPerDps = 0 });
+            _DisplayStatWeights.Add(new DisplayStatWeights() { Stat = StatName.AttackPower, EnabledForStatWeight = true, IncreasedAmount = 50, Name = "Attack Power", DpsDelta = 0, StatPerDps = 0 });
+            _DisplayStatWeights.Add(new DisplayStatWeights() { Stat = StatName.Agility, EnabledForStatWeight = true, IncreasedAmount = 1, Name = "Agility", DpsDelta = 0, StatPerDps = 0 });
+            _DisplayStatWeights.Add(new DisplayStatWeights() { Stat = StatName.CritRating, EnabledForStatWeight = true, IncreasedAmount = 1, Name = "Crit Rating", DpsDelta = 0, StatPerDps = 0 });
+            _DisplayStatWeights.Add(new DisplayStatWeights() { Stat = StatName.HitRating, EnabledForStatWeight = true, IncreasedAmount = 1, Name = "Hit Rating", DpsDelta = 0, StatPerDps = 0 });
+            _DisplayStatWeights.Add(new DisplayStatWeights() { Stat = StatName.HasteRating, EnabledForStatWeight = true, IncreasedAmount = 1, Name = "Haste Rating", DpsDelta = 0, StatPerDps = 0 });
+            _DisplayStatWeights.Add(new DisplayStatWeights() { Stat = StatName.ExpertiseRating, EnabledForStatWeight = true, IncreasedAmount = 1, Name = "Expertise Rating", DpsDelta = 0, StatPerDps = 0 });
+            _DisplayStatWeights.Add(new DisplayStatWeights() { Stat = StatName.ArmorPenetration, EnabledForStatWeight = true, IncreasedAmount = 1, Name = "Armor Penetration", DpsDelta = 0, StatPerDps = 0 });
+            _DisplayStatWeights.Add(new DisplayStatWeights() { Stat = StatName.SpellPower, EnabledForStatWeight = true, IncreasedAmount = 25, Name = "Spell Power", DpsDelta = 0, StatPerDps = 0 });
+            _DisplayStatWeights.Add(new DisplayStatWeights() { Stat = StatName.SpellCritRating, EnabledForStatWeight = true, IncreasedAmount = 1, Name = "Spell-Crit Rating", DpsDelta = 0, StatPerDps = 0 });
+            _DisplayStatWeights.Add(new DisplayStatWeights() { Stat = StatName.SpellHitRating, EnabledForStatWeight = true, IncreasedAmount = 1, Name = "Spell-Hit Rating", DpsDelta = 0, StatPerDps = 0 });
+            _DisplayStatWeights.Add(new DisplayStatWeights() { Stat = StatName.Intellect, EnabledForStatWeight = true, IncreasedAmount = 1, Name = "Intellect", DpsDelta = 0, StatPerDps = 0 });
+
             _SimButtonStatus = new()
             {
-                IsGearSimButtonEnabled = true,
                 IsSimButtonEnabled = true,
             };
 
@@ -236,6 +253,13 @@ namespace RetSimDesktop.ViewModel
         {
             get { return _SimButtonStatus; }
             set { _SimButtonStatus = value; }
+        }
+
+        [JsonIgnore]
+        public List<DisplayStatWeights> DisplayStatWeights
+        {
+            get { return _DisplayStatWeights; }
+            set { _DisplayStatWeights = value; }
         }
 
         public PlayerSettings PlayerSettings

@@ -78,7 +78,6 @@ namespace RetSimDesktop.View
                 }
 
                 input.Item1.SimButtonStatus.IsSimButtonEnabled = true;
-                input.Item1.SimButtonStatus.IsGearSimButtonEnabled = true;
             }
         }
     }

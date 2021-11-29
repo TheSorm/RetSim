@@ -120,7 +120,6 @@ namespace RetSimDesktop.View
                 retSimUIModel.CurrentSimOutput.Min = minSimulation.DPS;
                 retSimUIModel.CurrentSimOutput.Max = maxSimulation.DPS;
                 retSimUIModel.SimButtonStatus.IsSimButtonEnabled = true;
-                retSimUIModel.SimButtonStatus.IsGearSimButtonEnabled = true;
 
                 Array.Clear(combatLogs);
                 Array.Clear(threads);
