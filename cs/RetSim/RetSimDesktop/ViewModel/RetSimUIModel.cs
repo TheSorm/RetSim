@@ -58,7 +58,7 @@ namespace RetSimDesktop.ViewModel
 
             _DisplayStatWeights = new();
 
-            _DisplayStatWeights.Add(new DisplayStatWeights() { Stat = StatName.Stamina, EnabledForStatWeight=true, IncreasedAmount = 0, Name = "Base", DpsDelta = 0, StatPerDps = 0 });
+            _DisplayStatWeights.Add(new DisplayStatWeights() { Stat = StatName.Stamina, EnabledForStatWeight = true, IncreasedAmount = 0, Name = "Base", DpsDelta = 0, StatPerDps = 0 });
             _DisplayStatWeights.Add(new DisplayStatWeights() { Stat = StatName.Strength, EnabledForStatWeight = true, IncreasedAmount = 25, Name = "Strength", DpsDelta = 0, StatPerDps = 0 });
             _DisplayStatWeights.Add(new DisplayStatWeights() { Stat = StatName.AttackPower, EnabledForStatWeight = true, IncreasedAmount = 50, Name = "Attack Power", DpsDelta = 0, StatPerDps = 0 });
             _DisplayStatWeights.Add(new DisplayStatWeights() { Stat = StatName.Agility, EnabledForStatWeight = true, IncreasedAmount = 1, Name = "Agility", DpsDelta = 0, StatPerDps = 0 });

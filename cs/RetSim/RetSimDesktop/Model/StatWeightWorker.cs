@@ -59,7 +59,7 @@ namespace RetSimDesktop.Model
 
                 foreach (var item in retSimUIModel.DisplayStatWeights)
                 {
-                    if(item.Stat == StatName.Stamina || !item.EnabledForStatWeight)
+                    if (item.Stat == StatName.Stamina || !item.EnabledForStatWeight)
                     {
                         continue;
                     }
@@ -151,10 +151,11 @@ namespace RetSimDesktop.Model
             }
             dps /= iterationCount;
             statWeightsDisplay.DpsDelta = (dps - baseDps) / statWeightsDisplay.IncreasedAmount;
-            if(statWeightsDisplay.DpsDelta != 0)
+            if (statWeightsDisplay.DpsDelta != 0)
             {
                 statWeightsDisplay.StatPerDps = 1f / statWeightsDisplay.DpsDelta;
-            }else
+            }
+            else
             {
                 statWeightsDisplay.StatPerDps = 0;
             }
