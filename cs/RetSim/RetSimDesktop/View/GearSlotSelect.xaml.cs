@@ -199,7 +199,7 @@ namespace RetSimDesktop
             if (!gearSimWorker.IsBusy && DataContext is RetSimUIModel retSimUIModel)
             {
                 retSimUIModel.SimButtonStatus.IsSimButtonEnabled = false;
-                gearSimWorker.RunWorkerAsync(retSimUIModel);
+                gearSimWorker.RunWorkerAsync(new Tuple<RetSimUIModel, IEnumerable<DisplayGear>, int>(retSimUIModel, SlotList, SlotID));
             }
         }
 
