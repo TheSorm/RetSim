@@ -40,4 +40,8 @@ public class Stats
     public float EffectiveCastSpeed => (1 + this[StatName.SpellHaste].Value * 0.01f) * Parent.Modifiers.CastSpeed;
 
     public int EffectiveGCD(Spell spell) => Math.Max((int)(spell.GCD.Duration / EffectiveCastSpeed), Constants.Numbers.MinimumGCD);
+
+    public float CritAuraSuppression => Math.Min(this[StatName.CritChance].Bonus, Constants.Boss.CritAuraSuppression);
+
+    public float EffectiveCritChance => Math.Max(this[StatName.CritChance].Value - Constants.Boss.CritSuppression - CritAuraSuppression, 0);
 }

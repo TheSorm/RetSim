@@ -184,7 +184,7 @@ public class Attack
     {
         return category switch
         {
-            AttackCategory.Physical => player.Stats[StatName.CritChance].Value,
+            AttackCategory.Physical => player.Stats.EffectiveCritChance,
             AttackCategory.Spell => player.Stats[StatName.SpellCrit].Value,
             _ => 0f
         };

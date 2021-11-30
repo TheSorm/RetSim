@@ -1,4 +1,5 @@
 ﻿using RetSim.Items;
+using RetSim.Misc;
 using RetSim.Units.UnitStats;
 using RetSimDesktop.Model;
 using System;
@@ -59,18 +60,19 @@ namespace RetSimDesktop.ViewModel
             _DisplayStatWeights = new();
 
             _DisplayStatWeights.Add(new DisplayStatWeights() { Stat = StatName.Stamina, EnabledForStatWeight=true, IncreasedAmount = 0, Name = "Base", DpsDelta = 0, StatPerDps = 0 });
-            _DisplayStatWeights.Add(new DisplayStatWeights() { Stat = StatName.Strength, EnabledForStatWeight = true, IncreasedAmount = 25, Name = "Strength", DpsDelta = 0, StatPerDps = 0 });
-            _DisplayStatWeights.Add(new DisplayStatWeights() { Stat = StatName.AttackPower, EnabledForStatWeight = true, IncreasedAmount = 50, Name = "Attack Power", DpsDelta = 0, StatPerDps = 0 });
-            _DisplayStatWeights.Add(new DisplayStatWeights() { Stat = StatName.Agility, EnabledForStatWeight = true, IncreasedAmount = 1, Name = "Agility", DpsDelta = 0, StatPerDps = 0 });
-            _DisplayStatWeights.Add(new DisplayStatWeights() { Stat = StatName.CritRating, EnabledForStatWeight = true, IncreasedAmount = 1, Name = "Crit Rating", DpsDelta = 0, StatPerDps = 0 });
-            _DisplayStatWeights.Add(new DisplayStatWeights() { Stat = StatName.HitRating, EnabledForStatWeight = true, IncreasedAmount = 1, Name = "Hit Rating", DpsDelta = 0, StatPerDps = 0 });
-            _DisplayStatWeights.Add(new DisplayStatWeights() { Stat = StatName.HasteRating, EnabledForStatWeight = true, IncreasedAmount = 1, Name = "Haste Rating", DpsDelta = 0, StatPerDps = 0 });
-            _DisplayStatWeights.Add(new DisplayStatWeights() { Stat = StatName.ExpertiseRating, EnabledForStatWeight = true, IncreasedAmount = 1, Name = "Expertise Rating", DpsDelta = 0, StatPerDps = 0 });
-            _DisplayStatWeights.Add(new DisplayStatWeights() { Stat = StatName.ArmorPenetration, EnabledForStatWeight = true, IncreasedAmount = 1, Name = "Armor Penetration", DpsDelta = 0, StatPerDps = 0 });
-            _DisplayStatWeights.Add(new DisplayStatWeights() { Stat = StatName.SpellPower, EnabledForStatWeight = true, IncreasedAmount = 25, Name = "Spell Power", DpsDelta = 0, StatPerDps = 0 });
-            _DisplayStatWeights.Add(new DisplayStatWeights() { Stat = StatName.SpellCritRating, EnabledForStatWeight = true, IncreasedAmount = 1, Name = "Spell-Crit Rating", DpsDelta = 0, StatPerDps = 0 });
-            _DisplayStatWeights.Add(new DisplayStatWeights() { Stat = StatName.SpellHitRating, EnabledForStatWeight = true, IncreasedAmount = 1, Name = "Spell-Hit Rating", DpsDelta = 0, StatPerDps = 0 });
-            _DisplayStatWeights.Add(new DisplayStatWeights() { Stat = StatName.Intellect, EnabledForStatWeight = true, IncreasedAmount = 1, Name = "Intellect", DpsDelta = 0, StatPerDps = 0 });
+            _DisplayStatWeights.Add(new DisplayStatWeights() { Stat = StatName.Strength, EnabledForStatWeight = true, IncreasedAmount = 100, Name = "Strength", DpsDelta = 0, StatPerDps = 0 });
+            _DisplayStatWeights.Add(new DisplayStatWeights() { Stat = StatName.AttackPower, EnabledForStatWeight = true, IncreasedAmount = 100 * Constants.Stats.APPerStrength, Name = "Attack Power", DpsDelta = 0, StatPerDps = 0 });
+            _DisplayStatWeights.Add(new DisplayStatWeights() { Stat = StatName.Agility, EnabledForStatWeight = true, IncreasedAmount = Constants.Stats.AgilityPerCrit * 4, Name = "Agility", DpsDelta = 0, StatPerDps = 0 });
+            _DisplayStatWeights.Add(new DisplayStatWeights() { Stat = StatName.CritRating, EnabledForStatWeight = true, IncreasedAmount = Constants.Ratings.Crit, Name = "Crit Rating", DpsDelta = 0, StatPerDps = 0 });
+            _DisplayStatWeights.Add(new DisplayStatWeights() { Stat = StatName.HitRating, EnabledForStatWeight = true, IncreasedAmount = Constants.Ratings.Hit, Name = "Hit Rating", DpsDelta = 0, StatPerDps = 0 });
+            _DisplayStatWeights.Add(new DisplayStatWeights() { Stat = StatName.HasteRating, EnabledForStatWeight = true, IncreasedAmount = Constants.Ratings.Haste, Name = "Haste Rating", DpsDelta = 0, StatPerDps = 0 });
+            _DisplayStatWeights.Add(new DisplayStatWeights() { Stat = StatName.ExpertiseRating, EnabledForStatWeight = true, IncreasedAmount = Constants.Ratings.Expertise, Name = "Expertise Rating", DpsDelta = 0, StatPerDps = 0 });
+            _DisplayStatWeights.Add(new DisplayStatWeights() { Stat = StatName.ExpertiseRating, EnabledForStatWeight = true, IncreasedAmount = 1, Name = "Expertise Rating 1", DpsDelta = 0, StatPerDps = 0 });
+            _DisplayStatWeights.Add(new DisplayStatWeights() { Stat = StatName.ArmorPenetration, EnabledForStatWeight = true, IncreasedAmount = 150, Name = "Armor Penetration", DpsDelta = 0, StatPerDps = 0 });
+            _DisplayStatWeights.Add(new DisplayStatWeights() { Stat = StatName.SpellPower, EnabledForStatWeight = true, IncreasedAmount = 100, Name = "Spell Power", DpsDelta = 0, StatPerDps = 0 });
+            _DisplayStatWeights.Add(new DisplayStatWeights() { Stat = StatName.SpellCritRating, EnabledForStatWeight = true, IncreasedAmount = Constants.Ratings.SpellCrit, Name = "Spell-Crit Rating", DpsDelta = 0, StatPerDps = 0 });
+            _DisplayStatWeights.Add(new DisplayStatWeights() { Stat = StatName.SpellHitRating, EnabledForStatWeight = true, IncreasedAmount = Constants.Ratings.SpellHit, Name = "Spell-Hit Rating", DpsDelta = 0, StatPerDps = 0 });
+            _DisplayStatWeights.Add(new DisplayStatWeights() { Stat = StatName.Intellect, EnabledForStatWeight = true, IncreasedAmount = Constants.Stats.IntellectPerSpellCrit, Name = "Intellect", DpsDelta = 0, StatPerDps = 0 });
 
             _SimButtonStatus = new()
             {
