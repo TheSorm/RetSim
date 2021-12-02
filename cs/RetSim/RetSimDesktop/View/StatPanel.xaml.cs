@@ -113,6 +113,7 @@ namespace RetSimDesktop
                 var critChanceBonus = $"Bonus: {player.Stats[StatName.CritChance].Gear + player.Stats[StatName.CritChance].Bonus}%";
                 var critChanceAgility = $"Agility Bonus: {player.Stats[StatName.CritChance].SupportValue:0.##}%";
                 var critRating = $"Rating: {player.Stats[StatName.CritRating].Value} (+{player.Stats[StatName.CritChance].RatingValue:0.##}%)";
+                var critEffective = $"Effective crit chance against bosses: {player.Stats.EffectiveCritChance:0.##}%";
 
                 var missChance = Math.Max(player.Stats.EffectiveMissChance - fight.Enemy.Stats[StatName.IncreasedAttackerHitChance].Value, 0);
                 var dodgeChance = player.Stats.EffectiveDodgeChance;
@@ -121,7 +122,7 @@ namespace RetSimDesktop
 
                 var critResult = $"Crit caps: {autoCap:0.##}% (White) / {specialCap:0.##}% (Special)";
 
-                CritPercentage.ToolTip = new ToolTip { Content = $"{critChanceBase}\n{critRating}\n{critChanceBonus}\n{critChanceAgility}\n\n{critResult}" };
+                CritPercentage.ToolTip = new ToolTip { Content = $"{critChanceBase}\n{critRating}\n{critChanceBonus}\n{critChanceAgility}\n\n{critResult}\n{critEffective}" };
 
                 var hitChanceBonus = $"Bonus: {player.Stats[StatName.HitChance].Gear + player.Stats[StatName.HitChance].Bonus}%";
                 var hitChanceRating = $"Rating: {player.Stats[StatName.HitRating].Value} (+{player.Stats[StatName.HitChance].RatingValue:0.##}%)";
