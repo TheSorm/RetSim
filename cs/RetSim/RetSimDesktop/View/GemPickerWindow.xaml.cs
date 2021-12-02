@@ -58,6 +58,7 @@ namespace RetSimDesktop
 
         private void DataGridCell_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
+            Tooltip.Browser.Dispose();
             Tooltip.Browser.Visibility = Visibility.Collapsed;
             Tooltip.Browser = null;
             SelectedGem = (Gem)gemGrid.SelectedItem;
@@ -102,6 +103,16 @@ namespace RetSimDesktop
             Tooltip.ItemId = 0;
             WoWTooltip.TooltipSettings_PropertyChanged(Tooltip, new DependencyPropertyChangedEventArgs());
 
+        }
+
+        private void GemPicker_Closing(object sender, CancelEventArgs e)
+        {
+            if(Tooltip.Browser != null)
+            {
+                Tooltip.Browser.Dispose();
+                Tooltip.Browser.Visibility = Visibility.Collapsed;
+                Tooltip.Browser = null;
+            }
         }
     }
 }

@@ -100,6 +100,10 @@ namespace RetSimDesktop
             {
                 retSimUIModel.Save();
             }
+
+            WoWTooltip.Browser.Dispose();
+            WoWTooltip.Browser.Visibility = Visibility.Collapsed;
+            WoWTooltip.Browser = null;
         }
 
         private void OnTick(object? sender, EventArgs e)
