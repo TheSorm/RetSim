@@ -74,6 +74,7 @@ namespace RetSimDesktop.Model
                                 break;
                             }
                         }
+                        Thread.Sleep(100);
                     }
 
                     simExecuter[freeThread] = new(Collections.Races[race.ToString()], shattrathFaction, Collections.Bosses[encounterID], playerEquipment, talents, buffs, debuffs, consumables,
