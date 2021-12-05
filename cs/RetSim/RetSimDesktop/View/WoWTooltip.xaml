@@ -9,7 +9,7 @@
              xmlns:wv2="clr-namespace:Microsoft.Web.WebView2.Wpf;assembly=Microsoft.Web.WebView2.Wpf"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800" >
-    <Popup Name="TooltipPopUp" Placement="Relative" Focusable="False" IsOpen="False" AllowsTransparency="True" PlacementTarget="{Binding RelativeSource={RelativeSource Self}, Path=PlacementTarget}">
+    <Popup Name="TooltipPopUp" Placement="Relative" Focusable="False"  AllowsTransparency="True" IsOpen="True" PlacementTarget="{Binding RelativeSource={RelativeSource Self}, Path=PlacementTarget}">
         <Grid>
             <wv2:WebView2 Name="Browser" ></wv2:WebView2>
         </Grid>

@@ -75,7 +75,7 @@ namespace RetSimDesktop
         {
             await Browser.EnsureCoreWebView2Async(null);
             Browser.DefaultBackgroundColor = System.Drawing.Color.Transparent;
-            Browser.NavigateToString(@"<head><script>const whTooltips = {colorLinks: false, iconizeLinks: false, renameLinks: false};</script><script src=""https://wow.zamimg.com/widgets/power.js""></script></head><body><script>function test(xPos, yPos) {const event = new MouseEvent('mouseover', {view: window,bubbles: true,cancelable: true, clientX : xPos, clientY : yPos});const cb = document.getElementById('placeholder');const cancelled = !cb.dispatchEvent(event);}</script><a id=""placeholder"" href=""https://tbc.wowhead.com/item=28830""></a></body>");
+            Browser.NavigateToString(@"<head><script>const whTooltips = {colorLinks: false, iconizeLinks: false, renameLinks: false};</script><script src=""https://wow.zamimg.com/widgets/power.js""></script></head><body><script>function test(xPos, yPos) {const event = new MouseEvent('mouseover', {view: window,bubbles: true,cancelable: true, clientX : xPos, clientY : yPos});const cb = document.getElementById('placeholder');const cancelled = !cb.dispatchEvent(event);}</script><a id=""placeholder""></a></body>");
             await Browser.ExecuteScriptAsync("document.querySelector('body').style.overflow='hidden'");
         }
 
