@@ -31,11 +31,15 @@ public class EliteTactic : Tactic
 
     public override List<Event> PreFight(FightSimulation fight)
     {
-        var firstAutoAttack = new AutoAttackEvent(fight, 1501);
+        var spellGCD = fight.Player.Stats.EffectiveGCD(SealOfBlood);
+
+        var firstAutoAttack = new AutoAttackEvent(fight, spellGCD + 1);
         var onStart = new List<Event>()
-            {
-                new CastEvent(SealOfBlood, fight.Player, fight.Player, fight, 0),
-                new CastEvent(AvengingWrath, fight.Player, fight.Player, fight, 1495),
+            {                
+                new CastEvent(SealOfCommand, fight.Player, fight.Player, fight, 0),                
+                //new CastEvent(SealOfBlood, fight.Player, fight.Player, fight, 0),
+                new CastEvent(AvengingWrath, fight.Player, fight.Player, fight, spellGCD - 1),
+                //new CastEvent(CrusaderStrike, fight.Player, fight.Player, fight, spellGCD),
                 //new CastEvent(Heroism, fight.Player, fight.Player, fight, 1495),
                 //new CastEvent(HastePotion, fight.Player, fight.Player, fight, 1495),
                 //new CastEvent(SealOfBlood, fight.Player, fight.Player, fight, 1500),
