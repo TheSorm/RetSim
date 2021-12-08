@@ -34,7 +34,7 @@ public class EliteTactic : Tactic
         var firstAutoAttack = new AutoAttackEvent(fight, 1501);
         var onStart = new List<Event>()
             {
-                new CastEvent(SealOfCommand, fight.Player, fight.Player, fight, 0),
+                new CastEvent(SealOfBlood, fight.Player, fight.Player, fight, 0),
                 new CastEvent(AvengingWrath, fight.Player, fight.Player, fight, 1495),
                 //new CastEvent(Heroism, fight.Player, fight.Player, fight, 1495),
                 //new CastEvent(HastePotion, fight.Player, fight.Player, fight, 1495),
@@ -90,9 +90,9 @@ public class EliteTactic : Tactic
         {
             if (fight.Player.Auras[SealOfCommand.Aura].Active)
             {
-                int sobTwistWindowStart = fight.Player.TimeOfNextSwing() - 399;
-                int sobTwistWindowEnd = fight.Player.TimeOfNextSwing() - 1;
-                if (end >= sobTwistWindowEnd && start <= sobTwistWindowEnd)
+                int sobTwistWindowStart = swing - 399;
+                int sobTwistWindowEnd = swing - 1;
+                if (end >= sobTwistWindowStart && start <= sobTwistWindowEnd)
                     return new CastEvent(SealOfBlood, fight.Player, fight.Player, fight, Math.Max(start, sobTwistWindowStart));
             }
             else
