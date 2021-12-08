@@ -1,12 +1,15 @@
 ﻿using RetSim.Items;
+using RetSim.Misc;
 using RetSim.Simulation;
 using RetSim.Simulation.Events;
 using RetSim.Spells;
+using RetSim.Spells.AuraEffects;
 using RetSim.Spells.SpellEffects;
 using RetSim.Units.Enemy;
 using RetSim.Units.Player.State;
 using RetSim.Units.Player.Static;
 using RetSim.Units.UnitStats;
+using System.Linq;
 
 namespace RetSim.Units.Player;
 
@@ -24,9 +27,52 @@ public class Player : Unit
     public List<Talent> Talents { get; init; }
 
     public AutoAttackEvent NextAutoAttack { get; set; }
-    public int PreviousAutoAttack { get; set; }
 
     private float previousAttackSpeed;
+
+    public List<AuraEndEvent> HasteEndEvents { get; init; }
+    public int EffectiveNextAuto { get; set; }
+
+    public void RecalculateNext()
+    {
+        HasteEndEvents.Sort();
+
+        if (NextAutoAttack == null)
+            return;
+
+        int timeOfSwing = NextAutoAttack.Timestamp;
+
+        float currentModifier = Modifiers.AttackSpeed;
+        float currentRating = Stats[StatName.HasteRating].Value;
+        float currentSpeed = Stats.EffectiveAttackSpeed;
+
+        foreach (AuraEndEvent end in HasteEndEvents)
+        {
+            if (end.Timestamp < timeOfSwing)
+            {
+                ModAttackSpeed effect = end.Aura.Effects.First(x => x is ModAttackSpeed) as ModAttackSpeed;
+
+                float newRating = currentRating - effect.HasteRating;
+                float newModifier = currentModifier / ModifyPercent.GetDifference(effect.Value, Auras[end.Aura].Stacks);
+                float newSpeed = Stats.CalculateEffectiveAttackSpeed(newRating / Constants.Ratings.Haste, newModifier);
+                float ratio = currentSpeed / newSpeed;
+
+                int currentRemaining = timeOfSwing - end.Timestamp;
+                int realRemaining = (int)(currentRemaining * ratio);
+
+                timeOfSwing = end.Timestamp + realRemaining;
+
+                currentSpeed = newSpeed;
+                currentRating = newRating;
+                currentModifier = newModifier;
+            }
+
+            else
+                break;
+        }
+
+        EffectiveNextAuto = timeOfSwing;
+    }
 
     public Player(string name, Race race, ShattrathFaction faction, Equipment equipment, List<Talent> talents, StatSet weights = null) : base(name, CreatureType.Humanoid)
     {
@@ -53,6 +99,8 @@ public class Player : Unit
             Auras.Add(aura);
 
         previousAttackSpeed = Weapon.EffectiveSpeed;
+
+        HasteEndEvents = new();
     }
 
     public override ProcMask Cast(Spell spell, FightSimulation fight)
@@ -91,9 +139,8 @@ public class Player : Unit
     {
         return target switch
         {
-            SpellTarget.Self => this,
             SpellTarget.Enemy => fight.Enemy,
-            _ => fight.Player
+            _ => this
         };
     }
 
@@ -114,12 +161,12 @@ public class Player : Unit
 
     public void RecalculateAttack(FightSimulation fight)
     {
-        int speed = Weapon.EffectiveSpeed;
+        float speed = Stats.EffectiveAttackSpeed;
 
         if (NextAutoAttack != null)
         {
-            float ratio = speed / previousAttackSpeed;
-            float remaining = (PreviousAutoAttack + previousAttackSpeed - fight.Timestamp) * ratio;
+            float ratio = previousAttackSpeed / speed;
+            float remaining = (NextAutoAttack.Timestamp - fight.Timestamp) * ratio;
 
             NextAutoAttack.Timestamp = fight.Timestamp + (int)remaining;
         }

@@ -44,4 +44,9 @@ public class Stats
     public float CritAuraSuppression => Math.Min(this[StatName.CritChance].Bonus, Constants.Boss.CritAuraSuppression);
 
     public float EffectiveCritChance => Math.Max(this[StatName.CritChance].Value - Constants.Boss.CritSuppression - CritAuraSuppression, 0);
+
+    public static float CalculateEffectiveAttackSpeed(float haste, float attackSpeed)
+    {
+        return (1 + haste * 0.01f) * attackSpeed;
+    }
 }

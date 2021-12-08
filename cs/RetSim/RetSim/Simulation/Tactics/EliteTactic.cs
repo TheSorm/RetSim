@@ -42,7 +42,7 @@ public class EliteTactic : Tactic
                 firstAutoAttack,
             };
         fight.Player.NextAutoAttack = firstAutoAttack;
-        fight.Player.PreviousAutoAttack = firstAutoAttack.Timestamp - fight.Player.Weapon.BaseSpeed;
+        fight.Player.EffectiveNextAuto = firstAutoAttack.Timestamp + fight.Player.Weapon.EffectiveSpeed;
 
         if (fight.Player.Equipment.Trinket1 != null && fight.Player.Equipment.Trinket1.OnUse != null && Data.Collections.Spells.ContainsKey(fight.Player.Equipment.Trinket1.OnUse.ID))
             trinket1 = Data.Collections.Spells[fight.Player.Equipment.Trinket1.OnUse.ID];
@@ -73,12 +73,15 @@ public class EliteTactic : Tactic
         int hasteLeeway = 0;
         int maxCSDelay = 0;
 
+        int swing = fight.Player.EffectiveNextAuto;
+        int swingLeeway = swing - hasteLeeway;
+
         if (fight.Player.GCD.Active)
         {
             if (!fight.Player.Spellbook.IsOnCooldown(Judgement)
                 && fight.Player.Auras[SealOfBlood.Aura].Active
-                && fight.Player.Spellbook.IsOnCooldown(CrusaderStrike) && fight.Player.Spellbook[CrusaderStrike.ID].CooldownEnd.Timestamp > fight.Player.TimeOfNextSwing() - hasteLeeway
-                && fight.Player.GCD.GetEnd < fight.Player.TimeOfNextSwing() - hasteLeeway)
+                && fight.Player.Spellbook.IsOnCooldown(CrusaderStrike) && fight.Player.Spellbook[CrusaderStrike.ID].CooldownEnd.Timestamp > swingLeeway
+                && fight.Player.GCD.GetEnd < swingLeeway)
             {
                 return new CastEvent(Judgement, fight.Player, fight.Enemy, fight, start);
             }
@@ -95,10 +98,10 @@ public class EliteTactic : Tactic
             else
             {
                 if (fight.Player.Spellbook.IsOnCooldown(CrusaderStrike)
-                && !(fight.Player.Spellbook[CrusaderStrike.ID].CooldownEnd.Timestamp < fight.Player.TimeOfNextSwing() - hasteLeeway
-                     && fight.Player.TimeOfNextSwing() - hasteLeeway - 400 + fight.Player.Stats.EffectiveGCD(SealOfBlood) > fight.Player.Spellbook[CrusaderStrike.ID].CooldownEnd.Timestamp + maxCSDelay))
+                && !(fight.Player.Spellbook[CrusaderStrike.ID].CooldownEnd.Timestamp < swingLeeway
+                     && swingLeeway - 400 + fight.Player.Stats.EffectiveGCD(SealOfBlood) > fight.Player.Spellbook[CrusaderStrike.ID].CooldownEnd.Timestamp + maxCSDelay))
                 {
-                    if (start + fight.Player.Stats.EffectiveGCD(SealOfBlood) < fight.Player.TimeOfNextSwing() - hasteLeeway)
+                    if (start + fight.Player.Stats.EffectiveGCD(SealOfBlood) < swingLeeway)
                     {
 
                         if (fight.Player.Auras[SealOfBlood.Aura].Active && !fight.Player.Spellbook.IsOnCooldown(Judgement))
@@ -107,7 +110,7 @@ public class EliteTactic : Tactic
                         }
                         else if (!fight.Player.Auras[SealOfCommand.Aura].Active
                             && (!fight.Player.Auras[SealOfBlood.Aura].Active
-                            || (fight.Player.Spellbook.IsOnCooldown(Judgement) && fight.Player.Spellbook[Judgement.ID].CooldownEnd.Timestamp + fight.Player.Stats.EffectiveGCD(SealOfBlood) > fight.Player.TimeOfNextSwing() - hasteLeeway)))
+                            || (fight.Player.Spellbook.IsOnCooldown(Judgement) && fight.Player.Spellbook[Judgement.ID].CooldownEnd.Timestamp + fight.Player.Stats.EffectiveGCD(SealOfBlood) > swingLeeway)))
                         {
                             return new CastEvent(SealOfCommand, fight.Player, fight.Enemy, fight, start);
                         }
@@ -118,7 +121,7 @@ public class EliteTactic : Tactic
                         {
                             return new CastEvent(SealOfBlood, fight.Player, fight.Enemy, fight, start);
                         }
-                        else if (!fight.Player.Spellbook.IsOnCooldown(Judgement) && start < fight.Player.TimeOfNextSwing() - hasteLeeway)
+                        else if (!fight.Player.Spellbook.IsOnCooldown(Judgement) && start < swingLeeway)
                         {
                             return new CastEvent(Judgement, fight.Player, fight.Enemy, fight, start);
                         }
@@ -126,7 +129,7 @@ public class EliteTactic : Tactic
                 }
                 else if (!fight.Player.Spellbook.IsOnCooldown(CrusaderStrike))
                 {
-                    if (fight.Player.Auras[SealOfBlood.Aura].Active || start + fight.Player.Stats.EffectiveGCD(CrusaderStrike) < fight.Player.TimeOfNextSwing() - hasteLeeway)
+                    if (fight.Player.Auras[SealOfBlood.Aura].Active || start + fight.Player.Stats.EffectiveGCD(CrusaderStrike) < swingLeeway)
                     {
                         return new CastEvent(CrusaderStrike, fight.Player, fight.Enemy, fight, start);
                     }

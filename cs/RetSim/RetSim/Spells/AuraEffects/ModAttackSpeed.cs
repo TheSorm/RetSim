@@ -20,6 +20,10 @@ class ModAttackSpeed : ModifyPercent
         fight.Player.Stats[StatName.HasteRating].Bonus += HasteRating;
 
         fight.Player.RecalculateAttack(fight);
+
+        fight.Player.HasteEndEvents.Add(fight.Player.Auras[aura].End);
+
+        fight.Player.RecalculateNext();
     }
 
     public override void Remove(Aura aura, Unit caster, Unit target, FightSimulation fight)
@@ -29,5 +33,7 @@ class ModAttackSpeed : ModifyPercent
         fight.Player.Stats[StatName.HasteRating].Bonus -= HasteRating;
 
         fight.Player.RecalculateAttack(fight);
+
+        fight.Player.HasteEndEvents.Remove(fight.Player.Auras[aura].End);
     }
 }

@@ -4,6 +4,7 @@ using RetSim.Simulation.Events;
 using RetSim.Spells;
 using RetSim.Spells.AuraEffects;
 using RetSim.Units.UnitStats;
+using System.Linq;
 
 namespace RetSim.Units;
 
@@ -109,12 +110,16 @@ public class Auras : Dictionary<Aura, AuraState>
             }
 
             else
+            {
+                if (fight.Player.HasteEndEvents.Count != 0 && aura.Effects.Any(x => x is ModAttackSpeed))
+                    fight.Player.RecalculateNext();
+
                 return AuraChangeType.Refresh;
+            }
         }
 
         else
-        {
-            ApplyEffects(aura, caster, target, fight);
+        {           
 
             if (aura.Duration > 0)
             {
@@ -122,6 +127,8 @@ public class Auras : Dictionary<Aura, AuraState>
 
                 fight.Queue.Add(this[aura].End);
             }
+
+            ApplyEffects(aura, caster, target, fight);
 
             return AuraChangeType.Gain;
         }

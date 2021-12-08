@@ -7,7 +7,7 @@ public class AuraEndEvent : Event
 {
     private const int BasePriority = 1;
 
-    private Aura Aura { get; init; }
+    public Aura Aura { get; init; }
     private Unit Caster { get; init; }
     private Unit Target { get; init; }
 

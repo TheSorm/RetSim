@@ -4,7 +4,7 @@ abstract class ModifyPercent : AuraEffect
 {
     public ModifyPercent(float percent) : base(percent) { }
 
-    protected static float GetDifference(float value, int stacks)
+    public static float GetDifference(float value, int stacks)
     {
         float current = 100 + value * stacks;
 
