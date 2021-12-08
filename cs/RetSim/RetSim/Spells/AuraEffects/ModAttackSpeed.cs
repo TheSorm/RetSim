@@ -17,7 +17,7 @@ class ModAttackSpeed : ModifyPercent
     {
         fight.Player.Modifiers.AttackSpeed *= GetDifference(Value, target.Auras[aura].Stacks);
 
-        fight.Player.Stats[StatName.HasteRating].Value += HasteRating;
+        fight.Player.Stats[StatName.HasteRating].Bonus += HasteRating;
 
         fight.Player.RecalculateAttack(fight);
     }
@@ -26,7 +26,7 @@ class ModAttackSpeed : ModifyPercent
     {
         fight.Player.Modifiers.AttackSpeed /= GetDifference(Value, target.Auras[aura].Stacks);
 
-        fight.Player.Stats[StatName.HasteRating].Value -= HasteRating;
+        fight.Player.Stats[StatName.HasteRating].Bonus -= HasteRating;
 
         fight.Player.RecalculateAttack(fight);
     }
