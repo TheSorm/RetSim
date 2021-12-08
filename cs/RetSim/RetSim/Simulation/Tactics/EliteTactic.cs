@@ -42,7 +42,7 @@ public class EliteTactic : Tactic
                 firstAutoAttack,
             };
         fight.Player.NextAutoAttack = firstAutoAttack;
-        fight.Player.EffectiveNextAuto = firstAutoAttack.Timestamp + fight.Player.Weapon.EffectiveSpeed;
+        fight.Player.EffectiveNextAuto = firstAutoAttack.Timestamp;
 
         if (fight.Player.Equipment.Trinket1 != null && fight.Player.Equipment.Trinket1.OnUse != null && Data.Collections.Spells.ContainsKey(fight.Player.Equipment.Trinket1.OnUse.ID))
             trinket1 = Data.Collections.Spells[fight.Player.Equipment.Trinket1.OnUse.ID];
