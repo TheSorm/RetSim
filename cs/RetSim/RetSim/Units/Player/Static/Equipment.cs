@@ -283,7 +283,7 @@ public class Equipment
         }
     }
 
-    private static Dictionary<GemColor, int> GetGemCount(Equipment equipment)
+    public static Dictionary<GemColor, int> GetGemCount(Equipment equipment)
     {
         Dictionary<GemColor, int> totals = new()
         {

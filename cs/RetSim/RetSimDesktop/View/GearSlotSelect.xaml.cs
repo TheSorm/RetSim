@@ -233,6 +233,7 @@ namespace RetSimDesktop
                             displayItem.Item.Socket3.SocketedGem = null;
                         }
                         displayItem.OnPropertyChanged("");
+                        retSimUIModel.SelectedGear.OnPropertyChanged("");
                         DataGridCell_MouseEnter(cell, null);
                     }
                 }

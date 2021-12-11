@@ -1,9 +1,11 @@
 ﻿using RetSim.Data;
+using RetSim.Items;
 using RetSim.Simulation;
 using RetSim.Simulation.Tactics;
 using RetSim.Spells;
 using RetSim.Units.Enemy;
 using RetSim.Units.Player;
+using RetSim.Units.Player.Static;
 using RetSim.Units.UnitStats;
 using RetSimDesktop.ViewModel;
 using System;
@@ -39,8 +41,9 @@ namespace RetSimDesktop
         {
             if (DataContext is RetSimUIModel retSimUIModel)
             {
+                var equipment = retSimUIModel.SelectedGear.GetEquipment();
                 var player = new Player("Brave Hero", Collections.Races[retSimUIModel.PlayerSettings.SelectedRace.ToString()], ShattrathFaction.Aldor,
-                    retSimUIModel.SelectedGear.GetEquipment(), retSimUIModel.SelectedTalents.GetTalentList());
+                    equipment, retSimUIModel.SelectedTalents.GetTalentList());
                 FightSimulation fight = new(player, new Enemy(Collections.Bosses[retSimUIModel.EncounterSettings.EncounterID]), new EliteTactic(), new List<Spell>(), new List<Spell>(), new List<Spell>(), 0, 0);
 
                 StatPanelBoxHeader.Content = "Level 70 " + Collections.Races[retSimUIModel.PlayerSettings.SelectedRace.ToString()].Name + " Paladin";
@@ -157,6 +160,30 @@ namespace RetSimDesktop
                 var weaponDamageWarning2 = "You can ignore it.";
 
                 WeaponDamage.ToolTip = new ToolTip { Content = $"{weaponDamageWarning}\n{weaponDamageWarning2}" };
+
+
+                var gemCount = Equipment.GetGemCount(equipment);
+
+                RedGemCount.Content = gemCount[GemColor.Red];
+                BlueGemCount.Content = gemCount[GemColor.Blue];
+                YellowGemCount.Content = gemCount[GemColor.Yellow];
+
+
+                if (equipment.Head.Socket1 != null && equipment.Head.Socket1.IsMetaGem() is MetaGem meta)
+                {
+                    if (meta.IsActive(gemCount[GemColor.Red], gemCount[GemColor.Blue], gemCount[GemColor.Yellow]))
+                    {
+                        MetaGemActive.Content = "Active";
+                    }
+                    else
+                    {
+                        MetaGemActive.Content = "Inactive";
+                    }
+                }
+                else
+                {
+                    MetaGemActive.Content = "-";
+                }
 
             }
         }

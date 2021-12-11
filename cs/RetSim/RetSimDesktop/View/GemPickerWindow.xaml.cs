@@ -107,7 +107,7 @@ namespace RetSimDesktop
 
         private void GemPicker_Closing(object sender, CancelEventArgs e)
         {
-            if(Tooltip.Browser != null)
+            if (Tooltip.Browser != null)
             {
                 Tooltip.Browser.Dispose();
                 Tooltip.Browser.Visibility = Visibility.Collapsed;

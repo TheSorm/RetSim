@@ -280,6 +280,7 @@ namespace RetSimDesktop
                             displayWeapon.Weapon.Socket3.SocketedGem = null;
                         }
                         displayWeapon.OnPropertyChanged("");
+                        retSimUIModel.SelectedGear.OnPropertyChanged("");
                         DataGridCell_MouseEnter(cell, null);
                     }
                 }
