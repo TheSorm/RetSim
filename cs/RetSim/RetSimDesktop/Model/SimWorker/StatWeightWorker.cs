@@ -2,11 +2,11 @@
 using RetSim.Misc;
 using RetSim.Simulation;
 using RetSim.Simulation.Tactics;
-using RetSim.Spells;
 using RetSim.Units.Enemy;
 using RetSim.Units.Player;
 using RetSim.Units.Player.Static;
 using RetSim.Units.UnitStats;
+using RetSimDesktop.Model.SimWorker;
 using RetSimDesktop.ViewModel;
 using System;
 using System.Collections.Generic;
@@ -43,13 +43,32 @@ namespace RetSimDesktop.Model
                 var buffs = retSimUIModel.SelectedBuffs.GetBuffs();
                 var debuffs = retSimUIModel.SelectedDebuffs.GetDebuffs();
                 var consumables = retSimUIModel.SelectedConsumables.GetConsumables();
+                var cooldwons = retSimUIModel.SelectedCooldowns.GetCooldowns();
+                List<int> heroismUsage = new();
+                if (retSimUIModel.SelectedBuffs.HeroismEnabled)
+                {
+                    int time = 8000;
+                    if (minDuration < 8000)
+                    {
+                        time = 0;
+                    }
 
+                    while (time < maxDuration)
+                    {
+                        heroismUsage.Add(time);
+                        time += 600000;
+                    }
+
+                }
                 float baseDps = 0;
                 int baseSeed = RNG.global.Next();
                 for (int i = 0; i < numberOfSimulations; i++)
                 {
                     RNG.local = new(baseSeed + i);
-                    FightSimulation fight = new(new Player("Brave Hero", Collections.Races[race.ToString()], shattrathFaction, playerEquipment, talents), new Enemy(Collections.Bosses[encounterID]), new EliteTactic(), buffs, debuffs, consumables, minDuration, maxDuration, new List<Spell>(), new List<int>()); //TODO: Add cooldowns + heroism timings
+                    FightSimulation fight = new(
+                        new Player("Brave Hero", Collections.Races[race.ToString()], shattrathFaction, playerEquipment, talents),
+                        new Enemy(Collections.Bosses[encounterID]),
+                        new EliteTactic(), buffs, debuffs, consumables, minDuration, maxDuration, cooldwons, heroismUsage);
                     fight.Run();
                     baseDps += fight.CombatLog.DPS;
                     retSimUIModel.DisplayStatWeights[0].DpsDelta = baseDps / i;
@@ -76,9 +95,26 @@ namespace RetSimDesktop.Model
                         }
                         Thread.Sleep(100);
                     }
+                    simExecuter[freeThread] = new()
+                    {
+                        Race = Collections.Races[race.ToString()],
+                        ShattrathFaction = shattrathFaction,
+                        Encounter = Collections.Bosses[encounterID],
+                        PlayerEquipment = playerEquipment,
+                        Talents = talents,
+                        Buffs = buffs,
+                        Debuffs = debuffs,
+                        Consumables = consumables,
+                        Cooldwons = cooldwons,
+                        HeroismUsage = heroismUsage,
+                        MinFightDuration = minDuration,
+                        MaxFightDuration = maxDuration,
+                        NumberOfSimulations = numberOfSimulations,
+                        BaseSeed = baseSeed,
+                        BaseDps = baseDps,
+                        StatWeightsDisplay = item,
+                    };
 
-                    simExecuter[freeThread] = new(Collections.Races[race.ToString()], shattrathFaction, Collections.Bosses[encounterID], playerEquipment, talents, buffs, debuffs, consumables,
-                                minDuration, maxDuration, item, baseDps, numberOfSimulations, baseSeed);
                     threads[freeThread] = new(new ThreadStart(simExecuter[freeThread].Execute));
                     threads[freeThread].Start();
                 }
@@ -94,71 +130,42 @@ namespace RetSimDesktop.Model
         }
     }
 
-    public class StatWeightsSimExecuter
+    public class StatWeightsSimExecuter : SimExecuter
     {
-        private readonly Race race;
-        private readonly ShattrathFaction shattrathFaction;
-        private readonly Boss encounter;
-        private readonly Equipment playerEquipment;
-        private readonly List<Talent> talents;
-        private readonly List<Spell> buffs;
-        private readonly List<Spell> debuffs;
-        private readonly List<Spell> consumables;
-        private readonly int minFightDuration;
-        private readonly int maxFightDuration;
-        private readonly DisplayStatWeights statWeightsDisplay;
-        private readonly float baseDps;
-        public readonly int iterationCount;
-        public readonly int baseSeed;
+        public DisplayStatWeights StatWeightsDisplay { get; init; } = new();
+        public float BaseDps { get; init; }
+        public int BaseSeed { get; init; }
 
-        public StatWeightsSimExecuter(Race race, ShattrathFaction shattrathFaction, Boss encounter, Equipment playerEquipment, List<Talent> talents, List<Spell> buffs, List<Spell> debuffs, List<Spell> consumables, int minFightDuration, int maxFightDuration, DisplayStatWeights statWeightsDisplay, float baseDps, int iterationCount, int baseSeed)
-        {
-            this.race = race;
-            this.shattrathFaction = shattrathFaction;
-            this.encounter = encounter;
-            this.playerEquipment = playerEquipment;
-            this.talents = talents;
-            this.buffs = buffs;
-            this.debuffs = debuffs;
-            this.consumables = consumables;
-            this.minFightDuration = minFightDuration;
-            this.maxFightDuration = maxFightDuration;
-            this.statWeightsDisplay = statWeightsDisplay;
-            this.baseDps = baseDps;
-            this.iterationCount = iterationCount;
-            this.baseSeed = baseSeed;
-        }
-
-        public void Execute()
+        public override void Execute()
         {
             StatSet extraStats = new();
-            extraStats[statWeightsDisplay.Stat] += statWeightsDisplay.IncreasedAmount;
+            extraStats[StatWeightsDisplay.Stat] += StatWeightsDisplay.IncreasedAmount;
             float dps = 0;
-            for (int i = 0; i < iterationCount; i++)
+            for (int i = 0; i < NumberOfSimulations; i++)
             {
-                RNG.local = new(baseSeed + i);
-                FightSimulation fight = new(new Player("Brave Hero", race, shattrathFaction, playerEquipment, talents, extraStats), new Enemy(encounter), new EliteTactic(), buffs, debuffs, consumables, minFightDuration, maxFightDuration, new List<Spell>(), new List<int>()); //TODO: Add cooldowns + heroism timings
+                RNG.local = new(BaseSeed + i);
+                FightSimulation fight = new(new Player("Brave Hero", Race, ShattrathFaction, PlayerEquipment, Talents, extraStats), new Enemy(Encounter), new EliteTactic(), Buffs, Debuffs, Consumables, MinFightDuration, MaxFightDuration, Cooldwons, HeroismUsage);
                 fight.Run();
                 dps += fight.CombatLog.DPS;
-                statWeightsDisplay.DpsDelta = ((dps / i) - baseDps) / statWeightsDisplay.IncreasedAmount;
-                if (statWeightsDisplay.DpsDelta != 0)
+                StatWeightsDisplay.DpsDelta = ((dps / i) - BaseDps) / StatWeightsDisplay.IncreasedAmount;
+                if (StatWeightsDisplay.DpsDelta != 0)
                 {
-                    statWeightsDisplay.StatPerDps = 1f / statWeightsDisplay.DpsDelta;
+                    StatWeightsDisplay.StatPerDps = 1f / StatWeightsDisplay.DpsDelta;
                 }
                 else
                 {
-                    statWeightsDisplay.StatPerDps = 0;
+                    StatWeightsDisplay.StatPerDps = 0;
                 }
             }
-            dps /= iterationCount;
-            statWeightsDisplay.DpsDelta = (dps - baseDps) / statWeightsDisplay.IncreasedAmount;
-            if (statWeightsDisplay.DpsDelta != 0)
+            dps /= NumberOfSimulations;
+            StatWeightsDisplay.DpsDelta = (dps - BaseDps) / StatWeightsDisplay.IncreasedAmount;
+            if (StatWeightsDisplay.DpsDelta != 0)
             {
-                statWeightsDisplay.StatPerDps = 1f / statWeightsDisplay.DpsDelta;
+                StatWeightsDisplay.StatPerDps = 1f / StatWeightsDisplay.DpsDelta;
             }
             else
             {
-                statWeightsDisplay.StatPerDps = 0;
+                StatWeightsDisplay.StatPerDps = 0;
             }
         }
     }

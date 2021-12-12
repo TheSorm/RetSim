@@ -6,6 +6,7 @@ using RetSim.Units.Enemy;
 using RetSim.Units.Player;
 using RetSim.Units.Player.Static;
 using RetSimDesktop.Model;
+using RetSimDesktop.Model.SimWorker;
 using RetSimDesktop.ViewModel;
 using System;
 using System.Collections.Generic;
@@ -42,6 +43,23 @@ namespace RetSimDesktop.View
                 var buffs = input.Item1.SelectedBuffs.GetBuffs();
                 var debuffs = input.Item1.SelectedDebuffs.GetDebuffs();
                 var consumables = input.Item1.SelectedConsumables.GetConsumables();
+                var cooldwons = input.Item1.SelectedCooldowns.GetCooldowns();
+                List<int> heroismUsage = new();
+                if (input.Item1.SelectedBuffs.HeroismEnabled)
+                {
+                    int time = 8000;
+                    if (minDuration < 8000)
+                    {
+                        time = 0;
+                    }
+
+                    while (time < maxDuration)
+                    {
+                        heroismUsage.Add(time);
+                        time += 600000;
+                    }
+
+                }
 
                 foreach (var item in input.Item2)
                 {
@@ -65,9 +83,24 @@ namespace RetSimDesktop.View
                         }
                         Thread.Sleep(100);
                     }
+                    simExecuter[freeThread] = new()
+                    {
+                        Race = Collections.Races[race.ToString()],
+                        ShattrathFaction = shattrathFaction,
+                        Encounter = Collections.Bosses[encounterID],
+                        PlayerEquipment = playerEquipment,
+                        Talents = talents,
+                        Buffs = buffs,
+                        Debuffs = debuffs,
+                        Consumables = consumables,
+                        Cooldwons = cooldwons,
+                        HeroismUsage = heroismUsage,
+                        MinFightDuration = minDuration,
+                        MaxFightDuration = maxDuration,
+                        NumberOfSimulations = numberOfSimulations,
+                        Item = item
+                    };
 
-                    simExecuter[freeThread] = new(Collections.Races[race.ToString()], shattrathFaction, Collections.Bosses[encounterID], playerEquipment, talents, buffs, debuffs, consumables,
-                                minDuration, maxDuration, numberOfSimulations, item);
                     threads[freeThread] = new(new ThreadStart(simExecuter[freeThread].Execute));
                     threads[freeThread].Start();
                 }
@@ -83,48 +116,21 @@ namespace RetSimDesktop.View
         }
     }
 
-    public class WeaponSimExecuter
+    public class WeaponSimExecuter : SimExecuter
     {
-        private readonly Race race;
-        private readonly ShattrathFaction shattrathFaction;
-        private readonly Boss encounter;
-        private readonly Equipment playerEquipment;
-        private readonly List<Talent> talents;
-        private readonly List<Spell> buffs;
-        private readonly List<Spell> debuffs;
-        private readonly List<Spell> consumables;
-        private readonly int minFightDuration;
-        private readonly int maxFightDuration;
-        public readonly int numberOfSimulations;
-        private readonly DisplayWeapon item;
+        public DisplayWeapon Item { get; init; } = new();
 
-        public WeaponSimExecuter(Race race, ShattrathFaction shattrathFaction, Boss encounter, Equipment playerEquipment, List<Talent> talents, List<Spell> buffs, List<Spell> debuffs, List<Spell> consumables, int minFightDuration, int maxFightDuration, int numberOfSimulations, DisplayWeapon item)
-        {
-            this.race = race;
-            this.shattrathFaction = shattrathFaction;
-            this.encounter = encounter;
-            this.playerEquipment = playerEquipment;
-            this.talents = talents;
-            this.buffs = buffs;
-            this.debuffs = debuffs;
-            this.consumables = consumables;
-            this.minFightDuration = minFightDuration;
-            this.maxFightDuration = maxFightDuration;
-            this.numberOfSimulations = numberOfSimulations;
-            this.item = item;
-        }
-
-        public void Execute()
+        public override void Execute()
         {
             float overallDPS = 0;
-            for (int i = 0; i < numberOfSimulations; i++)
+            for (int i = 0; i < NumberOfSimulations; i++)
             {
-                FightSimulation fight = new(new Player("Brave Hero", race, shattrathFaction, playerEquipment, talents), new Enemy(encounter), new EliteTactic(), buffs, debuffs, consumables, minFightDuration, maxFightDuration, new List<Spell>(), new List<int>()); //TODO: Add cooldowns + heroism timings
+                FightSimulation fight = new(new Player("Brave Hero", Race, ShattrathFaction, PlayerEquipment, Talents), new Enemy(Encounter), new EliteTactic(), Buffs, Debuffs, Consumables, MinFightDuration, MaxFightDuration, new List<Spell>(), new List<int>()); //TODO: Add cooldowns + heroism timings
                 fight.Run();
                 overallDPS += fight.CombatLog.DPS;
-                item.DPS = overallDPS / (i + 1);
+                Item.DPS = overallDPS / (i + 1);
             }
-            item.DPS = overallDPS / numberOfSimulations;
+            Item.DPS = overallDPS / NumberOfSimulations;
         }
     }
 }

@@ -191,10 +191,10 @@ namespace RetSimDesktop.Model
             {
                 result.Add(Spells[30811]);
             }
-            if (heroismEnabled && Spells.ContainsKey(32182))
-            {
-                result.Add(Spells[32182]);
-            }
+            //if (heroismEnabled && Spells.ContainsKey(32182))
+            //{
+            //result.Add(Spells[32182]);
+            //}
             if (leaderofthePackEnabled && Spells.ContainsKey(17007))
             {
                 result.Add(Spells[17007]);

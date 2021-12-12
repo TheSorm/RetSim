@@ -502,11 +502,11 @@
                             Primary Potion
                         </GroupBox.Header>
                         <StackPanel>
-                            <RadioButton Margin="0,2,0,2" x:Name="NoPrimaryPotion" Content="None" GroupName="PrimaryPotion" IsChecked="{Binding Path=SelectedConsumables.SelectedPrimaryPotion, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:PrimaryPotion.None}}"/>
-                            <RadioButton Margin="0,2,0,2" x:Name="HastePotion" Content="Haste Potion" GroupName="PrimaryPotion" IsChecked="{Binding Path=SelectedConsumables.SelectedPrimaryPotion, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:PrimaryPotion.HastePotion}}"/>
-                            <RadioButton Margin="0,2,0,2" x:Name="InsaneStrengthPotion" Content="Insane Strength Potion" GroupName="PrimaryPotion" IsChecked="{Binding Path=SelectedConsumables.SelectedPrimaryPotion, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:PrimaryPotion.InsaneStrengthPotion}}"/>
-                            <RadioButton Margin="0,2,0,2" x:Name="SuperManaPotion" Content="Super Mana Potion" GroupName="PrimaryPotion" IsChecked="{Binding Path=SelectedConsumables.SelectedPrimaryPotion, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:PrimaryPotion.SuperManaPotion}}"/>
-                            <RadioButton Margin="0,2,0,2" x:Name="MadAlchemistsPotion" Content="Mad Alchemist's Potion" GroupName="PrimaryPotion" IsChecked="{Binding Path=SelectedConsumables.SelectedPrimaryPotion, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:PrimaryPotion.MadAlchemistsPotion}}"/>
+                            <RadioButton Margin="0,2,0,2" x:Name="NoPrimaryPotion" Content="None" GroupName="PrimaryPotion" IsChecked="{Binding Path=SelectedCooldowns.SelectedPrimaryPotion, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:PrimaryPotion.None}}"/>
+                            <RadioButton Margin="0,2,0,2" x:Name="HastePotion" Content="Haste Potion" GroupName="PrimaryPotion" IsChecked="{Binding Path=SelectedCooldowns.SelectedPrimaryPotion, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:PrimaryPotion.HastePotion}}"/>
+                            <RadioButton Margin="0,2,0,2" x:Name="InsaneStrengthPotion" Content="Insane Strength Potion" GroupName="PrimaryPotion" IsChecked="{Binding Path=SelectedCooldowns.SelectedPrimaryPotion, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:PrimaryPotion.InsaneStrengthPotion}}"/>
+                            <RadioButton Margin="0,2,0,2" x:Name="SuperManaPotion" Content="Super Mana Potion" GroupName="PrimaryPotion" IsChecked="{Binding Path=SelectedCooldowns.SelectedPrimaryPotion, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:PrimaryPotion.SuperManaPotion}}"/>
+                            <RadioButton Margin="0,2,0,2" x:Name="MadAlchemistsPotion" Content="Mad Alchemist's Potion" GroupName="PrimaryPotion" IsChecked="{Binding Path=SelectedCooldowns.SelectedPrimaryPotion, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:PrimaryPotion.MadAlchemistsPotion}}"/>
                         </StackPanel>
                     </GroupBox>
                     <GroupBox Margin="5" Width="200" Height="180" VerticalAlignment="Top" HorizontalAlignment="Left">
@@ -514,9 +514,9 @@
                             Secondary Potion
                         </GroupBox.Header>
                         <StackPanel>
-                            <RadioButton Margin="0,2,0,2" x:Name="NoSecondaryPotion" Content="None" GroupName="SecondaryPotion" IsChecked="{Binding Path=SelectedConsumables.SelectedSecondaryPotion, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:SecondaryPotion.None}}"/>
-                            <RadioButton Margin="0,2,0,2" x:Name="DemonicDarkRune" Content="Demonic/Dark Rune" GroupName="SecondaryPotion" IsChecked="{Binding Path=SelectedConsumables.SelectedSecondaryPotion, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:SecondaryPotion.DemonicDarkRune}}"/>
-                            <RadioButton Margin="0,2,0,2" x:Name="FlameCap" Content="Flame Cap" GroupName="SecondaryPotion" IsChecked="{Binding Path=SelectedConsumables.SelectedSecondaryPotion, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:SecondaryPotion.FlameCap}}"/>
+                            <RadioButton Margin="0,2,0,2" x:Name="NoSecondaryPotion" Content="None" GroupName="SecondaryPotion" IsChecked="{Binding Path=SelectedCooldowns.SelectedSecondaryPotion, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:SecondaryPotion.None}}"/>
+                            <RadioButton Margin="0,2,0,2" x:Name="DemonicDarkRune" Content="Demonic/Dark Rune" GroupName="SecondaryPotion" IsChecked="{Binding Path=SelectedCooldowns.SelectedSecondaryPotion, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:SecondaryPotion.DemonicDarkRune}}"/>
+                            <RadioButton Margin="0,2,0,2" x:Name="FlameCap" Content="Flame Cap" GroupName="SecondaryPotion" IsChecked="{Binding Path=SelectedCooldowns.SelectedSecondaryPotion, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:SecondaryPotion.FlameCap}}"/>
                         </StackPanel>
                     </GroupBox>
                     <GroupBox Margin="5" Width="200" Height="180" VerticalAlignment="Top" HorizontalAlignment="Left">
@@ -562,17 +562,17 @@
                                     </ComboBoxItem>
                                 </ComboBox>
                             </CheckBox>
-                            <CheckBox Margin="0,2,0,2" VerticalContentAlignment="Center" x:Name="Drum" IsChecked="{Binding SelectedConsumables.DrumEnabled}">
+                            <CheckBox Margin="0,2,0,2" VerticalContentAlignment="Center" x:Name="Drum" IsChecked="{Binding SelectedCooldowns.DrumEnabled}">
                                 <ComboBox Width="150">
-                                    <ComboBoxItem IsSelected="{Binding Path=SelectedConsumables.SelectedDrum, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:Drum.DrumsOfBattle}}">
+                                    <ComboBoxItem IsSelected="{Binding Path=SelectedCooldowns.SelectedDrum, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:Drum.DrumsOfBattle}}">
                                         Drums of Battle
                                     </ComboBoxItem>
-                                    <ComboBoxItem IsSelected="{Binding Path=SelectedConsumables.SelectedDrum, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:Drum.DrumsOfWar}}">
+                                    <ComboBoxItem IsSelected="{Binding Path=SelectedCooldowns.SelectedDrum, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:Drum.DrumsOfWar}}">
                                         Drums of War
                                     </ComboBoxItem>
                                 </ComboBox>
                             </CheckBox>
-                            <CheckBox Margin="0,4,0,4" x:Name="SuperSapperCharge" Content="Super Sapper Charge" IsChecked="{Binding SelectedConsumables.SuperSapperChargeEnabled}"/>
+                            <CheckBox Margin="0,4,0,4" x:Name="SuperSapperCharge" Content="Super Sapper Charge" IsChecked="{Binding SelectedCooldowns.SuperSapperChargeEnabled}"/>
                             <CheckBox Margin="0,4,0,4" x:Name="GnomishBattleChicken" Content="Gnomish Battle Chicken" IsChecked="{Binding SelectedConsumables.GnomishBattleChickenEnabled}"/>
                         </StackPanel>
                     </GroupBox>

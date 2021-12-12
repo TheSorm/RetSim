@@ -30,10 +30,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="Model\WeaponSim.cs">
+    <Compile Update="Model\SimWorker\WeaponSim.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Update="Model\GearSimWorker.cs">
+    <Compile Update="Model\SimWorker\GearSimWorker.cs">
       <SubType>Component</SubType>
     </Compile>
   </ItemGroup>

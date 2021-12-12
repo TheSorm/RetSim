@@ -13,8 +13,6 @@ namespace RetSimDesktop.Model
         private GuardianElixir selectedGuardianElixir = GuardianElixir.None;
         private TemporaryWeaponEnchantment selectedTemporaryWeaponEnchantment = TemporaryWeaponEnchantment.None;
         private Food selectedFood = Food.Strength20Food;
-        private PrimaryPotion selectedPrimaryPotion = PrimaryPotion.HastePotion;
-        private SecondaryPotion selectedSecondaryPotion = SecondaryPotion.DemonicDarkRune;
 
         private bool scrollOfStrengthEnabled = true;
         private ScrollOfStrength selectedScrollOfStrength = ScrollOfStrength.ScrollofStrengthV;
@@ -22,10 +20,6 @@ namespace RetSimDesktop.Model
         private bool scrollOfAgilityEnabled = true;
         private ScrollOfAgility selectedScrollOfAgility = ScrollOfAgility.ScrollOfAgilityV;
 
-        private bool drumEnabled = true;
-        private Drum selectedDrum = Drum.DrumsOfBattle;
-
-        private bool superSapperChargeEnabled = true;
         private bool gnomishBattleChickenEnabled = true;
 
         public BattleElixir SelectedBattleElixir
@@ -78,25 +72,6 @@ namespace RetSimDesktop.Model
             }
         }
 
-        public PrimaryPotion SelectedPrimaryPotion
-        {
-            get { return selectedPrimaryPotion; }
-            set
-            {
-                selectedPrimaryPotion = value;
-                OnPropertyChanged(nameof(SelectedPrimaryPotion));
-            }
-        }
-
-        public SecondaryPotion SelectedSecondaryPotion
-        {
-            get { return selectedSecondaryPotion; }
-            set
-            {
-                selectedSecondaryPotion = value;
-                OnPropertyChanged(nameof(SelectedSecondaryPotion));
-            }
-        }
         public bool ScrollOfStrengthEnabled
         {
             get { return scrollOfStrengthEnabled; }
@@ -135,34 +110,6 @@ namespace RetSimDesktop.Model
             }
         }
 
-        public bool DrumEnabled
-        {
-            get { return drumEnabled; }
-            set
-            {
-                drumEnabled = value;
-                OnPropertyChanged(nameof(DrumEnabled));
-            }
-        }
-        public Drum SelectedDrum
-        {
-            get { return selectedDrum; }
-            set
-            {
-                selectedDrum = value;
-                OnPropertyChanged(nameof(SelectedDrum));
-            }
-        }
-
-        public bool SuperSapperChargeEnabled
-        {
-            get { return superSapperChargeEnabled; }
-            set
-            {
-                superSapperChargeEnabled = value;
-                OnPropertyChanged(nameof(SuperSapperChargeEnabled));
-            }
-        }
         public bool GnomishBattleChickenEnabled
         {
             get { return gnomishBattleChickenEnabled; }
@@ -191,14 +138,6 @@ namespace RetSimDesktop.Model
             {
                 result.Add(Spells[(int)selectedFood]);
             }
-            if (selectedPrimaryPotion != PrimaryPotion.None && Spells.ContainsKey((int)selectedPrimaryPotion))
-            {
-                result.Add(Spells[(int)selectedPrimaryPotion]);
-            }
-            if (selectedSecondaryPotion != SecondaryPotion.None && Spells.ContainsKey((int)selectedSecondaryPotion))
-            {
-                result.Add(Spells[(int)selectedSecondaryPotion]);
-            }
             if (scrollOfStrengthEnabled && Spells.ContainsKey((int)selectedScrollOfStrength))
             {
                 result.Add(Spells[(int)selectedScrollOfStrength]);
@@ -206,14 +145,6 @@ namespace RetSimDesktop.Model
             if (scrollOfAgilityEnabled && Spells.ContainsKey((int)selectedScrollOfAgility))
             {
                 result.Add(Spells[(int)selectedScrollOfAgility]);
-            }
-            if (drumEnabled && Spells.ContainsKey((int)selectedDrum))
-            {
-                result.Add(Spells[(int)selectedDrum]);
-            }
-            if (superSapperChargeEnabled && Spells.ContainsKey(30486))
-            {
-                result.Add(Spells[30486]);
             }
             if (gnomishBattleChickenEnabled && Spells.ContainsKey(23060))
             {
@@ -267,20 +198,6 @@ namespace RetSimDesktop.Model
         HitRating20Food = 43763,
         MP58Food = 33265,
     }
-    public enum PrimaryPotion
-    {
-        None = 0,
-        HastePotion = 28507,
-        InsaneStrengthPotion = 28494,
-        SuperManaPotion = 28499,
-        MadAlchemistsPotion = 45051,
-    }
-    public enum SecondaryPotion
-    {
-        None = 0,
-        DemonicDarkRune = 27869,
-        FlameCap = 28714,
-    }
     public enum ScrollOfStrength
     {
         ScrollofStrength = 8118,
@@ -296,10 +213,5 @@ namespace RetSimDesktop.Model
         ScrollOfAgilityIII = 8117,
         ScrollOfAgilityIV = 12174,
         ScrollOfAgilityV = 33077,
-    }
-    public enum Drum
-    {
-        DrumsOfBattle = 35476,
-        DrumsOfWar = 35475,
     }
 }

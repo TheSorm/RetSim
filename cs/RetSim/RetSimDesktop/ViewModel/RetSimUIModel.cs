@@ -22,6 +22,7 @@ namespace RetSimDesktop.ViewModel
         private SelectedConsumables _SelectedConsumables;
         private SelectedBuffs _SelectedBuffs;
         private SelectedDebuffs _SelectedDebuffs;
+        private SelectedCooldowns _SelectedCooldowns;
         private SelectedGemWrapper _SelectedGemWrapper;
         private SimOutput _CurrentSimOutput;
         private SelectedPhases _SelectedPhases;
@@ -50,6 +51,8 @@ namespace RetSimDesktop.ViewModel
             _SelectedBuffs = new();
 
             _SelectedDebuffs = new();
+
+            _SelectedCooldowns = new();
 
             _SelectedGemWrapper = new();
 
@@ -174,6 +177,12 @@ namespace RetSimDesktop.ViewModel
             foreach (PropertyInfo property in typeof(SelectedDebuffs).GetProperties().Where(p => p.CanWrite))
             {
                 property.SetValue(_SelectedDebuffs, property.GetValue(defaultSelectedDebuffs, null), null);
+            }
+
+            var defaultSelectedCooldowns = new SelectedCooldowns();
+            foreach (PropertyInfo property in typeof(SelectedCooldowns).GetProperties().Where(p => p.CanWrite))
+            {
+                property.SetValue(_SelectedCooldowns, property.GetValue(defaultSelectedCooldowns, null), null);
             }
 
             var defaultSimSettings = new SimSettings();
@@ -327,7 +336,11 @@ namespace RetSimDesktop.ViewModel
             get => _SelectedDebuffs;
             set => _SelectedDebuffs = value;
         }
-
+        public SelectedCooldowns SelectedCooldowns
+        {
+            get => _SelectedCooldowns;
+            set => _SelectedCooldowns = value;
+        }
         public SelectedGemWrapper SelectedGemWrapper
         {
             get => _SelectedGemWrapper;
