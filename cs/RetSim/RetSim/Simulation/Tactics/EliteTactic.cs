@@ -55,10 +55,10 @@ public class EliteTactic : Tactic
             trinket2 = Data.Collections.Spells[fight.Player.Equipment.Trinket2.OnUse.ID];
 
         if (trinket1 != null)
-            onStart.Add(new CastEvent(trinket1, fight.Player, fight.Player, fight, 1495));
+            onStart.Add(new CastEvent(trinket1, fight.Player, fight.Player, fight, spellGCD));
 
-        else if (trinket2 != null)
-            onStart.Add(new CastEvent(trinket2, fight.Player, fight.Player, fight, 1495));
+        if (trinket2 != null)
+            onStart.Add(new CastEvent(trinket2, fight.Player, fight.Player, fight, spellGCD));
 
         return onStart;
     }
@@ -68,10 +68,10 @@ public class EliteTactic : Tactic
         if (!fight.Player.Spellbook.IsOnCooldown(AvengingWrath) && start > 1500)
             return new CastEvent(AvengingWrath, fight.Player, fight.Player, fight, start);
 
-        if (trinket1 != null && !fight.Player.Spellbook.IsOnCooldown(trinket1) && start > 21495)
+        if (trinket1 != null && !fight.Player.Spellbook.IsOnCooldown(trinket1) && start > 1500)
             return new CastEvent(trinket1, fight.Player, fight.Player, fight, start);
 
-        if (trinket2 != null && !fight.Player.Spellbook.IsOnCooldown(trinket2) && start > 21495)
+        if (trinket2 != null && !fight.Player.Spellbook.IsOnCooldown(trinket2) && start > 1500)
             return new CastEvent(trinket2, fight.Player, fight.Player, fight, start);
 
         int hasteLeeway = 0;
