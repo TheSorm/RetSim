@@ -40,7 +40,7 @@ public class Player : Unit
         if (NextAutoAttack == null)
             return;
 
-        int timeOfSwing = NextAutoAttack.Timestamp;
+        int nextSwing = NextAutoAttack.Timestamp;
 
         float currentModifier = Modifiers.AttackSpeed;
         float currentRating = Stats[StatName.HasteRating].Value;
@@ -48,7 +48,7 @@ public class Player : Unit
 
         foreach (AuraEndEvent end in HasteEndEvents)
         {
-            if (end.Timestamp < timeOfSwing)
+            if (end.Timestamp < nextSwing)
             {
                 ModAttackSpeed effect = end.Aura.Effects.First(x => x is ModAttackSpeed) as ModAttackSpeed;
 
@@ -57,10 +57,10 @@ public class Player : Unit
                 float newSpeed = Stats.CalculateEffectiveAttackSpeed(newRating / Constants.Ratings.Haste, newModifier);
                 float ratio = currentSpeed / newSpeed;
 
-                int currentRemaining = timeOfSwing - end.Timestamp;
-                int realRemaining = (int)(currentRemaining * ratio);
+                int oldRemaining = nextSwing - end.Timestamp;
+                int newRemaining = (int)(oldRemaining * ratio);
 
-                timeOfSwing = end.Timestamp + realRemaining;
+                nextSwing = end.Timestamp + newRemaining;
 
                 currentSpeed = newSpeed;
                 currentRating = newRating;
@@ -71,7 +71,7 @@ public class Player : Unit
                 break;
         }
 
-        EffectiveNextAuto = timeOfSwing;
+        EffectiveNextAuto = nextSwing;
     }
 
     public Player(string name, Race race, ShattrathFaction faction, Equipment equipment, List<Talent> talents, StatSet weights = null) : base(name, CreatureType.Humanoid)
@@ -80,8 +80,7 @@ public class Player : Unit
         Equipment = equipment;
 
         if (Equipment.Weapon is null)
-            Equipment.Weapon = new EquippableWeapon()
-            { ID = 0, Name = "Unarmed", MinDamage = 1, MaxDamage = 1, AttackSpeed = 2000, Type = WeaponType.Unarmed, ItemLevel = 0, Phase = 1, Quality = Quality.Legendary, Slot = Slot.Weapon };
+            Equipment.Weapon = EquippableWeapon.Unarmed;
 
         Race = race;
         Faction = faction;
@@ -98,7 +97,7 @@ public class Player : Unit
         foreach (Aura aura in Data.Collections.Auras.Values)
             Auras.Add(aura);
 
-        previousAttackSpeed = Weapon.EffectiveSpeed;
+        previousAttackSpeed = 1f;
 
         HasteEndEvents = new();
     }
@@ -135,7 +134,7 @@ public class Player : Unit
         return mask;
     }
 
-    protected override Unit GetSpellTarget(SpellTarget target, FightSimulation fight)
+    public override Unit GetSpellTarget(SpellTarget target, FightSimulation fight)
     {
         return target switch
         {

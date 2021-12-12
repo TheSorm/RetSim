@@ -165,7 +165,7 @@ namespace RetSimDesktop.View
         {
             for (int i = startIndex; i < startIndex + length; i++)
             {
-                FightSimulation fight = new(new Player("Brave Hero", race, shattrathFaction, playerEquipment, talents), new Enemy(encounter), new EliteTactic(), buffs, debuffs, consumables, minFightDuration, maxFightDuration);
+                FightSimulation fight = new(new Player("Brave Hero", race, shattrathFaction, playerEquipment, talents), new Enemy(encounter), new EliteTactic(), buffs, debuffs, consumables, minFightDuration, maxFightDuration, new List<Spell>(), new List<int>()); //TODO: Add cooldowns + heroism timings
                 fight.Run();
                 combatLogs[i] = fight.CombatLog;
             }

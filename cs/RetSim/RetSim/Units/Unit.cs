@@ -37,7 +37,7 @@ public class Unit
         return ProcMask.None;
     }
 
-    protected virtual Unit GetSpellTarget(SpellTarget target, FightSimulation fight)
+    public virtual Unit GetSpellTarget(SpellTarget target, FightSimulation fight)
     {
         return target switch
         {

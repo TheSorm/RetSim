@@ -119,7 +119,7 @@ public class Auras : Dictionary<Aura, AuraState>
         }
 
         else
-        {           
+        {
 
             if (aura.Duration > 0)
             {

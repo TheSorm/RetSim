@@ -12,6 +12,9 @@ public class EquippableWeapon : EquippableItem
     {
         return base.ToString();
     }
+
+    public static EquippableWeapon Unarmed = new EquippableWeapon()
+    { ID = 0, Name = "Unarmed", MinDamage = 1, MaxDamage = 1, AttackSpeed = 2000, Type = WeaponType.Unarmed, ItemLevel = 0, Phase = 1, Quality = Quality.Legendary, Slot = Slot.Weapon };
 }
 
 public enum WeaponType
@@ -22,3 +25,4 @@ public enum WeaponType
     Axe = 3,
     Polearm = 4
 }
+

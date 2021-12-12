@@ -12,6 +12,7 @@ using RetSim.Units.Player;
 using RetSim.Units.Player.Static;
 using RetSim.Units.UnitStats;
 using System.Diagnostics;
+using System.Linq;
 
 namespace RetSim;
 
@@ -19,18 +20,37 @@ class Program
 {
     public static AbstractLogger Logger = new ConsoleLogger();
 
+    static Equipment Equipment;
+    static List<Talent> Talents;
+    static List<Spell> Buffs, Debuffs, Consumables, Cooldowns;
+    static List<int> Heroisms;
+    static string Name = "Brave Hero";
+    static Race Race;
+    static ShattrathFaction Faction = ShattrathFaction.Aldor;
+
+    static Boss Boss;
+
+    static int MinDuration = 180000;
+    static int MaxDuration = 200000;
 
 
     static void Main(string[] args)
     {
         Manager.InstantiateData();
 
-        var equipment = Manager.GetEquipment();
+        Equipment = Manager.GetEquipment();
 
-        var playerTalents = Talent.GetTalents(20105, 25957, 20121, 31868, 20113, 20218, 31870, 20059, 35397, 31883, 20193, 20266);
-        var playerBuffs = Spell.GetSpells(25392, 14767, 25570, 27127, 32999, 26991, 17055, 28878, 30811, 27141, 20048, 25898, 25580, 29193, 25359, 25528, 16295, 2048, 12861);
-        var playerDebuffs = Spell.GetSpells(22959, 17800, 15258, 27228, 32484, 33200, 34501, 14325, 30070, 27159, 20337, 26993, 33602, 27226, 26866, 14169);
-        var playerConsumables = Spell.GetSpells(28520, 33256, 33082, 33077, 35476, 23060);
+        Talents = Talent.GetTalents(20105, 25957, 20121, 31868, 20113, 20218, 31870, 20059, 35397, 31883, 20193, 20266);
+        Buffs = Spell.GetSpells(25392, 14767, 25570, 27127, 32999, 26991, 17055, 28878, 30811, 27141, 20048, 25898, 25580, 29193, 25359, 25528, 16295, 2048, 12861);
+        Debuffs = Spell.GetSpells(17800, 15258, 27228, 32484, 33200, 34501, 14325, 30070, 27159, 20337, 26993, 33602, 27226, 26866, 14169);
+        Consumables = Spell.GetSpells(28520, 33256, 33082, 33077, 35476, 23060);
+
+        Cooldowns = Spell.GetSpells(31884, 28507, 30486);
+        Heroisms = new List<int> { 1400 };
+
+        Race = Collections.Races["Human"];
+        Boss = Collections.Bosses.First(x => x.Name == "Magtheridon");
+
 
         Logger.Log("Press Enter to run a single, detailed sim, or any other key to run many, non-detailed sims.");
 
@@ -41,17 +61,17 @@ class Program
         Logger.DisableInput();
 
         if (once)
-            RunOnce(equipment, playerTalents, playerBuffs, playerDebuffs, playerConsumables);
+            RunOnce();
 
         else
-            RunMany(equipment, playerTalents, playerBuffs, playerDebuffs, playerConsumables);
+            RunMany();
 
         //PrintEquipment(equipment);
 
         Logger.EnableInput();
     }
 
-    static void PrintEquipment(Equipment equipment)
+    static void PrintEquipment()
     {
         Logger.Log("");
 
@@ -59,7 +79,7 @@ class Program
         Logger.Log($"║   Slot    ║  ID   ║             Item              ║                              Gems                                   ║");
         Logger.Log($"╠═══════════╬═══════╬═══════════════════════════════╬═══╦═════════════════════════════════════════════════════════════════╣");
 
-        foreach (EquippableItem item in equipment.PlayerEquipment)
+        foreach (EquippableItem item in Equipment.PlayerEquipment)
         {
             if (item != null)
                 Logger.Log($"{item}");
@@ -68,9 +88,9 @@ class Program
         Logger.Log($"╚═══════════╩═══════╩═══════════════════════════════╩═══╩═════════════════════════════════════════════════════════════════╝");
     }
 
-    static void RunOnce(Equipment equipment, List<Talent> talents, List<Spell> buffs, List<Spell> debuffs, List<Spell> consumables)
+    static void RunOnce()
     {
-        FightSimulation fight = new(new Player("Brave Hero", Collections.Races["Human"], ShattrathFaction.Aldor, equipment, talents, null), new Enemy(Collections.Bosses[17]), new EliteTactic(), buffs, debuffs, consumables, 180000, 200000);
+        FightSimulation fight = new(new Player(Name, Race, Faction, Equipment, Talents, null), new Enemy(Boss), new EliteTactic(), Buffs, Debuffs, Consumables, MinDuration, MaxDuration, Cooldowns, Heroisms);
 
         PrintStats(fight.Player.Stats.All);
 
@@ -79,7 +99,7 @@ class Program
         fight.Output();
     }
 
-    static void RunMany(Equipment equipment, List<Talent> talents, List<Spell> buffs, List<Spell> debuffs, List<Spell> consumables)
+    static void RunMany()
     {
         float iterations = 10000;
         int outerIterations = 10;
@@ -115,7 +135,7 @@ class Program
 
         for (int i = 0; i < outerIterations; i++)
         {
-            results[i] = Run(iterations, equipment, talents, buffs, debuffs, consumables, i, false);
+            results[i] = Run(iterations, i, false);
 
             dps += results[i].AverageDPS;
             time += results[i].TimeSpan;
@@ -150,7 +170,7 @@ class Program
         Logger.Log($"╚══════════════════════════════╩════════════╩══════════════════╝");
     }
 
-    static (float AverageDPS, TimeSpan span) Run(float iterations, Equipment equipment, List<Talent> talents, List<Spell> buffs, List<Spell> debuffs, List<Spell> consumables, int outer, bool log)
+    static (float AverageDPS, TimeSpan span) Run(float iterations, int outer, bool log)
     {
         var dps = 0f;
         var row = outer + 3;
@@ -161,7 +181,7 @@ class Program
 
         for (int i = 0; i < iterations; i++)
         {
-            FightSimulation fight = new(new Player("Brave Hero", Data.Collections.Races["Human"], ShattrathFaction.Aldor, equipment, talents), new Enemy(Collections.Bosses[17]), new EliteTactic(), buffs, debuffs, consumables, 180000, 190000);
+            FightSimulation fight = new(new Player(Name, Race, Faction, Equipment, Talents, null), new Enemy(Boss), new EliteTactic(), Buffs, Debuffs, Consumables, MinDuration, MaxDuration, Cooldowns, Heroisms);
 
             fight.Run();
 

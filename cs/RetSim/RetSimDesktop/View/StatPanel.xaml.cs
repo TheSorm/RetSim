@@ -44,7 +44,7 @@ namespace RetSimDesktop
                 var equipment = retSimUIModel.SelectedGear.GetEquipment();
                 var player = new Player("Brave Hero", Collections.Races[retSimUIModel.PlayerSettings.SelectedRace.ToString()], ShattrathFaction.Aldor,
                     equipment, retSimUIModel.SelectedTalents.GetTalentList());
-                FightSimulation fight = new(player, new Enemy(Collections.Bosses[retSimUIModel.EncounterSettings.EncounterID]), new EliteTactic(), new List<Spell>(), new List<Spell>(), new List<Spell>(), 0, 0);
+                FightSimulation fight = new(player, new Enemy(Collections.Bosses[retSimUIModel.EncounterSettings.EncounterID]), new EliteTactic(), new List<Spell>(), new List<Spell>(), new List<Spell>(), 0, 0, new List<Spell>(), new List<int>()); //TODO: Add cooldowns + heroism timings
 
                 StatPanelBoxHeader.Content = "Level 70 " + Collections.Races[retSimUIModel.PlayerSettings.SelectedRace.ToString()].Name + " Paladin";
 

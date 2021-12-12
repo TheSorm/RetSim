@@ -1,4 +1,6 @@
-﻿using RetSim.Misc;
+﻿using RetSim.Data;
+using RetSim.Items;
+using RetSim.Misc;
 using RetSim.Simulation.CombatLogEntries;
 using RetSim.Simulation.EventQueues;
 using RetSim.Simulation.Events;
@@ -20,22 +22,23 @@ public class FightSimulation
         return $"{Player.Name} fights {Enemy.Name} for {t.Minutes}m {t.Seconds}.{t.Milliseconds:D3}s";
     }
 
-    public readonly Player Player;
-    public readonly Enemy Enemy;
-    public readonly Tactic Tactic;
+    public Player Player { get; init; }
+    public Enemy Enemy { get; init; }
+    public Tactic Tactic { get; init; }
 
-    public readonly List<Spell> Buffs;
-    public readonly List<Spell> Debuffs;
-    public readonly List<Spell> Consumables;
+    public List<Spell> Buffs { get; init; }
+    public List<Spell> Debuffs { get; init; }
+    public List<Spell> Consumables { get; init; }
 
-    public readonly CombatLog CombatLog;
-    public readonly IEventQueue Queue;
-    public int Timestamp { get; set; }
+    public CooldownManager CooldownManager { get; init; }
+    public CombatLog CombatLog { get; init; }
+    public IEventQueue Queue { get; init; }
+
+    public int Duration { get; init; }
+    public int Timestamp { get; private set; }
     public bool Ongoing { get; set; }
 
-    public readonly int Duration;
-
-    public FightSimulation(Player player, Enemy enemy, Tactic tactic, List<Spell> buffs, List<Spell> debuffs, List<Spell> consumables, int minDuration, int maxDuration)
+    public FightSimulation(Player player, Enemy enemy, Tactic tactic, List<Spell> buffs, List<Spell> debuffs, List<Spell> consumables, int minDuration, int maxDuration, List<Spell> cooldowns, List<int> heroisms)
     {
         Player = player;
         Enemy = enemy;
@@ -53,6 +56,28 @@ public class FightSimulation
         Duration = RNG.RollRange(minDuration, maxDuration);
 
         Initialize();
+
+        var allCooldowns = new List<Spell>();
+
+        foreach (Spell spell in cooldowns)
+        {
+            allCooldowns.Add(spell);
+        }
+
+        foreach (EquippableItem item in player.Equipment.PlayerEquipment)
+        {
+            if (item.OnUse != null && Collections.Spells.ContainsKey(item.OnUse.ID))
+                allCooldowns.AddRange(Spell.GetSpells(item.OnUse.ID));
+        }
+
+        CooldownManager = new CooldownManager(this, allCooldowns, heroisms);
+
+        var heroism = Collections.Spells[32182];
+
+        foreach (int timestamp in heroisms)
+        {
+            Queue.Add(new CastEvent(heroism, Player, Player, this, timestamp));
+        }
     }
 
     public void Initialize()
@@ -108,7 +133,6 @@ public class FightSimulation
 
         Queue.Add(new SimulationEndEvent(this, Duration));
 
-
         while (Ongoing)
         {
             int nextTimestamp = Duration;
@@ -152,9 +176,9 @@ public class FightSimulation
 
         Logger.Log($"\nDuration - Expected: {Duration} / Real: {Timestamp}\n");
 
-        Logger.Log($"╔════════════════════╦═════════╦═════════╦════════╦═════╦═════════════╦═════════════╦═════════════╦═════════════╗");
-        Logger.Log($"║    Ability Name    ║ Damage  ║   DPS   ║   %    ║  #  ║ #  Crit   % ║ #   Hit   % ║ #  Miss   % ║ #  Dodge  % ║");
-        Logger.Log($"╠════════════════════╬═════════╬═════════╬════════╬═════╬═════════════╬═════════════╬═════════════╬═════════════╣");
+        Logger.Log($"╔═════════════════════╦═════════╦═════════╦════════╦═════╦═════════════╦═════════════╦═════════════╦═════════════╗");
+        Logger.Log($"║    Ability Name     ║ Damage  ║   DPS   ║   %    ║  #  ║ #  Crit   % ║ #   Hit   % ║ #  Miss   % ║ #  Dodge  % ║");
+        Logger.Log($"╠═════════════════════╬═════════╬═════════╬════════╬═════╬═════════════╬═════════════╬═════════════╬═════════════╣");
 
         int totals = 0;
 
@@ -186,12 +210,12 @@ public class FightSimulation
             float dps = (float)damage / CombatLog.Duration * 1000;
             float hit = count - miss - dodge;
 
-            Logger.Log($"║ {s,-18} ║ {damage,7} ║ {dps.Rounded(),7} ║ {(dps / CombatLog.DPS * 100).Rounded(),5}% ║ {count,3} ║ {crit,-3} {(crit / hit * 100).Rounded(),6}% ║ {hit,-3} {(hit / count * 100).Rounded(),6}% ║ {miss,-3} {(miss / count * 100).Rounded(),6}% ║ {dodge,-3} {(dodge / count * 100).Rounded(),6}% ║");
+            Logger.Log($"║ {s,-19} ║ {damage,7} ║ {dps.Rounded(),7} ║ {(dps / CombatLog.DPS * 100).Rounded(),5}% ║ {count,3} ║ {crit,-3} {(crit / hit * 100).Rounded(),6}% ║ {hit,-3} {(hit / count * 100).Rounded(),6}% ║ {miss,-3} {(miss / count * 100).Rounded(),6}% ║ {dodge,-3} {(dodge / count * 100).Rounded(),6}% ║");
 
         }
 
-        Logger.Log($"╠════════════════════╬═════════╬═════════╬════════╬═════╬═════════════╩═════════════╩═════════════╩═════════════╝");
-        Logger.Log($"║       Totals       ║ {CombatLog.Damage,7} ║ {CombatLog.DPS.Rounded(),7} ║ {"100%",6} ║ {totals,3} ║");
-        Logger.Log($"╚════════════════════╩═════════╩═════════╩════════╩═════╝");
+        Logger.Log($"╠═════════════════════╬═════════╬═════════╬════════╬═════╬═════════════╩═════════════╩═════════════╩═════════════╝");
+        Logger.Log($"║       Totals        ║ {CombatLog.Damage,7} ║ {CombatLog.DPS.Rounded(),7} ║ {"100%",6} ║ {totals,3} ║");
+        Logger.Log($"╚═════════════════════╩═════════╩═════════╩════════╩═════╝");
     }
 }

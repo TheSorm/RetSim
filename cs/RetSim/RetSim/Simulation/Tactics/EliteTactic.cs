@@ -5,27 +5,17 @@ namespace RetSim.Simulation.Tactics;
 
 public class EliteTactic : Tactic
 {
-    Spell trinket1 = null;
-    Spell trinket2 = null;
-
     Spell CrusaderStrike;
     Spell SealOfCommand;
     Spell SealOfBlood;
     Spell Judgement;
-    Spell AvengingWrath;
-    Spell Heroism;
-    Spell HastePotion;
 
     public EliteTactic()
     {
         CrusaderStrike = Data.Collections.Spells[35395];
         SealOfCommand = Data.Collections.Spells[27170];
         SealOfBlood = Data.Collections.Spells[31892];
-        Heroism = Data.Collections.Spells[32182];
-        AvengingWrath = Data.Collections.Spells[31884];
         Judgement = Data.Collections.Spells[20271];
-
-        HastePotion = Data.Collections.Spells[28507];
 
     }
 
@@ -35,45 +25,21 @@ public class EliteTactic : Tactic
 
         var firstAutoAttack = new AutoAttackEvent(fight, spellGCD + 1);
         var onStart = new List<Event>()
-            {                
+            {
                 new CastEvent(SealOfCommand, fight.Player, fight.Player, fight, 0),                
                 //new CastEvent(SealOfBlood, fight.Player, fight.Player, fight, 0),
-                new CastEvent(AvengingWrath, fight.Player, fight.Player, fight, spellGCD - 1),
                 //new CastEvent(CrusaderStrike, fight.Player, fight.Player, fight, spellGCD),
-                //new CastEvent(Heroism, fight.Player, fight.Player, fight, 1495),
-                //new CastEvent(HastePotion, fight.Player, fight.Player, fight, 1495),
-                //new CastEvent(SealOfBlood, fight.Player, fight.Player, fight, 1500),
+
                 firstAutoAttack,
             };
         fight.Player.NextAutoAttack = firstAutoAttack;
         fight.Player.EffectiveNextAuto = firstAutoAttack.Timestamp;
-
-        if (fight.Player.Equipment.Trinket1 != null && fight.Player.Equipment.Trinket1.OnUse != null && Data.Collections.Spells.ContainsKey(fight.Player.Equipment.Trinket1.OnUse.ID))
-            trinket1 = Data.Collections.Spells[fight.Player.Equipment.Trinket1.OnUse.ID];
-
-        if (fight.Player.Equipment.Trinket2 != null && fight.Player.Equipment.Trinket2.OnUse != null && Data.Collections.Spells.ContainsKey(fight.Player.Equipment.Trinket2.OnUse.ID))
-            trinket2 = Data.Collections.Spells[fight.Player.Equipment.Trinket2.OnUse.ID];
-
-        if (trinket1 != null)
-            onStart.Add(new CastEvent(trinket1, fight.Player, fight.Player, fight, spellGCD));
-
-        if (trinket2 != null)
-            onStart.Add(new CastEvent(trinket2, fight.Player, fight.Player, fight, spellGCD));
 
         return onStart;
     }
 
     public override Event GetActionBetween(int start, int end, FightSimulation fight)
     {
-        if (!fight.Player.Spellbook.IsOnCooldown(AvengingWrath) && start > 1500)
-            return new CastEvent(AvengingWrath, fight.Player, fight.Player, fight, start);
-
-        if (trinket1 != null && !fight.Player.Spellbook.IsOnCooldown(trinket1) && start > 1500)
-            return new CastEvent(trinket1, fight.Player, fight.Player, fight, start);
-
-        if (trinket2 != null && !fight.Player.Spellbook.IsOnCooldown(trinket2) && start > 1500)
-            return new CastEvent(trinket2, fight.Player, fight.Player, fight, start);
-
         int hasteLeeway = 0;
         int maxCSDelay = 0;
 

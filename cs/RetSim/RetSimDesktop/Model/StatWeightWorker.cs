@@ -49,7 +49,7 @@ namespace RetSimDesktop.Model
                 for (int i = 0; i < numberOfSimulations; i++)
                 {
                     RNG.local = new(baseSeed + i);
-                    FightSimulation fight = new(new Player("Brave Hero", Collections.Races[race.ToString()], shattrathFaction, playerEquipment, talents), new Enemy(Collections.Bosses[encounterID]), new EliteTactic(), buffs, debuffs, consumables, minDuration, maxDuration);
+                    FightSimulation fight = new(new Player("Brave Hero", Collections.Races[race.ToString()], shattrathFaction, playerEquipment, talents), new Enemy(Collections.Bosses[encounterID]), new EliteTactic(), buffs, debuffs, consumables, minDuration, maxDuration, new List<Spell>(), new List<int>()); //TODO: Add cooldowns + heroism timings
                     fight.Run();
                     baseDps += fight.CombatLog.DPS;
                     retSimUIModel.DisplayStatWeights[0].DpsDelta = baseDps / i;
@@ -137,7 +137,7 @@ namespace RetSimDesktop.Model
             for (int i = 0; i < iterationCount; i++)
             {
                 RNG.local = new(baseSeed + i);
-                FightSimulation fight = new(new Player("Brave Hero", race, shattrathFaction, playerEquipment, talents, extraStats), new Enemy(encounter), new EliteTactic(), buffs, debuffs, consumables, minFightDuration, maxFightDuration);
+                FightSimulation fight = new(new Player("Brave Hero", race, shattrathFaction, playerEquipment, talents, extraStats), new Enemy(encounter), new EliteTactic(), buffs, debuffs, consumables, minFightDuration, maxFightDuration, new List<Spell>(), new List<int>()); //TODO: Add cooldowns + heroism timings
                 fight.Run();
                 dps += fight.CombatLog.DPS;
                 statWeightsDisplay.DpsDelta = ((dps / i) - baseDps) / statWeightsDisplay.IncreasedAmount;

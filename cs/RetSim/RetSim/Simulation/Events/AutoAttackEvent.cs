@@ -1,5 +1,4 @@
 ﻿using RetSim.Spells;
-using System.Diagnostics;
 
 namespace RetSim.Simulation.Events;
 
@@ -14,7 +13,7 @@ public class AutoAttackEvent : Event
     public override ProcMask Execute(object arguments = null)
     {
         Fight.Player.NextAutoAttack = new AutoAttackEvent(Fight, Timestamp + Fight.Player.Weapon.EffectiveSpeed);
-        
+
         Fight.Player.RecalculateNext();
 
         Fight.Queue.Add(Fight.Player.NextAutoAttack);

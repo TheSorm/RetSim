@@ -415,7 +415,7 @@
   "30486": {
     "ID": 30486,
     "Name": "Super Sapper Charge",
-    "Cooldown": 180000,
+    "Cooldown": 300000,
     "Target": "Enemy",
     "Effects": [
       {
