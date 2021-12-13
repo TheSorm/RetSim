@@ -17,7 +17,7 @@ namespace RetSimDesktop.Model.SimWorker
         public List<Spell> Buffs { get; init; } = new();
         public List<Spell> Debuffs { get; init; } = new();
         public List<Spell> Consumables { get; init; } = new();
-        public List<Spell> Cooldwons { get; init; } = new();
+        public List<Spell> Cooldowns { get; init; } = new();
         public List<int> HeroismUsage { get; init; } = new();
         public int MinFightDuration { get; init; }
         public int MaxFightDuration { get; init; }

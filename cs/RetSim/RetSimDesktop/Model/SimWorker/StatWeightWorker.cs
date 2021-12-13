@@ -43,7 +43,7 @@ namespace RetSimDesktop.Model
                 var buffs = retSimUIModel.SelectedBuffs.GetBuffs();
                 var debuffs = retSimUIModel.SelectedDebuffs.GetDebuffs();
                 var consumables = retSimUIModel.SelectedConsumables.GetConsumables();
-                var cooldwons = retSimUIModel.SelectedCooldowns.GetCooldowns();
+                var cooldowns = retSimUIModel.SelectedCooldowns.GetCooldowns();
                 List<int> heroismUsage = new();
                 if (retSimUIModel.SelectedBuffs.HeroismEnabled)
                 {
@@ -68,7 +68,7 @@ namespace RetSimDesktop.Model
                     FightSimulation fight = new(
                         new Player("Brave Hero", Collections.Races[race.ToString()], shattrathFaction, playerEquipment, talents),
                         new Enemy(Collections.Bosses[encounterID]),
-                        new EliteTactic(), buffs, debuffs, consumables, minDuration, maxDuration, cooldwons, heroismUsage);
+                        new EliteTactic(), buffs, debuffs, consumables, minDuration, maxDuration, cooldowns, heroismUsage);
                     fight.Run();
                     baseDps += fight.CombatLog.DPS;
                     retSimUIModel.DisplayStatWeights[0].DpsDelta = baseDps / i;
@@ -105,7 +105,7 @@ namespace RetSimDesktop.Model
                         Buffs = buffs,
                         Debuffs = debuffs,
                         Consumables = consumables,
-                        Cooldwons = cooldwons,
+                        Cooldowns = cooldowns,
                         HeroismUsage = heroismUsage,
                         MinFightDuration = minDuration,
                         MaxFightDuration = maxDuration,
@@ -144,7 +144,7 @@ namespace RetSimDesktop.Model
             for (int i = 0; i < NumberOfSimulations; i++)
             {
                 RNG.local = new(BaseSeed + i);
-                FightSimulation fight = new(new Player("Brave Hero", Race, ShattrathFaction, PlayerEquipment, Talents, extraStats), new Enemy(Encounter), new EliteTactic(), Buffs, Debuffs, Consumables, MinFightDuration, MaxFightDuration, Cooldwons, HeroismUsage);
+                FightSimulation fight = new(new Player("Brave Hero", Race, ShattrathFaction, PlayerEquipment, Talents, extraStats), new Enemy(Encounter), new EliteTactic(), Buffs, Debuffs, Consumables, MinFightDuration, MaxFightDuration, Cooldowns, HeroismUsage);
                 fight.Run();
                 dps += fight.CombatLog.DPS;
                 StatWeightsDisplay.DpsDelta = ((dps / i) - BaseDps) / StatWeightsDisplay.IncreasedAmount;

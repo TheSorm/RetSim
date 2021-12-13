@@ -42,7 +42,7 @@ namespace RetSimDesktop.View
                 var buffs = input.Item1.SelectedBuffs.GetBuffs();
                 var debuffs = input.Item1.SelectedDebuffs.GetDebuffs();
                 var consumables = input.Item1.SelectedConsumables.GetConsumables();
-                var cooldwons = input.Item1.SelectedCooldowns.GetCooldowns();
+                var cooldowns = input.Item1.SelectedCooldowns.GetCooldowns();
                 List<int> heroismUsage = new();
                 if (input.Item1.SelectedBuffs.HeroismEnabled)
                 {
@@ -92,7 +92,7 @@ namespace RetSimDesktop.View
                         Buffs = buffs,
                         Debuffs = debuffs,
                         Consumables = consumables,
-                        Cooldwons = cooldwons,
+                        Cooldowns = cooldowns,
                         HeroismUsage = heroismUsage,
                         MinFightDuration = minDuration,
                         MaxFightDuration = maxDuration,
@@ -123,7 +123,7 @@ namespace RetSimDesktop.View
             float overallDPS = 0;
             for (int i = 0; i < NumberOfSimulations; i++)
             {
-                FightSimulation fight = new(new Player("Brave Hero", Race, ShattrathFaction, PlayerEquipment, Talents), new Enemy(Encounter), new EliteTactic(), Buffs, Debuffs, Consumables, MinFightDuration, MaxFightDuration, Cooldwons, HeroismUsage);
+                FightSimulation fight = new(new Player("Brave Hero", Race, ShattrathFaction, PlayerEquipment, Talents), new Enemy(Encounter), new EliteTactic(), Buffs, Debuffs, Consumables, MinFightDuration, MaxFightDuration, Cooldowns, HeroismUsage);
                 fight.Run();
                 overallDPS += fight.CombatLog.DPS;
                 Item.DPS = overallDPS / (i + 1);
