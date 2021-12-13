@@ -4,34 +4,45 @@ namespace RetSim.Simulation.EventQueues
 {
     public class ListQueue : List<Event>, IEventQueue
     {
+        private bool dirty = false;
 
         public new void Add(Event e)
         {
             if (e != null)
+            {
                 base.Add(e);
+                dirty = true;
+            }
         }
 
         public void AddRange(List<Event> events)
         {
             foreach (Event e in events)
+            {
                 Add(e);
+                dirty = true;
+            }
         }
 
         public Event GetNext()
         {
-            return this[0];
+            return this[Count - 1];
         }
 
         public Event RemoveNext()
         {
-            Event next = this[0];
-            RemoveAt(0);
+            Event next = this[Count - 1];
+            RemoveAt(Count - 1);
             return next;
         }
 
         public void EnsureSorting()
         {
-            Sort();
+            if (dirty)
+            {
+                Sort((a, b) => b.CompareTo(a));
+                dirty = false;
+            }
         }
 
         public bool IsEmpty()
