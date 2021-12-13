@@ -20,7 +20,7 @@ namespace RetSim.Simulation
         {
             Parent = parent;
             FightDuration = parent.Duration;
-            HeroismTimings = new(heroism);
+            HeroismTimings = heroism;
 
             HeroismTimings.Sort();
 
