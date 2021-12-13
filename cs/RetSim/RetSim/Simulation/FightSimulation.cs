@@ -50,6 +50,16 @@ public class FightSimulation
 
         Initialize();
 
+        List<int> correctedHerosimTimes = new();
+
+        foreach(var time in heroisms)
+        {
+            if(time < Duration)
+            {
+                correctedHerosimTimes.Add(time);
+            }
+        }
+
         var allCooldowns = new List<Spell>();
 
         foreach (Spell spell in cooldowns)
@@ -63,11 +73,11 @@ public class FightSimulation
                 allCooldowns.AddRange(Spell.GetSpells(item.OnUse.ID));
         }
 
-        CooldownManager = new CooldownManager(this, allCooldowns, heroisms);
+        CooldownManager = new CooldownManager(this, allCooldowns, correctedHerosimTimes);
 
         var heroism = Collections.Spells[32182];
 
-        foreach (int timestamp in heroisms)
+        foreach (int timestamp in correctedHerosimTimes)
         {
             Queue.Add(new CastEvent(heroism, Player, Player, this, timestamp));
         }
@@ -75,37 +85,39 @@ public class FightSimulation
 
     public void Initialize()
     {
+        List<Event> preFightEvents = new();
         foreach (Spell spell in Player.Equipment.Spells)
         {
-            Queue.Add(new CastEvent(spell, Player, Player, this, Timestamp, -3));
+            preFightEvents.Add(new CastEvent(spell, Player, Player, this, Timestamp, -3));
         }
 
         foreach (Talent talent in Player.Talents)
         {
-            Queue.Add(new CastEvent(talent, Player, Player, this, Timestamp, -2));
+            preFightEvents.Add(new CastEvent(talent, Player, Player, this, Timestamp, -2));
         }
 
         foreach (Spell buff in Buffs)
         {
-            Queue.Add(new CastEvent(buff, Player, Player, this, Timestamp, -1));
+            preFightEvents.Add(new CastEvent(buff, Player, Player, this, Timestamp, -1));
         }
 
         foreach (Spell debuff in Debuffs)
         {
-            Queue.Add(new CastEvent(debuff, Player, Enemy, this, Timestamp, -1));
+            preFightEvents.Add(new CastEvent(debuff, Player, Enemy, this, Timestamp, -1));
         }
 
         foreach (Spell consumable in Consumables)
         {
-            Queue.Add(new CastEvent(consumable, Player, Player, this, Timestamp, -1));
+            preFightEvents.Add(new CastEvent(consumable, Player, Player, this, Timestamp, -1));
         }
 
         if (Player.Race.Racial != null && Player.Race.Racial.Requirements(Player))
-            Queue.Add(new CastEvent(Player.Race.Racial, Player, Player, this, Timestamp, -1));
+            preFightEvents.Add(new CastEvent(Player.Race.Racial, Player, Player, this, Timestamp, -1));
 
-        while (!Queue.IsEmpty())
+        while (preFightEvents.Count > 0)
         {
-            Event current = Queue.RemoveNext();
+            Event current = preFightEvents[preFightEvents.Count - 1];
+            preFightEvents.RemoveAt(preFightEvents.Count - 1);
 
             if (current is AuraEndEvent)
                 ends.Add((AuraEndEvent)current);

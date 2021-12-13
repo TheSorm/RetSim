@@ -20,13 +20,7 @@ namespace RetSim.Simulation
         {
             Parent = parent;
             FightDuration = parent.Duration;
-            HeroismTimings = new(heroism);
-
-            foreach (int hero in HeroismTimings)
-            {
-                if (hero > FightDuration)
-                    HeroismTimings.Remove(hero);
-            }
+            HeroismTimings = heroism;
 
             HeroismTimings.Sort();
 
