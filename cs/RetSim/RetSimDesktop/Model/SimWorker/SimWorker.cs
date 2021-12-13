@@ -41,7 +41,7 @@ namespace RetSimDesktop.View
                 var buffs = retSimUIModel.SelectedBuffs.GetBuffs();
                 var debuffs = retSimUIModel.SelectedDebuffs.GetDebuffs();
                 var consumables = retSimUIModel.SelectedConsumables.GetConsumables();
-                var cooldwons = retSimUIModel.SelectedCooldowns.GetCooldowns();
+                var cooldowns = retSimUIModel.SelectedCooldowns.GetCooldowns();
                 List<int> heroismUsage = new();
                 if (retSimUIModel.SelectedBuffs.HeroismEnabled)
                 {
@@ -79,7 +79,7 @@ namespace RetSimDesktop.View
                                 Buffs = buffs,
                                 Debuffs = debuffs,
                                 Consumables = consumables,
-                                Cooldwons = cooldwons,
+                                Cooldowns = cooldowns,
                                 HeroismUsage = heroismUsage,
                                 MinFightDuration = minDuration,
                                 MaxFightDuration = maxDuration,
@@ -101,7 +101,7 @@ namespace RetSimDesktop.View
                                 Buffs = buffs,
                                 Debuffs = debuffs,
                                 Consumables = consumables,
-                                Cooldwons = cooldwons,
+                                Cooldowns = cooldowns,
                                 HeroismUsage = heroismUsage,
                                 MinFightDuration = minDuration,
                                 MaxFightDuration = maxDuration,
@@ -184,7 +184,7 @@ namespace RetSimDesktop.View
         {
             for (int i = StartIndex; i < StartIndex + NumberOfSimulations; i++)
             {
-                FightSimulation fight = new(new Player("Brave Hero", Race, ShattrathFaction, PlayerEquipment, Talents), new Enemy(Encounter), new EliteTactic(), Buffs, Debuffs, Consumables, MinFightDuration, MaxFightDuration, Cooldwons, HeroismUsage);
+                FightSimulation fight = new(new Player("Brave Hero", Race, ShattrathFaction, PlayerEquipment, Talents), new Enemy(Encounter), new EliteTactic(), Buffs, Debuffs, Consumables, MinFightDuration, MaxFightDuration, Cooldowns, HeroismUsage);
                 fight.Run();
                 CombatLogs[i] = fight.CombatLog;
             }

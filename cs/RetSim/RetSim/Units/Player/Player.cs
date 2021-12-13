@@ -33,47 +33,6 @@ public class Player : Unit
     public List<AuraEndEvent> HasteEndEvents { get; init; }
     public int EffectiveNextAuto { get; set; }
 
-    public void RecalculateNext()
-    {
-        HasteEndEvents.Sort();
-
-        if (NextAutoAttack == null)
-            return;
-
-        int nextSwing = NextAutoAttack.Timestamp;
-
-        float currentModifier = Modifiers.AttackSpeed;
-        float currentRating = Stats[StatName.HasteRating].Value;
-        float currentSpeed = Stats.EffectiveAttackSpeed;
-
-        foreach (AuraEndEvent end in HasteEndEvents)
-        {
-            if (end.Timestamp < nextSwing)
-            {
-                ModAttackSpeed effect = end.Aura.Effects.First(x => x is ModAttackSpeed) as ModAttackSpeed;
-
-                float newRating = currentRating - effect.HasteRating;
-                float newModifier = currentModifier / ModifyPercent.GetDifference(effect.Value, Auras[end.Aura].Stacks);
-                float newSpeed = Stats.CalculateEffectiveAttackSpeed(newRating / Constants.Ratings.Haste, newModifier);
-                float ratio = currentSpeed / newSpeed;
-
-                int oldRemaining = nextSwing - end.Timestamp;
-                int newRemaining = (int)(oldRemaining * ratio);
-
-                nextSwing = end.Timestamp + newRemaining;
-
-                currentSpeed = newSpeed;
-                currentRating = newRating;
-                currentModifier = newModifier;
-            }
-
-            else
-                break;
-        }
-
-        EffectiveNextAuto = nextSwing;
-    }
-
     public Player(string name, Race race, ShattrathFaction faction, Equipment equipment, List<Talent> talents, StatSet weights = null) : base(name, CreatureType.Humanoid)
     {
         Talents = talents;
@@ -173,9 +132,50 @@ public class Player : Unit
         previousAttackSpeed = speed;
     }
 
+    public void RecalculateNext()
+    {
+        HasteEndEvents.Sort();
+
+        if (NextAutoAttack == null)
+            return;
+
+        int nextSwing = NextAutoAttack.Timestamp;
+
+        float currentModifier = Modifiers.AttackSpeed;
+        float currentRating = Stats[StatName.HasteRating].Value;
+        float currentSpeed = Stats.EffectiveAttackSpeed;
+
+        foreach (AuraEndEvent end in HasteEndEvents)
+        {
+            if (end.Timestamp < nextSwing)
+            {
+                ModAttackSpeed effect = end.Aura.Effects.First(x => x is ModAttackSpeed) as ModAttackSpeed;
+
+                float newRating = currentRating - effect.HasteRating;
+                float newModifier = currentModifier / ModifyPercent.GetDifference(effect.Value, Auras[end.Aura].Stacks);
+                float newSpeed = Stats.CalculateEffectiveAttackSpeed(newRating / Constants.Ratings.Haste, newModifier);
+                float ratio = currentSpeed / newSpeed;
+
+                int oldRemaining = nextSwing - end.Timestamp;
+                int newRemaining = (int)(oldRemaining * ratio);
+
+                nextSwing = end.Timestamp + newRemaining;
+
+                currentSpeed = newSpeed;
+                currentRating = newRating;
+                currentModifier = newModifier;
+            }
+
+            else
+                break;
+        }
+
+        EffectiveNextAuto = nextSwing;
+    }
+
     public override string ToString()
     {
-        return Name;
+        return $"Level 70 {Race} Paladin";
     }
 }
 

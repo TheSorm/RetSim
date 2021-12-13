@@ -15,13 +15,6 @@ namespace RetSim.Simulation;
 
 public class FightSimulation
 {
-    public override string ToString()
-    {
-        TimeSpan t = TimeSpan.FromMilliseconds(Duration);
-
-        return $"{Player.Name} fights {Enemy.Name} for {t.Minutes}m {t.Seconds}.{t.Milliseconds:D3}s";
-    }
-
     public Player Player { get; init; }
     public Enemy Enemy { get; init; }
     public Tactic Tactic { get; init; }
@@ -229,5 +222,13 @@ public class FightSimulation
         Logger.Log($"╠═════════════════════╬═════════╬═════════╬════════╬═════╬═════════════╩═════════════╩═════════════╩═════════════╝");
         Logger.Log($"║       Totals        ║ {CombatLog.Damage,7} ║ {CombatLog.DPS.Rounded(),7} ║ {"100%",6} ║ {totals,3} ║");
         Logger.Log($"╚═════════════════════╩═════════╩═════════╩════════╩═════╝");
+    }
+
+
+    public override string ToString()
+    {
+        TimeSpan t = TimeSpan.FromMilliseconds(Duration);
+
+        return $"{Player.Name} fights {Enemy.Name} for {t.Minutes}m {t.Seconds}.{t.Milliseconds:D3}s";
     }
 }

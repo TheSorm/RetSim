@@ -22,6 +22,12 @@ namespace RetSim.Simulation
             FightDuration = parent.Duration;
             HeroismTimings = heroism;
 
+            foreach (int hero in HeroismTimings)
+            {
+                if (hero > FightDuration)
+                    HeroismTimings.Remove(hero);
+            }
+
             HeroismTimings.Sort();
 
             Cooldowns = new();
