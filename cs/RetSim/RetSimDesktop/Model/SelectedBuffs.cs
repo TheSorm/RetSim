@@ -170,7 +170,6 @@ namespace RetSimDesktop.Model
             if (earthTotemEnabled && Spells.ContainsKey((int)EarthTotem.StrengthOfEarthTotem) && Spells.ContainsKey((int)selectedEarthTotem))
             {
                 result.Add(Spells[(int)EarthTotem.StrengthOfEarthTotem]);
-                result.Add(Spells[(int)selectedEarthTotem]);
             }
             if (airTotem1Enabled && Spells.ContainsKey((int)AirTotem1.WindfuryTotem) && Spells.ContainsKey((int)selectedAirTotem1))
             {
@@ -180,6 +179,10 @@ namespace RetSimDesktop.Model
             if (airTotem2Enabled && Spells.ContainsKey((int)AirTotem2.GraceOfAirTotem) && Spells.ContainsKey((int)selectedAirTotem2))
             {
                 result.Add(Spells[(int)AirTotem2.GraceOfAirTotem]);
+            }
+            if((earthTotemEnabled && selectedEarthTotem == EarthTotem.ImpStrengthOfEarthTotem) || (airTotem2Enabled && selectedAirTotem2 == AirTotem2.ImpGraceOfAirTotem))
+            {
+                result.Add(Spells[(int)selectedEarthTotem]);
                 result.Add(Spells[(int)selectedAirTotem2]);
             }
             if (waterTotemEnabled && Spells.ContainsKey((int)WaterTotem.ManaSpringTotem) && Spells.ContainsKey((int)selectedWaterTotem))
