@@ -11,11 +11,9 @@ A WoW TBC Classic Retribution Paladin Simulator
   * Add missing items & their spells
   * Remove trash
 * Mutually exclusive spells
-* Tactic for Heroism, drums, potions etc - temporary buffs
-  * Option 1: Have a cooldown grp based system 
-  * Option 2: Set Heroism time and pop other cooldowns based on that
 
 ## LOW PRIORITY / THOUGHTS / DESIGN CONSIDERATIONS
+* Enhance cooldown manager system
 * Uptime simulation (player / buffs like Expose Weakness)
 * More tactics  
 * Mana
