@@ -169,7 +169,7 @@ namespace RetSimDesktop
                 YellowGemCount.Content = gemCount[GemColor.Yellow];
 
 
-                if (equipment.Head.Socket1 != null && equipment.Head.Socket1.IsMetaGem() is MetaGem meta)
+                if (equipment.Head != null && equipment.Head.Socket1 != null && equipment.Head.Socket1.IsMetaGem() is MetaGem meta)
                 {
                     if (meta.IsActive(gemCount[GemColor.Red], gemCount[GemColor.Blue], gemCount[GemColor.Yellow]))
                     {

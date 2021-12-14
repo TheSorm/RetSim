@@ -69,7 +69,7 @@ public class FightSimulation
 
         foreach (EquippableItem item in player.Equipment.PlayerEquipment)
         {
-            if (item.OnUse != null && Collections.Spells.ContainsKey(item.OnUse.ID))
+            if (item != null && item.OnUse != null && Collections.Spells.ContainsKey(item.OnUse.ID))
                 allCooldowns.AddRange(Spell.GetSpells(item.OnUse.ID));
         }
 
