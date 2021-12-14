@@ -15038,7 +15038,10 @@
     "Stats": {
       "Armor": 0,
       "HitRating": 30,
-      "ArmorPenetration": 600
+    },
+	"OnUse": {
+      "ID": 34106,
+      "Name": "Armor Penetration"
     },
     "UniqueEquipped": true,
     "Phase": 1
