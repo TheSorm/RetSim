@@ -15037,7 +15037,7 @@
     "Slot": 11,
     "Stats": {
       "Armor": 0,
-      "HitRating": 30,
+      "HitRating": 30
     },
 	"OnUse": {
       "ID": 34106,
