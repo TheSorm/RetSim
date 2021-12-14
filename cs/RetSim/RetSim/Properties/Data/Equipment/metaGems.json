@@ -220,7 +220,7 @@
     "Stats": {
       "AttackPower": 24
     },
-    "Phase": 53
+    "Phase": 2
   },
   {
     "Requirements": {
@@ -235,7 +235,7 @@
       "SpellPower": 14,
       "HealingPower": 14
     },
-    "Phase": 53
+    "Phase": 2
   },
   {
     "Spell": {

@@ -127,30 +127,6 @@
     "Phase": 1
   },
   {
-    "ID": 28360,
-    "Name": "Mighty Blood Garnet",
-    "ItemLevel": 60,
-    "Quality": 3,
-    "Color": 2,
-    "Stats": {
-      "AttackPower": 14
-    },
-    "UniqueEquipped": true,
-    "Phase": 1
-  },
-  {
-    "ID": 28361,
-    "Name": "Mighty Blood Garnet",
-    "ItemLevel": 60,
-    "Quality": 3,
-    "Color": 2,
-    "Stats": {
-      "AttackPower": 14
-    },
-    "UniqueEquipped": true,
-    "Phase": 1
-  },
-  {
     "ID": 28362,
     "Name": "Bold Ornate Ruby",
     "ItemLevel": 60,
@@ -268,18 +244,6 @@
     "Phase": 1
   },
   {
-    "ID": 30571,
-    "Name": "Don Rodrigo\u0027s Heart",
-    "ItemLevel": 60,
-    "Quality": 3,
-    "Color": 2,
-    "Stats": {
-      "Strength": 8
-    },
-    "UniqueEquipped": true,
-    "Phase": 1
-  },
-  {
     "ID": 30574,
     "Name": "Brutal Tanzanite",
     "ItemLevel": 70,
@@ -288,30 +252,6 @@
     "Stats": {
       "AttackPower": 10,
       "Stamina": 6
-    },
-    "Phase": 1
-  },
-  {
-    "ID": 30575,
-    "Name": "Nimble Fire Opal",
-    "ItemLevel": 70,
-    "Quality": 4,
-    "Color": 10,
-    "Stats": {
-      "DodgeRating": 5,
-      "HitRating": 4
-    },
-    "Phase": 1
-  },
-  {
-    "ID": 30582,
-    "Name": "Deadly Fire Opal",
-    "ItemLevel": 70,
-    "Quality": 4,
-    "Color": 10,
-    "Stats": {
-      "AttackPower": 8,
-      "CritRating": 5
     },
     "Phase": 1
   },
@@ -325,42 +265,6 @@
       "CritRating": 4,
       "Strength": 5
     },
-    "Phase": 1
-  },
-  {
-    "ID": 30587,
-    "Name": "Champion\u0027s Fire Opal",
-    "ItemLevel": 70,
-    "Quality": 4,
-    "Color": 10,
-    "Stats": {
-      "DefenseRating": 4,
-      "Strength": 5
-    },
-    "Phase": 1
-  },
-  {
-    "ID": 30591,
-    "Name": "Empowered Fire Opal",
-    "ItemLevel": 70,
-    "Quality": 4,
-    "Color": 10,
-    "Stats": {
-      "AttackPower": 8,
-      "Resilience": 5
-    },
-    "Phase": 1
-  },
-  {
-    "ID": 30598,
-    "Name": "Don Amancio\u0027s Heart",
-    "ItemLevel": 60,
-    "Quality": 3,
-    "Color": 2,
-    "Stats": {
-      "Strength": 8
-    },
-    "UniqueEquipped": true,
     "Phase": 1
   },
   {
@@ -388,30 +292,6 @@
     "Phase": 1
   },
   {
-    "ID": 31862,
-    "Name": "Balanced Shadow Draenite",
-    "ItemLevel": 60,
-    "Quality": 2,
-    "Color": 6,
-    "Stats": {
-      "AttackPower": 6,
-      "Stamina": 4
-    },
-    "Phase": 1
-  },
-  {
-    "ID": 31863,
-    "Name": "Balanced Nightseye",
-    "ItemLevel": 70,
-    "Quality": 3,
-    "Color": 6,
-    "Stats": {
-      "AttackPower": 8,
-      "Stamina": 6
-    },
-    "Phase": 1
-  },
-  {
     "ID": 31864,
     "Name": "Infused Shadow Draenite",
     "ItemLevel": 60,
@@ -432,18 +312,6 @@
     "Stats": {
       "ManaPer5": 2,
       "AttackPower": 8
-    },
-    "Phase": 1
-  },
-  {
-    "ID": 31868,
-    "Name": "Wicked Noble Topaz",
-    "ItemLevel": 70,
-    "Quality": 3,
-    "Color": 10,
-    "Stats": {
-      "AttackPower": 8,
-      "CritRating": 4
     },
     "Phase": 1
   },
@@ -505,18 +373,6 @@
     "Phase": 3
   },
   {
-    "ID": 32213,
-    "Name": "Balanced Shadowsong Amethyst",
-    "ItemLevel": 100,
-    "Quality": 4,
-    "Color": 6,
-    "Stats": {
-      "AttackPower": 10,
-      "Stamina": 7
-    },
-    "Phase": 3
-  },
-  {
     "ID": 32214,
     "Name": "Infused Shadowsong Amethyst",
     "ItemLevel": 100,
@@ -553,56 +409,6 @@
     "Phase": 3
   },
   {
-    "ID": 32222,
-    "Name": "Wicked Pyrestone",
-    "ItemLevel": 100,
-    "Quality": 4,
-    "Color": 10,
-    "Stats": {
-      "AttackPower": 10,
-      "CritRating": 5
-    },
-    "Phase": 3
-  },
-  {
-    "ID": 32634,
-    "Name": "Unstable Amethyst",
-    "ItemLevel": 70,
-    "Quality": 3,
-    "Color": 10,
-    "Stats": {
-      "AttackPower": 8,
-      "Stamina": 6
-    },
-    "UniqueEquipped": true,
-    "Phase": 53
-  },
-  {
-    "ID": 32637,
-    "Name": "Unstable Citrine",
-    "ItemLevel": 70,
-    "Quality": 3,
-    "Color": 10,
-    "Stats": {
-      "AttackPower": 8,
-      "CritRating": 4
-    },
-    "UniqueEquipped": true,
-    "Phase": 53
-  },
-  {
-    "ID": 32735,
-    "Name": "Radiant Spencerite",
-    "ItemLevel": 70,
-    "Quality": 4,
-    "Color": 12,
-    "Stats": {
-      "AttackPower": 20
-    },
-    "UniqueEquipped": true,
-    "Phase": 53
-  },
-  {
     "ID": 33131,
     "Name": "Crimson Sun",
     "ItemLevel": 130,
@@ -613,22 +419,6 @@
     },
     "UniqueEquipped": true,
     "Phase": 1
-  },
-  {
-    "ID": 33137,
-    "Name": "Sparkling Falling Star",
-    "ItemLevel": 130,
-    "Quality": 4,
-    "Color": 4,
-    "Stats": {
-      "Agility": 18,
-      "Intellect": 18,
-      "Spirit": 18,
-      "Stamina": 18,
-      "Strength": 18
-    },
-    "UniqueEquipped": true,
-    "Phase": 53
   },
   {
     "ID": 33142,
@@ -652,28 +442,5 @@
       "AttackPower": 20
     },
     "Phase": 5
-  },
-  {
-    "ID": 38545,
-    "Name": "Bold Ornate Ruby",
-    "ItemLevel": 60,
-    "Quality": 4,
-    "Color": 2,
-    "Stats": {
-      "AttackPower": 20
-    },
-    "Phase": 1
-  },
-  {
-    "ID": 38547,
-    "Name": "Inscribed Ornate Topaz",
-    "ItemLevel": 60,
-    "Quality": 4,
-    "Color": 10,
-    "Stats": {
-      "AttackPower": 10,
-      "CritRating": 5
-    },
-    "Phase": 1
   }
 ]

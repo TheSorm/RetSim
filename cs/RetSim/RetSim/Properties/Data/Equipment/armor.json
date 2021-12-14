@@ -1,22 +1,5 @@
 [
   {
-    "ID": 23041,
-    "Name": "Slayer\u0027s Crest",
-    "ItemLevel": 90,
-    "Quality": 4,
-    "Slot": 11,
-    "Stats": {
-      "Armor": 0,
-      "AttackPower": 64
-    },
-    "OnUse": {
-      "ID": 28777,
-      "Name": "Slayer\u0027s Crest"
-    },
-    "UniqueEquipped": true,
-    "Phase": 1
-  },
-  {
     "ID": 23045,
     "Name": "Shroud of Dominion",
     "ItemLevel": 90,
@@ -43,22 +26,7 @@
       "CritRating": 14,
       "HitRating": 10
     },
-    "Phase": 53
-  },
-  {
-    "ID": 23206,
-    "Name": "Mark of the Champion",
-    "ItemLevel": 90,
-    "Quality": 4,
-    "Slot": 11,
-    "Stats": {
-      "Armor": 0
-    },
-    "OnEquip": {
-      "ID": 29112,
-      "Name": "Champion of the Dawn"
-    },
-    "Phase": 1
+    "Phase": -1
   },
   {
     "ID": 23363,
@@ -234,53 +202,6 @@
     "Phase": 1
   },
   {
-    "ID": 27926,
-    "Name": "Mark of Vindication",
-    "ItemLevel": 91,
-    "Quality": 3,
-    "Slot": 11,
-    "Stats": {
-      "Armor": 0,
-      "AttackPower": 54
-    },
-    "OnEquip": {
-      "ID": 33522,
-      "Name": "Mana Restore 2"
-    },
-    "Phase": 1
-  },
-  {
-    "ID": 27927,
-    "Name": "Mark of Vindication",
-    "ItemLevel": 91,
-    "Quality": 3,
-    "Slot": 11,
-    "Stats": {
-      "Armor": 0,
-      "AttackPower": 54
-    },
-    "OnEquip": {
-      "ID": 33522,
-      "Name": "Mana Restore 2"
-    },
-    "Phase": 1
-  },
-  {
-    "ID": 27949,
-    "Name": "Libram of Zeal",
-    "ItemLevel": 91,
-    "Quality": 3,
-    "Slot": 12,
-    "Stats": {
-      "Armor": 0
-    },
-    "OnEquip": {
-      "ID": 33557,
-      "Name": "Improved Seal of the Crusader"
-    },
-    "Phase": 1
-  },
-  {
     "ID": 27983,
     "Name": "Libram of Zeal",
     "ItemLevel": 91,
@@ -337,7 +258,7 @@
       "Strength": 21,
       "CritRating": 16
     },
-    "Phase": 53
+    "Phase": 1
   },
   {
     "ID": 31145,
@@ -1115,23 +1036,6 @@
     "Phase": 1
   },
   {
-    "ID": 27416,
-    "Name": "Fetish of the Fallen",
-    "ItemLevel": 100,
-    "Quality": 3,
-    "Slot": 11,
-    "Stats": {
-      "Armor": 0,
-      "AttackPower": 56
-    },
-    "OnUse": {
-      "ID": 33014,
-      "Name": "Consume Life"
-    },
-    "UniqueEquipped": true,
-    "Phase": 1
-  },
-  {
     "ID": 27637,
     "Name": "Shadowstalker\u0027s Sash",
     "ItemLevel": 100,
@@ -1746,21 +1650,6 @@
     "Phase": 1
   },
   {
-    "ID": 31856,
-    "Name": "Darkmoon Card: Crusade",
-    "ItemLevel": 100,
-    "Quality": 4,
-    "Slot": 11,
-    "Stats": {
-      "Armor": 0
-    },
-    "OnEquip": {
-      "ID": 39438,
-      "Name": "Aura of the Crusade"
-    },
-    "Phase": 3
-  },
-  {
     "ID": 31919,
     "Name": "Nexus-Prince\u0027s Ring of Balance",
     "ItemLevel": 100,
@@ -1836,17 +1725,6 @@
     },
     "SocketBonus": {
       "AttackPower": 6
-    },
-    "Phase": 1
-  },
-  {
-    "ID": 25644,
-    "Name": "Blessed Book of Nagrand",
-    "ItemLevel": 103,
-    "Quality": 3,
-    "Slot": 12,
-    "Stats": {
-      "Armor": 0
     },
     "Phase": 1
   },
@@ -2498,7 +2376,7 @@
     "SocketBonus": {
       "CritRating": 4
     },
-    "Phase": 53
+    "Phase": -1
   },
   {
     "ID": 32169,
@@ -2518,7 +2396,7 @@
       "ID": 23300,
       "Name": "Seal of the Crusader Judgement Increase"
     },
-    "Phase": 53
+    "Phase": -1
   },
   {
     "ID": 32170,
@@ -2542,7 +2420,7 @@
     "SocketBonus": {
       "Resilience": 4
     },
-    "Phase": 53
+    "Phase": -1
   },
   {
     "ID": 32171,
@@ -2558,7 +2436,7 @@
       "CritRating": 16,
       "Resilience": 16
     },
-    "Phase": 53
+    "Phase": -1
   },
   {
     "ID": 32172,
@@ -2583,7 +2461,7 @@
     "SocketBonus": {
       "Resilience": 3
     },
-    "Phase": 53
+    "Phase": -1
   },
   {
     "ID": 32540,
@@ -2597,7 +2475,7 @@
       "Stamina": 18,
       "AttackPower": 56
     },
-    "Phase": 53
+    "Phase": 2
   },
   {
     "ID": 32647,
@@ -2664,18 +2542,6 @@
       "Intellect": 3
     },
     "Phase": 2
-  },
-  {
-    "ID": 32770,
-    "Name": "Skyguard Silver Cross",
-    "ItemLevel": 105,
-    "Quality": 4,
-    "Slot": 11,
-    "Stats": {
-      "Armor": 0,
-      "CritRating": 34
-    },
-    "Phase": 1
   },
   {
     "ID": 32942,
@@ -3814,33 +3680,6 @@
     "Phase": 1
   },
   {
-    "ID": 29383,
-    "Name": "Bloodlust Brooch",
-    "ItemLevel": 110,
-    "Quality": 4,
-    "Slot": 11,
-    "Stats": {
-      "Armor": 0,
-      "AttackPower": 72
-    },
-    "OnUse": {
-      "ID": 35166,
-      "Name": "Lust for Battle"
-    },
-    "Phase": 1
-  },
-  {
-    "ID": 29388,
-    "Name": "Libram of Repentance",
-    "ItemLevel": 110,
-    "Quality": 4,
-    "Slot": 12,
-    "Stats": {
-      "Armor": 0
-    },
-    "Phase": 1
-  },
-  {
     "ID": 29463,
     "Name": "Amber Bands of the Aggressor",
     "ItemLevel": 110,
@@ -4170,7 +4009,7 @@
       "Stamina": 31,
       "AttackPower": 60
     },
-    "Phase": 53
+    "Phase": -1
   },
   {
     "ID": 34075,
@@ -4183,7 +4022,7 @@
       "Stamina": 31,
       "AttackPower": 60
     },
-    "Phase": 53
+    "Phase": 1
   },
   {
     "ID": 34799,
@@ -4269,7 +4108,7 @@
       "Stamina": 22,
       "AttackPower": 48
     },
-    "Phase": 53
+    "Phase": 1
   },
   {
     "ID": 35507,
@@ -4285,22 +4124,6 @@
       "AttackPower": 42
     },
     "Phase": 5
-  },
-  {
-    "ID": 38287,
-    "Name": "Empty Mug of Direbrew",
-    "ItemLevel": 110,
-    "Quality": 4,
-    "Slot": 11,
-    "Stats": {
-      "Armor": 0,
-      "AttackPower": 72
-    },
-    "OnUse": {
-      "ID": 51955,
-      "Name": "Dire Drunkard"
-    },
-    "Phase": 1
   },
   {
     "ID": 23763,
@@ -4634,23 +4457,6 @@
     "Phase": 1
   },
   {
-    "ID": 28034,
-    "Name": "Hourglass of the Unraveller",
-    "ItemLevel": 112,
-    "Quality": 3,
-    "Slot": 11,
-    "Stats": {
-      "Armor": 0,
-      "CritRating": 32
-    },
-    "OnEquip": {
-      "ID": 33648,
-      "Name": "Rage of the Unraveller"
-    },
-    "UniqueEquipped": true,
-    "Phase": 1
-  },
-  {
     "ID": 28186,
     "Name": "Laughing Skull Battle-Harness",
     "ItemLevel": 112,
@@ -4964,38 +4770,6 @@
     },
     "SocketBonus": {
       "Agility": 3
-    },
-    "Phase": 1
-  },
-  {
-    "ID": 24124,
-    "Name": "Figurine - Felsteel Boar",
-    "ItemLevel": 115,
-    "Quality": 3,
-    "Slot": 11,
-    "Stats": {
-      "Armor": 0,
-      "AttackPower": 68
-    },
-    "OnUse": {
-      "ID": 31038,
-      "Name": "Felsteel Boar"
-    },
-    "Phase": 1
-  },
-  {
-    "ID": 24128,
-    "Name": "Figurine - Nightseye Panther",
-    "ItemLevel": 115,
-    "Quality": 3,
-    "Slot": 11,
-    "Stats": {
-      "Armor": 0,
-      "AttackPower": 54
-    },
-    "OnUse": {
-      "ID": 31047,
-      "Name": "Nightseye Panther"
     },
     "Phase": 1
   },
@@ -6806,34 +6580,6 @@
     "Phase": 1
   },
   {
-    "ID": 28288,
-    "Name": "Abacus of Violent Odds",
-    "ItemLevel": 115,
-    "Quality": 3,
-    "Slot": 11,
-    "Stats": {
-      "Armor": 0,
-      "AttackPower": 64
-    },
-    "OnUse": {
-      "ID": 33807,
-      "Name": "Haste"
-    },
-    "UniqueEquipped": true,
-    "Phase": 1
-  },
-  {
-    "ID": 28296,
-    "Name": "Libram of the Lightbringer",
-    "ItemLevel": 115,
-    "Quality": 3,
-    "Slot": 12,
-    "Stats": {
-      "Armor": 0
-    },
-    "Phase": 1
-  },
-  {
     "ID": 28306,
     "Name": "Towering Mantle of the Hunt",
     "ItemLevel": 115,
@@ -7047,17 +6793,6 @@
     },
     "SocketBonus": {
       "Strength": 4
-    },
-    "Phase": 1
-  },
-  {
-    "ID": 28356,
-    "Name": "Gladiator\u0027s Libram of Justice",
-    "ItemLevel": 115,
-    "Quality": 4,
-    "Slot": 12,
-    "Stats": {
-      "Armor": 0
     },
     "Phase": 1
   },
@@ -7396,17 +7131,6 @@
       "Intellect": 23,
       "AttackPower": 46,
       "ManaPer5": 8
-    },
-    "Phase": 1
-  },
-  {
-    "ID": 28592,
-    "Name": "Libram of Souls Redeemed",
-    "ItemLevel": 115,
-    "Quality": 4,
-    "Slot": 12,
-    "Stats": {
-      "Armor": 0
     },
     "Phase": 1
   },
@@ -8552,26 +8276,6 @@
     "Phase": 1
   },
   {
-    "ID": 32654,
-    "Name": "Crystalforged Trinket",
-    "ItemLevel": 115,
-    "Quality": 3,
-    "Slot": 11,
-    "Stats": {
-      "Armor": 0
-    },
-    "OnUse": {
-      "ID": 40724,
-      "Name": "Valor"
-    },
-    "OnEquip": {
-      "ID": 40723,
-      "Name": "Weapon Damage"
-    },
-    "UniqueEquipped": true,
-    "Phase": 2
-  },
-  {
     "ID": 32665,
     "Name": "Crystalweave Cape",
     "ItemLevel": 115,
@@ -8635,44 +8339,6 @@
       "CritRating": 3
     },
     "Phase": 1
-  },
-  {
-    "ID": 33936,
-    "Name": "Gladiator\u0027s Libram of Fortitude",
-    "ItemLevel": 115,
-    "Quality": 4,
-    "Slot": 12,
-    "Stats": {
-      "Armor": 0
-    },
-    "Phase": 1
-  },
-  {
-    "ID": 33948,
-    "Name": "Gladiator\u0027s Libram of Vengeance",
-    "ItemLevel": 115,
-    "Quality": 4,
-    "Slot": 12,
-    "Stats": {
-      "Armor": 0
-    },
-    "Phase": 1
-  },
-  {
-    "ID": 34472,
-    "Name": "Shard of Contempt",
-    "ItemLevel": 115,
-    "Quality": 4,
-    "Slot": 11,
-    "Stats": {
-      "Armor": 0,
-      "ExpertiseRating": 44
-    },
-    "OnEquip": {
-      "ID": 45354,
-      "Name": "Item - Sunwell Dungeon Melee Trinket"
-    },
-    "Phase": 5
   },
   {
     "ID": 34601,
@@ -8810,19 +8476,6 @@
       "AttackPower": 38
     },
     "Phase": 5
-  },
-  {
-    "ID": 34712,
-    "Name": "Prismatic Signet",
-    "ItemLevel": 115,
-    "Quality": 3,
-    "Slot": 10,
-    "Stats": {
-      "Armor": 0,
-      "AttackPower": 40
-    },
-    "UniqueEquipped": true,
-    "Phase": 1
   },
   {
     "ID": 34789,
@@ -9505,7 +9158,7 @@
       "Resilience": 19,
       "AttackPower": 38
     },
-    "Phase": 53
+    "Phase": -1
   },
   {
     "ID": 28383,
@@ -9628,21 +9281,6 @@
       "Intellect": 23,
       "CritRating": 16,
       "Resilience": 16
-    },
-    "Phase": 1
-  },
-  {
-    "ID": 30491,
-    "Name": "General\u0027s Plate Greaves Tier 2",
-    "ItemLevel": 123,
-    "Quality": 4,
-    "Slot": 9,
-    "Stats": {
-      "Armor": 1063,
-      "Strength": 27,
-      "Stamina": 40,
-      "CritRating": 27,
-      "Resilience": 27
     },
     "Phase": 1
   },
@@ -9908,22 +9546,6 @@
     "Phase": 1
   },
   {
-    "ID": 28830,
-    "Name": "Dragonspine Trophy",
-    "ItemLevel": 125,
-    "Quality": 4,
-    "Slot": 11,
-    "Stats": {
-      "Armor": 0,
-      "AttackPower": 40
-    },
-    "OnEquip": {
-      "ID": 34774,
-      "Name": "Magtheridon Melee Trinket"
-    },
-    "Phase": 1
-  },
-  {
     "ID": 34613,
     "Name": "Shoulderpads of the Silvermoon Retainer",
     "ItemLevel": 125,
@@ -9978,38 +9600,6 @@
     },
     "SocketBonus": {
       "Strength": 4
-    },
-    "Phase": 5
-  },
-  {
-    "ID": 35694,
-    "Name": "Figurine - Khorium Boar",
-    "ItemLevel": 125,
-    "Quality": 4,
-    "Slot": 11,
-    "Stats": {
-      "Armor": 0,
-      "AttackPower": 84
-    },
-    "OnUse": {
-      "ID": 46782,
-      "Name": "Khorium Boar"
-    },
-    "Phase": 5
-  },
-  {
-    "ID": 35702,
-    "Name": "Figurine - Shadowsong Panther",
-    "ItemLevel": 125,
-    "Quality": 4,
-    "Slot": 11,
-    "Stats": {
-      "Armor": 0,
-      "AttackPower": 80
-    },
-    "OnUse": {
-      "ID": 46784,
-      "Name": "Shadowsong Panther"
     },
     "Phase": 5
   },
@@ -10117,7 +9707,7 @@
     "SocketBonus": {
       "CritRating": 4
     },
-    "Phase": 53
+    "Phase": 1
   },
   {
     "ID": 32461,
@@ -10212,7 +9802,7 @@
       "Stamina": 37,
       "AttackPower": 50
     },
-    "Phase": 3
+    "Phase": 2
   },
   {
     "ID": 29947,
@@ -10666,17 +10256,6 @@
     "Phase": 2
   },
   {
-    "ID": 30063,
-    "Name": "Libram of Absolute Truth",
-    "ItemLevel": 128,
-    "Quality": 4,
-    "Slot": 12,
-    "Stats": {
-      "Armor": 0
-    },
-    "Phase": 2
-  },
-  {
     "ID": 30068,
     "Name": "Girdle of the Tidal Call",
     "ItemLevel": 128,
@@ -10779,39 +10358,6 @@
     },
     "SocketBonus": {
       "AttackPower": 8
-    },
-    "Phase": 2
-  },
-  {
-    "ID": 30627,
-    "Name": "Tsunami Talisman",
-    "ItemLevel": 128,
-    "Quality": 4,
-    "Slot": 11,
-    "Stats": {
-      "Armor": 0,
-      "HitRating": 10,
-      "CritRating": 38
-    },
-    "OnEquip": {
-      "ID": 42083,
-      "Name": "Fury of the Crashing Waves"
-    },
-    "Phase": 2
-  },
-  {
-    "ID": 30629,
-    "Name": "Scarab of Displacement",
-    "ItemLevel": 128,
-    "Quality": 4,
-    "Slot": 11,
-    "Stats": {
-      "Armor": 0,
-      "DefenseRating": 42
-    },
-    "OnUse": {
-      "ID": 38351,
-      "Name": "Displacement"
     },
     "Phase": 2
   },
@@ -10948,7 +10494,7 @@
     "SocketBonus": {
       "HitRating": 3
     },
-    "Phase": 3
+    "Phase": 4
   },
   {
     "ID": 33280,
@@ -11088,21 +10634,6 @@
     "Phase": 4
   },
   {
-    "ID": 33482,
-    "Name": "Cobra-Lash Boots",
-    "ItemLevel": 128,
-    "Quality": 4,
-    "Slot": 9,
-    "Stats": {
-      "Armor": 619,
-      "Agility": 33,
-      "Stamina": 37,
-      "AttackPower": 68,
-      "ArmorPenetration": 126
-    },
-    "Phase": 2
-  },
-  {
     "ID": 33501,
     "Name": "Bloodthirster\u0027s Wargreaves",
     "ItemLevel": 128,
@@ -11129,17 +10660,6 @@
     "Phase": 4
   },
   {
-    "ID": 33502,
-    "Name": "Libram of Mending",
-    "ItemLevel": 128,
-    "Quality": 4,
-    "Slot": 12,
-    "Stats": {
-      "Armor": 0
-    },
-    "Phase": 4
-  },
-  {
     "ID": 33503,
     "Name": "Libram of Divine Judgement",
     "ItemLevel": 128,
@@ -11151,21 +10671,6 @@
     "OnEquip": {
       "ID": 43745,
       "Name": "Crusader\u0027s Command"
-    },
-    "Phase": 53
-  },
-  {
-    "ID": 33504,
-    "Name": "Libram of Divine Purpose",
-    "ItemLevel": 128,
-    "Quality": 4,
-    "Slot": 12,
-    "Stats": {
-      "Armor": 0
-    },
-    "OnEquip": {
-      "ID": 43743,
-      "Name": "Improved Seal of Righteousness"
     },
     "Phase": 4
   },
@@ -11305,7 +10810,7 @@
       "HasteRating": 30,
       "AttackPower": 92
     },
-    "Phase": 3
+    "Phase": 4
   },
   {
     "ID": 33539,
@@ -11320,7 +10825,7 @@
       "HasteRating": 25,
       "AttackPower": 68
     },
-    "Phase": 3
+    "Phase": 4
   },
   {
     "ID": 33540,
@@ -11402,7 +10907,7 @@
     "SocketBonus": {
       "Strength": 3
     },
-    "Phase": 3
+    "Phase": 4
   },
   {
     "ID": 33583,
@@ -11426,7 +10931,7 @@
     "SocketBonus": {
       "Strength": 3
     },
-    "Phase": 3
+    "Phase": 4
   },
   {
     "ID": 33590,
@@ -11483,22 +10988,6 @@
       "Stamina": 6
     },
     "Phase": 4
-  },
-  {
-    "ID": 25798,
-    "Name": "130 Epic Warrior Trinket",
-    "ItemLevel": 130,
-    "Quality": 4,
-    "Slot": 11,
-    "Stats": {
-      "Armor": 0,
-      "AttackPower": 80
-    },
-    "OnUse": {
-      "ID": 32604,
-      "Name": "Slayer\u0027s Crest"
-    },
-    "Phase": 53
   },
   {
     "ID": 29283,
@@ -11696,54 +11185,6 @@
     },
     "SocketBonus": {
       "AttackPower": 8
-    },
-    "Phase": 4
-  },
-  {
-    "ID": 33831,
-    "Name": "Berserker\u0027s Call",
-    "ItemLevel": 133,
-    "Quality": 4,
-    "Slot": 11,
-    "Stats": {
-      "Armor": 0,
-      "AttackPower": 90
-    },
-    "OnUse": {
-      "ID": 43716,
-      "Name": "Call of the Berserker"
-    },
-    "Phase": 4
-  },
-  {
-    "ID": 33832,
-    "Name": "Battlemaster\u0027s Determination",
-    "ItemLevel": 133,
-    "Quality": 4,
-    "Slot": 11,
-    "Stats": {
-      "Armor": 0,
-      "AttackPower": 80
-    },
-    "OnUse": {
-      "ID": 44055,
-      "Name": "Tremendous Fortitude"
-    },
-    "Phase": 4
-  },
-  {
-    "ID": 34578,
-    "Name": "Battlemaster\u0027s Determination",
-    "ItemLevel": 133,
-    "Quality": 4,
-    "Slot": 11,
-    "Stats": {
-      "Armor": 0,
-      "AttackPower": 80
-    },
-    "OnUse": {
-      "ID": 44055,
-      "Name": "Tremendous Fortitude"
     },
     "Phase": 4
   },
@@ -11987,17 +11428,6 @@
     "Phase": 2
   },
   {
-    "ID": 33077,
-    "Name": "Merciless Gladiator\u0027s Libram of Justice",
-    "ItemLevel": 136,
-    "Quality": 4,
-    "Slot": 12,
-    "Stats": {
-      "Armor": 0
-    },
-    "Phase": 2
-  },
-  {
     "ID": 33484,
     "Name": "Dory\u0027s Embrace",
     "ItemLevel": 136,
@@ -12012,28 +11442,6 @@
       "ArmorPenetration": 112
     },
     "Phase": 4
-  },
-  {
-    "ID": 33937,
-    "Name": "Merciless Gladiator\u0027s Libram of Fortitude",
-    "ItemLevel": 136,
-    "Quality": 4,
-    "Slot": 12,
-    "Stats": {
-      "Armor": 0
-    },
-    "Phase": 2
-  },
-  {
-    "ID": 33949,
-    "Name": "Merciless Gladiator\u0027s Libram of Vengeance",
-    "ItemLevel": 136,
-    "Quality": 4,
-    "Slot": 12,
-    "Stats": {
-      "Armor": 0
-    },
-    "Phase": 2
   },
   {
     "ID": 29994,
@@ -12633,7 +12041,7 @@
       "CritRating": 35,
       "ArmorPenetration": 350
     },
-    "Phase": 3
+    "Phase": 5
   },
   {
     "ID": 32345,
@@ -12730,17 +12138,6 @@
     "Phase": 3
   },
   {
-    "ID": 32368,
-    "Name": "Tome of the Lightbringer",
-    "ItemLevel": 141,
-    "Quality": 4,
-    "Slot": 12,
-    "Stats": {
-      "Armor": 0
-    },
-    "Phase": 3
-  },
-  {
     "ID": 32373,
     "Name": "Helm of the Illidari Shatterer",
     "ItemLevel": 141,
@@ -12799,23 +12196,6 @@
       "HitRating": 22,
       "CritRating": 33,
       "AttackPower": 94
-    },
-    "Phase": 3
-  },
-  {
-    "ID": 32505,
-    "Name": "Madness of the Betrayer",
-    "ItemLevel": 141,
-    "Quality": 4,
-    "Slot": 11,
-    "Stats": {
-      "Armor": 0,
-      "HitRating": 20,
-      "AttackPower": 84
-    },
-    "OnEquip": {
-      "ID": 40475,
-      "Name": "Black Temple Melee Trinket"
     },
     "Phase": 3
   },
@@ -13321,7 +12701,7 @@
     "SocketBonus": {
       "DefenseRating": 3
     },
-    "Phase": 3
+    "Phase": 5
   },
   {
     "ID": 34941,
@@ -13342,7 +12722,7 @@
     "SocketBonus": {
       "Stamina": 3
     },
-    "Phase": 3
+    "Phase": 5
   },
   {
     "ID": 34942,
@@ -13386,7 +12766,7 @@
     "SocketBonus": {
       "Strength": 3
     },
-    "Phase": 3
+    "Phase": 5
   },
   {
     "ID": 34944,
@@ -13406,7 +12786,7 @@
     "SocketBonus": {
       "Strength": 2
     },
-    "Phase": 3
+    "Phase": 5
   },
   {
     "ID": 35284,
@@ -13474,7 +12854,7 @@
     "SocketBonus": {
       "Agility": 4
     },
-    "Phase": 1
+    "Phase": 2
   },
   {
     "ID": 28485,
@@ -13814,17 +13194,6 @@
     "Phase": 3
   },
   {
-    "ID": 33842,
-    "Name": "Vengeful Gladiator\u0027s Libram of Justice",
-    "ItemLevel": 146,
-    "Quality": 4,
-    "Slot": 12,
-    "Stats": {
-      "Armor": 0
-    },
-    "Phase": 3
-  },
-  {
     "ID": 33909,
     "Name": "Vindicator\u0027s Scaled Belt",
     "ItemLevel": 146,
@@ -13853,28 +13222,6 @@
       "Intellect": 26,
       "CritRating": 27,
       "Resilience": 26
-    },
-    "Phase": 3
-  },
-  {
-    "ID": 33938,
-    "Name": "Vengeful Gladiator\u0027s Libram of Fortitude",
-    "ItemLevel": 146,
-    "Quality": 4,
-    "Slot": 12,
-    "Stats": {
-      "Armor": 0
-    },
-    "Phase": 3
-  },
-  {
-    "ID": 33950,
-    "Name": "Vengeful Gladiator\u0027s Libram of Vengeance",
-    "ItemLevel": 146,
-    "Quality": 4,
-    "Slot": 12,
-    "Stats": {
-      "Armor": 0
     },
     "Phase": 3
   },
@@ -14081,38 +13428,6 @@
       "DefenseRating": 32,
       "ExpertiseRating": 22,
       "BlockValue": 42
-    },
-    "Phase": 5
-  },
-  {
-    "ID": 34427,
-    "Name": "Blackened Naaru Sliver",
-    "ItemLevel": 154,
-    "Quality": 4,
-    "Slot": 11,
-    "Stats": {
-      "Armor": 0,
-      "HasteRating": 54
-    },
-    "OnEquip": {
-      "ID": 45355,
-      "Name": "Item - T7 Melee Trinket Base"
-    },
-    "Phase": 5
-  },
-  {
-    "ID": 34428,
-    "Name": "Steely Naaru Sliver",
-    "ItemLevel": 154,
-    "Quality": 4,
-    "Slot": 11,
-    "Stats": {
-      "Armor": 0,
-      "ExpertiseRating": 54
-    },
-    "OnUse": {
-      "ID": 45049,
-      "Name": "Tenacity"
     },
     "Phase": 5
   },
@@ -14989,39 +14304,6 @@
     "Phase": 5
   },
   {
-    "ID": 35039,
-    "Name": "Brutal Gladiator\u0027s Libram of Fortitude",
-    "ItemLevel": 159,
-    "Quality": 4,
-    "Slot": 12,
-    "Stats": {
-      "Armor": 0
-    },
-    "Phase": 5
-  },
-  {
-    "ID": 35040,
-    "Name": "Brutal Gladiator\u0027s Libram of Justice",
-    "ItemLevel": 159,
-    "Quality": 4,
-    "Slot": 12,
-    "Stats": {
-      "Armor": 0
-    },
-    "Phase": 5
-  },
-  {
-    "ID": 35041,
-    "Name": "Brutal Gladiator\u0027s Libram of Vengeance",
-    "ItemLevel": 159,
-    "Quality": 4,
-    "Slot": 12,
-    "Stats": {
-      "Armor": 0
-    },
-    "Phase": 5
-  },
-  {
     "ID": 35088,
     "Name": "Brutal Gladiator\u0027s Scaled Chestpiece",
     "ItemLevel": 159,
@@ -15361,5 +14643,1149 @@
       "CritRating": 4
     },
     "Phase": 5
+  },
+  {
+    "ID": 30341,
+    "Name": "Flesh Handler\u0027s Gauntlets",
+    "ItemLevel": 114,
+    "Quality": 2,
+    "Slot": 6,
+    "Stats": {
+      "Armor": 165,
+      "Strength": 18,
+      "Agility": 17,
+      "Stamina": 27,
+      "ExpertiseRating": 18
+    },
+    "Phase": 1
+  },
+  {
+    "ID": 22401,
+    "Name": "Libram of Hope",
+    "ItemLevel": 62,
+    "Quality": 3,
+    "Slot": 12,
+    "Stats": {
+      "Armor": 0
+    },
+    "OnEquip": {
+      "ID": 27848,
+      "Name": "Seal Cost Reduced"
+    },
+    "Phase": 1
+  },
+  {
+    "ID": 23203,
+    "Name": "Libram of Fervor",
+    "ItemLevel": 65,
+    "Quality": 3,
+    "Slot": 12,
+    "Stats": {
+      "Armor": 0
+    },
+    "OnEquip": {
+      "ID": 28852,
+      "Name": "Improved Seal of the Crusader"
+    },
+    "Phase": 1
+  },
+  {
+    "ID": 34427,
+    "Name": "Blackened Naaru Sliver",
+    "ItemLevel": 154,
+    "Quality": 4,
+    "Slot": 11,
+    "Stats": {
+      "Armor": 0,
+      "HasteRating": 54
+    },
+    "OnEquip": {
+      "ID": 45355,
+      "Name": "Item - T7 Melee Trinket Base"
+    },
+    "Phase": 5
+  },
+  {
+    "ID": 34428,
+    "Name": "Steely Naaru Sliver",
+    "ItemLevel": 154,
+    "Quality": 4,
+    "Slot": 11,
+    "Stats": {
+      "Armor": 0,
+      "ExpertiseRating": 54
+    },
+    "OnUse": {
+      "ID": 45049,
+      "Name": "Tenacity"
+    },
+    "Phase": 5
+  },
+  {
+    "ID": 32505,
+    "Name": "Madness of the Betrayer",
+    "ItemLevel": 141,
+    "Quality": 4,
+    "Slot": 11,
+    "Stats": {
+      "Armor": 0,
+      "HitRating": 20,
+      "AttackPower": 84
+    },
+    "OnEquip": {
+      "ID": 40475,
+      "Name": "Black Temple Melee Trinket"
+    },
+    "Phase": 3
+  },
+  {
+    "ID": 32489,
+    "Name": "Ashtongue Talisman of Zeal",
+    "ItemLevel": 141,
+    "Quality": 4,
+    "Slot": 11,
+    "Stats": {
+      "Armor": 0
+    },
+    "OnEquip": {
+      "ID": 40470,
+      "Name": "Paladin Tier 6 Trinket"
+    },
+    "Phase": 3
+  },
+  {
+    "ID": 33831,
+    "Name": "Berserker\u0027s Call",
+    "ItemLevel": 133,
+    "Quality": 4,
+    "Slot": 11,
+    "Stats": {
+      "Armor": 0,
+      "AttackPower": 90
+    },
+    "OnUse": {
+      "ID": 43716,
+      "Name": "Call of the Berserker"
+    },
+    "Phase": 4
+  },
+  {
+    "ID": 34163,
+    "Name": "Battlemaster\u0027s Cruelty",
+    "ItemLevel": 133,
+    "Quality": 4,
+    "Slot": 11,
+    "Stats": {
+      "Armor": 0,
+      "CritRating": 40
+    },
+    "OnUse": {
+      "ID": 44055,
+      "Name": "Tremendous Fortitude"
+    },
+    "Phase": 4
+  },
+  {
+    "ID": 30627,
+    "Name": "Tsunami Talisman",
+    "ItemLevel": 128,
+    "Quality": 4,
+    "Slot": 11,
+    "Stats": {
+      "Armor": 0,
+      "HitRating": 10,
+      "CritRating": 38
+    },
+    "OnEquip": {
+      "ID": 42083,
+      "Name": "Fury of the Crashing Waves"
+    },
+    "Phase": 2
+  },
+  {
+    "ID": 28239,
+    "Name": "Medallion of the Horde",
+    "ItemLevel": 115,
+    "Quality": 3,
+    "Slot": 11,
+    "Stats": {
+      "Armor": 0,
+      "Resilience": 20
+    },
+    "OnUse": {
+      "ID": 42292,
+      "Name": "PvP Trinket"
+    },
+    "Phase": 1
+  },
+  {
+    "ID": 28234,
+    "Name": "Medallion of the Alliance",
+    "ItemLevel": 115,
+    "Quality": 3,
+    "Slot": 11,
+    "Stats": {
+      "Armor": 0,
+      "Resilience": 20
+    },
+    "OnUse": {
+      "ID": 42292,
+      "Name": "PvP Trinket"
+    },
+    "Phase": 1
+  },
+  {
+    "ID": 30447,
+    "Name": "Tome of Fiery Redemption",
+    "ItemLevel": 128,
+    "Quality": 4,
+    "Slot": 11,
+    "Stats": {
+      "Armor": 0
+    },
+    "OnEquip": {
+      "ID": 37197,
+      "Name": "Spell Damage"
+    },
+    "Phase": 2
+  },
+  {
+    "ID": 37128,
+    "Name": "Balebrew Charm",
+    "ItemLevel": 128,
+    "Quality": 4,
+    "Slot": 11,
+    "Stats": {
+      "Armor": 0,
+      "Stamina": 45
+    },
+    "OnUse": {
+      "ID": 48042,
+      "Name": "Summon the Black Brewmaiden"
+    },
+    "Phase": -1
+  },
+  {
+    "ID": 28830,
+    "Name": "Dragonspine Trophy",
+    "ItemLevel": 125,
+    "Quality": 4,
+    "Slot": 11,
+    "Stats": {
+      "Armor": 0,
+      "AttackPower": 40
+    },
+    "OnEquip": {
+      "ID": 34774,
+      "Name": "Magtheridon Melee Trinket"
+    },
+    "Phase": 1
+  },
+  {
+    "ID": 35702,
+    "Name": "Figurine - Shadowsong Panther",
+    "ItemLevel": 125,
+    "Quality": 4,
+    "Slot": 11,
+    "Stats": {
+      "Armor": 0,
+      "AttackPower": 80
+    },
+    "OnUse": {
+      "ID": 46784,
+      "Name": "Shadowsong Panther"
+    },
+    "Phase": 5
+  },
+  {
+    "ID": 35700,
+    "Name": "Figurine - Crimson Serpent",
+    "ItemLevel": 125,
+    "Quality": 4,
+    "Slot": 11,
+    "Stats": {
+      "Armor": 0,
+      "Stamina": 49,
+      "Intellect": 33
+    },
+    "OnUse": {
+      "ID": 46783,
+      "Name": "Crimson Serpent"
+    },
+    "Phase": 5
+  },
+  {
+    "ID": 35751,
+    "Name": "Assassin\u0027s Alchemist Stone",
+    "ItemLevel": 125,
+    "Quality": 4,
+    "Slot": 11,
+    "Stats": {
+      "Armor": 0,
+      "AttackPower": 108
+    },
+    "OnEquip": {
+      "ID": 17619,
+      "Name": "Alchemist\u0027s Stone"
+    },
+    "Phase": 5
+  },
+  {
+    "ID": 35694,
+    "Name": "Figurine - Khorium Boar",
+    "ItemLevel": 125,
+    "Quality": 4,
+    "Slot": 11,
+    "Stats": {
+      "Armor": 0,
+      "AttackPower": 84
+    },
+    "OnUse": {
+      "ID": 46782,
+      "Name": "Khorium Boar"
+    },
+    "Phase": 5
+  },
+  {
+    "ID": 28288,
+    "Name": "Abacus of Violent Odds",
+    "ItemLevel": 115,
+    "Quality": 3,
+    "Slot": 11,
+    "Stats": {
+      "Armor": 0,
+      "AttackPower": 64
+    },
+    "OnUse": {
+      "ID": 33807,
+      "Name": "Haste"
+    },
+    "UniqueEquipped": true,
+    "Phase": 1
+  },
+  {
+    "ID": 27683,
+    "Name": "Quagmirran\u0027s Eye",
+    "ItemLevel": 115,
+    "Quality": 3,
+    "Slot": 11,
+    "Stats": {
+      "Armor": 0,
+      "SpellPower": 37,
+      "HealingPower": 37
+    },
+    "OnEquip": {
+      "ID": 33297,
+      "Name": "Spell Haste Trinket"
+    },
+    "UniqueEquipped": true,
+    "Phase": 1
+  },
+  {
+    "ID": 29132,
+    "Name": "Scryer\u0027s Bloodgem",
+    "ItemLevel": 115,
+    "Quality": 3,
+    "Slot": 11,
+    "Stats": {
+      "Armor": 0,
+      "SpellHitRating": 32
+    },
+    "OnUse": {
+      "ID": 35337,
+      "Name": "Spell Power"
+    },
+    "Phase": 1
+  },
+  {
+    "ID": 32658,
+    "Name": "Badge of Tenacity",
+    "ItemLevel": 115,
+    "Quality": 3,
+    "Slot": 11,
+    "Stats": {
+      "Armor": 308
+    },
+    "OnUse": {
+      "ID": 40729,
+      "Name": "Heightened Reflexes"
+    },
+    "UniqueEquipped": true,
+    "Phase": 2
+  },
+  {
+    "ID": 24128,
+    "Name": "Figurine - Nightseye Panther",
+    "ItemLevel": 115,
+    "Quality": 3,
+    "Slot": 11,
+    "Stats": {
+      "Armor": 0,
+      "AttackPower": 54
+    },
+    "OnUse": {
+      "ID": 31047,
+      "Name": "Nightseye Panther"
+    },
+    "Phase": 1
+  },
+  {
+    "ID": 28121,
+    "Name": "Icon of Unyielding Courage",
+    "ItemLevel": 115,
+    "Quality": 3,
+    "Slot": 11,
+    "Stats": {
+      "Armor": 0,
+      "HitRating": 30,
+      "ArmorPenetration": 600
+    },
+    "UniqueEquipped": true,
+    "Phase": 1
+  },
+  {
+    "ID": 28579,
+    "Name": "Romulo\u0027s Poison Vial",
+    "ItemLevel": 115,
+    "Quality": 4,
+    "Slot": 11,
+    "Stats": {
+      "Armor": 0,
+      "HitRating": 35
+    },
+    "OnEquip": {
+      "ID": 34586,
+      "Name": "Romulo\u0027s Poison"
+    },
+    "Phase": 1
+  },
+  {
+    "ID": 24126,
+    "Name": "Figurine - Living Ruby Serpent",
+    "ItemLevel": 115,
+    "Quality": 3,
+    "Slot": 11,
+    "Stats": {
+      "Armor": 0,
+      "Stamina": 33,
+      "Intellect": 23
+    },
+    "OnUse": {
+      "ID": 31040,
+      "Name": "Living Ruby Serpent"
+    },
+    "Phase": 1
+  },
+  {
+    "ID": 28223,
+    "Name": "Arcanist\u0027s Stone",
+    "ItemLevel": 115,
+    "Quality": 3,
+    "Slot": 11,
+    "Stats": {
+      "Armor": 0,
+      "SpellHitRating": 25
+    },
+    "OnUse": {
+      "ID": 34000,
+      "Name": "The Arcanist\u0027s Stone"
+    },
+    "UniqueEquipped": true,
+    "Phase": 1
+  },
+  {
+    "ID": 34472,
+    "Name": "Shard of Contempt",
+    "ItemLevel": 115,
+    "Quality": 4,
+    "Slot": 11,
+    "Stats": {
+      "Armor": 0,
+      "ExpertiseRating": 44
+    },
+    "OnEquip": {
+      "ID": 45354,
+      "Name": "Item - Sunwell Dungeon Melee Trinket"
+    },
+    "Phase": 5
+  },
+  {
+    "ID": 32654,
+    "Name": "Crystalforged Trinket",
+    "ItemLevel": 115,
+    "Quality": 3,
+    "Slot": 11,
+    "Stats": {
+      "Armor": 0
+    },
+    "OnUse": {
+      "ID": 40724,
+      "Name": "Valor"
+    },
+    "OnEquip": {
+      "ID": 40723,
+      "Name": "Weapon Damage"
+    },
+    "UniqueEquipped": true,
+    "Phase": 2
+  },
+  {
+    "ID": 24124,
+    "Name": "Figurine - Felsteel Boar",
+    "ItemLevel": 115,
+    "Quality": 3,
+    "Slot": 11,
+    "Stats": {
+      "Armor": 0,
+      "AttackPower": 68
+    },
+    "OnUse": {
+      "ID": 31038,
+      "Name": "Felsteel Boar"
+    },
+    "Phase": 1
+  },
+  {
+    "ID": 30340,
+    "Name": "Starkiller\u0027s Bauble",
+    "ItemLevel": 114,
+    "Quality": 2,
+    "Slot": 11,
+    "Stats": {
+      "Armor": 0,
+      "SpellHitRating": 26
+    },
+    "OnUse": {
+      "ID": 36432,
+      "Name": "Spell Power"
+    },
+    "Phase": -1
+  },
+  {
+    "ID": 28034,
+    "Name": "Hourglass of the Unraveller",
+    "ItemLevel": 112,
+    "Quality": 3,
+    "Slot": 11,
+    "Stats": {
+      "Armor": 0,
+      "CritRating": 32
+    },
+    "OnEquip": {
+      "ID": 33648,
+      "Name": "Rage of the Unraveller"
+    },
+    "UniqueEquipped": true,
+    "Phase": 1
+  },
+  {
+    "ID": 29383,
+    "Name": "Bloodlust Brooch",
+    "ItemLevel": 110,
+    "Quality": 4,
+    "Slot": 11,
+    "Stats": {
+      "Armor": 0,
+      "AttackPower": 72
+    },
+    "OnUse": {
+      "ID": 35166,
+      "Name": "Lust for Battle"
+    },
+    "Phase": 1
+  },
+  {
+    "ID": 29370,
+    "Name": "Icon of the Silver Crescent",
+    "ItemLevel": 110,
+    "Quality": 4,
+    "Slot": 11,
+    "Stats": {
+      "Armor": 0,
+      "SpellPower": 43,
+      "HealingPower": 43
+    },
+    "OnUse": {
+      "ID": 35163,
+      "Name": "Blessing of the Silver Crescent"
+    },
+    "Phase": 1
+  },
+  {
+    "ID": 38290,
+    "Name": "Dark Iron Smoking Pipe",
+    "ItemLevel": 110,
+    "Quality": 4,
+    "Slot": 11,
+    "Stats": {
+      "Armor": 0,
+      "SpellPower": 43,
+      "HealingPower": 43
+    },
+    "OnUse": {
+      "ID": 51953,
+      "Name": "Dark Iron Pipeweed"
+    },
+    "Phase": -1
+  },
+  {
+    "ID": 38287,
+    "Name": "Empty Mug of Direbrew",
+    "ItemLevel": 110,
+    "Quality": 4,
+    "Slot": 11,
+    "Stats": {
+      "Armor": 0,
+      "AttackPower": 72
+    },
+    "OnUse": {
+      "ID": 51955,
+      "Name": "Dire Drunkard"
+    },
+    "Phase": 1
+  },
+  {
+    "ID": 32864,
+    "Name": "Commander\u0027s Badge",
+    "ItemLevel": 109,
+    "Quality": 3,
+    "Slot": 11,
+    "Stats": {
+      "Armor": 0,
+      "Stamina": 45
+    },
+    "OnUse": {
+      "ID": 40815,
+      "Name": "Netherwing Ally"
+    },
+    "UniqueEquipped": true,
+    "Phase": 1
+  },
+  {
+    "ID": 29776,
+    "Name": "Core of Ar\u0027kelos",
+    "ItemLevel": 108,
+    "Quality": 2,
+    "Slot": 11,
+    "Stats": {
+      "Armor": 0,
+      "AttackPower": 52
+    },
+    "OnUse": {
+      "ID": 35733,
+      "Name": "Ancient Power"
+    },
+    "Phase": -1
+  },
+  {
+    "ID": 29181,
+    "Name": "Timelapse Shard",
+    "ItemLevel": 105,
+    "Quality": 4,
+    "Slot": 11,
+    "Stats": {
+      "Armor": 0,
+      "Stamina": 27,
+      "Resilience": 24
+    },
+    "OnUse": {
+      "ID": 35352,
+      "Name": "Soothe"
+    },
+    "Phase": 1
+  },
+  {
+    "ID": 32770,
+    "Name": "Skyguard Silver Cross",
+    "ItemLevel": 105,
+    "Quality": 4,
+    "Slot": 11,
+    "Stats": {
+      "Armor": 0,
+      "CritRating": 34
+    },
+    "Phase": 2
+  },
+  {
+    "ID": 31617,
+    "Name": "Ancient Draenei War Talisman",
+    "ItemLevel": 102,
+    "Quality": 2,
+    "Slot": 11,
+    "Stats": {
+      "Armor": 0,
+      "CritRating": 21
+    },
+    "OnUse": {
+      "ID": 33667,
+      "Name": "Ferocity"
+    },
+    "UniqueEquipped": true,
+    "Phase": -1
+  },
+  {
+    "ID": 25633,
+    "Name": "Uniting Charm",
+    "ItemLevel": 102,
+    "Quality": 2,
+    "Slot": 11,
+    "Stats": {
+      "Armor": 0,
+      "AttackPower": 48
+    },
+    "OnUse": {
+      "ID": 32362,
+      "Name": "Burning Hatred"
+    },
+    "Phase": -1
+  },
+  {
+    "ID": 25628,
+    "Name": "Ogre Mauler\u0027s Badge",
+    "ItemLevel": 102,
+    "Quality": 2,
+    "Slot": 11,
+    "Stats": {
+      "Armor": 0,
+      "AttackPower": 48
+    },
+    "OnUse": {
+      "ID": 32362,
+      "Name": "Burning Hatred"
+    },
+    "Phase": -1
+  },
+  {
+    "ID": 31856,
+    "Name": "Darkmoon Card: Crusade",
+    "ItemLevel": 100,
+    "Quality": 4,
+    "Slot": 11,
+    "Stats": {
+      "Armor": 0
+    },
+    "OnEquip": {
+      "ID": 39438,
+      "Name": "Aura of the Crusade"
+    },
+    "Phase": 3
+  },
+  {
+    "ID": 31858,
+    "Name": "Darkmoon Card: Vengeance",
+    "ItemLevel": 100,
+    "Quality": 4,
+    "Slot": 11,
+    "Stats": {
+      "Armor": 0,
+      "Stamina": 51
+    },
+    "OnEquip": {
+      "ID": 39444,
+      "Name": "Aura of Vengeance"
+    },
+    "Phase": 3
+  },
+  {
+    "ID": 27416,
+    "Name": "Fetish of the Fallen",
+    "ItemLevel": 100,
+    "Quality": 3,
+    "Slot": 11,
+    "Stats": {
+      "Armor": 0,
+      "AttackPower": 56
+    },
+    "OnUse": {
+      "ID": 33014,
+      "Name": "Consume Life"
+    },
+    "UniqueEquipped": true,
+    "Phase": 1
+  },
+  {
+    "ID": 26055,
+    "Name": "Oculus of the Hidden Eye",
+    "ItemLevel": 100,
+    "Quality": 3,
+    "Slot": 11,
+    "Stats": {
+      "Armor": 0,
+      "SpellPower": 33,
+      "HealingPower": 33
+    },
+    "OnUse": {
+      "ID": 33012,
+      "Name": "Consume Essence"
+    },
+    "UniqueEquipped": true,
+    "Phase": 1
+  },
+  {
+    "ID": 31859,
+    "Name": "Darkmoon Card: Madness",
+    "ItemLevel": 100,
+    "Quality": 4,
+    "Slot": 11,
+    "Stats": {
+      "Armor": 0,
+      "Stamina": 51
+    },
+    "OnEquip": {
+      "ID": 39446,
+      "Name": "Aura of Madness"
+    },
+    "Phase": 3
+  },
+  {
+    "ID": 25937,
+    "Name": "Terokkar Tablet of Precision",
+    "ItemLevel": 99,
+    "Quality": 2,
+    "Slot": 11,
+    "Stats": {
+      "Armor": 0,
+      "HitRating": 22
+    },
+    "OnUse": {
+      "ID": 39200,
+      "Name": "Heroism"
+    },
+    "Phase": -1
+  },
+  {
+    "ID": 25620,
+    "Name": "Ancient Crystal Talisman",
+    "ItemLevel": 96,
+    "Quality": 2,
+    "Slot": 11,
+    "Stats": {
+      "Armor": 0,
+      "SpellPower": 26,
+      "HealingPower": 26
+    },
+    "OnUse": {
+      "ID": 32355,
+      "Name": "Focused Power"
+    },
+    "Phase": -1
+  },
+  {
+    "ID": 25619,
+    "Name": "Glowing Crystal Insignia",
+    "ItemLevel": 96,
+    "Quality": 2,
+    "Slot": 11,
+    "Stats": {
+      "Armor": 0,
+      "SpellPower": 26,
+      "HealingPower": 26
+    },
+    "OnUse": {
+      "ID": 32355,
+      "Name": "Focused Power"
+    },
+    "Phase": -1
+  },
+  {
+    "ID": 23041,
+    "Name": "Slayer\u0027s Crest",
+    "ItemLevel": 90,
+    "Quality": 4,
+    "Slot": 11,
+    "Stats": {
+      "Armor": 0,
+      "AttackPower": 64
+    },
+    "OnUse": {
+      "ID": 28777,
+      "Name": "Slayer\u0027s Crest"
+    },
+    "UniqueEquipped": true,
+    "Phase": 1
+  },
+  {
+    "ID": 23046,
+    "Name": "The Restrained Essence of Sapphiron",
+    "ItemLevel": 90,
+    "Quality": 4,
+    "Slot": 11,
+    "Stats": {
+      "Armor": 0,
+      "SpellPower": 40,
+      "HealingPower": 40
+    },
+    "OnUse": {
+      "ID": 28779,
+      "Name": "Essence of Sapphiron"
+    },
+    "UniqueEquipped": true,
+    "Phase": 1
+  },
+  {
+    "ID": 28041,
+    "Name": "Bladefist\u0027s Breadth",
+    "ItemLevel": 88,
+    "Quality": 3,
+    "Slot": 11,
+    "Stats": {
+      "Armor": 0,
+      "CritRating": 26
+    },
+    "OnUse": {
+      "ID": 33667,
+      "Name": "Ferocity"
+    },
+    "Phase": 1
+  },
+  {
+    "ID": 22954,
+    "Name": "Kiss of the Spider",
+    "ItemLevel": 85,
+    "Quality": 4,
+    "Slot": 11,
+    "Stats": {
+      "Armor": 0,
+      "CritRating": 14,
+      "HitRating": 10
+    },
+    "OnUse": {
+      "ID": 28866,
+      "Name": "Kiss of the Spider"
+    },
+    "UniqueEquipped": true,
+    "Phase": 1
+  },
+  {
+    "ID": 19379,
+    "Name": "Neltharion\u0027s Tear",
+    "ItemLevel": 83,
+    "Quality": 4,
+    "Slot": 11,
+    "Stats": {
+      "Armor": 0,
+      "SpellPower": 44,
+      "HealingPower": 44
+    },
+    "OnEquip": {
+      "ID": 23729,
+      "Name": "Increased Spell Hit Chance 16"
+    },
+    "UniqueEquipped": true,
+    "Phase": 1
+  },
+  {
+    "ID": 23570,
+    "Name": "Jom Gabbar",
+    "ItemLevel": 81,
+    "Quality": 4,
+    "Slot": 11,
+    "Stats": {
+      "Armor": 0
+    },
+    "OnUse": {
+      "ID": 29602,
+      "Name": "Jom Gabbar"
+    },
+    "UniqueEquipped": true,
+    "Phase": 1
+  },
+  {
+    "ID": 21670,
+    "Name": "Badge of the Swarmguard",
+    "ItemLevel": 76,
+    "Quality": 4,
+    "Slot": 11,
+    "Stats": {
+      "Armor": 0
+    },
+    "OnUse": {
+      "ID": 26480,
+      "Name": "Badge of the Swarmguard"
+    },
+    "Phase": 1
+  },
+  {
+    "ID": 19343,
+    "Name": "Scrolls of Blinding Light",
+    "ItemLevel": 76,
+    "Quality": 4,
+    "Slot": 11,
+    "Stats": {
+      "Armor": 0
+    },
+    "OnUse": {
+      "ID": 23733,
+      "Name": "Blinding Light"
+    },
+    "UniqueEquipped": true,
+    "Phase": 1
+  },
+  {
+    "ID": 19406,
+    "Name": "Drake Fang Talisman",
+    "ItemLevel": 75,
+    "Quality": 4,
+    "Slot": 11,
+    "Stats": {
+      "Armor": 0,
+      "AttackPower": 56,
+      "HitRating": 20,
+      "DodgeRating": 12
+    },
+    "UniqueEquipped": true,
+    "Phase": 1
+  },
+  {
+    "ID": 21891,
+    "Name": "Shard of the Fallen Star",
+    "ItemLevel": 75,
+    "Quality": 4,
+    "Slot": 11,
+    "Stats": {
+      "Armor": 0
+    },
+    "OnUse": {
+      "ID": 26789,
+      "Name": "Shard of the Fallen Star"
+    },
+    "Phase": 1
+  },
+  {
+    "ID": 21473,
+    "Name": "Eye of Moam",
+    "ItemLevel": 74,
+    "Quality": 3,
+    "Slot": 11,
+    "Stats": {
+      "Armor": 0
+    },
+    "OnUse": {
+      "ID": 26166,
+      "Name": "Obsidian Insight"
+    },
+    "UniqueEquipped": true,
+    "Phase": 1
+  },
+  {
+    "ID": 23836,
+    "Name": "Goblin Rocket Launcher",
+    "ItemLevel": 70,
+    "Quality": 3,
+    "Slot": 11,
+    "Stats": {
+      "Armor": 0,
+      "Stamina": 45
+    },
+    "OnUse": {
+      "ID": 46567,
+      "Name": "Rocket Launch"
+    },
+    "Phase": 1
+  },
+  {
+    "ID": 23835,
+    "Name": "Gnomish Poultryizer",
+    "ItemLevel": 68,
+    "Quality": 3,
+    "Slot": 11,
+    "Stats": {
+      "Armor": 0,
+      "Stamina": 45
+    },
+    "OnUse": {
+      "ID": 30507,
+      "Name": "Poultryizer"
+    },
+    "Phase": 1
+  },
+  {
+    "ID": 19950,
+    "Name": "Zandalarian Hero Charm",
+    "ItemLevel": 68,
+    "Quality": 4,
+    "Slot": 11,
+    "Stats": {
+      "Armor": 0
+    },
+    "OnUse": {
+      "ID": 24658,
+      "Name": "Unstable Power"
+    },
+    "Phase": 1
+  },
+  {
+    "ID": 21180,
+    "Name": "Earthstrike",
+    "ItemLevel": 66,
+    "Quality": 4,
+    "Slot": 11,
+    "Stats": {
+      "Armor": 0
+    },
+    "OnUse": {
+      "ID": 25891,
+      "Name": "Earthstrike"
+    },
+    "Phase": 1
+  },
+  {
+    "ID": 19289,
+    "Name": "Darkmoon Card: Maelstrom",
+    "ItemLevel": 66,
+    "Quality": 4,
+    "Slot": 11,
+    "Stats": {
+      "Armor": 0
+    },
+    "OnEquip": {
+      "ID": 23686,
+      "Name": "Lightning Strike"
+    },
+    "Phase": 1
+  },
+  {
+    "ID": 13965,
+    "Name": "Blackhand\u0027s Breadth",
+    "ItemLevel": 63,
+    "Quality": 3,
+    "Slot": 11,
+    "Stats": {
+      "Armor": 0,
+      "CritRating": 28
+    },
+    "Phase": 1
+  },
+  {
+    "ID": 11815,
+    "Name": "Hand of Justice",
+    "ItemLevel": 58,
+    "Quality": 3,
+    "Slot": 11,
+    "Stats": {
+      "Armor": 0,
+      "AttackPower": 20
+    },
+    "OnEquip": {
+      "ID": 15600,
+      "Name": "Hand of Justice"
+    },
+    "UniqueEquipped": true,
+    "Phase": 1
+  },
+  {
+    "ID": 23206,
+    "Name": "Mark of the Champion",
+    "ItemLevel": 90,
+    "Quality": 4,
+    "Slot": 11,
+    "Stats": {
+      "Armor": 0
+    },
+    "OnEquip": {
+      "ID": 29112,
+      "Name": "Champion of the Dawn"
+    },
+    "Phase": 1
   }
 ]

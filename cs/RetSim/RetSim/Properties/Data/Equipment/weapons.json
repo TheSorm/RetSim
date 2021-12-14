@@ -65,23 +65,6 @@
     "Phase": 1
   },
   {
-    "Type": 4,
-    "MinDamage": 181,
-    "MaxDamage": 273,
-    "AttackSpeed": 3000,
-    "DPS": 75.666664,
-    "ID": 25608,
-    "Name": "Lantresor\u0027s Warblade",
-    "ItemLevel": 97,
-    "Quality": 3,
-    "Slot": 13,
-    "Stats": {
-      "Strength": 42,
-      "Agility": 27
-    },
-    "Phase": 1
-  },
-  {
     "Type": 1,
     "MinDamage": 205,
     "MaxDamage": 309,
@@ -336,7 +319,7 @@
       "CritRating": 31,
       "Resilience": 21
     },
-    "Phase": 53
+    "Phase": -1
   },
   {
     "Type": 3,
@@ -356,7 +339,7 @@
       "Resilience": 21,
       "AttackPower": 62
     },
-    "Phase": 53
+    "Phase": -1
   },
   {
     "Type": 2,
@@ -376,7 +359,7 @@
       "CritRating": 31,
       "Resilience": 21
     },
-    "Phase": 53
+    "Phase": -1
   },
   {
     "Type": 4,
@@ -396,7 +379,7 @@
       "Resilience": 21,
       "AttackPower": 62
     },
-    "Phase": 53
+    "Phase": -1
   },
   {
     "Type": 1,
@@ -416,7 +399,7 @@
       "CritRating": 31,
       "Resilience": 21
     },
-    "Phase": 53
+    "Phase": -1
   },
   {
     "Type": 3,
@@ -432,7 +415,7 @@
     "Stats": {
       "AttackPower": 110
     },
-    "Phase": 53
+    "Phase": -1
   },
   {
     "Type": 2,
@@ -1217,7 +1200,7 @@
     "Quality": 3,
     "Slot": 13,
     "Stats": {},
-    "Phase": 53
+    "Phase": -1
   },
   {
     "Type": 3,
@@ -1549,7 +1532,7 @@
     "Stats": {
       "AttackPower": 110
     },
-    "Phase": 53
+    "Phase": -1
   },
   {
     "Type": 3,
@@ -1618,7 +1601,7 @@
       "ID": 34513,
       "Name": "Lionheart"
     },
-    "Phase": 1
+    "Phase": 2
   },
   {
     "Type": 3,
@@ -1635,7 +1618,7 @@
       "CritRating": 56,
       "AttackPower": 112
     },
-    "Phase": 1
+    "Phase": 2
   },
   {
     "Type": 2,
@@ -1653,7 +1636,7 @@
       "Agility": 42,
       "Stamina": 61
     },
-    "Phase": 1
+    "Phase": 2
   },
   {
     "Type": 2,
@@ -2098,7 +2081,7 @@
       "ID": 18112,
       "Name": "Firebolt"
     },
-    "Phase": 53
+    "Phase": -1
   },
   {
     "Type": 1,
