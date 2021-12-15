@@ -8,12 +8,11 @@ A WoW TBC Classic Retribution Paladin Simulator
 
 ## SIM
 * Gear 
-  * Add missing items & their spells
-  * Remove trash
-* Mutually exclusive spells
+  * Add missing procs & on use effects
 
 ## LOW PRIORITY / THOUGHTS / DESIGN CONSIDERATIONS
 * Enhance cooldown manager system
+* Mutually exclusive spells
 * Uptime simulation (player / buffs like Expose Weakness)
 * More tactics  
 * Mana
