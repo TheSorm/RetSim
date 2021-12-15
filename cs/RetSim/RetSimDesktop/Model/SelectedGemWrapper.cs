@@ -9,6 +9,35 @@ namespace RetSimDesktop.Model
 {
     public class SelectedGemWrapper
     {
+        public SelectedGemWrapper()
+        {
+            foreach (var item in AllItems.Values)
+            {
+                foreach (var socket in item.Sockets)
+                {
+                    if (socket == null)
+                    {
+                        continue;
+                    }
+
+                    switch (socket.Color)
+                    {
+                        case SocketColor.Red:
+                            socket.SocketedGem = Gems[24027]; // 8 str
+                            break;
+                        case SocketColor.Blue:
+                            socket.SocketedGem = Gems[24054]; // 4 str 6 stam
+                            break;
+                        case SocketColor.Yellow:
+                            socket.SocketedGem = Gems[24058]; // 4 str 4 crit
+                            break;
+                        case SocketColor.Meta:
+                            socket.SocketedGem = MetaGems[32409]; // Relentless Earthstorm Diamond
+                            break;
+                    }
+                }
+            }
+        }
     }
 
     public class SelectedGemJsonConverter : JsonConverter<SelectedGemWrapper>
@@ -16,6 +45,8 @@ namespace RetSimDesktop.Model
 
         public override SelectedGemWrapper? Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
+            var selectedGemWrapper = new SelectedGemWrapper();
+
             reader.Read();
             reader.Read();
             int redSocketBaseID = reader.GetInt32();
@@ -93,11 +124,29 @@ namespace RetSimDesktop.Model
                                 break;
                         }
                     }
+                    else
+                    {
+                        switch (prpertyName)
+                        {
+                            case "Socket1":
+                                if (AllItems[propertyId].Socket1 != null)
+                                    AllItems[propertyId].Socket1.SocketedGem = null;
+                                break;
+                            case "Socket2":
+                                if (AllItems[propertyId].Socket2 != null)
+                                    AllItems[propertyId].Socket2.SocketedGem = null;
+                                break;
+                            case "Socket3":
+                                if (AllItems[propertyId].Socket3 != null)
+                                    AllItems[propertyId].Socket3.SocketedGem = null;
+                                break;
+                        }
+                    }
                 }
                 reader.Read();
             }
             reader.Read();
-            return new SelectedGemWrapper();
+            return selectedGemWrapper;
         }
 
         public override void Write(Utf8JsonWriter writer, SelectedGemWrapper value, JsonSerializerOptions options)
