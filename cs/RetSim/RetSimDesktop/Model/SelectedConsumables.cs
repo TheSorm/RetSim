@@ -20,7 +20,7 @@ namespace RetSimDesktop.Model
         private bool scrollOfAgilityEnabled = true;
         private ScrollOfAgility selectedScrollOfAgility = ScrollOfAgility.ScrollOfAgilityV;
 
-        private bool gnomishBattleChickenEnabled = true;
+        private bool gnomishBattleChickenEnabled = false;
 
         public BattleElixir SelectedBattleElixir
         {

@@ -8,10 +8,10 @@ namespace RetSimDesktop.Model
     public class SelectedBuffs : INotifyPropertyChanged
     {
         private bool battleShoutEnabled = true;
-        private BattleShout selectedBattleShout = BattleShout.ImpBattleShoutSolarianAndT2;
+        private BattleShout selectedBattleShout = BattleShout.ImpBattleShout;
 
-        private bool trueshotAuraEnabled = true;
-        private bool ferociousInspirationEnabled = true;
+        private bool trueshotAuraEnabled = false;
+        private bool ferociousInspirationEnabled = false;
 
         private bool earthTotemEnabled = true;
         private EarthTotem selectedEarthTotem = EarthTotem.ImpStrengthOfEarthTotem;
@@ -23,12 +23,12 @@ namespace RetSimDesktop.Model
         private AirTotem2 selectedAirTotem2 = AirTotem2.ImpGraceOfAirTotem;
 
         private bool waterTotemEnabled = true;
-        private WaterTotem selectedWaterTotem = WaterTotem.ImpManaSpringTotem;
+        private WaterTotem selectedWaterTotem = WaterTotem.ManaSpringTotem;
 
         private bool unleashedRageEnabled = true;
         private bool heroismEnabled = true;
-        private bool leaderofthePackEnabled = true;
-        private bool heroicPresenceEnabled = true;
+        private bool leaderofthePackEnabled = false;
+        private bool heroicPresenceEnabled = false;
         private bool inspiringPresenceEnabled = true;
 
         private bool blessingofMightEnabled = true;
@@ -36,7 +36,7 @@ namespace RetSimDesktop.Model
 
         private bool blessingofKingsEnabled = true;
 
-        private bool blessingofWisdomEnabled = true;
+        private bool blessingofWisdomEnabled = false;
         private BlessingofWisdom selectedBlessingofWisdom = BlessingofWisdom.ImpBlessingofWisdom;
 
         private bool markoftheWildEnabled = true;
@@ -50,8 +50,8 @@ namespace RetSimDesktop.Model
 
         private bool arcaneIntellectEnabled = true;
         private bool braidedEterniumChainEnabled = true;
-        private bool embraceoftheDawnEnabled = true;
-        private bool eyeoftheNightEnabled = true;
+        private bool embraceoftheDawnEnabled = false;
+        private bool eyeoftheNightEnabled = false;
 
 
         public bool BattleShoutEnabled { get => battleShoutEnabled; set { battleShoutEnabled = value; OnPropertyChanged(nameof(BattleShoutEnabled)); } }

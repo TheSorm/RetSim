@@ -32,7 +32,7 @@ namespace RetSimDesktop.Model
         private bool improvedShadowBoltEnabled = true;
         private bool miseryEnabled = true;
         private bool shadowWeavingEnabled = true;
-        private bool improvedScorchEnabled = true;
+        private bool improvedScorchEnabled = false;
 
         public bool JudgementoftheCrusaderEnabled { get => judgementoftheCrusaderEnabled; set { judgementoftheCrusaderEnabled = value; OnPropertyChanged(nameof(JudgementoftheCrusaderEnabled)); } }
         public JudgementoftheCrusader SelectedJudgementoftheCrusader { get => selectedJudgementoftheCrusader; set { selectedJudgementoftheCrusader = value; OnPropertyChanged(nameof(SelectedJudgementoftheCrusader)); } }

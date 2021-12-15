@@ -8,7 +8,7 @@ namespace RetSimDesktop.Model
     public class SelectedTalents : INotifyPropertyChanged
     {
         private bool divineStrengthEnabled = true;
-        private bool divineIntellectEnabled = true;
+        private bool divineIntellectEnabled = false;
         private bool precisionEnabled = true;
         private bool benedictionEnabled = true;
         private bool improvedJudgementEnabled = true;

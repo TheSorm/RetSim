@@ -13,7 +13,7 @@ namespace RetSimDesktop.Model
         private bool drumEnabled = true;
         private Drum selectedDrum = Drum.DrumsOfBattle;
 
-        private bool superSapperChargeEnabled = true;
+        private bool superSapperChargeEnabled = false;
 
         public PrimaryPotion SelectedPrimaryPotion
         {

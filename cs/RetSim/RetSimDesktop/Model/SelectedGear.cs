@@ -13,16 +13,16 @@ namespace RetSimDesktop.Model
     {
         private DisplayGear? selectedHead = new() { Item = AllItems[32461], DPS = 0, EnabledForGearSim = true };
         private DisplayGear? selectedNeck = new() { Item = AllItems[30022], DPS = 0, EnabledForGearSim = true };
-        private DisplayGear? selectedShoulders = new() { Item = AllItems[29075], DPS = 0, EnabledForGearSim = true };
+        private DisplayGear? selectedShoulders = new() { Item = AllItems[30055], DPS = 0, EnabledForGearSim = true };
         private DisplayGear? selectedBack = new() { Item = AllItems[30098], DPS = 0, EnabledForGearSim = true };
         private DisplayGear? selectedChest = new() { Item = AllItems[30129], DPS = 0, EnabledForGearSim = true };
         private DisplayGear? selectedWrists = new() { Item = AllItems[28795], DPS = 0, EnabledForGearSim = true };
         private DisplayGear? selectedHands = new() { Item = AllItems[29947], DPS = 0, EnabledForGearSim = true };
-        private DisplayGear? selectedWaist = new() { Item = AllItems[30032], DPS = 0, EnabledForGearSim = true };
+        private DisplayGear? selectedWaist = new() { Item = AllItems[30106], DPS = 0, EnabledForGearSim = true };
         private DisplayGear? selectedLegs = new() { Item = AllItems[30257], DPS = 0, EnabledForGearSim = true };
         private DisplayGear? selectedFeet = new() { Item = AllItems[29951], DPS = 0, EnabledForGearSim = true };
         private DisplayGear? selectedFinger1 = new() { Item = AllItems[30834], DPS = 0, EnabledForGearSim = true };
-        private DisplayGear? selectedFinger2 = new() { Item = AllItems[28730], DPS = 0, EnabledForGearSim = true };
+        private DisplayGear? selectedFinger2 = new() { Item = AllItems[30061], DPS = 0, EnabledForGearSim = true };
         private DisplayGear? selectedTrinket1 = new() { Item = AllItems[29383], DPS = 0, EnabledForGearSim = true };
         private DisplayGear? selectedTrinket2 = new() { Item = AllItems[28830], DPS = 0, EnabledForGearSim = true };
         private DisplayGear? selectedRelic = new() { Item = AllItems[27484], DPS = 0, EnabledForGearSim = true };

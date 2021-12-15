@@ -4,9 +4,9 @@ namespace RetSimDesktop.Model
 {
     public class EncounterSettings : INotifyPropertyChanged
     {
-        private int minFightDuration = 180000;
-        private int maxFightDuration = 200000;
-        private int encounterID = 0;
+        private int minFightDuration = 160000;
+        private int maxFightDuration = 180000;
+        private int encounterID = 17;
 
         public int EncounterID
         {
