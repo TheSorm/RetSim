@@ -80,7 +80,7 @@ namespace RetSim.Simulation
         {
             foreach (int cooldown in Cooldowns.Keys)
             {
-                int max = FightDuration / cooldown + 1;
+                int max = (int) Math.Ceiling(FightDuration / ((float)cooldown));
                 int[] current = new int[max];
 
                 int defaultCount = 0;
