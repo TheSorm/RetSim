@@ -86,10 +86,6 @@ public class FightSimulation
     public void Initialize()
     {
         List<Event> preFightEvents = new();
-        foreach (Spell spell in Player.Equipment.Spells)
-        {
-            preFightEvents.Add(new CastEvent(spell, Player, Player, this, Timestamp, -3));
-        }
 
         foreach (Talent talent in Player.Talents)
         {
@@ -113,6 +109,11 @@ public class FightSimulation
 
         if (Player.Race.Racial != null && Player.Race.Racial.Requirements(Player))
             preFightEvents.Add(new CastEvent(Player.Race.Racial, Player, Player, this, Timestamp, -1));
+
+        foreach (Spell spell in Player.Equipment.Spells)
+        {
+            preFightEvents.Add(new CastEvent(spell, Player, Player, this, Timestamp, -3));
+        }
 
         while (preFightEvents.Count > 0)
         {
