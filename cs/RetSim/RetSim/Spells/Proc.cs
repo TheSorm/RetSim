@@ -11,7 +11,7 @@ public class Proc
     public Spell Spell { get; set; }
     public ProcMask ProcMask { get; init; }
     public bool GuaranteedProc { get; init; } = false;
-    public int Chance { get; init; } = 0;
+    public float Chance { get; init; } = 0;
     public float PPM { get; init; } = 0f;
     public int Cooldown { get; init; } = 0;
 

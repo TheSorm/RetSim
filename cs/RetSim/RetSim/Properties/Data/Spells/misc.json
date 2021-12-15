@@ -1,4 +1,30 @@
 {
+  //TODO: Implement HoJ
+
+  //"15600": {
+  //  "ID": 15600,
+  //  "Name": "Hand of Justice",
+  //  "Aura": {
+  //    "Effects": [
+  //      {
+  //        "EffectType": "GainProc",
+  //        "Value": 40
+  //      }
+  //    ]
+  //  }
+  //},
+
+  "15601": {
+    "ID": 15601,
+    "Name": "Hand of Justice",
+    "Effects": [
+      {
+        "EffectType": "ExtraAttacks",
+        "ProcID": 3,
+        "Value": 1
+      }
+    ]
+  },
 
   "16916": {
     "ID": 16916,
@@ -42,6 +68,192 @@
             27159
           ],
           "AuraEffect1": 20
+        }
+      ]
+    }
+  },
+
+  "23686": {
+    "ID": 23686,
+    "Name": "Darkmoon Card: Maelstrom",
+    "Aura": {
+      "Effects": [
+        {
+          "EffectType": "GainProc",
+          "Value": 39
+        }
+      ]
+    }
+  },
+
+  "23687": {
+    "ID": 23687,
+    "Name": "Lightning Strike",
+    "Target": "Enemy",
+    "Effects": [
+      {
+        "EffectType": "Damage",
+        "School": "Nature",
+        "DefenseCategory": "Magic",
+        "CritCategory": "Spell",
+        "OnCast": 0,
+        "OnHit": 512,
+        "OnCrit": 1,
+        "Value": 200,
+        "DieSides": 100
+      }
+    ]
+  },
+
+  "23733": {
+    "ID": 23733,
+    "Name": "Blinding Light",
+    "Cooldown": 300000,
+    "Aura": {
+      "Duration": 20000,
+      "Effects": [
+        {
+          "EffectType": "ModAttackSpeed",
+          "HasteRating": 250
+        },
+        {
+          "EffectType": "ModStat",
+          "Stats": [
+            "SpellHaste"
+          ],
+          "Value": 330
+        }
+      ]
+    }
+  },
+
+  "25891": {
+    "ID": 25891,
+    "Name": "Earthstrike",
+    "Cooldown": 120000,
+    "Aura": {
+      "Duration": 20000,
+      "Effects": [
+        {
+          "EffectType": "ModStat",
+          "Stats": [
+            "AttackPower"
+          ],
+          "Value": 280
+        }
+      ]
+    }
+  },
+
+  "26166": {
+    "ID": 26166,
+    "Name": "Obsidian Insight",
+    "Cooldown": 180000,
+    "Aura": {
+      "Duration": 30000,
+      "Effects": [
+        {
+          "EffectType": "ModStat",
+          "Stats": [
+            "SpellPower"
+          ],
+          "Value": 50
+        }
+      ]
+    }
+  },
+
+  "26480": {
+    "ID": 26480,
+    "Name": "Badge of the Swarmguard",
+    "Cooldown": 180000,
+    "Aura": {
+      "Duration": 30000,
+      "Effects": [
+        {
+          "EffectType": "GainProc",
+          "Value": 38
+        },
+        {
+          "EffectType": "CancelAuraOnRemove",
+          "Spells": [
+            26481
+          ]
+        }
+      ]
+    }
+  },
+
+  "26481": {
+    "ID": 26481,
+    "Name": "Insight of the Qiraji",
+    "Aura": {
+      "Duration": 20000,
+      "MaxStacks": 6,
+      "Effects": [
+        {
+          "EffectType": "ModStat",
+          "Stats": [
+            "ArmorPenetration"
+          ],
+          "Value": 200
+        }
+      ]
+    }
+  },
+
+  "26789": {
+    "ID": 26789,
+    "Name": "Shard of the Fallen Star",
+    "Target": "Enemy",
+    "Cooldown": 180000,
+    "Effects": [
+      {
+        "EffectType": "Damage",
+        "School": "Fire",
+        "DefenseCategory": "Magic",
+        "CritCategory": "Spell",
+        "OnCast": 0,
+        "OnHit": 512,
+        "OnCrit": 1,
+        "Value": 400,
+        "DieSides": 42
+      }
+    ]
+  },
+
+  "27848": {
+    "ID": 27848,
+    "Name": "Seal Cost Reduced",
+    "Target": "Ally",
+    "Aura": {
+      "Effects": [
+        {
+          "EffectType": "ModSpell",
+          "Spells": [
+            27170,
+            31892,
+            27158
+          ],
+          "ManaCost": 20
+        }
+      ]
+    }
+  },
+
+  "28779": {
+    "ID": 28779,
+    "Name": "Essence of Sapphiron",
+    "Cooldown": 120000,
+    "Aura": {
+      "Duration": 20000,
+      "Effects": [
+        {
+          "EffectType": "ModStat",
+          "Stats": [
+            "SpellPower"
+          ],
+          "Value": 130
         }
       ]
     }
@@ -114,6 +326,30 @@
     }
   },
 
+  "28852": {
+    "ID": 28852,
+    "Name": "Improved Seal of the Crusader (Libram of Fervor)",
+    "Target": "Ally",
+    "Aura": {
+      "Effects": [
+        {
+          "EffectType": "ModSpell",
+          "Spells": [
+            27158
+          ],
+          "AuraEffect2": 48
+        },
+        {
+          "EffectType": "ModSpell",
+          "Spells": [
+            27159
+          ],
+          "AuraEffect1": 33
+        }
+      ]
+    }
+  },
+
 
   "29112": {
     "ID": 29112,
@@ -130,6 +366,94 @@
             "AttackPower"
           ],
           "Value": 150
+        }
+      ]
+    }
+  },
+
+  "31040": {
+    "ID": 31040,
+    "Name": "Living Ruby Serpent",
+    "Cooldown": 300000,
+    "Aura": {
+      "Duration": 20000,
+      "Effects": [
+        {
+          "EffectType": "ModStat",
+          "Stats": [
+            "SpellPower"
+          ],
+          "Value": 150
+        }
+      ]
+    }
+  },
+
+  "31047": {
+    "ID": 31047,
+    "Name": "Nightseye Panther",
+    "Cooldown": 180000,
+    "Aura": {
+      "Duration": 12000,
+      "Effects": [
+        {
+          "EffectType": "ModStat",
+          "Stats": [
+            "AttackPower"
+          ],
+          "Value": 320
+        }
+      ]
+    }
+  },
+
+  "32145": {
+    "ID": 32145,
+    "Name": "Epic PvP Set (35 Resilience)",
+    "Aura": {
+      "Effects": [
+        {
+          "EffectType": "ModStat",
+          "Stats": [
+            "Resilience"
+          ],
+          "Value": 35
+        }
+      ]
+    }
+  },
+
+  "32355": {
+    "ID": 32355,
+    "Name": "Focused Power",
+    "Cooldown": 120000,
+    "Aura": {
+      "Duration": 20000,
+      "Effects": [
+        {
+          "EffectType": "ModStat",
+          "Stats": [
+            "SpellPower"
+          ],
+          "Value": 104
+        }
+      ]
+    }
+  },
+
+  "32362": {
+    "ID": 32362,
+    "Name": "Burning Hatred",
+    "Cooldown": 120000,
+    "Aura": {
+      "Duration": 15000,
+      "Effects": [
+        {
+          "EffectType": "ModStat",
+          "Stats": [
+            "AttackPower"
+          ],
+          "Value": 185
         }
       ]
     }
@@ -213,10 +537,46 @@
     "Cooldown": 120000,
     "Aura": {
       "Duration": 10000,
-      "Effects": [        
+      "Effects": [
         {
           "EffectType": "ModAttackSpeed",
           "HasteRating": 260
+        }
+      ]
+    }
+  },
+
+  "34000": {
+    "ID": 34000,
+    "Name": "The Arcanist's Stone",
+    "Cooldown": 120000,
+    "Aura": {
+      "Duration": 20000,
+      "Effects": [
+        {
+          "EffectType": "ModStat",
+          "Stats": [
+            "SpellPower"
+          ],
+          "Value": 167
+        }
+      ]
+    }
+  },
+
+  "34106": {
+    "ID": 34106,
+    "Name": "Armor Penetration",
+    "Cooldown": 120000,
+    "Aura": {
+      "Duration": 20000,
+      "Effects": [
+        {
+          "EffectType": "ModStat",
+          "Stats": [
+            "ArmorPenetration"
+          ],
+          "Value": 600
         }
       ]
     }
@@ -364,6 +724,38 @@
     }
   },
 
+  "34586": {
+    "ID": 34586,
+    "Name": "Romulo's Poison Vial",
+    "Aura": {
+      "Effects": [
+        {
+          "EffectType": "GainProc",
+          "Value": 37
+        }
+      ]
+    }
+  },
+
+  "34587": {
+    "ID": 34587,
+    "Name": "Romulo's Poison",
+    "Target": "Enemy",
+    "Effects": [
+      {
+        "EffectType": "Damage",
+        "School": "Nature",
+        "DefenseCategory": "Magic",
+        "CritCategory": "Spell",
+        "OnCast": 0,
+        "OnHit": 512,
+        "OnCrit": 1,
+        "Value": 222,
+        "DieSides": 110
+      }
+    ]
+  },
+
   "34695": {
     "ID": 34695,
     "Name": "Drain Life",
@@ -414,7 +806,7 @@
     "Name": "Dragonspine Trophy",
     "Aura": {
       "Duration": 10000,
-      "Effects": [        
+      "Effects": [
         {
           "EffectType": "ModAttackSpeed",
           "HasteRating": 325
@@ -453,6 +845,24 @@
     }
   },
 
+  "35163": {
+    "ID": 35163,
+    "Name": "Blessing of the Silver Crescent",
+    "Cooldown": 120000,
+    "Aura": {
+      "Duration": 20000,
+      "Effects": [
+        {
+          "EffectType": "ModStat",
+          "Stats": [
+            "SpellPower"
+          ],
+          "Value": 155
+        }
+      ]
+    }
+  },
+
   "35166": {
     "ID": 35166,
     "Name": "Lust for Battle",
@@ -466,6 +876,24 @@
             "AttackPower"
           ],
           "Value": 278
+        }
+      ]
+    }
+  },
+
+  "35337": {
+    "ID": 35337,
+    "Name": "Spell Power",
+    "Cooldown": 90000,
+    "Aura": {
+      "Duration": 15000,
+      "Effects": [
+        {
+          "EffectType": "ModStat",
+          "Stats": [
+            "SpellPower"
+          ],
+          "Value": 150
         }
       ]
     }
@@ -534,6 +962,24 @@
     ]
   },
 
+  "36432": {
+    "ID": 36432,
+    "Name": "Spell Power",
+    "Cooldown": 90000,
+    "Aura": {
+      "Duration": 15000,
+      "Effects": [
+        {
+          "EffectType": "ModStat",
+          "Stats": [
+            "SpellPower"
+          ],
+          "Value": 125
+        }
+      ]
+    }
+  },
+
   "36479": {
     "ID": 36479,
     "Name": "Devastation",
@@ -556,6 +1002,162 @@
         {
           "EffectType": "ModAttackSpeed",
           "Value": 20
+        }
+      ]
+    }
+  },
+
+  "37186": {
+    "ID": 37186,
+    "Name": "Increased Judgement of Crusader (T4 2-piece)",
+    "Target": "Ally",
+    "Aura": {
+      "Effects": [
+        {
+          "EffectType": "ModSpellPercent",
+          "Spells": [
+            27159
+          ],
+          "AuraEffect1": 15
+        }
+      ]
+    }
+  },
+
+  "37187": {
+    "ID": 37187,
+    "Name": "Increased Judgement of Command (T4 4-piece)",
+    "Target": "Ally",
+    "Aura": {
+      "Effects": [
+        {
+          "EffectType": "ModSpellPercent",
+          "Spells": [
+            27171
+          ],
+          "Effect1": 10
+        }
+      ]
+    }
+  },
+
+  "37194": {
+    "ID": 37194,
+    "Name": "Reduced Judgement Cost (T5 2-piece)",
+    "Target": "Ally",
+    "Aura": {
+      "Effects": [
+        {
+          "EffectType": "ModSpell",
+          "Spells": [
+            20271
+          ],
+          "ManaCost": 35
+        }
+      ]
+    }
+  },
+
+  "37608": {
+    "ID": 37608,
+    "Name": "Wastewalker Armor (35 Hit)",
+    "Aura": {
+      "Effects": [
+        {
+          "EffectType": "ModStat",
+          "Stats": [
+            "HitRating"
+          ],
+          "Value": 35
+        }
+      ]
+    }
+  },
+
+  "37609": {
+    "ID": 37609,
+    "Name": "Desolation Armor (35 Hit)",
+    "Aura": {
+      "Effects": [
+        {
+          "EffectType": "ModStat",
+          "Stats": [
+            "HitRating"
+          ],
+          "Value": 35
+        }
+      ]
+    }
+  },
+
+  "37610": {
+    "ID": 37610,
+    "Name": "Doomplate Armor (35 Hit)",
+    "Aura": {
+      "Effects": [
+        {
+          "EffectType": "ModStat",
+          "Stats": [
+            "HitRating"
+          ],
+          "Value": 35
+        }
+      ]
+    }
+  },
+
+  "37611": {
+    "ID": 37611,
+    "Name": "160 Attack Power Proc",
+    "Aura": {
+      "Effects": [
+        {
+          "EffectType": "GainProc",
+          "Value": 41
+        }
+      ]
+    }
+  },
+
+  "37612": {
+    "ID": 37612,
+    "Name": "Heroic Resolution",
+    "Aura": {
+      "Duration": 15000,
+      "Effects": [
+        {
+          "EffectType": "ModStat",
+          "Stats": [
+            "AttackPower"
+          ],
+          "Value": 160
+        }
+      ]
+    }
+  },
+
+  "37617": {
+    "ID": 37617,
+    "Name": "160 Attack Power Proc",
+    "Aura": {
+      "Effects": [
+        {
+          "EffectType": "GainProc",
+          "Value": 41
+        }
+      ]
+    }
+  },
+
+
+  "37618": {
+    "ID": 37618,
+    "Name": "160 Attack Power Proc",
+    "Aura": {
+      "Effects": [
+        {
+          "EffectType": "GainProc",
+          "Value": 41
         }
       ]
     }
@@ -598,6 +1200,24 @@
     }
   },
 
+  "39200": {
+    "ID": 39200,
+    "Name": "Heroism (Trinket)",
+    "Cooldown": 90000,
+    "Aura": {
+      "Duration": 15000,
+      "Effects": [
+        {
+          "EffectType": "ModStat",
+          "Stats": [
+            "AttackPower"
+          ],
+          "Value": 140
+        }
+      ]
+    }
+  },
+
   "38282": {
     "ID": 38282,
     "Name": "Singing Crystal Axe",
@@ -616,7 +1236,7 @@
     "Name": "The Blade\u0027s Song",
     "Aura": {
       "Duration": 10000,
-      "Effects": [        
+      "Effects": [
         {
           "EffectType": "ModAttackSpeed",
           "HasteRating": 400
@@ -695,22 +1315,110 @@
     }
   },
 
-  "40724": {
-    "ID": 40724,
-    "Name": "Valor",
-    "Cooldown": 60000,
+  "39958": {
+    "ID": 39958,
+    "Name": "Thundering Skyfire Diamond",
     "Aura": {
-      "Duration": 10000,
+      "Effects": [
+        {
+          "EffectType": "GainProc",
+          "Value": 42
+        }
+      ]
+    }
+  },
+
+  "39959": {
+    "ID": 39959,
+    "Name": "Skyfire Swiftness",
+    "Aura": {
+      "Duration": 6000,
+      "Effects": [
+        {
+          "EffectType": "ModAttackSpeed",
+          "HasteRating": 240
+        }
+      ]
+    }
+  },
+
+  "39982": {
+    "ID": 39982,
+    "Name": "Netherscale Armor (20 Hit)",
+    "Aura": {
       "Effects": [
         {
           "EffectType": "ModStat",
           "Stats": [
-            "AttackPower"
+            "HitRating"
           ],
-          "Value": 216
+          "Value": 20
         }
       ]
     }
+  },
+
+  "40046": {
+    "ID": 40046,
+    "Name": "Rare PvP Set (35 Resilience)",
+    "Aura": {
+      "Effects": [
+        {
+          "EffectType": "ModStat",
+          "Stats": [
+            "Resilience"
+          ],
+          "Value": 35
+        }
+      ]
+    }
+  },
+
+  "40050": {
+    "ID": 40050,
+    "Name": "Rare PvP Set (35 Resilience)",
+    "Aura": {
+      "Effects": [
+        {
+          "EffectType": "ModStat",
+          "Stats": [
+            "Resilience"
+          ],
+          "Value": 35
+        }
+      ]
+    }
+  },
+
+  "40470": {
+    "ID": 40470,
+    "Name": "Paladin Tier 6 Trinket",
+    "Aura": {
+      "Effects": [
+        {
+          "EffectType": "GainProc",
+          "Value": 36
+        }
+      ]
+    }
+  },
+
+  "40472": {
+    "ID": 40472,
+    "Name": "Enduring Judgement",
+    "Effects": [
+      {
+        "EffectType": "Damage",
+        "School": "Holy",
+        "DefenseCategory": "None",
+        "CritCategory": "None",
+        "OnCast": 0,
+        "OnHit": 0,
+        "OnCrit": 0,
+        "Value": 480,
+        "DieSides": 0
+      }
+    ]
   },
 
   "40475": {
@@ -738,6 +1446,90 @@
             "ArmorPenetration"
           ],
           "Value": 300
+        }
+      ]
+    }
+  },
+
+  "40724": {
+    "ID": 40724,
+    "Name": "Valor",
+    "Cooldown": 60000,
+    "Aura": {
+      "Duration": 10000,
+      "Effects": [
+        {
+          "EffectType": "ModStat",
+          "Stats": [
+            "AttackPower"
+          ],
+          "Value": 216
+        }
+      ]
+    }
+  },
+
+  "40729": {
+    "ID": 40729,
+    "Name": "Heightened Reflexes",
+    "Cooldown": 120000,
+    "Aura": {
+      "Duration": 20000,
+      "Effects": [
+        {
+          "EffectType": "ModStat",
+          "Stats": [
+            "Agility"
+          ],
+          "Value": 150
+        }
+      ]
+    }
+  },
+
+  "41678": {
+    "ID": 41678,
+    "Name": "Ragesteel Armor (20 Hit)",
+    "Aura": {
+      "Effects": [
+        {
+          "EffectType": "ModStat",
+          "Stats": [
+            "HitRating"
+          ],
+          "Value": 20
+        }
+      ]
+    }
+  },
+
+  "41749": {
+    "ID": 41749,
+    "Name": "Felstalker Armor (20 Hit)",
+    "Aura": {
+      "Effects": [
+        {
+          "EffectType": "ModStat",
+          "Stats": [
+            "HitRating"
+          ],
+          "Value": 20
+        }
+      ]
+    }
+  },
+
+  "41832": {
+    "ID": 41832,
+    "Name": "Primalstrike Armor (40 Attack Power)",
+    "Aura": {
+      "Effects": [
+        {
+          "EffectType": "ModStat",
+          "Stats": [
+            "AttackPower"
+          ],
+          "Value": 40
         }
       ]
     }
@@ -863,6 +1655,23 @@
             35395
           ],
           "Effect1": 5
+        }
+      ]
+    }
+  },
+
+  "44797": {
+    "ID": 44797,
+    "Name": "Increase Critical Damage 3%",
+    "Aura": {
+      "Effects": [
+        {
+          "EffectType": "ModStatPercent",
+          "Stats": [
+            "CritDamage",
+            "SpellCritDamage"
+          ],
+          "Value": 3
         }
       ]
     }
@@ -1048,6 +1857,59 @@
     }
   },
 
+  "46600": {
+    "ID": 46600,
+    "Name": "Ember Skyfire Intellect",
+    "Target": "Self",
+    "Aura": {
+      "Effects": [
+        {
+          "EffectType": "ModStatPercent",
+          "Stats": [
+            "Intellect"
+          ],
+          "Value": 2
+        }
+      ]
+    }
+  },
+
+  "46534": {
+    "ID": 46534,
+    "Name": "Reputation PvP Set (35 Resilience)",
+    "Aura": {
+      "Effects": [
+        {
+          "EffectType": "ModStat",
+          "Stats": [
+            "Resilience"
+          ],
+          "Value": 35
+        }
+      ]
+    }
+  },
+
+  "46567": {
+    "ID": 46567,
+    "Name": "Rocket Launch",
+    "Target": "Enemy",
+    "Cooldown": 600000,
+    "Effects": [
+      {
+        "EffectType": "Damage",
+        "School": "Fire",
+        "DefenseCategory": "Magic",
+        "CritCategory": "Spell",
+        "OnCast": 0,
+        "OnHit": 512,
+        "OnCrit": 1,
+        "Value": 960,
+        "DieSides": 480
+      }
+    ]
+  },
+
   "46579": {
     "ID": 46579,
     "Name": "Deathfrost",
@@ -1078,6 +1940,24 @@
     }
   },
 
+  "46783": {
+    "ID": 46783,
+    "Name": "Crimson Serpent",
+    "Cooldown": 120000,
+    "Aura": {
+      "Duration": 20000,
+      "Effects": [
+        {
+          "EffectType": "ModStat",
+          "Stats": [
+            "SpellPower"
+          ],
+          "Value": 150
+        }
+      ]
+    }
+  },
+
   "46784": {
     "ID": 46784,
     "Name": "Shadowsong Panther",
@@ -1091,6 +1971,24 @@
             "AttackPower"
           ],
           "Value": 320
+        }
+      ]
+    }
+  },
+
+  "51953": {
+    "ID": 51953,
+    "Name": "Dark Iron Pipeweed",
+    "Cooldown": 120000,
+    "Aura": {
+      "Duration": 20000,
+      "Effects": [
+        {
+          "EffectType": "ModStat",
+          "Stats": [
+            "SpellPower"
+          ],
+          "Value": 155
         }
       ]
     }

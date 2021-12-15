@@ -257,6 +257,57 @@
     "SpellID": 45041,
     "ProcMask": 94,
     "GuaranteedProc": true
+  },
+  "36": {
+    "ID": 36,
+    "Name": "Paladin Tier 6 Trinket",
+    "SpellID": 40472,
+    "ProcMask": 128,
+    "Chance": 50
+  },
+  "37": {
+    "ID": 37,
+    "Name": "Romulo's Poison Vial",
+    "SpellID": 34587,
+    "ProcMask": 94,
+    "PPM": 1
+  },
+  "38": {
+    "ID": 38,
+    "Name": "Badge of the Swarmguard",
+    "SpellID": 26481,
+    "ProcMask": 94,
+    "PPM": 10
+  },
+  "39": {
+    "ID": 39,
+    "Name": "Darkmoon Card: Maelstrom",
+    "SpellID": 23687,
+    "ProcMask": 94,
+    "PPM": 1
+  },
+  "40": {
+    "ID": 40,
+    "Name": "Hand of Justice",
+    "SpellID": 15601,
+    "ProcMask": 94,
+    "Chance": 1.3,
+    "Cooldown": 2000
+  },
+  "41": {
+    "ID": 41,
+    "Name": "Attack Power Bonus (Set Bonus)",
+    "SpellID": 37612,
+    "ProcMask": 94,
+    "Chance": 2
+  },
+  "42": {
+    "ID": 42,
+    "Name": "Thundering Skyfire Diamond",
+    "SpellID": 39959,
+    "ProcMask": 6,
+    "PPM": 1,
+    "Cooldown": 40000
   }
 }
 

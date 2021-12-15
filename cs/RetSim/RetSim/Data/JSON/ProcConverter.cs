@@ -10,7 +10,7 @@ public class ProcConverter : JsonConverter<Proc>
     {
         JObject jo = JObject.Load(reader);
 
-        return new Proc() { ID = (int)jo["ID"], SpellID = (int)jo["SpellID"], ProcMask = (ProcMask)(int)jo["ProcMask"], GuaranteedProc = (bool)(jo["GuaranteedProc"] ?? false), Chance = (int)(jo["Chance"] ?? 0), PPM = (float)(jo["PPM"] ?? 0), Cooldown = (int)(jo["Cooldown"] ?? 0) };
+        return new Proc() { ID = (int)jo["ID"], SpellID = (int)jo["SpellID"], ProcMask = (ProcMask)(int)jo["ProcMask"], GuaranteedProc = (bool)(jo["GuaranteedProc"] ?? false), Chance = (float)(jo["Chance"] ?? 0), PPM = (float)(jo["PPM"] ?? 0), Cooldown = (int)(jo["Cooldown"] ?? 0) };
     }
 
     public override void WriteJson(JsonWriter writer, Proc value, JsonSerializer serializer)
@@ -25,7 +25,7 @@ public class ProcConverter : JsonConverter<Proc>
         if (value.GuaranteedProc)
             writer.WriteData("GuaranteedProc", value.GuaranteedProc);
 
-        if (value.Chance != 0)
+        if (value.Chance != 0f)
             writer.WriteData("Chance", value.Chance);
 
         if (value.PPM != 0)

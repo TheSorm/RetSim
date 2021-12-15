@@ -15162,7 +15162,7 @@
       "ID": 36432,
       "Name": "Spell Power"
     },
-    "Phase": -1
+    "Phase": 1
   },
   {
     "ID": 28034,
@@ -15229,7 +15229,7 @@
       "ID": 51953,
       "Name": "Dark Iron Pipeweed"
     },
-    "Phase": -1
+    "Phase": 1
   },
   {
     "ID": 38287,
@@ -15340,7 +15340,7 @@
       "ID": 32362,
       "Name": "Burning Hatred"
     },
-    "Phase": -1
+    "Phase": 1
   },
   {
     "ID": 25628,
@@ -15356,7 +15356,7 @@
       "ID": 32362,
       "Name": "Burning Hatred"
     },
-    "Phase": -1
+    "Phase": 1
   },
   {
     "ID": 31856,
@@ -15454,7 +15454,7 @@
       "ID": 39200,
       "Name": "Heroism"
     },
-    "Phase": -1
+    "Phase": 1
   },
   {
     "ID": 25620,
@@ -15471,7 +15471,7 @@
       "ID": 32355,
       "Name": "Focused Power"
     },
-    "Phase": -1
+    "Phase": 1
   },
   {
     "ID": 25619,
@@ -15488,7 +15488,7 @@
       "ID": 32355,
       "Name": "Focused Power"
     },
-    "Phase": -1
+    "Phase": 1
   },
   {
     "ID": 23041,

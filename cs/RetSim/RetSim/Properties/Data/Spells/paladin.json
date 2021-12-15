@@ -35,6 +35,24 @@
     ]
   },
 
+  "3": {
+    "ID": 3,
+    "Name": "Melee (Hand of Justice)",
+    "Target": "Enemy",
+    "Effects": [
+      {
+        "EffectType": "WeaponAttack",
+        "School": "Physical",
+        "DefenseCategory": "White",
+        "CritCategory": "Physical",
+        "OnCast": 0,
+        "OnHit": 4,
+        "OnCrit": 33,
+        "Value": 1
+      }
+    ]
+  },
+
   "20050": {
     "ID": 20050,
     "Name": "Vengeance",
