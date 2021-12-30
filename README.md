@@ -1,6 +1,8 @@
 # RetSim
 RetSim is a Retribution Paladin DPS Simulator for World of Warcraft: The Burning Crusade Classic.
 
+Made by Sulis and Pride.
+
 ## Instructions
 * You can always download the latest version of the sim on our [Releases page](https://github.com/TheSorm/RetSim/releases/tag/release).
 * For detailed instructions on how to install the sim, check out the [relevant Wiki page](https://github.com/TheSorm/RetSim/wiki/1.-Installing-the-Sim).
