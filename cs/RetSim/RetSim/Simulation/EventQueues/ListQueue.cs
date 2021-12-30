@@ -20,7 +20,6 @@ namespace RetSim.Simulation.EventQueues
             foreach (Event e in events)
             {
                 Add(e);
-                dirty = true;
             }
         }
 

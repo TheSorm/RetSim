@@ -41,7 +41,7 @@ public class FightSimulation
         Consumables = consumables;
 
         CombatLog = new CombatLog();
-        Queue = new MinQueue();
+        Queue = new InsertionQueue();
 
         Timestamp = 0;
         Ongoing = true;
