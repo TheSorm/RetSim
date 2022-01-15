@@ -35,8 +35,8 @@ namespace RetSimDesktop.View
 
                 var numberOfSimulations = input.Item1.SimSettings.SimulationCount;
 
-                var minDuration = input.Item1.EncounterSettings.MinFightDuration;
-                var maxDuration = input.Item1.EncounterSettings.MaxFightDuration;
+                var minDuration = input.Item1.EncounterSettings.MinFightDurationMilliseconds;
+                var maxDuration = input.Item1.EncounterSettings.MaxFightDurationMilliseconds;
 
                 var talents = input.Item1.SelectedTalents.GetTalentList();
                 var buffs = input.Item1.SelectedBuffs.GetBuffs();

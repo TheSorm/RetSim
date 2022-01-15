@@ -65,7 +65,7 @@
                                     <ColumnDefinition Width="60"/>
                                 </Grid.ColumnDefinitions>
                                 <Label Margin="0" Padding="0" VerticalAlignment="Center" Content="Fight Duration (min)"/>
-                                <TextBox Grid.Column="2" HorizontalContentAlignment="Right" PreviewTextInput="NumberValidationTextBox" Text="{Binding EncounterSettings.MinFightDuration, Converter={StaticResource StringEmptyConverter}, ConverterParameter='1'}" />
+                                <TextBox Grid.Column="2" HorizontalContentAlignment="Right" PreviewTextInput="NumberValidationTextBox" ToolTipService.InitialShowDelay="0" ToolTip="sec" Text="{Binding EncounterSettings.MinFightDurationSeconds, Converter={StaticResource StringEmptyConverter}, ConverterParameter='1'}" />
                             </Grid>
                             <Grid Margin="0,2,0,2">
                                 <Grid.ColumnDefinitions>
@@ -74,7 +74,7 @@
                                     <ColumnDefinition Width="60"/>
                                 </Grid.ColumnDefinitions>
                                 <Label Margin="0" Padding="0" VerticalAlignment="Center" Content="Fight Duration (max)"/>
-                                <TextBox Grid.Column="2" HorizontalContentAlignment="Right" PreviewTextInput="NumberValidationTextBox" Text="{Binding EncounterSettings.MaxFightDuration, Converter={StaticResource StringEmptyConverter}, ConverterParameter='1'}" />
+                                <TextBox Grid.Column="2" HorizontalContentAlignment="Right" PreviewTextInput="NumberValidationTextBox" ToolTipService.InitialShowDelay="0" ToolTip="sec" Text="{Binding EncounterSettings.MaxFightDurationSeconds, Converter={StaticResource StringEmptyConverter}, ConverterParameter='1'}" />
                             </Grid>
                         </StackPanel>
                     </GroupBox>
