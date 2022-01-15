@@ -286,65 +286,129 @@ namespace RetSimDesktop.Model
             {
                 result.SelectedHead = new() { Item = AllItems[properties["SelectedHead"]], DPS = 0, EnabledForGearSim = true };
             }
+            else
+            {
+                result.SelectedHead = null;
+            }
             if (properties.ContainsKey("SelectedNeck"))
             {
                 result.SelectedNeck = new() { Item = AllItems[properties["SelectedNeck"]], DPS = 0, EnabledForGearSim = true };
+            }
+            else
+            {
+                result.SelectedNeck = null;
             }
             if (properties.ContainsKey("SelectedShoulders"))
             {
                 result.SelectedShoulders = new() { Item = AllItems[properties["SelectedShoulders"]], DPS = 0, EnabledForGearSim = true };
             }
+            else
+            {
+                result.SelectedShoulders = null;
+            }
             if (properties.ContainsKey("SelectedBack"))
             {
                 result.SelectedBack = new() { Item = AllItems[properties["SelectedBack"]], DPS = 0, EnabledForGearSim = true };
+            }
+            else
+            {
+                result.SelectedBack = null;
             }
             if (properties.ContainsKey("SelectedChest"))
             {
                 result.SelectedChest = new() { Item = AllItems[properties["SelectedChest"]], DPS = 0, EnabledForGearSim = true };
             }
+            else
+            {
+                result.SelectedChest = null;
+            }
             if (properties.ContainsKey("SelectedWrists"))
             {
                 result.SelectedWrists = new() { Item = AllItems[properties["SelectedWrists"]], DPS = 0, EnabledForGearSim = true };
+            }
+            else
+            {
+                result.SelectedWrists = null;
             }
             if (properties.ContainsKey("SelectedHands"))
             {
                 result.SelectedHands = new() { Item = AllItems[properties["SelectedHands"]], DPS = 0, EnabledForGearSim = true };
             }
+            else
+            {
+                result.SelectedHands = null;
+            }
             if (properties.ContainsKey("SelectedWaist"))
             {
                 result.SelectedWaist = new() { Item = AllItems[properties["SelectedWaist"]], DPS = 0, EnabledForGearSim = true };
+            }
+            else
+            {
+                result.SelectedWaist = null;
             }
             if (properties.ContainsKey("SelectedLegs"))
             {
                 result.SelectedLegs = new() { Item = AllItems[properties["SelectedLegs"]], DPS = 0, EnabledForGearSim = true };
             }
+            else
+            {
+                result.SelectedLegs = null;
+            }
             if (properties.ContainsKey("SelectedFeet"))
             {
                 result.SelectedFeet = new() { Item = AllItems[properties["SelectedFeet"]], DPS = 0, EnabledForGearSim = true };
+            }
+            else
+            {
+                result.SelectedFeet = null;
             }
             if (properties.ContainsKey("SelectedFinger1"))
             {
                 result.SelectedFinger1 = new() { Item = AllItems[properties["SelectedFinger1"]], DPS = 0, EnabledForGearSim = true };
             }
+            else
+            {
+                result.SelectedFinger1 = null;
+            }
             if (properties.ContainsKey("SelectedFinger2"))
             {
                 result.SelectedFinger2 = new() { Item = AllItems[properties["SelectedFinger2"]], DPS = 0, EnabledForGearSim = true };
+            }
+            else
+            {
+                result.SelectedFinger2 = null;
             }
             if (properties.ContainsKey("SelectedTrinket1"))
             {
                 result.SelectedTrinket1 = new() { Item = AllItems[properties["SelectedTrinket1"]], DPS = 0, EnabledForGearSim = true };
             }
+            else
+            {
+                result.SelectedTrinket1 = null;
+            }
             if (properties.ContainsKey("SelectedTrinket2"))
             {
                 result.SelectedTrinket2 = new() { Item = AllItems[properties["SelectedTrinket2"]], DPS = 0, EnabledForGearSim = true };
+            }
+            else
+            {
+                result.SelectedTrinket2 = null;
             }
             if (properties.ContainsKey("SelectedRelic"))
             {
                 result.SelectedRelic = new() { Item = AllItems[properties["SelectedRelic"]], DPS = 0, EnabledForGearSim = true };
             }
+            else
+            {
+                result.SelectedRelic = null;
+            }
             if (properties.ContainsKey("SelectedWeapon"))
             {
                 result.SelectedWeapon = new() { Weapon = Weapons[properties["SelectedWeapon"]], DPS = 0, EnabledForGearSim = true };
+            }
+            else
+            {
+                result.SelectedWeapon = null;
             }
 
             if (properties.ContainsKey("HeadEnchant") && properties["HeadEnchant"] != -1)

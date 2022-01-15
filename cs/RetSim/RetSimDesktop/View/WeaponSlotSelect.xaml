@@ -20,6 +20,27 @@
             <RowDefinition Height="30px" />
         </Grid.RowDefinitions>
         <DataGrid Name="gearSlot" ColumnWidth="*" GridLinesVisibility="Horizontal" SelectionChanged="GearSlotSelectionChanged" IsReadOnly="True" SelectionMode="Single" HeadersVisibility="Column" CanUserResizeColumns="False" CanUserResizeRows="False" AutoGenerateColumns="False">
+            <DataGrid.Resources>
+                <Style TargetType="{x:Type DataGridCell}">
+                    <Style.Triggers>
+                        <Trigger Property="DataGridCell.IsSelected" Value="True">
+                            <Setter Property="Background" Value="#0078d7" />
+                            <Setter Property="BorderBrush" Value="#0078d7" />
+                        </Trigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsMouseOver" Value="True"/>
+                                <Condition Property="IsReadOnly" Value="False"/>
+                            </MultiTrigger.Conditions>
+                            <Setter Property="IsEditing" Value="True" />
+                        </MultiTrigger>
+                    </Style.Triggers>
+                    <EventSetter Event="MouseEnter" Handler="DataGridCell_MouseEnter"/>
+                    <EventSetter Event="MouseLeave" Handler="DataGridCell_MouseLeave"/>
+                    <EventSetter Event="PreviewMouseDown" Handler="DataGridCell_PreviewMouseDown"/>
+                    <EventSetter Event="PreviewMouseUp" Handler="DataGridCell_PreviewMouseUp"/>
+                </Style>
+            </DataGrid.Resources>
             <DataGrid.Columns>
                 <DataGridCheckBoxColumn MinWidth="27" Width="27" MaxWidth="27" CanUserSort="False" IsReadOnly="False" IsThreeState="False" Binding="{Binding EnabledForGearSim, UpdateSourceTrigger=PropertyChanged}" >
                     <DataGridCheckBoxColumn.Header>
@@ -304,28 +325,6 @@
                     </DataGridTextColumn.ElementStyle>
                 </DataGridTextColumn>
             </DataGrid.Columns>
-            <DataGrid.Resources>
-                <Style TargetType="{x:Type DataGridCell}">
-                    <Style.Triggers>
-                        <Trigger Property="DataGridCell.IsSelected" Value="True">
-                            <Setter Property="Background" Value="#0078d7" />
-                            <Setter Property="BorderBrush" Value="#0078d7" />
-                        </Trigger>
-                        <MultiTrigger>
-                            <MultiTrigger.Conditions>
-                                <Condition Property="IsMouseOver" Value="True"/>
-                                <Condition Property="IsReadOnly" Value="False"/>
-                            </MultiTrigger.Conditions>
-                            <Setter Property="IsEditing" Value="True" />
-                        </MultiTrigger>
-                    </Style.Triggers>
-                    <EventSetter Event="MouseDoubleClick" Handler="DataGridCell_MouseDoubleClick"/>
-                    <EventSetter Event="MouseEnter" Handler="DataGridCell_MouseEnter"/>
-                    <EventSetter Event="MouseLeave" Handler="DataGridCell_MouseLeave"/>
-                    <EventSetter Event="PreviewMouseDown" Handler="DataGridCell_PreviewMouseDown"/>
-                </Style>
-            </DataGrid.Resources>
-
         </DataGrid>
         <ComboBox Name="WeaponEnchantComboBox" Width="200" Grid.Row="1" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="0,0,5,5" >
             <ComboBox.ItemTemplate>

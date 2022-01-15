@@ -33,10 +33,10 @@
                             <Setter Property="IsEditing" Value="True" />
                         </MultiTrigger>
                     </Style.Triggers>
-                    <EventSetter Event="MouseDoubleClick" Handler="DataGridCell_MouseDoubleClick"/>
                     <EventSetter Event="MouseEnter" Handler="DataGridCell_MouseEnter"/>
                     <EventSetter Event="MouseLeave" Handler="DataGridCell_MouseLeave"/>
                     <EventSetter Event="PreviewMouseDown" Handler="DataGridCell_PreviewMouseDown"/>
+                    <EventSetter Event="PreviewMouseUp" Handler="DataGridCell_PreviewMouseUp"/>
                 </Style>
             </DataGrid.Resources>
             <DataGrid.Columns>

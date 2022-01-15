@@ -1,7 +1,6 @@
 ﻿using RetSim.Data;
 using RetSim.Simulation;
 using RetSim.Simulation.Tactics;
-using RetSim.Spells;
 using RetSim.Units.Enemy;
 using RetSim.Units.Player;
 using RetSim.Units.Player.Static;
@@ -125,7 +124,7 @@ namespace RetSimDesktop.View
             float overallDPS = 0;
             for (int i = 0; i < NumberOfSimulations; i++)
             {
-                FightSimulation fight = new(new Player("Brave Hero", Race, ShattrathFaction, PlayerEquipment, Talents), new Enemy(Encounter), new EliteTactic(), Buffs, Debuffs, Consumables, MinFightDuration, MaxFightDuration, Cooldowns, HeroismUsage); 
+                FightSimulation fight = new(new Player("Brave Hero", Race, ShattrathFaction, PlayerEquipment, Talents), new Enemy(Encounter), new EliteTactic(), Buffs, Debuffs, Consumables, MinFightDuration, MaxFightDuration, Cooldowns, HeroismUsage);
                 fight.Run();
                 overallDPS += fight.CombatLog.DPS;
                 Item.DPS = overallDPS / (i + 1);
