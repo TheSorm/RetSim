@@ -451,7 +451,6 @@
   "28714": {
     "ID": 28714,
     "Name": "Flame Cap",
-    "Target": "Self",
     "Cooldown": 180000,
     "Aura": {
       "Duration": 60000,
@@ -479,297 +478,298 @@
         "OnCrit": 1,
         "Value": 40
       }
-    ],
+    ]
+  },
 
-    "29453": {
-      "ID": 29453,
-      "Name": "Sharpen Blade",
-      "Target": "Self",
-      "Aura": {
-        "Effects": [
-          {
-            "EffectType": "ModStat",
-            "Stats": [
-              "WeaponDamage"
-            ],
-            "Value": 12
-          },
-          {
-            "EffectType": "ModStat",
-            "Stats": [
-              "CritRating"
-            ],
-            "Value": 14
-          }
-        ]
-      }
-    },
-
-    "30486": {
-      "ID": 30486,
-      "Name": "Super Sapper Charge",
-      "Cooldown": 300000,
-      "Target": "Enemy",
+  "29453": {
+    "ID": 29453,
+    "Name": "Sharpen Blade",
+    "Target": "Self",
+    "Aura": {
       "Effects": [
         {
-          "EffectType": "Damage",
-          "School": "Fire",
-          "DefenseCategory": "Magic",
-          "CritCategory": "Spell",
-          "OnCast": 0,
-          "OnHit": 512,
-          "OnCrit": 1,
-          "Value": 900,
-          "DieSides": 600
+          "EffectType": "ModStat",
+          "Stats": [
+            "WeaponDamage"
+          ],
+          "Value": 12
+        },
+        {
+          "EffectType": "ModStat",
+          "Stats": [
+            "CritRating"
+          ],
+          "Value": 14
         }
       ]
-    },
+    }
+  },
 
-    "33077": {
-      "ID": 33077,
-      "Name": "Agility",
-      "Rank": 5,
-      "Target": "Self",
-      "Aura": {
-        "Effects": [
-          {
-            "EffectType": "ModStat",
-            "Stats": [
-              "Agility"
-            ],
-            "Value": 20
-          }
-        ]
+  "30486": {
+    "ID": 30486,
+    "Name": "Super Sapper Charge",
+    "Cooldown": 300000,
+    "Target": "Enemy",
+    "Effects": [
+      {
+        "EffectType": "Damage",
+        "School": "Fire",
+        "DefenseCategory": "Magic",
+        "CritCategory": "Spell",
+        "OnCast": 0,
+        "OnHit": 512,
+        "OnCrit": 1,
+        "Value": 900,
+        "DieSides": 600
       }
-    },
+    ]
+  },
 
-    "33082": {
-      "ID": 33082,
-      "Name": "Strength",
-      "Rank": 5,
-      "Target": "Self",
-      "Aura": {
-        "Effects": [
-          {
-            "EffectType": "ModStat",
-            "Stats": [
-              "Strength"
-            ],
-            "Value": 20
-          }
-        ]
-      }
-    },
+  "33077": {
+    "ID": 33077,
+    "Name": "Agility",
+    "Rank": 5,
+    "Target": "Self",
+    "Aura": {
+      "Effects": [
+        {
+          "EffectType": "ModStat",
+          "Stats": [
+            "Agility"
+          ],
+          "Value": 20
+        }
+      ]
+    }
+  },
 
-    "33256": {
-      "ID": 33256,
-      "Name": "Well Fed (20 Strength)",
-      "Target": "Self",
-      "Aura": {
-        "Effects": [
-          {
-            "EffectType": "ModStat",
-            "Stats": [
-              "Strength"
-            ],
-            "Value": 20
-          }
-        ]
-      }
-    },
+  "33082": {
+    "ID": 33082,
+    "Name": "Strength",
+    "Rank": 5,
+    "Target": "Self",
+    "Aura": {
+      "Effects": [
+        {
+          "EffectType": "ModStat",
+          "Stats": [
+            "Strength"
+          ],
+          "Value": 20
+        }
+      ]
+    }
+  },
 
-    "33261": {
-      "ID": 33261,
-      "Name": "Well Fed (20 Agility)",
-      "Target": "Self",
-      "Aura": {
-        "Effects": [
-          {
-            "EffectType": "ModStat",
-            "Stats": [
-              "Agility"
-            ],
-            "Value": 20
-          }
-        ]
-      }
-    },
+  "33256": {
+    "ID": 33256,
+    "Name": "Well Fed (20 Strength)",
+    "Target": "Self",
+    "Aura": {
+      "Effects": [
+        {
+          "EffectType": "ModStat",
+          "Stats": [
+            "Strength"
+          ],
+          "Value": 20
+        }
+      ]
+    }
+  },
 
-    "33263": {
-      "ID": 33263,
-      "Name": "Well Fed (23 Spell Power)",
-      "Target": "Self",
-      "Aura": {
-        "Effects": [
-          {
-            "EffectType": "ModStat",
-            "Stats": [
-              "SpellPower"
-            ],
-            "Value": 23
-          }
-        ]
-      }
-    },
+  "33261": {
+    "ID": 33261,
+    "Name": "Well Fed (20 Agility)",
+    "Target": "Self",
+    "Aura": {
+      "Effects": [
+        {
+          "EffectType": "ModStat",
+          "Stats": [
+            "Agility"
+          ],
+          "Value": 20
+        }
+      ]
+    }
+  },
 
-    "33265": {
-      "ID": 33265,
-      "Name": "Well Fed (8 Mana per 5)",
-      "Target": "Self",
-      "Aura": {
-        "Effects": [
-          {
-            "EffectType": "ModStat",
-            "Stats": [
-              "ManaPer5"
-            ],
-            "Value": 8
-          }
-        ]
-      }
-    },
+  "33263": {
+    "ID": 33263,
+    "Name": "Well Fed (23 Spell Power)",
+    "Target": "Self",
+    "Aura": {
+      "Effects": [
+        {
+          "EffectType": "ModStat",
+          "Stats": [
+            "SpellPower"
+          ],
+          "Value": 23
+        }
+      ]
+    }
+  },
 
-    "33726": {
-      "ID": 33726,
-      "Name": "Elixir of Mastery",
-      "Target": "Self",
-      "Aura": {
-        "Effects": [
-          {
-            "EffectType": "ModStat",
-            "Stats": [
-              "Strength",
-              "Agility",
-              "Stamina",
-              "Intellect"
-            ],
-            "Value": 15
-          }
-        ]
-      }
-    },
+  "33265": {
+    "ID": 33265,
+    "Name": "Well Fed (8 Mana per 5)",
+    "Target": "Self",
+    "Aura": {
+      "Effects": [
+        {
+          "EffectType": "ModStat",
+          "Stats": [
+            "ManaPer5"
+          ],
+          "Value": 8
+        }
+      ]
+    }
+  },
 
-    "35475": {
-      "ID": 35475,
-      "Name": "Drums of War",
-      "Cooldown": 120000,
-      "Target": "Self",
-      "Aura": {
-        "Duration": 30000,
-        "Effects": [
-          {
-            "EffectType": "ModStat",
-            "Stats": [
-              "AttackPower"
-            ],
-            "Value": 60
-          },
-          {
-            "EffectType": "ModStat",
-            "Stats": [
-              "SpellPower"
-            ],
-            "Value": 30
-          }
-        ]
-      }
-    },
+  "33726": {
+    "ID": 33726,
+    "Name": "Elixir of Mastery",
+    "Target": "Self",
+    "Aura": {
+      "Effects": [
+        {
+          "EffectType": "ModStat",
+          "Stats": [
+            "Strength",
+            "Agility",
+            "Stamina",
+            "Intellect"
+          ],
+          "Value": 15
+        }
+      ]
+    }
+  },
 
-    "35476": {
-      "ID": 35476,
-      "Name": "Drums of Battle",
-      "Cooldown": 120000,
-      "Target": "Self",
-      "Aura": {
-        "Duration": 30000,
-        "Effects": [
-          {
-            "EffectType": "ModAttackSpeed",
-            "HasteRating": 80
-          },
-          {
-            "EffectType": "ModStat",
-            "Stats": [
-              "SpellHasteRating"
-            ],
-            "Value": 80
-          }
-        ]
-      }
-    },
+  "35475": {
+    "ID": 35475,
+    "Name": "Drums of War",
+    "Cooldown": 120000,
+    "Target": "Self",
+    "Aura": {
+      "Duration": 30000,
+      "Effects": [
+        {
+          "EffectType": "ModStat",
+          "Stats": [
+            "AttackPower"
+          ],
+          "Value": 60
+        },
+        {
+          "EffectType": "ModStat",
+          "Stats": [
+            "SpellPower"
+          ],
+          "Value": 30
+        }
+      ]
+    }
+  },
 
-    "38954": {
-      "ID": 38954,
-      "Name": "Fel Strength Elixir",
-      "Target": "Self",
-      "Aura": {
-        "Effects": [
-          {
-            "EffectType": "ModStat",
-            "Stats": [
-              "AttackPower"
-            ],
-            "Value": 90
-          },
-          {
-            "EffectType": "ModStat",
-            "Stats": [
-              "Stamina"
-            ],
-            "Value": -10
-          }
-        ]
-      }
-    },
+  "35476": {
+    "ID": 35476,
+    "Name": "Drums of Battle",
+    "Cooldown": 120000,
+    "Target": "Self",
+    "Aura": {
+      "Duration": 30000,
+      "Effects": [
+        {
+          "EffectType": "ModAttackSpeed",
+          "HasteRating": 80
+        },
+        {
+          "EffectType": "ModStat",
+          "Stats": [
+            "SpellHasteRating"
+          ],
+          "Value": 80
+        }
+      ]
+    }
+  },
 
-    "39625": {
-      "ID": 39625,
-      "Name": "Elixir of Major Fortitude",
-      "Target": "Self",
-      "Aura": {
-        "Effects": [
-          {
-            "EffectType": "ModStat",
-            "Stats": [
-              "Health"
-            ],
-            "Value": 250
-          }
-        ]
-      }
-    },
+  "38954": {
+    "ID": 38954,
+    "Name": "Fel Strength Elixir",
+    "Target": "Self",
+    "Aura": {
+      "Effects": [
+        {
+          "EffectType": "ModStat",
+          "Stats": [
+            "AttackPower"
+          ],
+          "Value": 90
+        },
+        {
+          "EffectType": "ModStat",
+          "Stats": [
+            "Stamina"
+          ],
+          "Value": -10
+        }
+      ]
+    }
+  },
 
-    "39627": {
-      "ID": 39627,
-      "Name": "Elixir of Draenic Wisdom",
-      "Target": "Self",
-      "Aura": {
-        "Effects": [
-          {
-            "EffectType": "ModStat",
-            "Stats": [
-              "Intellect"
-            ],
-            "Value": 30
-          }
-        ]
-      }
-    },
+  "39625": {
+    "ID": 39625,
+    "Name": "Elixir of Major Fortitude",
+    "Target": "Self",
+    "Aura": {
+      "Effects": [
+        {
+          "EffectType": "ModStat",
+          "Stats": [
+            "Health"
+          ],
+          "Value": 250
+        }
+      ]
+    }
+  },
 
-    "43763": {
-      "ID": 43763,
-      "Name": "Well Fed (20 Hit Rating)",
-      "Target": "Self",
-      "Aura": {
-        "Effects": [
-          {
-            "EffectType": "ModStat",
-            "Stats": [
-              "HitRating"
-            ],
-            "Value": 20
-          }
-        ]
-      }
+  "39627": {
+    "ID": 39627,
+    "Name": "Elixir of Draenic Wisdom",
+    "Target": "Self",
+    "Aura": {
+      "Effects": [
+        {
+          "EffectType": "ModStat",
+          "Stats": [
+            "Intellect"
+          ],
+          "Value": 30
+        }
+      ]
+    }
+  },
+
+  "43763": {
+    "ID": 43763,
+    "Name": "Well Fed (20 Hit Rating)",
+    "Target": "Self",
+    "Aura": {
+      "Effects": [
+        {
+          "EffectType": "ModStat",
+          "Stats": [
+            "HitRating"
+          ],
+          "Value": 20
+        }
+      ]
     }
   }
+}
