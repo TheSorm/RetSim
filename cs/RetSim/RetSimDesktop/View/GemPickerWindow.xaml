@@ -142,7 +142,6 @@
                             <Setter Property="BorderBrush" Value="#0078d7" />
                         </Trigger>
                     </Style.Triggers>
-                    <EventSetter Event="MouseDoubleClick" Handler="DataGridCell_MouseDoubleClick"/>
                     <EventSetter Event="MouseEnter" Handler="DataGridCell_MouseEnter"/>
                     <EventSetter Event="MouseLeave" Handler="DataGridCell_MouseLeave"/>
 

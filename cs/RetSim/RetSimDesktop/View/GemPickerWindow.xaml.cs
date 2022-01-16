@@ -56,15 +56,6 @@ namespace RetSimDesktop
             gemGrid.Items.SortDescriptions.Add(new SortDescription(ColorColumn.SortMemberPath, ListSortDirection.Ascending));
         }
 
-        private void DataGridCell_MouseDoubleClick(object sender, MouseButtonEventArgs e)
-        {
-            Tooltip.Browser.Dispose();
-            Tooltip.Browser.Visibility = Visibility.Collapsed;
-            Tooltip.Browser = null;
-            SelectedGem = (Gem)gemGrid.SelectedItem;
-            DialogResult = true;
-        }
-
         private void GemGrid_PreviewMouseDown(object sender, MouseButtonEventArgs e)
         {
             if (ItemsControl.ContainerFromElement((DataGrid)sender, e.OriginalSource as DependencyObject) is not DataGridRow row) return;
@@ -78,6 +69,14 @@ namespace RetSimDesktop
                         FileName = "https://tbc.wowhead.com/item=" + gem.ID,
                         UseShellExecute = true
                     });
+                }
+                else if (e.ChangedButton == MouseButton.Left && e.ButtonState == MouseButtonState.Pressed)
+                {
+                    Tooltip.Browser.Dispose();
+                    Tooltip.Browser.Visibility = Visibility.Collapsed;
+                    Tooltip.Browser = null;
+                    SelectedGem = gem;
+                    DialogResult = true;
                 }
             }
         }
