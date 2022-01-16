@@ -525,7 +525,7 @@
                         </GroupBox.Header>
                         <StackPanel>
                             <CheckBox Margin="0,2,0,2" VerticalContentAlignment="Center"  x:Name="ScrollofStrength" IsChecked="{Binding SelectedConsumables.ScrollOfStrengthEnabled}">
-                                <ComboBox Width="150" >
+                                <ComboBox Width="168" >
                                     <ComboBoxItem IsSelected="{Binding Path=SelectedConsumables.SelectedScrollOfStrength, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:ScrollOfStrength.ScrollofStrength}}">
                                         Scroll of Strength
                                     </ComboBoxItem>
@@ -544,7 +544,7 @@
                                 </ComboBox>
                             </CheckBox>
                             <CheckBox Margin="0,2,0,2" VerticalContentAlignment="Center" x:Name="ScrollofAgility" IsChecked="{Binding SelectedConsumables.ScrollOfAgilityEnabled}">
-                                <ComboBox Width="150" >
+                                <ComboBox Width="168" >
                                     <ComboBoxItem IsSelected="{Binding Path=SelectedConsumables.SelectedScrollOfAgility, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:ScrollOfAgility.ScrollOfAgility}}">
                                         Scroll of Agility
                                     </ComboBoxItem>
@@ -563,7 +563,7 @@
                                 </ComboBox>
                             </CheckBox>
                             <CheckBox Margin="0,2,0,2" VerticalContentAlignment="Center" x:Name="Drum" IsChecked="{Binding SelectedCooldowns.DrumEnabled}">
-                                <ComboBox Width="150">
+                                <ComboBox Width="168">
                                     <ComboBoxItem IsSelected="{Binding Path=SelectedCooldowns.SelectedDrum, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:Drum.DrumsOfBattle}}">
                                         Drums of Battle
                                     </ComboBoxItem>
@@ -573,7 +573,27 @@
                                 </ComboBox>
                             </CheckBox>
                             <CheckBox Margin="0,4,0,4" x:Name="SuperSapperCharge" Content="Super Sapper Charge" IsChecked="{Binding SelectedCooldowns.SuperSapperChargeEnabled}"/>
-                            <CheckBox Margin="0,4,0,4" x:Name="GnomishBattleChicken" Content="Gnomish Battle Chicken" IsChecked="{Binding SelectedConsumables.GnomishBattleChickenEnabled}"/>
+                            <CheckBox Margin="0,2,0,2" VerticalContentAlignment="Center" HorizontalContentAlignment="Stretch" x:Name="GnomishBattleChicken" IsChecked="{Binding SelectedConsumables.GnomishBattleChickenEnabled}">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="10"/>
+                                        <ColumnDefinition Width="40"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Label Margin="0" Padding="0" VerticalAlignment="Center" Content="Gnomish Battle Chicken"/>
+                                    <ComboBox Grid.Column="2" SelectedItem="{Binding SelectedConsumables.GnomishBattleChickenCount}">
+                                        <ComboBox.ItemsSource>
+                                            <x:Array Type="{x:Type sys:Int32}">
+                                                <sys:Int32>1</sys:Int32>
+                                                <sys:Int32>2</sys:Int32>
+                                                <sys:Int32>3</sys:Int32>
+                                                <sys:Int32>4</sys:Int32>
+                                                <sys:Int32>5</sys:Int32>
+                                            </x:Array>
+                                        </ComboBox.ItemsSource>
+                                    </ComboBox>
+                                </Grid>
+                            </CheckBox>
                         </StackPanel>
                     </GroupBox>
                 </WrapPanel>

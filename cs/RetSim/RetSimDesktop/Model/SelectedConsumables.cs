@@ -21,6 +21,7 @@ namespace RetSimDesktop.Model
         private ScrollOfAgility selectedScrollOfAgility = ScrollOfAgility.ScrollOfAgilityV;
 
         private bool gnomishBattleChickenEnabled = false;
+        private int gnomishBattleChickenCount = 1;
 
         public BattleElixir SelectedBattleElixir
         {
@@ -119,6 +120,16 @@ namespace RetSimDesktop.Model
                 OnPropertyChanged(nameof(GnomishBattleChickenEnabled));
             }
         }
+
+        public int GnomishBattleChickenCount
+        {
+            get { return gnomishBattleChickenCount; }
+            set
+            {
+                gnomishBattleChickenCount = value;
+                OnPropertyChanged(nameof(GnomishBattleChickenCount));
+            }
+        }
         public List<Spell> GetConsumables()
         {
             List<Spell> result = new();
@@ -146,9 +157,28 @@ namespace RetSimDesktop.Model
             {
                 result.Add(Spells[(int)selectedScrollOfAgility]);
             }
-            if (gnomishBattleChickenEnabled && Spells.ContainsKey(23060))
+            if (gnomishBattleChickenEnabled)
             {
-                result.Add(Spells[23060]);
+                if(gnomishBattleChickenCount == 1 && Spells.ContainsKey((int)GnomishBattleChicken.GnomishBattleChicken))
+                {
+                    result.Add(Spells[(int)GnomishBattleChicken.GnomishBattleChicken]);
+                }
+                else if (gnomishBattleChickenCount == 2 && Spells.ContainsKey((int)GnomishBattleChicken.GnomishBattleChickenII))
+                {
+                    result.Add(Spells[(int)GnomishBattleChicken.GnomishBattleChickenII]);
+                }
+                else if (gnomishBattleChickenCount == 3 && Spells.ContainsKey((int)GnomishBattleChicken.GnomishBattleChickenIII))
+                {
+                    result.Add(Spells[(int)GnomishBattleChicken.GnomishBattleChickenIII]);
+                }
+                else if (gnomishBattleChickenCount == 4 && Spells.ContainsKey((int)GnomishBattleChicken.GnomishBattleChickenIV))
+                {
+                    result.Add(Spells[(int)GnomishBattleChicken.GnomishBattleChickenIV]);
+                }
+                else if (gnomishBattleChickenCount == 5 && Spells.ContainsKey((int)GnomishBattleChicken.GnomishBattleChickenV))
+                {
+                    result.Add(Spells[(int)GnomishBattleChicken.GnomishBattleChickenV]);
+                }
             }
             return result;
         }
@@ -213,5 +243,14 @@ namespace RetSimDesktop.Model
         ScrollOfAgilityIII = 8117,
         ScrollOfAgilityIV = 12174,
         ScrollOfAgilityV = 33077,
+    }
+
+    public enum GnomishBattleChicken
+    {
+        GnomishBattleChicken = 23060,
+        GnomishBattleChickenII = 23061,
+        GnomishBattleChickenIII = 23062,
+        GnomishBattleChickenIV = 23063,
+        GnomishBattleChickenV = 23064,
     }
 }
