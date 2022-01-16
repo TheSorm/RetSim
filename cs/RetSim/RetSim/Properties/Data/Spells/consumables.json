@@ -220,6 +220,66 @@
     }
   },
 
+  "23061": {
+    "ID": 23061,
+    "Name": "Double Squawk",
+    "Target": "Self",
+    "Aura": {
+      "Duration": 240000,
+      "Effects": [
+        {
+          "EffectType": "ModAttackSpeed",
+          "Value": 10.25
+        }
+      ]
+    }
+  },
+
+  "23062": {
+    "ID": 23062,
+    "Name": "Triple Squawk",
+    "Target": "Self",
+    "Aura": {
+      "Duration": 240000,
+      "Effects": [
+        {
+          "EffectType": "ModAttackSpeed",
+          "Value": 15.7625
+        }
+      ]
+    }
+  },
+
+  "23063": {
+    "ID": 23063,
+    "Name": "Quadruple Squawk",
+    "Target": "Self",
+    "Aura": {
+      "Duration": 240000,
+      "Effects": [
+        {
+          "EffectType": "ModAttackSpeed",
+          "Value": 21.550625
+        }
+      ]
+    }
+  },
+
+  "23064": {
+    "ID": 23064,
+    "Name": "PENTA Squawk",
+    "Target": "Self",
+    "Aura": {
+      "Duration": 240000,
+      "Effects": [
+        {
+          "EffectType": "ModAttackSpeed",
+          "Value": 27.62815625
+        }
+      ]
+    }
+  },
+
   "24382": {
     "ID": 24382,
     "Name": "Spirit of Zanza",
