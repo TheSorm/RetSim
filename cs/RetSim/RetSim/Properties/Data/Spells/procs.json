@@ -308,6 +308,13 @@
     "ProcMask": 6,
     "PPM": 1,
     "Cooldown": 40000
+  },
+  "43": {
+    "ID": 43,
+    "Name": "Flame Cap",
+    "SpellID": 28715,
+    "ProcMask": 6,
+    "PPM": 10
   }
 }
 
