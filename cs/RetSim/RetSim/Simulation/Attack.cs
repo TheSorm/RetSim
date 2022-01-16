@@ -86,6 +86,7 @@ public class Attack
             DefenseType.Special => Special(miss, dodge, crit),
             DefenseType.None => None(crit),
             _ => Ranged(miss, crit)
+            //TODO: Add Magic Defense Result
         };
     }
 
