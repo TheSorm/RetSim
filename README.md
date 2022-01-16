@@ -1,31 +1,27 @@
 # RetSim
-A WoW TBC Classic Retribution Paladin Simulator
+RetSim is a Retribution Paladin DPS Simulator for World of Warcraft: The Burning Crusade Classic.
 
-## DESKTOP VERSION
-* Settings
-  * Select all gems without changing the selected items
-* Make it prettier
+Made by Sulis and Pride.
 
-## SIM
-* Gear 
-  * Add missing procs & on use effects
+## Instructions
+* You can always download the latest version of the sim on our [Releases page](https://github.com/TheSorm/RetSim/releases/tag/release).
+* For detailed instructions on how to install the sim, check out the [relevant Wiki page](https://github.com/TheSorm/RetSim/wiki/1.-Installing-the-Sim).
+* For other instructions, frequently asked questions, known issues, etc, please check out the [Wiki](https://github.com/TheSorm/RetSim/wiki).
 
-## LOW PRIORITY / THOUGHTS / DESIGN CONSIDERATIONS
-* Enhance cooldown manager system
-* Mutually exclusive spells
-* Uptime simulation (player / buffs like Expose Weakness)
-* More tactics  
-* Mana
-  * Using / gaining
-  * Mana regen events (mana per 5)
-  * Procs (Judgement renew, Judgement of Wisdom, Sanctified Judgements)
-* Spells
-  * Periodic spells
-    * Create CastEvents for every tick (but this "sounds wrong")   
-  * Cast time spells
-    * Low prio
-    * (Player State casting -> OnCast spell with cast time -> casting = spell, new CastEvent(castTime, spell))  
-* Proc
-  * Should Prio on ProcEvents should be higher than on normal cast events?
-* Test how much DPS is effected by CS delay. If its highly effected, build a UI page to sim that.
-* Test haste leeway settings
+## Requirements
+* Operating Systems: Windows 7, 8, 8.1, 10, 11
+  * Currently only 64-bit systems are supported
+* CPU: Any 64-bit CPU
+  * Simulation is CPU intensive, so old systems will take considerably longer
+
+In order to use the Desktop version of our sim, you will need to have the WebView2 runtime installed, which comes pre-installed with Microsoft Edge on Windows 8+. For instructions on how to install it separately if necessary, please see the [relevant Wiki page](https://github.com/TheSorm/RetSim/wiki/2.-Help!-I-can't-start-the-sim!).
+
+## Features
+* Simulating your character's DPS given specific equipment, buffs, debuffs, and other fight parameters
+  * Extensive support for the paladin DPS rotation & all relevant procs
+* Compare the DPS values of multiple equipment pieces at once
+* View detailed logs of simulated fights
+* Generate stat weights, i.e. how much DPS you gain from 1 point in each stat
+
+## License
+Our code is released under the [MIT License](https://github.com/TheSorm/RetSim/blob/main/LICENSE).

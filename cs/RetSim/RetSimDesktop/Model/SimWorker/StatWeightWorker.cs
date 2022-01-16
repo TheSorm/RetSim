@@ -35,8 +35,8 @@ namespace RetSimDesktop.Model
 
                 var numberOfSimulations = retSimUIModel.SimSettings.SimulationCount;
 
-                var minDuration = retSimUIModel.EncounterSettings.MinFightDuration;
-                var maxDuration = retSimUIModel.EncounterSettings.MaxFightDuration;
+                var minDuration = retSimUIModel.EncounterSettings.MinFightDurationMilliseconds;
+                var maxDuration = retSimUIModel.EncounterSettings.MaxFightDurationMilliseconds;
 
                 Equipment playerEquipment = retSimUIModel.SelectedGear.GetEquipment();
                 var talents = retSimUIModel.SelectedTalents.GetTalentList();

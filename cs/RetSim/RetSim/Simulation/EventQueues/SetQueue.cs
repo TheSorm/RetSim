@@ -1,5 +1,4 @@
 ﻿using RetSim.Simulation.Events;
-using System.Linq;
 
 namespace RetSim.Simulation.EventQueues
 {
@@ -22,12 +21,12 @@ namespace RetSim.Simulation.EventQueues
 
         public Event GetNext()
         {
-            return this.First();
+            return this.Min;
         }
 
         public Event RemoveNext()
         {
-            Event next = this.First();
+            Event next = this.Min;
             Remove(next);
             return next;
         }

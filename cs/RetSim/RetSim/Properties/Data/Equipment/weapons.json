@@ -1,19 +1,5 @@
 [
   {
-    "Type": 3,
-    "MinDamage": 104,
-    "MaxDamage": 157,
-    "AttackSpeed": 3500,
-    "DPS": 37.29,
-    "ID": 7717,
-    "Name": "Ravager",
-    "ItemLevel": 42,
-    "Quality": 3,
-    "Slot": 13,
-    "Stats": {},
-    "Phase": 1
-  },
-  {
     "Type": 2,
     "MinDamage": 212,
     "MaxDamage": 318,
@@ -2149,5 +2135,23 @@
       "Name": "Speed Infusion"
     },
     "Phase": 2
+  },
+  {
+    "Type": 3,
+    "MinDamage": 104,
+    "MaxDamage": 157,
+    "AttackSpeed": 3500,
+    "DPS": 37.285713,
+    "ID": 7717,
+    "Name": "Ravager",
+    "ItemLevel": 42,
+    "Quality": 3,
+    "Slot": 13,
+    "Stats": {},
+    "OnEquip": {
+      "ID": 9632,
+      "Name": "Bladestorm"
+    },
+    "Phase": 1
   }
 ]

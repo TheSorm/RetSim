@@ -180,7 +180,7 @@ namespace RetSimDesktop.Model
             {
                 result.Add(Spells[(int)AirTotem2.GraceOfAirTotem]);
             }
-            if((earthTotemEnabled && selectedEarthTotem == EarthTotem.ImpStrengthOfEarthTotem) || (airTotem2Enabled && selectedAirTotem2 == AirTotem2.ImpGraceOfAirTotem))
+            if ((earthTotemEnabled && selectedEarthTotem == EarthTotem.ImpStrengthOfEarthTotem) || (airTotem2Enabled && selectedAirTotem2 == AirTotem2.ImpGraceOfAirTotem))
             {
                 result.Add(Spells[(int)selectedEarthTotem]);
                 result.Add(Spells[(int)selectedAirTotem2]);

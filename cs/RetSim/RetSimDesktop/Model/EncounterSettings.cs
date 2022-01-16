@@ -1,11 +1,12 @@
 ﻿using System.ComponentModel;
+using System.Text.Json.Serialization;
 
 namespace RetSimDesktop.Model
 {
     public class EncounterSettings : INotifyPropertyChanged
     {
-        private int minFightDuration = 160000;
-        private int maxFightDuration = 180000;
+        private int minFightDurationSeconds = 160;
+        private int maxFightDurationSeconds = 180;
         private int encounterID = 17;
 
         public int EncounterID
@@ -18,24 +19,36 @@ namespace RetSimDesktop.Model
             }
         }
 
-        public int MinFightDuration
+        public int MinFightDurationSeconds
         {
-            get { return minFightDuration; }
+            get { return minFightDurationSeconds; }
             set
             {
-                minFightDuration = value;
-                OnPropertyChanged(nameof(MinFightDuration));
+                minFightDurationSeconds = value;
+                OnPropertyChanged(nameof(MinFightDurationSeconds));
             }
         }
 
-        public int MaxFightDuration
+        public int MaxFightDurationSeconds
         {
-            get { return maxFightDuration; }
+            get { return maxFightDurationSeconds; }
             set
             {
-                maxFightDuration = value;
-                OnPropertyChanged(nameof(MaxFightDuration));
+                maxFightDurationSeconds = value;
+                OnPropertyChanged(nameof(MaxFightDurationSeconds));
             }
+        }
+
+        [JsonIgnore]
+        public int MinFightDurationMilliseconds
+        {
+            get { return minFightDurationSeconds * 1000; }
+        }
+
+        [JsonIgnore]
+        public int MaxFightDurationMilliseconds
+        {
+            get { return maxFightDurationSeconds * 1000; }
         }
 
         public event PropertyChangedEventHandler? PropertyChanged;

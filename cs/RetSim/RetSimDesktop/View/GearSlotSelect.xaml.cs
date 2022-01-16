@@ -149,51 +149,6 @@ namespace RetSimDesktop
             SPColumn.Binding = spBinding;
         }
 
-        private void DataGridCell_MouseDoubleClick(object sender, MouseButtonEventArgs e)
-        {
-            var dataGridCellTarget = (DataGridCell)sender;
-            var header = dataGridCellTarget.Column.Header.ToString();
-
-            Socket? selectedSocket = null;
-            if (header == "Socket 1")
-            {
-                selectedSocket = SelectedItem.Item.Socket1;
-            }
-            else if (header == "Socket 2")
-            {
-                selectedSocket = SelectedItem.Item.Socket2;
-            }
-            else if (header == "Socket 3")
-            {
-                selectedSocket = SelectedItem.Item.Socket3;
-            }
-
-            if (selectedSocket != null)
-            {
-                if (DataContext is RetSimUIModel retSimUIModel)
-                {
-                    GemPickerWindow gemPicker;
-                    if (selectedSocket.Color == SocketColor.Meta)
-                    {
-                        gemPicker = new(RetSim.Data.Items.MetaGems.Values, selectedSocket.SocketedGem);
-                    }
-                    else
-                    {
-                        gemPicker = new(RetSim.Data.Items.Gems.Values, selectedSocket.SocketedGem);
-                    }
-
-                    retSimUIModel.TooltipSettings.HoverItemID = 0;
-                    if (gemPicker.ShowDialog() == true)
-                    {
-                        selectedSocket.SocketedGem = gemPicker.SelectedGem;
-
-                        retSimUIModel.SelectedGear.OnPropertyChanged("");
-                        SelectedItem.OnPropertyChanged("");
-                    }
-                }
-            }
-        }
-
         private void GearSim_Click(object sender, RoutedEventArgs e)
         {
             if (!gearSimWorker.IsBusy && DataContext is RetSimUIModel retSimUIModel)
@@ -207,36 +162,109 @@ namespace RetSimDesktop
         {
             if (sender is DataGridCell cell)
             {
-                if (DataContext is RetSimUIModel retSimUIModel && DataGridRow.GetRowContainingElement(cell).Item is DisplayGear displayItem)
+                if (DataContext is RetSimUIModel retSimUIModel && DataGridRow.GetRowContainingElement(cell).Item is DisplayGear displayGear)
                 {
                     if (e.ChangedButton == MouseButton.Middle && e.ButtonState == MouseButtonState.Pressed)
                     {
-                        System.Diagnostics.Process.Start(new ProcessStartInfo
+                        Process.Start(new ProcessStartInfo
                         {
-                            FileName = "https://tbc.wowhead.com/item=" + displayItem.Item.ID,
+                            FileName = "https://tbc.wowhead.com/item=" + displayGear.Item.ID,
                             UseShellExecute = true
                         });
+                    }
+                    else if (e.ChangedButton == MouseButton.Left && e.ButtonState == MouseButtonState.Pressed)
+                    {
+                        var header = cell.Column.Header.ToString();
+                        if (cell.Column.Header.GetType() == typeof(CheckBox) && cell.Content is CheckBox checkBox)
+                        {
+                            checkBox.IsChecked = !checkBox.IsChecked;
+                            e.Handled = true;
+                        }
+                        else if (header != null && header.Contains("Socket"))
+                        {
+                            Socket? selectedSocket = null;
+
+                            if (header == "Socket 1")
+                            {
+                                selectedSocket = displayGear.Item.Socket1;
+                            }
+                            else if (header == "Socket 2")
+                            {
+                                selectedSocket = displayGear.Item.Socket2;
+                            }
+                            else if (header == "Socket 3")
+                            {
+                                selectedSocket = displayGear.Item.Socket3;
+                            }
+
+                            if (selectedSocket != null)
+                            {
+                                GemPickerWindow gemPicker;
+                                if (selectedSocket.Color == SocketColor.Meta)
+                                {
+                                    gemPicker = new(RetSim.Data.Items.MetaGems.Values, selectedSocket.SocketedGem);
+                                }
+                                else
+                                {
+                                    gemPicker = new(RetSim.Data.Items.Gems.Values, selectedSocket.SocketedGem);
+                                }
+
+                                retSimUIModel.TooltipSettings.HoverItemID = 0;
+                                if (gemPicker.ShowDialog() == true)
+                                {
+                                    selectedSocket.SocketedGem = gemPicker.SelectedGem;
+
+                                    retSimUIModel.SelectedGear.OnPropertyChanged("");
+                                    displayGear.OnPropertyChanged("");
+                                }
+                                e.Handled = true;
+                            }
+                        }
                     }
                     else if (e.ChangedButton == MouseButton.Right && e.ButtonState == MouseButtonState.Pressed)
                     {
                         var header = cell.Column.Header.ToString();
-                        if (header == "Socket 1" && displayItem.Item.Socket1 != null)
+                        if (header != null && header.Contains("Socket"))
                         {
-                            displayItem.Item.Socket1.SocketedGem = null;
+                            bool socketNotNull = false;
+                            if (header == "Socket 1" && displayGear.Item.Socket1 != null)
+                            {
+                                displayGear.Item.Socket1.SocketedGem = null;
+                                socketNotNull = true;
+                            }
+                            else if (header == "Socket 2" && displayGear.Item.Socket2 != null)
+                            {
+                                displayGear.Item.Socket2.SocketedGem = null;
+                                socketNotNull = true;
+                            }
+                            else if (header == "Socket 3" && displayGear.Item.Socket3 != null)
+                            {
+                                displayGear.Item.Socket3.SocketedGem = null;
+                                socketNotNull = true;
+                            }
+                            if (socketNotNull)
+                            {
+                                displayGear.OnPropertyChanged("");
+                                retSimUIModel.SelectedGear.OnPropertyChanged("");
+                                DataGridCell_MouseEnter(cell, null);
+                                return;
+                            }
                         }
-                        else if (header == "Socket 2" && displayItem.Item.Socket2 != null)
+                        if (gearSlot.SelectedItem == displayGear)
                         {
-                            displayItem.Item.Socket2.SocketedGem = null;
+                            gearSlot.SelectedItem = null;
+                            retSimUIModel.SelectedGear.OnPropertyChanged("");
                         }
-                        else if (header == "Socket 3" && displayItem.Item.Socket3 != null)
-                        {
-                            displayItem.Item.Socket3.SocketedGem = null;
-                        }
-                        displayItem.OnPropertyChanged("");
-                        retSimUIModel.SelectedGear.OnPropertyChanged("");
-                        DataGridCell_MouseEnter(cell, null);
                     }
                 }
+            }
+        }
+
+        private void DataGridCell_PreviewMouseUp(object sender, MouseButtonEventArgs e)
+        {
+            if (e.ChangedButton == MouseButton.Right && e.ButtonState == MouseButtonState.Released)
+            {
+                e.Handled = true;
             }
         }
 

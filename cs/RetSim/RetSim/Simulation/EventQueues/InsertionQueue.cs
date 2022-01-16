@@ -2,15 +2,24 @@
 
 namespace RetSim.Simulation.EventQueues
 {
-    public class MinQueue : List<Event>, IEventQueue
+    public class InsertionQueue : List<Event>, IEventQueue
     {
-        private int minIndex = -1;
         public new void Add(Event e)
         {
             if (e != null)
             {
-                base.Add(e);
-                minIndex = -1;
+                int low = 0;
+                int high = Count;
+
+                while (low < high)
+                {
+                    var mid = (low + high) >> 1;
+                    if (this[mid].CompareTo(e) >= 0) 
+                        low = mid + 1;
+                    else 
+                        high = mid;
+                }
+                this.Insert(low, e);
             }
         }
 
@@ -24,32 +33,19 @@ namespace RetSim.Simulation.EventQueues
 
         public Event GetNext()
         {
-            return this[minIndex];
+            return this[Count - 1];
         }
 
         public Event RemoveNext()
         {
-            Event next = this[minIndex];
-            RemoveAt(minIndex);
-            minIndex = -1;
+            Event next = this[Count - 1];
+            RemoveAt(Count - 1);
             return next;
         }
 
         public void EnsureSorting()
         {
-            if (Count > 0 && minIndex == -1)
-            {
-                Event min = this[0];
-                minIndex = 0;
-                for (int i = 1; i < Count; i++)
-                {
-                    if (min.CompareTo(this[i]) >= 0)
-                    {
-                        min = this[i];
-                        minIndex = i;
-                    }
-                }
-            }
+            
         }
 
         public bool IsEmpty()
@@ -59,10 +55,12 @@ namespace RetSim.Simulation.EventQueues
 
         public void UpdateRemove(Event e)
         {
+            this.Remove(e);
         }
 
         public void UpdateAdd(Event e)
         {
+            this.Add(e);
         }
     }
 }

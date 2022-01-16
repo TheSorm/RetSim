@@ -89,7 +89,7 @@ namespace RetSimDesktop
 
                 Mana.ToolTip = new ToolTip { Content = $"{manaBase}\n{manaBonus}\n{manaIntellect}" };
 
-                var manaPer5Bonus = $"Mana regenerated over the fight's duration: ~{((retSimUIModel.EncounterSettings.MinFightDuration + retSimUIModel.EncounterSettings.MaxFightDuration) / 10000) * player.Stats[StatName.ManaPer5].Value}";
+                var manaPer5Bonus = $"Mana regenerated over the fight's duration: ~{((retSimUIModel.EncounterSettings.MinFightDurationSeconds + retSimUIModel.EncounterSettings.MaxFightDurationSeconds)) * player.Stats[StatName.ManaPer5].Value}";
 
                 ManaPer5.ToolTip = new ToolTip { Content = $"{manaPer5Bonus}" };
 

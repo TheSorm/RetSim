@@ -306,26 +306,6 @@
     "Phase": 1
   },
   {
-    "ID": 22416,
-    "Name": "Dreadnaught Breastplate",
-    "ItemLevel": 92,
-    "Quality": 4,
-    "Slot": 4,
-    "Stats": {
-      "Armor": 1172,
-      "Strength": 21,
-      "Stamina": 43,
-      "DefenseRating": 20,
-      "DodgeRating": 12,
-      "HitRating": 20
-    },
-    "Set": {
-      "ID": 523,
-      "Name": "Dreadnaught\u0027s Battlegear"
-    },
-    "Phase": 1
-  },
-  {
     "ID": 22436,
     "Name": "Cryptstalker Tunic",
     "ItemLevel": 92,
@@ -10862,7 +10842,7 @@
       "Intellect": 13,
       "ArmorPenetration": 150
     },
-    "Phase": 3
+    "Phase": 4
   },
   {
     "ID": 33580,
@@ -14690,6 +14670,26 @@
     "Phase": 1
   },
   {
+    "ID": 24114,
+    "Name": "Braided Eternium Chain",
+    "ItemLevel": 102,
+    "Quality": 3,
+    "Slot": 1,
+    "Stats": {
+      "Armor": 0,
+      "HitRating": 21
+    },
+    "OnUse": {
+      "ID": 31025,
+      "Name": "Braided Eternium Chain"
+    },
+    "OnEquip": {
+      "ID": 33488,
+      "Name": "Weapon Damage"
+    },
+    "Phase": 1
+  },
+  {
     "ID": 34427,
     "Name": "Blackened Naaru Sliver",
     "ItemLevel": 154,
@@ -15039,7 +15039,7 @@
       "Armor": 0,
       "HitRating": 30
     },
-	"OnUse": {
+    "OnUse": {
       "ID": 34106,
       "Name": "Armor Penetration"
     },
@@ -15278,7 +15278,7 @@
       "ID": 35733,
       "Name": "Ancient Power"
     },
-    "Phase": -1
+    "Phase": 1
   },
   {
     "ID": 29181,
@@ -15324,7 +15324,7 @@
       "Name": "Ferocity"
     },
     "UniqueEquipped": true,
-    "Phase": -1
+    "Phase": 1
   },
   {
     "ID": 25633,

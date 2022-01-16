@@ -35,6 +35,18 @@
     "Phase": 1
   },
   {
+    "ID": 23104,
+    "Name": "Jagged Deep Peridot",
+    "ItemLevel": 60,
+    "Quality": 2,
+    "Color": 12,
+    "Stats": {
+      "CritRating": 3,
+      "Stamina": 4
+    },
+    "Phase": 1
+  },
+  {
     "ID": 23111,
     "Name": "Sovereign Shadow Draenite",
     "ItemLevel": 60,
@@ -76,6 +88,17 @@
     "Color": 2,
     "Stats": {
       "AttackPower": 16
+    },
+    "Phase": 1
+  },
+  {
+    "ID": 24048,
+    "Name": "Smooth Dawnstone",
+    "ItemLevel": 70,
+    "Quality": 3,
+    "Color": 8,
+    "Stats": {
+      "CritRating": 8
     },
     "Phase": 1
   },
@@ -127,6 +150,67 @@
     "Phase": 1
   },
   {
+    "ID": 24067,
+    "Name": "Jagged Talasite",
+    "ItemLevel": 70,
+    "Quality": 3,
+    "Color": 12,
+    "Stats": {
+      "CritRating": 4,
+      "Stamina": 6
+    },
+    "Phase": 1
+  },
+  {
+    "ID": 27786,
+    "Name": "Barbed Deep Peridot",
+    "ItemLevel": 60,
+    "Quality": 3,
+    "Color": 12,
+    "Stats": {
+      "CritRating": 4,
+      "Stamina": 3
+    },
+    "UniqueEquipped": true,
+    "Phase": 1
+  },
+  {
+    "ID": 27809,
+    "Name": "Barbed Deep Peridot",
+    "ItemLevel": 60,
+    "Quality": 3,
+    "Color": 12,
+    "Stats": {
+      "CritRating": 4,
+      "Stamina": 3
+    },
+    "UniqueEquipped": true,
+    "Phase": 1
+  },
+  {
+    "ID": 28119,
+    "Name": "Smooth Ornate Dawnstone",
+    "ItemLevel": 60,
+    "Quality": 4,
+    "Color": 8,
+    "Stats": {
+      "CritRating": 10
+    },
+    "UniqueEquipped": true,
+    "Phase": 1
+  },
+  {
+    "ID": 28290,
+    "Name": "Smooth Golden Draenite",
+    "ItemLevel": 60,
+    "Quality": 2,
+    "Color": 8,
+    "Stats": {
+      "CritRating": 6
+    },
+    "Phase": 1
+  },
+  {
     "ID": 28362,
     "Name": "Bold Ornate Ruby",
     "ItemLevel": 60,
@@ -174,6 +258,17 @@
     "Phase": 1
   },
   {
+    "ID": 28467,
+    "Name": "Smooth Amber",
+    "ItemLevel": 55,
+    "Quality": 1,
+    "Color": 8,
+    "Stats": {
+      "CritRating": 4
+    },
+    "Phase": 53
+  },
+  {
     "ID": 28468,
     "Name": "Rigid Amber",
     "ItemLevel": 55,
@@ -204,6 +299,18 @@
     "Stats": {
       "Stamina": 6,
       "Strength": 5
+    },
+    "Phase": 1
+  },
+  {
+    "ID": 30550,
+    "Name": "Sundered Chrysoprase",
+    "ItemLevel": 70,
+    "Quality": 4,
+    "Color": 12,
+    "Stats": {
+      "ManaPer5": 2,
+      "CritRating": 5
     },
     "Phase": 1
   },
@@ -244,6 +351,18 @@
     "Phase": 1
   },
   {
+    "ID": 30565,
+    "Name": "Assassin\u0027s Fire Opal",
+    "ItemLevel": 70,
+    "Quality": 4,
+    "Color": 10,
+    "Stats": {
+      "DodgeRating": 5,
+      "CritRating": 6
+    },
+    "Phase": 1
+  },
+  {
     "ID": 30574,
     "Name": "Brutal Tanzanite",
     "ItemLevel": 70,
@@ -264,6 +383,18 @@
     "Stats": {
       "CritRating": 4,
       "Strength": 5
+    },
+    "Phase": 1
+  },
+  {
+    "ID": 30602,
+    "Name": "Jagged Chrysoprase",
+    "ItemLevel": 70,
+    "Quality": 4,
+    "Color": 12,
+    "Stats": {
+      "CritRating": 5,
+      "Stamina": 6
     },
     "Phase": 1
   },
@@ -350,6 +481,17 @@
     "Phase": 3
   },
   {
+    "ID": 32205,
+    "Name": "Smooth Lionseye",
+    "ItemLevel": 100,
+    "Quality": 4,
+    "Color": 8,
+    "Stats": {
+      "CritRating": 10
+    },
+    "Phase": 3
+  },
+  {
     "ID": 32206,
     "Name": "Rigid Lionseye",
     "ItemLevel": 100,
@@ -409,6 +551,18 @@
     "Phase": 3
   },
   {
+    "ID": 32226,
+    "Name": "Jagged Seaspray Emerald",
+    "ItemLevel": 100,
+    "Quality": 4,
+    "Color": 12,
+    "Stats": {
+      "CritRating": 5,
+      "Stamina": 7
+    },
+    "Phase": 3
+  },
+  {
     "ID": 33131,
     "Name": "Crimson Sun",
     "ItemLevel": 130,
@@ -433,6 +587,18 @@
     "Phase": 53
   },
   {
+    "ID": 33143,
+    "Name": "Stone of Blades",
+    "ItemLevel": 130,
+    "Quality": 4,
+    "Color": 8,
+    "Stats": {
+      "CritRating": 12
+    },
+    "UniqueEquipped": true,
+    "Phase": 53
+  },
+  {
     "ID": 35487,
     "Name": "Bright Crimson Spinel",
     "ItemLevel": 100,
@@ -442,5 +608,16 @@
       "AttackPower": 20
     },
     "Phase": 5
+  },
+  {
+    "ID": 38550,
+    "Name": "Smooth Ornate Dawnstone",
+    "ItemLevel": 60,
+    "Quality": 4,
+    "Color": 8,
+    "Stats": {
+      "CritRating": 10
+    },
+    "Phase": 1
   }
 ]
