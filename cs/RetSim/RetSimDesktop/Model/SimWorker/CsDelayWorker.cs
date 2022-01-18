@@ -17,7 +17,7 @@ namespace RetSimDesktop.Model
     public class CsDelayWorker : BackgroundWorker
     {
         private static Thread[] threads = new Thread[Environment.ProcessorCount];
-        private static CsSelaySimExecuter[] simExecuter = new CsSelaySimExecuter[Environment.ProcessorCount];
+        private static CsDelaySimExecuter[] simExecuter = new CsDelaySimExecuter[Environment.ProcessorCount];
 
         public CsDelayWorker()
         {
@@ -132,7 +132,7 @@ namespace RetSimDesktop.Model
         }
     }
 
-    public class CsSelaySimExecuter : SimExecuter
+    public class CsDelaySimExecuter : SimExecuter
     {
         public DisplayCsDelay CsDelayDisplay { get; init; } = new();
         public float BaseDps { get; init; }
