@@ -88,19 +88,19 @@ public class FightSimulation
         if (Player.Race.Racial != null && Player.Race.Racial.Requirements(Player))
             (new CastEvent(Player.Race.Racial, Player, Player, this, Timestamp, -1)).Execute();
 
-        foreach (Spell buffTalent in groupTalents)
+        foreach (Spell groupTalent in groupTalents)
         {
-            (new CastEvent(buffTalent, Player, Player, this, Timestamp, -1)).Execute();
-        }
-
-        foreach (Spell debuff in debuffs)
-        {
-            (new CastEvent(debuff, Player, Enemy, this, Timestamp, -1)).Execute();
+            (new CastEvent(groupTalent, Player, Player, this, Timestamp, -1)).Execute();
         }
 
         foreach (Talent talent in Player.Talents)
         {
             (new CastEvent(talent, Player, Player, this, Timestamp, -2)).Execute();
+        }
+
+        foreach (Spell debuff in debuffs)
+        {
+            (new CastEvent(debuff, Player, Enemy, this, Timestamp, -1)).Execute();
         }
 
         Timestamp = 0;
