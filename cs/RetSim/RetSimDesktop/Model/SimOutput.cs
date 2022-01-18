@@ -1,4 +1,5 @@
 ﻿using RetSim.Simulation;
+using System.Collections.Generic;
 using System.ComponentModel;
 
 namespace RetSimDesktop.Model
@@ -12,6 +13,7 @@ namespace RetSimDesktop.Model
         private CombatLog medianCombatLog;
         private CombatLog minCombatLog;
         private CombatLog maxCombatLog;
+        private List<double> dpsResults;
 
         public int Progress
         {
@@ -77,6 +79,16 @@ namespace RetSimDesktop.Model
             {
                 maxCombatLog = value;
                 OnPropertyChanged(nameof(MaxCombatLog));
+            }
+        }
+
+        public List<double> DpsResults
+        {
+            get { return dpsResults; }
+            set
+            {
+                dpsResults = value;
+                OnPropertyChanged(nameof(DpsResults));
             }
         }
 

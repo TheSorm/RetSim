@@ -2,8 +2,10 @@
 using RetSim.Simulation;
 using RetSim.Simulation.CombatLogEntries;
 using RetSimDesktop.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Linq;
 using System.Windows.Controls;
 
 namespace RetSimDesktop
@@ -38,7 +40,20 @@ namespace RetSimDesktop
             DamageBreakdownMedianLog = new();
             DamageBreakdownMaxLog = new();
 
+            AuraBreakdownMinLog = new();
+            AuraBreakdownMedianLog = new();
+            AuraBreakdownMaxLog = new();
+
             DamageBreakdownTable.ItemsSource = DamageBreakdownMedianLog;
+            AuraBreakdownTable.ItemsSource = AuraBreakdownMedianLog;
+
+            WpfPlot1.Configuration.Zoom = false;
+            WpfPlot1.Configuration.Pan = false;
+            WpfPlot1.Configuration.DoubleClickBenchmark = false;
+
+            WpfPlot1.RightClicked -= WpfPlot1.DefaultRightClickEvent;
+            WpfPlot1.Plot.YAxis.Label("");
+            WpfPlot1.Plot.XAxis.Label("DPS");
         }
 
         private void CurrentSimOutputChanged(object? sender, PropertyChangedEventArgs e)
@@ -67,6 +82,29 @@ namespace RetSimDesktop
 
                         DamageBreakdownSelection_SelectionChanged(null, null);
                         AuraBreakdownSelection_SelectionChanged(null, null);
+                    }
+                });
+            }
+            else if (e.PropertyName == "DpsResults")
+            {
+                DamageBreakdownTable.Dispatcher.Invoke(() =>
+                {
+                    if (DataContext is RetSimUIModel retSimUIModel)
+                    {
+                        double min = retSimUIModel.CurrentSimOutput.DpsResults[0];
+                        double max = retSimUIModel.CurrentSimOutput.DpsResults[retSimUIModel.CurrentSimOutput.DpsResults.Count - 1];
+                        (double[] counts, double[] binEdges) = ScottPlot.Statistics.Common.Histogram(retSimUIModel.CurrentSimOutput.DpsResults.ToArray(), min: min, max: max, binSize: 10);
+                        double[] leftEdges = binEdges.Take(binEdges.Length - 1).ToArray();
+
+                        WpfPlot1.Plot.Clear();
+                        var bar = WpfPlot1.Plot.AddBar(values: counts, positions: leftEdges);
+                        bar.BarWidth = 10;
+
+                        WpfPlot1.Plot.YAxis.Label("");
+                        WpfPlot1.Plot.XAxis.Label("DPS");
+                        WpfPlot1.Plot.SetAxisLimits(yMin: 0);
+
+                        WpfPlot1.Refresh();
                     }
                 });
             }

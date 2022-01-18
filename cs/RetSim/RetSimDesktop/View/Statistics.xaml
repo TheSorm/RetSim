@@ -10,6 +10,7 @@
              d:DesignHeight="450" d:DesignWidth="800">
     <ScrollViewer >
         <StackPanel Background="White">
+            <WpfPlot Name="WpfPlot1" Height="250"/>
             <Expander IsExpanded="True" Margin="10" Header="Damage Breakdown">
                 <Grid Background="White" MinHeight="100" Margin="5,0,5,5">
                     <Grid.RowDefinitions>

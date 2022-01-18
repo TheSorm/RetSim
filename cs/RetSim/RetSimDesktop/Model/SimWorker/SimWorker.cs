@@ -161,6 +161,13 @@ namespace RetSimDesktop.View
                 var medianSimulation = combatLogs[(int)(numberOfSimulations / 2f)];
                 var maxSimulation = combatLogs[numberOfSimulations - 1];
 
+                List<double> simDps = new List<double>();
+                foreach(CombatLog log in combatLogs)
+                {
+                    simDps.Add(log.DPS);
+                }
+
+                retSimUIModel.CurrentSimOutput.DpsResults = simDps;
                 retSimUIModel.CurrentSimOutput.MinCombatLog = minSimulation;
                 retSimUIModel.CurrentSimOutput.MedianCombatLog = medianSimulation;
                 retSimUIModel.CurrentSimOutput.MaxCombatLog = maxSimulation;
