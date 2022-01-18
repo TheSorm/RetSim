@@ -32,6 +32,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Model\SimWorker\CsDelayWorker.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Update="Model\SimWorker\WeaponSim.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -41,6 +44,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Page Update="View\CsDelay.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+    </Page>
     <Page Update="View\WeaponSelect.xaml">
       <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
     </Page>

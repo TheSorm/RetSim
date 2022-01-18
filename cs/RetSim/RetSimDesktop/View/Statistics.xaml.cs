@@ -2,7 +2,6 @@
 using RetSim.Simulation;
 using RetSim.Simulation.CombatLogEntries;
 using RetSimDesktop.ViewModel;
-using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -92,7 +91,7 @@ namespace RetSimDesktop
                     if (DataContext is RetSimUIModel retSimUIModel)
                     {
                         double min = retSimUIModel.CurrentSimOutput.DpsResults[0];
-                        double max = retSimUIModel.CurrentSimOutput.DpsResults[retSimUIModel.CurrentSimOutput.DpsResults.Count - 1];
+                        double max = retSimUIModel.CurrentSimOutput.DpsResults[^1];
                         (double[] counts, double[] binEdges) = ScottPlot.Statistics.Common.Histogram(retSimUIModel.CurrentSimOutput.DpsResults.ToArray(), min: min, max: max, binSize: 10);
                         double[] leftEdges = binEdges.Take(binEdges.Length - 1).ToArray();
 

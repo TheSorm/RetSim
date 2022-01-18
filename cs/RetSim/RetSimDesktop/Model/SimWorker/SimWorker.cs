@@ -162,7 +162,7 @@ namespace RetSimDesktop.View
                 var maxSimulation = combatLogs[numberOfSimulations - 1];
 
                 List<double> simDps = new List<double>();
-                foreach(CombatLog log in combatLogs)
+                foreach (CombatLog log in combatLogs)
                 {
                     simDps.Add(log.DPS);
                 }
@@ -191,7 +191,7 @@ namespace RetSimDesktop.View
         {
             for (int i = StartIndex; i < StartIndex + NumberOfSimulations; i++)
             {
-                FightSimulation fight = new(new Player("Brave Hero", Race, ShattrathFaction, PlayerEquipment, Talents), new Enemy(Encounter), new EliteTactic(), GroupTalents, Buffs, Debuffs, Consumables, MinFightDuration, MaxFightDuration, Cooldowns, HeroismUsage);
+                FightSimulation fight = new(new Player("Brave Hero", Race, ShattrathFaction, PlayerEquipment, Talents), new Enemy(Encounter), new EliteTactic(0), GroupTalents, Buffs, Debuffs, Consumables, MinFightDuration, MaxFightDuration, Cooldowns, HeroismUsage);
                 fight.Run();
                 CombatLogs[i] = fight.CombatLog;
             }

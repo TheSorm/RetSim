@@ -5,7 +5,6 @@ using RetSim.Simulation.Tactics;
 using RetSim.Units.Enemy;
 using RetSim.Units.Player;
 using RetSim.Units.Player.Static;
-using RetSim.Units.UnitStats;
 using RetSimDesktop.Model.SimWorker;
 using RetSimDesktop.ViewModel;
 using System;
@@ -15,12 +14,12 @@ using System.Threading;
 
 namespace RetSimDesktop.Model
 {
-    public class StatWeightWorker : BackgroundWorker
+    public class CsDelayWorker : BackgroundWorker
     {
         private static Thread[] threads = new Thread[Environment.ProcessorCount];
-        private static StatWeightsSimExecuter[] simExecuter = new StatWeightsSimExecuter[Environment.ProcessorCount];
+        private static CsSelaySimExecuter[] simExecuter = new CsSelaySimExecuter[Environment.ProcessorCount];
 
-        public StatWeightWorker()
+        public CsDelayWorker()
         {
             DoWork += BackgroundWorker_DoWork;
         }
@@ -73,14 +72,14 @@ namespace RetSimDesktop.Model
                         new EliteTactic(0), groupTalents, buffs, debuffs, consumables, minDuration, maxDuration, cooldowns, heroismUsage);
                     fight.Run();
                     baseDps += fight.CombatLog.DPS;
-                    retSimUIModel.DisplayStatWeights[0].DpsDelta = baseDps / i;
+                    retSimUIModel.DisplayCsDelay[0].DpsDelta = baseDps / i;
                 }
                 baseDps /= numberOfSimulations;
-                retSimUIModel.DisplayStatWeights[0].DpsDelta = baseDps;
+                retSimUIModel.DisplayCsDelay[0].DpsDelta = baseDps;
 
-                foreach (var item in retSimUIModel.DisplayStatWeights)
+                foreach (var item in retSimUIModel.DisplayCsDelay)
                 {
-                    if (item.Stat == StatName.Stamina || !item.EnabledForStatWeight)
+                    if (item.Delay == 0 || !item.EnabledForCsDelay)
                     {
                         continue;
                     }
@@ -115,7 +114,7 @@ namespace RetSimDesktop.Model
                         NumberOfSimulations = numberOfSimulations,
                         BaseSeed = baseSeed,
                         BaseDps = baseDps,
-                        StatWeightsDisplay = item,
+                        CsDelayDisplay = item,
                     };
 
                     threads[freeThread] = new(new ThreadStart(simExecuter[freeThread].Execute));
@@ -133,43 +132,25 @@ namespace RetSimDesktop.Model
         }
     }
 
-    public class StatWeightsSimExecuter : SimExecuter
+    public class CsSelaySimExecuter : SimExecuter
     {
-        public DisplayStatWeights StatWeightsDisplay { get; init; } = new();
+        public DisplayCsDelay CsDelayDisplay { get; init; } = new();
         public float BaseDps { get; init; }
         public int BaseSeed { get; init; }
 
         public override void Execute()
         {
-            StatSet extraStats = new();
-            extraStats[StatWeightsDisplay.Stat] += StatWeightsDisplay.IncreasedAmount;
             float dps = 0;
             for (int i = 0; i < NumberOfSimulations; i++)
             {
                 RNG.local = new(BaseSeed + i);
-                FightSimulation fight = new(new Player("Brave Hero", Race, ShattrathFaction, PlayerEquipment, Talents, extraStats), new Enemy(Encounter), new EliteTactic(0), GroupTalents, Buffs, Debuffs, Consumables, MinFightDuration, MaxFightDuration, Cooldowns, HeroismUsage);
+                FightSimulation fight = new(new Player("Brave Hero", Race, ShattrathFaction, PlayerEquipment, Talents), new Enemy(Encounter), new EliteTactic((int)(CsDelayDisplay.Delay * 1000)), GroupTalents, Buffs, Debuffs, Consumables, MinFightDuration, MaxFightDuration, Cooldowns, HeroismUsage);
                 fight.Run();
                 dps += fight.CombatLog.DPS;
-                StatWeightsDisplay.DpsDelta = ((dps / i) - BaseDps) / StatWeightsDisplay.IncreasedAmount;
-                if (StatWeightsDisplay.DpsDelta != 0)
-                {
-                    StatWeightsDisplay.StatPerDps = 1f / StatWeightsDisplay.DpsDelta;
-                }
-                else
-                {
-                    StatWeightsDisplay.StatPerDps = 0;
-                }
+                CsDelayDisplay.DpsDelta = ((dps / i) - BaseDps);
             }
             dps /= NumberOfSimulations;
-            StatWeightsDisplay.DpsDelta = (dps - BaseDps) / StatWeightsDisplay.IncreasedAmount;
-            if (StatWeightsDisplay.DpsDelta != 0)
-            {
-                StatWeightsDisplay.StatPerDps = 1f / StatWeightsDisplay.DpsDelta;
-            }
-            else
-            {
-                StatWeightsDisplay.StatPerDps = 0;
-            }
+            CsDelayDisplay.DpsDelta = (dps - BaseDps);
         }
     }
 }

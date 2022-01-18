@@ -7,7 +7,7 @@
         xmlns:viewmodel="clr-namespace:RetSimDesktop.ViewModel"
         d:DataContext="{d:DesignInstance viewmodel:RetSimUIModel}"
         mc:Ignorable="d"
-        Title="RetSim" Name="Window" Height="690" Width="1100" MinHeight="690" MinWidth="900" Closing="Window_Closing">
+        Title="RetSim" Name="Window" Height="710" Width="1100" MinHeight="690" MinWidth="900" Closing="Window_Closing">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="200" />
@@ -17,7 +17,7 @@
         <Border BorderBrush="Gray" BorderThickness="0,0,1,0" Margin="0,0,2,0">
             <Grid Margin="0,0,0,5">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="80" />
+                    <RowDefinition Height="100" />
                     <RowDefinition Height="*" />
                     <RowDefinition Height="100" />
                 </Grid.RowDefinitions>
@@ -25,6 +25,7 @@
                     <Button BorderThickness="1,1,0,1" x:Name="GearButton" IsEnabled="False" Content="Gear" Click="Gear_Click"/>
                     <Button BorderThickness="1,0,0,1" x:Name="SettingsButton" Content="Settings" Click="Settings_Click"/>
                     <Button BorderThickness="1,0,0,1" x:Name="StatWeightsButton" Content="Stat Weights" Click="StatWeights_Click"/>
+                    <Button BorderThickness="1,0,0,1" x:Name="CsDelayButton" Content="CS Delay" Click="CsDelay_Click"/>
                     <Button BorderThickness="1,0,0,1" x:Name="StatisticsButton" Content="Statistics" Click="Statistics_Click"/>
                 </StackPanel>
                 <local:StatPanel Grid.Row="1" Width="200" VerticalAlignment="Center" HorizontalAlignment="Center"/>
@@ -63,6 +64,7 @@
         <local:GearSelect x:Name="GearSelect"  Grid.Column="1"/>
         <local:Settings Visibility="Hidden" x:Name="Settings" Grid.Column="1"/>
         <local:StatWeights Visibility="Hidden" x:Name="StatWeights" Grid.Column="1"/>
+        <local:CsDelay Visibility="Hidden" x:Name="CsDelay" Grid.Column="1"/>
         <local:Statistics Visibility="Hidden" x:Name="Statistics" Grid.Column="1"/>
     </Grid>
 </Window>

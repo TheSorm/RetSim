@@ -90,7 +90,7 @@ class Program
 
     static void RunOnce()
     {
-        FightSimulation fight = new(new Player(Name, Race, Faction, Equipment, Talents, null), new Enemy(Boss), new EliteTactic(), Buffs, Buffs, Debuffs, Consumables, MinDuration, MaxDuration, Cooldowns, Heroisms);
+        FightSimulation fight = new(new Player(Name, Race, Faction, Equipment, Talents, null), new Enemy(Boss), new EliteTactic(0), Buffs, Buffs, Debuffs, Consumables, MinDuration, MaxDuration, Cooldowns, Heroisms);
 
         PrintStats(fight.Player.Stats.All);
 
@@ -181,7 +181,7 @@ class Program
 
         for (int i = 0; i < iterations; i++)
         {
-            FightSimulation fight = new(new Player(Name, Race, Faction, Equipment, Talents, null), new Enemy(Boss), new EliteTactic(), Buffs, Buffs, Debuffs, Consumables, MinDuration, MaxDuration, Cooldowns, Heroisms);
+            FightSimulation fight = new(new Player(Name, Race, Faction, Equipment, Talents, null), new Enemy(Boss), new EliteTactic(0), Buffs, Buffs, Debuffs, Consumables, MinDuration, MaxDuration, Cooldowns, Heroisms);
 
             fight.Run();
 

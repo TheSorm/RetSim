@@ -34,10 +34,12 @@ namespace RetSimDesktop
         {
             Settings.Visibility = Visibility.Hidden;
             StatWeights.Visibility = Visibility.Hidden;
+            CsDelay.Visibility = Visibility.Hidden;
             Statistics.Visibility = Visibility.Hidden;
             GearSelect.Visibility = Visibility.Visible;
             GearButton.IsEnabled = false;
             SettingsButton.IsEnabled = true;
+            CsDelayButton.IsEnabled = true;
             StatWeightsButton.IsEnabled = true;
             StatisticsButton.IsEnabled = true;
         }
@@ -46,10 +48,12 @@ namespace RetSimDesktop
         {
             Settings.Visibility = Visibility.Visible;
             StatWeights.Visibility = Visibility.Hidden;
+            CsDelay.Visibility = Visibility.Hidden;
             Statistics.Visibility = Visibility.Hidden;
             GearSelect.Visibility = Visibility.Hidden;
             GearButton.IsEnabled = true;
             SettingsButton.IsEnabled = false;
+            CsDelayButton.IsEnabled = true;
             StatWeightsButton.IsEnabled = true;
             StatisticsButton.IsEnabled = true;
         }
@@ -58,10 +62,12 @@ namespace RetSimDesktop
         {
             Settings.Visibility = Visibility.Hidden;
             StatWeights.Visibility = Visibility.Hidden;
+            CsDelay.Visibility = Visibility.Hidden;
             Statistics.Visibility = Visibility.Visible;
             GearSelect.Visibility = Visibility.Hidden;
             GearButton.IsEnabled = true;
             SettingsButton.IsEnabled = true;
+            CsDelayButton.IsEnabled = true;
             StatWeightsButton.IsEnabled = true;
             StatisticsButton.IsEnabled = false;
         }
@@ -70,11 +76,27 @@ namespace RetSimDesktop
         {
             Settings.Visibility = Visibility.Hidden;
             StatWeights.Visibility = Visibility.Visible;
+            CsDelay.Visibility = Visibility.Hidden;
+            Statistics.Visibility = Visibility.Hidden;
+            GearSelect.Visibility = Visibility.Hidden;
+            GearButton.IsEnabled = true;
+            CsDelayButton.IsEnabled = true;
+            SettingsButton.IsEnabled = true;
+            StatWeightsButton.IsEnabled = false;
+            StatisticsButton.IsEnabled = true;
+        }
+
+        private void CsDelay_Click(object sender, RoutedEventArgs e)
+        {
+            Settings.Visibility = Visibility.Hidden;
+            CsDelay.Visibility = Visibility.Visible;
+            StatWeights.Visibility = Visibility.Hidden;
             Statistics.Visibility = Visibility.Hidden;
             GearSelect.Visibility = Visibility.Hidden;
             GearButton.IsEnabled = true;
             SettingsButton.IsEnabled = true;
-            StatWeightsButton.IsEnabled = false;
+            StatWeightsButton.IsEnabled = true;
+            CsDelayButton.IsEnabled = false;
             StatisticsButton.IsEnabled = true;
         }
 

@@ -30,6 +30,7 @@ namespace RetSimDesktop.ViewModel
         private SimButtonStatus _SimButtonStatus;
         private TooltipSettings _TooltipSettings;
         private List<DisplayStatWeights> _DisplayStatWeights;
+        private List<DisplayCsDelay> _DisplayCsDelay;
         private Dictionary<Slot, Dictionary<int, List<DisplayGear>>> _GearByPhases;
         private Dictionary<int, DisplayGear> _AllGear;
         private Dictionary<WeaponType, Dictionary<int, List<DisplayWeapon>>> _WeaponsByPhases;
@@ -76,6 +77,8 @@ namespace RetSimDesktop.ViewModel
             _DisplayStatWeights.Add(new DisplayStatWeights() { Stat = StatName.SpellCritRating, EnabledForStatWeight = true, IncreasedAmount = Constants.Ratings.SpellCrit, Name = "Spell-Crit Rating", DpsDelta = 0, StatPerDps = 0 });
             _DisplayStatWeights.Add(new DisplayStatWeights() { Stat = StatName.SpellHitRating, EnabledForStatWeight = true, IncreasedAmount = Constants.Ratings.SpellHit, Name = "Spell-Hit Rating", DpsDelta = 0, StatPerDps = 0 });
             _DisplayStatWeights.Add(new DisplayStatWeights() { Stat = StatName.Intellect, EnabledForStatWeight = true, IncreasedAmount = Constants.Stats.IntellectPerSpellCrit, Name = "Intellect", DpsDelta = 0, StatPerDps = 0 });
+
+            _DisplayCsDelay = new();
 
             _SimButtonStatus = new()
             {
@@ -273,6 +276,12 @@ namespace RetSimDesktop.ViewModel
             set { _DisplayStatWeights = value; }
         }
 
+        [JsonIgnore]
+        public List<DisplayCsDelay> DisplayCsDelay
+        {
+            get { return _DisplayCsDelay; }
+            set { _DisplayCsDelay = value; }
+        }
         public PlayerSettings PlayerSettings
         {
             get { return _PlayerSettings; }

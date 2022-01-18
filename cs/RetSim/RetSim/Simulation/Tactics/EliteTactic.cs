@@ -10,13 +10,16 @@ public class EliteTactic : Tactic
     Spell SealOfBlood;
     Spell Judgement;
 
-    public EliteTactic()
+    private int csDelay = 0;
+
+    public EliteTactic(int CsDelay)
     {
         CrusaderStrike = Data.Collections.Spells[35395];
         SealOfCommand = Data.Collections.Spells[27170];
         SealOfBlood = Data.Collections.Spells[31892];
         Judgement = Data.Collections.Spells[20271];
 
+        this.csDelay = CsDelay;
     }
 
     public override List<Event> PreFight(FightSimulation fight)
@@ -41,7 +44,7 @@ public class EliteTactic : Tactic
     public override Event GetActionBetween(int start, int end, FightSimulation fight)
     {
         int hasteLeeway = 0;
-        int maxCSDelay = 0;
+        int maxCSDelay = csDelay;
 
         int swing = fight.Player.EffectiveNextAuto;
         int swingLeeway = swing - hasteLeeway;
