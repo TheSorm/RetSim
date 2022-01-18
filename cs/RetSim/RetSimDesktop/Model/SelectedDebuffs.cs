@@ -63,13 +63,43 @@ namespace RetSimDesktop.Model
         public bool ImprovedScorchEnabled { get => improvedScorchEnabled; set { improvedScorchEnabled = value; OnPropertyChanged(nameof(ImprovedScorchEnabled)); } }
 
 
+        public List<Spell> GetGroupTalents()
+        {
+            HashSet<Spell> result = new();
+            if (judgementoftheCrusaderEnabled && selectedJudgementoftheCrusader != JudgementoftheCrusader.JudgementoftheCrusader && Spells.ContainsKey((int)selectedJudgementoftheCrusader))
+            {
+                result.Add(Spells[(int)selectedJudgementoftheCrusader]);
+            }
+            if (armorDebuffEnabled)
+            {
+                switch (selectedArmorDebuff)
+                {
+                    case ArmorDebuff.ExposeArmor:
+                        break;
+                    case ArmorDebuff.SunderArmor:
+                        break;
+                    case ArmorDebuff.ImpExposeArmor:
+                        result.Add(Spells[(int)ArmorDebuff.ImpExposeArmor]);
+                        break;
+                }
+            }
+            if (faerieFireEnabled && selectedFaerieFire != FaerieFire.FaerieFire && Spells.ContainsKey((int)selectedFaerieFire))
+            {
+                result.Add(Spells[(int)selectedFaerieFire]);
+            }
+            if (curseoftheElementsEnabled && selectedCurseoftheElements != CurseoftheElements.CurseoftheElements && Spells.ContainsKey((int)selectedCurseoftheElements))
+            {
+                result.Add(Spells[(int)selectedCurseoftheElements]);
+            }
+            return new List<Spell>(result);
+        }
+
         public List<Spell> GetDebuffs()
         {
             HashSet<Spell> result = new();
-            if (judgementoftheCrusaderEnabled && Spells.ContainsKey((int)JudgementoftheCrusader.JudgementoftheCrusader) && Spells.ContainsKey((int)selectedJudgementoftheCrusader))
+            if (judgementoftheCrusaderEnabled && Spells.ContainsKey((int)JudgementoftheCrusader.JudgementoftheCrusader))
             {
                 result.Add(Spells[(int)JudgementoftheCrusader.JudgementoftheCrusader]);
-                result.Add(Spells[(int)selectedJudgementoftheCrusader]);
             }
             if (judgementofWisdomEnabled && Spells.ContainsKey(20354))
             {
@@ -87,7 +117,6 @@ namespace RetSimDesktop.Model
                         break;
                     case ArmorDebuff.ImpExposeArmor:
                         result.Add(Spells[(int)ArmorDebuff.ExposeArmor]);
-                        result.Add(Spells[(int)ArmorDebuff.ImpExposeArmor]);
                         break;
                 }
             }
@@ -103,19 +132,17 @@ namespace RetSimDesktop.Model
             {
                 result.Add(Spells[34501]);
             }
-            if (faerieFireEnabled && Spells.ContainsKey((int)FaerieFire.FaerieFire) && Spells.ContainsKey((int)selectedFaerieFire))
+            if (faerieFireEnabled && Spells.ContainsKey((int)FaerieFire.FaerieFire))
             {
                 result.Add(Spells[(int)FaerieFire.FaerieFire]);
-                result.Add(Spells[(int)selectedFaerieFire]);
             }
             if (curseofRecklessnessEnabled && Spells.ContainsKey(27226))
             {
                 result.Add(Spells[27226]);
             }
-            if (curseoftheElementsEnabled && Spells.ContainsKey((int)CurseoftheElements.CurseoftheElements) && Spells.ContainsKey((int)selectedCurseoftheElements))
+            if (curseoftheElementsEnabled && Spells.ContainsKey((int)CurseoftheElements.CurseoftheElements))
             {
                 result.Add(Spells[(int)CurseoftheElements.CurseoftheElements]);
-                result.Add(Spells[(int)selectedCurseoftheElements]);
             }
             if (improvedShadowBoltEnabled && Spells.ContainsKey(17800))
             {

@@ -121,12 +121,11 @@ namespace RetSimDesktop.Model
         public bool EmbraceoftheDawnEnabled { get => embraceoftheDawnEnabled; set { embraceoftheDawnEnabled = value; OnPropertyChanged(nameof(EmbraceoftheDawnEnabled)); } }
         public bool EyeoftheNightEnabled { get => eyeoftheNightEnabled; set { eyeoftheNightEnabled = value; OnPropertyChanged(nameof(EyeoftheNightEnabled)); } }
 
-        public List<Spell> GetBuffs()
+        public List<Spell> GetGroupTalents()
         {
             HashSet<Spell> result = new();
-            if (battleShoutEnabled && Spells.ContainsKey((int)BattleShout.BattleShout))
+            if (battleShoutEnabled)
             {
-                result.Add(Spells[(int)BattleShout.BattleShout]);
                 switch (selectedBattleShout)
                 {
                     case BattleShout.BattleShout:
@@ -159,6 +158,49 @@ namespace RetSimDesktop.Model
                         break;
                 }
             }
+            if (airTotem1Enabled && selectedAirTotem1 != AirTotem1.WindfuryTotem && Spells.ContainsKey((int)selectedAirTotem1))
+            {
+                result.Add(Spells[(int)selectedAirTotem1]);
+            }
+            if ((earthTotemEnabled && selectedEarthTotem == EarthTotem.ImpStrengthOfEarthTotem) || (airTotem2Enabled && selectedAirTotem2 == AirTotem2.ImpGraceOfAirTotem))
+            {
+                result.Add(Spells[(int)EarthTotem.ImpStrengthOfEarthTotem]);
+                result.Add(Spells[(int)AirTotem2.ImpGraceOfAirTotem]);
+            }
+            if (waterTotemEnabled && selectedWaterTotem != WaterTotem.ManaSpringTotem && Spells.ContainsKey((int)selectedWaterTotem))
+            {
+                result.Add(Spells[(int)selectedWaterTotem]);
+            }
+            if (blessingofMightEnabled && selectedBlessingofMight != BlessingofMight.BlessingofMight && Spells.ContainsKey((int)selectedBlessingofMight))
+            {
+                result.Add(Spells[(int)selectedBlessingofMight]);
+            }
+            if (blessingofWisdomEnabled && selectedBlessingofWisdom != BlessingofWisdom.BlessingofWisdom && Spells.ContainsKey((int)selectedBlessingofWisdom))
+            {
+                result.Add(Spells[(int)selectedBlessingofWisdom]);
+            }
+            if (markoftheWildEnabled && selectedMarkoftheWild != MarkoftheWild.MarkoftheWild && Spells.ContainsKey((int)selectedMarkoftheWild))
+            {
+                result.Add(Spells[(int)selectedMarkoftheWild]);
+            }
+            if (powerWordFortitudeEnabled && selectedPowerWordFortitude != PowerWordFortitude.PowerWordFortitude && Spells.ContainsKey((int)selectedPowerWordFortitude))
+            {
+                result.Add(Spells[(int)selectedPowerWordFortitude]);
+            }
+            if (divineSpiritEnabled && selectedDivineSpirit != DivineSpirit.DivineSpirit && Spells.ContainsKey((int)selectedDivineSpirit))
+            {
+                result.Add(Spells[(int)selectedDivineSpirit]);
+            }
+            return new List<Spell>(result);
+        }
+
+        public List<Spell> GetBuffs()
+        {
+            HashSet<Spell> result = new();
+            if (battleShoutEnabled && Spells.ContainsKey((int)BattleShout.BattleShout))
+            {
+                result.Add(Spells[(int)BattleShout.BattleShout]);
+            }
             if (trueshotAuraEnabled && Spells.ContainsKey(27066))
             {
                 result.Add(Spells[27066]);
@@ -167,28 +209,21 @@ namespace RetSimDesktop.Model
             {
                 result.Add(Spells[34460]);
             }
-            if (earthTotemEnabled && Spells.ContainsKey((int)EarthTotem.StrengthOfEarthTotem) && Spells.ContainsKey((int)selectedEarthTotem))
+            if (earthTotemEnabled && Spells.ContainsKey((int)EarthTotem.StrengthOfEarthTotem))
             {
                 result.Add(Spells[(int)EarthTotem.StrengthOfEarthTotem]);
             }
-            if (airTotem1Enabled && Spells.ContainsKey((int)AirTotem1.WindfuryTotem) && Spells.ContainsKey((int)selectedAirTotem1))
+            if (airTotem1Enabled && Spells.ContainsKey((int)AirTotem1.WindfuryTotem))
             {
                 result.Add(Spells[(int)AirTotem1.WindfuryTotem]);
-                result.Add(Spells[(int)selectedAirTotem1]);
             }
-            if (airTotem2Enabled && Spells.ContainsKey((int)AirTotem2.GraceOfAirTotem) && Spells.ContainsKey((int)selectedAirTotem2))
+            if (airTotem2Enabled && Spells.ContainsKey((int)AirTotem2.GraceOfAirTotem))
             {
                 result.Add(Spells[(int)AirTotem2.GraceOfAirTotem]);
             }
-            if ((earthTotemEnabled && selectedEarthTotem == EarthTotem.ImpStrengthOfEarthTotem) || (airTotem2Enabled && selectedAirTotem2 == AirTotem2.ImpGraceOfAirTotem))
-            {
-                result.Add(Spells[(int)selectedEarthTotem]);
-                result.Add(Spells[(int)selectedAirTotem2]);
-            }
-            if (waterTotemEnabled && Spells.ContainsKey((int)WaterTotem.ManaSpringTotem) && Spells.ContainsKey((int)selectedWaterTotem))
+            if (waterTotemEnabled && Spells.ContainsKey((int)WaterTotem.ManaSpringTotem))
             {
                 result.Add(Spells[(int)WaterTotem.ManaSpringTotem]);
-                result.Add(Spells[(int)selectedWaterTotem]);
             }
             if (unleashedRageEnabled && Spells.ContainsKey(30811))
             {
@@ -210,34 +245,29 @@ namespace RetSimDesktop.Model
             {
                 result.Add(Spells[28878]);
             }
-            if (blessingofMightEnabled && Spells.ContainsKey((int)BlessingofMight.BlessingofMight) && Spells.ContainsKey((int)selectedBlessingofMight))
+            if (blessingofMightEnabled && Spells.ContainsKey((int)BlessingofMight.BlessingofMight))
             {
                 result.Add(Spells[(int)BlessingofMight.BlessingofMight]);
-                result.Add(Spells[(int)selectedBlessingofMight]);
             }
             if (blessingofKingsEnabled && Spells.ContainsKey(25898))
             {
                 result.Add(Spells[25898]);
             }
-            if (blessingofWisdomEnabled && Spells.ContainsKey((int)BlessingofWisdom.BlessingofWisdom) && Spells.ContainsKey((int)selectedBlessingofWisdom))
+            if (blessingofWisdomEnabled && Spells.ContainsKey((int)BlessingofWisdom.BlessingofWisdom))
             {
                 result.Add(Spells[(int)BlessingofWisdom.BlessingofWisdom]);
-                result.Add(Spells[(int)selectedBlessingofWisdom]);
             }
-            if (markoftheWildEnabled && Spells.ContainsKey((int)MarkoftheWild.MarkoftheWild) && Spells.ContainsKey((int)selectedMarkoftheWild))
+            if (markoftheWildEnabled && Spells.ContainsKey((int)MarkoftheWild.MarkoftheWild))
             {
                 result.Add(Spells[(int)MarkoftheWild.MarkoftheWild]);
-                result.Add(Spells[(int)selectedMarkoftheWild]);
             }
-            if (powerWordFortitudeEnabled && Spells.ContainsKey((int)PowerWordFortitude.PowerWordFortitude) && Spells.ContainsKey((int)selectedPowerWordFortitude))
+            if (powerWordFortitudeEnabled && Spells.ContainsKey((int)PowerWordFortitude.PowerWordFortitude))
             {
                 result.Add(Spells[(int)PowerWordFortitude.PowerWordFortitude]);
-                result.Add(Spells[(int)selectedPowerWordFortitude]);
             }
-            if (divineSpiritEnabled && Spells.ContainsKey((int)DivineSpirit.DivineSpirit) && Spells.ContainsKey((int)selectedDivineSpirit))
+            if (divineSpiritEnabled && Spells.ContainsKey((int)DivineSpirit.DivineSpirit))
             {
                 result.Add(Spells[(int)DivineSpirit.DivineSpirit]);
-                result.Add(Spells[(int)selectedDivineSpirit]);
             }
             if (arcaneIntellectEnabled && Spells.ContainsKey(27127))
             {

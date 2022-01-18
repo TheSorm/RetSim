@@ -14,6 +14,7 @@ namespace RetSimDesktop.Model.SimWorker
         public Boss Encounter { get; init; } = Collections.Bosses[0];
         public Equipment PlayerEquipment { get; init; } = new Equipment();
         public List<Talent> Talents { get; init; } = new();
+        public List<Spell> GroupTalents { get; init; } = new();
         public List<Spell> Buffs { get; init; } = new();
         public List<Spell> Debuffs { get; init; } = new();
         public List<Spell> Consumables { get; init; } = new();

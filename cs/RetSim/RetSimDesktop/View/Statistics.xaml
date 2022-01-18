@@ -327,6 +327,61 @@
                     </DataGrid>
                 </Grid>
             </Expander>
+            <Expander IsExpanded="True" Margin="10" Header="Aura Breakdown">
+                <Grid Background="White" MinHeight="100" Margin="5,0,5,5">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="30" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="20" />
+                    </Grid.RowDefinitions>
+                    <ComboBox Margin="0,5,0,5" Name="AuraBreakdownSelection" SelectedValuePath="Content" VerticalAlignment="Bottom" HorizontalAlignment="Right" SelectionChanged="AuraBreakdownSelection_SelectionChanged">
+                        <ComboBoxItem>Min</ComboBoxItem>
+                        <ComboBoxItem IsSelected="True">Median</ComboBoxItem>
+                        <ComboBoxItem>Max</ComboBoxItem>
+                    </ComboBox>
+                    <DataGrid Grid.Row="1" ColumnWidth="*" GridLinesVisibility="Horizontal" Name="AuraBreakdownTable" IsReadOnly="True" HeadersVisibility="Column" CanUserResizeColumns="False" CanUserResizeRows="False" AutoGenerateColumns="False">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn MinWidth="220" CanUserReorder="False" Header="Aura" Binding="{Binding AuraName}" />
+                            <DataGridTextColumn MinWidth="50" CanUserReorder="False" Header="Count" Binding="{Binding Count}">
+                                <DataGridTextColumn.HeaderStyle>
+                                    <Style TargetType="DataGridColumnHeader">
+                                        <Setter Property="HorizontalContentAlignment" Value="Center" />
+                                    </Style>
+                                </DataGridTextColumn.HeaderStyle>
+                                <DataGridTextColumn.ElementStyle>
+                                    <Style TargetType="TextBlock">
+                                        <Setter Property="TextAlignment" Value="Center" />
+                                    </Style>
+                                </DataGridTextColumn.ElementStyle>
+                            </DataGridTextColumn>
+                            <DataGridTextColumn MinWidth="50" x:Name="AuraBreakdownUptimeColumn" CanUserReorder="False" Header="Uptime" Binding="{Binding Uptime}">
+                                <DataGridTextColumn.HeaderStyle>
+                                    <Style TargetType="DataGridColumnHeader">
+                                        <Setter Property="HorizontalContentAlignment" Value="Center" />
+                                    </Style>
+                                </DataGridTextColumn.HeaderStyle>
+                                <DataGridTextColumn.ElementStyle>
+                                    <Style TargetType="TextBlock">
+                                        <Setter Property="TextAlignment" Value="Center" />
+                                    </Style>
+                                </DataGridTextColumn.ElementStyle>
+                            </DataGridTextColumn>
+                            <DataGridTextColumn MinWidth="40" MaxWidth="40" CanUserReorder="False" Header="%" Binding="{Binding UptimePercentage}">
+                                <DataGridTextColumn.HeaderStyle>
+                                    <Style TargetType="DataGridColumnHeader">
+                                        <Setter Property="HorizontalContentAlignment" Value="Center" />
+                                    </Style>
+                                </DataGridTextColumn.HeaderStyle>
+                                <DataGridTextColumn.ElementStyle>
+                                    <Style TargetType="TextBlock">
+                                        <Setter Property="TextAlignment" Value="Center" />
+                                    </Style>
+                                </DataGridTextColumn.ElementStyle>
+                            </DataGridTextColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+            </Expander>
             <Expander IsExpanded="False" Margin="10" Header="Combat Log">
                 <Grid Background="White" Height="400" Margin="5,0,5,5">
                     <Grid.RowDefinitions>

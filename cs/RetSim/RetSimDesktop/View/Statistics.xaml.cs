@@ -17,6 +17,10 @@ namespace RetSimDesktop
         public List<DamageBreakdownElement> DamageBreakdownMedianLog { get; set; }
         public List<DamageBreakdownElement> DamageBreakdownMaxLog { get; set; }
 
+        public List<AuraBreakdownElement> AuraBreakdownMinLog { get; set; }
+        public List<AuraBreakdownElement> AuraBreakdownMedianLog { get; set; }
+        public List<AuraBreakdownElement> AuraBreakdownMaxLog { get; set; }
+
         public Statistics()
         {
             InitializeComponent();
@@ -45,11 +49,24 @@ namespace RetSimDesktop
                 {
                     if (DataContext is RetSimUIModel retSimUIModel)
                     {
+                        retSimUIModel.CurrentSimOutput.MinCombatLog.CreateDamageBreakdown();
+                        retSimUIModel.CurrentSimOutput.MedianCombatLog.CreateDamageBreakdown();
+                        retSimUIModel.CurrentSimOutput.MaxCombatLog.CreateDamageBreakdown();
+
                         DamageBreakdownMinLog = CreateDamageBreakdown(retSimUIModel.CurrentSimOutput.MinCombatLog);
                         DamageBreakdownMedianLog = CreateDamageBreakdown(retSimUIModel.CurrentSimOutput.MedianCombatLog);
                         DamageBreakdownMaxLog = CreateDamageBreakdown(retSimUIModel.CurrentSimOutput.MaxCombatLog);
 
+                        retSimUIModel.CurrentSimOutput.MinCombatLog.CreateAuraBreakDown();
+                        retSimUIModel.CurrentSimOutput.MedianCombatLog.CreateAuraBreakDown();
+                        retSimUIModel.CurrentSimOutput.MaxCombatLog.CreateAuraBreakDown();
+
+                        AuraBreakdownMinLog = CreateAuraBreakdown(retSimUIModel.CurrentSimOutput.MinCombatLog);
+                        AuraBreakdownMedianLog = CreateAuraBreakdown(retSimUIModel.CurrentSimOutput.MedianCombatLog);
+                        AuraBreakdownMaxLog = CreateAuraBreakdown(retSimUIModel.CurrentSimOutput.MaxCombatLog);
+
                         DamageBreakdownSelection_SelectionChanged(null, null);
+                        AuraBreakdownSelection_SelectionChanged(null, null);
                     }
                 });
             }
@@ -134,6 +151,61 @@ namespace RetSimDesktop
             return result;
         }
 
+        private static List<AuraBreakdownElement> CreateAuraBreakdown(CombatLog log)
+        {
+            List<AuraBreakdownElement> result = new();
+
+            foreach (string s in log.AuraBreakdown.Keys)
+            {
+                int count = 0;
+                float uptime = 0;
+
+                float start = -1;
+                foreach (BuffEntry entry in log.AuraBreakdown[s])
+                {
+                    if (entry.Timestamp < 0)
+                    {
+                        continue;
+                    }
+
+                    if (entry.Type == RetSim.Spells.AuraChangeType.Gain || entry.Type == RetSim.Spells.AuraChangeType.Refresh)
+                    {
+                        count++;
+                    }
+
+                    if (entry.Type == RetSim.Spells.AuraChangeType.Gain && start == -1)
+                    {
+                        start = entry.Timestamp;
+                    }
+
+                    if (entry.Type == RetSim.Spells.AuraChangeType.Fade)
+                    {
+                        uptime += entry.Timestamp - start;
+                        start = -1;
+                    }
+                }
+
+                if (start != -1)
+                {
+                    uptime += log.Duration - start;
+                }
+
+                if (count == 0 && uptime == 0)
+                {
+                    continue;
+                }
+
+                result.Add(new()
+                {
+                    AuraName = s,
+                    Count = count,
+                    Uptime = uptime / 1000,
+                    UptimePercentage = (uptime / log.Duration * 100f).Rounded(),
+                });
+            }
+            return result;
+        }
+
         private void DamageBreakdownSelection_SelectionChanged(object? sender, SelectionChangedEventArgs? e)
         {
             if (DamageBreakdownSelection != null && DamageBreakdownSelection.SelectedValue != null)
@@ -160,6 +232,31 @@ namespace RetSimDesktop
                 DamageBreakdownTable.Items.SortDescriptions.Add(new SortDescription(DamageBreakdownDamageColumn.SortMemberPath, ListSortDirection.Descending));
             }
         }
+
+        private void AuraBreakdownSelection_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (AuraBreakdownSelection != null && AuraBreakdownSelection.SelectedValue != null)
+            {
+                var value = AuraBreakdownSelection.SelectedValue.ToString();
+
+                if (value == "Min" && AuraBreakdownMinLog.Count > 0)
+                {
+                    AuraBreakdownTable.ItemsSource = AuraBreakdownMinLog;
+                }
+                else if (value == "Median" && AuraBreakdownMedianLog.Count > 0)
+                {
+                    AuraBreakdownTable.ItemsSource = AuraBreakdownMedianLog;
+                }
+                else if (value == "Max" && AuraBreakdownMaxLog.Count > 0)
+                {
+                    AuraBreakdownTable.ItemsSource = AuraBreakdownMaxLog;
+                }
+                AuraBreakdownTable.Items.Refresh();
+                AuraBreakdownUptimeColumn.SortDirection = ListSortDirection.Descending;
+                AuraBreakdownTable.Items.SortDescriptions.Add(new SortDescription(AuraBreakdownUptimeColumn.SortMemberPath, ListSortDirection.Descending));
+            }
+        }
+
         private void CombatLogSelection_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (DataContext is RetSimUIModel retSimUIModel)
@@ -201,5 +298,13 @@ namespace RetSimDesktop
         public int Dodges { get; set; }
         public float DodgePercentage { get; set; }
 
+    }
+
+    public class AuraBreakdownElement
+    {
+        public string AuraName { get; set; }
+        public int Count { get; set; }
+        public float Uptime { get; set; }
+        public float UptimePercentage { get; set; }
     }
 }

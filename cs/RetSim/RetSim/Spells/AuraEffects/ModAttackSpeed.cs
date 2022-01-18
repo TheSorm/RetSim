@@ -8,7 +8,7 @@ class ModAttackSpeed : ModifyPercent
 {
     public int HasteRating { get; init; }
 
-    public ModAttackSpeed(float percent, int haste) : base(percent) 
+    public ModAttackSpeed(float percent, int haste) : base(percent)
     {
         HasteRating = haste;
     }

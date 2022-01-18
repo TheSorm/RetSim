@@ -19,10 +19,6 @@ public class FightSimulation
     public Enemy Enemy { get; init; }
     public Tactic Tactic { get; init; }
 
-    public List<Spell> Buffs { get; init; }
-    public List<Spell> Debuffs { get; init; }
-    public List<Spell> Consumables { get; init; }
-
     public CooldownManager CooldownManager { get; init; }
     public CombatLog CombatLog { get; init; }
     public IEventQueue Queue { get; init; }
@@ -31,14 +27,11 @@ public class FightSimulation
     public int Timestamp { get; private set; }
     public bool Ongoing { get; set; }
 
-    public FightSimulation(Player player, Enemy enemy, Tactic tactic, List<Spell> buffs, List<Spell> debuffs, List<Spell> consumables, int minDuration, int maxDuration, List<Spell> cooldowns, List<int> heroisms)
+    public FightSimulation(Player player, Enemy enemy, Tactic tactic, List<Spell> buffTalents, List<Spell> buffs, List<Spell> debuffs, List<Spell> consumables, int minDuration, int maxDuration, List<Spell> cooldowns, List<int> heroisms)
     {
         Player = player;
         Enemy = enemy;
         Tactic = tactic;
-        Buffs = buffs;
-        Debuffs = debuffs;
-        Consumables = consumables;
 
         CombatLog = new CombatLog();
         Queue = new InsertionQueue();
@@ -48,13 +41,13 @@ public class FightSimulation
 
         Duration = RNG.RollRange(minDuration, maxDuration);
 
-        Initialize();
+        Initialize(buffTalents, buffs, debuffs, consumables);
 
         List<int> correctedHerosimTimes = new();
 
-        foreach(var time in heroisms)
+        foreach (var time in heroisms)
         {
-            if(time < Duration)
+            if (time < Duration)
             {
                 correctedHerosimTimes.Add(time);
             }
@@ -83,59 +76,49 @@ public class FightSimulation
         }
     }
 
-    public void Initialize()
+    public void Initialize(List<Spell> buffTalents, List<Spell> buffs, List<Spell> debuffs, List<Spell> consumables)
     {
-        List<Event> preFightEvents = new();
-
-        foreach (Talent talent in Player.Talents)
-        {
-            preFightEvents.Add(new CastEvent(talent, Player, Player, this, Timestamp, -2));
-        }
-
-        foreach (Spell buff in Buffs)
-        {
-            preFightEvents.Add(new CastEvent(buff, Player, Player, this, Timestamp, -1));
-        }
-
-        foreach (Spell debuff in Debuffs)
-        {
-            preFightEvents.Add(new CastEvent(debuff, Player, Enemy, this, Timestamp, -1));
-        }
-
-        foreach (Spell consumable in Consumables)
-        {
-            preFightEvents.Add(new CastEvent(consumable, Player, Player, this, Timestamp, -1));
-        }
-
-        if (Player.Race.Racial != null && Player.Race.Racial.Requirements(Player))
-            preFightEvents.Add(new CastEvent(Player.Race.Racial, Player, Player, this, Timestamp, -1));
+        Timestamp = -1;
 
         foreach (Spell spell in Player.Equipment.Spells)
         {
-            preFightEvents.Add(new CastEvent(spell, Player, Player, this, Timestamp, -3));
+            (new CastEvent(spell, Player, Player, this, Timestamp, -3)).Execute();
         }
 
-        while (preFightEvents.Count > 0)
+        if (Player.Race.Racial != null && Player.Race.Racial.Requirements(Player))
+            (new CastEvent(Player.Race.Racial, Player, Player, this, Timestamp, -1)).Execute();
+
+        foreach (Spell buffTalent in buffTalents)
         {
-            Event current = preFightEvents[preFightEvents.Count - 1];
-            preFightEvents.RemoveAt(preFightEvents.Count - 1);
+            (new CastEvent(buffTalent, Player, Player, this, Timestamp, -1)).Execute();
+        }
 
-            if (current is AuraEndEvent)
-                ends.Add((AuraEndEvent)current);
+        foreach (Spell debuff in debuffs)
+        {
+            (new CastEvent(debuff, Player, Enemy, this, Timestamp, -1)).Execute();
+        }
 
-            else
-                current.Execute();
+        foreach (Talent talent in Player.Talents)
+        {
+            (new CastEvent(talent, Player, Player, this, Timestamp, -2)).Execute();
+        }
+
+        Timestamp = 0;
+
+        foreach (Spell buff in buffs)
+        {
+            (new CastEvent(buff, Player, Player, this, Timestamp, -1)).Execute();
+        }
+
+        foreach (Spell consumable in consumables)
+        {
+            (new CastEvent(consumable, Player, Player, this, Timestamp, -1)).Execute();
         }
     }
-
-    private List<AuraEndEvent> ends = new();
 
     public CombatLog Run()
     {
         Queue.AddRange(Tactic.PreFight(this));
-
-        foreach (AuraEndEvent end in ends)
-            Queue.Add(end);
 
         Queue.Add(new SimulationEndEvent(this, Duration));
 

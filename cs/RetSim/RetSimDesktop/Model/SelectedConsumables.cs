@@ -159,7 +159,7 @@ namespace RetSimDesktop.Model
             }
             if (gnomishBattleChickenEnabled)
             {
-                if(gnomishBattleChickenCount == 1 && Spells.ContainsKey((int)GnomishBattleChicken.GnomishBattleChicken))
+                if (gnomishBattleChickenCount == 1 && Spells.ContainsKey((int)GnomishBattleChicken.GnomishBattleChicken))
                 {
                     result.Add(Spells[(int)GnomishBattleChicken.GnomishBattleChicken]);
                 }

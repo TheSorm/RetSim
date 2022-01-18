@@ -39,6 +39,8 @@ namespace RetSimDesktop.View
                 var maxDuration = input.Item1.EncounterSettings.MaxFightDurationMilliseconds;
 
                 var talents = input.Item1.SelectedTalents.GetTalentList();
+                var groupTalents = input.Item1.SelectedBuffs.GetGroupTalents();
+                groupTalents.AddRange(input.Item1.SelectedDebuffs.GetGroupTalents());
                 var buffs = input.Item1.SelectedBuffs.GetBuffs();
                 var debuffs = input.Item1.SelectedDebuffs.GetDebuffs();
                 var consumables = input.Item1.SelectedConsumables.GetConsumables();
@@ -89,6 +91,7 @@ namespace RetSimDesktop.View
                         Encounter = Collections.Bosses[encounterID],
                         PlayerEquipment = playerEquipment,
                         Talents = talents,
+                        GroupTalents = groupTalents,
                         Buffs = buffs,
                         Debuffs = debuffs,
                         Consumables = consumables,
@@ -123,7 +126,7 @@ namespace RetSimDesktop.View
             float overallDPS = 0;
             for (int i = 0; i < NumberOfSimulations; i++)
             {
-                FightSimulation fight = new(new Player("Brave Hero", Race, ShattrathFaction, PlayerEquipment, Talents), new Enemy(Encounter), new EliteTactic(), Buffs, Debuffs, Consumables, MinFightDuration, MaxFightDuration, Cooldowns, HeroismUsage);
+                FightSimulation fight = new(new Player("Brave Hero", Race, ShattrathFaction, PlayerEquipment, Talents), new Enemy(Encounter), new EliteTactic(), GroupTalents, Buffs, Debuffs, Consumables, MinFightDuration, MaxFightDuration, Cooldowns, HeroismUsage);
                 fight.Run();
                 overallDPS += fight.CombatLog.DPS;
                 Item.DPS = overallDPS / (i + 1);

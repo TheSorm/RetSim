@@ -39,6 +39,8 @@ namespace RetSimDesktop.View
                 Equipment playerEquipment = retSimUIModel.SelectedGear.GetEquipment();
                 var talents = retSimUIModel.SelectedTalents.GetTalentList();
                 var buffs = retSimUIModel.SelectedBuffs.GetBuffs();
+                var groupTalents = retSimUIModel.SelectedBuffs.GetGroupTalents();
+                groupTalents.AddRange(retSimUIModel.SelectedDebuffs.GetGroupTalents());
                 var debuffs = retSimUIModel.SelectedDebuffs.GetDebuffs();
                 var consumables = retSimUIModel.SelectedConsumables.GetConsumables();
                 var cooldowns = retSimUIModel.SelectedCooldowns.GetCooldowns();
@@ -76,6 +78,7 @@ namespace RetSimDesktop.View
                                 Encounter = Collections.Bosses[encounterID],
                                 PlayerEquipment = playerEquipment,
                                 Talents = talents,
+                                GroupTalents = groupTalents,
                                 Buffs = buffs,
                                 Debuffs = debuffs,
                                 Consumables = consumables,
@@ -98,6 +101,7 @@ namespace RetSimDesktop.View
                                 Encounter = Collections.Bosses[encounterID],
                                 PlayerEquipment = playerEquipment,
                                 Talents = talents,
+                                GroupTalents = groupTalents,
                                 Buffs = buffs,
                                 Debuffs = debuffs,
                                 Consumables = consumables,
@@ -157,10 +161,6 @@ namespace RetSimDesktop.View
                 var medianSimulation = combatLogs[(int)(numberOfSimulations / 2f)];
                 var maxSimulation = combatLogs[numberOfSimulations - 1];
 
-                minSimulation.CreateDamageBreakdown();
-                medianSimulation.CreateDamageBreakdown();
-                maxSimulation.CreateDamageBreakdown();
-
                 retSimUIModel.CurrentSimOutput.MinCombatLog = minSimulation;
                 retSimUIModel.CurrentSimOutput.MedianCombatLog = medianSimulation;
                 retSimUIModel.CurrentSimOutput.MaxCombatLog = maxSimulation;
@@ -184,7 +184,7 @@ namespace RetSimDesktop.View
         {
             for (int i = StartIndex; i < StartIndex + NumberOfSimulations; i++)
             {
-                FightSimulation fight = new(new Player("Brave Hero", Race, ShattrathFaction, PlayerEquipment, Talents), new Enemy(Encounter), new EliteTactic(), Buffs, Debuffs, Consumables, MinFightDuration, MaxFightDuration, Cooldowns, HeroismUsage);
+                FightSimulation fight = new(new Player("Brave Hero", Race, ShattrathFaction, PlayerEquipment, Talents), new Enemy(Encounter), new EliteTactic(), GroupTalents, Buffs, Debuffs, Consumables, MinFightDuration, MaxFightDuration, Cooldowns, HeroismUsage);
                 fight.Run();
                 CombatLogs[i] = fight.CombatLog;
             }

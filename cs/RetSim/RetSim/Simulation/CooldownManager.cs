@@ -1,6 +1,5 @@
 ﻿using RetSim.Simulation.Events;
 using RetSim.Spells;
-using System.Linq;
 
 namespace RetSim.Simulation
 {
@@ -80,7 +79,7 @@ namespace RetSim.Simulation
         {
             foreach (int cooldown in Cooldowns.Keys)
             {
-                int max = (int) Math.Ceiling(FightDuration / ((float)cooldown));
+                int max = (int)Math.Ceiling(FightDuration / ((float)cooldown));
                 int[] current = new int[max];
 
                 int defaultCount = 0;

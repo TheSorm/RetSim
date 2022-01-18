@@ -14,9 +14,9 @@ namespace RetSim.Simulation.EventQueues
                 while (low < high)
                 {
                     var mid = (low + high) >> 1;
-                    if (this[mid].CompareTo(e) >= 0) 
+                    if (this[mid].CompareTo(e) >= 0)
                         low = mid + 1;
-                    else 
+                    else
                         high = mid;
                 }
                 this.Insert(low, e);
@@ -45,7 +45,7 @@ namespace RetSim.Simulation.EventQueues
 
         public void EnsureSorting()
         {
-            
+
         }
 
         public bool IsEmpty()
