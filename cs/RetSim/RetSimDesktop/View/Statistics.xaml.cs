@@ -46,13 +46,34 @@ namespace RetSimDesktop
             DamageBreakdownTable.ItemsSource = DamageBreakdownMedianLog;
             AuraBreakdownTable.ItemsSource = AuraBreakdownMedianLog;
 
-            WpfPlot1.Configuration.Zoom = false;
-            WpfPlot1.Configuration.Pan = false;
-            WpfPlot1.Configuration.DoubleClickBenchmark = false;
+            DPSHistogram.Configuration.Zoom = false;
+            DPSHistogram.Configuration.Pan = false;
+            DPSHistogram.Configuration.DoubleClickBenchmark = false;
+            DPSHistogram.Configuration.LeftClickDragPan = false;
+            DPSHistogram.Configuration.LockHorizontalAxis = true;
+            DPSHistogram.MouseLeftButtonUp += (o, e) =>
+            {
+                if (DataContext is RetSimUIModel retSimUIModel && retSimUIModel.CurrentSimOutput.DpsResults != null)
+                    DPSHistogram.Plot.SetAxisLimits(yMin: 0, xMin: retSimUIModel.CurrentSimOutput.DpsResults[0]);
+            };
+            DPSHistogram.SizeChanged += (o, e) =>
+            {
+                if (DataContext is RetSimUIModel retSimUIModel && retSimUIModel.CurrentSimOutput.DpsResults != null)
+                    DPSHistogram.Plot.SetAxisLimits(yMin: 0, xMin: retSimUIModel.CurrentSimOutput.DpsResults[0]);
+            };
 
-            WpfPlot1.RightClicked -= WpfPlot1.DefaultRightClickEvent;
-            WpfPlot1.Plot.YAxis.Label("");
-            WpfPlot1.Plot.XAxis.Label("DPS");
+            DPSHistogram.RightClicked -= DPSHistogram.DefaultRightClickEvent;
+            DPSHistogram.Plot.YAxis.Label("");
+            DPSHistogram.Plot.XAxis.Label("DPS");
+
+            DPSGraph.Configuration.Zoom = false;
+            DPSGraph.Configuration.Pan = false;
+            DPSGraph.Configuration.DoubleClickBenchmark = false;
+
+            DPSGraph.RightClicked -= DPSGraph.DefaultRightClickEvent;
+            DPSGraph.Plot.YAxis.Label("Damage");
+            DPSGraph.Plot.XAxis.Label("Time");
+            DPSGraph.Plot.SetAxisLimits(yMin: 0, xMin: 0);
         }
 
         private void CurrentSimOutputChanged(object? sender, PropertyChangedEventArgs e)
@@ -95,15 +116,15 @@ namespace RetSimDesktop
                         (double[] counts, double[] binEdges) = ScottPlot.Statistics.Common.Histogram(retSimUIModel.CurrentSimOutput.DpsResults.ToArray(), min: min, max: max, binSize: 10);
                         double[] leftEdges = binEdges.Take(binEdges.Length - 1).ToArray();
 
-                        WpfPlot1.Plot.Clear();
-                        var bar = WpfPlot1.Plot.AddBar(values: counts, positions: leftEdges);
+                        DPSHistogram.Plot.Clear();
+                        var bar = DPSHistogram.Plot.AddBar(values: counts, positions: leftEdges);
                         bar.BarWidth = 10;
 
-                        WpfPlot1.Plot.YAxis.Label("");
-                        WpfPlot1.Plot.XAxis.Label("DPS");
-                        WpfPlot1.Plot.SetAxisLimits(yMin: 0);
+                        DPSHistogram.Plot.YAxis.Label("");
+                        DPSHistogram.Plot.XAxis.Label("DPS");
+                        DPSHistogram.Plot.SetAxisLimits(yMin: 0, xMin: min);
 
-                        WpfPlot1.Refresh();
+                        DPSHistogram.Refresh();
                     }
                 });
             }
@@ -247,26 +268,54 @@ namespace RetSimDesktop
         {
             if (DamageBreakdownSelection != null && DamageBreakdownSelection.SelectedValue != null)
             {
-                var value = DamageBreakdownSelection.SelectedValue.ToString();
+                if (DataContext is RetSimUIModel retSimUIModel)
+                {
+                    var value = DamageBreakdownSelection.SelectedValue.ToString();
+                    CombatLog newLog = new();
+                    if (value == "Min" && DamageBreakdownMinLog.Count > 0)
+                    {
+                        DamageBreakdownTable.ItemsSource = DamageBreakdownMinLog.GetRange(0, DamageBreakdownMinLog.Count - 1);
+                        DamageBreakdownTotalTable.ItemsSource = DamageBreakdownMinLog.GetRange(DamageBreakdownMinLog.Count - 1, 1);
+                        newLog = retSimUIModel.CurrentSimOutput.MinCombatLog;
+                    }
+                    else if (value == "Median" && DamageBreakdownMedianLog.Count > 0)
+                    {
+                        DamageBreakdownTable.ItemsSource = DamageBreakdownMedianLog.GetRange(0, DamageBreakdownMedianLog.Count - 1);
+                        DamageBreakdownTotalTable.ItemsSource = DamageBreakdownMedianLog.GetRange(DamageBreakdownMedianLog.Count - 1, 1);
+                        newLog = retSimUIModel.CurrentSimOutput.MedianCombatLog;
+                    }
+                    else if (value == "Max" && DamageBreakdownMaxLog.Count > 0)
+                    {
+                        DamageBreakdownTable.ItemsSource = DamageBreakdownMaxLog.GetRange(0, DamageBreakdownMaxLog.Count - 1);
+                        DamageBreakdownTotalTable.ItemsSource = DamageBreakdownMaxLog.GetRange(DamageBreakdownMaxLog.Count - 1, 1);
+                        newLog = retSimUIModel.CurrentSimOutput.MaxCombatLog;
+                    }
 
-                if (value == "Min" && DamageBreakdownMinLog.Count > 0)
-                {
-                    DamageBreakdownTable.ItemsSource = DamageBreakdownMinLog.GetRange(0, DamageBreakdownMinLog.Count - 1);
-                    DamageBreakdownTotalTable.ItemsSource = DamageBreakdownMinLog.GetRange(DamageBreakdownMinLog.Count - 1, 1);
+
+                    List<double> damage = new();
+                    List<double> time = new();
+
+                    double totalDamage = 0;
+                    foreach (DamageEntry entry in newLog.DamageLog)
+                    {
+                        totalDamage += entry.Damage;
+                        time.Add(entry.Timestamp / 1000f);
+                        damage.Add(totalDamage);
+                    }
+
+                    if (time.Count > 0)
+                    {
+                        DPSGraph.Plot.Clear();
+                        DPSGraph.Plot.AddScatter(time.ToArray(), damage.ToArray());
+
+                        DPSHistogram.Plot.SetAxisLimits(yMin: 0, xMin: 0);
+                        DPSGraph.Refresh();
+                    }
+
+                    DamageBreakdownTable.Items.Refresh();
+                    DamageBreakdownDamageColumn.SortDirection = ListSortDirection.Descending;
+                    DamageBreakdownTable.Items.SortDescriptions.Add(new SortDescription(DamageBreakdownDamageColumn.SortMemberPath, ListSortDirection.Descending));
                 }
-                else if (value == "Median" && DamageBreakdownMedianLog.Count > 0)
-                {
-                    DamageBreakdownTable.ItemsSource = DamageBreakdownMedianLog.GetRange(0, DamageBreakdownMedianLog.Count - 1);
-                    DamageBreakdownTotalTable.ItemsSource = DamageBreakdownMedianLog.GetRange(DamageBreakdownMedianLog.Count - 1, 1);
-                }
-                else if (value == "Max" && DamageBreakdownMaxLog.Count > 0)
-                {
-                    DamageBreakdownTable.ItemsSource = DamageBreakdownMaxLog.GetRange(0, DamageBreakdownMaxLog.Count - 1);
-                    DamageBreakdownTotalTable.ItemsSource = DamageBreakdownMaxLog.GetRange(DamageBreakdownMaxLog.Count - 1, 1);
-                }
-                DamageBreakdownTable.Items.Refresh();
-                DamageBreakdownDamageColumn.SortDirection = ListSortDirection.Descending;
-                DamageBreakdownTable.Items.SortDescriptions.Add(new SortDescription(DamageBreakdownDamageColumn.SortMemberPath, ListSortDirection.Descending));
             }
         }
 

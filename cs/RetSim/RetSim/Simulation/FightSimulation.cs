@@ -27,7 +27,7 @@ public class FightSimulation
     public int Timestamp { get; private set; }
     public bool Ongoing { get; set; }
 
-    public FightSimulation(Player player, Enemy enemy, Tactic tactic, List<Spell> groupTalents, List<Spell> buffs, List<Spell> debuffs, List<Spell> consumables, int minDuration, int maxDuration, List<Spell> cooldowns, List<int> heroisms)
+    public FightSimulation(Player player, Enemy enemy, Tactic tactic, List<Spell> spellModifiers, List<Spell> buffs, List<Spell> debuffs, List<Spell> consumables, int minDuration, int maxDuration, List<Spell> cooldowns, List<int> heroisms)
     {
         Player = player;
         Enemy = enemy;
@@ -41,7 +41,7 @@ public class FightSimulation
 
         Duration = RNG.RollRange(minDuration, maxDuration);
 
-        Initialize(groupTalents, buffs, debuffs, consumables);
+        Initialize(spellModifiers, buffs, debuffs, consumables);
 
         List<int> correctedHerosimTimes = new();
 
@@ -76,7 +76,7 @@ public class FightSimulation
         }
     }
 
-    public void Initialize(List<Spell> groupTalents, List<Spell> buffs, List<Spell> debuffs, List<Spell> consumables)
+    public void Initialize(List<Spell> spellModifiers, List<Spell> buffs, List<Spell> debuffs, List<Spell> consumables)
     {
         Timestamp = -1;
 
@@ -88,9 +88,9 @@ public class FightSimulation
         if (Player.Race.Racial != null && Player.Race.Racial.Requirements(Player))
             (new CastEvent(Player.Race.Racial, Player, Player, this, Timestamp, -1)).Execute();
 
-        foreach (Spell groupTalent in groupTalents)
+        foreach (Spell spellModifier in spellModifiers)
         {
-            (new CastEvent(groupTalent, Player, Player, this, Timestamp, -1)).Execute();
+            (new CastEvent(spellModifier, Player, Player, this, Timestamp, -1)).Execute();
         }
 
         foreach (Talent talent in Player.Talents)
