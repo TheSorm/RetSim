@@ -178,7 +178,7 @@
                                         </ComboBox.ItemsSource>
                                     </ComboBox>
                                 </Grid>
-                             </CheckBox>
+                            </CheckBox>
                             <CheckBox Margin="0,2,0,2" VerticalContentAlignment="Center" HorizontalContentAlignment="Stretch" IsChecked="{Binding SelectedTalents.DivineIntellectEnabled}">
                                 <Grid>
                                     <Grid.ColumnDefinitions>
@@ -580,8 +580,8 @@
                                         <ColumnDefinition Width="10"/>
                                         <ColumnDefinition Width="40"/>
                                     </Grid.ColumnDefinitions>
-                                    <Label Margin="0" Padding="0" VerticalAlignment="Center" Content="Gnomish Battle Chicken"/>
-                                    <ComboBox Grid.Column="2" SelectedItem="{Binding SelectedConsumables.GnomishBattleChickenCount}">
+                                    <Label Padding="0" VerticalAlignment="Center" Content="Gnomish Battle Chicken" Grid.ColumnSpan="2" Height="15"/>
+                                    <ComboBox Grid.Column="2" SelectedItem="{Binding SelectedConsumables.GnomishBattleChickenCount}" Margin="5,1,0,0">
                                         <ComboBox.ItemsSource>
                                             <x:Array Type="{x:Type sys:Int32}">
                                                 <sys:Int32>1</sys:Int32>
