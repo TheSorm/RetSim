@@ -10,7 +10,21 @@
              d:DesignHeight="450" d:DesignWidth="800">
     <TabControl>
         <TabItem Header="Overview">
-            <WpfPlot Name="DPSHistogram"/>
+            <Grid Background="White" MinHeight="100" Margin="5,0,5,5">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <WpfPlot Name="DPSHistogram"/>
+                <Grid Background="White" Grid.Row="1" MinHeight="100" Margin="5,0,5,5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <WpfPlot Name="DamageShart"/>
+                    <WpfPlot Grid.Column="1" Name="AuraShart"/>
+                </Grid>
+            </Grid>
         </TabItem>
         <TabItem Header="Damage Breakdown">
             <StackPanel Background="White">                    

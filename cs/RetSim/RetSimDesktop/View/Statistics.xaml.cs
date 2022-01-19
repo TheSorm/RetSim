@@ -2,6 +2,7 @@
 using RetSim.Simulation;
 using RetSim.Simulation.CombatLogEntries;
 using RetSimDesktop.ViewModel;
+using ScottPlot;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -54,12 +55,12 @@ namespace RetSimDesktop
             DPSHistogram.MouseLeftButtonUp += (o, e) =>
             {
                 if (DataContext is RetSimUIModel retSimUIModel && retSimUIModel.CurrentSimOutput.DpsResults != null)
-                    DPSHistogram.Plot.SetAxisLimits(yMin: 0, xMin: retSimUIModel.CurrentSimOutput.DpsResults[0]);
+                    DPSHistogram.Plot.SetAxisLimits(yMin: 0, xMin: retSimUIModel.CurrentSimOutput.DpsResults[0], xMax: retSimUIModel.CurrentSimOutput.DpsResults[^1]);
             };
             DPSHistogram.SizeChanged += (o, e) =>
             {
                 if (DataContext is RetSimUIModel retSimUIModel && retSimUIModel.CurrentSimOutput.DpsResults != null)
-                    DPSHistogram.Plot.SetAxisLimits(yMin: 0, xMin: retSimUIModel.CurrentSimOutput.DpsResults[0]);
+                    DPSHistogram.Plot.SetAxisLimits(yMin: 0, xMin: retSimUIModel.CurrentSimOutput.DpsResults[0], xMax: retSimUIModel.CurrentSimOutput.DpsResults[^1]);
             };
 
             DPSHistogram.RightClicked -= DPSHistogram.DefaultRightClickEvent;
@@ -74,42 +75,121 @@ namespace RetSimDesktop
             DPSGraph.Plot.YAxis.Label("Damage");
             DPSGraph.Plot.XAxis.Label("Time");
             DPSGraph.Plot.SetAxisLimits(yMin: 0, xMin: 0);
+
+            DamageShart.Configuration.Zoom = false;
+            DamageShart.Configuration.Pan = false;
+            DamageShart.Configuration.DoubleClickBenchmark = false;
+            DamageShart.RightClicked -= DamageShart.DefaultRightClickEvent;
+            DamageShart.Visibility = System.Windows.Visibility.Hidden;
+
+            AuraShart.Configuration.Zoom = false;
+            AuraShart.Configuration.Pan = false;
+            AuraShart.Configuration.DoubleClickBenchmark = false;
+            AuraShart.RightClicked -= AuraShart.DefaultRightClickEvent;
+            AuraShart.Visibility = System.Windows.Visibility.Hidden;
+
         }
 
         private void CurrentSimOutputChanged(object? sender, PropertyChangedEventArgs e)
         {
-            if (e.PropertyName == "MinCombatLog" || e.PropertyName == "MedianCombatLog" || e.PropertyName == "MaxCombatLog")
+            DamageBreakdownTable.Dispatcher.Invoke(() =>
             {
-                DamageBreakdownTable.Dispatcher.Invoke(() =>
-                {
-                    if (DataContext is RetSimUIModel retSimUIModel)
+            if (DataContext is RetSimUIModel retSimUIModel)
+            {
+                    if (e.PropertyName == "MinCombatLog" || e.PropertyName == "MaxCombatLog")
                     {
+
                         retSimUIModel.CurrentSimOutput.MinCombatLog.CreateDamageBreakdown();
-                        retSimUIModel.CurrentSimOutput.MedianCombatLog.CreateDamageBreakdown();
                         retSimUIModel.CurrentSimOutput.MaxCombatLog.CreateDamageBreakdown();
 
                         DamageBreakdownMinLog = CreateDamageBreakdown(retSimUIModel.CurrentSimOutput.MinCombatLog);
-                        DamageBreakdownMedianLog = CreateDamageBreakdown(retSimUIModel.CurrentSimOutput.MedianCombatLog);
                         DamageBreakdownMaxLog = CreateDamageBreakdown(retSimUIModel.CurrentSimOutput.MaxCombatLog);
 
                         retSimUIModel.CurrentSimOutput.MinCombatLog.CreateAuraBreakDown();
-                        retSimUIModel.CurrentSimOutput.MedianCombatLog.CreateAuraBreakDown();
                         retSimUIModel.CurrentSimOutput.MaxCombatLog.CreateAuraBreakDown();
 
                         AuraBreakdownMinLog = CreateAuraBreakdown(retSimUIModel.CurrentSimOutput.MinCombatLog);
-                        AuraBreakdownMedianLog = CreateAuraBreakdown(retSimUIModel.CurrentSimOutput.MedianCombatLog);
                         AuraBreakdownMaxLog = CreateAuraBreakdown(retSimUIModel.CurrentSimOutput.MaxCombatLog);
 
                         DamageBreakdownSelection_SelectionChanged(null, null);
                         AuraBreakdownSelection_SelectionChanged(null, null);
+
                     }
-                });
-            }
-            else if (e.PropertyName == "DpsResults")
-            {
-                DamageBreakdownTable.Dispatcher.Invoke(() =>
-                {
-                    if (DataContext is RetSimUIModel retSimUIModel)
+                    else if (e.PropertyName == "MedianCombatLog")
+                    {
+                        retSimUIModel.CurrentSimOutput.MedianCombatLog.CreateDamageBreakdown();
+                        DamageBreakdownMedianLog = CreateDamageBreakdown(retSimUIModel.CurrentSimOutput.MedianCombatLog);
+                        retSimUIModel.CurrentSimOutput.MedianCombatLog.CreateAuraBreakDown();
+                        AuraBreakdownMedianLog = CreateAuraBreakdown(retSimUIModel.CurrentSimOutput.MedianCombatLog);
+                        AuraBreakdownMedianLog.Sort((a, b) => b.Uptime.CompareTo(a.Uptime));
+
+                        if (DamageBreakdownSelection.SelectedValue.ToString() == "Median")
+                        {
+                            DamageBreakdownSelection_SelectionChanged(null, null);
+                        }
+                        if(AuraBreakdownSelection.SelectedValue.ToString() == "Median")
+                        {
+                            AuraBreakdownSelection_SelectionChanged(null, null);
+                        }
+
+                        DamageShart.Plot.Clear();
+                        List<double> damage = new();
+                        List<string> damageLabels = new();
+                        for (int i = 0; i < DamageBreakdownMedianLog.Count - 1; i++)
+                        {
+                            damage.Add(DamageBreakdownMedianLog[i].Damage);
+                            damageLabels.Add(DamageBreakdownMedianLog[i].AbilityName);
+                        }
+
+                        var DamageShartPie = DamageShart.Plot.AddPie(damage.ToArray());
+                        DamageShartPie.ShowPercentages = true;
+                        DamageShartPie.SliceLabels = damageLabels.ToArray();
+                        DamageShart.Plot.Legend();
+                        DamageShart.Refresh();
+
+                        AuraShart.Plot.Clear();
+                        List<double[]> uptime = new();
+                        List<double[]> errors = new();
+                        List<string> uptimeLabels = new();
+                        for (int i = 0; i < AuraBreakdownMedianLog.Count; i++)
+                        {
+                            if(AuraBreakdownMedianLog[i].UptimePercentage == 100 && AuraBreakdownMedianLog[i].Count == 1)
+                            {
+                                continue;
+                            }
+                            uptime.Add(new double[] { AuraBreakdownMedianLog[i].UptimePercentage });
+                            errors.Add(new double[] { 0 });
+                            uptimeLabels.Add(AuraBreakdownMedianLog[i].AuraName);
+                        }
+
+                        var bars = AuraShart.Plot.AddBarGroups(new string[] {""}, uptimeLabels.ToArray(), uptime.ToArray(), errors.ToArray());
+                        var legend = AuraShart.Plot.Legend(location: Alignment.UpperRight);
+                        legend.FontSize = 10;
+                        legend.ReverseOrder = true;
+                        foreach(var bar in bars)
+                        {
+                            bar.Orientation = ScottPlot.Orientation.Horizontal;
+                        }
+
+                        double[] xPositions = { 0, 25, 50, 75, 100 };
+                        string[] xLabels = { "0%", "25%", "50%", "75%", "100%" };
+                        AuraShart.Plot.XAxis.ManualTickPositions(xPositions, xLabels);
+
+                        AuraShart.Plot.SetAxisLimits(xMin: 0);
+                        AuraShart.Plot.XAxis.Ticks(true);
+                        AuraShart.Plot.XAxis.MajorGrid(enable: false);
+                        AuraShart.Plot.YAxis.Ticks(false);
+                        AuraShart.Plot.YAxis.MajorGrid(enable: false);
+                        AuraShart.Plot.YAxis2.Line(false);
+                        AuraShart.Plot.XAxis2.Line(false);
+                        AuraShart.Refresh();
+
+
+                        DamageShart.Visibility = System.Windows.Visibility.Visible;
+                        AuraShart.Visibility = System.Windows.Visibility.Visible;
+
+                    }
+                    else if (e.PropertyName == "DpsResults")
                     {
                         double min = retSimUIModel.CurrentSimOutput.DpsResults[0];
                         double max = retSimUIModel.CurrentSimOutput.DpsResults[^1];
@@ -122,12 +202,12 @@ namespace RetSimDesktop
 
                         DPSHistogram.Plot.YAxis.Label("");
                         DPSHistogram.Plot.XAxis.Label("DPS");
-                        DPSHistogram.Plot.SetAxisLimits(yMin: 0, xMin: min);
+                        DPSHistogram.Plot.SetAxisLimits(yMin: 0, xMin: min, xMax: max);
 
                         DPSHistogram.Refresh();
                     }
-                });
-            }
+                }
+            });
         }
 
         private static List<DamageBreakdownElement> CreateDamageBreakdown(CombatLog log)
