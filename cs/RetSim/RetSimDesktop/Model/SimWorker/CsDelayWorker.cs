@@ -45,6 +45,8 @@ namespace RetSimDesktop.Model
                 var debuffs = retSimUIModel.SelectedDebuffs.GetDebuffs();
                 var consumables = retSimUIModel.SelectedConsumables.GetConsumables();
                 var cooldowns = retSimUIModel.SelectedCooldowns.GetCooldowns();
+                var delayElements = retSimUIModel.DisplayCsDelay;
+
                 List<int> heroismUsage = new();
                 if (retSimUIModel.SelectedBuffs.HeroismEnabled)
                 {
@@ -77,7 +79,7 @@ namespace RetSimDesktop.Model
                 baseDps /= numberOfSimulations;
                 retSimUIModel.DisplayCsDelay[0].DpsDelta = baseDps;
 
-                foreach (var item in retSimUIModel.DisplayCsDelay)
+                foreach (var item in delayElements)
                 {
                     if (item.Delay == 0 || !item.EnabledForCsDelay)
                     {

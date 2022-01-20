@@ -12,6 +12,7 @@ namespace RetSimDesktop
     public partial class CsDelay : UserControl
     {
         private static CsDelayWorker csDelayWorker = new();
+        private DisplayWeapon? currentWeapon;
         public CsDelay()
         {
             InitializeComponent();
@@ -21,6 +22,7 @@ namespace RetSimDesktop
                 if (DataContext is RetSimUIModel retSimUIModel)
                 {
                     retSimUIModel.SelectedGear.PropertyChanged += SelectedGearChanged;
+                    retSimUIModel.SimButtonStatus.PropertyChanged += SelectedGearChanged;
                     SelectedGearChanged(this, new("SelectedWeapon"));
                 }
             };
@@ -28,11 +30,12 @@ namespace RetSimDesktop
 
         private void SelectedGearChanged(object? sender, PropertyChangedEventArgs e)
         {
-            if (e.PropertyName == "SelectedWeapon")
+            if (e.PropertyName == "SelectedWeapon" || e.PropertyName == "IsSimButtonEnabled")
             {
                 csDelayGrid.Dispatcher.Invoke(() =>
                 {
-                    if (DataContext is RetSimUIModel retSimUIModel && retSimUIModel.SelectedGear.SelectedWeapon != null)
+                    if (DataContext is RetSimUIModel retSimUIModel && retSimUIModel.SelectedGear.SelectedWeapon != null
+                    && retSimUIModel.SimButtonStatus.IsSimButtonEnabled && currentWeapon != retSimUIModel.SelectedGear.SelectedWeapon)
                     {
                         retSimUIModel.DisplayCsDelay.Clear();
 
@@ -42,6 +45,7 @@ namespace RetSimDesktop
                         }
 
                         csDelayGrid.Items.Refresh();
+                        currentWeapon = retSimUIModel.SelectedGear.SelectedWeapon;
                     }
 
                 });
