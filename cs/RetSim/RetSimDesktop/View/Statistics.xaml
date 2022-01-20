@@ -21,8 +21,8 @@
                         <ColumnDefinition Width="*" />
                         <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
-                    <WpfPlot Name="DamageShart"/>
-                    <WpfPlot Grid.Column="1" Name="AuraShart"/>
+                    <WpfPlot Name="DamageChart"/>
+                    <WpfPlot Grid.Column="1" Name="AuraChart"/>
                 </Grid>
             </Grid>
         </TabItem>

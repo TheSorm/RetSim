@@ -5,6 +5,7 @@ using RetSimDesktop.ViewModel;
 using ScottPlot;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Drawing;
 using System.Linq;
 using System.Windows.Controls;
 
@@ -67,26 +68,26 @@ namespace RetSimDesktop
             DPSHistogram.Plot.YAxis.Label("");
             DPSHistogram.Plot.XAxis.Label("DPS");
 
-            DPSGraph.Configuration.Zoom = false;
-            DPSGraph.Configuration.Pan = false;
+            DPSGraph.Configuration.Zoom = true;
+            DPSGraph.Configuration.Pan = true;
+            DPSGraph.ClipToBounds = true;
             DPSGraph.Configuration.DoubleClickBenchmark = false;
 
-            DPSGraph.RightClicked -= DPSGraph.DefaultRightClickEvent;
             DPSGraph.Plot.YAxis.Label("Damage");
             DPSGraph.Plot.XAxis.Label("Time");
             DPSGraph.Plot.SetAxisLimits(yMin: 0, xMin: 0);
 
-            DamageShart.Configuration.Zoom = false;
-            DamageShart.Configuration.Pan = false;
-            DamageShart.Configuration.DoubleClickBenchmark = false;
-            DamageShart.RightClicked -= DamageShart.DefaultRightClickEvent;
-            DamageShart.Visibility = System.Windows.Visibility.Hidden;
+            DamageChart.Configuration.Zoom = false;
+            DamageChart.Configuration.Pan = false;
+            DamageChart.Configuration.DoubleClickBenchmark = false;
+            DamageChart.RightClicked -= DamageChart.DefaultRightClickEvent;
+            DamageChart.Visibility = System.Windows.Visibility.Hidden;
 
-            AuraShart.Configuration.Zoom = false;
-            AuraShart.Configuration.Pan = false;
-            AuraShart.Configuration.DoubleClickBenchmark = false;
-            AuraShart.RightClicked -= AuraShart.DefaultRightClickEvent;
-            AuraShart.Visibility = System.Windows.Visibility.Hidden;
+            AuraChart.Configuration.Zoom = false;
+            AuraChart.Configuration.Pan = false;
+            AuraChart.Configuration.DoubleClickBenchmark = false;
+            AuraChart.RightClicked -= AuraChart.DefaultRightClickEvent;
+            AuraChart.Visibility = System.Windows.Visibility.Hidden;
 
         }
 
@@ -132,7 +133,7 @@ namespace RetSimDesktop
                             AuraBreakdownSelection_SelectionChanged(null, null);
                         }
 
-                        DamageShart.Plot.Clear();
+                        DamageChart.Plot.Clear();
                         List<double> damage = new();
                         List<string> damageLabels = new();
                         for (int i = 0; i < DamageBreakdownMedianLog.Count - 1; i++)
@@ -141,13 +142,13 @@ namespace RetSimDesktop
                             damageLabels.Add(DamageBreakdownMedianLog[i].AbilityName);
                         }
 
-                        var DamageShartPie = DamageShart.Plot.AddPie(damage.ToArray());
-                        DamageShartPie.ShowPercentages = true;
-                        DamageShartPie.SliceLabels = damageLabels.ToArray();
-                        DamageShart.Plot.Legend();
-                        DamageShart.Refresh();
+                        var DamageChartPie = DamageChart.Plot.AddPie(damage.ToArray());
+                        DamageChartPie.ShowPercentages = true;
+                        DamageChartPie.SliceLabels = damageLabels.ToArray();
+                        DamageChart.Plot.Legend();
+                        DamageChart.Refresh();
 
-                        AuraShart.Plot.Clear();
+                        AuraChart.Plot.Clear();
                         List<double[]> uptime = new();
                         List<double[]> errors = new();
                         List<string> uptimeLabels = new();
@@ -162,8 +163,8 @@ namespace RetSimDesktop
                             uptimeLabels.Add(AuraBreakdownMedianLog[i].AuraName);
                         }
 
-                        var bars = AuraShart.Plot.AddBarGroups(new string[] {""}, uptimeLabels.ToArray(), uptime.ToArray(), errors.ToArray());
-                        var legend = AuraShart.Plot.Legend(location: Alignment.UpperRight);
+                        var bars = AuraChart.Plot.AddBarGroups(new string[] {""}, uptimeLabels.ToArray(), uptime.ToArray(), errors.ToArray());
+                        var legend = AuraChart.Plot.Legend(location: Alignment.UpperRight);
                         legend.FontSize = 10;
                         legend.ReverseOrder = true;
                         foreach(var bar in bars)
@@ -173,20 +174,20 @@ namespace RetSimDesktop
 
                         double[] xPositions = { 0, 25, 50, 75, 100 };
                         string[] xLabels = { "0%", "25%", "50%", "75%", "100%" };
-                        AuraShart.Plot.XAxis.ManualTickPositions(xPositions, xLabels);
+                        AuraChart.Plot.XAxis.ManualTickPositions(xPositions, xLabels);
 
-                        AuraShart.Plot.SetAxisLimits(xMin: 0);
-                        AuraShart.Plot.XAxis.Ticks(true);
-                        AuraShart.Plot.XAxis.MajorGrid(enable: false);
-                        AuraShart.Plot.YAxis.Ticks(false);
-                        AuraShart.Plot.YAxis.MajorGrid(enable: false);
-                        AuraShart.Plot.YAxis2.Line(false);
-                        AuraShart.Plot.XAxis2.Line(false);
-                        AuraShart.Refresh();
+                        AuraChart.Plot.SetAxisLimits(xMin: 0);
+                        AuraChart.Plot.XAxis.Ticks(true);
+                        AuraChart.Plot.XAxis.MajorGrid(enable: false);
+                        AuraChart.Plot.YAxis.Ticks(false);
+                        AuraChart.Plot.YAxis.MajorGrid(enable: false);
+                        AuraChart.Plot.YAxis2.Line(false);
+                        AuraChart.Plot.XAxis2.Line(false);
+                        AuraChart.Refresh();
 
 
-                        DamageShart.Visibility = System.Windows.Visibility.Visible;
-                        AuraShart.Visibility = System.Windows.Visibility.Visible;
+                        DamageChart.Visibility = System.Windows.Visibility.Visible;
+                        AuraChart.Visibility = System.Windows.Visibility.Visible;
 
                     }
                     else if (e.PropertyName == "DpsResults")
@@ -372,23 +373,55 @@ namespace RetSimDesktop
                     }
 
 
-                    List<double> damage = new();
-                    List<double> time = new();
+                    List<double> damage;
+                    List<double> time;
 
                     double totalDamage = 0;
+
+                    if (newLog.DamageLog.Count > 0)
+                    {
+                        damage = new() { 0, 0 };
+                        time = new() { 0, newLog.DamageLog[0].Timestamp / 1000.0 };
+                    }
+
+                    else
+                    {
+                        damage = new();
+                        time = new();
+                    }                   
+
                     foreach (DamageEntry entry in newLog.DamageLog)
                     {
-                        totalDamage += entry.Damage;
-                        time.Add(entry.Timestamp / 1000f);
+                        totalDamage += entry.Damage;                        
+                        time.Add(entry.Timestamp / 1000.0);
                         damage.Add(totalDamage);
                     }
 
                     if (time.Count > 0)
                     {
                         DPSGraph.Plot.Clear();
-                        DPSGraph.Plot.AddScatter(time.ToArray(), damage.ToArray());
+                        DPSGraph.Plot.AddScatterStep(time.ToArray(), damage.ToArray());
+                        DPSGraph.Plot.AddScatterPoints(time.ToArray(), damage.ToArray(), Color.Blue, 5, Marker.FilledSquare);
 
                         DPSHistogram.Plot.SetAxisLimits(yMin: 0, xMin: 0);
+                        DPSGraph.Plot.SetOuterViewLimits(yMin: -100, xMin: 0, yMax: totalDamage * 1.1, xMax: time[^1]);
+
+                        //I tried adding tooltips, didn't go great
+
+                        //for (int i = 0; i < time.Count; i++)
+                        //{
+                        //    double pointDamage = damage[i];
+
+                        //    if (pointDamage == 0)
+                        //        continue;
+
+                        //    double pointTime = time[i];
+
+                        //    DPSGraph.Plot.AddTooltip($"{pointDamage} damage at {pointTime}", pointTime, pointDamage);
+
+                        //}
+
+                       
                         DPSGraph.Refresh();
                     }
 
