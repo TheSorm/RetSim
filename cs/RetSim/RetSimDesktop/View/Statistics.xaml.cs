@@ -3,11 +3,13 @@ using RetSim.Simulation;
 using RetSim.Simulation.CombatLogEntries;
 using RetSimDesktop.ViewModel;
 using ScottPlot;
+using ScottPlot.Plottable;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Controls;
+using System.Windows.Input;
 
 namespace RetSimDesktop
 {
@@ -73,6 +75,9 @@ namespace RetSimDesktop
             DPSGraph.ClipToBounds = true;
             DPSGraph.Configuration.DoubleClickBenchmark = false;
 
+            DPSGraph.MouseMove += DPSGraph_MouseMove;
+            DPSGraph.MouseLeave += DPSGraph_MouseLeave;
+
             DPSGraph.Plot.YAxis.Label("Damage");
             DPSGraph.Plot.XAxis.Label("Time");
             DPSGraph.Plot.SetAxisLimits(yMin: 0, xMin: 0);
@@ -95,8 +100,8 @@ namespace RetSimDesktop
         {
             DamageBreakdownTable.Dispatcher.Invoke(() =>
             {
-            if (DataContext is RetSimUIModel retSimUIModel)
-            {
+                if (DataContext is RetSimUIModel retSimUIModel)
+                {
                     if (e.PropertyName == "MinCombatLog" || e.PropertyName == "MaxCombatLog")
                     {
 
@@ -128,7 +133,7 @@ namespace RetSimDesktop
                         {
                             DamageBreakdownSelection_SelectionChanged(null, null);
                         }
-                        if(AuraBreakdownSelection.SelectedValue.ToString() == "Median")
+                        if (AuraBreakdownSelection.SelectedValue.ToString() == "Median")
                         {
                             AuraBreakdownSelection_SelectionChanged(null, null);
                         }
@@ -154,7 +159,7 @@ namespace RetSimDesktop
                         List<string> uptimeLabels = new();
                         for (int i = 0; i < AuraBreakdownMedianLog.Count; i++)
                         {
-                            if(AuraBreakdownMedianLog[i].UptimePercentage == 100 && AuraBreakdownMedianLog[i].Count == 1)
+                            if (AuraBreakdownMedianLog[i].UptimePercentage == 100 && AuraBreakdownMedianLog[i].Count == 1)
                             {
                                 continue;
                             }
@@ -163,11 +168,11 @@ namespace RetSimDesktop
                             uptimeLabels.Add(AuraBreakdownMedianLog[i].AuraName);
                         }
 
-                        var bars = AuraChart.Plot.AddBarGroups(new string[] {""}, uptimeLabels.ToArray(), uptime.ToArray(), errors.ToArray());
+                        var bars = AuraChart.Plot.AddBarGroups(new string[] { "" }, uptimeLabels.ToArray(), uptime.ToArray(), errors.ToArray());
                         var legend = AuraChart.Plot.Legend(location: Alignment.UpperRight);
                         legend.FontSize = 10;
                         legend.ReverseOrder = true;
-                        foreach(var bar in bars)
+                        foreach (var bar in bars)
                         {
                             bar.Orientation = ScottPlot.Orientation.Horizontal;
                         }
@@ -345,6 +350,12 @@ namespace RetSimDesktop
             return result;
         }
 
+        CombatLog newLog = new();
+
+        ScatterPlot scatterPlot;
+        MarkerPlot highlight;
+        Tooltip tooltip;
+
         private void DamageBreakdownSelection_SelectionChanged(object? sender, SelectionChangedEventArgs? e)
         {
             if (DamageBreakdownSelection != null && DamageBreakdownSelection.SelectedValue != null)
@@ -352,7 +363,7 @@ namespace RetSimDesktop
                 if (DataContext is RetSimUIModel retSimUIModel)
                 {
                     var value = DamageBreakdownSelection.SelectedValue.ToString();
-                    CombatLog newLog = new();
+
                     if (value == "Min" && DamageBreakdownMinLog.Count > 0)
                     {
                         DamageBreakdownTable.ItemsSource = DamageBreakdownMinLog.GetRange(0, DamageBreakdownMinLog.Count - 1);
@@ -388,11 +399,11 @@ namespace RetSimDesktop
                     {
                         damage = new();
                         time = new();
-                    }                   
+                    }
 
                     foreach (DamageEntry entry in newLog.DamageLog)
                     {
-                        totalDamage += entry.Damage;                        
+                        totalDamage += entry.Damage;
                         time.Add(entry.Timestamp / 1000.0);
                         damage.Add(totalDamage);
                     }
@@ -401,27 +412,20 @@ namespace RetSimDesktop
                     {
                         DPSGraph.Plot.Clear();
                         DPSGraph.Plot.AddScatterStep(time.ToArray(), damage.ToArray());
-                        DPSGraph.Plot.AddScatterPoints(time.ToArray(), damage.ToArray(), Color.Blue, 5, Marker.FilledSquare);
+                        scatterPlot = DPSGraph.Plot.AddScatterPoints(time.ToArray(), damage.ToArray(), Color.Blue, 5, Marker.FilledSquare);
 
                         DPSHistogram.Plot.SetAxisLimits(yMin: 0, xMin: 0);
-                        DPSGraph.Plot.SetOuterViewLimits(yMin: -100, xMin: 0, yMax: totalDamage * 1.1, xMax: time[^1]);
+                        DPSGraph.Plot.SetOuterViewLimits(yMin: -totalDamage * 0.1, xMin: -2, yMax: totalDamage * 1.1, xMax: time[^1] + 2);
 
-                        //I tried adding tooltips, didn't go great
+                        highlight = DPSGraph.Plot.AddPoint(0, 0);
+                        highlight.Color = Color.Red;
+                        highlight.MarkerSize = 8;
+                        highlight.MarkerShape = MarkerShape.openSquare;
+                        highlight.IsVisible = false;
 
-                        //for (int i = 0; i < time.Count; i++)
-                        //{
-                        //    double pointDamage = damage[i];
+                        tooltip = DPSGraph.Plot.AddTooltip("Test", 0, 0);
+                        tooltip.IsVisible = false;
 
-                        //    if (pointDamage == 0)
-                        //        continue;
-
-                        //    double pointTime = time[i];
-
-                        //    DPSGraph.Plot.AddTooltip($"{pointDamage} damage at {pointTime}", pointTime, pointDamage);
-
-                        //}
-
-                       
                         DPSGraph.Refresh();
                     }
 
@@ -430,6 +434,51 @@ namespace RetSimDesktop
                     DamageBreakdownTable.Items.SortDescriptions.Add(new SortDescription(DamageBreakdownDamageColumn.SortMemberPath, ListSortDirection.Descending));
                 }
             }
+        }
+
+        int lastIndex;
+
+        private void DPSGraph_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (scatterPlot == null)
+                return;
+
+            (double mouseCoordX, double mouseCoordY) = DPSGraph.GetMouseCoordinates();
+            double xyRatio = DPSGraph.Plot.XAxis.Dims.PxPerUnit / DPSGraph.Plot.YAxis.Dims.PxPerUnit;
+            (double pointX, double pointY, int pointIndex) = scatterPlot.GetPointNearest(mouseCoordX, mouseCoordY, xyRatio);
+
+            if (pointIndex <= 1)
+                return;
+
+            if (lastIndex != pointIndex || !tooltip.IsVisible)
+            {
+                tooltip.X = pointX;
+                tooltip.Y = pointY;
+                tooltip.Label = newLog.DamageLog[pointIndex - 2].ToString();
+                tooltip.IsVisible = true;
+
+
+                highlight.X = pointX;
+                highlight.Y = pointY;
+                highlight.IsVisible = true;
+
+
+                lastIndex = pointIndex;
+
+                DPSGraph.Refresh();
+            }
+        }
+
+        private void DPSGraph_MouseLeave(object sender, MouseEventArgs e)
+        {
+            if (scatterPlot != null)
+            {
+                tooltip.IsVisible = false;
+                highlight.IsVisible = false;
+
+                DPSGraph.Refresh();
+            }
+
         }
 
         private void AuraBreakdownSelection_SelectionChanged(object sender, SelectionChangedEventArgs e)
