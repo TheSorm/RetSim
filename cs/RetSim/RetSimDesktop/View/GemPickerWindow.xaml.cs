@@ -16,7 +16,7 @@ namespace RetSimDesktop
     public partial class GemPickerWindow : Window
     {
         public Gem? SelectedGem { get; set; }
-        public GemPickerWindow(IEnumerable<Gem> gemList, Gem selectedGem)
+        public GemPickerWindow(IEnumerable<Gem> gemList, Gem selectedGem, bool meta = false)
         {
             InitializeComponent();
 
@@ -42,18 +42,18 @@ namespace RetSimDesktop
             HitColumn.Binding = hitBinding;
             Binding staBinding = new("Stats[" + StatName.Stamina + "]");
             staBinding.Converter = statConverter;
-            StaColumn.Binding = staBinding;
-            Binding intBinding = new("Stats[" + StatName.Intellect + "]");
-            intBinding.Converter = statConverter;
-            IntColumn.Binding = intBinding;
+            StaColumn.Binding = staBinding;           
             Binding mp5Binding = new("Stats[" + StatName.ManaPer5 + "]");
             mp5Binding.Converter = statConverter;
             MP5Column.Binding = mp5Binding;
             Binding spBinding = new("Stats[" + StatName.SpellPower + "]");
             spBinding.Converter = statConverter;
 
-            ColorColumn.SortDirection = ListSortDirection.Ascending;
-            gemGrid.Items.SortDescriptions.Add(new SortDescription(ColorColumn.SortMemberPath, ListSortDirection.Ascending));
+            if (meta)
+            {
+                NameColumn.SortDirection = ListSortDirection.Ascending;
+                gemGrid.Items.SortDescriptions.Add(new SortDescription(NameColumn.SortMemberPath, ListSortDirection.Ascending));
+            }
         }
 
         private void GemGrid_PreviewMouseDown(object sender, MouseButtonEventArgs e)

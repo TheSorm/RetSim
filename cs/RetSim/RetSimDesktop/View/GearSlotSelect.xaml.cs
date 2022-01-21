@@ -202,11 +202,11 @@ namespace RetSimDesktop
                                 GemPickerWindow gemPicker;
                                 if (selectedSocket.Color == SocketColor.Meta)
                                 {
-                                    gemPicker = new(RetSim.Data.Items.MetaGems.Values, selectedSocket.SocketedGem);
+                                    gemPicker = new(RetSim.Data.Items.MetaGems.Values, selectedSocket.SocketedGem, true);
                                 }
                                 else
                                 {
-                                    gemPicker = new(RetSim.Data.Items.Gems.Values, selectedSocket.SocketedGem);
+                                    gemPicker = new(RetSim.Data.Items.GemsSorted, selectedSocket.SocketedGem);
                                 }
 
                                 retSimUIModel.TooltipSettings.HoverItemID = 0;

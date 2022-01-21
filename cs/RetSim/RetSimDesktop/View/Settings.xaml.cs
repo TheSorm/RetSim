@@ -33,26 +33,26 @@ namespace RetSimDesktop
 
         private void RedSocketSelect_Click(object sender, RoutedEventArgs e)
         {
-            SelectGemForSocketColor(SocketColor.Red, RetSim.Data.Items.Gems.Values);
+            SelectGemForSocketColor(SocketColor.Red, Items.GemsSorted);
         }
         private void YellowSocketSelect_Click(object sender, RoutedEventArgs e)
         {
-            SelectGemForSocketColor(SocketColor.Yellow, RetSim.Data.Items.Gems.Values);
+            SelectGemForSocketColor(SocketColor.Yellow, Items.GemsSorted);
         }
         private void BlueSocketSelect_Click(object sender, RoutedEventArgs e)
         {
-            SelectGemForSocketColor(SocketColor.Blue, RetSim.Data.Items.Gems.Values);
+            SelectGemForSocketColor(SocketColor.Blue, Items.GemsSorted);
         }
         private void MetaSocketSelect_Click(object sender, RoutedEventArgs e)
         {
-            SelectGemForSocketColor(SocketColor.Meta, RetSim.Data.Items.MetaGems.Values);
+            SelectGemForSocketColor(SocketColor.Meta, Items.MetaGems.Values, true);
         }
 
-        private void SelectGemForSocketColor(SocketColor color, IEnumerable<Gem> gemList)
+        private void SelectGemForSocketColor(SocketColor color, IEnumerable<Gem> gemList, bool meta = false)
         {
             if (DataContext is RetSimUIModel retSimUIModel)
             {
-                GemPickerWindow gemPicker = new(gemList, null);
+                GemPickerWindow gemPicker = new(gemList, null, meta);
                 if (gemPicker.ShowDialog() == true)
                 {
                     foreach (var displayItem in retSimUIModel.AllGear.Values)

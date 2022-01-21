@@ -20,8 +20,14 @@ public static class Items
     public static readonly Dictionary<int, EquippableItem> Relics = new();
     public static readonly Dictionary<int, ItemSet> Sets = new();
     public static readonly Dictionary<int, Gem> Gems = new();
+    public static readonly List<Gem> GemsSorted = new();
     public static readonly Dictionary<int, MetaGem> MetaGems = new();
     public static readonly Dictionary<int, Enchant> Enchants = new();
+
+    private static readonly List<int> GemIDs = new() 
+    { 33131, 32193, 24027, 23095, 28458, 32217, 24058, 23098, 30584, 30559, 30553, 32211, 24054, 23111, 30546, 30574, 31118, 32197, 28362, 24031, 28595, 28462, 28363, 32220, 30556, 24061, 23100, 30604,
+      32214, 31865, 31864, 33142, 32206, 24051, 23116, 28468, 33143, 32205, 38550, 24048, 28290, 28467, 30550, 32226, 30602, 24067, 27809, 23104
+    };
 
     public static void Initialize(List<EquippableWeapon> weapons, List<EquippableItem> armorPieces, List<ItemSet> sets, List<Gem> gems, List<MetaGem> metaGems, List<Enchant> enchants)
     {
@@ -89,6 +95,11 @@ public static class Items
         foreach (var gem in gems)
         {
             Gems.Add(gem.ID, gem);
+        }
+
+        foreach (int gem in GemIDs)
+        {
+            GemsSorted.Add(Gems[gem]);
         }
 
         foreach (var metaGem in metaGems)

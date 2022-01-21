@@ -12,7 +12,7 @@
         <local:WoWTooltip x:Name="Tooltip" PlacementTarget="{Binding ElementName=GemPicker}"/>
         <DataGrid Name="gemGrid" ColumnWidth="*" GridLinesVisibility="Horizontal" PreviewMouseDown="GemGrid_PreviewMouseDown" IsReadOnly="True" SelectionMode="Single" HeadersVisibility="Column" CanUserResizeColumns="False" CanUserResizeRows="False" AutoGenerateColumns="False">
             <DataGrid.Columns>
-                <DataGridTextColumn MinWidth="220" CanUserReorder="False" Header="Name" Binding="{Binding Name}" />
+                <DataGridTextColumn MinWidth="220" CanUserReorder="False" Header="Name"  x:Name="NameColumn" Binding="{Binding Name}" />
                 <DataGridTextColumn CanUserReorder="False" Header="Level" Binding="{Binding ItemLevel}" >
                     <DataGridTextColumn.HeaderStyle>
                         <Style TargetType="DataGridColumnHeader">
@@ -108,19 +108,7 @@
                             <Setter Property="TextAlignment" Value="Center" />
                         </Style>
                     </DataGridTextColumn.ElementStyle>
-                </DataGridTextColumn>
-                <DataGridTextColumn CanUserReorder="False" Header="Int"    x:Name="IntColumn" >
-                    <DataGridTextColumn.HeaderStyle>
-                        <Style TargetType="DataGridColumnHeader">
-                            <Setter Property="HorizontalContentAlignment" Value="Center" />
-                        </Style>
-                    </DataGridTextColumn.HeaderStyle>
-                    <DataGridTextColumn.ElementStyle>
-                        <Style TargetType="TextBlock">
-                            <Setter Property="TextAlignment" Value="Center" />
-                        </Style>
-                    </DataGridTextColumn.ElementStyle>
-                </DataGridTextColumn>
+                </DataGridTextColumn>                
                 <DataGridTextColumn CanUserReorder="False" Header="MP5"    x:Name="MP5Column" >
                     <DataGridTextColumn.HeaderStyle>
                         <Style TargetType="DataGridColumnHeader">
