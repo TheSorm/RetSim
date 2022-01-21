@@ -74,7 +74,7 @@
                                     <ColumnDefinition Width="60"/>
                                 </Grid.ColumnDefinitions>
                                 <Label Margin="0" Padding="0" VerticalAlignment="Center" Content="Fight Duration (max)"/>
-                                <TextBox Grid.Column="2" HorizontalContentAlignment="Right" PreviewTextInput="NumberValidationTextBox" ToolTipService.InitialShowDelay="0" ToolTip="sec" Text="{Binding EncounterSettings.MaxFightDurationSeconds, Converter={StaticResource StringEmptyConverter}, ConverterParameter='1'}" />
+                                <TextBox Grid.Column="2" HorizontalContentAlignment="Right" PreviewTextInput="NumberValidationTextBox" ToolTipService.InitialShowDelay="0" ToolTip="Time in seconds." Text="{Binding EncounterSettings.MaxFightDurationSeconds, Converter={StaticResource StringEmptyConverter}, ConverterParameter='1'}" />
                             </Grid>
                         </StackPanel>
                     </GroupBox>
