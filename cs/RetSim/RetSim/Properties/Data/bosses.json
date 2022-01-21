@@ -229,5 +229,138 @@
     "CreatureType": "Humanoid",
     "ArmorCategory": "Paladin",
     "Raid": "Tempest Keep"
+  },
+  {
+    "ID": 33,
+    "Name": "Rage Winterchill",
+    "CreatureType": "Undead",
+    "ArmorCategory": "Paladin",
+    "Raid": "Mount Hyjal"
+  },
+  {
+    "ID": 34,
+    "Name": "Anetheron",
+    "CreatureType": "Demon",
+    "ArmorCategory": "Paladin",
+    "Raid": "Mount Hyjal"
+  },
+  {
+    "ID": 35,
+    "Name": "Kaz'rogal",
+    "CreatureType": "Demon",
+    "ArmorCategory": "Paladin",
+    "Raid": "Mount Hyjal"
+  },
+  {
+    "ID": 36,
+    "Name": "Azgalor",
+    "CreatureType": "Demon",
+    "ArmorCategory": "Paladin",
+    "Raid": "Mount Hyjal"
+  },
+  {
+    "ID": 37,
+    "Name": "Archimonde",
+    "CreatureType": "Demon",
+    "ArmorCategory": "Paladin",
+    "Raid": "Mount Hyjal"
+  },
+  {
+    "ID": 38,
+    "Name": "High Warlord Naj'entus",
+    "CreatureType": "Humanoid",
+    "ArmorCategory": "Warrior",
+    "Raid": "Black Temple"
+  },
+  {
+    "ID": 39,
+    "Name": "Supremus",
+    "CreatureType": "Demon",
+    "ArmorCategory": "Warrior",
+    "Raid": "Black Temple"
+  },
+  {
+    "ID": 40,
+    "Name": "Shade of Akama",
+    "CreatureType": "Humanoid",
+    "ArmorCategory": "Warrior",
+    "Raid": "Black Temple"
+  },
+  {
+    "ID": 41,
+    "Name": "Teron Gorefiend",
+    "CreatureType": "Undead",
+    "ArmorCategory": "Paladin",
+    "Raid": "Black Temple"
+  },
+  {
+    "ID": 42,
+    "Name": "Essence of Suffering",
+    "CreatureType": "Uncategorized",
+    "ArmorCategory": "None",
+    "Raid": "Black Temple"
+  },
+  {
+    "ID": 43,
+    "Name": "Essence of Desire",
+    "CreatureType": "Uncategorized",
+    "ArmorCategory": "Warrior",
+    "Raid": "Black Temple"
+  },
+  {
+    "ID": 44,
+    "Name": "Essence of Anger",
+    "CreatureType": "Uncategorized",
+    "ArmorCategory": "Warrior",
+    "Raid": "Black Temple"
+  },
+  {
+    "ID": 45,
+    "Name": "Gurtogg Bloodboil",
+    "CreatureType": "Humanoid",
+    "ArmorCategory": "Warrior",
+    "Raid": "Black Temple"
+  },
+  {
+    "ID": 46,
+    "Name": "Mother Shahraz",
+    "CreatureType": "Demon",
+    "ArmorCategory": "Paladin",
+    "Raid": "Black Temple"
+  },
+  {
+    "ID": 47,
+    "Name": "Gathios the Shatterer",
+    "CreatureType": "Humanoid",
+    "ArmorCategory": "Paladin",
+    "Raid": "Black Temple"
+  },
+  {
+    "ID": 48,
+    "Name": "High Nethermancer Zerevor",
+    "CreatureType": "Humanoid",
+    "ArmorCategory": "Paladin",
+    "Raid": "Black Temple"
+  },
+  {
+    "ID": 49,
+    "Name": "Lady Malande",
+    "CreatureType": "Humanoid",
+    "ArmorCategory": "Paladin",
+    "Raid": "Black Temple"
+  },
+  {
+    "ID": 50,
+    "Name": "Veras Darkshadow",
+    "CreatureType": "Humanoid",
+    "ArmorCategory": "Warrior",
+    "Raid": "Black Temple"
+  },
+  {
+    "ID": 51,
+    "Name": "Illidan Stormrage",
+    "CreatureType": "Demon",
+    "ArmorCategory": "Warrior",
+    "Raid": "Black Temple"
   }
 ]
