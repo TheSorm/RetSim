@@ -4,6 +4,7 @@ using RetSim.Simulation.CombatLogEntries;
 using RetSimDesktop.ViewModel;
 using ScottPlot;
 using ScottPlot.Plottable;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
@@ -19,6 +20,8 @@ namespace RetSimDesktop
     /// </summary>
     public partial class Statistics : UserControl
     {
+        int simulations;
+
         public List<DamageBreakdownElement> DamageBreakdownMinLog { get; set; }
         public List<DamageBreakdownElement> DamageBreakdownMedianLog { get; set; }
         public List<DamageBreakdownElement> DamageBreakdownMaxLog { get; set; }
@@ -66,6 +69,8 @@ namespace RetSimDesktop
             DPSHistogram.RightClicked -= DPSHistogram.DefaultRightClickEvent;
             DPSHistogram.Plot.YAxis.Label("");
             DPSHistogram.Plot.XAxis.Label("DPS");
+
+            DPSHistogram.MouseMove += DPSHistograph_MouseMove;
 
             DPSGraph.Configuration.Zoom = true;
             DPSGraph.Configuration.Pan = true;
@@ -194,24 +199,32 @@ namespace RetSimDesktop
                     }
                     else if (e.PropertyName == "DpsResults")
                     {
-                        double min = retSimUIModel.CurrentSimOutput.DpsResults[0];
-                        double max = retSimUIModel.CurrentSimOutput.DpsResults[^1];
+                        double min = (int)Math.Floor(retSimUIModel.CurrentSimOutput.DpsResults[0] / 10) * 10;
+                        double max = (int)Math.Ceiling(retSimUIModel.CurrentSimOutput.DpsResults[^1] / 10) * 10;
                         (double[] counts, double[] binEdges) = ScottPlot.Statistics.Common.Histogram(retSimUIModel.CurrentSimOutput.DpsResults.ToArray(), min: min, max: max, binSize: 10);
                         double[] leftEdges = binEdges.Take(binEdges.Length - 1).ToArray();
 
                         DPSHistogram.Plot.Clear();
-                        var bar = DPSHistogram.Plot.AddBar(values: counts, positions: leftEdges);
-                        bar.BarWidth = 10;
+                        barPlot = DPSHistogram.Plot.AddBar(values: counts, positions: leftEdges);
+                        barPlot.BarWidth = 10;
 
                         DPSHistogram.Plot.YAxis.Label("");
                         DPSHistogram.Plot.XAxis.Label("DPS");
-                        DPSHistogram.Plot.SetAxisLimits(yMin: 0, xMin: min, xMax: max);
+                        DPSHistogram.Plot.SetAxisLimits(yMin: 0, xMin: min - 10, xMax: max);
+
+                        barTooltip = DPSHistogram.Plot.AddTooltip("Test", 0, 0);
+                        barTooltip.IsVisible = false;
 
                         DPSHistogram.Refresh();
+
+                        simulations = retSimUIModel.CurrentSimOutput.DpsResults.Count;
                     }
                 }
             });
         }
+
+        BarPlot barPlot;
+        Tooltip barTooltip;
 
         private static List<DamageBreakdownElement> CreateDamageBreakdown(CombatLog log)
         {
@@ -450,6 +463,79 @@ namespace RetSimDesktop
                 DPSGraph.Plot.Clear();
                 DPSGraph.Refresh();
             }
+        }
+
+        private void DPSHistograph_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (barPlot == null)
+                return;
+
+            (double mouseCoordX, double mouseCoordY) = DPSHistogram.GetMouseCoordinates();
+
+            int index = -1;
+            double up = 0, left = 0, right = 0;
+
+            for (int i = 0; i < barPlot.Positions.Length; i++)
+            {
+                left = barPlot.Positions[i];
+                double halfWidth = barPlot.BarWidth / 2;
+                right = left + halfWidth;
+                
+
+                if (mouseCoordX < right && mouseCoordX > left - halfWidth)
+                {
+                    index = i;
+
+                    up = barPlot.Values[i];
+
+                    if (mouseCoordY < up && mouseCoordY > 0)
+                        break;
+
+                    else
+                        index = -1;
+                }
+            }
+
+            if (index != -1)
+            {
+                barTooltip.X = mouseCoordX;
+                barTooltip.Y = mouseCoordY;
+
+                if (barTooltip.Y < 3)
+                    barTooltip.Y = 3;
+
+                int min = (int)(Math.Round(left / 10, 0) * 10);
+                double max = min + barPlot.BarWidth - 0.1;
+                double percentage = up / simulations;
+
+                barTooltip.Label = $"{min}-{max} DPS: {up} instances ({percentage:###.##%} of all results)";
+
+                barTooltip.IsVisible = true;
+            }
+
+            else
+                barTooltip.IsVisible = false;
+
+
+            DPSHistogram.Render();
+
+            //if ((damageBreakdownScatterPlotLastIndex != pointIndex || !damageBreakdownScatterPlotTooltip.IsVisible) && currentFilteredDamageBreakdownCombatLog.Count > pointIndex - 2)
+            //{
+            //    damageBreakdownScatterPlotTooltip.X = pointX;
+            //    damageBreakdownScatterPlotTooltip.Y = pointY;
+            //    damageBreakdownScatterPlotTooltip.Label = currentFilteredDamageBreakdownCombatLog[pointIndex - 2].ToString();
+            //    damageBreakdownScatterPlotTooltip.IsVisible = true;
+
+
+            //    damageBreakdownScatterPlotHighlight.X = pointX;
+            //    damageBreakdownScatterPlotHighlight.Y = pointY;
+            //    damageBreakdownScatterPlotHighlight.IsVisible = true;
+
+
+            //    damageBreakdownScatterPlotLastIndex = pointIndex;
+
+            //    DPSGraph.Refresh();
+            //}
         }
 
 
