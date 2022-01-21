@@ -188,8 +188,8 @@ namespace RetSimDesktop
                         AuraChart.Refresh();
 
 
-                        DamageChart.Visibility = System.Windows.Visibility.Visible;
-                        AuraChart.Visibility = System.Windows.Visibility.Visible;
+                        DamageChart.Visibility = Visibility.Visible;
+                        AuraChart.Visibility = Visibility.Visible;
 
                     }
                     else if (e.PropertyName == "DpsResults")
@@ -404,18 +404,33 @@ namespace RetSimDesktop
                 time = new();
             }
 
+            Dictionary<string, (List<double>, List<double>)> damageByName = new();
             foreach (DamageEntry entry in currentFilteredDamageBreakdownCombatLog)
             {
                 totalDamage += entry.Damage;
                 time.Add(entry.Timestamp / 1000.0);
                 damage.Add(totalDamage);
+
+                if (!damageByName.ContainsKey(entry.Source))
+                {
+                    damageByName[entry.Source] = (new(), new());
+                }
+
+                damageByName[entry.Source].Item1.Add(entry.Timestamp / 1000.0);
+                damageByName[entry.Source].Item2.Add(totalDamage);
             }
 
             if (time.Count > 0)
             {
                 DPSGraph.Plot.Clear();
                 DPSGraph.Plot.AddScatterStep(time.ToArray(), damage.ToArray());
-                damageBreakdownScatterPlot = DPSGraph.Plot.AddScatterPoints(time.ToArray(), damage.ToArray(), Color.Blue, 5, Marker.FilledSquare);
+
+                var legend = DPSGraph.Plot.Legend(true);
+                foreach (var damageOfAbility in damageByName)
+                {
+                    var plotable = DPSGraph.Plot.AddScatterPoints(damageOfAbility.Value.Item1.ToArray(), damageOfAbility.Value.Item2.ToArray(), markerSize: 5, markerShape: Marker.FilledSquare, label: damageOfAbility.Key);
+                }
+                damageBreakdownScatterPlot = DPSGraph.Plot.AddScatterPoints(time.ToArray(), damage.ToArray(), markerSize: 0, markerShape: Marker.FilledSquare);
 
                 DPSGraph.Plot.SetOuterViewLimits(yMin: -totalDamage * 0.1, xMin: -2, yMax: totalDamage * 1.1, xMax: time[^1] + 2);
 
