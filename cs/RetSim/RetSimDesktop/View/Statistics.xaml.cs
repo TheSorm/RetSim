@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
 using System.Linq;
+using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 
@@ -25,6 +26,14 @@ namespace RetSimDesktop
         public List<AuraBreakdownElement> AuraBreakdownMinLog { get; set; }
         public List<AuraBreakdownElement> AuraBreakdownMedianLog { get; set; }
         public List<AuraBreakdownElement> AuraBreakdownMaxLog { get; set; }
+
+        private List<DamageEntry> currentDamageBreakdownCombatLog = new();
+        private List<DamageEntry> currentFilteredDamageBreakdownCombatLog = new();
+
+        private ScatterPlot damageBreakdownScatterPlot;
+        private MarkerPlot damageBreakdownScatterPlotHighlight;
+        private Tooltip damageBreakdownScatterPlotTooltip;
+        private int damageBreakdownScatterPlotLastIndex;
 
         public Statistics()
         {
@@ -74,13 +83,13 @@ namespace RetSimDesktop
             DamageChart.Configuration.Pan = false;
             DamageChart.Configuration.DoubleClickBenchmark = false;
             DamageChart.RightClicked -= DamageChart.DefaultRightClickEvent;
-            DamageChart.Visibility = System.Windows.Visibility.Hidden;
+            DamageChart.Visibility = Visibility.Hidden;
 
             AuraChart.Configuration.Zoom = false;
             AuraChart.Configuration.Pan = false;
             AuraChart.Configuration.DoubleClickBenchmark = false;
             AuraChart.RightClicked -= AuraChart.DefaultRightClickEvent;
-            AuraChart.Visibility = System.Windows.Visibility.Hidden;
+            AuraChart.Visibility = Visibility.Hidden;
 
         }
 
@@ -249,6 +258,7 @@ namespace RetSimDesktop
 
                 result.Add(new()
                 {
+                    IsChecked = true,
                     AbilityName = s,
                     Damage = damage,
                     DPS = dps.Rounded(),
@@ -266,6 +276,7 @@ namespace RetSimDesktop
             }
             result.Add(new()
             {
+                IsChecked = false,
                 AbilityName = "Total",
                 Damage = log.Damage,
                 DPS = log.DPS.Rounded(),
@@ -338,12 +349,6 @@ namespace RetSimDesktop
             return result;
         }
 
-        CombatLog newLog = new();
-
-        ScatterPlot scatterPlot;
-        MarkerPlot highlight;
-        Tooltip tooltip;
-
         private void DamageBreakdownSelection_SelectionChanged(object? sender, SelectionChangedEventArgs? e)
         {
             if (DamageBreakdownSelection != null && DamageBreakdownSelection.SelectedValue != null)
@@ -356,65 +361,22 @@ namespace RetSimDesktop
                     {
                         DamageBreakdownTable.ItemsSource = DamageBreakdownMinLog.GetRange(0, DamageBreakdownMinLog.Count - 1);
                         DamageBreakdownTotalTable.ItemsSource = DamageBreakdownMinLog.GetRange(DamageBreakdownMinLog.Count - 1, 1);
-                        newLog = retSimUIModel.CurrentSimOutput.MinCombatLog;
+                        currentDamageBreakdownCombatLog = retSimUIModel.CurrentSimOutput.MinCombatLog.DamageLog;
                     }
                     else if (value == "Median" && DamageBreakdownMedianLog.Count > 0)
                     {
                         DamageBreakdownTable.ItemsSource = DamageBreakdownMedianLog.GetRange(0, DamageBreakdownMedianLog.Count - 1);
                         DamageBreakdownTotalTable.ItemsSource = DamageBreakdownMedianLog.GetRange(DamageBreakdownMedianLog.Count - 1, 1);
-                        newLog = retSimUIModel.CurrentSimOutput.MedianCombatLog;
+                        currentDamageBreakdownCombatLog = retSimUIModel.CurrentSimOutput.MedianCombatLog.DamageLog;
                     }
                     else if (value == "Max" && DamageBreakdownMaxLog.Count > 0)
                     {
                         DamageBreakdownTable.ItemsSource = DamageBreakdownMaxLog.GetRange(0, DamageBreakdownMaxLog.Count - 1);
                         DamageBreakdownTotalTable.ItemsSource = DamageBreakdownMaxLog.GetRange(DamageBreakdownMaxLog.Count - 1, 1);
-                        newLog = retSimUIModel.CurrentSimOutput.MaxCombatLog;
+                        currentDamageBreakdownCombatLog = retSimUIModel.CurrentSimOutput.MaxCombatLog.DamageLog;
                     }
-
-
-                    List<double> damage;
-                    List<double> time;
-
-                    double totalDamage = 0;
-
-                    if (newLog.DamageLog.Count > 0)
-                    {
-                        damage = new() { 0, 0 };
-                        time = new() { 0, newLog.DamageLog[0].Timestamp / 1000.0 };
-                    }
-
-                    else
-                    {
-                        damage = new();
-                        time = new();
-                    }
-
-                    foreach (DamageEntry entry in newLog.DamageLog)
-                    {
-                        totalDamage += entry.Damage;
-                        time.Add(entry.Timestamp / 1000.0);
-                        damage.Add(totalDamage);
-                    }
-
-                    if (time.Count > 0)
-                    {
-                        DPSGraph.Plot.Clear();
-                        DPSGraph.Plot.AddScatterStep(time.ToArray(), damage.ToArray());
-                        scatterPlot = DPSGraph.Plot.AddScatterPoints(time.ToArray(), damage.ToArray(), Color.Blue, 5, Marker.FilledSquare);
-
-                        DPSGraph.Plot.SetOuterViewLimits(yMin: -totalDamage * 0.1, xMin: -2, yMax: totalDamage * 1.1, xMax: time[^1] + 2);
-
-                        highlight = DPSGraph.Plot.AddPoint(0, 0);
-                        highlight.Color = Color.Red;
-                        highlight.MarkerSize = 8;
-                        highlight.MarkerShape = MarkerShape.openSquare;
-                        highlight.IsVisible = false;
-
-                        tooltip = DPSGraph.Plot.AddTooltip("Test", 0, 0);
-                        tooltip.IsVisible = false;
-
-                        DPSGraph.Refresh();
-                    }
+                    currentFilteredDamageBreakdownCombatLog = currentDamageBreakdownCombatLog;
+                    UpdateDamageGraph();
 
                     DamageBreakdownTable.Items.Refresh();
                     DamageBreakdownDamageColumn.SortDirection = ListSortDirection.Descending;
@@ -423,34 +385,85 @@ namespace RetSimDesktop
             }
         }
 
-        int lastIndex;
+        private void UpdateDamageGraph()
+        {
+
+            List<double> damage;
+            List<double> time;
+
+            double totalDamage = 0;
+
+            if (currentFilteredDamageBreakdownCombatLog.Count > 0)
+            {
+                damage = new() { 0, 0 };
+                time = new() { 0, currentFilteredDamageBreakdownCombatLog[0].Timestamp / 1000.0 };
+            }
+            else
+            {
+                damage = new();
+                time = new();
+            }
+
+            foreach (DamageEntry entry in currentFilteredDamageBreakdownCombatLog)
+            {
+                totalDamage += entry.Damage;
+                time.Add(entry.Timestamp / 1000.0);
+                damage.Add(totalDamage);
+            }
+
+            if (time.Count > 0)
+            {
+                DPSGraph.Plot.Clear();
+                DPSGraph.Plot.AddScatterStep(time.ToArray(), damage.ToArray());
+                damageBreakdownScatterPlot = DPSGraph.Plot.AddScatterPoints(time.ToArray(), damage.ToArray(), Color.Blue, 5, Marker.FilledSquare);
+
+                DPSGraph.Plot.SetOuterViewLimits(yMin: -totalDamage * 0.1, xMin: -2, yMax: totalDamage * 1.1, xMax: time[^1] + 2);
+
+                damageBreakdownScatterPlotHighlight = DPSGraph.Plot.AddPoint(0, 0);
+                damageBreakdownScatterPlotHighlight.Color = Color.Red;
+                damageBreakdownScatterPlotHighlight.MarkerSize = 8;
+                damageBreakdownScatterPlotHighlight.MarkerShape = MarkerShape.openSquare;
+                damageBreakdownScatterPlotHighlight.IsVisible = false;
+
+                damageBreakdownScatterPlotTooltip = DPSGraph.Plot.AddTooltip("Test", 0, 0);
+                damageBreakdownScatterPlotTooltip.IsVisible = false;
+
+                DPSGraph.Refresh();
+            }
+            else
+            {
+                DPSGraph.Plot.Clear();
+                DPSGraph.Refresh();
+            }
+        }
+
 
         private void DPSGraph_MouseMove(object sender, MouseEventArgs e)
         {
-            if (scatterPlot == null)
+            if (damageBreakdownScatterPlot == null)
                 return;
 
             (double mouseCoordX, double mouseCoordY) = DPSGraph.GetMouseCoordinates();
             double xyRatio = DPSGraph.Plot.XAxis.Dims.PxPerUnit / DPSGraph.Plot.YAxis.Dims.PxPerUnit;
-            (double pointX, double pointY, int pointIndex) = scatterPlot.GetPointNearest(mouseCoordX, mouseCoordY, xyRatio);
+            (double pointX, double pointY, int pointIndex) = damageBreakdownScatterPlot.GetPointNearest(mouseCoordX, mouseCoordY, xyRatio);
 
             if (pointIndex <= 1)
                 return;
 
-            if (lastIndex != pointIndex || !tooltip.IsVisible)
+            if ((damageBreakdownScatterPlotLastIndex != pointIndex || !damageBreakdownScatterPlotTooltip.IsVisible) && currentFilteredDamageBreakdownCombatLog.Count > pointIndex - 2)
             {
-                tooltip.X = pointX;
-                tooltip.Y = pointY;
-                tooltip.Label = newLog.DamageLog[pointIndex - 2].ToString();
-                tooltip.IsVisible = true;
+                damageBreakdownScatterPlotTooltip.X = pointX;
+                damageBreakdownScatterPlotTooltip.Y = pointY;
+                damageBreakdownScatterPlotTooltip.Label = currentFilteredDamageBreakdownCombatLog[pointIndex - 2].ToString();
+                damageBreakdownScatterPlotTooltip.IsVisible = true;
 
 
-                highlight.X = pointX;
-                highlight.Y = pointY;
-                highlight.IsVisible = true;
+                damageBreakdownScatterPlotHighlight.X = pointX;
+                damageBreakdownScatterPlotHighlight.Y = pointY;
+                damageBreakdownScatterPlotHighlight.IsVisible = true;
 
 
-                lastIndex = pointIndex;
+                damageBreakdownScatterPlotLastIndex = pointIndex;
 
                 DPSGraph.Refresh();
             }
@@ -458,10 +471,10 @@ namespace RetSimDesktop
 
         private void DPSGraph_MouseLeave(object sender, MouseEventArgs e)
         {
-            if (scatterPlot != null)
+            if (damageBreakdownScatterPlot != null)
             {
-                tooltip.IsVisible = false;
-                highlight.IsVisible = false;
+                damageBreakdownScatterPlotTooltip.IsVisible = false;
+                damageBreakdownScatterPlotHighlight.IsVisible = false;
 
                 DPSGraph.Refresh();
             }
@@ -515,10 +528,33 @@ namespace RetSimDesktop
                 }
             }
         }
+
+        private void DamageBreakdownElementChecked(object sender, RoutedEventArgs e)
+        {
+            Dictionary<string, bool> enabledDamageEvents = new();
+            foreach (var element in (List<DamageBreakdownElement>)DamageBreakdownTable.ItemsSource)
+            {
+                enabledDamageEvents.Add(element.AbilityName, element.IsChecked);
+            }
+
+            List<DamageEntry> damageEntries = new();
+
+            foreach (var element in currentDamageBreakdownCombatLog)
+            {
+                if (enabledDamageEvents[element.Source])
+                {
+                    damageEntries.Add(element);
+                }
+            }
+            currentFilteredDamageBreakdownCombatLog = damageEntries;
+
+            UpdateDamageGraph();
+        }
     }
 
     public class DamageBreakdownElement
     {
+        public bool IsChecked { get; set; }
         public string AbilityName { get; set; }
         public int Damage { get; set; }
         public float DPS { get; set; }

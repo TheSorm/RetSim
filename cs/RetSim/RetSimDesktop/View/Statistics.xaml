@@ -40,7 +40,28 @@
                         <RowDefinition Height="20" />
                     </Grid.RowDefinitions>
                     <DataGrid Grid.Row="0" ColumnWidth="*" BorderThickness="1,1,1,0" GridLinesVisibility="Horizontal" Name="DamageBreakdownTable" IsReadOnly="True" HeadersVisibility="Column" CanUserResizeColumns="False" CanUserResizeRows="False" AutoGenerateColumns="False">
+                        <DataGrid.Resources>
+                            <Style TargetType="{x:Type DataGridCell}">
+                                <Style.Triggers>
+                                    <MultiTrigger>
+                                        <MultiTrigger.Conditions>
+                                            <Condition Property="IsMouseOver" Value="True"/>
+                                            <Condition Property="IsReadOnly" Value="False"/>
+                                        </MultiTrigger.Conditions>
+                                        <Setter Property="IsEditing" Value="True" />
+                                    </MultiTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </DataGrid.Resources>
                         <DataGrid.Columns>
+                            <DataGridCheckBoxColumn Binding="{Binding IsChecked, UpdateSourceTrigger=PropertyChanged}" MinWidth="27" Width="27" MaxWidth="27" CanUserSort="False" IsReadOnly="False" IsThreeState="False">
+                                <DataGridCheckBoxColumn.CellStyle>
+                                    <Style TargetType="DataGridCell" BasedOn="{StaticResource {x:Type DataGridCell}}">
+                                        <EventSetter Event="CheckBox.Checked" Handler="DamageBreakdownElementChecked"/>
+                                        <EventSetter Event="CheckBox.Unchecked" Handler="DamageBreakdownElementChecked"/>
+                                    </Style>
+                                </DataGridCheckBoxColumn.CellStyle>
+                            </DataGridCheckBoxColumn>
                             <DataGridTextColumn MinWidth="220" CanUserReorder="False" Header="Ability" Binding="{Binding AbilityName}" />
                             <DataGridTextColumn MinWidth="50" CanUserReorder="False" Header="Casts"    Binding="{Binding Casts}">
                                 <DataGridTextColumn.HeaderStyle>
@@ -195,6 +216,7 @@
                             </Style>
                         </DataGrid.RowStyle>
                         <DataGrid.Columns>
+                            <DataGridTextColumn MinWidth="27" Width="27" MaxWidth="27" CanUserSort="False" IsReadOnly="False" />
                             <DataGridTextColumn MinWidth="220" CanUserReorder="False" Header="Ability" Binding="{Binding AbilityName}" />
                             <DataGridTextColumn MinWidth="50" CanUserReorder="False" Header="Casts"    Binding="{Binding Casts}">
                                 <DataGridTextColumn.HeaderStyle>
