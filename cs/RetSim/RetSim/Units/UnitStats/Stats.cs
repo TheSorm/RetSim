@@ -28,7 +28,7 @@ public class Stats
         {
             float miss = Constants.Boss.SpellMissChance - this[StatName.SpellHit].Value;
 
-            return miss > Constants.Boss.MininumSpellMissChance ? Constants.Boss.MininumSpellMissChance : 0;
+            return miss < Constants.Boss.MininumSpellMissChance ? Constants.Boss.MininumSpellMissChance : miss;
         }
     }
 

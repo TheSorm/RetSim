@@ -41,7 +41,7 @@ public class Attack
 
     public void ResolveAttack()
     {
-        float miss = GetMissChance(Player, Effect.DefenseCategory) - Enemy.Stats[StatName.IncreasedAttackerHitChance].Value;
+        float miss = GetMissChance(Player, Effect.DefenseCategory, Enemy.Stats[StatName.IncreasedAttackerHitChance].Value);
 
         if (miss < 0)
             miss = 0;
@@ -86,7 +86,6 @@ public class Attack
             DefenseType.Special => Special(miss, dodge, crit),
             DefenseType.None => None(crit),
             _ => Ranged(miss, crit)
-            //TODO: Add Magic Defense Result
         };
     }
 
@@ -191,13 +190,13 @@ public class Attack
         };
     }
 
-    public static float GetMissChance(Player player, DefenseType category)
+    public static float GetMissChance(Player player, DefenseType category, float increasedAttackerHitChance)
     {
         return category switch
         {
             DefenseType.None => 0f,
             DefenseType.Magic => player.Stats.EffectiveSpellMissChance,
-            _ => player.Stats.EffectiveMissChance
+            _ => player.Stats.EffectiveMissChance - increasedAttackerHitChance
         };
     }
 
