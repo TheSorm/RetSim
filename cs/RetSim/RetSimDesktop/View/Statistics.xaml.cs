@@ -218,6 +218,12 @@ namespace RetSimDesktop
                         DPSHistogram.Refresh();
 
                         simulations = retSimUIModel.CurrentSimOutput.DpsResults.Count;
+
+                        foreach (double result in barPlot.Values)
+                        {
+                            if (result > maxY)
+                                maxY = result;
+                        }
                     }
                 }
             });
@@ -465,6 +471,8 @@ namespace RetSimDesktop
             }
         }
 
+        private double maxY = 0;
+
         private void DPSHistograph_MouseMove(object sender, MouseEventArgs e)
         {
             if (barPlot == null)
@@ -501,8 +509,11 @@ namespace RetSimDesktop
                 barTooltip.X = mouseCoordX;
                 barTooltip.Y = mouseCoordY;
 
-                if (barTooltip.Y < 3)
-                    barTooltip.Y = 3;
+                double minY = maxY / 15.0;
+
+                if (barTooltip.Y < minY)
+                    barTooltip.Y = minY;
+
 
                 int min = (int)(Math.Round(left / 10, 0) * 10);
                 double max = min + barPlot.BarWidth - 0.1;
@@ -558,11 +569,9 @@ namespace RetSimDesktop
                 damageBreakdownScatterPlotTooltip.Label = currentFilteredDamageBreakdownCombatLog[pointIndex - 2].ToString();
                 damageBreakdownScatterPlotTooltip.IsVisible = true;
 
-
                 damageBreakdownScatterPlotHighlight.X = pointX;
                 damageBreakdownScatterPlotHighlight.Y = pointY;
                 damageBreakdownScatterPlotHighlight.IsVisible = true;
-
 
                 damageBreakdownScatterPlotLastIndex = pointIndex;
 
