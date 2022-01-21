@@ -49,6 +49,7 @@ namespace RetSimDesktop.Model
         private DivineSpirit selectedDivineSpirit = DivineSpirit.ImpDivineSpirit;
 
         private bool arcaneIntellectEnabled = true;
+
         private bool braidedEterniumChainEnabled = true;
         private bool embraceoftheDawnEnabled = false;
         private bool eyeoftheNightEnabled = false;

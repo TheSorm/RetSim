@@ -23,13 +23,13 @@ namespace RetSimDesktop.Model
                     switch (socket.Color)
                     {
                         case SocketColor.Red:
-                            socket.SocketedGem = Gems[24027]; // 8 str
+                            socket.SocketedGem = Gems[32193]; // 10 str
                             break;
                         case SocketColor.Blue:
-                            socket.SocketedGem = Gems[24054]; // 4 str 6 stam
+                            socket.SocketedGem = Gems[32211]; // 5 str 7 stam
                             break;
                         case SocketColor.Yellow:
-                            socket.SocketedGem = Gems[24058]; // 4 str 4 crit
+                            socket.SocketedGem = Gems[32217]; // 5 str 5 crit
                             break;
                         case SocketColor.Meta:
                             socket.SocketedGem = MetaGems[32409]; // Relentless Earthstorm Diamond
