@@ -53,18 +53,6 @@ namespace RetSimDesktop
             DPSHistogram.Configuration.Zoom = false;
             DPSHistogram.Configuration.Pan = false;
             DPSHistogram.Configuration.DoubleClickBenchmark = false;
-            DPSHistogram.Configuration.LeftClickDragPan = false;
-            DPSHistogram.Configuration.LockHorizontalAxis = true;
-            DPSHistogram.MouseLeftButtonUp += (o, e) =>
-            {
-                if (DataContext is RetSimUIModel retSimUIModel && retSimUIModel.CurrentSimOutput.DpsResults != null)
-                    DPSHistogram.Plot.SetAxisLimits(yMin: 0, xMin: retSimUIModel.CurrentSimOutput.DpsResults[0], xMax: retSimUIModel.CurrentSimOutput.DpsResults[^1]);
-            };
-            DPSHistogram.SizeChanged += (o, e) =>
-            {
-                if (DataContext is RetSimUIModel retSimUIModel && retSimUIModel.CurrentSimOutput.DpsResults != null)
-                    DPSHistogram.Plot.SetAxisLimits(yMin: 0, xMin: retSimUIModel.CurrentSimOutput.DpsResults[0], xMax: retSimUIModel.CurrentSimOutput.DpsResults[^1]);
-            };
 
             DPSHistogram.RightClicked -= DPSHistogram.DefaultRightClickEvent;
             DPSHistogram.Plot.YAxis.Label("");
@@ -414,7 +402,6 @@ namespace RetSimDesktop
                         DPSGraph.Plot.AddScatterStep(time.ToArray(), damage.ToArray());
                         scatterPlot = DPSGraph.Plot.AddScatterPoints(time.ToArray(), damage.ToArray(), Color.Blue, 5, Marker.FilledSquare);
 
-                        DPSHistogram.Plot.SetAxisLimits(yMin: 0, xMin: 0);
                         DPSGraph.Plot.SetOuterViewLimits(yMin: -totalDamage * 0.1, xMin: -2, yMax: totalDamage * 1.1, xMax: time[^1] + 2);
 
                         highlight = DPSGraph.Plot.AddPoint(0, 0);
