@@ -25,3 +25,12 @@ In order to use the Desktop version of our sim, you will need to have the WebVie
 
 ## License
 Our code is released under the [MIT License](https://github.com/TheSorm/RetSim/blob/main/LICENSE).
+
+## Legal
+We do not own or distribute World of Warcraft, or World of Warcraft: The Burning Crusade Classic.
+
+World of Warcraft and all its associated assets used in this program are a property of Blizzard Entertainment, Inc.
+
+©2004 Blizzard Entertainment, Inc. All rights reserved. World of Warcraft, Warcraft and Blizzard Entertainment are trademarks or registered trademarks of Blizzard Entertainment, Inc. in the U.S. and/or other countries.
+
+
