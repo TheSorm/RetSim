@@ -53,17 +53,31 @@ public class FightSimulation
             }
         }
 
-        var allCooldowns = new List<Spell>();
+        var allCooldowns = new List<List<Spell>>();
 
         foreach (Spell spell in cooldowns)
         {
-            allCooldowns.Add(spell);
+            allCooldowns.Add(new() { spell });
         }
 
         foreach (EquippableItem item in player.Equipment.PlayerEquipment)
         {
-            if (item != null && item.OnUse != null && Collections.Spells.ContainsKey(item.OnUse.ID))
-                allCooldowns.AddRange(Spell.GetSpells(item.OnUse.ID));
+            if (item != null && item.OnUse != null && Collections.Spells.ContainsKey(item.OnUse.ID) && item.Slot != Slot.Trinket)
+                allCooldowns.Add(new() { Collections.Spells[item.OnUse.ID] });
+        }
+
+        List<Spell> trinketOnUses = new();
+        if (player.Equipment.Trinket1 != null && player.Equipment.Trinket1.OnUse != null && Collections.Spells.ContainsKey(player.Equipment.Trinket1.OnUse.ID))
+        {
+            trinketOnUses.Add(Collections.Spells[player.Equipment.Trinket1.OnUse.ID]);
+        }
+        if (player.Equipment.Trinket2 != null && player.Equipment.Trinket2.OnUse != null && Collections.Spells.ContainsKey(player.Equipment.Trinket2.OnUse.ID))
+        {
+            trinketOnUses.Add(Collections.Spells[player.Equipment.Trinket2.OnUse.ID]);
+        }
+        if (trinketOnUses.Count > 0)
+        {
+            allCooldowns.Add(trinketOnUses);
         }
 
         CooldownManager = new CooldownManager(this, allCooldowns, correctedHerosimTimes);

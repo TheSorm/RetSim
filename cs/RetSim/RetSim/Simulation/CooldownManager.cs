@@ -9,13 +9,13 @@ namespace RetSim.Simulation
 
         public int FightDuration { get; init; }
         public List<int> HeroismTimings { get; init; }
-        public Dictionary<int, List<Spell>> Cooldowns { get; init; }
+        public Dictionary<int, List<List<Spell>>> Cooldowns { get; init; }
 
         public Dictionary<int, List<int>> Possibilities { get; init; }
 
         public List<int> TotalPossibilities { get; init; }
 
-        public CooldownManager(FightSimulation parent, List<Spell> cooldowns, List<int> heroism)
+        public CooldownManager(FightSimulation parent, List<List<Spell>> cooldowns, List<int> heroism)
         {
             Parent = parent;
             FightDuration = parent.Duration;
@@ -27,13 +27,13 @@ namespace RetSim.Simulation
             Possibilities = new();
             TotalPossibilities = new();
 
-            foreach (Spell spell in cooldowns)
+            foreach (var spellList in cooldowns)
             {
-                if (Cooldowns.ContainsKey(spell.Cooldown))
-                    Cooldowns[spell.Cooldown].Add(spell);
+                if (Cooldowns.ContainsKey(spellList[0].Cooldown))
+                    Cooldowns[spellList[0].Cooldown].Add(spellList);
 
                 else
-                    Cooldowns[spell.Cooldown] = new List<Spell> { spell };
+                    Cooldowns[spellList[0].Cooldown] = new() { spellList };
             }
 
             //foreach (int cooldown in Cooldowns.Keys)
@@ -125,9 +125,15 @@ namespace RetSim.Simulation
 
                 foreach (int timing in current)
                 {
-                    foreach (Spell spell in Cooldowns[cooldown])
+                    foreach (var spellList in Cooldowns[cooldown])
                     {
-                        Parent.Queue.Add(new CastEvent(spell, Parent.Player, Parent.Player.GetSpellTarget(spell.Target, Parent), Parent, timing));
+                        int castTime = timing;
+                        foreach (var spell in spellList)
+                        {
+                            Parent.Queue.Add(new CastEvent(spell, Parent.Player, Parent.Player.GetSpellTarget(spell.Target, Parent), Parent, castTime));
+                            if (spell.Aura != null)
+                                castTime += spell.Aura.Duration;
+                        }
                     }
                 }
             }
