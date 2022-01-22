@@ -42,7 +42,7 @@ namespace RetSimDesktop
             HitColumn.Binding = hitBinding;
             Binding staBinding = new("Stats[" + StatName.Stamina + "]");
             staBinding.Converter = statConverter;
-            StaColumn.Binding = staBinding;           
+            StaColumn.Binding = staBinding;
             Binding mp5Binding = new("Stats[" + StatName.ManaPer5 + "]");
             mp5Binding.Converter = statConverter;
             MP5Column.Binding = mp5Binding;

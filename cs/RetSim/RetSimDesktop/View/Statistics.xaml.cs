@@ -488,7 +488,7 @@ namespace RetSimDesktop
                 left = barPlot.Positions[i];
                 double halfWidth = barPlot.BarWidth / 2;
                 right = left + halfWidth;
-                
+
 
                 if (mouseCoordX < right && mouseCoordX > left - halfWidth)
                 {
@@ -509,10 +509,8 @@ namespace RetSimDesktop
                 barTooltip.X = mouseCoordX;
                 barTooltip.Y = mouseCoordY;
 
-                double minY = maxY / 15.0;
-
-                if (barTooltip.Y < minY)
-                    barTooltip.Y = minY;
+                if (DPSHistogram.Plot.GetPixelY(barTooltip.Y) > DPSHistogram.ActualHeight - 79)
+                    barTooltip.Y = DPSHistogram.Plot.GetCoordinateY((float)(DPSHistogram.ActualHeight - 79));
 
 
                 int min = (int)(Math.Round(left / 10, 0) * 10);
