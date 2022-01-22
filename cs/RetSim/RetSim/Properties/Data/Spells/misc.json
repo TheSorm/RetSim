@@ -320,7 +320,7 @@
         },
         {
           "EffectType": "ModAttackSpeed",
-          "Value": 3
+          "Value": 2
         }
       ]
     }
