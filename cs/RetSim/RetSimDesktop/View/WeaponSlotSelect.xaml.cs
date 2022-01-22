@@ -221,25 +221,25 @@ namespace RetSimDesktop
                     }
                     else if (e.ChangedButton == MouseButton.Left && e.ButtonState == MouseButtonState.Pressed)
                     {
-                        var header = cell.Column.Header.ToString();
+                        var column = cell.Column;
                         if (cell.Column.Header.GetType() == typeof(CheckBox) && cell.Content is CheckBox checkBox)
                         {
                             checkBox.IsChecked = !checkBox.IsChecked;
                             e.Handled = true;
                         }
-                        else if (header != null && header.Contains("Socket"))
+                        else if (column != null && column == Socket1Column || column == Socket2Column || column == Socket3Column)
                         {
                             Socket? selectedSocket = null;
 
-                            if (header == "Socket 1")
+                            if (column == Socket1Column)
                             {
                                 selectedSocket = displayWeapon.Weapon.Socket1;
                             }
-                            else if (header == "Socket 2")
+                            else if (column == Socket2Column)
                             {
                                 selectedSocket = displayWeapon.Weapon.Socket2;
                             }
-                            else if (header == "Socket 3")
+                            else if (column == Socket3Column)
                             {
                                 selectedSocket = displayWeapon.Weapon.Socket3;
                             }
@@ -270,21 +270,21 @@ namespace RetSimDesktop
                     }
                     else if (e.ChangedButton == MouseButton.Right && e.ButtonState == MouseButtonState.Pressed)
                     {
-                        var header = cell.Column.Header.ToString();
-                        if (header != null && header.Contains("Socket"))
+                        var column = cell.Column;
+                        if (column != null && column == Socket1Column || column == Socket2Column || column == Socket3Column)
                         {
                             bool socketNotNull = false;
-                            if (header == "Socket 1" && displayWeapon.Weapon.Socket1 != null)
+                            if (column == Socket1Column && displayWeapon.Weapon.Socket1 != null)
                             {
                                 displayWeapon.Weapon.Socket1.SocketedGem = null;
                                 socketNotNull = true;
                             }
-                            else if (header == "Socket 2" && displayWeapon.Weapon.Socket2 != null)
+                            else if (column == Socket2Column && displayWeapon.Weapon.Socket2 != null)
                             {
                                 displayWeapon.Weapon.Socket2.SocketedGem = null;
                                 socketNotNull = true;
                             }
-                            else if (header == "Socket 3" && displayWeapon.Weapon.Socket3 != null)
+                            else if (column == Socket3Column && displayWeapon.Weapon.Socket3 != null)
                             {
                                 displayWeapon.Weapon.Socket3.SocketedGem = null;
                                 socketNotNull = true;
@@ -321,17 +321,17 @@ namespace RetSimDesktop
             {
                 if (DataContext is RetSimUIModel retSimUIModel && DataGridRow.GetRowContainingElement(cell).Item is DisplayWeapon displayWeapon)
                 {
-                    var header = cell.Column.Header.ToString();
+                    var column = cell.Column;
 
-                    if (header == "Socket 1" && displayWeapon.Weapon.Socket1 != null && displayWeapon.Weapon.Socket1.SocketedGem != null)
+                    if (column == Socket1Column && displayWeapon.Weapon.Socket1 != null && displayWeapon.Weapon.Socket1.SocketedGem != null)
                     {
                         retSimUIModel.TooltipSettings.HoverItemID = displayWeapon.Weapon.Socket1.SocketedGem.ID;
                     }
-                    else if (header == "Socket 2" && displayWeapon.Weapon.Socket2 != null && displayWeapon.Weapon.Socket2.SocketedGem != null)
+                    else if (column == Socket2Column && displayWeapon.Weapon.Socket2 != null && displayWeapon.Weapon.Socket2.SocketedGem != null)
                     {
                         retSimUIModel.TooltipSettings.HoverItemID = displayWeapon.Weapon.Socket2.SocketedGem.ID;
                     }
-                    else if (header == "Socket 3" && displayWeapon.Weapon.Socket3 != null && displayWeapon.Weapon.Socket3.SocketedGem != null)
+                    else if (column == Socket3Column && displayWeapon.Weapon.Socket3 != null && displayWeapon.Weapon.Socket3.SocketedGem != null)
                     {
                         retSimUIModel.TooltipSettings.HoverItemID = displayWeapon.Weapon.Socket3.SocketedGem.ID;
                     }

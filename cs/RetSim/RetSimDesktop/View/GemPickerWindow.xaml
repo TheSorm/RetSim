@@ -8,10 +8,20 @@
         d:DataContext="{d:DesignInstance viewmodel:RetSimUIModel}"
         mc:Ignorable="d"
         Title="Gems" Height="388" Width="600" ResizeMode="NoResize" Name="GemPicker" Closing="GemPicker_Closing" WindowStartupLocation="CenterScreen">
+    <Window.Resources>
+        <local:GemToImageConverter x:Key="GemToImageConverter" />
+    </Window.Resources>
     <Grid>
         <local:WoWTooltip x:Name="Tooltip" PlacementTarget="{Binding ElementName=GemPicker}"/>
         <DataGrid Name="gemGrid" ColumnWidth="*" GridLinesVisibility="Horizontal" PreviewMouseDown="GemGrid_PreviewMouseDown" IsReadOnly="True" SelectionMode="Single" HeadersVisibility="Column" CanUserResizeColumns="False" CanUserResizeRows="False" AutoGenerateColumns="False">
             <DataGrid.Columns>
+                <DataGridTemplateColumn x:Name="Socket1Column" Width="25" CanUserReorder="False" CanUserSort="False" Header="">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Image Width="18" Height="18" RenderOptions.BitmapScalingMode="HighQuality" Source="{Binding ID, Converter={StaticResource GemToImageConverter}}" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
                 <DataGridTextColumn MinWidth="220" CanUserReorder="False" Header="Name"  x:Name="NameColumn" Binding="{Binding Name}" />
                 <DataGridTextColumn CanUserReorder="False" Header="Level" Binding="{Binding ItemLevel}" >
                     <DataGridTextColumn.HeaderStyle>

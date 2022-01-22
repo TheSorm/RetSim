@@ -11,6 +11,7 @@ using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Imaging;
 
 namespace RetSimDesktop
 {
@@ -174,25 +175,25 @@ namespace RetSimDesktop
                     }
                     else if (e.ChangedButton == MouseButton.Left && e.ButtonState == MouseButtonState.Pressed)
                     {
-                        var header = cell.Column.Header.ToString();
+                        var column = cell.Column;
                         if (cell.Column.Header.GetType() == typeof(CheckBox) && cell.Content is CheckBox checkBox)
                         {
                             checkBox.IsChecked = !checkBox.IsChecked;
                             e.Handled = true;
                         }
-                        else if (header != null && header.Contains("Socket"))
+                        else if (column != null && column == Socket1Column || column == Socket2Column || column == Socket3Column)
                         {
                             Socket? selectedSocket = null;
 
-                            if (header == "Socket 1")
+                            if (column == Socket1Column)
                             {
                                 selectedSocket = displayGear.Item.Socket1;
                             }
-                            else if (header == "Socket 2")
+                            else if (column == Socket2Column)
                             {
                                 selectedSocket = displayGear.Item.Socket2;
                             }
-                            else if (header == "Socket 3")
+                            else if (column == Socket3Column)
                             {
                                 selectedSocket = displayGear.Item.Socket3;
                             }
@@ -223,21 +224,21 @@ namespace RetSimDesktop
                     }
                     else if (e.ChangedButton == MouseButton.Right && e.ButtonState == MouseButtonState.Pressed)
                     {
-                        var header = cell.Column.Header.ToString();
-                        if (header != null && header.Contains("Socket"))
+                        var column = cell.Column;
+                        if (column != null && column == Socket1Column || column == Socket2Column || column == Socket3Column)
                         {
                             bool socketNotNull = false;
-                            if (header == "Socket 1" && displayGear.Item.Socket1 != null)
+                            if (column == Socket1Column && displayGear.Item.Socket1 != null)
                             {
                                 displayGear.Item.Socket1.SocketedGem = null;
                                 socketNotNull = true;
                             }
-                            else if (header == "Socket 2" && displayGear.Item.Socket2 != null)
+                            else if (column == Socket2Column && displayGear.Item.Socket2 != null)
                             {
                                 displayGear.Item.Socket2.SocketedGem = null;
                                 socketNotNull = true;
                             }
-                            else if (header == "Socket 3" && displayGear.Item.Socket3 != null)
+                            else if (column == Socket3Column && displayGear.Item.Socket3 != null)
                             {
                                 displayGear.Item.Socket3.SocketedGem = null;
                                 socketNotNull = true;
@@ -295,17 +296,17 @@ namespace RetSimDesktop
             {
                 if (DataContext is RetSimUIModel retSimUIModel && DataGridRow.GetRowContainingElement(cell).Item is DisplayGear displayItem)
                 {
-                    var header = cell.Column.Header.ToString();
+                    var column = cell.Column;
 
-                    if (header == "Socket 1" && displayItem.Item.Socket1 != null && displayItem.Item.Socket1.SocketedGem != null)
+                    if (column == Socket1Column && displayItem.Item.Socket1 != null && displayItem.Item.Socket1.SocketedGem != null)
                     {
                         retSimUIModel.TooltipSettings.HoverItemID = displayItem.Item.Socket1.SocketedGem.ID;
                     }
-                    else if (header == "Socket 2" && displayItem.Item.Socket2 != null && displayItem.Item.Socket2.SocketedGem != null)
+                    else if (column == Socket2Column && displayItem.Item.Socket2 != null && displayItem.Item.Socket2.SocketedGem != null)
                     {
                         retSimUIModel.TooltipSettings.HoverItemID = displayItem.Item.Socket2.SocketedGem.ID;
                     }
-                    else if (header == "Socket 3" && displayItem.Item.Socket3 != null && displayItem.Item.Socket3.SocketedGem != null)
+                    else if (column == Socket3Column && displayItem.Item.Socket3 != null && displayItem.Item.Socket3.SocketedGem != null)
                     {
                         retSimUIModel.TooltipSettings.HoverItemID = displayItem.Item.Socket3.SocketedGem.ID;
                     }
@@ -399,6 +400,74 @@ namespace RetSimDesktop
         public object ConvertBack(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
         {
             throw new NotSupportedException();
+        }
+    }
+
+    public class SocketToImageConverter : IValueConverter
+    {
+        public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
+        {
+            if(value is Socket socket)
+            {
+                if(socket.SocketedGem != null && MainWindow.GemsToIconName.ContainsKey(socket.SocketedGem.ID))
+                {
+                    return new BitmapImage(new Uri($"pack://application:,,,/Properties/Icons/{MainWindow.GemsToIconName[socket.SocketedGem.ID]}"));
+                }
+                else if(socket.Color == SocketColor.Red)
+                {
+                    return new BitmapImage(new Uri("pack://application:,,,/Properties/Icons/red_socket.jpg"));
+                }
+                else if (socket.Color == SocketColor.Blue)
+                {
+                    return new BitmapImage(new Uri("pack://application:,,,/Properties/Icons/blue_socket.jpg"));
+                }
+                else if (socket.Color == SocketColor.Yellow)
+                {
+                    return new BitmapImage(new Uri("pack://application:,,,/Properties/Icons/yellow_socket.jpg"));
+                }
+                else if (socket.Color == SocketColor.Meta)
+                {
+                    return new BitmapImage(new Uri("pack://application:,,,/Properties/Icons/meta_socket.jpg"));
+                }
+            }
+            return null;
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
+        {
+            return null;
+        }
+    }
+
+    public class SocketToSocketColorBrushConverter : IValueConverter
+    {
+        public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
+        {
+            if(value is Socket socket && socket.SocketedGem != null)
+            {
+                if(socket.Color == SocketColor.Meta)
+                {
+                    return new SolidColorBrush(Colors.DarkGray);
+                }
+                if (socket.Color == SocketColor.Red)
+                {
+                    return new SolidColorBrush(Colors.Red);
+                }
+                if (socket.Color == SocketColor.Blue)
+                {
+                    return new SolidColorBrush(Colors.Blue);
+                }
+                if (socket.Color == SocketColor.Yellow)
+                {
+                    return new SolidColorBrush(Colors.Yellow);
+                }
+            }
+            return new SolidColorBrush(Colors.Transparent);
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
+        {
+            return null;
         }
     }
 }

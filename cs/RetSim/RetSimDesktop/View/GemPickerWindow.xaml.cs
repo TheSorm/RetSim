@@ -1,5 +1,6 @@
 ﻿using RetSim.Items;
 using RetSim.Units.UnitStats;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
@@ -7,6 +8,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Input;
+using System.Windows.Media.Imaging;
 
 namespace RetSimDesktop
 {
@@ -112,6 +114,22 @@ namespace RetSimDesktop
                 Tooltip.Browser.Visibility = Visibility.Collapsed;
                 Tooltip.Browser = null;
             }
+        }
+    }
+    public class GemToImageConverter : IValueConverter
+    {
+        public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
+        {   
+            if(value is int id)
+            {
+                return new BitmapImage(new Uri($"pack://application:,,,/Properties/Icons/{MainWindow.GemsToIconName[id]}"));
+            }
+            return null;
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
+        {
+            return null;
         }
     }
 }

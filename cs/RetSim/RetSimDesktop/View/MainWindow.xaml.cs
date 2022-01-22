@@ -1,7 +1,11 @@
 ﻿using RetSimDesktop.View;
 using RetSimDesktop.ViewModel;
 using System;
+using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
+using System.Reflection;
+using System.Text.Json;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Threading;
@@ -14,6 +18,7 @@ namespace RetSimDesktop
     public partial class MainWindow : Window
     {
         private static SimWorker simWorker = new();
+        public static Dictionary<int, string> GemsToIconName = new();
 
         private DispatcherTimer timer = new DispatcherTimer();
         private Stopwatch timeTaken = new();
@@ -22,6 +27,20 @@ namespace RetSimDesktop
             var (Weapons, Armor, Sets, Gems, MetaGems, Enchants) = RetSim.Data.Manager.LoadData();
             RetSim.Data.Items.Initialize(Weapons, Armor, Sets, Gems, MetaGems, Enchants);
             RetSim.Data.Manager.InstantiateData();
+
+            try
+            {
+                string jsonString = File.ReadAllText($"Properties\\MetaData\\gemsMetaData.json");
+                var gemsMetaData = JsonSerializer.Deserialize<Dictionary<int, string>>(jsonString);
+                if(gemsMetaData != null)
+                {
+                    GemsToIconName = gemsMetaData;
+                }
+            }
+            catch (Exception) 
+            {
+            }
+
             InitializeComponent();
             RetSimUIModel GM = RetSimUIModel.Load();
             DataContext = GM;

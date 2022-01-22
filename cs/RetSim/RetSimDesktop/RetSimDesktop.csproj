@@ -5,11 +5,39 @@
     <TargetFramework>net6.0-windows</TargetFramework>
     <Nullable>enable</Nullable>
     <UseWPF>true</UseWPF>
-    <ApplicationIcon>Icon.ico</ApplicationIcon>
     <SupportedOSPlatformVersion>7.0</SupportedOSPlatformVersion>
+    <ApplicationIcon>Icon.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Properties\Icons\blue_socket.jpg" />
+    <None Remove="Properties\Icons\inv_jewelcrafting_crimsonspinel_02.jpg" />
+    <None Remove="Properties\Icons\inv_jewelcrafting_dawnstone_03.jpg" />
+    <None Remove="Properties\Icons\inv_jewelcrafting_lionseye_02.jpg" />
+    <None Remove="Properties\Icons\inv_jewelcrafting_livingruby_03.jpg" />
+    <None Remove="Properties\Icons\inv_jewelcrafting_nightseye_03.jpg" />
+    <None Remove="Properties\Icons\inv_jewelcrafting_nobletopaz_03.jpg" />
+    <None Remove="Properties\Icons\inv_jewelcrafting_pyrestone_02.jpg" />
+    <None Remove="Properties\Icons\inv_jewelcrafting_seasprayemerald_02.jpg" />
+    <None Remove="Properties\Icons\inv_jewelcrafting_shadowsongamethyst_02.jpg" />
+    <None Remove="Properties\Icons\inv_jewelcrafting_talasite_03.jpg" />
+    <None Remove="Properties\Icons\inv_misc_gem_bloodgem_02.jpg" />
+    <None Remove="Properties\Icons\inv_misc_gem_deepperidot_01.jpg" />
+    <None Remove="Properties\Icons\inv_misc_gem_deepperidot_02.jpg" />
+    <None Remove="Properties\Icons\inv_misc_gem_diamond_06.jpg" />
+    <None Remove="Properties\Icons\inv_misc_gem_diamond_07.jpg" />
+    <None Remove="Properties\Icons\inv_misc_gem_ebondraenite_02.jpg" />
+    <None Remove="Properties\Icons\inv_misc_gem_flamespessarite_02.jpg" />
+    <None Remove="Properties\Icons\inv_misc_gem_goldendraenite_02.jpg" />
+    <None Remove="Properties\Icons\inv_misc_gem_opal_01.jpg" />
+    <None Remove="Properties\Icons\inv_misc_gem_ruby_02.jpg" />
+    <None Remove="Properties\Icons\inv_misc_gem_ruby_03.jpg" />
+    <None Remove="Properties\Icons\inv_misc_gem_topaz_01.jpg" />
+    <None Remove="Properties\Icons\inv_misc_gem_topaz_03.jpg" />
+    <None Remove="Properties\Icons\meta_socket.jpg" />
+    <None Remove="Properties\Icons\red_socket.jpg" />
+    <None Remove="Properties\Icons\socket-red.gif" />
+    <None Remove="Properties\Icons\yellow_socket.jpg" />
     <None Remove="View\GearSlotSelect.xaml.cs~RF16209c.TMP" />
     <None Remove="View\GearSlotSelect.xaml~RF944546.TMP" />
   </ItemGroup>
@@ -32,6 +60,36 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Properties\Icons\blue_socket.jpg" />
+    <Resource Include="Properties\Icons\inv_jewelcrafting_crimsonspinel_02.jpg" />
+    <Resource Include="Properties\Icons\inv_jewelcrafting_dawnstone_03.jpg" />
+    <Resource Include="Properties\Icons\inv_jewelcrafting_lionseye_02.jpg" />
+    <Resource Include="Properties\Icons\inv_jewelcrafting_livingruby_03.jpg" />
+    <Resource Include="Properties\Icons\inv_jewelcrafting_nightseye_03.jpg" />
+    <Resource Include="Properties\Icons\inv_jewelcrafting_nobletopaz_03.jpg" />
+    <Resource Include="Properties\Icons\inv_jewelcrafting_pyrestone_02.jpg" />
+    <Resource Include="Properties\Icons\inv_jewelcrafting_seasprayemerald_02.jpg" />
+    <Resource Include="Properties\Icons\inv_jewelcrafting_shadowsongamethyst_02.jpg" />
+    <Resource Include="Properties\Icons\inv_jewelcrafting_talasite_03.jpg" />
+    <Resource Include="Properties\Icons\inv_misc_gem_bloodgem_02.jpg" />
+    <Resource Include="Properties\Icons\inv_misc_gem_deepperidot_01.jpg" />
+    <Resource Include="Properties\Icons\inv_misc_gem_deepperidot_02.jpg" />
+    <Resource Include="Properties\Icons\inv_misc_gem_diamond_06.jpg" />
+    <Resource Include="Properties\Icons\inv_misc_gem_diamond_07.jpg" />
+    <Resource Include="Properties\Icons\inv_misc_gem_ebondraenite_02.jpg" />
+    <Resource Include="Properties\Icons\inv_misc_gem_flamespessarite_02.jpg" />
+    <Resource Include="Properties\Icons\inv_misc_gem_goldendraenite_02.jpg" />
+    <Resource Include="Properties\Icons\inv_misc_gem_opal_01.jpg" />
+    <Resource Include="Properties\Icons\inv_misc_gem_ruby_02.jpg" />
+    <Resource Include="Properties\Icons\inv_misc_gem_ruby_03.jpg" />
+    <Resource Include="Properties\Icons\inv_misc_gem_topaz_01.jpg" />
+    <Resource Include="Properties\Icons\inv_misc_gem_topaz_03.jpg" />
+    <Resource Include="Properties\Icons\meta_socket.jpg" />
+    <Resource Include="Properties\Icons\red_socket.jpg" />
+    <Resource Include="Properties\Icons\yellow_socket.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Update="Model\SimWorker\CsDelayWorker.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -41,6 +99,24 @@
     <Compile Update="Model\SimWorker\GearSimWorker.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Properties\MetaData\gemsMetaData.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
   <ItemGroup>

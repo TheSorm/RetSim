@@ -11,6 +11,8 @@
     <UserControl.Resources>
         <local:SocketConverter x:Key="SocketConverter" />
         <local:SocketBonusConverter x:Key="SocketBonusConverter" />
+        <local:SocketToImageConverter x:Key="SocketToImageConverter" />
+        <local:SocketToSocketColorBrushConverter x:Key="SocketToSocketColorBrushConverter" />
     </UserControl.Resources>
     <Grid>
         <Grid.RowDefinitions>
@@ -58,42 +60,39 @@
                         </Style>
                     </DataGridTextColumn.ElementStyle>
                 </DataGridTextColumn>
-                <DataGridTextColumn MinWidth="55" CanUserReorder="False" CanUserSort="False" Header="Socket 1" Binding="{Binding Item.Socket1, Converter={StaticResource SocketConverter}}" >
-                    <DataGridTextColumn.HeaderStyle>
-                        <Style TargetType="DataGridColumnHeader">
-                            <Setter Property="HorizontalContentAlignment" Value="Center" />
-                        </Style>
-                    </DataGridTextColumn.HeaderStyle>
-                    <DataGridTextColumn.ElementStyle>
-                        <Style TargetType="TextBlock">
-                            <Setter Property="TextAlignment" Value="Center" />
-                        </Style>
-                    </DataGridTextColumn.ElementStyle>
-                </DataGridTextColumn>
-                <DataGridTextColumn MinWidth="55" CanUserReorder="False" CanUserSort="False" Header="Socket 2" Binding="{Binding Item.Socket2, Converter={StaticResource SocketConverter}}" >
-                    <DataGridTextColumn.HeaderStyle>
-                        <Style TargetType="DataGridColumnHeader">
-                            <Setter Property="HorizontalContentAlignment" Value="Center" />
-                        </Style>
-                    </DataGridTextColumn.HeaderStyle>
-                    <DataGridTextColumn.ElementStyle>
-                        <Style TargetType="TextBlock">
-                            <Setter Property="TextAlignment" Value="Center" />
-                        </Style>
-                    </DataGridTextColumn.ElementStyle>
-                </DataGridTextColumn>
-                <DataGridTextColumn MinWidth="55" CanUserReorder="False" CanUserSort="False" Header="Socket 3" Binding="{Binding Item.Socket3, Converter={StaticResource SocketConverter}}" >
-                    <DataGridTextColumn.HeaderStyle>
-                        <Style TargetType="DataGridColumnHeader">
-                            <Setter Property="HorizontalContentAlignment" Value="Center" />
-                        </Style>
-                    </DataGridTextColumn.HeaderStyle>
-                    <DataGridTextColumn.ElementStyle>
-                        <Style TargetType="TextBlock">
-                            <Setter Property="TextAlignment" Value="Center" />
-                        </Style>
-                    </DataGridTextColumn.ElementStyle>
-                </DataGridTextColumn>
+                <DataGridTemplateColumn x:Name="Socket1Column" Width="25" CanUserReorder="False" CanUserSort="False" Header="">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Border Width="18" Height="18" BorderThickness="2"
+                                BorderBrush="{Binding Item.Socket1, Converter={StaticResource SocketToSocketColorBrushConverter}}"
+                                VerticalAlignment="Top">
+                                <Image Width="14" Height="14" RenderOptions.BitmapScalingMode="HighQuality" Source="{Binding Item.Socket1, Converter={StaticResource SocketToImageConverter}}" />
+                            </Border>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn x:Name="Socket2Column" Width="25" CanUserReorder="False" CanUserSort="False" Header="">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Border Width="18" Height="18" BorderThickness="2"
+                                BorderBrush="{Binding Item.Socket2, Converter={StaticResource SocketToSocketColorBrushConverter}}"
+                                VerticalAlignment="Top">
+                                <Image Width="14" Height="14" RenderOptions.BitmapScalingMode="HighQuality" Source="{Binding Item.Socket2, Converter={StaticResource SocketToImageConverter}}" />
+                            </Border>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn x:Name="Socket3Column" Width="25" CanUserReorder="False" CanUserSort="False" Header="">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Border Width="18" Height="18" BorderThickness="2"
+                                BorderBrush="{Binding Item.Socket3, Converter={StaticResource SocketToSocketColorBrushConverter}}"
+                                VerticalAlignment="Top">
+                                <Image Width="14" Height="14" RenderOptions.BitmapScalingMode="HighQuality" Source="{Binding Item.Socket3, Converter={StaticResource SocketToImageConverter}}" />
+                            </Border>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
                 <DataGridTextColumn MinWidth="45" CanUserReorder="False" CanUserSort="False" Header="Bonus" Binding="{Binding Item, Converter={StaticResource SocketBonusConverter}}" >
                     <DataGridTextColumn.HeaderStyle>
                         <Style TargetType="DataGridColumnHeader">
