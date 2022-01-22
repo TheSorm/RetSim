@@ -152,6 +152,8 @@ namespace RetSimDesktop
                         var DamageChartPie = DamageChart.Plot.AddPie(damage.ToArray());
                         DamageChartPie.ShowPercentages = true;
                         DamageChartPie.SliceLabels = damageLabels.ToArray();
+                        DamageChartPie.Explode = true;
+
                         DamageChart.Plot.Legend();
                         DamageChart.Refresh();
 
@@ -177,7 +179,7 @@ namespace RetSimDesktop
                         foreach (var bar in bars)
                         {
                             bar.Orientation = ScottPlot.Orientation.Horizontal;
-                        }
+                        }                        
 
                         double[] xPositions = { 0, 25, 50, 75, 100 };
                         string[] xLabels = { "0%", "25%", "50%", "75%", "100%" };
@@ -527,27 +529,8 @@ namespace RetSimDesktop
 
 
             DPSHistogram.Render();
-
-            //if ((damageBreakdownScatterPlotLastIndex != pointIndex || !damageBreakdownScatterPlotTooltip.IsVisible) && currentFilteredDamageBreakdownCombatLog.Count > pointIndex - 2)
-            //{
-            //    damageBreakdownScatterPlotTooltip.X = pointX;
-            //    damageBreakdownScatterPlotTooltip.Y = pointY;
-            //    damageBreakdownScatterPlotTooltip.Label = currentFilteredDamageBreakdownCombatLog[pointIndex - 2].ToString();
-            //    damageBreakdownScatterPlotTooltip.IsVisible = true;
-
-
-            //    damageBreakdownScatterPlotHighlight.X = pointX;
-            //    damageBreakdownScatterPlotHighlight.Y = pointY;
-            //    damageBreakdownScatterPlotHighlight.IsVisible = true;
-
-
-            //    damageBreakdownScatterPlotLastIndex = pointIndex;
-
-            //    DPSGraph.Refresh();
-            //}
         }
-
-
+       
         private void DPSGraph_MouseMove(object sender, MouseEventArgs e)
         {
             if (damageBreakdownScatterPlot == null)
