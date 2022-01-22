@@ -459,7 +459,7 @@ namespace RetSimDesktop
                 }
                 if (socket.Color == SocketColor.Yellow)
                 {
-                    return new SolidColorBrush(Colors.Yellow);
+                    return new SolidColorBrush(Color.FromRgb(181, 181, 0));
                 }
             }
             return new SolidColorBrush(Colors.Transparent);
