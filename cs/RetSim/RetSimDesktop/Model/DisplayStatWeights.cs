@@ -11,6 +11,17 @@ namespace RetSimDesktop.Model
         private string name = "";
         private float dpsDelta;
         private float statPerDps;
+        private bool ignoreExpertiseCap = false;
+
+        public bool IgnoreExpertiseCap
+        {
+            get { return ignoreExpertiseCap; }
+            set
+            {
+                ignoreExpertiseCap = value;
+                OnPropertyChanged(nameof(IgnoreExpertiseCap));
+            }
+        }
 
         public StatName Stat
         {

@@ -7,7 +7,7 @@ public abstract class Stat
 
     public float Race { get; init; }
     public float Gear { get; init; }
-    public float Permanent { get; init; }
+    public float Permanent { get; set; }
 
     protected float modifier;
     public float Modifier

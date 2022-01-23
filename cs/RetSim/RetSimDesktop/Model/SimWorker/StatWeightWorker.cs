@@ -116,6 +116,7 @@ namespace RetSimDesktop.Model
                         BaseSeed = baseSeed,
                         BaseDps = baseDps,
                         StatWeightsDisplay = item,
+                        IgnoreExpertiseCap = item.IgnoreExpertiseCap
                     };
 
                     threads[freeThread] = new(new ThreadStart(simExecuter[freeThread].Execute));
@@ -138,38 +139,62 @@ namespace RetSimDesktop.Model
         public DisplayStatWeights StatWeightsDisplay { get; init; } = new();
         public float BaseDps { get; init; }
         public int BaseSeed { get; init; }
+        public bool IgnoreExpertiseCap { get; init; }
+
+        private const float ExpertiseDecrease = 8f;
 
         public override void Execute()
         {
+            float dps = 0;
+            float delta = 0;            
+            float increase = StatWeightsDisplay.IncreasedAmount;
+
             StatSet extraStats = new();
             extraStats[StatWeightsDisplay.Stat] += StatWeightsDisplay.IncreasedAmount;
-            float dps = 0;
+            
             for (int i = 0; i < NumberOfSimulations; i++)
             {
                 RNG.local = new(BaseSeed + i);
+
                 FightSimulation fight = new(new Player("Brave Hero", Race, ShattrathFaction, PlayerEquipment, Talents, extraStats), new Enemy(Encounter), new EliteTactic(0), GroupTalents, Buffs, Debuffs, Consumables, MinFightDuration, MaxFightDuration, Cooldowns, HeroismUsage);
+                
+                if (IgnoreExpertiseCap && fight.Player.Stats[StatName.Expertise].Value > Constants.Stats.ExpertiseCap) 
+                {
+                    fight.Player.Stats[StatName.ExpertiseRating].Permanent = 0;
+                    fight.Player.Stats[StatName.ExpertiseRating].Bonus = 0;
+                    fight.Player.Stats[StatName.ExpertiseRating].Update();
+                    fight.Player.Stats[StatName.Expertise].Permanent = 0;
+                    fight.Player.Stats[StatName.Expertise].Bonus = Constants.Stats.ExpertiseCap - ExpertiseDecrease;
+                    fight.Player.Stats[StatName.Expertise].Update();
+
+                    increase = -Constants.Ratings.Expertise * ExpertiseDecrease;
+                }
+
                 fight.Run();
+
                 dps += fight.CombatLog.DPS;
-                StatWeightsDisplay.DpsDelta = ((dps / i) - BaseDps) / StatWeightsDisplay.IncreasedAmount;
-                if (StatWeightsDisplay.DpsDelta != 0)
-                {
-                    StatWeightsDisplay.StatPerDps = 1f / StatWeightsDisplay.DpsDelta;
-                }
-                else
-                {
-                    StatWeightsDisplay.StatPerDps = 0;
-                }
+
+                delta = ((dps / i) - BaseDps) / increase;
+
+                UpdateInterface(delta);
             }
+
             dps /= NumberOfSimulations;
-            StatWeightsDisplay.DpsDelta = (dps - BaseDps) / StatWeightsDisplay.IncreasedAmount;
-            if (StatWeightsDisplay.DpsDelta != 0)
-            {
+
+            delta = (dps - BaseDps) / increase;
+
+            UpdateInterface(delta);
+        }
+
+        private void UpdateInterface(float delta)
+        {
+            StatWeightsDisplay.DpsDelta = delta;
+
+            if (StatWeightsDisplay.DpsDelta > 0)
                 StatWeightsDisplay.StatPerDps = 1f / StatWeightsDisplay.DpsDelta;
-            }
+
             else
-            {
                 StatWeightsDisplay.StatPerDps = 0;
-            }
         }
     }
 }
