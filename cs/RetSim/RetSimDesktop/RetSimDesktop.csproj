@@ -10,18 +10,340 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Properties\Icons\ability_warrior_endlessrage.jpg" />
+    <None Remove="Properties\Icons\ability_warrior_focusedrage.jpg" />
     <None Remove="Properties\Icons\blue_socket.jpg" />
+    <None Remove="Properties\Icons\inv_axe_02.jpg" />
+    <None Remove="Properties\Icons\inv_axe_04.jpg" />
+    <None Remove="Properties\Icons\inv_axe_09.jpg" />
+    <None Remove="Properties\Icons\inv_axe_10.jpg" />
+    <None Remove="Properties\Icons\inv_axe_40.jpg" />
+    <None Remove="Properties\Icons\inv_axe_44.jpg" />
+    <None Remove="Properties\Icons\inv_axe_46.jpg" />
+    <None Remove="Properties\Icons\inv_axe_49.jpg" />
+    <None Remove="Properties\Icons\inv_axe_50.jpg" />
+    <None Remove="Properties\Icons\inv_axe_51.jpg" />
+    <None Remove="Properties\Icons\inv_axe_52.jpg" />
+    <None Remove="Properties\Icons\inv_axe_54.jpg" />
+    <None Remove="Properties\Icons\inv_axe_60.jpg" />
+    <None Remove="Properties\Icons\inv_axe_64.jpg" />
+    <None Remove="Properties\Icons\inv_axe_67.jpg" />
+    <None Remove="Properties\Icons\inv_axe_68.jpg" />
+    <None Remove="Properties\Icons\inv_axe_69.jpg" />
+    <None Remove="Properties\Icons\inv_axe_70.jpg" />
+    <None Remove="Properties\Icons\inv_axe_71.jpg" />
+    <None Remove="Properties\Icons\inv_axe_72.jpg" />
+    <None Remove="Properties\Icons\inv_axe_73.jpg" />
+    <None Remove="Properties\Icons\inv_axe_85.jpg" />
+    <None Remove="Properties\Icons\inv_belt_01.jpg" />
+    <None Remove="Properties\Icons\inv_belt_03.jpg" />
+    <None Remove="Properties\Icons\inv_belt_08.jpg" />
+    <None Remove="Properties\Icons\inv_belt_09.jpg" />
+    <None Remove="Properties\Icons\inv_belt_11.jpg" />
+    <None Remove="Properties\Icons\inv_belt_12.jpg" />
+    <None Remove="Properties\Icons\inv_belt_13.jpg" />
+    <None Remove="Properties\Icons\inv_belt_14.jpg" />
+    <None Remove="Properties\Icons\inv_belt_15.jpg" />
+    <None Remove="Properties\Icons\inv_belt_16.jpg" />
+    <None Remove="Properties\Icons\inv_belt_17.jpg" />
+    <None Remove="Properties\Icons\inv_belt_18.jpg" />
+    <None Remove="Properties\Icons\inv_belt_19.jpg" />
+    <None Remove="Properties\Icons\inv_belt_20.jpg" />
+    <None Remove="Properties\Icons\inv_belt_22.jpg" />
+    <None Remove="Properties\Icons\inv_belt_23.jpg" />
+    <None Remove="Properties\Icons\inv_belt_24.jpg" />
+    <None Remove="Properties\Icons\inv_belt_25.jpg" />
+    <None Remove="Properties\Icons\inv_belt_26.jpg" />
+    <None Remove="Properties\Icons\inv_belt_27.jpg" />
+    <None Remove="Properties\Icons\inv_belt_28.jpg" />
+    <None Remove="Properties\Icons\inv_belt_29.jpg" />
+    <None Remove="Properties\Icons\inv_belt_30.jpg" />
+    <None Remove="Properties\Icons\inv_belt_31.jpg" />
+    <None Remove="Properties\Icons\inv_belt_35.jpg" />
+    <None Remove="Properties\Icons\inv_boots_02.jpg" />
+    <None Remove="Properties\Icons\inv_boots_05.jpg" />
+    <None Remove="Properties\Icons\inv_boots_07.jpg" />
+    <None Remove="Properties\Icons\inv_boots_chain_01.jpg" />
+    <None Remove="Properties\Icons\inv_boots_chain_02.jpg" />
+    <None Remove="Properties\Icons\inv_boots_chain_03.jpg" />
+    <None Remove="Properties\Icons\inv_boots_chain_04.jpg" />
+    <None Remove="Properties\Icons\inv_boots_chain_05.jpg" />
+    <None Remove="Properties\Icons\inv_boots_chain_06.jpg" />
+    <None Remove="Properties\Icons\inv_boots_chain_07.jpg" />
+    <None Remove="Properties\Icons\inv_boots_chain_08.jpg" />
+    <None Remove="Properties\Icons\inv_boots_chain_09.jpg" />
+    <None Remove="Properties\Icons\inv_boots_chain_11.jpg" />
+    <None Remove="Properties\Icons\inv_boots_chain_12.jpg" />
+    <None Remove="Properties\Icons\inv_boots_cloth_02.jpg" />
+    <None Remove="Properties\Icons\inv_boots_cloth_04.jpg" />
+    <None Remove="Properties\Icons\inv_boots_cloth_05.jpg" />
+    <None Remove="Properties\Icons\inv_boots_cloth_06.jpg" />
+    <None Remove="Properties\Icons\inv_boots_plate_01.jpg" />
+    <None Remove="Properties\Icons\inv_boots_plate_02.jpg" />
+    <None Remove="Properties\Icons\inv_boots_plate_03.jpg" />
+    <None Remove="Properties\Icons\inv_boots_plate_04.jpg" />
+    <None Remove="Properties\Icons\inv_boots_plate_06.jpg" />
+    <None Remove="Properties\Icons\inv_boots_plate_08.jpg" />
+    <None Remove="Properties\Icons\inv_boots_plate_10.jpg" />
+    <None Remove="Properties\Icons\inv_boots_wolf.jpg" />
+    <None Remove="Properties\Icons\inv_bracer_02.jpg" />
+    <None Remove="Properties\Icons\inv_bracer_04.jpg" />
+    <None Remove="Properties\Icons\inv_bracer_05.jpg" />
+    <None Remove="Properties\Icons\inv_bracer_06.jpg" />
+    <None Remove="Properties\Icons\inv_bracer_07.jpg" />
+    <None Remove="Properties\Icons\inv_bracer_08.jpg" />
+    <None Remove="Properties\Icons\inv_bracer_09.jpg" />
+    <None Remove="Properties\Icons\inv_bracer_10.jpg" />
+    <None Remove="Properties\Icons\inv_bracer_12.jpg" />
+    <None Remove="Properties\Icons\inv_bracer_13.jpg" />
+    <None Remove="Properties\Icons\inv_bracer_14.jpg" />
+    <None Remove="Properties\Icons\inv_bracer_15.jpg" />
+    <None Remove="Properties\Icons\inv_bracer_16.jpg" />
+    <None Remove="Properties\Icons\inv_bracer_17.jpg" />
+    <None Remove="Properties\Icons\inv_bracer_18.jpg" />
+    <None Remove="Properties\Icons\inv_bracer_19.jpg" />
+    <None Remove="Properties\Icons\inv_brd_banner.jpg" />
+    <None Remove="Properties\Icons\inv_chest_chain_03.jpg" />
+    <None Remove="Properties\Icons\inv_chest_chain_06.jpg" />
+    <None Remove="Properties\Icons\inv_chest_chain_07.jpg" />
+    <None Remove="Properties\Icons\inv_chest_chain_12.jpg" />
+    <None Remove="Properties\Icons\inv_chest_chain_13.jpg" />
+    <None Remove="Properties\Icons\inv_chest_chain_15.jpg" />
+    <None Remove="Properties\Icons\inv_chest_chain_16.jpg" />
+    <None Remove="Properties\Icons\inv_chest_chain_17.jpg" />
+    <None Remove="Properties\Icons\inv_chest_cloth_05.jpg" />
+    <None Remove="Properties\Icons\inv_chest_cloth_07.jpg" />
+    <None Remove="Properties\Icons\inv_chest_cloth_45.jpg" />
+    <None Remove="Properties\Icons\inv_chest_leather_03.jpg" />
+    <None Remove="Properties\Icons\inv_chest_leather_04.jpg" />
+    <None Remove="Properties\Icons\inv_chest_leather_05.jpg" />
+    <None Remove="Properties\Icons\inv_chest_leather_06.jpg" />
+    <None Remove="Properties\Icons\inv_chest_leather_08.jpg" />
+    <None Remove="Properties\Icons\inv_chest_leather_14.jpg" />
+    <None Remove="Properties\Icons\inv_chest_leather_16.jpg" />
+    <None Remove="Properties\Icons\inv_chest_plate02.jpg" />
+    <None Remove="Properties\Icons\inv_chest_plate05.jpg" />
+    <None Remove="Properties\Icons\inv_chest_plate06.jpg" />
+    <None Remove="Properties\Icons\inv_chest_plate07.jpg" />
+    <None Remove="Properties\Icons\inv_chest_plate08.jpg" />
+    <None Remove="Properties\Icons\inv_chest_plate09.jpg" />
+    <None Remove="Properties\Icons\inv_chest_plate10.jpg" />
+    <None Remove="Properties\Icons\inv_chest_plate11.jpg" />
+    <None Remove="Properties\Icons\inv_chest_plate13.jpg" />
+    <None Remove="Properties\Icons\inv_chest_plate14.jpg" />
+    <None Remove="Properties\Icons\inv_chest_plate15.jpg" />
+    <None Remove="Properties\Icons\inv_chest_plate16.jpg" />
+    <None Remove="Properties\Icons\inv_chest_plate20.jpg" />
+    <None Remove="Properties\Icons\inv_chest_plate_22.jpg" />
+    <None Remove="Properties\Icons\inv_chest_samurai.jpg" />
+    <None Remove="Properties\Icons\inv_datacrystal01.jpg" />
+    <None Remove="Properties\Icons\inv_datacrystal02.jpg" />
+    <None Remove="Properties\Icons\inv_datacrystal06.jpg" />
+    <None Remove="Properties\Icons\inv_drink_03.jpg" />
+    <None Remove="Properties\Icons\inv_drink_04.jpg" />
+    <None Remove="Properties\Icons\inv_gauntlets_01.jpg" />
+    <None Remove="Properties\Icons\inv_gauntlets_03.jpg" />
+    <None Remove="Properties\Icons\inv_gauntlets_05.jpg" />
+    <None Remove="Properties\Icons\inv_gauntlets_08.jpg" />
+    <None Remove="Properties\Icons\inv_gauntlets_09.jpg" />
+    <None Remove="Properties\Icons\inv_gauntlets_10.jpg" />
+    <None Remove="Properties\Icons\inv_gauntlets_11.jpg" />
+    <None Remove="Properties\Icons\inv_gauntlets_13.jpg" />
+    <None Remove="Properties\Icons\inv_gauntlets_15.jpg" />
+    <None Remove="Properties\Icons\inv_gauntlets_17.jpg" />
+    <None Remove="Properties\Icons\inv_gauntlets_19.jpg" />
+    <None Remove="Properties\Icons\inv_gauntlets_21.jpg" />
+    <None Remove="Properties\Icons\inv_gauntlets_22.jpg" />
+    <None Remove="Properties\Icons\inv_gauntlets_23.jpg" />
+    <None Remove="Properties\Icons\inv_gauntlets_25.jpg" />
+    <None Remove="Properties\Icons\inv_gauntlets_26.jpg" />
+    <None Remove="Properties\Icons\inv_gauntlets_28.jpg" />
+    <None Remove="Properties\Icons\inv_gauntlets_29.jpg" />
+    <None Remove="Properties\Icons\inv_gauntlets_30.jpg" />
+    <None Remove="Properties\Icons\inv_gauntlets_31.jpg" />
+    <None Remove="Properties\Icons\inv_gauntlets_50.jpg" />
+    <None Remove="Properties\Icons\inv_gauntlets_51.jpg" />
+    <None Remove="Properties\Icons\inv_gauntlets_52.jpg" />
+    <None Remove="Properties\Icons\inv_gauntlets_59.jpg" />
+    <None Remove="Properties\Icons\inv_gauntlets_60.jpg" />
+    <None Remove="Properties\Icons\inv_gauntlets_62.jpg" />
+    <None Remove="Properties\Icons\inv_gauntlets_65.jpg" />
+    <None Remove="Properties\Icons\inv_gauntlets_67.jpg" />
+    <None Remove="Properties\Icons\inv_gizmo_khoriumpowercore.jpg" />
+    <None Remove="Properties\Icons\inv_gizmo_newgoggles.jpg" />
+    <None Remove="Properties\Icons\inv_gizmo_rocketboot_01.jpg" />
+    <None Remove="Properties\Icons\inv_gizmo_rocketlauncher.jpg" />
+    <None Remove="Properties\Icons\inv_hammer_04.jpg" />
+    <None Remove="Properties\Icons\inv_hammer_09.jpg" />
+    <None Remove="Properties\Icons\inv_hammer_10.jpg" />
+    <None Remove="Properties\Icons\inv_hammer_17.jpg" />
+    <None Remove="Properties\Icons\inv_hammer_28.jpg" />
+    <None Remove="Properties\Icons\inv_helmet128.jpg" />
+    <None Remove="Properties\Icons\inv_helmet_01.jpg" />
+    <None Remove="Properties\Icons\inv_helmet_03.jpg" />
+    <None Remove="Properties\Icons\inv_helmet_04.jpg" />
+    <None Remove="Properties\Icons\inv_helmet_05.jpg" />
+    <None Remove="Properties\Icons\inv_helmet_06.jpg" />
+    <None Remove="Properties\Icons\inv_helmet_09.jpg" />
+    <None Remove="Properties\Icons\inv_helmet_10.jpg" />
+    <None Remove="Properties\Icons\inv_helmet_113.jpg" />
+    <None Remove="Properties\Icons\inv_helmet_114.jpg" />
+    <None Remove="Properties\Icons\inv_helmet_116.jpg" />
+    <None Remove="Properties\Icons\inv_helmet_12.jpg" />
+    <None Remove="Properties\Icons\inv_helmet_126.jpg" />
+    <None Remove="Properties\Icons\inv_helmet_127.jpg" />
+    <None Remove="Properties\Icons\inv_helmet_15.jpg" />
+    <None Remove="Properties\Icons\inv_helmet_16.jpg" />
+    <None Remove="Properties\Icons\inv_helmet_17.jpg" />
+    <None Remove="Properties\Icons\inv_helmet_18.jpg" />
+    <None Remove="Properties\Icons\inv_helmet_19.jpg" />
+    <None Remove="Properties\Icons\inv_helmet_20.jpg" />
+    <None Remove="Properties\Icons\inv_helmet_21.jpg" />
+    <None Remove="Properties\Icons\inv_helmet_22.jpg" />
+    <None Remove="Properties\Icons\inv_helmet_23.jpg" />
+    <None Remove="Properties\Icons\inv_helmet_25.jpg" />
+    <None Remove="Properties\Icons\inv_helmet_29.jpg" />
+    <None Remove="Properties\Icons\inv_helmet_30.jpg" />
+    <None Remove="Properties\Icons\inv_helmet_38.jpg" />
+    <None Remove="Properties\Icons\inv_helmet_42.jpg" />
+    <None Remove="Properties\Icons\inv_helmet_43.jpg" />
+    <None Remove="Properties\Icons\inv_helmet_45.jpg" />
+    <None Remove="Properties\Icons\inv_helmet_50.jpg" />
+    <None Remove="Properties\Icons\inv_helmet_57.jpg" />
+    <None Remove="Properties\Icons\inv_helmet_58.jpg" />
+    <None Remove="Properties\Icons\inv_helmet_60.jpg" />
+    <None Remove="Properties\Icons\inv_helmet_71.jpg" />
+    <None Remove="Properties\Icons\inv_helmet_72.jpg" />
+    <None Remove="Properties\Icons\inv_helmet_73.jpg" />
+    <None Remove="Properties\Icons\inv_helmet_92.jpg" />
+    <None Remove="Properties\Icons\inv_helmet_95.jpg" />
+    <None Remove="Properties\Icons\inv_helmet_96.jpg" />
+    <None Remove="Properties\Icons\inv_helmet_98.jpg" />
+    <None Remove="Properties\Icons\inv_jewelcrafting_blackpearlpanther.jpg" />
     <None Remove="Properties\Icons\inv_jewelcrafting_crimsonspinel_02.jpg" />
     <None Remove="Properties\Icons\inv_jewelcrafting_dawnstone_03.jpg" />
     <None Remove="Properties\Icons\inv_jewelcrafting_lionseye_02.jpg" />
     <None Remove="Properties\Icons\inv_jewelcrafting_livingruby_03.jpg" />
+    <None Remove="Properties\Icons\inv_jewelcrafting_nightseye_01.jpg" />
     <None Remove="Properties\Icons\inv_jewelcrafting_nightseye_03.jpg" />
     <None Remove="Properties\Icons\inv_jewelcrafting_nobletopaz_03.jpg" />
     <None Remove="Properties\Icons\inv_jewelcrafting_pyrestone_02.jpg" />
+    <None Remove="Properties\Icons\inv_jewelcrafting_rubyserpent.jpg" />
     <None Remove="Properties\Icons\inv_jewelcrafting_seasprayemerald_02.jpg" />
     <None Remove="Properties\Icons\inv_jewelcrafting_shadowsongamethyst_02.jpg" />
     <None Remove="Properties\Icons\inv_jewelcrafting_talasite_03.jpg" />
+    <None Remove="Properties\Icons\inv_jewelcrafting_truesilverboar.jpg" />
+    <None Remove="Properties\Icons\inv_jewelry_necklace_04.jpg" />
+    <None Remove="Properties\Icons\inv_jewelry_necklace_06.jpg" />
+    <None Remove="Properties\Icons\inv_jewelry_necklace_07.jpg" />
+    <None Remove="Properties\Icons\inv_jewelry_necklace_12.jpg" />
+    <None Remove="Properties\Icons\inv_jewelry_necklace_13.jpg" />
+    <None Remove="Properties\Icons\inv_jewelry_necklace_17.jpg" />
+    <None Remove="Properties\Icons\inv_jewelry_necklace_18.jpg" />
+    <None Remove="Properties\Icons\inv_jewelry_necklace_19.jpg" />
+    <None Remove="Properties\Icons\inv_jewelry_necklace_20.jpg" />
+    <None Remove="Properties\Icons\inv_jewelry_necklace_21.jpg" />
+    <None Remove="Properties\Icons\inv_jewelry_necklace_22.jpg" />
+    <None Remove="Properties\Icons\inv_jewelry_necklace_28.jpg" />
+    <None Remove="Properties\Icons\inv_jewelry_necklace_28naxxramas.jpg" />
+    <None Remove="Properties\Icons\inv_jewelry_necklace_29naxxramas.jpg" />
+    <None Remove="Properties\Icons\inv_jewelry_necklace_30naxxramas.jpg" />
+    <None Remove="Properties\Icons\inv_jewelry_necklace_33.jpg" />
+    <None Remove="Properties\Icons\inv_jewelry_necklace_34.jpg" />
+    <None Remove="Properties\Icons\inv_jewelry_necklace_35.jpg" />
+    <None Remove="Properties\Icons\inv_jewelry_necklace_36.jpg" />
+    <None Remove="Properties\Icons\inv_jewelry_necklace_38.jpg" />
+    <None Remove="Properties\Icons\inv_jewelry_necklace_39.jpg" />
+    <None Remove="Properties\Icons\inv_jewelry_necklace_43.jpg" />
+    <None Remove="Properties\Icons\inv_jewelry_necklace_47.jpg" />
+    <None Remove="Properties\Icons\inv_jewelry_necklace_ahnqiraj_01.jpg" />
+    <None Remove="Properties\Icons\inv_jewelry_necklace_ahnqiraj_03.jpg" />
+    <None Remove="Properties\Icons\inv_jewelry_ring_02.jpg" />
+    <None Remove="Properties\Icons\inv_jewelry_ring_04.jpg" />
+    <None Remove="Properties\Icons\inv_jewelry_ring_16.jpg" />
+    <None Remove="Properties\Icons\inv_jewelry_ring_22.jpg" />
+    <None Remove="Properties\Icons\inv_jewelry_ring_23.jpg" />
+    <None Remove="Properties\Icons\inv_jewelry_ring_24.jpg" />
+    <None Remove="Properties\Icons\inv_jewelry_ring_34.jpg" />
+    <None Remove="Properties\Icons\inv_jewelry_ring_35.jpg" />
+    <None Remove="Properties\Icons\inv_jewelry_ring_36.jpg" />
+    <None Remove="Properties\Icons\inv_jewelry_ring_37.jpg" />
+    <None Remove="Properties\Icons\inv_jewelry_ring_38.jpg" />
+    <None Remove="Properties\Icons\inv_jewelry_ring_39.jpg" />
+    <None Remove="Properties\Icons\inv_jewelry_ring_41.jpg" />
+    <None Remove="Properties\Icons\inv_jewelry_ring_44.jpg" />
+    <None Remove="Properties\Icons\inv_jewelry_ring_45.jpg" />
+    <None Remove="Properties\Icons\inv_jewelry_ring_47.jpg" />
+    <None Remove="Properties\Icons\inv_jewelry_ring_48naxxramas.jpg" />
+    <None Remove="Properties\Icons\inv_jewelry_ring_51naxxramas.jpg" />
+    <None Remove="Properties\Icons\inv_jewelry_ring_53naxxramas.jpg" />
+    <None Remove="Properties\Icons\inv_jewelry_ring_54.jpg" />
+    <None Remove="Properties\Icons\inv_jewelry_ring_55.jpg" />
+    <None Remove="Properties\Icons\inv_jewelry_ring_58.jpg" />
+    <None Remove="Properties\Icons\inv_jewelry_ring_60.jpg" />
+    <None Remove="Properties\Icons\inv_jewelry_ring_62.jpg" />
+    <None Remove="Properties\Icons\inv_jewelry_ring_64.jpg" />
+    <None Remove="Properties\Icons\inv_jewelry_ring_65.jpg" />
+    <None Remove="Properties\Icons\inv_jewelry_ring_67.jpg" />
+    <None Remove="Properties\Icons\inv_jewelry_ring_68.jpg" />
+    <None Remove="Properties\Icons\inv_jewelry_ring_71.jpg" />
+    <None Remove="Properties\Icons\inv_jewelry_ring_72.jpg" />
+    <None Remove="Properties\Icons\inv_jewelry_ring_79.jpg" />
+    <None Remove="Properties\Icons\inv_jewelry_ring_ahnqiraj_01.jpg" />
+    <None Remove="Properties\Icons\inv_jewelry_ring_ahnqiraj_03.jpg" />
+    <None Remove="Properties\Icons\inv_jewelry_ring_ahnqiraj_05.jpg" />
+    <None Remove="Properties\Icons\inv_jewelry_talisman_01.jpg" />
+    <None Remove="Properties\Icons\inv_jewelry_talisman_04.jpg" />
+    <None Remove="Properties\Icons\inv_jewelry_talisman_06.jpg" />
+    <None Remove="Properties\Icons\inv_jewelry_talisman_12.jpg" />
+    <None Remove="Properties\Icons\inv_jewelry_talisman_14.jpg" />
+    <None Remove="Properties\Icons\inv_jewelry_talisman_16.jpg" />
+    <None Remove="Properties\Icons\inv_jewelry_talisman_18.jpg" />
+    <None Remove="Properties\Icons\inv_jewelry_trinketpvp_01.jpg" />
+    <None Remove="Properties\Icons\inv_jewelry_trinketpvp_02.jpg" />
+    <None Remove="Properties\Icons\inv_mace_21.jpg" />
+    <None Remove="Properties\Icons\inv_mace_2h_blacksmithing_01.jpg" />
+    <None Remove="Properties\Icons\inv_mace_2h_blacksmithing_02.jpg" />
+    <None Remove="Properties\Icons\inv_mace_2h_blacksmithing_03.jpg" />
+    <None Remove="Properties\Icons\inv_mace_36.jpg" />
+    <None Remove="Properties\Icons\inv_mace_41.jpg" />
+    <None Remove="Properties\Icons\inv_mace_42.jpg" />
+    <None Remove="Properties\Icons\inv_mace_43.jpg" />
+    <None Remove="Properties\Icons\inv_mace_45.jpg" />
+    <None Remove="Properties\Icons\inv_mace_47.jpg" />
+    <None Remove="Properties\Icons\inv_mace_49.jpg" />
+    <None Remove="Properties\Icons\inv_mace_51.jpg" />
+    <None Remove="Properties\Icons\inv_mace_52.jpg" />
+    <None Remove="Properties\Icons\inv_misc_ahnqirajtrinket_04.jpg" />
+    <None Remove="Properties\Icons\inv_misc_armorkit_09.jpg" />
+    <None Remove="Properties\Icons\inv_misc_armorkit_12.jpg" />
+    <None Remove="Properties\Icons\inv_misc_bag_28_halloween.jpg" />
+    <None Remove="Properties\Icons\inv_misc_bandana_03.jpg" />
+    <None Remove="Properties\Icons\inv_misc_bone_03.jpg" />
+    <None Remove="Properties\Icons\inv_misc_bone_06.jpg" />
+    <None Remove="Properties\Icons\inv_misc_book_07.jpg" />
+    <None Remove="Properties\Icons\inv_misc_book_13.jpg" />
+    <None Remove="Properties\Icons\inv_misc_cape_02.jpg" />
+    <None Remove="Properties\Icons\inv_misc_cape_05.jpg" />
+    <None Remove="Properties\Icons\inv_misc_cape_06.jpg" />
+    <None Remove="Properties\Icons\inv_misc_cape_07.jpg" />
+    <None Remove="Properties\Icons\inv_misc_cape_08.jpg" />
+    <None Remove="Properties\Icons\inv_misc_cape_10.jpg" />
+    <None Remove="Properties\Icons\inv_misc_cape_14.jpg" />
+    <None Remove="Properties\Icons\inv_misc_cape_15.jpg" />
+    <None Remove="Properties\Icons\inv_misc_cape_16.jpg" />
+    <None Remove="Properties\Icons\inv_misc_cape_17.jpg" />
+    <None Remove="Properties\Icons\inv_misc_cape_18.jpg" />
+    <None Remove="Properties\Icons\inv_misc_cape_20.jpg" />
+    <None Remove="Properties\Icons\inv_misc_cape_21.jpg" />
+    <None Remove="Properties\Icons\inv_misc_cape_naxxramas_02.jpg" />
+    <None Remove="Properties\Icons\inv_misc_cape_naxxramas_03.jpg" />
+    <None Remove="Properties\Icons\inv_misc_enggizmos_06.jpg" />
+    <None Remove="Properties\Icons\inv_misc_enggizmos_18.jpg" />
+    <None Remove="Properties\Icons\inv_misc_enggizmos_19.jpg" />
+    <None Remove="Properties\Icons\inv_misc_eye_01.jpg" />
     <None Remove="Properties\Icons\inv_misc_gem_bloodgem_02.jpg" />
+    <None Remove="Properties\Icons\inv_misc_gem_bloodstone_02.jpg" />
     <None Remove="Properties\Icons\inv_misc_gem_deepperidot_01.jpg" />
     <None Remove="Properties\Icons\inv_misc_gem_deepperidot_02.jpg" />
     <None Remove="Properties\Icons\inv_misc_gem_diamond_06.jpg" />
@@ -30,13 +352,151 @@
     <None Remove="Properties\Icons\inv_misc_gem_flamespessarite_02.jpg" />
     <None Remove="Properties\Icons\inv_misc_gem_goldendraenite_02.jpg" />
     <None Remove="Properties\Icons\inv_misc_gem_opal_01.jpg" />
+    <None Remove="Properties\Icons\inv_misc_gem_pearl_01.jpg" />
     <None Remove="Properties\Icons\inv_misc_gem_ruby_02.jpg" />
     <None Remove="Properties\Icons\inv_misc_gem_ruby_03.jpg" />
+    <None Remove="Properties\Icons\inv_misc_gem_sapphire_01.jpg" />
     <None Remove="Properties\Icons\inv_misc_gem_topaz_01.jpg" />
     <None Remove="Properties\Icons\inv_misc_gem_topaz_03.jpg" />
+    <None Remove="Properties\Icons\inv_misc_monsterscales_15.jpg" />
+    <None Remove="Properties\Icons\inv_misc_noose_01.jpg" />
+    <None Remove="Properties\Icons\inv_misc_pipe_01.jpg" />
+    <None Remove="Properties\Icons\inv_misc_rune_04.jpg" />
+    <None Remove="Properties\Icons\inv_misc_stonetablet_05.jpg" />
+    <None Remove="Properties\Icons\inv_misc_stonetablet_11.jpg" />
+    <None Remove="Properties\Icons\inv_misc_ticket_tarot_crusade.jpg" />
+    <None Remove="Properties\Icons\inv_misc_ticket_tarot_madness.jpg" />
+    <None Remove="Properties\Icons\inv_misc_ticket_tarot_maelstrom_01.jpg" />
+    <None Remove="Properties\Icons\inv_misc_ticket_tarot_vengeance.jpg" />
+    <None Remove="Properties\Icons\inv_misc_token_argentdawn2.jpg" />
+    <None Remove="Properties\Icons\inv_pants_02.jpg" />
+    <None Remove="Properties\Icons\inv_pants_03.jpg" />
+    <None Remove="Properties\Icons\inv_pants_05.jpg" />
+    <None Remove="Properties\Icons\inv_pants_06.jpg" />
+    <None Remove="Properties\Icons\inv_pants_07.jpg" />
+    <None Remove="Properties\Icons\inv_pants_14.jpg" />
+    <None Remove="Properties\Icons\inv_pants_cloth_07.jpg" />
+    <None Remove="Properties\Icons\inv_pants_cloth_12.jpg" />
+    <None Remove="Properties\Icons\inv_pants_cloth_14.jpg" />
+    <None Remove="Properties\Icons\inv_pants_cloth_20.jpg" />
+    <None Remove="Properties\Icons\inv_pants_leather_02.jpg" />
+    <None Remove="Properties\Icons\inv_pants_leather_03.jpg" />
+    <None Remove="Properties\Icons\inv_pants_leather_05.jpg" />
+    <None Remove="Properties\Icons\inv_pants_leather_06.jpg" />
+    <None Remove="Properties\Icons\inv_pants_leather_09.jpg" />
+    <None Remove="Properties\Icons\inv_pants_leather_12.jpg" />
+    <None Remove="Properties\Icons\inv_pants_leather_13.jpg" />
+    <None Remove="Properties\Icons\inv_pants_leather_18.jpg" />
+    <None Remove="Properties\Icons\inv_pants_leather_23.jpg" />
+    <None Remove="Properties\Icons\inv_pants_leather_25.jpg" />
+    <None Remove="Properties\Icons\inv_pants_leather_27.jpg" />
+    <None Remove="Properties\Icons\inv_pants_mail_03.jpg" />
+    <None Remove="Properties\Icons\inv_pants_mail_04.jpg" />
+    <None Remove="Properties\Icons\inv_pants_mail_05.jpg" />
+    <None Remove="Properties\Icons\inv_pants_mail_08.jpg" />
+    <None Remove="Properties\Icons\inv_pants_mail_09.jpg" />
+    <None Remove="Properties\Icons\inv_pants_mail_11.jpg" />
+    <None Remove="Properties\Icons\inv_pants_mail_15.jpg" />
+    <None Remove="Properties\Icons\inv_pants_mail_16.jpg" />
+    <None Remove="Properties\Icons\inv_pants_mail_19.jpg" />
+    <None Remove="Properties\Icons\inv_pants_mail_21.jpg" />
+    <None Remove="Properties\Icons\inv_pants_plate_01.jpg" />
+    <None Remove="Properties\Icons\inv_pants_plate_02.jpg" />
+    <None Remove="Properties\Icons\inv_pants_plate_05.jpg" />
+    <None Remove="Properties\Icons\inv_pants_plate_06.jpg" />
+    <None Remove="Properties\Icons\inv_pants_plate_12.jpg" />
+    <None Remove="Properties\Icons\inv_pants_plate_15.jpg" />
+    <None Remove="Properties\Icons\inv_pants_plate_17.jpg" />
+    <None Remove="Properties\Icons\inv_pants_plate_20.jpg" />
+    <None Remove="Properties\Icons\inv_pants_plate_21.jpg" />
+    <None Remove="Properties\Icons\inv_pants_plate_24.jpg" />
+    <None Remove="Properties\Icons\inv_pants_plate_26.jpg" />
+    <None Remove="Properties\Icons\inv_pants_plate_28.jpg" />
+    <None Remove="Properties\Icons\inv_pants_plate_29.jpg" />
+    <None Remove="Properties\Icons\inv_poison_mindnumbing.jpg" />
+    <None Remove="Properties\Icons\inv_qirajidol_sun.jpg" />
+    <None Remove="Properties\Icons\inv_qiraj_jewelblessed.jpg" />
+    <None Remove="Properties\Icons\inv_relics_libramofgrace.jpg" />
+    <None Remove="Properties\Icons\inv_relics_libramofhope.jpg" />
+    <None Remove="Properties\Icons\inv_relics_libramoftruth.jpg" />
+    <None Remove="Properties\Icons\inv_scroll_08.jpg" />
+    <None Remove="Properties\Icons\inv_shoulder_01.jpg" />
+    <None Remove="Properties\Icons\inv_shoulder_03.jpg" />
+    <None Remove="Properties\Icons\inv_shoulder_07.jpg" />
+    <None Remove="Properties\Icons\inv_shoulder_08.jpg" />
+    <None Remove="Properties\Icons\inv_shoulder_11.jpg" />
+    <None Remove="Properties\Icons\inv_shoulder_13.jpg" />
+    <None Remove="Properties\Icons\inv_shoulder_14.jpg" />
+    <None Remove="Properties\Icons\inv_shoulder_15.jpg" />
+    <None Remove="Properties\Icons\inv_shoulder_16.jpg" />
+    <None Remove="Properties\Icons\inv_shoulder_17.jpg" />
+    <None Remove="Properties\Icons\inv_shoulder_18.jpg" />
+    <None Remove="Properties\Icons\inv_shoulder_19.jpg" />
+    <None Remove="Properties\Icons\inv_shoulder_20.jpg" />
+    <None Remove="Properties\Icons\inv_shoulder_21.jpg" />
+    <None Remove="Properties\Icons\inv_shoulder_22.jpg" />
+    <None Remove="Properties\Icons\inv_shoulder_23.jpg" />
+    <None Remove="Properties\Icons\inv_shoulder_24.jpg" />
+    <None Remove="Properties\Icons\inv_shoulder_25.jpg" />
+    <None Remove="Properties\Icons\inv_shoulder_26.jpg" />
+    <None Remove="Properties\Icons\inv_shoulder_27.jpg" />
+    <None Remove="Properties\Icons\inv_shoulder_29.jpg" />
+    <None Remove="Properties\Icons\inv_shoulder_30.jpg" />
+    <None Remove="Properties\Icons\inv_shoulder_34.jpg" />
+    <None Remove="Properties\Icons\inv_shoulder_35.jpg" />
+    <None Remove="Properties\Icons\inv_shoulder_36.jpg" />
+    <None Remove="Properties\Icons\inv_shoulder_59.jpg" />
+    <None Remove="Properties\Icons\inv_shoulder_60.jpg" />
+    <None Remove="Properties\Icons\inv_shoulder_65.jpg" />
+    <None Remove="Properties\Icons\inv_shoulder_66.jpg" />
+    <None Remove="Properties\Icons\inv_shoulder_67.jpg" />
+    <None Remove="Properties\Icons\inv_shoulder_81.jpg" />
+    <None Remove="Properties\Icons\inv_shoulder_85.jpg" />
+    <None Remove="Properties\Icons\inv_shoulder_88.jpg" />
+    <None Remove="Properties\Icons\inv_shoulder_89.jpg" />
+    <None Remove="Properties\Icons\inv_shoulder_90.jpg" />
+    <None Remove="Properties\Icons\inv_spear_03.jpg" />
+    <None Remove="Properties\Icons\inv_spear_04.jpg" />
+    <None Remove="Properties\Icons\inv_spear_05.jpg" />
+    <None Remove="Properties\Icons\inv_spear_08.jpg" />
+    <None Remove="Properties\Icons\inv_stone_15.jpg" />
+    <None Remove="Properties\Icons\inv_sword_08.jpg" />
+    <None Remove="Properties\Icons\inv_sword_108.jpg" />
+    <None Remove="Properties\Icons\inv_sword_116.jpg" />
+    <None Remove="Properties\Icons\inv_sword_2h_blacksmithing_01.jpg" />
+    <None Remove="Properties\Icons\inv_sword_2h_blacksmithing_02.jpg" />
+    <None Remove="Properties\Icons\inv_sword_2h_blacksmithing_03.jpg" />
+    <None Remove="Properties\Icons\inv_sword_2h_blood_c_01.jpg" />
+    <None Remove="Properties\Icons\inv_sword_36.jpg" />
+    <None Remove="Properties\Icons\inv_sword_37.jpg" />
+    <None Remove="Properties\Icons\inv_sword_39.jpg" />
+    <None Remove="Properties\Icons\inv_sword_48.jpg" />
+    <None Remove="Properties\Icons\inv_sword_58.jpg" />
+    <None Remove="Properties\Icons\inv_sword_68.jpg" />
+    <None Remove="Properties\Icons\inv_sword_69.jpg" />
+    <None Remove="Properties\Icons\inv_sword_70.jpg" />
+    <None Remove="Properties\Icons\inv_sword_71.jpg" />
+    <None Remove="Properties\Icons\inv_sword_81.jpg" />
+    <None Remove="Properties\Icons\inv_sword_82.jpg" />
+    <None Remove="Properties\Icons\inv_trinket_naxxramas03.jpg" />
+    <None Remove="Properties\Icons\inv_trinket_naxxramas04.jpg" />
+    <None Remove="Properties\Icons\inv_trinket_naxxramas06.jpg" />
+    <None Remove="Properties\Icons\inv_weapon_halberd15.jpg" />
+    <None Remove="Properties\Icons\inv_weapon_halberd16.jpg" />
+    <None Remove="Properties\Icons\inv_weapon_halberd_04.jpg" />
+    <None Remove="Properties\Icons\inv_weapon_halberd_05.jpg" />
+    <None Remove="Properties\Icons\inv_weapon_halberd_12.jpg" />
+    <None Remove="Properties\Icons\inv_weapon_halberd_20.jpg" />
+    <None Remove="Properties\Icons\inv_weapon_shortblade_23.jpg" />
     <None Remove="Properties\Icons\meta_socket.jpg" />
+    <None Remove="Properties\Icons\racial_troll_berserk.jpg" />
     <None Remove="Properties\Icons\red_socket.jpg" />
     <None Remove="Properties\Icons\socket-red.gif" />
+    <None Remove="Properties\Icons\spell_arcane_arcaneresilience.jpg" />
+    <None Remove="Properties\Icons\spell_nature_abolishmagic.jpg" />
+    <None Remove="Properties\Icons\spell_nature_healingway.jpg" />
+    <None Remove="Properties\Icons\spell_nature_unrelentingstorm.jpg" />
+    <None Remove="Properties\Icons\spell_shadow_charm.jpg" />
     <None Remove="Properties\Icons\yellow_socket.jpg" />
     <None Remove="View\GearSlotSelect.xaml.cs~RF16209c.TMP" />
     <None Remove="View\GearSlotSelect.xaml~RF944546.TMP" />
@@ -60,33 +520,1467 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="Properties\Icons\blue_socket.jpg" />
-    <Resource Include="Properties\Icons\inv_jewelcrafting_crimsonspinel_02.jpg" />
-    <Resource Include="Properties\Icons\inv_jewelcrafting_dawnstone_03.jpg" />
-    <Resource Include="Properties\Icons\inv_jewelcrafting_lionseye_02.jpg" />
-    <Resource Include="Properties\Icons\inv_jewelcrafting_livingruby_03.jpg" />
-    <Resource Include="Properties\Icons\inv_jewelcrafting_nightseye_03.jpg" />
-    <Resource Include="Properties\Icons\inv_jewelcrafting_nobletopaz_03.jpg" />
-    <Resource Include="Properties\Icons\inv_jewelcrafting_pyrestone_02.jpg" />
-    <Resource Include="Properties\Icons\inv_jewelcrafting_seasprayemerald_02.jpg" />
-    <Resource Include="Properties\Icons\inv_jewelcrafting_shadowsongamethyst_02.jpg" />
-    <Resource Include="Properties\Icons\inv_jewelcrafting_talasite_03.jpg" />
-    <Resource Include="Properties\Icons\inv_misc_gem_bloodgem_02.jpg" />
-    <Resource Include="Properties\Icons\inv_misc_gem_deepperidot_01.jpg" />
-    <Resource Include="Properties\Icons\inv_misc_gem_deepperidot_02.jpg" />
-    <Resource Include="Properties\Icons\inv_misc_gem_diamond_06.jpg" />
-    <Resource Include="Properties\Icons\inv_misc_gem_diamond_07.jpg" />
-    <Resource Include="Properties\Icons\inv_misc_gem_ebondraenite_02.jpg" />
-    <Resource Include="Properties\Icons\inv_misc_gem_flamespessarite_02.jpg" />
-    <Resource Include="Properties\Icons\inv_misc_gem_goldendraenite_02.jpg" />
-    <Resource Include="Properties\Icons\inv_misc_gem_opal_01.jpg" />
-    <Resource Include="Properties\Icons\inv_misc_gem_ruby_02.jpg" />
-    <Resource Include="Properties\Icons\inv_misc_gem_ruby_03.jpg" />
-    <Resource Include="Properties\Icons\inv_misc_gem_topaz_01.jpg" />
-    <Resource Include="Properties\Icons\inv_misc_gem_topaz_03.jpg" />
-    <Resource Include="Properties\Icons\meta_socket.jpg" />
-    <Resource Include="Properties\Icons\red_socket.jpg" />
-    <Resource Include="Properties\Icons\yellow_socket.jpg" />
+    <Resource Include="Properties\Icons\ability_warrior_endlessrage.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\ability_warrior_focusedrage.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\blue_socket.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_axe_02.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_axe_04.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_axe_09.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_axe_10.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_axe_40.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_axe_44.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_axe_46.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_axe_49.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_axe_50.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_axe_51.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_axe_52.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_axe_54.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_axe_60.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_axe_64.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_axe_67.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_axe_68.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_axe_69.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_axe_70.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_axe_71.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_axe_72.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_axe_73.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_axe_85.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_belt_01.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_belt_03.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_belt_08.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_belt_09.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_belt_11.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_belt_12.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_belt_13.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_belt_14.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_belt_15.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_belt_16.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_belt_17.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_belt_18.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_belt_19.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_belt_20.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_belt_22.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_belt_23.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_belt_24.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_belt_25.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_belt_26.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_belt_27.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_belt_28.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_belt_29.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_belt_30.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_belt_31.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_belt_35.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_boots_02.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_boots_05.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_boots_07.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_boots_chain_01.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_boots_chain_02.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_boots_chain_03.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_boots_chain_04.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_boots_chain_05.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_boots_chain_06.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_boots_chain_07.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_boots_chain_08.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_boots_chain_09.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_boots_chain_11.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_boots_chain_12.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_boots_cloth_02.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_boots_cloth_04.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_boots_cloth_05.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_boots_cloth_06.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_boots_plate_01.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_boots_plate_02.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_boots_plate_03.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_boots_plate_04.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_boots_plate_06.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_boots_plate_08.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_boots_plate_10.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_boots_wolf.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_bracer_02.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_bracer_04.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_bracer_05.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_bracer_06.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_bracer_07.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_bracer_08.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_bracer_09.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_bracer_10.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_bracer_12.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_bracer_13.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_bracer_14.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_bracer_15.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_bracer_16.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_bracer_17.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_bracer_18.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_bracer_19.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_brd_banner.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_chest_chain_03.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_chest_chain_06.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_chest_chain_07.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_chest_chain_12.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_chest_chain_13.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_chest_chain_15.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_chest_chain_16.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_chest_chain_17.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_chest_cloth_05.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_chest_cloth_07.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_chest_cloth_45.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_chest_leather_03.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_chest_leather_04.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_chest_leather_05.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_chest_leather_06.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_chest_leather_08.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_chest_leather_14.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_chest_leather_16.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_chest_plate02.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_chest_plate05.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_chest_plate06.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_chest_plate07.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_chest_plate08.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_chest_plate09.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_chest_plate10.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_chest_plate11.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_chest_plate13.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_chest_plate14.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_chest_plate15.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_chest_plate16.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_chest_plate20.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_chest_plate_22.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_chest_samurai.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_datacrystal01.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_datacrystal02.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_datacrystal06.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_drink_03.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_drink_04.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_gauntlets_01.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_gauntlets_03.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_gauntlets_05.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_gauntlets_08.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_gauntlets_09.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_gauntlets_10.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_gauntlets_11.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_gauntlets_13.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_gauntlets_15.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_gauntlets_17.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_gauntlets_19.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_gauntlets_21.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_gauntlets_22.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_gauntlets_23.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_gauntlets_25.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_gauntlets_26.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_gauntlets_28.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_gauntlets_29.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_gauntlets_30.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_gauntlets_31.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_gauntlets_50.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_gauntlets_51.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_gauntlets_52.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_gauntlets_59.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_gauntlets_60.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_gauntlets_62.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_gauntlets_65.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_gauntlets_67.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_gizmo_khoriumpowercore.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_gizmo_newgoggles.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_gizmo_rocketboot_01.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_gizmo_rocketlauncher.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_hammer_04.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_hammer_09.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_hammer_10.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_hammer_17.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_hammer_28.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_helmet128.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_helmet_01.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_helmet_03.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_helmet_04.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_helmet_05.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_helmet_06.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_helmet_09.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_helmet_10.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_helmet_113.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_helmet_114.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_helmet_116.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_helmet_12.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_helmet_126.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_helmet_127.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_helmet_15.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_helmet_16.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_helmet_17.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_helmet_18.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_helmet_19.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_helmet_20.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_helmet_21.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_helmet_22.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_helmet_23.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_helmet_25.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_helmet_29.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_helmet_30.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_helmet_38.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_helmet_42.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_helmet_43.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_helmet_45.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_helmet_50.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_helmet_57.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_helmet_58.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_helmet_60.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_helmet_71.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_helmet_72.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_helmet_73.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_helmet_92.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_helmet_95.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_helmet_96.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_helmet_98.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_jewelcrafting_blackpearlpanther.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_jewelcrafting_crimsonspinel_02.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_jewelcrafting_dawnstone_03.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_jewelcrafting_lionseye_02.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_jewelcrafting_livingruby_03.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_jewelcrafting_nightseye_01.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_jewelcrafting_nightseye_03.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_jewelcrafting_nobletopaz_03.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_jewelcrafting_pyrestone_02.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_jewelcrafting_rubyserpent.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_jewelcrafting_seasprayemerald_02.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_jewelcrafting_shadowsongamethyst_02.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_jewelcrafting_talasite_03.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_jewelcrafting_truesilverboar.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_jewelry_necklace_04.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_jewelry_necklace_06.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_jewelry_necklace_07.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_jewelry_necklace_12.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_jewelry_necklace_13.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_jewelry_necklace_17.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_jewelry_necklace_18.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_jewelry_necklace_19.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_jewelry_necklace_20.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_jewelry_necklace_21.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_jewelry_necklace_22.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_jewelry_necklace_28.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_jewelry_necklace_28naxxramas.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_jewelry_necklace_29naxxramas.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_jewelry_necklace_30naxxramas.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_jewelry_necklace_33.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_jewelry_necklace_34.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_jewelry_necklace_35.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_jewelry_necklace_36.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_jewelry_necklace_38.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_jewelry_necklace_39.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_jewelry_necklace_43.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_jewelry_necklace_47.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_jewelry_necklace_ahnqiraj_01.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_jewelry_necklace_ahnqiraj_03.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_jewelry_ring_02.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_jewelry_ring_04.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_jewelry_ring_16.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_jewelry_ring_22.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_jewelry_ring_23.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_jewelry_ring_24.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_jewelry_ring_34.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_jewelry_ring_35.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_jewelry_ring_36.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_jewelry_ring_37.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_jewelry_ring_38.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_jewelry_ring_39.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_jewelry_ring_41.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_jewelry_ring_44.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_jewelry_ring_45.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_jewelry_ring_47.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_jewelry_ring_48naxxramas.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_jewelry_ring_51naxxramas.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_jewelry_ring_53naxxramas.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_jewelry_ring_54.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_jewelry_ring_55.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_jewelry_ring_58.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_jewelry_ring_60.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_jewelry_ring_62.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_jewelry_ring_64.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_jewelry_ring_65.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_jewelry_ring_67.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_jewelry_ring_68.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_jewelry_ring_71.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_jewelry_ring_72.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_jewelry_ring_79.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_jewelry_ring_ahnqiraj_01.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_jewelry_ring_ahnqiraj_03.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_jewelry_ring_ahnqiraj_05.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_jewelry_talisman_01.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_jewelry_talisman_04.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_jewelry_talisman_06.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_jewelry_talisman_12.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_jewelry_talisman_14.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_jewelry_talisman_16.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_jewelry_talisman_18.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_jewelry_trinketpvp_01.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_jewelry_trinketpvp_02.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_mace_21.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_mace_2h_blacksmithing_01.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_mace_2h_blacksmithing_02.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_mace_2h_blacksmithing_03.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_mace_36.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_mace_41.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_mace_42.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_mace_43.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_mace_45.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_mace_47.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_mace_49.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_mace_51.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_mace_52.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_misc_ahnqirajtrinket_04.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_misc_armorkit_09.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_misc_armorkit_12.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_misc_bag_28_halloween.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_misc_bandana_03.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_misc_bone_03.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_misc_bone_06.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_misc_book_07.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_misc_book_13.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_misc_cape_02.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_misc_cape_05.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_misc_cape_06.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_misc_cape_07.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_misc_cape_08.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_misc_cape_10.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_misc_cape_14.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_misc_cape_15.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_misc_cape_16.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_misc_cape_17.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_misc_cape_18.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_misc_cape_20.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_misc_cape_21.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_misc_cape_naxxramas_02.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_misc_cape_naxxramas_03.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_misc_enggizmos_06.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_misc_enggizmos_18.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_misc_enggizmos_19.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_misc_eye_01.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_misc_gem_bloodgem_02.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_misc_gem_bloodstone_02.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_misc_gem_deepperidot_01.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_misc_gem_deepperidot_02.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_misc_gem_diamond_06.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_misc_gem_diamond_07.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_misc_gem_ebondraenite_02.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_misc_gem_flamespessarite_02.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_misc_gem_goldendraenite_02.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_misc_gem_opal_01.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_misc_gem_pearl_01.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_misc_gem_ruby_02.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_misc_gem_ruby_03.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_misc_gem_sapphire_01.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_misc_gem_topaz_01.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_misc_gem_topaz_03.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_misc_monsterscales_15.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_misc_noose_01.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_misc_pipe_01.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_misc_rune_04.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_misc_stonetablet_05.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_misc_stonetablet_11.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_misc_ticket_tarot_crusade.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_misc_ticket_tarot_madness.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_misc_ticket_tarot_maelstrom_01.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_misc_ticket_tarot_vengeance.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_misc_token_argentdawn2.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_pants_02.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_pants_03.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_pants_05.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_pants_06.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_pants_07.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_pants_14.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_pants_cloth_07.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_pants_cloth_12.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_pants_cloth_14.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_pants_cloth_20.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_pants_leather_02.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_pants_leather_03.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_pants_leather_05.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_pants_leather_06.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_pants_leather_09.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_pants_leather_12.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_pants_leather_13.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_pants_leather_18.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_pants_leather_23.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_pants_leather_25.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_pants_leather_27.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_pants_mail_03.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_pants_mail_04.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_pants_mail_05.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_pants_mail_08.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_pants_mail_09.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_pants_mail_11.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_pants_mail_15.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_pants_mail_16.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_pants_mail_19.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_pants_mail_21.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_pants_plate_01.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_pants_plate_02.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_pants_plate_05.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_pants_plate_06.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_pants_plate_12.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_pants_plate_15.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_pants_plate_17.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_pants_plate_20.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_pants_plate_21.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_pants_plate_24.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_pants_plate_26.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_pants_plate_28.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_pants_plate_29.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_poison_mindnumbing.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_qirajidol_sun.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_qiraj_jewelblessed.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_relics_libramofgrace.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_relics_libramofhope.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_relics_libramoftruth.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_scroll_08.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_shoulder_01.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_shoulder_03.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_shoulder_07.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_shoulder_08.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_shoulder_11.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_shoulder_13.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_shoulder_14.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_shoulder_15.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_shoulder_16.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_shoulder_17.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_shoulder_18.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_shoulder_19.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_shoulder_20.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_shoulder_21.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_shoulder_22.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_shoulder_23.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_shoulder_24.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_shoulder_25.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_shoulder_26.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_shoulder_27.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_shoulder_29.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_shoulder_30.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_shoulder_34.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_shoulder_35.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_shoulder_36.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_shoulder_59.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_shoulder_60.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_shoulder_65.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_shoulder_66.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_shoulder_67.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_shoulder_81.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_shoulder_85.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_shoulder_88.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_shoulder_89.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_shoulder_90.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_spear_03.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_spear_04.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_spear_05.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_spear_08.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_stone_15.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_sword_08.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_sword_108.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_sword_116.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_sword_2h_blacksmithing_01.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_sword_2h_blacksmithing_02.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_sword_2h_blacksmithing_03.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_sword_2h_blood_c_01.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_sword_36.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_sword_37.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_sword_39.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_sword_48.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_sword_58.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_sword_68.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_sword_69.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_sword_70.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_sword_71.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_sword_81.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_sword_82.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_trinket_naxxramas03.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_trinket_naxxramas04.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_trinket_naxxramas06.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_weapon_halberd15.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_weapon_halberd16.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_weapon_halberd_04.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_weapon_halberd_05.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_weapon_halberd_12.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_weapon_halberd_20.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\inv_weapon_shortblade_23.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\meta_socket.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\racial_troll_berserk.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\red_socket.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\spell_arcane_arcaneresilience.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\spell_nature_abolishmagic.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\spell_nature_healingway.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\spell_nature_unrelentingstorm.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\spell_shadow_charm.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\Icons\yellow_socket.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
 
   <ItemGroup>
@@ -115,6 +2009,9 @@
 
   <ItemGroup>
     <None Update="Properties\MetaData\gemsMetaData.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Properties\MetaData\itemsMetaData.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>

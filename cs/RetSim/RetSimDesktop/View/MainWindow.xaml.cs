@@ -18,7 +18,6 @@ namespace RetSimDesktop
     public partial class MainWindow : Window
     {
         private static SimWorker simWorker = new();
-        public static Dictionary<int, string> GemsToIconName = new();
 
         private DispatcherTimer timer = new DispatcherTimer();
         private Stopwatch timeTaken = new();
@@ -27,19 +26,7 @@ namespace RetSimDesktop
             var (Weapons, Armor, Sets, Gems, MetaGems, Enchants) = RetSim.Data.Manager.LoadData();
             RetSim.Data.Items.Initialize(Weapons, Armor, Sets, Gems, MetaGems, Enchants);
             RetSim.Data.Manager.InstantiateData();
-
-            try
-            {
-                string jsonString = File.ReadAllText($"Properties\\MetaData\\gemsMetaData.json");
-                var gemsMetaData = JsonSerializer.Deserialize<Dictionary<int, string>>(jsonString);
-                if(gemsMetaData != null)
-                {
-                    GemsToIconName = gemsMetaData;
-                }
-            }
-            catch (Exception) 
-            {
-            }
+            MediaMetaData.Initialize();
 
             InitializeComponent();
             RetSimUIModel GM = RetSimUIModel.Load();

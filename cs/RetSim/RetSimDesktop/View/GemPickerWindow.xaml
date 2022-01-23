@@ -15,7 +15,7 @@
         <local:WoWTooltip x:Name="Tooltip" PlacementTarget="{Binding ElementName=GemPicker}"/>
         <DataGrid Name="gemGrid" ColumnWidth="*" RowHeight="25" GridLinesVisibility="Horizontal" PreviewMouseDown="GemGrid_PreviewMouseDown" IsReadOnly="True" SelectionMode="Single" HeadersVisibility="Column" CanUserResizeColumns="False" CanUserResizeRows="False" AutoGenerateColumns="False">
             <DataGrid.Columns>
-                <DataGridTemplateColumn x:Name="Socket1Column" Width="25" CanUserReorder="False" CanUserSort="False" Header="">
+                <DataGridTemplateColumn Width="25" CanUserReorder="False" CanUserSort="False" Header="">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <Border HorizontalAlignment="Center" VerticalAlignment="Center" BorderThickness="2" CornerRadius="1" BorderBrush="Black">

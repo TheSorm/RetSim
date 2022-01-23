@@ -444,9 +444,9 @@ namespace RetSimDesktop
         {
             if(value is Socket socket)
             {
-                if(socket.SocketedGem != null && MainWindow.GemsToIconName.ContainsKey(socket.SocketedGem.ID))
+                if(socket.SocketedGem != null && MediaMetaData.GemsToIconName.ContainsKey(socket.SocketedGem.ID))
                 {
-                    return new BitmapImage(new Uri($"pack://application:,,,/Properties/Icons/{MainWindow.GemsToIconName[socket.SocketedGem.ID]}"));
+                    return new BitmapImage(new Uri($"pack://application:,,,/Properties/Icons/{MediaMetaData.GemsToIconName[socket.SocketedGem.ID]}"));
                 }
                 else if(socket.Color == SocketColor.Red)
                 {
@@ -463,6 +463,26 @@ namespace RetSimDesktop
                 else if (socket.Color == SocketColor.Meta)
                 {
                     return new BitmapImage(new Uri("pack://application:,,,/Properties/Icons/meta_socket.jpg"));
+                }
+            }
+            return null;
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
+        {
+            return null;
+        }
+    }
+
+    public class ItemToImageConverter : IValueConverter
+    {
+        public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
+        {
+            if (value is int id)
+            {
+                if (MediaMetaData.ItemsMetaData.ContainsKey(id))
+                {
+                    return new BitmapImage(new Uri($"pack://application:,,,/Properties/Icons/{MediaMetaData.ItemsMetaData[id].IconFileName}"));
                 }
             }
             return null;

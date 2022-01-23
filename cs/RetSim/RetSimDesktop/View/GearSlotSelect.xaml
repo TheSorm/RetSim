@@ -14,13 +14,14 @@
         <local:SocketToImageConverter x:Key="SocketToImageConverter" />
         <local:SocketToSocketColorBrushConverter x:Key="SocketToSocketColorBrushConverter" />
         <local:SocketBonusActiveConverter x:Key="SocketBonusActiveConverter" />
+        <local:ItemToImageConverter x:Key="ItemToImageConverter" />
     </UserControl.Resources>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
             <RowDefinition Height="30px" />
         </Grid.RowDefinitions>
-        <DataGrid Name="gearSlot" ColumnWidth="*" GridLinesVisibility="Horizontal" IsReadOnly="True" SelectionMode="Single" HeadersVisibility="Column" CanUserResizeColumns="False" CanUserResizeRows="False" AutoGenerateColumns="False">
+        <DataGrid Name="gearSlot" RowHeight="25" ColumnWidth="*" GridLinesVisibility="Horizontal" IsReadOnly="True" SelectionMode="Single" HeadersVisibility="Column" CanUserResizeColumns="False" CanUserResizeRows="False" AutoGenerateColumns="False">
             <DataGrid.Resources>
                 <Style TargetType="{x:Type DataGridCell}">
                     <Style.Triggers>
@@ -36,6 +37,15 @@
                             <Setter Property="IsEditing" Value="True" />
                         </MultiTrigger>
                     </Style.Triggers>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type DataGridCell}">
+                                <Grid Background="{TemplateBinding Background}">
+                                    <ContentPresenter VerticalAlignment="Center" />
+                                </Grid>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
                     <EventSetter Event="MouseEnter" Handler="DataGridCell_MouseEnter"/>
                     <EventSetter Event="MouseLeave" Handler="DataGridCell_MouseLeave"/>
                     <EventSetter Event="PreviewMouseDown" Handler="DataGridCell_PreviewMouseDown"/>
@@ -48,6 +58,15 @@
                         <CheckBox Name="chkSelectAll" IsChecked="True" Checked="ChkSelectAll_Checked" Unchecked="ChkSelectAll_Unchecked"></CheckBox>
                     </DataGridCheckBoxColumn.Header>
                 </DataGridCheckBoxColumn>
+                <DataGridTemplateColumn Width="25" MinWidth="25" CanUserReorder="False" CanUserSort="False" Header="">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Border HorizontalAlignment="Center" VerticalAlignment="Center" BorderThickness="2" CornerRadius="1" BorderBrush="Black">
+                                <Image Width="17" Height="17" RenderOptions.BitmapScalingMode="HighQuality" Source="{Binding Item.ID, Converter={StaticResource ItemToImageConverter}}" />
+                            </Border>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
                 <DataGridTextColumn MinWidth="240" CanUserReorder="False" Header="Name" Binding="{Binding Item.Name}" />
                 <DataGridTextColumn MinWidth="38" CanUserReorder="False" Header="Level" x:Name="LevelColumn" Binding="{Binding Item.ItemLevel}" >
                     <DataGridTextColumn.HeaderStyle>

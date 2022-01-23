@@ -1,0 +1,4157 @@
+{
+  "23045": {
+    "IconFileName": "inv_misc_cape_naxxramas_03.jpg"
+  },
+  "23072": {
+    "IconFileName": "inv_gauntlets_22.jpg"
+  },
+  "23363": {
+    "IconFileName": "inv_chest_plate16.jpg",
+    "AlternativeGemOrder": [
+      1,
+      1,
+      1
+    ]
+  },
+  "24360": {
+    "IconFileName": "inv_belt_11.jpg"
+  },
+  "24363": {
+    "IconFileName": "inv_chest_plate13.jpg",
+    "AlternativeGemOrder": [
+      2,
+      2,
+      4
+    ]
+  },
+  "24364": {
+    "IconFileName": "inv_pants_mail_15.jpg"
+  },
+  "24365": {
+    "IconFileName": "inv_gauntlets_22.jpg",
+    "AlternativeGemOrder": [
+      4,
+      8
+    ]
+  },
+  "24366": {
+    "IconFileName": "inv_shoulder_03.jpg",
+    "AlternativeGemOrder": [
+      2,
+      4
+    ]
+  },
+  "25967": {
+    "IconFileName": "inv_shoulder_29.jpg",
+    "AlternativeGemOrder": [
+      2,
+      8
+    ]
+  },
+  "25968": {
+    "IconFileName": "inv_shoulder_19.jpg",
+    "AlternativeGemOrder": [
+      2,
+      8
+    ]
+  },
+  "27983": {
+    "IconFileName": "inv_relics_libramoftruth.jpg"
+  },
+  "28069": {
+    "IconFileName": "inv_boots_plate_03.jpg"
+  },
+  "28074": {
+    "IconFileName": "inv_boots_07.jpg"
+  },
+  "31143": {
+    "IconFileName": "inv_misc_cape_18.jpg"
+  },
+  "31145": {
+    "IconFileName": "inv_helmet_17.jpg"
+  },
+  "31147": {
+    "IconFileName": "inv_jewelry_necklace_06.jpg"
+  },
+  "31148": {
+    "IconFileName": "inv_shoulder_07.jpg"
+  },
+  "22436": {
+    "IconFileName": "inv_chest_chain_15.jpg"
+  },
+  "22476": {
+    "IconFileName": "inv_chest_plate02.jpg"
+  },
+  "23053": {
+    "IconFileName": "inv_jewelry_necklace_28naxxramas.jpg"
+  },
+  "24451": {
+    "IconFileName": "inv_jewelry_ring_ahnqiraj_01.jpg"
+  },
+  "24456": {
+    "IconFileName": "inv_pants_mail_19.jpg",
+    "AlternativeGemOrder": [
+      8,
+      8,
+      4
+    ]
+  },
+  "24457": {
+    "IconFileName": "inv_shoulder_21.jpg",
+    "AlternativeGemOrder": [
+      2,
+      2
+    ]
+  },
+  "24458": {
+    "IconFileName": "inv_belt_01.jpg",
+    "AlternativeGemOrder": [
+      2,
+      8
+    ]
+  },
+  "24461": {
+    "IconFileName": "inv_mace_21.jpg",
+    "AlternativeGemOrder": [
+      2,
+      8,
+      4
+    ]
+  },
+  "24463": {
+    "IconFileName": "inv_shoulder_15.jpg",
+    "AlternativeGemOrder": [
+      8,
+      4
+    ]
+  },
+  "24465": {
+    "IconFileName": "inv_chest_chain_03.jpg",
+    "AlternativeGemOrder": [
+      8,
+      4,
+      2
+    ]
+  },
+  "24466": {
+    "IconFileName": "inv_pants_mail_21.jpg",
+    "AlternativeGemOrder": [
+      2,
+      2,
+      4
+    ]
+  },
+  "25537": {
+    "IconFileName": "inv_axe_02.jpg"
+  },
+  "25540": {
+    "IconFileName": "inv_misc_cape_20.jpg"
+  },
+  "31151": {
+    "IconFileName": "inv_belt_23.jpg"
+  },
+  "31152": {
+    "IconFileName": "inv_chest_plate16.jpg"
+  },
+  "31173": {
+    "IconFileName": "inv_boots_02.jpg"
+  },
+  "31175": {
+    "IconFileName": "inv_bracer_07.jpg"
+  },
+  "31727": {
+    "IconFileName": "inv_jewelry_necklace_20.jpg"
+  },
+  "23829": {
+    "IconFileName": "inv_gizmo_newgoggles.jpg"
+  },
+  "23839": {
+    "IconFileName": "inv_helmet_60.jpg"
+  },
+  "28553": {
+    "IconFileName": "inv_jewelry_ring_60.jpg"
+  },
+  "25603": {
+    "IconFileName": "inv_weapon_halberd_04.jpg"
+  },
+  "25941": {
+    "IconFileName": "inv_boots_chain_03.jpg"
+  },
+  "25942": {
+    "IconFileName": "inv_gauntlets_30.jpg",
+    "AlternativeGemOrder": [
+      2,
+      4
+    ]
+  },
+  "25944": {
+    "IconFileName": "inv_sword_82.jpg"
+  },
+  "25946": {
+    "IconFileName": "inv_boots_chain_06.jpg"
+  },
+  "25947": {
+    "IconFileName": "inv_shoulder_17.jpg"
+  },
+  "25955": {
+    "IconFileName": "inv_helmet_57.jpg",
+    "AlternativeGemOrder": [
+      2,
+      2,
+      8
+    ]
+  },
+  "25956": {
+    "IconFileName": "inv_bracer_05.jpg"
+  },
+  "25962": {
+    "IconFileName": "inv_jewelry_ring_44.jpg"
+  },
+  "28031": {
+    "IconFileName": "inv_misc_cape_18.jpg"
+  },
+  "28032": {
+    "IconFileName": "inv_misc_cape_05.jpg"
+  },
+  "29312": {
+    "IconFileName": "inv_helmet_25.jpg"
+  },
+  "29326": {
+    "IconFileName": "inv_shoulder_03.jpg"
+  },
+  "31180": {
+    "IconFileName": "inv_gauntlets_29.jpg"
+  },
+  "31187": {
+    "IconFileName": "inv_boots_chain_11.jpg"
+  },
+  "31190": {
+    "IconFileName": "inv_shoulder_30.jpg"
+  },
+  "25562": {
+    "IconFileName": "inv_jewelry_necklace_06.jpg"
+  },
+  "25775": {
+    "IconFileName": "inv_jewelry_ring_02.jpg"
+  },
+  "27408": {
+    "IconFileName": "inv_helmet_16.jpg",
+    "AlternativeGemOrder": [
+      2,
+      8,
+      4
+    ]
+  },
+  "27409": {
+    "IconFileName": "inv_helmet_21.jpg",
+    "AlternativeGemOrder": [
+      2,
+      4,
+      4
+    ]
+  },
+  "27413": {
+    "IconFileName": "inv_jewelry_ring_34.jpg"
+  },
+  "27414": {
+    "IconFileName": "inv_helmet_19.jpg",
+    "AlternativeGemOrder": [
+      2,
+      2,
+      8
+    ]
+  },
+  "27415": {
+    "IconFileName": "inv_helmet_42.jpg"
+  },
+  "27637": {
+    "IconFileName": "inv_belt_15.jpg"
+  },
+  "27639": {
+    "IconFileName": "inv_belt_14.jpg"
+  },
+  "27644": {
+    "IconFileName": "inv_belt_14.jpg"
+  },
+  "27645": {
+    "IconFileName": "inv_belt_17.jpg"
+  },
+  "27646": {
+    "IconFileName": "inv_belt_20.jpg"
+  },
+  "27647": {
+    "IconFileName": "inv_pants_mail_04.jpg",
+    "AlternativeGemOrder": [
+      8
+    ]
+  },
+  "27648": {
+    "IconFileName": "inv_pants_07.jpg",
+    "AlternativeGemOrder": [
+      2,
+      8
+    ]
+  },
+  "27650": {
+    "IconFileName": "inv_pants_leather_03.jpg",
+    "AlternativeGemOrder": [
+      8
+    ]
+  },
+  "27653": {
+    "IconFileName": "inv_pants_plate_15.jpg",
+    "AlternativeGemOrder": [
+      8
+    ]
+  },
+  "27654": {
+    "IconFileName": "inv_pants_plate_15.jpg",
+    "AlternativeGemOrder": [
+      8
+    ]
+  },
+  "28246": {
+    "IconFileName": "inv_jewelry_ring_60.jpg"
+  },
+  "28559": {
+    "IconFileName": "inv_helmet_22.jpg",
+    "AlternativeGemOrder": [
+      1
+    ]
+  },
+  "28561": {
+    "IconFileName": "inv_helmet_30.jpg",
+    "AlternativeGemOrder": [
+      1
+    ]
+  },
+  "28574": {
+    "IconFileName": "inv_helmet_30.jpg",
+    "AlternativeGemOrder": [
+      1
+    ]
+  },
+  "28576": {
+    "IconFileName": "inv_helmet_09.jpg",
+    "AlternativeGemOrder": [
+      1
+    ]
+  },
+  "28577": {
+    "IconFileName": "inv_helmet_09.jpg",
+    "AlternativeGemOrder": [
+      1
+    ]
+  },
+  "28761": {
+    "IconFileName": "inv_helmet_22.jpg",
+    "AlternativeGemOrder": [
+      1
+    ]
+  },
+  "29171": {
+    "IconFileName": "inv_hammer_10.jpg"
+  },
+  "29337": {
+    "IconFileName": "inv_chest_plate10.jpg",
+    "AlternativeGemOrder": [
+      8,
+      8,
+      8
+    ]
+  },
+  "29339": {
+    "IconFileName": "inv_chest_plate10.jpg",
+    "AlternativeGemOrder": [
+      4,
+      4,
+      4
+    ]
+  },
+  "29340": {
+    "IconFileName": "inv_chest_leather_03.jpg",
+    "AlternativeGemOrder": [
+      2,
+      2,
+      8
+    ]
+  },
+  "29973": {
+    "IconFileName": "inv_chest_cloth_07.jpg"
+  },
+  "29975": {
+    "IconFileName": "inv_chest_plate06.jpg"
+  },
+  "30074": {
+    "IconFileName": "inv_chest_plate06.jpg",
+    "AlternativeGemOrder": [
+      2,
+      8,
+      4
+    ]
+  },
+  "30076": {
+    "IconFileName": "inv_chest_chain_17.jpg",
+    "AlternativeGemOrder": [
+      4,
+      8,
+      4
+    ]
+  },
+  "30086": {
+    "IconFileName": "inv_sword_37.jpg"
+  },
+  "30088": {
+    "IconFileName": "inv_axe_46.jpg"
+  },
+  "30093": {
+    "IconFileName": "inv_hammer_09.jpg"
+  },
+  "30830": {
+    "IconFileName": "inv_spear_04.jpg"
+  },
+  "30834": {
+    "IconFileName": "inv_jewelry_ring_41.jpg"
+  },
+  "31222": {
+    "IconFileName": "inv_helmet_57.jpg"
+  },
+  "31226": {
+    "IconFileName": "inv_pants_cloth_12.jpg"
+  },
+  "31318": {
+    "IconFileName": "inv_axe_72.jpg"
+  },
+  "31320": {
+    "IconFileName": "inv_chest_plate02.jpg"
+  },
+  "31321": {
+    "IconFileName": "inv_jewelry_necklace_33.jpg"
+  },
+  "31322": {
+    "IconFileName": "inv_hammer_28.jpg"
+  },
+  "31326": {
+    "IconFileName": "inv_jewelry_ring_58.jpg"
+  },
+  "31328": {
+    "IconFileName": "inv_pants_mail_16.jpg"
+  },
+  "31333": {
+    "IconFileName": "inv_helmet_43.jpg"
+  },
+  "31919": {
+    "IconFileName": "inv_jewelry_ring_53naxxramas.jpg"
+  },
+  "31920": {
+    "IconFileName": "inv_jewelry_ring_51naxxramas.jpg"
+  },
+  "23506": {
+    "IconFileName": "inv_bracer_07.jpg",
+    "AlternativeGemOrder": [
+      4
+    ]
+  },
+  "23508": {
+    "IconFileName": "inv_gauntlets_30.jpg",
+    "AlternativeGemOrder": [
+      2,
+      4
+    ]
+  },
+  "25762": {
+    "IconFileName": "inv_axe_49.jpg"
+  },
+  "25821": {
+    "IconFileName": "inv_pants_06.jpg"
+  },
+  "27417": {
+    "IconFileName": "inv_shoulder_17.jpg",
+    "AlternativeGemOrder": [
+      2,
+      8
+    ]
+  },
+  "27420": {
+    "IconFileName": "inv_boots_plate_02.jpg"
+  },
+  "27423": {
+    "IconFileName": "inv_misc_cape_18.jpg"
+  },
+  "27427": {
+    "IconFileName": "inv_chest_chain_12.jpg",
+    "AlternativeGemOrder": [
+      4,
+      8,
+      8
+    ]
+  },
+  "27430": {
+    "IconFileName": "inv_pants_plate_21.jpg",
+    "AlternativeGemOrder": [
+      8,
+      2,
+      4
+    ]
+  },
+  "27432": {
+    "IconFileName": "inv_jewelry_ring_53naxxramas.jpg"
+  },
+  "27434": {
+    "IconFileName": "inv_shoulder_35.jpg",
+    "AlternativeGemOrder": [
+      2,
+      2
+    ]
+  },
+  "28168": {
+    "IconFileName": "inv_jewelry_necklace_34.jpg"
+  },
+  "28172": {
+    "IconFileName": "inv_chest_leather_03.jpg"
+  },
+  "28173": {
+    "IconFileName": "inv_pants_mail_09.jpg"
+  },
+  "28175": {
+    "IconFileName": "inv_pants_plate_21.jpg"
+  },
+  "29316": {
+    "IconFileName": "inv_shoulder_01.jpg",
+    "AlternativeGemOrder": [
+      2,
+      8
+    ]
+  },
+  "29318": {
+    "IconFileName": "inv_boots_chain_06.jpg",
+    "AlternativeGemOrder": [
+      2,
+      4
+    ]
+  },
+  "31237": {
+    "IconFileName": "inv_pants_leather_02.jpg"
+  },
+  "31240": {
+    "IconFileName": "inv_pants_mail_03.jpg"
+  },
+  "31255": {
+    "IconFileName": "inv_misc_cape_20.jpg"
+  },
+  "31694": {
+    "IconFileName": "inv_jewelry_necklace_33.jpg"
+  },
+  "31695": {
+    "IconFileName": "inv_jewelry_necklace_34.jpg"
+  },
+  "23531": {
+    "IconFileName": "inv_gauntlets_26.jpg",
+    "AlternativeGemOrder": [
+      2,
+      4
+    ]
+  },
+  "23533": {
+    "IconFileName": "inv_gauntlets_29.jpg",
+    "AlternativeGemOrder": [
+      2,
+      4
+    ]
+  },
+  "23534": {
+    "IconFileName": "inv_helmet_29.jpg",
+    "AlternativeGemOrder": [
+      2,
+      4,
+      8
+    ]
+  },
+  "23537": {
+    "IconFileName": "inv_bracer_07.jpg"
+  },
+  "23541": {
+    "IconFileName": "inv_sword_08.jpg"
+  },
+  "23543": {
+    "IconFileName": "inv_axe_02.jpg"
+  },
+  "23546": {
+    "IconFileName": "inv_hammer_17.jpg"
+  },
+  "24259": {
+    "IconFileName": "inv_misc_cape_18.jpg",
+    "AlternativeGemOrder": [
+      2
+    ]
+  },
+  "29119": {
+    "IconFileName": "inv_jewelry_necklace_29naxxramas.jpg"
+  },
+  "29177": {
+    "IconFileName": "inv_jewelry_ring_48naxxramas.jpg"
+  },
+  "29356": {
+    "IconFileName": "inv_sword_81.jpg"
+  },
+  "29502": {
+    "IconFileName": "inv_helmet_38.jpg"
+  },
+  "29503": {
+    "IconFileName": "inv_gauntlets_15.jpg"
+  },
+  "29507": {
+    "IconFileName": "inv_gauntlets_25.jpg"
+  },
+  "29509": {
+    "IconFileName": "inv_gauntlets_10.jpg"
+  },
+  "29510": {
+    "IconFileName": "inv_helmet_06.jpg"
+  },
+  "29511": {
+    "IconFileName": "inv_gauntlets_05.jpg"
+  },
+  "29512": {
+    "IconFileName": "inv_boots_chain_02.jpg"
+  },
+  "29514": {
+    "IconFileName": "inv_chest_plate08.jpg"
+  },
+  "29517": {
+    "IconFileName": "inv_bracer_19.jpg",
+    "AlternativeGemOrder": [
+      8
+    ]
+  },
+  "32168": {
+    "IconFileName": "inv_chest_plate05.jpg",
+    "AlternativeGemOrder": [
+      2,
+      2,
+      8
+    ]
+  },
+  "32169": {
+    "IconFileName": "inv_gauntlets_29.jpg"
+  },
+  "32170": {
+    "IconFileName": "inv_helmet_22.jpg",
+    "AlternativeGemOrder": [
+      1,
+      2
+    ]
+  },
+  "32171": {
+    "IconFileName": "inv_pants_plate_17.jpg"
+  },
+  "32172": {
+    "IconFileName": "inv_shoulder_22.jpg",
+    "AlternativeGemOrder": [
+      2,
+      8
+    ]
+  },
+  "32181": {
+    "IconFileName": "inv_hammer_04.jpg"
+  },
+  "32182": {
+    "IconFileName": "inv_axe_09.jpg"
+  },
+  "32183": {
+    "IconFileName": "inv_hammer_04.jpg"
+  },
+  "32184": {
+    "IconFileName": "inv_weapon_halberd_04.jpg"
+  },
+  "32186": {
+    "IconFileName": "inv_sword_39.jpg"
+  },
+  "32421": {
+    "IconFileName": "inv_axe_64.jpg"
+  },
+  "32540": {
+    "IconFileName": "inv_misc_cape_08.jpg"
+  },
+  "32647": {
+    "IconFileName": "inv_bracer_13.jpg",
+    "AlternativeGemOrder": [
+      4
+    ]
+  },
+  "32648": {
+    "IconFileName": "inv_boots_plate_02.jpg",
+    "AlternativeGemOrder": [
+      8,
+      4
+    ]
+  },
+  "32656": {
+    "IconFileName": "inv_gauntlets_09.jpg",
+    "AlternativeGemOrder": [
+      2,
+      2
+    ]
+  },
+  "32854": {
+    "IconFileName": "inv_mace_41.jpg"
+  },
+  "32942": {
+    "IconFileName": "inv_jewelry_ring_22.jpg"
+  },
+  "33204": {
+    "IconFileName": "inv_chest_plate11.jpg",
+    "AlternativeGemOrder": [
+      2,
+      4,
+      8
+    ]
+  },
+  "23507": {
+    "IconFileName": "inv_chest_plate11.jpg",
+    "AlternativeGemOrder": [
+      4,
+      4,
+      2
+    ]
+  },
+  "25685": {
+    "IconFileName": "inv_gauntlets_22.jpg",
+    "AlternativeGemOrder": [
+      8,
+      2
+    ]
+  },
+  "29782": {
+    "IconFileName": "inv_helmet_03.jpg"
+  },
+  "29815": {
+    "IconFileName": "inv_jewelry_necklace_04.jpg"
+  },
+  "30014": {
+    "IconFileName": "inv_pants_cloth_07.jpg"
+  },
+  "30016": {
+    "IconFileName": "inv_helmet_03.jpg"
+  },
+  "30973": {
+    "IconFileName": "inv_jewelry_ring_44.jpg"
+  },
+  "31033": {
+    "IconFileName": "inv_misc_book_13.jpg"
+  },
+  "31275": {
+    "IconFileName": "inv_jewelry_necklace_19.jpg"
+  },
+  "31276": {
+    "IconFileName": "inv_boots_chain_04.jpg"
+  },
+  "31277": {
+    "IconFileName": "inv_jewelry_ring_ahnqiraj_01.jpg"
+  },
+  "31281": {
+    "IconFileName": "inv_helmet_42.jpg"
+  },
+  "23563": {
+    "IconFileName": "inv_chest_chain_17.jpg",
+    "AlternativeGemOrder": [
+      2,
+      8,
+      4
+    ]
+  },
+  "28428": {
+    "IconFileName": "inv_sword_2h_blacksmithing_01.jpg"
+  },
+  "28434": {
+    "IconFileName": "inv_axe_50.jpg"
+  },
+  "28440": {
+    "IconFileName": "inv_mace_2h_blacksmithing_01.jpg"
+  },
+  "28483": {
+    "IconFileName": "inv_chest_plate14.jpg",
+    "AlternativeGemOrder": [
+      4,
+      8,
+      8
+    ]
+  },
+  "24087": {
+    "IconFileName": "inv_jewelry_ring_64.jpg"
+  },
+  "25803": {
+    "IconFileName": "inv_jewelry_necklace_21.jpg"
+  },
+  "25804": {
+    "IconFileName": "inv_jewelry_ring_16.jpg"
+  },
+  "25809": {
+    "IconFileName": "inv_jewelry_necklace_17.jpg"
+  },
+  "25811": {
+    "IconFileName": "inv_jewelry_ring_23.jpg"
+  },
+  "30009": {
+    "IconFileName": "inv_axe_54.jpg"
+  },
+  "30257": {
+    "IconFileName": "inv_pants_leather_05.jpg"
+  },
+  "30258": {
+    "IconFileName": "inv_chest_plate11.jpg"
+  },
+  "30365": {
+    "IconFileName": "inv_jewelry_ring_24.jpg"
+  },
+  "30369": {
+    "IconFileName": "inv_shoulder_11.jpg"
+  },
+  "30370": {
+    "IconFileName": "inv_gauntlets_10.jpg"
+  },
+  "30372": {
+    "IconFileName": "inv_belt_25.jpg"
+  },
+  "30375": {
+    "IconFileName": "inv_gauntlets_29.jpg"
+  },
+  "30860": {
+    "IconFileName": "inv_jewelry_ring_34.jpg"
+  },
+  "30933": {
+    "IconFileName": "inv_chest_leather_05.jpg"
+  },
+  "30939": {
+    "IconFileName": "inv_boots_chain_11.jpg"
+  },
+  "30943": {
+    "IconFileName": "inv_gauntlets_21.jpg"
+  },
+  "30944": {
+    "IconFileName": "inv_bracer_06.jpg"
+  },
+  "30948": {
+    "IconFileName": "inv_pants_plate_21.jpg"
+  },
+  "30951": {
+    "IconFileName": "inv_gauntlets_26.jpg"
+  },
+  "30962": {
+    "IconFileName": "inv_belt_13.jpg"
+  },
+  "30967": {
+    "IconFileName": "inv_gauntlets_29.jpg"
+  },
+  "31010": {
+    "IconFileName": "inv_axe_09.jpg"
+  },
+  "31062": {
+    "IconFileName": "inv_axe_68.jpg"
+  },
+  "31076": {
+    "IconFileName": "inv_jewelry_ring_37.jpg"
+  },
+  "31077": {
+    "IconFileName": "inv_jewelry_ring_39.jpg"
+  },
+  "31105": {
+    "IconFileName": "inv_helmet_10.jpg",
+    "AlternativeGemOrder": [
+      4,
+      8,
+      8
+    ]
+  },
+  "31106": {
+    "IconFileName": "inv_helmet_01.jpg",
+    "AlternativeGemOrder": [
+      4,
+      4,
+      4
+    ]
+  },
+  "31109": {
+    "IconFileName": "inv_helmet_73.jpg",
+    "AlternativeGemOrder": [
+      2,
+      4,
+      8
+    ]
+  },
+  "31284": {
+    "IconFileName": "inv_bracer_10.jpg"
+  },
+  "31285": {
+    "IconFileName": "inv_chest_leather_06.jpg"
+  },
+  "31286": {
+    "IconFileName": "inv_chest_plate10.jpg"
+  },
+  "31288": {
+    "IconFileName": "inv_boots_cloth_05.jpg"
+  },
+  "31380": {
+    "IconFileName": "inv_jewelry_ring_64.jpg"
+  },
+  "31381": {
+    "IconFileName": "inv_jewelry_ring_65.jpg"
+  },
+  "31544": {
+    "IconFileName": "inv_pants_14.jpg"
+  },
+  "31545": {
+    "IconFileName": "inv_pants_cloth_14.jpg"
+  },
+  "31547": {
+    "IconFileName": "inv_helmet_45.jpg"
+  },
+  "31548": {
+    "IconFileName": "inv_chest_plate10.jpg"
+  },
+  "31549": {
+    "IconFileName": "inv_chest_plate16.jpg"
+  },
+  "32829": {
+    "IconFileName": "inv_spear_05.jpg"
+  },
+  "29237": {
+    "IconFileName": "inv_bracer_07.jpg"
+  },
+  "29238": {
+    "IconFileName": "inv_belt_27.jpg"
+  },
+  "29239": {
+    "IconFileName": "inv_boots_plate_01.jpg"
+  },
+  "29246": {
+    "IconFileName": "inv_bracer_15.jpg"
+  },
+  "29247": {
+    "IconFileName": "inv_belt_26.jpg"
+  },
+  "29248": {
+    "IconFileName": "inv_boots_cloth_05.jpg"
+  },
+  "29259": {
+    "IconFileName": "inv_bracer_02.jpg"
+  },
+  "29261": {
+    "IconFileName": "inv_belt_30.jpg"
+  },
+  "29262": {
+    "IconFileName": "inv_boots_chain_05.jpg"
+  },
+  "29263": {
+    "IconFileName": "inv_bracer_02.jpg"
+  },
+  "29264": {
+    "IconFileName": "inv_belt_22.jpg"
+  },
+  "29265": {
+    "IconFileName": "inv_boots_chain_05.jpg"
+  },
+  "29281": {
+    "IconFileName": "inv_jewelry_ring_62.jpg"
+  },
+  "29349": {
+    "IconFileName": "inv_jewelry_necklace_06.jpg"
+  },
+  "29357": {
+    "IconFileName": "inv_gauntlets_22.jpg"
+  },
+  "29379": {
+    "IconFileName": "inv_jewelry_ring_ahnqiraj_01.jpg"
+  },
+  "29381": {
+    "IconFileName": "inv_jewelry_necklace_04.jpg"
+  },
+  "29382": {
+    "IconFileName": "inv_misc_cape_18.jpg"
+  },
+  "29463": {
+    "IconFileName": "inv_bracer_02.jpg"
+  },
+  "30533": {
+    "IconFileName": "inv_pants_plate_21.jpg",
+    "AlternativeGemOrder": [
+      2,
+      2,
+      4
+    ]
+  },
+  "30534": {
+    "IconFileName": "inv_pants_mail_16.jpg",
+    "AlternativeGemOrder": [
+      4,
+      4,
+      8
+    ]
+  },
+  "30535": {
+    "IconFileName": "inv_pants_mail_08.jpg",
+    "AlternativeGemOrder": [
+      2,
+      4,
+      4
+    ]
+  },
+  "30536": {
+    "IconFileName": "inv_pants_plate_21.jpg",
+    "AlternativeGemOrder": [
+      2,
+      4,
+      4
+    ]
+  },
+  "30538": {
+    "IconFileName": "inv_pants_leather_09.jpg",
+    "AlternativeGemOrder": [
+      2,
+      2,
+      4
+    ]
+  },
+  "32072": {
+    "IconFileName": "inv_gauntlets_28.jpg"
+  },
+  "32073": {
+    "IconFileName": "inv_shoulder_16.jpg"
+  },
+  "32076": {
+    "IconFileName": "inv_gauntlets_31.jpg"
+  },
+  "32080": {
+    "IconFileName": "inv_shoulder_25.jpg"
+  },
+  "32081": {
+    "IconFileName": "inv_jewelry_ring_45.jpg"
+  },
+  "32085": {
+    "IconFileName": "inv_helmet_72.jpg",
+    "AlternativeGemOrder": [
+      2,
+      1
+    ]
+  },
+  "32087": {
+    "IconFileName": "inv_helmet_73.jpg",
+    "AlternativeGemOrder": [
+      8,
+      1
+    ]
+  },
+  "32088": {
+    "IconFileName": "inv_helmet_38.jpg",
+    "AlternativeGemOrder": [
+      8,
+      1
+    ]
+  },
+  "33808": {
+    "IconFileName": "inv_helmet_21.jpg",
+    "AlternativeGemOrder": [
+      2,
+      8,
+      4
+    ]
+  },
+  "33959": {
+    "IconFileName": "inv_misc_bag_28_halloween.jpg"
+  },
+  "34075": {
+    "IconFileName": "inv_misc_bag_28_halloween.jpg"
+  },
+  "34799": {
+    "IconFileName": "inv_chest_chain_17.jpg",
+    "AlternativeGemOrder": [
+      2,
+      8,
+      8
+    ]
+  },
+  "34807": {
+    "IconFileName": "inv_boots_plate_01.jpg",
+    "AlternativeGemOrder": [
+      2,
+      4
+    ]
+  },
+  "34809": {
+    "IconFileName": "inv_boots_07.jpg",
+    "AlternativeGemOrder": [
+      2
+    ]
+  },
+  "35495": {
+    "IconFileName": "inv_misc_cape_16.jpg"
+  },
+  "35507": {
+    "IconFileName": "inv_jewelry_necklace_18.jpg"
+  },
+  "23763": {
+    "IconFileName": "inv_gizmo_newgoggles.jpg"
+  },
+  "23824": {
+    "IconFileName": "inv_gizmo_rocketboot_01.jpg"
+  },
+  "25682": {
+    "IconFileName": "inv_helmet_50.jpg"
+  },
+  "25683": {
+    "IconFileName": "inv_helmet_50.jpg"
+  },
+  "25686": {
+    "IconFileName": "inv_boots_cloth_05.jpg",
+    "AlternativeGemOrder": [
+      8,
+      2
+    ]
+  },
+  "25687": {
+    "IconFileName": "inv_pants_leather_03.jpg",
+    "AlternativeGemOrder": [
+      2,
+      8,
+      8
+    ]
+  },
+  "25695": {
+    "IconFileName": "inv_belt_13.jpg",
+    "AlternativeGemOrder": [
+      2,
+      4
+    ]
+  },
+  "27519": {
+    "IconFileName": "inv_misc_cape_06.jpg"
+  },
+  "27520": {
+    "IconFileName": "inv_helmet_71.jpg"
+  },
+  "27524": {
+    "IconFileName": "inv_mace_36.jpg"
+  },
+  "27787": {
+    "IconFileName": "inv_chest_plate11.jpg"
+  },
+  "27788": {
+    "IconFileName": "inv_boots_chain_04.jpg"
+  },
+  "27884": {
+    "IconFileName": "inv_boots_chain_04.jpg"
+  },
+  "27888": {
+    "IconFileName": "inv_helmet_21.jpg"
+  },
+  "27892": {
+    "IconFileName": "inv_misc_cape_08.jpg"
+  },
+  "27893": {
+    "IconFileName": "inv_pants_plate_21.jpg",
+    "AlternativeGemOrder": [
+      2,
+      8,
+      4
+    ]
+  },
+  "27915": {
+    "IconFileName": "inv_boots_chain_05.jpg"
+  },
+  "27917": {
+    "IconFileName": "inv_relics_libramoftruth.jpg"
+  },
+  "27918": {
+    "IconFileName": "inv_bracer_10.jpg"
+  },
+  "27995": {
+    "IconFileName": "inv_shoulder_08.jpg"
+  },
+  "28186": {
+    "IconFileName": "inv_chest_leather_04.jpg",
+    "AlternativeGemOrder": [
+      2,
+      8,
+      4
+    ]
+  },
+  "31291": {
+    "IconFileName": "inv_axe_40.jpg"
+  },
+  "31293": {
+    "IconFileName": "inv_belt_31.jpg"
+  },
+  "31295": {
+    "IconFileName": "inv_chest_leather_05.jpg"
+  },
+  "28244": {
+    "IconFileName": "inv_jewelry_necklace_36.jpg",
+    "AlternativeGemOrder": [
+      8
+    ]
+  },
+  "28381": {
+    "IconFileName": "inv_bracer_19.jpg",
+    "AlternativeGemOrder": [
+      8
+    ]
+  },
+  "28646": {
+    "IconFileName": "inv_bracer_19.jpg",
+    "AlternativeGemOrder": [
+      8
+    ]
+  },
+  "28996": {
+    "IconFileName": "inv_bracer_19.jpg",
+    "AlternativeGemOrder": [
+      8
+    ]
+  },
+  "28999": {
+    "IconFileName": "inv_bracer_19.jpg",
+    "AlternativeGemOrder": [
+      8
+    ]
+  },
+  "25696": {
+    "IconFileName": "inv_chest_chain_13.jpg",
+    "AlternativeGemOrder": [
+      2,
+      2,
+      4
+    ]
+  },
+  "25697": {
+    "IconFileName": "inv_bracer_14.jpg",
+    "AlternativeGemOrder": [
+      4
+    ]
+  },
+  "25789": {
+    "IconFileName": "inv_belt_35.jpg"
+  },
+  "25790": {
+    "IconFileName": "inv_shoulder_13.jpg"
+  },
+  "23520": {
+    "IconFileName": "inv_gauntlets_26.jpg"
+  },
+  "23521": {
+    "IconFileName": "inv_helmet_22.jpg"
+  },
+  "23522": {
+    "IconFileName": "inv_chest_chain_16.jpg"
+  },
+  "23526": {
+    "IconFileName": "inv_gauntlets_17.jpg",
+    "AlternativeGemOrder": [
+      2,
+      4
+    ]
+  },
+  "27447": {
+    "IconFileName": "inv_bracer_18.jpg"
+  },
+  "27450": {
+    "IconFileName": "inv_boots_chain_03.jpg"
+  },
+  "27453": {
+    "IconFileName": "inv_jewelry_ring_38.jpg"
+  },
+  "27455": {
+    "IconFileName": "inv_helmet_12.jpg"
+  },
+  "27459": {
+    "IconFileName": "inv_bracer_06.jpg"
+  },
+  "27461": {
+    "IconFileName": "inv_chest_leather_08.jpg"
+  },
+  "27467": {
+    "IconFileName": "inv_boots_cloth_06.jpg"
+  },
+  "27468": {
+    "IconFileName": "inv_gauntlets_13.jpg"
+  },
+  "27474": {
+    "IconFileName": "inv_gauntlets_10.jpg",
+    "AlternativeGemOrder": [
+      2,
+      4
+    ]
+  },
+  "27475": {
+    "IconFileName": "inv_gauntlets_28.jpg",
+    "AlternativeGemOrder": [
+      2,
+      8
+    ]
+  },
+  "27478": {
+    "IconFileName": "inv_belt_09.jpg",
+    "AlternativeGemOrder": [
+      2,
+      2
+    ]
+  },
+  "27484": {
+    "IconFileName": "inv_misc_stonetablet_05.jpg"
+  },
+  "27487": {
+    "IconFileName": "inv_pants_plate_02.jpg",
+    "AlternativeGemOrder": [
+      2,
+      8,
+      4
+    ]
+  },
+  "27494": {
+    "IconFileName": "inv_bracer_16.jpg"
+  },
+  "27495": {
+    "IconFileName": "inv_jewelry_necklace_39.jpg"
+  },
+  "27497": {
+    "IconFileName": "inv_gauntlets_29.jpg",
+    "AlternativeGemOrder": [
+      8,
+      8,
+      4
+    ]
+  },
+  "27505": {
+    "IconFileName": "inv_helmet_12.jpg"
+  },
+  "27509": {
+    "IconFileName": "inv_gauntlets_01.jpg"
+  },
+  "27514": {
+    "IconFileName": "inv_pants_leather_12.jpg",
+    "AlternativeGemOrder": [
+      2,
+      8,
+      4
+    ]
+  },
+  "27521": {
+    "IconFileName": "inv_belt_09.jpg"
+  },
+  "27527": {
+    "IconFileName": "inv_pants_plate_01.jpg",
+    "AlternativeGemOrder": [
+      2,
+      8,
+      4
+    ]
+  },
+  "27528": {
+    "IconFileName": "inv_gauntlets_10.jpg",
+    "AlternativeGemOrder": [
+      2,
+      2
+    ]
+  },
+  "27531": {
+    "IconFileName": "inv_gauntlets_25.jpg",
+    "AlternativeGemOrder": [
+      2,
+      8
+    ]
+  },
+  "27541": {
+    "IconFileName": "inv_belt_25.jpg"
+  },
+  "27545": {
+    "IconFileName": "inv_pants_mail_05.jpg",
+    "AlternativeGemOrder": [
+      2,
+      2,
+      4
+    ]
+  },
+  "27546": {
+    "IconFileName": "inv_misc_noose_01.jpg"
+  },
+  "27551": {
+    "IconFileName": "inv_jewelry_talisman_12.jpg"
+  },
+  "27672": {
+    "IconFileName": "inv_belt_26.jpg",
+    "AlternativeGemOrder": [
+      2,
+      8
+    ]
+  },
+  "27712": {
+    "IconFileName": "inv_bracer_08.jpg"
+  },
+  "27737": {
+    "IconFileName": "inv_shoulder_24.jpg",
+    "AlternativeGemOrder": [
+      2,
+      2
+    ]
+  },
+  "27740": {
+    "IconFileName": "inv_jewelry_ring_24.jpg"
+  },
+  "27745": {
+    "IconFileName": "inv_gauntlets_11.jpg"
+  },
+  "27755": {
+    "IconFileName": "inv_belt_29.jpg",
+    "AlternativeGemOrder": [
+      2,
+      8
+    ]
+  },
+  "27760": {
+    "IconFileName": "inv_belt_24.jpg",
+    "AlternativeGemOrder": [
+      2,
+      4
+    ]
+  },
+  "27761": {
+    "IconFileName": "inv_jewelry_ring_ahnqiraj_01.jpg"
+  },
+  "27762": {
+    "IconFileName": "inv_jewelry_ring_44.jpg"
+  },
+  "27765": {
+    "IconFileName": "inv_bracer_07.jpg"
+  },
+  "27769": {
+    "IconFileName": "inv_sword_71.jpg"
+  },
+  "27771": {
+    "IconFileName": "inv_shoulder_26.jpg",
+    "AlternativeGemOrder": [
+      2,
+      2
+    ]
+  },
+  "27773": {
+    "IconFileName": "inv_pants_leather_06.jpg",
+    "AlternativeGemOrder": [
+      2,
+      2,
+      4
+    ]
+  },
+  "27776": {
+    "IconFileName": "inv_shoulder_24.jpg",
+    "AlternativeGemOrder": [
+      8,
+      8
+    ]
+  },
+  "27779": {
+    "IconFileName": "inv_jewelry_necklace_04.jpg"
+  },
+  "27797": {
+    "IconFileName": "inv_shoulder_15.jpg",
+    "AlternativeGemOrder": [
+      2,
+      4
+    ]
+  },
+  "27801": {
+    "IconFileName": "inv_shoulder_23.jpg",
+    "AlternativeGemOrder": [
+      8,
+      2
+    ]
+  },
+  "27803": {
+    "IconFileName": "inv_shoulder_26.jpg",
+    "AlternativeGemOrder": [
+      8,
+      4
+    ]
+  },
+  "27813": {
+    "IconFileName": "inv_boots_chain_11.jpg",
+    "AlternativeGemOrder": [
+      8,
+      4
+    ]
+  },
+  "27823": {
+    "IconFileName": "inv_chest_chain_13.jpg"
+  },
+  "27825": {
+    "IconFileName": "inv_gauntlets_15.jpg"
+  },
+  "27829": {
+    "IconFileName": "inv_axe_70.jpg"
+  },
+  "27831": {
+    "IconFileName": "inv_shoulder_17.jpg"
+  },
+  "27837": {
+    "IconFileName": "inv_pants_mail_04.jpg",
+    "AlternativeGemOrder": [
+      2,
+      2,
+      4
+    ]
+  },
+  "27840": {
+    "IconFileName": "inv_mace_51.jpg"
+  },
+  "27844": {
+    "IconFileName": "inv_shoulder_35.jpg"
+  },
+  "27847": {
+    "IconFileName": "inv_shoulder_34.jpg",
+    "AlternativeGemOrder": [
+      2,
+      4
+    ]
+  },
+  "27865": {
+    "IconFileName": "inv_bracer_16.jpg"
+  },
+  "27867": {
+    "IconFileName": "inv_boots_chain_06.jpg"
+  },
+  "27870": {
+    "IconFileName": "inv_pants_plate_12.jpg"
+  },
+  "27873": {
+    "IconFileName": "inv_pants_14.jpg"
+  },
+  "27874": {
+    "IconFileName": "inv_pants_03.jpg"
+  },
+  "27878": {
+    "IconFileName": "inv_misc_cape_21.jpg"
+  },
+  "27903": {
+    "IconFileName": "inv_spear_08.jpg"
+  },
+  "27904": {
+    "IconFileName": "inv_jewelry_ring_64.jpg"
+  },
+  "27906": {
+    "IconFileName": "inv_chest_plate08.jpg"
+  },
+  "27908": {
+    "IconFileName": "inv_pants_leather_03.jpg"
+  },
+  "27911": {
+    "IconFileName": "inv_belt_19.jpg"
+  },
+  "27925": {
+    "IconFileName": "inv_jewelry_ring_16.jpg"
+  },
+  "27936": {
+    "IconFileName": "inv_pants_cloth_20.jpg"
+  },
+  "27938": {
+    "IconFileName": "inv_helmet_73.jpg"
+  },
+  "27977": {
+    "IconFileName": "inv_pants_plate_06.jpg"
+  },
+  "27985": {
+    "IconFileName": "inv_belt_23.jpg",
+    "AlternativeGemOrder": [
+      2,
+      4
+    ]
+  },
+  "27986": {
+    "IconFileName": "inv_axe_69.jpg",
+    "AlternativeGemOrder": [
+      2,
+      2,
+      2
+    ]
+  },
+  "28124": {
+    "IconFileName": "inv_belt_15.jpg",
+    "AlternativeGemOrder": [
+      2,
+      8
+    ]
+  },
+  "28167": {
+    "IconFileName": "inv_bracer_17.jpg",
+    "AlternativeGemOrder": [
+      8
+    ]
+  },
+  "28170": {
+    "IconFileName": "inv_bracer_16.jpg",
+    "AlternativeGemOrder": [
+      2
+    ]
+  },
+  "28176": {
+    "IconFileName": "inv_boots_chain_01.jpg",
+    "AlternativeGemOrder": [
+      2,
+      4
+    ]
+  },
+  "28178": {
+    "IconFileName": "inv_boots_05.jpg",
+    "AlternativeGemOrder": [
+      2,
+      4
+    ]
+  },
+  "28180": {
+    "IconFileName": "inv_helmet_25.jpg",
+    "AlternativeGemOrder": [
+      2,
+      1
+    ]
+  },
+  "28181": {
+    "IconFileName": "inv_helmet_38.jpg",
+    "AlternativeGemOrder": [
+      2,
+      1
+    ]
+  },
+  "28182": {
+    "IconFileName": "inv_helmet_15.jpg",
+    "AlternativeGemOrder": [
+      8,
+      1
+    ]
+  },
+  "28192": {
+    "IconFileName": "inv_helmet_18.jpg",
+    "AlternativeGemOrder": [
+      8,
+      1
+    ]
+  },
+  "28204": {
+    "IconFileName": "inv_chest_chain_17.jpg",
+    "AlternativeGemOrder": [
+      2,
+      2,
+      4
+    ]
+  },
+  "28205": {
+    "IconFileName": "inv_chest_chain_15.jpg",
+    "AlternativeGemOrder": [
+      2,
+      2,
+      4
+    ]
+  },
+  "28206": {
+    "IconFileName": "inv_helmet_29.jpg"
+  },
+  "28207": {
+    "IconFileName": "inv_shoulder_01.jpg"
+  },
+  "28215": {
+    "IconFileName": "inv_helmet_72.jpg"
+  },
+  "28219": {
+    "IconFileName": "inv_pants_mail_16.jpg",
+    "AlternativeGemOrder": [
+      4,
+      4,
+      8
+    ]
+  },
+  "28222": {
+    "IconFileName": "inv_axe_71.jpg",
+    "AlternativeGemOrder": [
+      2,
+      8,
+      4
+    ]
+  },
+  "28224": {
+    "IconFileName": "inv_helmet_15.jpg",
+    "AlternativeGemOrder": [
+      4,
+      1
+    ]
+  },
+  "28225": {
+    "IconFileName": "inv_helmet_20.jpg",
+    "AlternativeGemOrder": [
+      2,
+      1
+    ]
+  },
+  "28228": {
+    "IconFileName": "inv_chest_chain_03.jpg",
+    "AlternativeGemOrder": [
+      2,
+      2,
+      4
+    ]
+  },
+  "28249": {
+    "IconFileName": "inv_misc_cape_20.jpg"
+  },
+  "28253": {
+    "IconFileName": "inv_weapon_halberd15.jpg"
+  },
+  "28262": {
+    "IconFileName": "inv_chest_plate07.jpg"
+  },
+  "28264": {
+    "IconFileName": "inv_chest_chain_17.jpg",
+    "AlternativeGemOrder": [
+      8,
+      8,
+      8
+    ]
+  },
+  "28275": {
+    "IconFileName": "inv_helmet_19.jpg",
+    "AlternativeGemOrder": [
+      2,
+      1
+    ]
+  },
+  "28293": {
+    "IconFileName": "inv_sword_48.jpg"
+  },
+  "28306": {
+    "IconFileName": "inv_shoulder_11.jpg"
+  },
+  "28318": {
+    "IconFileName": "inv_boots_plate_06.jpg",
+    "AlternativeGemOrder": [
+      8,
+      8
+    ]
+  },
+  "28323": {
+    "IconFileName": "inv_jewelry_ring_16.jpg"
+  },
+  "28324": {
+    "IconFileName": "inv_gauntlets_26.jpg"
+  },
+  "28337": {
+    "IconFileName": "inv_chest_plate08.jpg",
+    "AlternativeGemOrder": [
+      2,
+      2,
+      4
+    ]
+  },
+  "28339": {
+    "IconFileName": "inv_boots_05.jpg",
+    "AlternativeGemOrder": [
+      2,
+      8
+    ]
+  },
+  "28343": {
+    "IconFileName": "inv_jewelry_necklace_17.jpg"
+  },
+  "28344": {
+    "IconFileName": "inv_shoulder_18.jpg"
+  },
+  "28347": {
+    "IconFileName": "inv_pants_mail_21.jpg"
+  },
+  "28348": {
+    "IconFileName": "inv_helmet_15.jpg",
+    "AlternativeGemOrder": [
+      4,
+      1
+    ]
+  },
+  "28350": {
+    "IconFileName": "inv_helmet_20.jpg",
+    "AlternativeGemOrder": [
+      4,
+      1
+    ]
+  },
+  "28367": {
+    "IconFileName": "inv_sword_58.jpg"
+  },
+  "28371": {
+    "IconFileName": "inv_misc_cape_02.jpg"
+  },
+  "28375": {
+    "IconFileName": "inv_belt_23.jpg"
+  },
+  "28384": {
+    "IconFileName": "inv_boots_chain_09.jpg"
+  },
+  "28390": {
+    "IconFileName": "inv_gauntlets_30.jpg"
+  },
+  "28393": {
+    "IconFileName": "inv_mace_42.jpg",
+    "AlternativeGemOrder": [
+      2,
+      8,
+      4
+    ]
+  },
+  "28396": {
+    "IconFileName": "inv_gauntlets_22.jpg",
+    "AlternativeGemOrder": [
+      2,
+      4
+    ]
+  },
+  "28401": {
+    "IconFileName": "inv_chest_chain_03.jpg",
+    "AlternativeGemOrder": [
+      8,
+      8,
+      2
+    ]
+  },
+  "28403": {
+    "IconFileName": "inv_chest_chain_15.jpg",
+    "AlternativeGemOrder": [
+      2,
+      2,
+      4
+    ]
+  },
+  "28414": {
+    "IconFileName": "inv_helmet_15.jpg",
+    "AlternativeGemOrder": [
+      8,
+      1
+    ]
+  },
+  "28454": {
+    "IconFileName": "inv_bracer_02.jpg"
+  },
+  "28506": {
+    "IconFileName": "inv_gauntlets_28.jpg",
+    "AlternativeGemOrder": [
+      2,
+      4
+    ]
+  },
+  "28509": {
+    "IconFileName": "inv_jewelry_necklace_22.jpg"
+  },
+  "28514": {
+    "IconFileName": "inv_bracer_15.jpg"
+  },
+  "28519": {
+    "IconFileName": "inv_gauntlets_25.jpg",
+    "AlternativeGemOrder": [
+      4,
+      2
+    ]
+  },
+  "28529": {
+    "IconFileName": "inv_misc_cape_10.jpg"
+  },
+  "28545": {
+    "IconFileName": "inv_boots_plate_06.jpg",
+    "AlternativeGemOrder": [
+      2,
+      8
+    ]
+  },
+  "28566": {
+    "IconFileName": "inv_belt_27.jpg",
+    "AlternativeGemOrder": [
+      2,
+      8
+    ]
+  },
+  "28573": {
+    "IconFileName": "inv_sword_69.jpg"
+  },
+  "28587": {
+    "IconFileName": "inv_axe_46.jpg"
+  },
+  "28589": {
+    "IconFileName": "inv_shoulder_36.jpg"
+  },
+  "28593": {
+    "IconFileName": "inv_helmet_03.jpg",
+    "AlternativeGemOrder": [
+      2,
+      8,
+      4
+    ]
+  },
+  "28599": {
+    "IconFileName": "inv_chest_chain_07.jpg"
+  },
+  "28601": {
+    "IconFileName": "inv_chest_leather_06.jpg"
+  },
+  "28608": {
+    "IconFileName": "inv_boots_plate_04.jpg",
+    "AlternativeGemOrder": [
+      2,
+      8
+    ]
+  },
+  "28610": {
+    "IconFileName": "inv_boots_chain_04.jpg",
+    "AlternativeGemOrder": [
+      8,
+      4
+    ]
+  },
+  "28621": {
+    "IconFileName": "inv_pants_plate_05.jpg",
+    "AlternativeGemOrder": [
+      2,
+      8,
+      8
+    ]
+  },
+  "28649": {
+    "IconFileName": "inv_jewelry_ring_47.jpg"
+  },
+  "28656": {
+    "IconFileName": "inv_belt_22.jpg"
+  },
+  "28669": {
+    "IconFileName": "inv_boots_plate_06.jpg"
+  },
+  "28671": {
+    "IconFileName": "inv_helmet_05.jpg"
+  },
+  "28672": {
+    "IconFileName": "inv_misc_cape_10.jpg"
+  },
+  "28674": {
+    "IconFileName": "inv_jewelry_necklace_34.jpg"
+  },
+  "28709": {
+    "IconFileName": "inv_chest_plate05.jpg",
+    "AlternativeGemOrder": [
+      2,
+      2,
+      8
+    ]
+  },
+  "28710": {
+    "IconFileName": "inv_gauntlets_29.jpg"
+  },
+  "28711": {
+    "IconFileName": "inv_helmet_22.jpg",
+    "AlternativeGemOrder": [
+      1,
+      2
+    ]
+  },
+  "28712": {
+    "IconFileName": "inv_pants_plate_17.jpg"
+  },
+  "28713": {
+    "IconFileName": "inv_shoulder_22.jpg",
+    "AlternativeGemOrder": [
+      2,
+      8
+    ]
+  },
+  "28730": {
+    "IconFileName": "inv_jewelry_ring_24.jpg"
+  },
+  "28732": {
+    "IconFileName": "inv_helmet_58.jpg"
+  },
+  "28740": {
+    "IconFileName": "inv_pants_plate_02.jpg",
+    "AlternativeGemOrder": [
+      2,
+      8,
+      4
+    ]
+  },
+  "28741": {
+    "IconFileName": "inv_pants_leather_13.jpg",
+    "AlternativeGemOrder": [
+      2,
+      2,
+      4
+    ]
+  },
+  "28743": {
+    "IconFileName": "inv_shoulder_29.jpg",
+    "AlternativeGemOrder": [
+      2,
+      8
+    ]
+  },
+  "28745": {
+    "IconFileName": "inv_jewelry_necklace_06.jpg"
+  },
+  "28746": {
+    "IconFileName": "inv_boots_chain_05.jpg",
+    "AlternativeGemOrder": [
+      2,
+      4
+    ]
+  },
+  "28747": {
+    "IconFileName": "inv_boots_plate_06.jpg",
+    "AlternativeGemOrder": [
+      2,
+      4
+    ]
+  },
+  "28750": {
+    "IconFileName": "inv_belt_26.jpg",
+    "AlternativeGemOrder": [
+      2,
+      2
+    ]
+  },
+  "28755": {
+    "IconFileName": "inv_shoulder_29.jpg",
+    "AlternativeGemOrder": [
+      8,
+      8
+    ]
+  },
+  "28861": {
+    "IconFileName": "inv_chest_plate05.jpg",
+    "AlternativeGemOrder": [
+      2,
+      2,
+      8
+    ]
+  },
+  "28862": {
+    "IconFileName": "inv_gauntlets_29.jpg"
+  },
+  "28863": {
+    "IconFileName": "inv_helmet_22.jpg",
+    "AlternativeGemOrder": [
+      1,
+      2
+    ]
+  },
+  "28864": {
+    "IconFileName": "inv_pants_plate_17.jpg"
+  },
+  "28865": {
+    "IconFileName": "inv_shoulder_22.jpg",
+    "AlternativeGemOrder": [
+      2,
+      8
+    ]
+  },
+  "28917": {
+    "IconFileName": "inv_hammer_04.jpg"
+  },
+  "28918": {
+    "IconFileName": "inv_axe_10.jpg"
+  },
+  "28919": {
+    "IconFileName": "inv_hammer_04.jpg"
+  },
+  "28923": {
+    "IconFileName": "inv_weapon_halberd_04.jpg"
+  },
+  "28942": {
+    "IconFileName": "inv_hammer_04.jpg"
+  },
+  "28943": {
+    "IconFileName": "inv_sword_39.jpg"
+  },
+  "28945": {
+    "IconFileName": "inv_axe_09.jpg"
+  },
+  "28948": {
+    "IconFileName": "inv_hammer_04.jpg"
+  },
+  "28949": {
+    "IconFileName": "inv_weapon_halberd_04.jpg"
+  },
+  "29116": {
+    "IconFileName": "inv_pants_02.jpg"
+  },
+  "29128": {
+    "IconFileName": "inv_jewelry_ring_48naxxramas.jpg"
+  },
+  "29131": {
+    "IconFileName": "inv_pants_leather_18.jpg"
+  },
+  "29135": {
+    "IconFileName": "inv_helmet_17.jpg",
+    "AlternativeGemOrder": [
+      2,
+      8,
+      4
+    ]
+  },
+  "29136": {
+    "IconFileName": "inv_helmet_04.jpg",
+    "AlternativeGemOrder": [
+      2,
+      8,
+      4
+    ]
+  },
+  "29137": {
+    "IconFileName": "inv_axe_44.jpg"
+  },
+  "29138": {
+    "IconFileName": "inv_mace_45.jpg"
+  },
+  "29147": {
+    "IconFileName": "inv_shoulder_07.jpg"
+  },
+  "29148": {
+    "IconFileName": "inv_shoulder_25.jpg"
+  },
+  "29166": {
+    "IconFileName": "inv_weapon_halberd_12.jpg"
+  },
+  "29167": {
+    "IconFileName": "inv_spear_03.jpg"
+  },
+  "29180": {
+    "IconFileName": "inv_belt_08.jpg"
+  },
+  "29280": {
+    "IconFileName": "inv_jewelry_ring_62.jpg"
+  },
+  "29321": {
+    "IconFileName": "inv_jewelry_ring_38.jpg"
+  },
+  "29329": {
+    "IconFileName": "inv_spear_08.jpg"
+  },
+  "29332": {
+    "IconFileName": "inv_misc_bandana_03.jpg"
+  },
+  "29335": {
+    "IconFileName": "inv_jewelry_necklace_04.jpg"
+  },
+  "29516": {
+    "IconFileName": "inv_belt_29.jpg",
+    "AlternativeGemOrder": [
+      4,
+      8
+    ]
+  },
+  "29526": {
+    "IconFileName": "inv_belt_03.jpg"
+  },
+  "29527": {
+    "IconFileName": "inv_bracer_07.jpg"
+  },
+  "30643": {
+    "IconFileName": "inv_belt_22.jpg"
+  },
+  "30644": {
+    "IconFileName": "inv_gauntlets_28.jpg"
+  },
+  "30674": {
+    "IconFileName": "inv_boots_plate_06.jpg"
+  },
+  "30705": {
+    "IconFileName": "inv_shoulder_26.jpg"
+  },
+  "30710": {
+    "IconFileName": "inv_jewelry_necklace_04.jpg"
+  },
+  "30789": {
+    "IconFileName": "inv_sword_82.jpg"
+  },
+  "30835": {
+    "IconFileName": "inv_chest_plate08.jpg"
+  },
+  "31298": {
+    "IconFileName": "inv_pants_plate_21.jpg"
+  },
+  "31299": {
+    "IconFileName": "inv_mace_47.jpg"
+  },
+  "31462": {
+    "IconFileName": "inv_belt_11.jpg"
+  },
+  "31464": {
+    "IconFileName": "inv_belt_16.jpg"
+  },
+  "31748": {
+    "IconFileName": "inv_jewelry_necklace_12.jpg"
+  },
+  "32529": {
+    "IconFileName": "inv_gauntlets_03.jpg"
+  },
+  "32532": {
+    "IconFileName": "inv_bracer_18.jpg"
+  },
+  "32539": {
+    "IconFileName": "inv_misc_cape_08.jpg"
+  },
+  "32663": {
+    "IconFileName": "inv_axe_44.jpg"
+  },
+  "32665": {
+    "IconFileName": "inv_misc_cape_02.jpg"
+  },
+  "32769": {
+    "IconFileName": "inv_belt_19.jpg",
+    "AlternativeGemOrder": [
+      2,
+      4
+    ]
+  },
+  "32951": {
+    "IconFileName": "inv_sword_36.jpg"
+  },
+  "33173": {
+    "IconFileName": "inv_shoulder_16.jpg",
+    "AlternativeGemOrder": [
+      8,
+      8
+    ]
+  },
+  "34601": {
+    "IconFileName": "inv_shoulder_27.jpg",
+    "AlternativeGemOrder": [
+      8,
+      4
+    ]
+  },
+  "34673": {
+    "IconFileName": "inv_axe_46.jpg"
+  },
+  "34679": {
+    "IconFileName": "inv_jewelry_necklace_38.jpg"
+  },
+  "34680": {
+    "IconFileName": "inv_jewelry_necklace_39.jpg"
+  },
+  "34698": {
+    "IconFileName": "inv_bracer_16.jpg",
+    "AlternativeGemOrder": [
+      4
+    ]
+  },
+  "34701": {
+    "IconFileName": "inv_pants_06.jpg",
+    "AlternativeGemOrder": [
+      2,
+      8,
+      4
+    ]
+  },
+  "34706": {
+    "IconFileName": "inv_jewelry_ring_54.jpg"
+  },
+  "34708": {
+    "IconFileName": "inv_misc_cape_06.jpg"
+  },
+  "34789": {
+    "IconFileName": "inv_bracer_15.jpg",
+    "AlternativeGemOrder": [
+      8
+    ]
+  },
+  "34794": {
+    "IconFileName": "inv_axe_69.jpg"
+  },
+  "34798": {
+    "IconFileName": "inv_jewelry_ring_16.jpg"
+  },
+  "35412": {
+    "IconFileName": "inv_chest_plate05.jpg",
+    "AlternativeGemOrder": [
+      2,
+      2,
+      8
+    ]
+  },
+  "35413": {
+    "IconFileName": "inv_gauntlets_29.jpg"
+  },
+  "35414": {
+    "IconFileName": "inv_helmet_22.jpg",
+    "AlternativeGemOrder": [
+      1,
+      2
+    ]
+  },
+  "35415": {
+    "IconFileName": "inv_pants_plate_17.jpg"
+  },
+  "35416": {
+    "IconFileName": "inv_shoulder_22.jpg",
+    "AlternativeGemOrder": [
+      2,
+      8
+    ]
+  },
+  "35477": {
+    "IconFileName": "inv_gauntlets_29.jpg"
+  },
+  "27460": {
+    "IconFileName": "inv_jewelry_ring_ahnqiraj_03.jpg"
+  },
+  "29071": {
+    "IconFileName": "inv_chest_chain_15.jpg",
+    "AlternativeGemOrder": [
+      2,
+      2,
+      4
+    ]
+  },
+  "29072": {
+    "IconFileName": "inv_gauntlets_25.jpg"
+  },
+  "29073": {
+    "IconFileName": "inv_helmet_15.jpg",
+    "AlternativeGemOrder": [
+      2,
+      1
+    ]
+  },
+  "29074": {
+    "IconFileName": "inv_pants_mail_15.jpg"
+  },
+  "29075": {
+    "IconFileName": "inv_shoulder_14.jpg",
+    "AlternativeGemOrder": [
+      8,
+      2
+    ]
+  },
+  "29282": {
+    "IconFileName": "inv_jewelry_ring_62.jpg"
+  },
+  "29515": {
+    "IconFileName": "inv_chest_plate08.jpg",
+    "AlternativeGemOrder": [
+      4,
+      8,
+      4
+    ]
+  },
+  "29525": {
+    "IconFileName": "inv_chest_cloth_45.jpg"
+  },
+  "30722": {
+    "IconFileName": "inv_axe_67.jpg",
+    "AlternativeGemOrder": [
+      2,
+      8,
+      8
+    ]
+  },
+  "30729": {
+    "IconFileName": "inv_misc_cape_20.jpg"
+  },
+  "30730": {
+    "IconFileName": "inv_chest_cloth_45.jpg",
+    "AlternativeGemOrder": [
+      2,
+      8,
+      8
+    ]
+  },
+  "30738": {
+    "IconFileName": "inv_jewelry_ring_04.jpg"
+  },
+  "30739": {
+    "IconFileName": "inv_pants_mail_11.jpg",
+    "AlternativeGemOrder": [
+      2,
+      2,
+      2
+    ]
+  },
+  "30740": {
+    "IconFileName": "inv_shoulder_36.jpg",
+    "AlternativeGemOrder": [
+      8,
+      8
+    ]
+  },
+  "33122": {
+    "IconFileName": "inv_misc_cape_20.jpg",
+    "AlternativeGemOrder": [
+      4
+    ]
+  },
+  "24550": {
+    "IconFileName": "inv_sword_70.jpg"
+  },
+  "27879": {
+    "IconFileName": "inv_chest_plate05.jpg",
+    "AlternativeGemOrder": [
+      2,
+      2,
+      8
+    ]
+  },
+  "27880": {
+    "IconFileName": "inv_gauntlets_29.jpg"
+  },
+  "27881": {
+    "IconFileName": "inv_helmet_22.jpg",
+    "AlternativeGemOrder": [
+      1,
+      2
+    ]
+  },
+  "27882": {
+    "IconFileName": "inv_pants_plate_17.jpg"
+  },
+  "27883": {
+    "IconFileName": "inv_shoulder_22.jpg",
+    "AlternativeGemOrder": [
+      2,
+      8
+    ]
+  },
+  "28298": {
+    "IconFileName": "inv_axe_68.jpg"
+  },
+  "28299": {
+    "IconFileName": "inv_mace_52.jpg"
+  },
+  "28300": {
+    "IconFileName": "inv_weapon_halberd15.jpg"
+  },
+  "28377": {
+    "IconFileName": "inv_misc_cape_07.jpg"
+  },
+  "28380": {
+    "IconFileName": "inv_misc_cape_07.jpg"
+  },
+  "28383": {
+    "IconFileName": "inv_boots_plate_04.jpg"
+  },
+  "28385": {
+    "IconFileName": "inv_belt_14.jpg"
+  },
+  "28429": {
+    "IconFileName": "inv_sword_2h_blacksmithing_02.jpg"
+  },
+  "28435": {
+    "IconFileName": "inv_axe_51.jpg"
+  },
+  "28441": {
+    "IconFileName": "inv_mace_2h_blacksmithing_02.jpg"
+  },
+  "28476": {
+    "IconFileName": "inv_mace_52.jpg"
+  },
+  "28644": {
+    "IconFileName": "inv_belt_14.jpg"
+  },
+  "28645": {
+    "IconFileName": "inv_boots_plate_04.jpg"
+  },
+  "28995": {
+    "IconFileName": "inv_belt_14.jpg"
+  },
+  "28997": {
+    "IconFileName": "inv_boots_plate_04.jpg"
+  },
+  "28998": {
+    "IconFileName": "inv_belt_14.jpg"
+  },
+  "29000": {
+    "IconFileName": "inv_boots_plate_04.jpg"
+  },
+  "28757": {
+    "IconFileName": "inv_jewelry_ring_ahnqiraj_05.jpg"
+  },
+  "28764": {
+    "IconFileName": "inv_misc_cape_17.jpg"
+  },
+  "28773": {
+    "IconFileName": "inv_axe_60.jpg"
+  },
+  "28774": {
+    "IconFileName": "inv_weapon_halberd16.jpg",
+    "AlternativeGemOrder": [
+      2,
+      2,
+      2
+    ]
+  },
+  "28775": {
+    "IconFileName": "inv_helmet_58.jpg"
+  },
+  "28776": {
+    "IconFileName": "inv_gauntlets_19.jpg",
+    "AlternativeGemOrder": [
+      4,
+      4
+    ]
+  },
+  "28777": {
+    "IconFileName": "inv_misc_cape_14.jpg"
+  },
+  "28778": {
+    "IconFileName": "inv_belt_20.jpg",
+    "AlternativeGemOrder": [
+      4,
+      2
+    ]
+  },
+  "28779": {
+    "IconFileName": "inv_belt_22.jpg",
+    "AlternativeGemOrder": [
+      2,
+      4
+    ]
+  },
+  "28791": {
+    "IconFileName": "inv_jewelry_ring_71.jpg"
+  },
+  "28794": {
+    "IconFileName": "inv_axe_64.jpg"
+  },
+  "28795": {
+    "IconFileName": "inv_bracer_15.jpg",
+    "AlternativeGemOrder": [
+      4,
+      2
+    ]
+  },
+  "28796": {
+    "IconFileName": "inv_helmet_58.jpg"
+  },
+  "28800": {
+    "IconFileName": "inv_hammer_28.jpg",
+    "AlternativeGemOrder": [
+      2,
+      2,
+      4
+    ]
+  },
+  "28801": {
+    "IconFileName": "inv_helmet_23.jpg"
+  },
+  "28824": {
+    "IconFileName": "inv_gauntlets_31.jpg",
+    "AlternativeGemOrder": [
+      4,
+      8
+    ]
+  },
+  "28827": {
+    "IconFileName": "inv_gauntlets_25.jpg",
+    "AlternativeGemOrder": [
+      2,
+      2
+    ]
+  },
+  "28828": {
+    "IconFileName": "inv_belt_26.jpg",
+    "AlternativeGemOrder": [
+      4,
+      8
+    ]
+  },
+  "34613": {
+    "IconFileName": "inv_shoulder_07.jpg"
+  },
+  "34614": {
+    "IconFileName": "inv_chest_chain_06.jpg"
+  },
+  "34615": {
+    "IconFileName": "inv_chest_plate02.jpg",
+    "AlternativeGemOrder": [
+      2,
+      8,
+      4
+    ]
+  },
+  "32818": {
+    "IconFileName": "inv_bracer_19.jpg",
+    "AlternativeGemOrder": [
+      8
+    ]
+  },
+  "32819": {
+    "IconFileName": "inv_bracer_19.jpg",
+    "AlternativeGemOrder": [
+      8
+    ]
+  },
+  "23564": {
+    "IconFileName": "inv_chest_chain_17.jpg",
+    "AlternativeGemOrder": [
+      2,
+      8,
+      4
+    ]
+  },
+  "28484": {
+    "IconFileName": "inv_chest_plate15.jpg",
+    "AlternativeGemOrder": [
+      4,
+      8,
+      8
+    ]
+  },
+  "32461": {
+    "IconFileName": "inv_gizmo_newgoggles.jpg",
+    "AlternativeGemOrder": [
+      1,
+      4
+    ]
+  },
+  "32474": {
+    "IconFileName": "inv_gizmo_newgoggles.jpg",
+    "AlternativeGemOrder": [
+      1,
+      4
+    ]
+  },
+  "32478": {
+    "IconFileName": "inv_gizmo_newgoggles.jpg",
+    "AlternativeGemOrder": [
+      1,
+      4
+    ]
+  },
+  "29298": {
+    "IconFileName": "inv_jewelry_ring_54.jpg"
+  },
+  "29947": {
+    "IconFileName": "inv_gauntlets_28.jpg"
+  },
+  "29950": {
+    "IconFileName": "inv_pants_plate_05.jpg",
+    "AlternativeGemOrder": [
+      2,
+      8,
+      4
+    ]
+  },
+  "29951": {
+    "IconFileName": "inv_boots_chain_04.jpg",
+    "AlternativeGemOrder": [
+      4,
+      4
+    ]
+  },
+  "29966": {
+    "IconFileName": "inv_bracer_15.jpg",
+    "AlternativeGemOrder": [
+      4
+    ]
+  },
+  "29983": {
+    "IconFileName": "inv_helmet_03.jpg"
+  },
+  "29985": {
+    "IconFileName": "inv_pants_mail_15.jpg",
+    "AlternativeGemOrder": [
+      2,
+      8,
+      4
+    ]
+  },
+  "30022": {
+    "IconFileName": "inv_jewelry_necklace_ahnqiraj_01.jpg"
+  },
+  "30026": {
+    "IconFileName": "inv_bracer_17.jpg"
+  },
+  "30032": {
+    "IconFileName": "inv_belt_13.jpg",
+    "AlternativeGemOrder": [
+      4,
+      8
+    ]
+  },
+  "30039": {
+    "IconFileName": "inv_boots_05.jpg"
+  },
+  "30040": {
+    "IconFileName": "inv_belt_29.jpg",
+    "AlternativeGemOrder": [
+      4,
+      4
+    ]
+  },
+  "30041": {
+    "IconFileName": "inv_boots_cloth_04.jpg"
+  },
+  "30042": {
+    "IconFileName": "inv_belt_25.jpg",
+    "AlternativeGemOrder": [
+      2,
+      2
+    ]
+  },
+  "30045": {
+    "IconFileName": "inv_boots_chain_07.jpg"
+  },
+  "30046": {
+    "IconFileName": "inv_belt_03.jpg",
+    "AlternativeGemOrder": [
+      4,
+      8
+    ]
+  },
+  "30052": {
+    "IconFileName": "inv_jewelry_ring_51naxxramas.jpg"
+  },
+  "30053": {
+    "IconFileName": "inv_shoulder_20.jpg",
+    "AlternativeGemOrder": [
+      2,
+      4
+    ]
+  },
+  "30054": {
+    "IconFileName": "inv_chest_plate09.jpg",
+    "AlternativeGemOrder": [
+      4,
+      2,
+      8
+    ]
+  },
+  "30055": {
+    "IconFileName": "inv_shoulder_23.jpg",
+    "AlternativeGemOrder": [
+      2
+    ]
+  },
+  "30057": {
+    "IconFileName": "inv_bracer_19.jpg",
+    "AlternativeGemOrder": [
+      4
+    ]
+  },
+  "30059": {
+    "IconFileName": "inv_jewelry_necklace_ahnqiraj_03.jpg"
+  },
+  "30060": {
+    "IconFileName": "inv_boots_plate_06.jpg"
+  },
+  "30061": {
+    "IconFileName": "inv_jewelry_ring_41.jpg"
+  },
+  "30068": {
+    "IconFileName": "inv_belt_19.jpg"
+  },
+  "30081": {
+    "IconFileName": "inv_boots_plate_04.jpg"
+  },
+  "30085": {
+    "IconFileName": "inv_shoulder_27.jpg"
+  },
+  "30091": {
+    "IconFileName": "inv_bracer_15.jpg",
+    "AlternativeGemOrder": [
+      8
+    ]
+  },
+  "30098": {
+    "IconFileName": "inv_misc_cape_20.jpg"
+  },
+  "30101": {
+    "IconFileName": "inv_chest_plate08.jpg",
+    "AlternativeGemOrder": [
+      8,
+      8,
+      4
+    ]
+  },
+  "33055": {
+    "IconFileName": "inv_jewelry_ring_71.jpg"
+  },
+  "33057": {
+    "IconFileName": "inv_jewelry_ring_60.jpg"
+  },
+  "33066": {
+    "IconFileName": "inv_jewelry_necklace_36.jpg",
+    "AlternativeGemOrder": [
+      8
+    ]
+  },
+  "33206": {
+    "IconFileName": "inv_shoulder_85.jpg",
+    "AlternativeGemOrder": [
+      8,
+      2
+    ]
+  },
+  "33211": {
+    "IconFileName": "inv_belt_14.jpg",
+    "AlternativeGemOrder": [
+      4
+    ]
+  },
+  "33215": {
+    "IconFileName": "inv_chest_plate_22.jpg"
+  },
+  "33222": {
+    "IconFileName": "inv_boots_07.jpg",
+    "AlternativeGemOrder": [
+      4,
+      2
+    ]
+  },
+  "33280": {
+    "IconFileName": "inv_belt_22.jpg"
+  },
+  "33296": {
+    "IconFileName": "inv_jewelry_necklace_28.jpg"
+  },
+  "33297": {
+    "IconFileName": "inv_jewelry_necklace_19.jpg"
+  },
+  "33300": {
+    "IconFileName": "inv_shoulder_24.jpg"
+  },
+  "33303": {
+    "IconFileName": "inv_boots_plate_10.jpg",
+    "AlternativeGemOrder": [
+      2,
+      4
+    ]
+  },
+  "33328": {
+    "IconFileName": "inv_chest_chain_13.jpg"
+  },
+  "33329": {
+    "IconFileName": "inv_chest_leather_06.jpg"
+  },
+  "33331": {
+    "IconFileName": "inv_belt_18.jpg",
+    "AlternativeGemOrder": [
+      2,
+      4
+    ]
+  },
+  "33501": {
+    "IconFileName": "inv_pants_plate_28.jpg",
+    "AlternativeGemOrder": [
+      2,
+      8,
+      4
+    ]
+  },
+  "33503": {
+    "IconFileName": "inv_relics_libramofgrace.jpg"
+  },
+  "33512": {
+    "IconFileName": "inv_gauntlets_67.jpg",
+    "AlternativeGemOrder": [
+      2,
+      8
+    ]
+  },
+  "33513": {
+    "IconFileName": "inv_bracer_15.jpg"
+  },
+  "33514": {
+    "IconFileName": "inv_shoulder_81.jpg"
+  },
+  "33516": {
+    "IconFileName": "inv_bracer_19.jpg"
+  },
+  "33527": {
+    "IconFileName": "inv_pants_leather_23.jpg"
+  },
+  "33528": {
+    "IconFileName": "inv_gauntlets_25.jpg",
+    "AlternativeGemOrder": [
+      8,
+      2
+    ]
+  },
+  "33529": {
+    "IconFileName": "inv_bracer_02.jpg"
+  },
+  "33538": {
+    "IconFileName": "inv_pants_leather_09.jpg"
+  },
+  "33539": {
+    "IconFileName": "inv_gauntlets_50.jpg"
+  },
+  "33540": {
+    "IconFileName": "inv_bracer_07.jpg",
+    "AlternativeGemOrder": [
+      8
+    ]
+  },
+  "33579": {
+    "IconFileName": "inv_chest_leather_08.jpg"
+  },
+  "33580": {
+    "IconFileName": "inv_bracer_12.jpg",
+    "AlternativeGemOrder": [
+      8
+    ]
+  },
+  "33582": {
+    "IconFileName": "inv_boots_wolf.jpg",
+    "AlternativeGemOrder": [
+      2,
+      8
+    ]
+  },
+  "33583": {
+    "IconFileName": "inv_belt_22.jpg",
+    "AlternativeGemOrder": [
+      4,
+      2
+    ]
+  },
+  "33590": {
+    "IconFileName": "inv_misc_cape_20.jpg"
+  },
+  "33805": {
+    "IconFileName": "inv_boots_chain_08.jpg"
+  },
+  "33810": {
+    "IconFileName": "inv_helmet_114.jpg",
+    "AlternativeGemOrder": [
+      2,
+      8,
+      4
+    ]
+  },
+  "29283": {
+    "IconFileName": "inv_jewelry_ring_62.jpg"
+  },
+  "32422": {
+    "IconFileName": "inv_axe_64.jpg"
+  },
+  "33492": {
+    "IconFileName": "inv_axe_85.jpg",
+    "AlternativeGemOrder": [
+      2,
+      4
+    ]
+  },
+  "30129": {
+    "IconFileName": "inv_chest_chain_15.jpg",
+    "AlternativeGemOrder": [
+      2,
+      8,
+      8
+    ]
+  },
+  "30130": {
+    "IconFileName": "inv_gauntlets_25.jpg"
+  },
+  "30131": {
+    "IconFileName": "inv_helmet_15.jpg",
+    "AlternativeGemOrder": [
+      2,
+      1
+    ]
+  },
+  "30132": {
+    "IconFileName": "inv_pants_mail_15.jpg",
+    "AlternativeGemOrder": [
+      8
+    ]
+  },
+  "30133": {
+    "IconFileName": "inv_shoulder_14.jpg",
+    "AlternativeGemOrder": [
+      8,
+      8
+    ]
+  },
+  "33432": {
+    "IconFileName": "inv_helmet_113.jpg",
+    "AlternativeGemOrder": [
+      2,
+      8,
+      4
+    ]
+  },
+  "33479": {
+    "IconFileName": "inv_helmet_116.jpg",
+    "AlternativeGemOrder": [
+      2,
+      8,
+      4
+    ]
+  },
+  "30090": {
+    "IconFileName": "inv_mace_52.jpg"
+  },
+  "29300": {
+    "IconFileName": "inv_jewelry_ring_54.jpg"
+  },
+  "34837": {
+    "IconFileName": "inv_jewelry_ring_34.jpg"
+  },
+  "28430": {
+    "IconFileName": "inv_sword_2h_blacksmithing_03.jpg"
+  },
+  "28436": {
+    "IconFileName": "inv_axe_52.jpg"
+  },
+  "28442": {
+    "IconFileName": "inv_mace_2h_blacksmithing_03.jpg"
+  },
+  "29299": {
+    "IconFileName": "inv_jewelry_ring_54.jpg"
+  },
+  "31959": {
+    "IconFileName": "inv_mace_52.jpg"
+  },
+  "31966": {
+    "IconFileName": "inv_axe_68.jpg"
+  },
+  "31984": {
+    "IconFileName": "inv_sword_70.jpg"
+  },
+  "32014": {
+    "IconFileName": "inv_mace_52.jpg"
+  },
+  "32025": {
+    "IconFileName": "inv_weapon_halberd15.jpg"
+  },
+  "32039": {
+    "IconFileName": "inv_chest_plate05.jpg",
+    "AlternativeGemOrder": [
+      2,
+      2,
+      8
+    ]
+  },
+  "32040": {
+    "IconFileName": "inv_gauntlets_29.jpg"
+  },
+  "32041": {
+    "IconFileName": "inv_helmet_22.jpg",
+    "AlternativeGemOrder": [
+      1,
+      2
+    ]
+  },
+  "32042": {
+    "IconFileName": "inv_pants_plate_17.jpg"
+  },
+  "32043": {
+    "IconFileName": "inv_shoulder_22.jpg",
+    "AlternativeGemOrder": [
+      2,
+      8
+    ]
+  },
+  "32793": {
+    "IconFileName": "inv_boots_plate_04.jpg"
+  },
+  "32794": {
+    "IconFileName": "inv_boots_plate_04.jpg"
+  },
+  "32805": {
+    "IconFileName": "inv_belt_14.jpg"
+  },
+  "32806": {
+    "IconFileName": "inv_belt_14.jpg"
+  },
+  "33484": {
+    "IconFileName": "inv_misc_cape_20.jpg"
+  },
+  "29994": {
+    "IconFileName": "inv_misc_cape_15.jpg"
+  },
+  "29995": {
+    "IconFileName": "inv_pants_leather_03.jpg"
+  },
+  "29997": {
+    "IconFileName": "inv_jewelry_ring_55.jpg"
+  },
+  "30017": {
+    "IconFileName": "inv_jewelry_necklace_30naxxramas.jpg"
+  },
+  "30102": {
+    "IconFileName": "inv_chest_plate11.jpg"
+  },
+  "30104": {
+    "IconFileName": "inv_boots_chain_12.jpg",
+    "AlternativeGemOrder": [
+      4,
+      2
+    ]
+  },
+  "30106": {
+    "IconFileName": "inv_belt_26.jpg",
+    "AlternativeGemOrder": [
+      2,
+      4
+    ]
+  },
+  "33478": {
+    "IconFileName": "inv_sword_108.jpg"
+  },
+  "29993": {
+    "IconFileName": "inv_sword_2h_blood_c_01.jpg",
+    "AlternativeGemOrder": [
+      2,
+      8,
+      4
+    ]
+  },
+  "30861": {
+    "IconFileName": "inv_bracer_15.jpg",
+    "AlternativeGemOrder": [
+      8
+    ]
+  },
+  "30863": {
+    "IconFileName": "inv_bracer_09.jpg",
+    "AlternativeGemOrder": [
+      8
+    ]
+  },
+  "30864": {
+    "IconFileName": "inv_bracer_02.jpg",
+    "AlternativeGemOrder": [
+      4
+    ]
+  },
+  "30866": {
+    "IconFileName": "inv_shoulder_65.jpg"
+  },
+  "30879": {
+    "IconFileName": "inv_belt_26.jpg",
+    "AlternativeGemOrder": [
+      2,
+      8
+    ]
+  },
+  "30880": {
+    "IconFileName": "inv_boots_chain_09.jpg",
+    "AlternativeGemOrder": [
+      2,
+      8
+    ]
+  },
+  "30891": {
+    "IconFileName": "inv_boots_cloth_05.jpg"
+  },
+  "30892": {
+    "IconFileName": "inv_shoulder_59.jpg"
+  },
+  "30898": {
+    "IconFileName": "inv_pants_leather_25.jpg"
+  },
+  "30900": {
+    "IconFileName": "inv_pants_mail_15.jpg",
+    "AlternativeGemOrder": [
+      2,
+      8,
+      4
+    ]
+  },
+  "30915": {
+    "IconFileName": "inv_belt_27.jpg"
+  },
+  "30917": {
+    "IconFileName": "inv_shoulder_67.jpg"
+  },
+  "30919": {
+    "IconFileName": "inv_belt_22.jpg"
+  },
+  "32234": {
+    "IconFileName": "inv_gauntlets_59.jpg"
+  },
+  "32248": {
+    "IconFileName": "inv_weapon_halberd_20.jpg"
+  },
+  "32251": {
+    "IconFileName": "inv_bracer_06.jpg"
+  },
+  "32252": {
+    "IconFileName": "inv_chest_leather_03.jpg",
+    "AlternativeGemOrder": [
+      2,
+      8,
+      4
+    ]
+  },
+  "32260": {
+    "IconFileName": "inv_jewelry_necklace_35.jpg"
+  },
+  "32264": {
+    "IconFileName": "inv_shoulder_59.jpg"
+  },
+  "32265": {
+    "IconFileName": "inv_belt_26.jpg"
+  },
+  "32266": {
+    "IconFileName": "inv_jewelry_ring_68.jpg"
+  },
+  "32278": {
+    "IconFileName": "inv_gauntlets_62.jpg",
+    "AlternativeGemOrder": [
+      2,
+      2
+    ]
+  },
+  "32280": {
+    "IconFileName": "inv_gauntlets_62.jpg"
+  },
+  "32323": {
+    "IconFileName": "inv_misc_cape_naxxramas_02.jpg"
+  },
+  "32324": {
+    "IconFileName": "inv_bracer_04.jpg",
+    "AlternativeGemOrder": [
+      8
+    ]
+  },
+  "32332": {
+    "IconFileName": "inv_mace_49.jpg"
+  },
+  "32334": {
+    "IconFileName": "inv_chest_samurai.jpg"
+  },
+  "32335": {
+    "IconFileName": "inv_jewelry_ring_71.jpg"
+  },
+  "32341": {
+    "IconFileName": "inv_pants_plate_20.jpg"
+  },
+  "32345": {
+    "IconFileName": "inv_boots_plate_02.jpg",
+    "AlternativeGemOrder": [
+      8,
+      8
+    ]
+  },
+  "32346": {
+    "IconFileName": "inv_belt_14.jpg"
+  },
+  "32347": {
+    "IconFileName": "inv_gauntlets_65.jpg"
+  },
+  "32348": {
+    "IconFileName": "inv_axe_60.jpg"
+  },
+  "32365": {
+    "IconFileName": "inv_chest_plate08.jpg"
+  },
+  "32366": {
+    "IconFileName": "inv_boots_cloth_02.jpg",
+    "AlternativeGemOrder": [
+      2,
+      8
+    ]
+  },
+  "32373": {
+    "IconFileName": "inv_helmet_98.jpg",
+    "AlternativeGemOrder": [
+      1,
+      8
+    ]
+  },
+  "32376": {
+    "IconFileName": "inv_helmet_95.jpg",
+    "AlternativeGemOrder": [
+      2,
+      1
+    ]
+  },
+  "32377": {
+    "IconFileName": "inv_shoulder_67.jpg"
+  },
+  "32510": {
+    "IconFileName": "inv_boots_chain_01.jpg"
+  },
+  "32568": {
+    "IconFileName": "inv_bracer_15.jpg"
+  },
+  "32570": {
+    "IconFileName": "inv_shoulder_29.jpg"
+  },
+  "32574": {
+    "IconFileName": "inv_bracer_02.jpg"
+  },
+  "32575": {
+    "IconFileName": "inv_shoulder_66.jpg"
+  },
+  "32580": {
+    "IconFileName": "inv_bracer_15.jpg"
+  },
+  "32581": {
+    "IconFileName": "inv_shoulder_23.jpg"
+  },
+  "32591": {
+    "IconFileName": "inv_jewelry_necklace_34.jpg"
+  },
+  "32593": {
+    "IconFileName": "inv_boots_wolf.jpg"
+  },
+  "32606": {
+    "IconFileName": "inv_belt_28.jpg"
+  },
+  "32608": {
+    "IconFileName": "inv_gauntlets_62.jpg"
+  },
+  "33496": {
+    "IconFileName": "inv_jewelry_ring_44.jpg"
+  },
+  "33813": {
+    "IconFileName": "inv_bracer_19.jpg",
+    "AlternativeGemOrder": [
+      8
+    ]
+  },
+  "33910": {
+    "IconFileName": "inv_bracer_19.jpg",
+    "AlternativeGemOrder": [
+      8
+    ]
+  },
+  "33919": {
+    "IconFileName": "inv_jewelry_ring_60.jpg"
+  },
+  "33923": {
+    "IconFileName": "inv_jewelry_necklace_36.jpg",
+    "AlternativeGemOrder": [
+      8
+    ]
+  },
+  "34887": {
+    "IconFileName": "inv_jewelry_ring_79.jpg"
+  },
+  "34906": {
+    "IconFileName": "inv_chest_cloth_05.jpg",
+    "AlternativeGemOrder": [
+      2
+    ]
+  },
+  "34910": {
+    "IconFileName": "inv_pants_05.jpg",
+    "AlternativeGemOrder": [
+      2,
+      8
+    ]
+  },
+  "34911": {
+    "IconFileName": "inv_gauntlets_08.jpg",
+    "AlternativeGemOrder": [
+      8
+    ]
+  },
+  "34912": {
+    "IconFileName": "inv_chest_chain_17.jpg",
+    "AlternativeGemOrder": [
+      8
+    ]
+  },
+  "34914": {
+    "IconFileName": "inv_pants_mail_05.jpg",
+    "AlternativeGemOrder": [
+      8,
+      4
+    ]
+  },
+  "34916": {
+    "IconFileName": "inv_gauntlets_25.jpg",
+    "AlternativeGemOrder": [
+      8
+    ]
+  },
+  "34927": {
+    "IconFileName": "inv_chest_plate02.jpg",
+    "AlternativeGemOrder": [
+      2
+    ]
+  },
+  "34928": {
+    "IconFileName": "inv_pants_leather_03.jpg",
+    "AlternativeGemOrder": [
+      8,
+      4
+    ]
+  },
+  "34929": {
+    "IconFileName": "inv_belt_03.jpg",
+    "AlternativeGemOrder": [
+      8
+    ]
+  },
+  "34940": {
+    "IconFileName": "inv_pants_plate_21.jpg",
+    "AlternativeGemOrder": [
+      2,
+      4
+    ]
+  },
+  "34941": {
+    "IconFileName": "inv_belt_27.jpg",
+    "AlternativeGemOrder": [
+      2
+    ]
+  },
+  "34942": {
+    "IconFileName": "inv_chest_plate06.jpg",
+    "AlternativeGemOrder": [
+      2
+    ]
+  },
+  "34943": {
+    "IconFileName": "inv_pants_plate_21.jpg",
+    "AlternativeGemOrder": [
+      8,
+      4
+    ]
+  },
+  "34944": {
+    "IconFileName": "inv_belt_13.jpg",
+    "AlternativeGemOrder": [
+      4
+    ]
+  },
+  "35284": {
+    "IconFileName": "inv_jewelry_ring_60.jpg"
+  },
+  "35292": {
+    "IconFileName": "inv_jewelry_necklace_36.jpg",
+    "AlternativeGemOrder": [
+      4
+    ]
+  },
+  "23565": {
+    "IconFileName": "inv_chest_chain_17.jpg",
+    "AlternativeGemOrder": [
+      2,
+      8,
+      4
+    ]
+  },
+  "28485": {
+    "IconFileName": "inv_chest_plate16.jpg",
+    "AlternativeGemOrder": [
+      4,
+      8,
+      8
+    ]
+  },
+  "30982": {
+    "IconFileName": "inv_gauntlets_60.jpg",
+    "AlternativeGemOrder": [
+      8
+    ]
+  },
+  "30989": {
+    "IconFileName": "inv_helmet_96.jpg",
+    "AlternativeGemOrder": [
+      8,
+      1
+    ]
+  },
+  "30990": {
+    "IconFileName": "inv_chest_plate_22.jpg",
+    "AlternativeGemOrder": [
+      2,
+      8,
+      4
+    ]
+  },
+  "30993": {
+    "IconFileName": "inv_pants_plate_26.jpg",
+    "AlternativeGemOrder": [
+      2
+    ]
+  },
+  "30997": {
+    "IconFileName": "inv_shoulder_60.jpg",
+    "AlternativeGemOrder": [
+      8,
+      8
+    ]
+  },
+  "33663": {
+    "IconFileName": "inv_mace_43.jpg"
+  },
+  "33670": {
+    "IconFileName": "inv_axe_60.jpg"
+  },
+  "33688": {
+    "IconFileName": "inv_sword_108.jpg"
+  },
+  "33727": {
+    "IconFileName": "inv_weapon_halberd15.jpg"
+  },
+  "33749": {
+    "IconFileName": "inv_chest_plate_22.jpg",
+    "AlternativeGemOrder": [
+      2,
+      2,
+      8
+    ]
+  },
+  "33750": {
+    "IconFileName": "inv_gauntlets_60.jpg"
+  },
+  "33751": {
+    "IconFileName": "inv_helmet_96.jpg",
+    "AlternativeGemOrder": [
+      1,
+      2
+    ]
+  },
+  "33752": {
+    "IconFileName": "inv_pants_plate_26.jpg"
+  },
+  "33753": {
+    "IconFileName": "inv_shoulder_60.jpg",
+    "AlternativeGemOrder": [
+      2,
+      8
+    ]
+  },
+  "33811": {
+    "IconFileName": "inv_belt_14.jpg"
+  },
+  "33812": {
+    "IconFileName": "inv_boots_plate_04.jpg"
+  },
+  "33909": {
+    "IconFileName": "inv_belt_14.jpg"
+  },
+  "33911": {
+    "IconFileName": "inv_boots_plate_04.jpg"
+  },
+  "34891": {
+    "IconFileName": "inv_axe_04.jpg"
+  },
+  "30902": {
+    "IconFileName": "inv_sword_68.jpg"
+  },
+  "30903": {
+    "IconFileName": "inv_pants_plate_21.jpg"
+  },
+  "30905": {
+    "IconFileName": "inv_chest_plate02.jpg",
+    "AlternativeGemOrder": [
+      4,
+      2,
+      8
+    ]
+  },
+  "30907": {
+    "IconFileName": "inv_chest_chain_17.jpg"
+  },
+  "32235": {
+    "IconFileName": "inv_misc_bandana_03.jpg",
+    "AlternativeGemOrder": [
+      1,
+      8
+    ]
+  },
+  "32497": {
+    "IconFileName": "inv_jewelry_ring_67.jpg"
+  },
+  "32526": {
+    "IconFileName": "inv_jewelry_ring_35.jpg"
+  },
+  "29301": {
+    "IconFileName": "inv_jewelry_ring_55.jpg"
+  },
+  "34177": {
+    "IconFileName": "inv_jewelry_necklace_43.jpg"
+  },
+  "34178": {
+    "IconFileName": "inv_jewelry_necklace_47.jpg"
+  },
+  "34183": {
+    "IconFileName": "inv_weapon_halberd_20.jpg",
+    "AlternativeGemOrder": [
+      8
+    ]
+  },
+  "34189": {
+    "IconFileName": "inv_jewelry_ring_36.jpg"
+  },
+  "34190": {
+    "IconFileName": "inv_misc_cape_18.jpg"
+  },
+  "34213": {
+    "IconFileName": "inv_jewelry_ring_72.jpg"
+  },
+  "34431": {
+    "IconFileName": "inv_bracer_15.jpg",
+    "AlternativeGemOrder": [
+      8
+    ]
+  },
+  "34485": {
+    "IconFileName": "inv_belt_27.jpg",
+    "AlternativeGemOrder": [
+      2
+    ]
+  },
+  "34561": {
+    "IconFileName": "inv_boots_chain_08.jpg",
+    "AlternativeGemOrder": [
+      2
+    ]
+  },
+  "34989": {
+    "IconFileName": "inv_mace_49.jpg"
+  },
+  "34997": {
+    "IconFileName": "inv_axe_73.jpg"
+  },
+  "35015": {
+    "IconFileName": "inv_sword_116.jpg"
+  },
+  "35064": {
+    "IconFileName": "inv_weapon_halberd_20.jpg"
+  },
+  "35131": {
+    "IconFileName": "inv_jewelry_ring_60.jpg"
+  },
+  "35135": {
+    "IconFileName": "inv_jewelry_necklace_36.jpg",
+    "AlternativeGemOrder": [
+      8
+    ]
+  },
+  "35176": {
+    "IconFileName": "inv_bracer_17.jpg",
+    "AlternativeGemOrder": [
+      8
+    ]
+  },
+  "35178": {
+    "IconFileName": "inv_bracer_17.jpg",
+    "AlternativeGemOrder": [
+      8
+    ]
+  },
+  "32824": {
+    "IconFileName": "inv_sword_48.jpg"
+  },
+  "34168": {
+    "IconFileName": "inv_pants_mail_16.jpg",
+    "AlternativeGemOrder": [
+      8,
+      4,
+      4
+    ]
+  },
+  "34180": {
+    "IconFileName": "inv_pants_plate_24.jpg",
+    "AlternativeGemOrder": [
+      4,
+      2,
+      8
+    ]
+  },
+  "34188": {
+    "IconFileName": "inv_pants_leather_27.jpg",
+    "AlternativeGemOrder": [
+      2,
+      2,
+      2
+    ]
+  },
+  "34194": {
+    "IconFileName": "inv_shoulder_90.jpg",
+    "AlternativeGemOrder": [
+      2,
+      2
+    ]
+  },
+  "34195": {
+    "IconFileName": "inv_shoulder_88.jpg"
+  },
+  "34211": {
+    "IconFileName": "inv_chest_leather_14.jpg",
+    "AlternativeGemOrder": [
+      2,
+      8,
+      4
+    ]
+  },
+  "34215": {
+    "IconFileName": "inv_chest_plate20.jpg",
+    "AlternativeGemOrder": [
+      2,
+      8,
+      8
+    ]
+  },
+  "34228": {
+    "IconFileName": "inv_chest_chain_17.jpg",
+    "AlternativeGemOrder": [
+      2,
+      8,
+      4
+    ]
+  },
+  "34234": {
+    "IconFileName": "inv_gauntlets_28.jpg",
+    "AlternativeGemOrder": [
+      2,
+      4
+    ]
+  },
+  "34353": {
+    "IconFileName": "inv_gizmo_newgoggles.jpg",
+    "AlternativeGemOrder": [
+      1,
+      4
+    ]
+  },
+  "34354": {
+    "IconFileName": "inv_gizmo_newgoggles.jpg",
+    "AlternativeGemOrder": [
+      1,
+      4
+    ]
+  },
+  "34356": {
+    "IconFileName": "inv_gizmo_newgoggles.jpg",
+    "AlternativeGemOrder": [
+      1,
+      4
+    ]
+  },
+  "34358": {
+    "IconFileName": "inv_jewelry_necklace_35.jpg",
+    "AlternativeGemOrder": [
+      8
+    ]
+  },
+  "34361": {
+    "IconFileName": "inv_jewelry_ring_55.jpg"
+  },
+  "34369": {
+    "IconFileName": "inv_chest_plate02.jpg",
+    "AlternativeGemOrder": [
+      8,
+      2,
+      2
+    ]
+  },
+  "34370": {
+    "IconFileName": "inv_gauntlets_28.jpg",
+    "AlternativeGemOrder": [
+      2,
+      2
+    ]
+  },
+  "34373": {
+    "IconFileName": "inv_chest_chain_17.jpg",
+    "AlternativeGemOrder": [
+      2,
+      2,
+      2
+    ]
+  },
+  "34374": {
+    "IconFileName": "inv_gauntlets_59.jpg",
+    "AlternativeGemOrder": [
+      8,
+      8
+    ]
+  },
+  "34377": {
+    "IconFileName": "inv_chest_plate11.jpg",
+    "AlternativeGemOrder": [
+      2,
+      2,
+      2
+    ]
+  },
+  "34378": {
+    "IconFileName": "inv_gauntlets_62.jpg",
+    "AlternativeGemOrder": [
+      2,
+      8
+    ]
+  },
+  "34381": {
+    "IconFileName": "inv_pants_plate_21.jpg",
+    "AlternativeGemOrder": [
+      4,
+      4,
+      2
+    ]
+  },
+  "34385": {
+    "IconFileName": "inv_pants_leather_23.jpg",
+    "AlternativeGemOrder": [
+      2,
+      2,
+      4
+    ]
+  },
+  "34388": {
+    "IconFileName": "inv_shoulder_89.jpg",
+    "AlternativeGemOrder": [
+      2,
+      8
+    ]
+  },
+  "34392": {
+    "IconFileName": "inv_shoulder_88.jpg",
+    "AlternativeGemOrder": [
+      2,
+      4
+    ]
+  },
+  "34394": {
+    "IconFileName": "inv_chest_plate20.jpg",
+    "AlternativeGemOrder": [
+      4,
+      4,
+      2
+    ]
+  },
+  "34397": {
+    "IconFileName": "inv_chest_leather_16.jpg",
+    "AlternativeGemOrder": [
+      4,
+      8,
+      2
+    ]
+  },
+  "34404": {
+    "IconFileName": "inv_helmet_126.jpg",
+    "AlternativeGemOrder": [
+      2,
+      1
+    ]
+  },
+  "34408": {
+    "IconFileName": "inv_gauntlets_51.jpg",
+    "AlternativeGemOrder": [
+      2,
+      4
+    ]
+  },
+  "35088": {
+    "IconFileName": "inv_chest_plate_22.jpg",
+    "AlternativeGemOrder": [
+      2,
+      2,
+      8
+    ]
+  },
+  "35089": {
+    "IconFileName": "inv_gauntlets_52.jpg"
+  },
+  "35090": {
+    "IconFileName": "inv_helmet_127.jpg",
+    "AlternativeGemOrder": [
+      1,
+      2
+    ]
+  },
+  "35091": {
+    "IconFileName": "inv_pants_plate_29.jpg"
+  },
+  "35092": {
+    "IconFileName": "inv_shoulder_89.jpg",
+    "AlternativeGemOrder": [
+      2,
+      8
+    ]
+  },
+  "35146": {
+    "IconFileName": "inv_boots_plate_01.jpg"
+  },
+  "35148": {
+    "IconFileName": "inv_boots_plate_08.jpg"
+  },
+  "35161": {
+    "IconFileName": "inv_belt_14.jpg"
+  },
+  "35163": {
+    "IconFileName": "inv_belt_12.jpg"
+  },
+  "34241": {
+    "IconFileName": "inv_misc_cape_naxxramas_02.jpg",
+    "AlternativeGemOrder": [
+      8
+    ]
+  },
+  "34244": {
+    "IconFileName": "inv_helmet_126.jpg",
+    "AlternativeGemOrder": [
+      1,
+      2
+    ]
+  },
+  "34247": {
+    "IconFileName": "inv_sword_116.jpg",
+    "AlternativeGemOrder": [
+      2,
+      2,
+      2
+    ]
+  },
+  "34333": {
+    "IconFileName": "inv_helmet128.jpg",
+    "AlternativeGemOrder": [
+      2,
+      1
+    ]
+  },
+  "34341": {
+    "IconFileName": "inv_gauntlets_65.jpg",
+    "AlternativeGemOrder": [
+      2,
+      4
+    ]
+  },
+  "34343": {
+    "IconFileName": "inv_gauntlets_51.jpg",
+    "AlternativeGemOrder": [
+      2,
+      8
+    ]
+  },
+  "34345": {
+    "IconFileName": "inv_helmet_92.jpg",
+    "AlternativeGemOrder": [
+      1,
+      2
+    ]
+  },
+  "30316": {
+    "IconFileName": "inv_axe_68.jpg"
+  },
+  "30341": {
+    "IconFileName": "inv_gauntlets_23.jpg"
+  },
+  "22401": {
+    "IconFileName": "inv_relics_libramofhope.jpg"
+  },
+  "23203": {
+    "IconFileName": "inv_relics_libramoftruth.jpg"
+  },
+  "7717": {
+    "IconFileName": "inv_weapon_halberd_05.jpg"
+  },
+  "24114": {
+    "IconFileName": "inv_jewelry_necklace_07.jpg"
+  },
+  "34427": {
+    "IconFileName": "inv_jewelry_talisman_16.jpg"
+  },
+  "34428": {
+    "IconFileName": "inv_jewelry_talisman_18.jpg"
+  },
+  "32505": {
+    "IconFileName": "spell_shadow_charm.jpg"
+  },
+  "32489": {
+    "IconFileName": "inv_qiraj_jewelblessed.jpg"
+  },
+  "33831": {
+    "IconFileName": "racial_troll_berserk.jpg"
+  },
+  "33832": {
+    "IconFileName": "ability_warrior_endlessrage.jpg"
+  },
+  "34163": {
+    "IconFileName": "ability_warrior_focusedrage.jpg"
+  },
+  "30627": {
+    "IconFileName": "spell_nature_unrelentingstorm.jpg"
+  },
+  "28239": {
+    "IconFileName": "inv_jewelry_trinketpvp_02.jpg"
+  },
+  "28234": {
+    "IconFileName": "inv_jewelry_trinketpvp_01.jpg"
+  },
+  "30447": {
+    "IconFileName": "inv_misc_book_07.jpg"
+  },
+  "37128": {
+    "IconFileName": "inv_drink_04.jpg"
+  },
+  "28830": {
+    "IconFileName": "inv_misc_bone_03.jpg"
+  },
+  "35702": {
+    "IconFileName": "inv_jewelcrafting_blackpearlpanther.jpg"
+  },
+  "35700": {
+    "IconFileName": "inv_jewelcrafting_rubyserpent.jpg"
+  },
+  "35751": {
+    "IconFileName": "spell_nature_healingway.jpg"
+  },
+  "35694": {
+    "IconFileName": "inv_jewelcrafting_truesilverboar.jpg"
+  },
+  "28288": {
+    "IconFileName": "inv_misc_enggizmos_18.jpg"
+  },
+  "27683": {
+    "IconFileName": "inv_misc_gem_pearl_01.jpg"
+  },
+  "29132": {
+    "IconFileName": "inv_misc_gem_bloodstone_02.jpg"
+  },
+  "32658": {
+    "IconFileName": "inv_misc_armorkit_12.jpg"
+  },
+  "24128": {
+    "IconFileName": "inv_jewelcrafting_blackpearlpanther.jpg"
+  },
+  "28121": {
+    "IconFileName": "inv_brd_banner.jpg"
+  },
+  "28579": {
+    "IconFileName": "inv_poison_mindnumbing.jpg"
+  },
+  "24126": {
+    "IconFileName": "inv_jewelcrafting_rubyserpent.jpg"
+  },
+  "28223": {
+    "IconFileName": "inv_jewelcrafting_nightseye_01.jpg"
+  },
+  "34472": {
+    "IconFileName": "inv_misc_rune_04.jpg"
+  },
+  "32654": {
+    "IconFileName": "inv_datacrystal01.jpg"
+  },
+  "24124": {
+    "IconFileName": "inv_jewelcrafting_truesilverboar.jpg"
+  },
+  "30340": {
+    "IconFileName": "spell_arcane_arcaneresilience.jpg"
+  },
+  "28034": {
+    "IconFileName": "inv_gizmo_khoriumpowercore.jpg"
+  },
+  "29383": {
+    "IconFileName": "inv_misc_monsterscales_15.jpg"
+  },
+  "29370": {
+    "IconFileName": "inv_weapon_shortblade_23.jpg"
+  },
+  "38290": {
+    "IconFileName": "inv_misc_pipe_01.jpg"
+  },
+  "38287": {
+    "IconFileName": "inv_drink_03.jpg"
+  },
+  "32864": {
+    "IconFileName": "inv_misc_gem_sapphire_01.jpg"
+  },
+  "29776": {
+    "IconFileName": "spell_nature_abolishmagic.jpg"
+  },
+  "29181": {
+    "IconFileName": "inv_datacrystal02.jpg"
+  },
+  "32770": {
+    "IconFileName": "inv_jewelry_talisman_06.jpg"
+  },
+  "31617": {
+    "IconFileName": "inv_jewelry_talisman_14.jpg"
+  },
+  "25633": {
+    "IconFileName": "inv_jewelry_talisman_04.jpg"
+  },
+  "25628": {
+    "IconFileName": "inv_jewelry_talisman_04.jpg"
+  },
+  "31856": {
+    "IconFileName": "inv_misc_ticket_tarot_crusade.jpg"
+  },
+  "31858": {
+    "IconFileName": "inv_misc_ticket_tarot_vengeance.jpg"
+  },
+  "27416": {
+    "IconFileName": "inv_helmet_45.jpg"
+  },
+  "26055": {
+    "IconFileName": "inv_jewelry_ring_45.jpg"
+  },
+  "31859": {
+    "IconFileName": "inv_misc_ticket_tarot_madness.jpg"
+  },
+  "25937": {
+    "IconFileName": "inv_misc_stonetablet_11.jpg"
+  },
+  "25620": {
+    "IconFileName": "inv_jewelry_necklace_28.jpg"
+  },
+  "25619": {
+    "IconFileName": "inv_jewelry_necklace_28.jpg"
+  },
+  "27926": {
+    "IconFileName": "inv_qirajidol_sun.jpg"
+  },
+  "23041": {
+    "IconFileName": "inv_trinket_naxxramas03.jpg"
+  },
+  "23046": {
+    "IconFileName": "inv_trinket_naxxramas06.jpg"
+  },
+  "28041": {
+    "IconFileName": "inv_datacrystal06.jpg"
+  },
+  "22954": {
+    "IconFileName": "inv_trinket_naxxramas04.jpg"
+  },
+  "19379": {
+    "IconFileName": "inv_stone_15.jpg"
+  },
+  "23570": {
+    "IconFileName": "inv_misc_enggizmos_19.jpg"
+  },
+  "21670": {
+    "IconFileName": "inv_misc_ahnqirajtrinket_04.jpg"
+  },
+  "19343": {
+    "IconFileName": "inv_scroll_08.jpg"
+  },
+  "19406": {
+    "IconFileName": "inv_misc_bone_06.jpg"
+  },
+  "21891": {
+    "IconFileName": "inv_misc_ahnqirajtrinket_04.jpg"
+  },
+  "21473": {
+    "IconFileName": "inv_misc_eye_01.jpg"
+  },
+  "23836": {
+    "IconFileName": "inv_gizmo_rocketlauncher.jpg"
+  },
+  "23835": {
+    "IconFileName": "inv_misc_enggizmos_06.jpg"
+  },
+  "19950": {
+    "IconFileName": "inv_jewelry_necklace_13.jpg"
+  },
+  "21180": {
+    "IconFileName": "spell_nature_abolishmagic.jpg"
+  },
+  "19289": {
+    "IconFileName": "inv_misc_ticket_tarot_maelstrom_01.jpg"
+  },
+  "13965": {
+    "IconFileName": "inv_misc_armorkit_09.jpg"
+  },
+  "11815": {
+    "IconFileName": "inv_jewelry_talisman_01.jpg"
+  },
+  "23206": {
+    "IconFileName": "inv_misc_token_argentdawn2.jpg"
+  }
+}

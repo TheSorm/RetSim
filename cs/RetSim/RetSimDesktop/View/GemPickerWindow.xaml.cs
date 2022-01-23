@@ -122,7 +122,7 @@ namespace RetSimDesktop
         {   
             if(value is int id)
             {
-                return new BitmapImage(new Uri($"pack://application:,,,/Properties/Icons/{MainWindow.GemsToIconName[id]}"));
+                return new BitmapImage(new Uri($"pack://application:,,,/Properties/Icons/{MediaMetaData.GemsToIconName[id]}"));
             }
             return null;
         }
