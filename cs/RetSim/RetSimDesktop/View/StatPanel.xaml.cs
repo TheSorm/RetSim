@@ -116,16 +116,16 @@ namespace RetSimDesktop
                 var critChanceBonus = $"Bonus: {player.Stats[StatName.CritChance].Gear + player.Stats[StatName.CritChance].Bonus}%";
                 var critChanceAgility = $"Agility Bonus: {player.Stats[StatName.CritChance].SupportValue:0.##}%";
                 var critRating = $"Rating: {player.Stats[StatName.CritRating].Value} (+{player.Stats[StatName.CritChance].RatingValue:0.##}%)";
-                var critEffective = $"Effective crit chance against bosses: {player.Stats.EffectiveCritChance:0.##}%";
+                var critEffective = $"Crit % vs bosses: {player.Stats.EffectiveCritChance:0.##}%";
 
                 var missChance = Math.Max(player.Stats.EffectiveMissChance - fight.Enemy.Stats[StatName.IncreasedAttackerHitChance].Value, 0);
                 var dodgeChance = player.Stats.EffectiveDodgeChance;
+
                 var specialCap = 100 - missChance - dodgeChance;
                 var autoCap = specialCap - RetSim.Misc.Constants.Boss.GlancingChance;
+                var critCaps = $"Crit caps\nWhite: {autoCap:0.##}%\nSpecial: {specialCap:0.##}%";
 
-                var critResult = $"Crit caps: {autoCap:0.##}% (White) / {specialCap:0.##}% (Special)";
-
-                CritPercentage.ToolTip = new ToolTip { Content = $"{critChanceBase}\n{critRating}\n{critChanceBonus}\n{critChanceAgility}\n\n{critResult}\n{critEffective}" };
+                CritPercentage.ToolTip = new ToolTip { Content = $"{critChanceBase}\n{critRating}\n{critChanceBonus}\n{critChanceAgility}\n\n{critEffective}\n\n{critCaps}" };
 
                 var hitChanceBonus = $"Bonus: {player.Stats[StatName.HitChance].Gear + player.Stats[StatName.HitChance].Bonus}%";
                 var hitChanceRating = $"Rating: {player.Stats[StatName.HitRating].Value} (+{player.Stats[StatName.HitChance].RatingValue:0.##}%)";
@@ -133,11 +133,10 @@ namespace RetSimDesktop
 
                 HitPercentage.ToolTip = new ToolTip { Content = $"{hitChanceRating}\n{hitChanceBonus}\n\n{hitChanceResult}" };
 
-                var hasteBonus = $"Bonus: {player.Stats[StatName.Haste].Gear + player.Stats[StatName.Haste].Bonus}%";
                 var hasteRating = $"Rating: {player.Stats[StatName.HasteRating].Value} (+{player.Stats[StatName.Haste].RatingValue:0.##}%)";
-                var hasteResult = $"Weapon speed: {fight.Player.Weapon.EffectiveSpeed / 1000f} (Current) / {fight.Player.Weapon.BaseSpeed / 1000f} (Base)";
+                var hasteResult = $"Weapon speed \nBase: {fight.Player.Weapon.BaseSpeed / 1000f}\nCurrent: {fight.Player.Weapon.EffectiveSpeed / 1000f}";
 
-                HastePercentage.ToolTip = new ToolTip { Content = $"{hasteRating}\n{hasteBonus}\n\n{hasteResult}" };
+                HastePercentage.ToolTip = new ToolTip { Content = $"{hasteRating}\n\n{hasteResult}" };
 
                 var expertiseBonus = $"Bonus: {player.Stats[StatName.Expertise].Gear + player.Stats[StatName.Expertise].Bonus}";
                 var expertiseRating = $"Rating: {player.Stats[StatName.ExpertiseRating].Value} (+{player.Stats[StatName.Expertise].RatingValue:0.##})";
@@ -145,16 +144,19 @@ namespace RetSimDesktop
 
                 ExpertisePercentage.ToolTip = new ToolTip { Content = $"{expertiseRating}\n{expertiseBonus}\n\n{expertiseResult}" };
 
-                var armorPenResult = $"{fight.Enemy.Name}'s armor: {Math.Max(fight.Enemy.Stats[StatName.Armor].Value - player.Stats[StatName.ArmorPenetration].Value, 0):0} (Remaining) / {fight.Enemy.Stats[StatName.Armor].Permanent} (Base)";
-
+                var remainingArmor = Math.Max(fight.Enemy.Stats[StatName.Armor].Value - player.Stats[StatName.ArmorPenetration].Value, 0);
                 var baseDR = Attack.GetArmorDR(0, fight.Enemy.Stats[StatName.Armor].Value);
                 var currentDR = Attack.GetArmorDR(player.Stats[StatName.ArmorPenetration].Value, fight.Enemy.Stats[StatName.Armor].Value);
 
-                var armorPenResult2 = $"{fight.Enemy.Name}'s damage reduction: {1 - currentDR:0.##%} (Remaining) / {1 - baseDR:0.##%} (Base)";
+                var arpLine1 = $"{fight.Enemy.Name}'s Armor";
+                var arpLine2 = $"Base: {fight.Enemy.Stats[StatName.Armor].Permanent} ({1 - baseDR:0.##%} Damage Reduction)";
+                var arpLine3 = $"Remaining: {remainingArmor:0} ({1 - currentDR:0.##%} Damage Reduction)";
 
-                var armorPenResult3 = $"Armor penetration damage increase: {currentDR - baseDR:0.##%} (Flat) / {currentDR / baseDR - 1:0.##%} (Relative)";
+                var arpLine4 = "Armor Penetration damage increase";
+                var arpLine5 = $"Flat: {currentDR - baseDR:0.##%}";
+                var arpLine6 = $"Relative: {currentDR / baseDR - 1:0.##%}";
 
-                ArmorPenetration.ToolTip = new ToolTip { Content = $"{armorPenResult}\n{armorPenResult2}\n\n{armorPenResult3}" };
+                ArmorPenetration.ToolTip = new ToolTip { Content = $"{arpLine1}\n{arpLine2}\n{arpLine3}\n\n{arpLine4}\n{arpLine5}\n{arpLine6}" };
 
                 var weaponDamageWarning = "This stat is nearly useless.";
                 var weaponDamageWarning2 = "You can ignore it.";
