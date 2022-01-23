@@ -352,13 +352,48 @@ namespace RetSimDesktop
 
     public class SocketBonusConverter : IValueConverter
     {
+        private static readonly Dictionary<StatName, string> StatToShortString = new()
+        {
+            { StatName.Stamina, "Stam" },
+            { StatName.Intellect, "Int" },
+            { StatName.ManaPer5, "MP5" },
+            { StatName.Strength, "Str" },
+            { StatName.AttackPower, "AP" },
+            { StatName.Agility, "Agi " },
+            { StatName.CritRating, "Crit" },
+            { StatName.HitRating, "Hit" },
+            { StatName.Haste, "Haste" },
+            { StatName.ArmorPenetration, "APen" },
+            { StatName.SpellPower, "SP" },
+            { StatName.Resilience, "Resi" }
+        };
         public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
         {
-            if (value is EquippableItem item && item.Socket1 != null)
+            if (value is EquippableItem item && item.Socket1 != null && item.SocketBonus != null)
             {
-                return item.IsSocketBonusActive() ? "✓" : "✗";
+                foreach (var stat in item.SocketBonus.Keys)
+                {
+                    if (StatToShortString.ContainsKey(stat))
+                        return $"+{item.SocketBonus[stat]} {StatToShortString[stat]}";
+                }
             }
             return "";
+        }
+        public object ConvertBack(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
+        {
+            throw new NotSupportedException();
+        }
+    }
+    public class SocketBonusActiveConverter : IValueConverter
+    {
+            
+        public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
+        {
+            if (value is EquippableItem item && item.Socket1 != null && item.IsSocketBonusActive())
+            {
+                return new SolidColorBrush(Colors.Black);
+            }
+            return new SolidColorBrush(Colors.LightGray);
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)

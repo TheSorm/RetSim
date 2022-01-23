@@ -13,6 +13,7 @@
         <local:SocketBonusConverter x:Key="SocketBonusConverter" />
         <local:SocketToImageConverter x:Key="SocketToImageConverter" />
         <local:SocketToSocketColorBrushConverter x:Key="SocketToSocketColorBrushConverter" />
+        <local:SocketBonusActiveConverter x:Key="SocketBonusActiveConverter" />
     </UserControl.Resources>
     <Grid>
         <Grid.RowDefinitions>
@@ -93,18 +94,13 @@
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-                <DataGridTextColumn MinWidth="45" CanUserReorder="False" CanUserSort="False" Header="Bonus" Binding="{Binding Item, Converter={StaticResource SocketBonusConverter}}" >
-                    <DataGridTextColumn.HeaderStyle>
-                        <Style TargetType="DataGridColumnHeader">
-                            <Setter Property="HorizontalContentAlignment" Value="Center" />
-                        </Style>
-                    </DataGridTextColumn.HeaderStyle>
-                    <DataGridTextColumn.ElementStyle>
-                        <Style TargetType="TextBlock">
-                            <Setter Property="TextAlignment" Value="Center" />
-                        </Style>
-                    </DataGridTextColumn.ElementStyle>
-                </DataGridTextColumn>
+                <DataGridTemplateColumn MinWidth="48" CanUserReorder="False" CanUserSort="False" Header="Bonus">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Item, Converter={StaticResource SocketBonusConverter}}" Foreground="{Binding Item, Converter={StaticResource SocketBonusActiveConverter}}" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
                 <DataGridTextColumn MinWidth="38" CanUserReorder="False" Header="Str"    x:Name="StrColumn" >
                     <DataGridTextColumn.HeaderStyle>
                         <Style TargetType="DataGridColumnHeader">
