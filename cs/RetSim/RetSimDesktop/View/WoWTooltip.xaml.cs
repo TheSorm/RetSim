@@ -1,4 +1,7 @@
-﻿using System;
+﻿using RetSim.Data;
+using RetSim.Items;
+using System;
+using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
@@ -95,7 +98,38 @@ namespace RetSimDesktop
             if (d is WoWTooltip wowTooltip)
             {
                 wowTooltip.TooltipPopUp.IsOpen = wowTooltip.ItemId != 0;
-                wowTooltip.UpdateTooltip(wowTooltip.ItemId);
+                string gemString = "";
+
+                if (Items.AllItems.ContainsKey(wowTooltip.ItemId) && MediaMetaData.ItemsMetaData.ContainsKey(wowTooltip.ItemId))
+                {
+                    var item = Items.AllItems[wowTooltip.ItemId];
+                    if(item.Socket1 != null)
+                    {
+                        gemString += "&gems=";
+
+                        List<Socket> sockets = new(item.Sockets);
+                        foreach (var socketColor in MediaMetaData.ItemsMetaData[item.ID].AlternativeGemOrder)
+                        {
+                            for (int i = 0; i < sockets.Count; i++) 
+                            {
+                                if(sockets[i].Color == socketColor)
+                                {
+                                    if(sockets[i].SocketedGem != null) 
+                                    {
+                                        gemString += $"{sockets[i].SocketedGem.ID}:";
+                                    }
+                                    else
+                                    {
+                                        gemString += "0:";
+                                    }
+                                    sockets.RemoveAt(i);
+                                    break;
+                                }
+                            }
+                        }
+                    }
+                }
+                wowTooltip.UpdateTooltip(wowTooltip.ItemId, gemString);
             }
         }
 
@@ -106,12 +140,12 @@ namespace RetSimDesktop
             Browser.Height = Math.Max(PlacementTarget.ActualHeight - TooltipPopUp.HorizontalOffset + 40, 0);
         }
 
-        private async void UpdateTooltip(int itemId)
+        private async void UpdateTooltip(int itemId, string gemString)
         {
             if (Browser != null)
             {
                 await Browser.EnsureCoreWebView2Async(null);
-                await Browser.ExecuteScriptAsync(@"document.getElementById('placeholder').href = ""https://tbc.wowhead.com/item=" + itemId + @""";");
+                await Browser.ExecuteScriptAsync(@"document.getElementById('placeholder').href = ""https://tbc.wowhead.com/item=" + itemId + gemString + @""";");
                 //var heightString = await Browser.ExecuteScriptAsync(@"document.getElementsByClassName(""wowhead-tooltip"")[0].clientHeight");
                 //var widthString = await Browser.ExecuteScriptAsync(@"document.getElementsByClassName(""wowhead-tooltip"")[0].clientWidth");
                 //await Browser.ExecuteScriptAsync("test(35, 0);");
