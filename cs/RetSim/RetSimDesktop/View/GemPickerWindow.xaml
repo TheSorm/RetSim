@@ -13,12 +13,14 @@
     </Window.Resources>
     <Grid>
         <local:WoWTooltip x:Name="Tooltip" PlacementTarget="{Binding ElementName=GemPicker}"/>
-        <DataGrid Name="gemGrid" ColumnWidth="*" GridLinesVisibility="Horizontal" PreviewMouseDown="GemGrid_PreviewMouseDown" IsReadOnly="True" SelectionMode="Single" HeadersVisibility="Column" CanUserResizeColumns="False" CanUserResizeRows="False" AutoGenerateColumns="False">
+        <DataGrid Name="gemGrid" ColumnWidth="*" RowHeight="25" GridLinesVisibility="Horizontal" PreviewMouseDown="GemGrid_PreviewMouseDown" IsReadOnly="True" SelectionMode="Single" HeadersVisibility="Column" CanUserResizeColumns="False" CanUserResizeRows="False" AutoGenerateColumns="False">
             <DataGrid.Columns>
                 <DataGridTemplateColumn x:Name="Socket1Column" Width="25" CanUserReorder="False" CanUserSort="False" Header="">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Image Width="18" Height="18" RenderOptions.BitmapScalingMode="HighQuality" Source="{Binding ID, Converter={StaticResource GemToImageConverter}}" />
+                            <Border HorizontalAlignment="Center" VerticalAlignment="Center" BorderThickness="2" CornerRadius="1" BorderBrush="Black">
+                                <Image Width="17" Height="17" RenderOptions.BitmapScalingMode="HighQuality" Source="{Binding ID, Converter={StaticResource GemToImageConverter}}" />
+                            </Border>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
@@ -140,9 +142,17 @@
                             <Setter Property="BorderBrush" Value="#0078d7" />
                         </Trigger>
                     </Style.Triggers>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type DataGridCell}">
+                                <Grid Background="{TemplateBinding Background}">
+                                    <ContentPresenter VerticalAlignment="Center" />
+                                </Grid>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
                     <EventSetter Event="MouseEnter" Handler="DataGridCell_MouseEnter"/>
                     <EventSetter Event="MouseLeave" Handler="DataGridCell_MouseLeave"/>
-
                 </Style>
             </DataGrid.Resources>
         </DataGrid>

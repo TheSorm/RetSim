@@ -64,9 +64,8 @@
                 <DataGridTemplateColumn x:Name="Socket1Column" Width="25" CanUserReorder="False" CanUserSort="False" Header="">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Border Width="18" Height="18" BorderThickness="2"
-                                BorderBrush="{Binding Item.Socket1, Converter={StaticResource SocketToSocketColorBrushConverter}}"
-                                VerticalAlignment="Top">
+                            <Border HorizontalAlignment="Center" VerticalAlignment="Center" BorderThickness="2" CornerRadius="1"
+                                BorderBrush="{Binding Item.Socket1, Converter={StaticResource SocketToSocketColorBrushConverter}}">
                                 <Image Width="14" Height="14" RenderOptions.BitmapScalingMode="HighQuality" Source="{Binding Item.Socket1, Converter={StaticResource SocketToImageConverter}}" />
                             </Border>
                         </DataTemplate>
@@ -75,9 +74,8 @@
                 <DataGridTemplateColumn x:Name="Socket2Column" Width="25" CanUserReorder="False" CanUserSort="False" Header="">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Border Width="18" Height="18" BorderThickness="2"
-                                BorderBrush="{Binding Item.Socket2, Converter={StaticResource SocketToSocketColorBrushConverter}}"
-                                VerticalAlignment="Top">
+                            <Border HorizontalAlignment="Center" VerticalAlignment="Center" BorderThickness="2" CornerRadius="1"
+                                BorderBrush="{Binding Item.Socket2, Converter={StaticResource SocketToSocketColorBrushConverter}}">
                                 <Image Width="14" Height="14" RenderOptions.BitmapScalingMode="HighQuality" Source="{Binding Item.Socket2, Converter={StaticResource SocketToImageConverter}}" />
                             </Border>
                         </DataTemplate>
@@ -86,9 +84,8 @@
                 <DataGridTemplateColumn x:Name="Socket3Column" Width="25" CanUserReorder="False" CanUserSort="False" Header="">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Border Width="18" Height="18" BorderThickness="2"
-                                BorderBrush="{Binding Item.Socket3, Converter={StaticResource SocketToSocketColorBrushConverter}}"
-                                VerticalAlignment="Top">
+                            <Border HorizontalAlignment="Center" VerticalAlignment="Center" BorderThickness="2" CornerRadius="1"
+                                BorderBrush="{Binding Item.Socket3, Converter={StaticResource SocketToSocketColorBrushConverter}}">
                                 <Image Width="14" Height="14" RenderOptions.BitmapScalingMode="HighQuality" Source="{Binding Item.Socket3, Converter={StaticResource SocketToImageConverter}}" />
                             </Border>
                         </DataTemplate>
