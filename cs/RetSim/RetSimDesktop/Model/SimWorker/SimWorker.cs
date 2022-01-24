@@ -32,6 +32,7 @@ namespace RetSimDesktop.View
                 var encounterID = retSimUIModel.EncounterSettings.EncounterID;
 
                 var numberOfSimulations = retSimUIModel.SimSettings.SimulationCount;
+                var maxCSDelay = retSimUIModel.SimSettings.MaxCSDelay;
 
                 var minDuration = retSimUIModel.EncounterSettings.MinFightDurationMilliseconds;
                 var maxDuration = retSimUIModel.EncounterSettings.MaxFightDurationMilliseconds;
@@ -88,7 +89,8 @@ namespace RetSimDesktop.View
                                 MaxFightDuration = maxDuration,
                                 CombatLogs = combatLogs,
                                 StartIndex = simulationsDistributed,
-                                NumberOfSimulations = simulationsPerThread
+                                NumberOfSimulations = simulationsPerThread,
+                                MaxCSDelay = maxCSDelay
                             };
                             simulationsDistributed += simulationsPerThread;
                         }
@@ -111,7 +113,8 @@ namespace RetSimDesktop.View
                                 MaxFightDuration = maxDuration,
                                 CombatLogs = combatLogs,
                                 StartIndex = simulationsDistributed,
-                                NumberOfSimulations = numberOfSimulations - simulationsDistributed
+                                NumberOfSimulations = numberOfSimulations - simulationsDistributed,
+                                MaxCSDelay = maxCSDelay,
                             };
                             simulationsDistributed += numberOfSimulations - simulationsDistributed;
                         }
@@ -191,7 +194,7 @@ namespace RetSimDesktop.View
         {
             for (int i = StartIndex; i < StartIndex + NumberOfSimulations; i++)
             {
-                FightSimulation fight = new(new Player("Brave Hero", Race, ShattrathFaction, PlayerEquipment, Talents), new Enemy(Encounter), new EliteTactic(0), GroupTalents, Buffs, Debuffs, Consumables, MinFightDuration, MaxFightDuration, Cooldowns, HeroismUsage);
+                FightSimulation fight = new(new Player("Brave Hero", Race, ShattrathFaction, PlayerEquipment, Talents), new Enemy(Encounter), new EliteTactic(MaxCSDelay), GroupTalents, Buffs, Debuffs, Consumables, MinFightDuration, MaxFightDuration, Cooldowns, HeroismUsage);
                 fight.Run();
                 CombatLogs[i] = fight.CombatLog;
             }

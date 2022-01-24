@@ -21,6 +21,12 @@ namespace RetSimDesktop
             Initialized += Setup;
 
             InitializeComponent();
+
+            string line1 = "The maximum amount of time the sim will be allowed to delay Crusader Strike by, expressed in milliseconds.";
+            string line2 = "This setting should only be changed by advanced users. Use the CS Delay sim to find your optimal CS delay.";
+            string line3 = "Leave at 0 if you don't understand what you're doing.";
+
+            MaxCSDelay.ToolTip = new ToolTip { Content = $"{line1}\n\n{line2}\n\n{line3}" };
         }
 
         private void Setup(object? sender, EventArgs e)

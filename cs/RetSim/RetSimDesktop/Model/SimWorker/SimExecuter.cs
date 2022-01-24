@@ -23,6 +23,7 @@ namespace RetSimDesktop.Model.SimWorker
         public int MinFightDuration { get; init; }
         public int MaxFightDuration { get; init; }
         public int NumberOfSimulations { get; init; }
+        public int MaxCSDelay { get; init; }
 
 
         public abstract void Execute();
