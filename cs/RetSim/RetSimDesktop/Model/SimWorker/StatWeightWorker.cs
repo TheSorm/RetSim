@@ -146,19 +146,19 @@ namespace RetSimDesktop.Model
         public override void Execute()
         {
             float dps = 0;
-            float delta = 0;            
+            float delta = 0;
             float increase = StatWeightsDisplay.IncreasedAmount;
 
             StatSet extraStats = new();
             extraStats[StatWeightsDisplay.Stat] += StatWeightsDisplay.IncreasedAmount;
-            
+
             for (int i = 0; i < NumberOfSimulations; i++)
             {
                 RNG.local = new(BaseSeed + i);
 
                 FightSimulation fight = new(new Player("Brave Hero", Race, ShattrathFaction, PlayerEquipment, Talents, extraStats), new Enemy(Encounter), new EliteTactic(0), GroupTalents, Buffs, Debuffs, Consumables, MinFightDuration, MaxFightDuration, Cooldowns, HeroismUsage);
-                
-                if (IgnoreExpertiseCap && fight.Player.Stats[StatName.Expertise].Value > Constants.Stats.ExpertiseCap) 
+
+                if (IgnoreExpertiseCap && fight.Player.Stats[StatName.Expertise].Value > Constants.Stats.ExpertiseCap)
                 {
                     fight.Player.Stats[StatName.ExpertiseRating].Permanent = 0;
                     fight.Player.Stats[StatName.ExpertiseRating].Bonus = 0;

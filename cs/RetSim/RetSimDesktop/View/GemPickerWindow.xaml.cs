@@ -119,8 +119,8 @@ namespace RetSimDesktop
     public class GemToImageConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
-        {   
-            if(value is int id)
+        {
+            if (value is int id)
             {
                 return new BitmapImage(new Uri($"pack://application:,,,/Properties/Icons/{MediaMetaData.GemsToIconName[id]}"));
             }

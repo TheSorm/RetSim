@@ -179,7 +179,7 @@ namespace RetSimDesktop
                         foreach (var bar in bars)
                         {
                             bar.Orientation = ScottPlot.Orientation.Horizontal;
-                        }                        
+                        }
 
                         double[] xPositions = { 0, 25, 50, 75, 100 };
                         string[] xLabels = { "0%", "25%", "50%", "75%", "100%" };
@@ -530,7 +530,7 @@ namespace RetSimDesktop
 
             DPSHistogram.Render();
         }
-       
+
         private void DPSGraph_MouseMove(object sender, MouseEventArgs e)
         {
             if (damageBreakdownScatterPlot == null)

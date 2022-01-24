@@ -409,8 +409,8 @@ namespace RetSimDesktop
 
         private void SelectAll(object sender, RoutedEventArgs e)
         {
-            if(sender is TextBox textbox)
-            {         
+            if (sender is TextBox textbox)
+            {
                 textbox.SelectAll();
             }
         }
@@ -425,7 +425,7 @@ namespace RetSimDesktop
                 {
                     e.Handled = true;
                     textbox.Focus();
-                }               
+                }
             }
         }
     }

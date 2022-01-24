@@ -3,7 +3,6 @@ using RetSim.Items;
 using RetSimDesktop.ViewModel;
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
@@ -97,92 +96,100 @@ namespace RetSimDesktop
 
         public static void TooltipSettings_PropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
-            if (d is WoWTooltip wowTooltip && wowTooltip.DataContext is RetSimUIModel retSimUIModel)
+            if (d is WoWTooltip wowTooltip)
             {
                 wowTooltip.TooltipPopUp.IsOpen = wowTooltip.ItemId != 0;
-                string gemString = "";
 
-                if (Items.AllItems.ContainsKey(wowTooltip.ItemId) && MediaMetaData.ItemsMetaData.ContainsKey(wowTooltip.ItemId))
+                if (wowTooltip.DataContext is RetSimUIModel retSimUIModel)
                 {
-                    var item = Items.AllItems[wowTooltip.ItemId];
-                    if(item.Socket1 != null)
-                    {
-                        gemString += "&gems=";
+                    string gemString = "";
 
-                        List<Socket> sockets = new(item.Sockets);
-                        foreach (var socketColor in MediaMetaData.ItemsMetaData[item.ID].AlternativeGemOrder)
+                    if (Items.AllItems.ContainsKey(wowTooltip.ItemId) && MediaMetaData.ItemsMetaData.ContainsKey(wowTooltip.ItemId))
+                    {
+                        var item = Items.AllItems[wowTooltip.ItemId];
+                        if (item.Socket1 != null)
                         {
-                            for (int i = 0; i < sockets.Count; i++) 
+                            gemString += "&gems=";
+
+                            List<Socket> sockets = new(item.Sockets);
+                            foreach (var socketColor in MediaMetaData.ItemsMetaData[item.ID].AlternativeGemOrder)
                             {
-                                if(sockets[i].Color == socketColor)
+                                for (int i = 0; i < sockets.Count; i++)
                                 {
-                                    if(sockets[i].SocketedGem != null) 
+                                    if (sockets[i].Color == socketColor)
                                     {
-                                        gemString += $"{sockets[i].SocketedGem.ID}:";
+                                        if (sockets[i].SocketedGem != null)
+                                        {
+                                            gemString += $"{sockets[i].SocketedGem.ID}:";
+                                        }
+                                        else
+                                        {
+                                            gemString += "0:";
+                                        }
+                                        sockets.RemoveAt(i);
+                                        break;
                                     }
-                                    else
-                                    {
-                                        gemString += "0:";
-                                    }
-                                    sockets.RemoveAt(i);
-                                    break;
                                 }
                             }
                         }
                     }
-                }
 
-                string enchantString = "";
+                    string enchantString = "";
 
-                if (Items.AllItems.ContainsKey(wowTooltip.ItemId) && retSimUIModel.SelectedGear != null)
-                {
-                    switch (Items.AllItems[wowTooltip.ItemId].Slot)
+                    if (Items.AllItems.ContainsKey(wowTooltip.ItemId) && retSimUIModel.SelectedGear != null)
                     {
-                        case Slot.Head:
-                            if (retSimUIModel.SelectedGear.HeadEnchant != null && retSimUIModel.SelectedGear.HeadEnchant.ID != -1)
-                                enchantString += $"&ench={retSimUIModel.SelectedGear.HeadEnchant.EnchantmentID}";
-                            break;
-                        case Slot.Shoulders:
-                            if (retSimUIModel.SelectedGear.ShouldersEnchant != null && retSimUIModel.SelectedGear.ShouldersEnchant.ID != -1)
-                                enchantString += $"&ench={retSimUIModel.SelectedGear.ShouldersEnchant.EnchantmentID}";
-                            break;
-                        case Slot.Back:
-                            if (retSimUIModel.SelectedGear.BackEnchant != null && retSimUIModel.SelectedGear.BackEnchant.ID != -1)
-                                enchantString += $"&ench={retSimUIModel.SelectedGear.BackEnchant.EnchantmentID}";
-                            break;
-                        case Slot.Chest:
-                            if (retSimUIModel.SelectedGear.ChestEnchant != null && retSimUIModel.SelectedGear.ChestEnchant.ID != -1)
-                                enchantString += $"&ench={retSimUIModel.SelectedGear.ChestEnchant.EnchantmentID}";
-                            break;
-                        case Slot.Wrists:
-                            if (retSimUIModel.SelectedGear.WristsEnchant != null && retSimUIModel.SelectedGear.WristsEnchant.ID != -1)
-                                enchantString += $"&ench={retSimUIModel.SelectedGear.WristsEnchant.EnchantmentID}";
-                            break;
-                        case Slot.Hands:
-                            if (retSimUIModel.SelectedGear.HandsEnchant != null && retSimUIModel.SelectedGear.HandsEnchant.ID != -1)
-                                enchantString += $"&ench={retSimUIModel.SelectedGear.HandsEnchant.EnchantmentID}";
-                            break;
-                        case Slot.Legs:
-                            if (retSimUIModel.SelectedGear.LegsEnchant != null && retSimUIModel.SelectedGear.LegsEnchant.ID != -1)
-                                enchantString += $"&ench={retSimUIModel.SelectedGear.LegsEnchant.EnchantmentID}";
-                            break;
-                        case Slot.Feet:
-                            if (retSimUIModel.SelectedGear.FeetEnchant != null && retSimUIModel.SelectedGear.FeetEnchant.ID != -1)
-                                enchantString += $"&ench={retSimUIModel.SelectedGear.FeetEnchant.EnchantmentID}";
-                            break;
-                        case Slot.Finger:
-                            if(retSimUIModel.TooltipSettings.RingEnchant != null && retSimUIModel.TooltipSettings.RingEnchant.ID != -1)
-                                enchantString += $"&ench={retSimUIModel.TooltipSettings.RingEnchant.EnchantmentID}";
-                            break;
-                        case Slot.Weapon:
-                            if (retSimUIModel.SelectedGear.WeaponEnchant != null && retSimUIModel.SelectedGear.WeaponEnchant.ID != -1)
-                                enchantString += $"&ench={retSimUIModel.SelectedGear.WeaponEnchant.EnchantmentID}";
-                            break;
-                        default:
-                            break;
+                        switch (Items.AllItems[wowTooltip.ItemId].Slot)
+                        {
+                            case Slot.Head:
+                                if (retSimUIModel.SelectedGear.HeadEnchant != null && retSimUIModel.SelectedGear.HeadEnchant.ID != -1)
+                                    enchantString += $"&ench={retSimUIModel.SelectedGear.HeadEnchant.EnchantmentID}";
+                                break;
+                            case Slot.Shoulders:
+                                if (retSimUIModel.SelectedGear.ShouldersEnchant != null && retSimUIModel.SelectedGear.ShouldersEnchant.ID != -1)
+                                    enchantString += $"&ench={retSimUIModel.SelectedGear.ShouldersEnchant.EnchantmentID}";
+                                break;
+                            case Slot.Back:
+                                if (retSimUIModel.SelectedGear.BackEnchant != null && retSimUIModel.SelectedGear.BackEnchant.ID != -1)
+                                    enchantString += $"&ench={retSimUIModel.SelectedGear.BackEnchant.EnchantmentID}";
+                                break;
+                            case Slot.Chest:
+                                if (retSimUIModel.SelectedGear.ChestEnchant != null && retSimUIModel.SelectedGear.ChestEnchant.ID != -1)
+                                    enchantString += $"&ench={retSimUIModel.SelectedGear.ChestEnchant.EnchantmentID}";
+                                break;
+                            case Slot.Wrists:
+                                if (retSimUIModel.SelectedGear.WristsEnchant != null && retSimUIModel.SelectedGear.WristsEnchant.ID != -1)
+                                    enchantString += $"&ench={retSimUIModel.SelectedGear.WristsEnchant.EnchantmentID}";
+                                break;
+                            case Slot.Hands:
+                                if (retSimUIModel.SelectedGear.HandsEnchant != null && retSimUIModel.SelectedGear.HandsEnchant.ID != -1)
+                                    enchantString += $"&ench={retSimUIModel.SelectedGear.HandsEnchant.EnchantmentID}";
+                                break;
+                            case Slot.Legs:
+                                if (retSimUIModel.SelectedGear.LegsEnchant != null && retSimUIModel.SelectedGear.LegsEnchant.ID != -1)
+                                    enchantString += $"&ench={retSimUIModel.SelectedGear.LegsEnchant.EnchantmentID}";
+                                break;
+                            case Slot.Feet:
+                                if (retSimUIModel.SelectedGear.FeetEnchant != null && retSimUIModel.SelectedGear.FeetEnchant.ID != -1)
+                                    enchantString += $"&ench={retSimUIModel.SelectedGear.FeetEnchant.EnchantmentID}";
+                                break;
+                            case Slot.Finger:
+                                if (retSimUIModel.TooltipSettings.RingEnchant != null && retSimUIModel.TooltipSettings.RingEnchant.ID != -1)
+                                    enchantString += $"&ench={retSimUIModel.TooltipSettings.RingEnchant.EnchantmentID}";
+                                break;
+                            case Slot.Weapon:
+                                if (retSimUIModel.SelectedGear.WeaponEnchant != null && retSimUIModel.SelectedGear.WeaponEnchant.ID != -1)
+                                    enchantString += $"&ench={retSimUIModel.SelectedGear.WeaponEnchant.EnchantmentID}";
+                                break;
+                            default:
+                                break;
+                        }
                     }
+                    wowTooltip.UpdateTooltip(wowTooltip.ItemId, gemString, enchantString);
                 }
-                wowTooltip.UpdateTooltip(wowTooltip.ItemId, gemString, enchantString);
+                else
+                {
+                    wowTooltip.UpdateTooltip(wowTooltip.ItemId, "", "");
+                }
             }
         }
 
