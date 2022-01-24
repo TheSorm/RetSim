@@ -314,6 +314,15 @@ namespace RetSimDesktop
                     {
                         retSimUIModel.TooltipSettings.HoverItemID = displayItem.Item.ID;
                     }
+
+                    foreach(var item in SlotList)
+                    {
+                        if(item.Item.Slot == Slot.Finger)
+                        {
+                            retSimUIModel.TooltipSettings.RingEnchant = SelectedEnchant;
+                        }
+                        break;
+                    }
                 }
             }
         }

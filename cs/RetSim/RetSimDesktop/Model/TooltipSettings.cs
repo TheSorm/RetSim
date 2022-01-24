@@ -1,10 +1,12 @@
-﻿using System.ComponentModel;
+﻿using RetSim.Items;
+using System.ComponentModel;
 
 namespace RetSimDesktop.Model
 {
     public class TooltipSettings : INotifyPropertyChanged
     {
         private int hoverItemID;
+        private Enchant? ringEnchant;
 
         public int HoverItemID
         {
@@ -13,6 +15,15 @@ namespace RetSimDesktop.Model
             {
                 hoverItemID = value;
                 OnPropertyChanged(nameof(HoverItemID));
+            }
+        }
+        public Enchant? RingEnchant
+        {
+            get { return ringEnchant; }
+            set
+            {
+                ringEnchant = value;
+                OnPropertyChanged(nameof(RingEnchant));
             }
         }
 
