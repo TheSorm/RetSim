@@ -12,14 +12,14 @@ public class EliteTactic : Tactic
 
     private int csDelay = 0;
 
-    public EliteTactic(int CsDelay)
+    public EliteTactic(int maxCSDelay)
     {
         CrusaderStrike = Data.Collections.Spells[35395];
         SealOfCommand = Data.Collections.Spells[27170];
         SealOfBlood = Data.Collections.Spells[31892];
         Judgement = Data.Collections.Spells[20271];
 
-        this.csDelay = CsDelay;
+        csDelay = maxCSDelay;
     }
 
     public override List<Event> PreFight(FightSimulation fight)

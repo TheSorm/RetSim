@@ -34,6 +34,7 @@ namespace RetSimDesktop.Model
                 var encounterID = retSimUIModel.EncounterSettings.EncounterID;
 
                 var numberOfSimulations = retSimUIModel.SimSettings.SimulationCount;
+                var maxCSDelay = retSimUIModel.SimSettings.MaxCSDelay;
 
                 var minDuration = retSimUIModel.EncounterSettings.MinFightDurationMilliseconds;
                 var maxDuration = retSimUIModel.EncounterSettings.MaxFightDurationMilliseconds;
@@ -70,7 +71,7 @@ namespace RetSimDesktop.Model
                     FightSimulation fight = new(
                         new Player("Brave Hero", Collections.Races[race.ToString()], shattrathFaction, playerEquipment, talents),
                         new Enemy(Collections.Bosses[encounterID]),
-                        new EliteTactic(0), groupTalents, buffs, debuffs, consumables, minDuration, maxDuration, cooldowns, heroismUsage);
+                        new EliteTactic(maxCSDelay), groupTalents, buffs, debuffs, consumables, minDuration, maxDuration, cooldowns, heroismUsage);
                     fight.Run();
                     baseDps += fight.CombatLog.DPS;
                     retSimUIModel.DisplayStatWeights[0].DpsDelta = baseDps / i;
@@ -113,6 +114,7 @@ namespace RetSimDesktop.Model
                         MinFightDuration = minDuration,
                         MaxFightDuration = maxDuration,
                         NumberOfSimulations = numberOfSimulations,
+                        MaxCSDelay = maxCSDelay,
                         BaseSeed = baseSeed,
                         BaseDps = baseDps,
                         StatWeightsDisplay = item,
@@ -156,9 +158,9 @@ namespace RetSimDesktop.Model
             {
                 RNG.local = new(BaseSeed + i);
 
-                FightSimulation fight = new(new Player("Brave Hero", Race, ShattrathFaction, PlayerEquipment, Talents, extraStats), new Enemy(Encounter), new EliteTactic(0), GroupTalents, Buffs, Debuffs, Consumables, MinFightDuration, MaxFightDuration, Cooldowns, HeroismUsage);
-
-                if (IgnoreExpertiseCap && fight.Player.Stats[StatName.Expertise].Value > Constants.Stats.ExpertiseCap)
+                FightSimulation fight = new(new Player("Brave Hero", Race, ShattrathFaction, PlayerEquipment, Talents, extraStats), new Enemy(Encounter), new EliteTactic(MaxCSDelay), GroupTalents, Buffs, Debuffs, Consumables, MinFightDuration, MaxFightDuration, Cooldowns, HeroismUsage);
+                
+                if (IgnoreExpertiseCap && fight.Player.Stats[StatName.Expertise].Value > Constants.Stats.ExpertiseCap) 
                 {
                     fight.Player.Stats[StatName.ExpertiseRating].Permanent = 0;
                     fight.Player.Stats[StatName.ExpertiseRating].Bonus = 0;

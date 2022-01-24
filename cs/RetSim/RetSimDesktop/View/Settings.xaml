@@ -92,6 +92,15 @@
                                 <Label Margin="0" Padding="0" VerticalAlignment="Center" Content="Simulations"/>
                                 <TextBox Grid.Column="2" HorizontalContentAlignment="Right" PreviewTextInput="NumberValidationTextBox" Text="{Binding SimSettings.SimulationCount, Converter={StaticResource StringEmptyConverter}, ConverterParameter='1'}" />
                             </Grid>
+                            <Grid Margin="0,2,0,2" x:Name="MaxCSDelay" ToolTipService.InitialShowDelay="0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="10"/>
+                                    <ColumnDefinition Width="60"/>
+                                </Grid.ColumnDefinitions>
+                                <Label Margin="0" Padding="0" VerticalAlignment="Center" Content="Max CS Delay"/>
+                                <TextBox Grid.Column="2" HorizontalContentAlignment="Right" PreviewTextInput="NumberValidationTextBox" Text="{Binding SimSettings.MaxCSDelay, Converter={StaticResource StringEmptyConverter}, ConverterParameter='1'}" />
+                            </Grid>
                         </StackPanel>
                     </GroupBox>
                     <GroupBox Margin="5" Height="110" >
@@ -737,7 +746,7 @@
                                     </Grid.ColumnDefinitions>
                                     <CheckBox Margin="0,2,0,2" x:Name="ExposeWeakness" Content="Expose Weakness" IsChecked="{Binding SelectedDebuffs.ExposeWeaknessEnabled}">
                                     </CheckBox>
-                                    <TextBox Grid.Column="2" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" ToolTipService.InitialShowDelay="0" ToolTip="Hunter Agility" PreviewTextInput="NumberValidationTextBox" Text="{Binding SelectedDebuffs.HunterAgility, Converter={StaticResource StringEmptyConverter}, ConverterParameter='4'}" />
+                                    <TextBox Grid.Column="2" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" ToolTipService.InitialShowDelay="0" ToolTip="The Survival Hunter's Agility value." PreviewTextInput="NumberValidationTextBox" Text="{Binding SelectedDebuffs.HunterAgility, Converter={StaticResource StringEmptyConverter}, ConverterParameter='4'}" />
                                 </Grid>
                                 <CheckBox x:Name="FaerieFire" Margin="0,2,0,2" VerticalContentAlignment="Center" IsChecked="{Binding SelectedDebuffs.FaerieFireEnabled}">
                                     <ComboBox Width="200">

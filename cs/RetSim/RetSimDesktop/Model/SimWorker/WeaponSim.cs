@@ -34,6 +34,7 @@ namespace RetSimDesktop.View
                 var encounterID = input.Item1.EncounterSettings.EncounterID;
 
                 var numberOfSimulations = input.Item1.SimSettings.SimulationCount;
+                var maxCSDelay = input.Item1.SimSettings.SimulationCount;
 
                 var minDuration = input.Item1.EncounterSettings.MinFightDurationMilliseconds;
                 var maxDuration = input.Item1.EncounterSettings.MaxFightDurationMilliseconds;
@@ -100,6 +101,7 @@ namespace RetSimDesktop.View
                         MinFightDuration = minDuration,
                         MaxFightDuration = maxDuration,
                         NumberOfSimulations = numberOfSimulations,
+                        MaxCSDelay = maxCSDelay,
                         Item = item
                     };
 
@@ -127,7 +129,7 @@ namespace RetSimDesktop.View
             float overallDPS = 0;
             for (int i = 0; i < NumberOfSimulations; i++)
             {
-                FightSimulation fight = new(new Player("Brave Hero", Race, ShattrathFaction, PlayerEquipment, Talents), new Enemy(Encounter), new EliteTactic(0), GroupTalents, Buffs, Debuffs, Consumables, MinFightDuration, MaxFightDuration, Cooldowns, HeroismUsage);
+                FightSimulation fight = new(new Player("Brave Hero", Race, ShattrathFaction, PlayerEquipment, Talents), new Enemy(Encounter), new EliteTactic(MaxCSDelay), GroupTalents, Buffs, Debuffs, Consumables, MinFightDuration, MaxFightDuration, Cooldowns, HeroismUsage);
                 fight.Run();
                 overallDPS += fight.CombatLog.DPS;
                 Item.DPS = overallDPS / (i + 1);
