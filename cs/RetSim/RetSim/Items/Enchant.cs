@@ -5,6 +5,7 @@ namespace RetSim.Items;
 public class Enchant
 {
     public int ID { get; init; }
+    public int EnchantmentID { get; init; }
     public int ItemID { get; init; }
     public string Name { get; init; }
     public string Nickname { get; init; }

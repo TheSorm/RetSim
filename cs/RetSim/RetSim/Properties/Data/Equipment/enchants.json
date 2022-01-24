@@ -2,6 +2,7 @@
   {
     "ID": 35452,
     "ItemID": 29192,
+    "EnchantmentID": 3003,
     "Name": "Glyph of Ferocity",
     "Nickname": "34 Attack Power, 16 Hit Rating",
     "Slot": 0,
@@ -14,6 +15,7 @@
   {
     "ID": 37891,
     "ItemID": 30846,
+    "EnchantmentID": 3096,
     "Name": "Glyph of the Outcast",
     "Nickname": "17 Strength, 16 Intellect",
     "Slot": 0,
@@ -26,6 +28,7 @@
   {
     "ID": 35447,
     "ItemID": 29191,
+    "EnchantmentID": 3002,
     "Name": "Glyph of Power",
     "Nickname": "22 Spell Power, 14 Spell Hit Rating",
     "Slot": 0,
@@ -38,6 +41,7 @@
   {
     "ID": 35453,
     "ItemID": 29193,
+    "EnchantmentID": 3004,
     "Name": "Glyph of the Gladiator",
     "Nickname": "18 Stamina, 20 Resilience Rating",
     "Slot": 0,
@@ -50,6 +54,7 @@
   {
     "ID": 24160,
     "ItemID": 19783,
+    "EnchantmentID": 2584,
     "Name": "Syncretist\u0027s Sigil",
     "Nickname": "10 Stamina, 10 Defense Rating, 24 Healing Power",
     "Slot": 0,
@@ -61,6 +66,7 @@
   {
     "ID": 15397,
     "ItemID": 11645,
+    "EnchantmentID": 1506,
     "Name": "Lesser Arcanum of Voracity",
     "Nickname": "8 Strength",
     "Slot": 0,
@@ -72,6 +78,7 @@
   {
     "ID": 22840,
     "ItemID": 18329,
+    "EnchantmentID": 2543,
     "Name": "Arcanum of Rapidity",
     "Nickname": "10 Haste Rating",
     "Slot": 0,
@@ -83,6 +90,7 @@
   {
     "ID": 35417,
     "ItemID": 28888,
+    "EnchantmentID": 2986,
     "Name": "Greater Inscription of Vengeance",
     "Nickname": "30 Attack Power, 10 Crit Rating",
     "Slot": 2,
@@ -95,6 +103,7 @@
   {
     "ID": 35439,
     "ItemID": 28910,
+    "EnchantmentID": 2997,
     "Name": "Greater Inscription of the Blade",
     "Nickname": "20 Attack Power, 15 Crit Rating",
     "Slot": 2,
@@ -107,6 +116,7 @@
   {
     "ID": 35406,
     "ItemID": 28886,
+    "EnchantmentID": 2982,
     "Name": "Greater Inscription of Discipline",
     "Nickname": "18 Spell Power, 10 Spell Crit Rating",
     "Slot": 2,
@@ -119,6 +129,7 @@
   {
     "ID": 35437,
     "ItemID": 28909,
+    "EnchantmentID": 2995,
     "Name": "Greater Inscription of the Orb",
     "Nickname": "12 Spell Power, 15 Spell Crit Rating",
     "Slot": 2,
@@ -131,6 +142,7 @@
   {
     "ID": 35407,
     "ItemID": 28885,
+    "EnchantmentID": 2983,
     "Name": "Inscription of Vengeance",
     "Nickname": "26 Attack Power",
     "Slot": 2,
@@ -142,6 +154,7 @@
   {
     "ID": 35438,
     "ItemID": 28907,
+    "EnchantmentID": 2996,
     "Name": "Inscription of the Blade",
     "Nickname": "13 Crit Rating",
     "Slot": 2,
@@ -153,6 +166,7 @@
   {
     "ID": 35405,
     "ItemID": 28881,
+    "EnchantmentID": 2981,
     "Name": "Inscription of Discipline",
     "Nickname": "15 Spell Power",
     "Slot": 2,
@@ -164,6 +178,7 @@
   {
     "ID": 35436,
     "ItemID": 28903,
+    "EnchantmentID": 2994,
     "Name": "Inscription of the Orb",
     "Nickname": "13 Spell Crit Rating",
     "Slot": 2,
@@ -175,6 +190,7 @@
   {
     "ID": 24422,
     "ItemID": 20077,
+    "EnchantmentID": 2606,
     "Name": "Zandalar Signet of Might",
     "Nickname": "30 Attack Power",
     "Slot": 2,
@@ -186,6 +202,7 @@
   {
     "ID": 24421,
     "ItemID": 20076,
+    "EnchantmentID": 2605,
     "Name": "Zandalar Signet of Mojo",
     "Nickname": "18 Spell Power",
     "Slot": 2,
@@ -197,6 +214,7 @@
   {
     "ID": 29483,
     "ItemID": 23548,
+    "EnchantmentID": 2717,
     "Name": "Might of the Scourge",
     "Nickname": "26 Attack Power, 14 Crit Rating",
     "Slot": 2,
@@ -209,6 +227,7 @@
   {
     "ID": 29467,
     "ItemID": 23545,
+    "EnchantmentID": 2721,
     "Name": "Power of the Scourge",
     "Nickname": "15 Spell Power, 14 Spell Crit Rating",
     "Slot": 2,
@@ -221,6 +240,7 @@
   {
     "ID": 34004,
     "ItemID": 35432,
+    "EnchantmentID": 368,
     "Name": "Enchant Cloak - Greater Agility",
     "Nickname": "12 Agility",
     "Slot": 3,
@@ -232,6 +252,7 @@
   {
     "ID": 25084,
     "ItemID": 187800,
+    "EnchantmentID": 2621,
     "Name": "Enchant Cloak - Subtlety",
     "Nickname": "2% Threat Reduction",
     "Slot": 3,
@@ -242,6 +263,7 @@
   {
     "ID": 27960,
     "ItemID": 35429,
+    "EnchantmentID": 2661,
     "Name": "Enchant Chest - Exceptional Stats",
     "Nickname": "6 Stats",
     "Slot": 4,
@@ -257,6 +279,7 @@
   {
     "ID": 33992,
     "ItemID": 35430,
+    "EnchantmentID": 2933,
     "Name": "Enchant Chest - Major Resilience",
     "Nickname": "15 Resilience",
     "Slot": 4,
@@ -268,6 +291,7 @@
   {
     "ID": 27899,
     "ItemID": 35420,
+    "EnchantmentID": 2647,
     "Name": "Enchant Bracer - Brawn",
     "Nickname": "12 Strength",
     "Slot": 5,
@@ -279,6 +303,7 @@
   {
     "ID": 27905,
     "ItemID": 35426,
+    "EnchantmentID": 1891,
     "Name": "Enchant Bracer - Stats",
     "Nickname": "4 Stats",
     "Slot": 5,
@@ -294,6 +319,7 @@
   {
     "ID": 27917,
     "ItemID": 35425,
+    "EnchantmentID": 2650,
     "Name": "Enchant Bracer - Spellpower",
     "Nickname": "15 Spell Power",
     "Slot": 5,
@@ -305,6 +331,7 @@
   {
     "ID": 33995,
     "ItemID": 35442,
+    "EnchantmentID": 684,
     "Name": "Enchant Gloves - Major Strength",
     "Nickname": "15 Strength",
     "Slot": 6,
@@ -316,6 +343,7 @@
   {
     "ID": 33997,
     "ItemID": 35441,
+    "EnchantmentID": 2937,
     "Name": "Enchant Gloves - Major Spellpower",
     "Nickname": "20 Spell Power",
     "Slot": 6,
@@ -327,6 +355,7 @@
   {
     "ID": 35490,
     "ItemID": 29535,
+    "EnchantmentID": 3012,
     "Name": "Nethercobra Leg Armor",
     "Nickname": "50 Attack Power, 12 Crit Rating",
     "Slot": 8,
@@ -339,6 +368,7 @@
   {
     "ID": 35495,
     "ItemID": 29536,
+    "EnchantmentID": 3013,
     "Name": "Nethercleft Leg Armor",
     "Nickname": "12 Agility, 40 Stamina",
     "Slot": 8,
@@ -351,6 +381,7 @@
   {
     "ID": 31372,
     "ItemID": 24274,
+    "EnchantmentID": 2748,
     "Name": "Runic Spellthread",
     "Nickname": "35 Spell Power, 20 Stamina",
     "Slot": 8,
@@ -363,6 +394,7 @@
   {
     "ID": 35488,
     "ItemID": 29533,
+    "EnchantmentID": 3010,
     "Name": "Cobrahide Leg Armor",
     "Nickname": "40 Attack Power, 10 Crit Rating",
     "Slot": 8,
@@ -375,6 +407,7 @@
   {
     "ID": 35489,
     "ItemID": 29534,
+    "EnchantmentID": 3011,
     "Name": "Clefthide Leg Armor",
     "Nickname": "10 Agility, 30 Stamina",
     "Slot": 8,
@@ -387,6 +420,7 @@
   {
     "ID": 31371,
     "ItemID": 24273,
+    "EnchantmentID": 2747,
     "Name": "Mystic Spellthread",
     "Nickname": "25 Spell Power, 15 Stamina",
     "Slot": 8,
@@ -399,6 +433,7 @@
   {
     "ID": 241600,
     "ItemID": 19783,
+    "EnchantmentID": 2584,
     "Name": "Syncretist\u0027s Sigil",
     "Nickname": "10 Stamina, 10 Defense Rating, 24 Healing Power",
     "Slot": 8,
@@ -410,6 +445,7 @@
   {
     "ID": 153970,
     "ItemID": 11645,
+    "EnchantmentID": 1506,
     "Name": "Lesser Arcanum of Voracity",
     "Nickname": "8 Strength",
     "Slot": 8,
@@ -421,6 +457,7 @@
   {
     "ID": 228400,
     "ItemID": 18329,
+    "EnchantmentID": 2543,
     "Name": "Arcanum of Rapidity",
     "Nickname": "10 Haste Rating",
     "Slot": 8,
@@ -432,6 +469,7 @@
   {
     "ID": 27951,
     "ItemID": 35400,
+    "EnchantmentID": 2657,
     "Name": "Enchant Boots - Dexterity",
     "Nickname": "12 Agility",
     "Slot": 9,
@@ -443,6 +481,7 @@
   {
     "ID": 27954,
     "ItemID": 35418,
+    "EnchantmentID": 2658,
     "Name": "Enchant Boots - Surefooted",
     "Nickname": "10 Hit Rating, 5% Snare/Root Resist",
     "Slot": 9,
@@ -454,6 +493,7 @@
   {
     "ID": 34007,
     "ItemID": 35399,
+    "EnchantmentID": 2939,
     "Name": "Enchant Boots - Cat\u0027s Swiftness",
     "Nickname": "6 Agility, Minor Run Speed",
     "Slot": 9,
@@ -465,6 +505,7 @@
   {
     "ID": 34008,
     "ItemID": 35398,
+    "EnchantmentID": 2940,
     "Name": "Enchant Boots - Boar\u0027s Speed",
     "Nickname": "9 Stamina, Minor Run Speed",
     "Slot": 9,
@@ -476,6 +517,7 @@
   {
     "ID": 27927,
     "ItemID": 35446,
+    "EnchantmentID": 2931,
     "Name": "Enchant Ring - Stats",
     "Nickname": "4 Stats",
     "Slot": 10,
@@ -491,6 +533,7 @@
   {
     "ID": 27924,
     "ItemID": 35445,
+    "EnchantmentID": 2928,
     "Name": "Enchant Ring - Spellpower",
     "Nickname": "12 Spell Power",
     "Slot": 10,
@@ -502,6 +545,7 @@
   {
     "ID": 27920,
     "ItemID": 35447,
+    "EnchantmentID": 2929,
     "Name": "Enchant Ring - Striking",
     "Nickname": "2 Weapon Damage (Useless)",
     "Slot": 10,
@@ -513,6 +557,7 @@
   {
     "ID": 27984,
     "ItemID": 35458,
+    "EnchantmentID": 2673,
     "Name": "Enchant Weapon - Mongoose",
     "Nickname": "Mongoose",
     "Slot": 13,
@@ -526,6 +571,8 @@
   },
   {
     "ID": 42974,
+    "ItemID": 33307,
+    "EnchantmentID": 3225,
     "Name": "Enchant Weapon - Executioner",
     "Nickname": "Executioner",
     "Slot": 13,
@@ -539,6 +586,8 @@
   },
   {
     "ID": 46578,
+    "ItemID": 35498,
+    "EnchantmentID": 3273,
     "Name": "Enchant Weapon - Deathfrost",
     "Nickname": "Deathfrost",
     "Slot": 13,
@@ -553,6 +602,7 @@
   {
     "ID": 27971,
     "ItemID": 35397,
+    "EnchantmentID": 2667,
     "Name": "Enchant 2H Weapon - Savagery",
     "Nickname": "70 Attack Power",
     "Slot": 13,
@@ -564,6 +614,7 @@
   {
     "ID": 27972,
     "ItemID": 35459,
+    "EnchantmentID": 2668,
     "Name": "Enchant Weapon - Potency",
     "Nickname": "20 Strength",
     "Slot": 13,
@@ -575,6 +626,7 @@
   {
     "ID": 27977,
     "ItemID": 35396,
+    "EnchantmentID": 2670,
     "Name": "Enchant 2H Weapon - Major Agility",
     "Nickname": "35 Agility",
     "Slot": 13,
@@ -586,6 +638,7 @@
   {
     "ID": 27975,
     "ItemID": 35456,
+    "EnchantmentID": 2669,
     "Name": "Enchant Weapon - Major Spellpower",
     "Nickname": "40 Spell Power",
     "Slot": 13,
