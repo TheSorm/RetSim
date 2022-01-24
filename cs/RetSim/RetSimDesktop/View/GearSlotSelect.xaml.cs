@@ -386,7 +386,7 @@ namespace RetSimDesktop
     }
     public class SocketBonusActiveConverter : IValueConverter
     {
-            
+
         public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
         {
             if (value is EquippableItem item && item.Socket1 != null && item.IsSocketBonusActive())
@@ -442,13 +442,13 @@ namespace RetSimDesktop
     {
         public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
         {
-            if(value is Socket socket)
+            if (value is Socket socket)
             {
-                if(socket.SocketedGem != null && MediaMetaData.GemsToIconName.ContainsKey(socket.SocketedGem.ID))
+                if (socket.SocketedGem != null && MediaMetaData.GemsToIconName.ContainsKey(socket.SocketedGem.ID))
                 {
                     return new BitmapImage(new Uri($"pack://application:,,,/Properties/Icons/{MediaMetaData.GemsToIconName[socket.SocketedGem.ID]}"));
                 }
-                else if(socket.Color == SocketColor.Red)
+                else if (socket.Color == SocketColor.Red)
                 {
                     return new BitmapImage(new Uri("pack://application:,,,/Properties/Icons/red_socket.jpg"));
                 }
@@ -498,9 +498,9 @@ namespace RetSimDesktop
     {
         public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
         {
-            if(value is Socket socket && socket.SocketedGem != null)
+            if (value is Socket socket && socket.SocketedGem != null)
             {
-                if(socket.Color == SocketColor.Meta)
+                if (socket.Color == SocketColor.Meta)
                 {
                     return new SolidColorBrush(Colors.DarkGray);
                 }

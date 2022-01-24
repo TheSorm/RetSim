@@ -247,6 +247,26 @@ namespace RetSimDesktop.Model
             };
         }
 
+        public void ClearSelectedGear()
+        {
+            selectedHead =      null;
+            selectedNeck =      null;
+            selectedShoulders = null;
+            selectedBack =      null;
+            selectedChest =     null;
+            selectedWrists =    null;
+            selectedHands =     null;
+            selectedWaist =     null;
+            selectedLegs =      null;
+            selectedFeet =      null;
+            selectedFinger1 =   null;
+            selectedFinger2 =   null;
+            selectedTrinket1 =  null;
+            selectedTrinket2 =  null;
+            selectedRelic =     null;
+            selectedWeapon =    null;
+        }
+
         public event PropertyChangedEventHandler? PropertyChanged;
         public void OnPropertyChanged(string propertyName)
         {
