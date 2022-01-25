@@ -159,8 +159,8 @@ namespace RetSimDesktop.Model
                 RNG.local = new(BaseSeed + i);
 
                 FightSimulation fight = new(new Player("Brave Hero", Race, ShattrathFaction, PlayerEquipment, Talents, extraStats), new Enemy(Encounter), new EliteTactic(MaxCSDelay), GroupTalents, Buffs, Debuffs, Consumables, MinFightDuration, MaxFightDuration, Cooldowns, HeroismUsage);
-                
-                if (IgnoreExpertiseCap && fight.Player.Stats[StatName.Expertise].Value > Constants.Stats.ExpertiseCap) 
+
+                if (IgnoreExpertiseCap && fight.Player.Stats[StatName.Expertise].Value > Constants.Stats.ExpertiseCap)
                 {
                     fight.Player.Stats[StatName.ExpertiseRating].Permanent = 0;
                     fight.Player.Stats[StatName.ExpertiseRating].Bonus = 0;
