@@ -48,9 +48,7 @@ public class FightSimulation
         foreach (var time in heroisms)
         {
             if (time < Duration)
-            {
                 correctedHerosimTimes.Add(time);
-            }
         }
 
         var allCooldowns = new List<List<Spell>>();
@@ -66,19 +64,16 @@ public class FightSimulation
                 allCooldowns.Add(new() { Collections.Spells[item.OnUse.ID] });
         }
 
-        List<Spell> trinketOnUses = new();
+        List<Spell> activeTrinkets = new();
+
         if (player.Equipment.Trinket1 != null && player.Equipment.Trinket1.OnUse != null && Collections.Spells.ContainsKey(player.Equipment.Trinket1.OnUse.ID))
-        {
-            trinketOnUses.Add(Collections.Spells[player.Equipment.Trinket1.OnUse.ID]);
-        }
+            activeTrinkets.Add(Collections.Spells[player.Equipment.Trinket1.OnUse.ID]);
+
         if (player.Equipment.Trinket2 != null && player.Equipment.Trinket2.OnUse != null && Collections.Spells.ContainsKey(player.Equipment.Trinket2.OnUse.ID))
-        {
-            trinketOnUses.Add(Collections.Spells[player.Equipment.Trinket2.OnUse.ID]);
-        }
-        if (trinketOnUses.Count > 0)
-        {
-            allCooldowns.Add(trinketOnUses);
-        }
+            activeTrinkets.Add(Collections.Spells[player.Equipment.Trinket2.OnUse.ID]);
+
+        if (activeTrinkets.Count > 0)
+            allCooldowns.Add(activeTrinkets);
 
         CooldownManager = new CooldownManager(this, allCooldowns, correctedHerosimTimes);
 
@@ -221,7 +216,6 @@ public class FightSimulation
         Logger.Log($"║       Totals        ║ {CombatLog.Damage,7} ║ {CombatLog.DPS.Rounded(),7} ║ {"100%",6} ║ {totals,3} ║");
         Logger.Log($"╚═════════════════════╩═════════╩═════════╩════════╩═════╝");
     }
-
 
     public override string ToString()
     {
