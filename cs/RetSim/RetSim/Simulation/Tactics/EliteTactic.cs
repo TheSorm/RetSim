@@ -35,6 +35,7 @@ public class EliteTactic : Tactic
 
                 firstAutoAttack,
             };
+
         fight.Player.NextAutoAttack = firstAutoAttack;
         fight.Player.EffectiveNextAuto = firstAutoAttack.Timestamp;
 
@@ -59,15 +60,18 @@ public class EliteTactic : Tactic
                 return new CastEvent(Judgement, fight.Player, fight.Enemy, fight, start);
             }
         }
+
         else
         {
             if (fight.Player.Auras[SealOfCommand.Aura].Active)
             {
                 int sobTwistWindowStart = swing - 399;
                 int sobTwistWindowEnd = swing - 1;
+
                 if (end >= sobTwistWindowStart && start <= sobTwistWindowEnd)
                     return new CastEvent(SealOfBlood, fight.Player, fight.Player, fight, Math.Max(start, sobTwistWindowStart));
             }
+
             else
             {
                 if (fight.Player.Spellbook.IsOnCooldown(CrusaderStrike)
@@ -76,40 +80,34 @@ public class EliteTactic : Tactic
                 {
                     if (start + fight.Player.Stats.EffectiveGCD(SealOfBlood) < swingLeeway)
                     {
-
                         if (fight.Player.Auras[SealOfBlood.Aura].Active && !fight.Player.Spellbook.IsOnCooldown(Judgement))
-                        {
                             return new CastEvent(Judgement, fight.Player, fight.Enemy, fight, start);
-                        }
+
                         else if (!fight.Player.Auras[SealOfCommand.Aura].Active
                             && (!fight.Player.Auras[SealOfBlood.Aura].Active
                             || (fight.Player.Spellbook.IsOnCooldown(Judgement) && fight.Player.Spellbook[Judgement.ID].CooldownEnd.Timestamp + fight.Player.Stats.EffectiveGCD(SealOfBlood) > swingLeeway)))
                         {
-                            return new CastEvent(SealOfCommand, fight.Player, fight.Enemy, fight, start);
+                            return new CastEvent(SealOfCommand, fight.Player, fight.Player, fight, start);
                         }
                     }
+
                     else
                     {
                         if (!fight.Player.Auras[SealOfBlood.Aura].Active)
-                        {
-                            return new CastEvent(SealOfBlood, fight.Player, fight.Enemy, fight, start);
-                        }
+                            return new CastEvent(SealOfBlood, fight.Player, fight.Player, fight, start);
+
                         else if (!fight.Player.Spellbook.IsOnCooldown(Judgement) && start < swingLeeway)
-                        {
                             return new CastEvent(Judgement, fight.Player, fight.Enemy, fight, start);
-                        }
                     }
                 }
+
                 else if (!fight.Player.Spellbook.IsOnCooldown(CrusaderStrike))
                 {
                     if (fight.Player.Auras[SealOfBlood.Aura].Active || start + fight.Player.Stats.EffectiveGCD(CrusaderStrike) < swingLeeway)
-                    {
                         return new CastEvent(CrusaderStrike, fight.Player, fight.Enemy, fight, start);
-                    }
+
                     else
-                    {
-                        return new CastEvent(SealOfBlood, fight.Player, fight.Enemy, fight, start);
-                    }
+                        return new CastEvent(SealOfBlood, fight.Player, fight.Player, fight, start);
                 }
             }
         }
