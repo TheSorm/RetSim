@@ -180,7 +180,7 @@ public class Equipment
         StatSet result = new();
 
         var stats = new List<StatName> { StatName.Stamina, StatName.Intellect, StatName.ManaPer5, StatName.AttackPower, StatName.Strength, StatName.CritRating, StatName.Agility,
-                StatName.HitRating, StatName.HasteRating, StatName.ExpertiseRating, StatName.ArmorPenetration, StatName.SpellPower, StatName.SpellCrit, StatName.SpellHit, StatName.SpellHaste };
+                StatName.HitRating, StatName.HasteRating, StatName.ExpertiseRating, StatName.ArmorPenetration, StatName.SpellPower, StatName.SpellCrit, StatName.SpellHit, StatName.SpellHaste, StatName.WeaponDamage };
 
         foreach (var stat in stats)
         {
