@@ -121,6 +121,7 @@ namespace RetSimDesktop
 
                         DamageBreakdownSelection_SelectionChanged(null, null);
                         AuraBreakdownSelection_SelectionChanged(null, null);
+                        CombatLogSelection_SelectionChanged(null, null);
 
                     }
                     else if (e.PropertyName == "MedianCombatLog")
@@ -138,6 +139,10 @@ namespace RetSimDesktop
                         if (AuraBreakdownSelection.SelectedValue.ToString() == "Median")
                         {
                             AuraBreakdownSelection_SelectionChanged(null, null);
+                        }
+                        if (CombatLogSelection.SelectedValue.ToString() == "Median")
+                        {
+                            CombatLogSelection_SelectionChanged(null, null);
                         }
 
                         DamageChart.Plot.Clear();
