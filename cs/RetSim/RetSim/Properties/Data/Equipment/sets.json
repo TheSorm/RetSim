@@ -1,5 +1,57 @@
 [
   {
+    "ID": 530,
+    "Name": "Cryptstalker Armor",
+    "SetSpells": [
+      {
+        "Name": "Rapid Fire",
+        "ID": 28755,
+        "RequiredCount": 2
+      },
+      {
+        "Name": "Stalker\u0027s Ally",
+        "ID": 28756,
+        "RequiredCount": 4
+      },
+      {
+        "Name": "Adrenaline Rush",
+        "ID": 28752,
+        "RequiredCount": 6
+      },
+      {
+        "Name": "Multi-Shot",
+        "ID": 28751,
+        "RequiredCount": 8
+      }
+    ]
+  },
+  {
+    "ID": 524,
+    "Name": "Bonescythe Armor",
+    "SetSpells": [
+      {
+        "Name": "Invigorate",
+        "ID": 28816,
+        "RequiredCount": 2
+      },
+      {
+        "Name": "Head Rush",
+        "ID": 28812,
+        "RequiredCount": 4
+      },
+      {
+        "Name": "Reduced Threat",
+        "ID": 28811,
+        "RequiredCount": 6
+      },
+      {
+        "Name": "Revealed Flaw",
+        "ID": 28814,
+        "RequiredCount": 8
+      }
+    ]
+  },
+  {
     "ID": 562,
     "Name": "Adamantite Battlegear",
     "SetSpells": [

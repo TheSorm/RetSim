@@ -14677,11 +14677,39 @@
     "Slot": 1,
     "Stats": {
       "Armor": 0,
-      "HitRating": 21
+      "HitRating": 21,
+      "WeaponDamage": 5
+    },
+    "Phase": 1
+  },
+  {
+    "ID": 24117,
+    "Name": "Embrace of the Dawn",
+    "ItemLevel": 115,
+    "Quality": 3,
+    "Slot": 1,
+    "Stats": {
+      "Armor": 0,
+      "Stamina": 27,
+      "Intellect": 19,
+      "ManaPer5": 7
+    },
+    "Phase": 1
+  },
+  {
+    "ID": 24116,
+    "Name": "Eye of the Night",
+    "ItemLevel": 114,
+    "Quality": 3,
+    "Slot": 1,
+    "Stats": {
+      "Armor": 0,
+      "SpellHitRating": 16,
+      "SpellCritRating": 26
     },
     "OnEquip": {
-      "ID": 33488,
-      "Name": "Weapon Damage"
+      "ID": 28869,
+      "Name": "Spell Penetration 15"
     },
     "Phase": 1
   },
@@ -14762,6 +14790,22 @@
     "OnUse": {
       "ID": 43716,
       "Name": "Call of the Berserker"
+    },
+    "Phase": 4
+  },
+  {
+    "ID": 33832,
+    "Name": "Battlemaster\u0027s Determination",
+    "ItemLevel": 133,
+    "Quality": 4,
+    "Slot": 11,
+    "Stats": {
+      "Armor": 0,
+      "AttackPower": 80
+    },
+    "OnUse": {
+      "ID": 44055,
+      "Name": "Tremendous Fortitude"
     },
     "Phase": 4
   },
@@ -15115,15 +15159,12 @@
     "Quality": 3,
     "Slot": 11,
     "Stats": {
-      "Armor": 0
+      "Armor": 0,
+      "WeaponDamage": 7
     },
     "OnUse": {
       "ID": 40724,
       "Name": "Valor"
-    },
-    "OnEquip": {
-      "ID": 40723,
-      "Name": "Weapon Damage"
     },
     "UniqueEquipped": true,
     "Phase": 2
@@ -15483,6 +15524,22 @@
     "OnUse": {
       "ID": 32355,
       "Name": "Focused Power"
+    },
+    "Phase": 1
+  },
+  {
+    "ID": 27926,
+    "Name": "Mark of Vindication",
+    "ItemLevel": 91,
+    "Quality": 3,
+    "Slot": 11,
+    "Stats": {
+      "Armor": 0,
+      "AttackPower": 54
+    },
+    "OnEquip": {
+      "ID": 33522,
+      "Name": "Mana Restore 2"
     },
     "Phase": 1
   },
