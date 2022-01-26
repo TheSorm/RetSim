@@ -44,17 +44,17 @@ public static class Constants
 
     public static class Ratings
     {
-        public const float Crit = 22.08f;
-        public const float Hit = 15.77f;
-        public const float Haste = 15.77f;
+        public const float Crit = 22.07692f;
+        public const float Hit = 15.76923f;
+        public const float Haste = 15.76923f;
 
-        public const float SpellCrit = 22.08f;
-        public const float SpellHit = 12.62f;
-        public const float SpellHaste = 15.77f;
+        public const float SpellCrit = 22.07692f;
+        public const float SpellHit = 12.61538f;
+        public const float SpellHaste = 15.76923f;
 
-        public const float Expertise = 3.93f;
+        public const float Expertise = 3.9423f;
 
-        public const float Resilience = 39.4f;
+        public const float Resilience = 39.42308f;
     }
 
     public static class Boss
