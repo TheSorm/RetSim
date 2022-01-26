@@ -14679,10 +14679,6 @@
       "Armor": 0,
       "HitRating": 21
     },
-    "OnUse": {
-      "ID": 31025,
-      "Name": "Braided Eternium Chain"
-    },
     "OnEquip": {
       "ID": 33488,
       "Name": "Weapon Damage"

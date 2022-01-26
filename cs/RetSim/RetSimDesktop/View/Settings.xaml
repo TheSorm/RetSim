@@ -12,769 +12,779 @@
              xmlns:viewmodel="clr-namespace:RetSimDesktop.ViewModel"
              d:DataContext="{d:DesignInstance viewmodel:RetSimUIModel}"
              mc:Ignorable="d" 
-             d:DesignHeight="1500" d:DesignWidth="900" d:Background="White">
+             d:DesignHeight="800" d:DesignWidth="1100" d:Background="White">
     <UserControl.Resources>
         <local:StringEmptyOrZeroConverter x:Key="StringEmptyConverter" />
         <local:ComparisonConverter x:Key="ComparisonConverter" />
         <local:BossToIDConverter x:Key="BossToIDConverter" />
     </UserControl.Resources>
-    <ScrollViewer>
-        <StackPanel Margin="5,5,5,5">
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-                <Button Width="80" Content="Reset" Click="ResetButton_Click"></Button>
-            </StackPanel>
-            <Expander IsExpanded="True" Margin="10" Header="Sim">
-                <WrapPanel>
-                    <GroupBox Margin="5" Height="110" VerticalAlignment="Top" HorizontalAlignment="Left">
-                        <GroupBox.Header>
-                            Player
-                        </GroupBox.Header>
-                        <StackPanel>
-                            <Grid Width="100">
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="*"/>
-                                </Grid.ColumnDefinitions>
-                                <ComboBox>
-                                    <ComboBoxItem IsSelected="{Binding Path=PlayerSettings.SelectedRace, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static ret:Races.Human}}">Human</ComboBoxItem>
-                                    <ComboBoxItem IsSelected="{Binding Path=PlayerSettings.SelectedRace, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static ret:Races.Dwarf}}">Dwarf</ComboBoxItem>
-                                    <ComboBoxItem IsSelected="{Binding Path=PlayerSettings.SelectedRace, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static ret:Races.Draenei}}">Draenei</ComboBoxItem>
-                                    <ComboBoxItem IsSelected="{Binding Path=PlayerSettings.SelectedRace, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static ret:Races.BloodElf}}">Blood Elf</ComboBoxItem>
-                                </ComboBox>
-                            </Grid>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="30px" />
+        </Grid.RowDefinitions>
+        <TabControl>
+            <TabItem Header="General">
+                <StackPanel HorizontalAlignment="Center">
+                    <StackPanel Orientation="Horizontal">
+                        <GroupBox Margin="5" Height="110" VerticalAlignment="Top" HorizontalAlignment="Left">
+                            <GroupBox.Header>
+                                Player
+                            </GroupBox.Header>
                             <StackPanel>
-                                <RadioButton Margin="0,2,0,2" x:Name="Aldor" Content="Aldor" GroupName="ShattrathFaction" IsChecked="{Binding Path=PlayerSettings.SelectedShattrathFaction, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static ret3:ShattrathFaction.Aldor}}"/>
-                                <RadioButton Margin="0,2,0,2" x:Name="Scryer" Content="Scryer" GroupName="ShattrathFaction" IsChecked="{Binding Path=PlayerSettings.SelectedShattrathFaction, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static ret3:ShattrathFaction.Scryer}}"/>
+                                <Grid Width="100">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <ComboBox>
+                                        <ComboBoxItem IsSelected="{Binding Path=PlayerSettings.SelectedRace, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static ret:Races.Human}}">Human</ComboBoxItem>
+                                        <ComboBoxItem IsSelected="{Binding Path=PlayerSettings.SelectedRace, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static ret:Races.Dwarf}}">Dwarf</ComboBoxItem>
+                                        <ComboBoxItem IsSelected="{Binding Path=PlayerSettings.SelectedRace, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static ret:Races.Draenei}}">Draenei</ComboBoxItem>
+                                        <ComboBoxItem IsSelected="{Binding Path=PlayerSettings.SelectedRace, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static ret:Races.BloodElf}}">Blood Elf</ComboBoxItem>
+                                    </ComboBox>
+                                </Grid>
+                                <StackPanel>
+                                    <RadioButton Margin="0,2,0,2" x:Name="Aldor" Content="Aldor" GroupName="ShattrathFaction" IsChecked="{Binding Path=PlayerSettings.SelectedShattrathFaction, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static ret3:ShattrathFaction.Aldor}}"/>
+                                    <RadioButton Margin="0,2,0,2" x:Name="Scryer" Content="Scryer" GroupName="ShattrathFaction" IsChecked="{Binding Path=PlayerSettings.SelectedShattrathFaction, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static ret3:ShattrathFaction.Scryer}}"/>
+                                </StackPanel>
                             </StackPanel>
-                        </StackPanel>
-                    </GroupBox>
-                    <GroupBox Margin="5" Height="110">
-                        <GroupBox.Header>
-                            Encounter
-                        </GroupBox.Header>
-                        <StackPanel>
-                            <Grid Margin="0,2,0,2" Width="180">
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="*"/>
-                                </Grid.ColumnDefinitions>
-                                <ComboBox x:Name="BossesComboBox" DisplayMemberPath="Name" SelectedItem="{Binding EncounterSettings.EncounterID, Converter={StaticResource BossToIDConverter}}"></ComboBox>
-                            </Grid>
-                            <Grid Margin="0,2,0,2">
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="*"/>
-                                    <ColumnDefinition Width="10"/>
-                                    <ColumnDefinition Width="60"/>
-                                </Grid.ColumnDefinitions>
-                                <Label Margin="0" Padding="0" VerticalAlignment="Center" Content="Fight Duration (min)"/>
-                                <TextBox Grid.Column="2" HorizontalContentAlignment="Right" PreviewTextInput="NumberValidationTextBox" ToolTipService.InitialShowDelay="0" ToolTip="Time in seconds." Text="{Binding EncounterSettings.MinFightDurationSeconds, Converter={StaticResource StringEmptyConverter}, ConverterParameter='1'}" />
-                            </Grid>
-                            <Grid Margin="0,2,0,2">
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="*"/>
-                                    <ColumnDefinition Width="10"/>
-                                    <ColumnDefinition Width="60"/>
-                                </Grid.ColumnDefinitions>
-                                <Label Margin="0" Padding="0" VerticalAlignment="Center" Content="Fight Duration (max)"/>
-                                <TextBox Grid.Column="2" HorizontalContentAlignment="Right" PreviewTextInput="NumberValidationTextBox" ToolTipService.InitialShowDelay="0" ToolTip="Time in seconds." Text="{Binding EncounterSettings.MaxFightDurationSeconds, Converter={StaticResource StringEmptyConverter}, ConverterParameter='1'}" />
-                            </Grid>
-                        </StackPanel>
-                    </GroupBox>
-                    <GroupBox Margin="5" Height="110" VerticalAlignment="Top" HorizontalAlignment="Left">
-                        <GroupBox.Header>
-                            Sim
-                        </GroupBox.Header>
-                        <StackPanel>
-                            <Grid Margin="0,2,0,2">
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="*"/>
-                                    <ColumnDefinition Width="10"/>
-                                    <ColumnDefinition Width="60"/>
-                                </Grid.ColumnDefinitions>
-                                <Label Margin="0" Padding="0" VerticalAlignment="Center" Content="Simulations"/>
-                                <TextBox Grid.Column="2" HorizontalContentAlignment="Right" PreviewTextInput="NumberValidationTextBox" Text="{Binding SimSettings.SimulationCount, Converter={StaticResource StringEmptyConverter}, ConverterParameter='1'}" />
-                            </Grid>
-                            <Grid Margin="0,2,0,2" x:Name="MaxCSDelay" ToolTipService.InitialShowDelay="0">
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="*"/>
-                                    <ColumnDefinition Width="10"/>
-                                    <ColumnDefinition Width="60"/>
-                                </Grid.ColumnDefinitions>
-                                <Label Margin="0" Padding="0" VerticalAlignment="Center" Content="Max CS Delay"/>
-                                <TextBox Grid.Column="2" HorizontalContentAlignment="Right" PreviewTextInput="NumberValidationTextBox" Text="{Binding SimSettings.MaxCSDelay, Converter={StaticResource StringEmptyConverter}, ConverterParameter='1'}" />
-                            </Grid>
-                        </StackPanel>
-                    </GroupBox>
-                    <GroupBox Margin="5" Height="110" >
-                        <GroupBox.Header>
-                            Phases
-                        </GroupBox.Header>
-                        <StackPanel>
-                            <CheckBox Content = "Phase 1" HorizontalAlignment = "Left" IsChecked="{Binding SelectedPhases.Phase1Selected}" VerticalAlignment = "Top"  />
-                            <CheckBox Content = "Phase 2" HorizontalAlignment = "Left" IsChecked="{Binding SelectedPhases.Phase2Selected}" VerticalAlignment = "Top"  />
-                            <CheckBox Content = "Phase 3" HorizontalAlignment = "Left" IsChecked="{Binding SelectedPhases.Phase3Selected}" VerticalAlignment = "Top"  />
-                            <CheckBox Content = "Phase 4" HorizontalAlignment = "Left" IsChecked="{Binding SelectedPhases.Phase4Selected}"  VerticalAlignment = "Top"  />
-                            <CheckBox Content = "Phase 5" HorizontalAlignment = "Left" IsChecked="{Binding SelectedPhases.Phase5Selected}"  VerticalAlignment = "Top"  />
-                        </StackPanel>
-                    </GroupBox>
-                    <GroupBox Margin="5" VerticalAlignment="Top" HorizontalAlignment="Left" Height="110">
-                        <GroupBox.Header>
-                            Gems
-                        </GroupBox.Header>
-                        <StackPanel>
-                            <Grid Margin="0,2,0,2">
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="*"/>
-                                    <ColumnDefinition Width="10"/>
-                                    <ColumnDefinition Width="50"/>
-                                </Grid.ColumnDefinitions>
-                                <Label Margin="0" Padding="0" VerticalAlignment="Center" Content="Red Sockets"/>
-                                <Button Grid.Column="2" Padding="0" Click="RedSocketSelect_Click">...</Button>
-                            </Grid>
-                            <Grid Margin="0,2,0,2">
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="*"/>
-                                    <ColumnDefinition Width="10"/>
-                                    <ColumnDefinition Width="50"/>
-                                </Grid.ColumnDefinitions>
-                                <Label Margin="0" Padding="0" VerticalAlignment="Center" Content="Yellow Sockets"/>
-                                <Button Grid.Column="2" Padding="0" Click="YellowSocketSelect_Click">...</Button>
-                            </Grid>
-                            <Grid Margin="0,2,0,2">
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="*"/>
-                                    <ColumnDefinition Width="10"/>
-                                    <ColumnDefinition Width="50"/>
-                                </Grid.ColumnDefinitions>
-                                <Label Margin="0" Padding="0" VerticalAlignment="Center" Content="Blue Sockets"/>
-                                <Button Grid.Column="2" Padding="0" Click="BlueSocketSelect_Click">...</Button>
-                            </Grid>
-                            <Grid Margin="0,2,0,2">
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="*"/>
-                                    <ColumnDefinition Width="10"/>
-                                    <ColumnDefinition Width="50"/>
-                                </Grid.ColumnDefinitions>
-                                <Label Margin="0" Padding="0" VerticalAlignment="Center" Content="Meta Sockets"/>
-                                <Button Grid.Column="2" Padding="0" Click="MetaSocketSelect_Click">...</Button>
-                            </Grid>
-                        </StackPanel>
-                    </GroupBox>
-                </WrapPanel>
-            </Expander>
-            <Expander IsExpanded="True" Margin="10" Header="Talents">
-                <WrapPanel>
-                    <GroupBox Margin="5" Width="230" Height="295" VerticalAlignment="Top" HorizontalAlignment="Left">
-                        <GroupBox.Header>
-                            Holy
-                        </GroupBox.Header>
-                        <StackPanel>
-                            <CheckBox Margin="0,2,0,2" VerticalContentAlignment="Center" HorizontalContentAlignment="Stretch" IsChecked="{Binding SelectedTalents.DivineStrengthEnabled}">
-                                <Grid>
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="*"/>
-                                        <ColumnDefinition Width="10"/>
-                                        <ColumnDefinition Width="40"/>
-                                    </Grid.ColumnDefinitions>
-                                    <Label Margin="0" Padding="0" VerticalAlignment="Center" Content="Divine Strength"/>
-                                    <ComboBox Grid.Column="2" SelectedItem="{Binding SelectedTalents.DivineStrengthRank}">
-                                        <ComboBox.ItemsSource>
-                                            <x:Array Type="{x:Type sys:Int32}">
-                                                <sys:Int32>1</sys:Int32>
-                                                <sys:Int32>2</sys:Int32>
-                                                <sys:Int32>3</sys:Int32>
-                                                <sys:Int32>4</sys:Int32>
-                                                <sys:Int32>5</sys:Int32>
-                                            </x:Array>
-                                        </ComboBox.ItemsSource>
-                                    </ComboBox>
-                                </Grid>
-                            </CheckBox>
-                            <CheckBox Margin="0,2,0,2" VerticalContentAlignment="Center" HorizontalContentAlignment="Stretch" IsChecked="{Binding SelectedTalents.DivineIntellectEnabled}">
-                                <Grid>
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="*"/>
-                                        <ColumnDefinition Width="10"/>
-                                        <ColumnDefinition Width="40"/>
-                                    </Grid.ColumnDefinitions>
-                                    <Label Margin="0" Padding="0" VerticalAlignment="Center" Content="Divine Intellect"/>
-                                    <ComboBox Grid.Column="2" SelectedItem="{Binding SelectedTalents.DivineIntellectRank}">
-                                        <ComboBox.ItemsSource>
-                                            <x:Array Type="{x:Type sys:Int32}">
-                                                <sys:Int32>1</sys:Int32>
-                                                <sys:Int32>2</sys:Int32>
-                                                <sys:Int32>3</sys:Int32>
-                                                <sys:Int32>4</sys:Int32>
-                                                <sys:Int32>5</sys:Int32>
-                                            </x:Array>
-                                        </ComboBox.ItemsSource>
-                                    </ComboBox>
-                                </Grid>
-                            </CheckBox>
-                        </StackPanel>
-                    </GroupBox>
-                    <GroupBox Margin="5" Width="230" Height="295" VerticalAlignment="Top" HorizontalAlignment="Left">
-                        <GroupBox.Header>
-                            Protection
-                        </GroupBox.Header>
-                        <StackPanel>
-                            <CheckBox Margin="0,2,0,2" VerticalContentAlignment="Center" HorizontalContentAlignment="Stretch" IsChecked="{Binding SelectedTalents.PrecisionEnabled}">
-                                <Grid>
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="*"/>
-                                        <ColumnDefinition Width="10"/>
-                                        <ColumnDefinition Width="40"/>
-                                    </Grid.ColumnDefinitions>
-                                    <Label Margin="0" Padding="0" VerticalAlignment="Center" Content="Precision"/>
-                                    <ComboBox Grid.Column="2" SelectedItem="{Binding SelectedTalents.PrecisionRank}">
-                                        <ComboBox.ItemsSource>
-                                            <x:Array Type="{x:Type sys:Int32}">
-                                                <sys:Int32>1</sys:Int32>
-                                                <sys:Int32>2</sys:Int32>
-                                                <sys:Int32>3</sys:Int32>
-                                            </x:Array>
-                                        </ComboBox.ItemsSource>
-                                    </ComboBox>
-                                </Grid>
-                            </CheckBox>
-                        </StackPanel>
-                    </GroupBox>
-                    <GroupBox Margin="5" Width="230" Height="295" VerticalAlignment="Top" HorizontalAlignment="Left">
-                        <GroupBox.Header>
-                            Retribution
-                        </GroupBox.Header>
-                        <StackPanel>
-                            <CheckBox Margin="0,2,0,2" VerticalContentAlignment="Center" HorizontalContentAlignment="Stretch" IsChecked="{Binding SelectedTalents.BenedictionEnabled}">
-                                <Grid>
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="*"/>
-                                        <ColumnDefinition Width="10"/>
-                                        <ColumnDefinition Width="40"/>
-                                    </Grid.ColumnDefinitions>
-                                    <Label Margin="0" Padding="0" VerticalAlignment="Center" Content="Benediction"/>
-                                    <ComboBox Grid.Column="2" SelectedItem="{Binding SelectedTalents.BenedictionRank}">
-                                        <ComboBox.ItemsSource>
-                                            <x:Array Type="{x:Type sys:Int32}">
-                                                <sys:Int32>1</sys:Int32>
-                                                <sys:Int32>2</sys:Int32>
-                                                <sys:Int32>3</sys:Int32>
-                                                <sys:Int32>4</sys:Int32>
-                                                <sys:Int32>5</sys:Int32>
-                                            </x:Array>
-                                        </ComboBox.ItemsSource>
-                                    </ComboBox>
-                                </Grid>
-                            </CheckBox>
-                            <CheckBox Margin="0,2,0,2" VerticalContentAlignment="Center" HorizontalContentAlignment="Stretch" IsChecked="{Binding SelectedTalents.ImprovedJudgementEnabled}">
-                                <Grid>
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="*"/>
-                                        <ColumnDefinition Width="10"/>
-                                        <ColumnDefinition Width="40"/>
-                                    </Grid.ColumnDefinitions>
-                                    <Label Margin="0" Padding="0" VerticalAlignment="Center" Content="Improved Judgement"/>
-                                    <ComboBox Grid.Column="2" SelectedItem="{Binding SelectedTalents.ImprovedJudgementRank}">
-                                        <ComboBox.ItemsSource>
-                                            <x:Array Type="{x:Type sys:Int32}">
-                                                <sys:Int32>1</sys:Int32>
-                                                <sys:Int32>2</sys:Int32>
-                                            </x:Array>
-                                        </ComboBox.ItemsSource>
-                                    </ComboBox>
-                                </Grid>
-                            </CheckBox>
-                            <CheckBox Margin="0,2,0,2" VerticalContentAlignment="Center" HorizontalContentAlignment="Stretch" IsChecked="{Binding SelectedTalents.ConvictionEnabled}">
-                                <Grid>
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="*"/>
-                                        <ColumnDefinition Width="10"/>
-                                        <ColumnDefinition Width="40"/>
-                                    </Grid.ColumnDefinitions>
-                                    <Label Margin="0" Padding="0" VerticalAlignment="Center" Content="Conviction"/>
-                                    <ComboBox Grid.Column="2" SelectedItem="{Binding SelectedTalents.ConvictionRank}">
-                                        <ComboBox.ItemsSource>
-                                            <x:Array Type="{x:Type sys:Int32}">
-                                                <sys:Int32>1</sys:Int32>
-                                                <sys:Int32>2</sys:Int32>
-                                                <sys:Int32>3</sys:Int32>
-                                                <sys:Int32>4</sys:Int32>
-                                                <sys:Int32>5</sys:Int32>
-                                            </x:Array>
-                                        </ComboBox.ItemsSource>
-                                    </ComboBox>
-                                </Grid>
-                            </CheckBox>
-                            <CheckBox Margin="0,2,0,2" VerticalContentAlignment="Center" HorizontalContentAlignment="Stretch" IsChecked="{Binding SelectedTalents.CrusadeEnabled}">
-                                <Grid>
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="*"/>
-                                        <ColumnDefinition Width="10"/>
-                                        <ColumnDefinition Width="40"/>
-                                    </Grid.ColumnDefinitions>
-                                    <Label Margin="0" Padding="0" VerticalAlignment="Center" Content="Crusade"/>
-                                    <ComboBox Grid.Column="2" SelectedItem="{Binding SelectedTalents.CrusadeRank}">
-                                        <ComboBox.ItemsSource>
-                                            <x:Array Type="{x:Type sys:Int32}">
-                                                <sys:Int32>1</sys:Int32>
-                                                <sys:Int32>2</sys:Int32>
-                                                <sys:Int32>3</sys:Int32>
-                                            </x:Array>
-                                        </ComboBox.ItemsSource>
-                                    </ComboBox>
-                                </Grid>
-                            </CheckBox>
-                            <CheckBox Margin="0,2,0,2" VerticalContentAlignment="Center" HorizontalContentAlignment="Stretch" IsChecked="{Binding SelectedTalents.TwoHandedWeaponSpecializationEnabled}">
-                                <Grid>
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="*"/>
-                                        <ColumnDefinition Width="10"/>
-                                        <ColumnDefinition Width="40"/>
-                                    </Grid.ColumnDefinitions>
-                                    <Label Margin="0" Padding="0" VerticalAlignment="Center" Content="Two-Handed Weapon Spec."/>
-                                    <ComboBox Grid.Column="2" SelectedItem="{Binding SelectedTalents.TwoHandedWeaponSpecializationRank}">
-                                        <ComboBox.ItemsSource>
-                                            <x:Array Type="{x:Type sys:Int32}">
-                                                <sys:Int32>1</sys:Int32>
-                                                <sys:Int32>2</sys:Int32>
-                                                <sys:Int32>3</sys:Int32>
-                                            </x:Array>
-                                        </ComboBox.ItemsSource>
-                                    </ComboBox>
-                                </Grid>
-                            </CheckBox>
-                            <CheckBox Margin="0,4,0,4" VerticalContentAlignment="Center" HorizontalContentAlignment="Stretch" IsChecked="{Binding SelectedTalents.SanctityAuraEnabled}">
-                                <Grid>
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="*"/>
-                                        <ColumnDefinition Width="10"/>
-                                        <ColumnDefinition Width="40"/>
-                                    </Grid.ColumnDefinitions>
-                                    <Label Margin="0" Padding="0" VerticalAlignment="Center" Content="Sanctity Aura"/>
-                                </Grid>
-                            </CheckBox>
-                            <CheckBox Margin="0,2,0,2" VerticalContentAlignment="Center" HorizontalContentAlignment="Stretch" IsChecked="{Binding SelectedTalents.ImprovedSanctityAuraEnabled}">
-                                <Grid>
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="*"/>
-                                        <ColumnDefinition Width="10"/>
-                                        <ColumnDefinition Width="40"/>
-                                    </Grid.ColumnDefinitions>
-                                    <Label Margin="0" Padding="0" VerticalAlignment="Center" Content="Improved Sanctity Aura"/>
-                                    <ComboBox Grid.Column="2" SelectedItem="{Binding SelectedTalents.ImprovedSanctityAuraRank}">
-                                        <ComboBox.ItemsSource>
-                                            <x:Array Type="{x:Type sys:Int32}">
-                                                <sys:Int32>1</sys:Int32>
-                                                <sys:Int32>2</sys:Int32>
-                                            </x:Array>
-                                        </ComboBox.ItemsSource>
-                                    </ComboBox>
-                                </Grid>
-                            </CheckBox>
-                            <CheckBox Margin="0,2,0,2" VerticalContentAlignment="Center" HorizontalContentAlignment="Stretch" IsChecked="{Binding SelectedTalents.VengeanceEnabled}">
-                                <Grid>
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="*"/>
-                                        <ColumnDefinition Width="10"/>
-                                        <ColumnDefinition Width="40"/>
-                                    </Grid.ColumnDefinitions>
-                                    <Label Margin="0" Padding="0" VerticalAlignment="Center" Content="Vengeance"/>
-                                    <ComboBox Grid.Column="2" SelectedItem="{Binding SelectedTalents.VengeanceRank}">
-                                        <ComboBox.ItemsSource>
-                                            <x:Array Type="{x:Type sys:Int32}">
-                                                <sys:Int32>1</sys:Int32>
-                                                <sys:Int32>2</sys:Int32>
-                                                <sys:Int32>3</sys:Int32>
-                                                <sys:Int32>4</sys:Int32>
-                                                <sys:Int32>5</sys:Int32>
-                                            </x:Array>
-                                        </ComboBox.ItemsSource>
-                                    </ComboBox>
-                                </Grid>
-                            </CheckBox>
-                            <CheckBox Margin="0,2,0,2" VerticalContentAlignment="Center" HorizontalContentAlignment="Stretch" IsChecked="{Binding SelectedTalents.SanctifiedJudgementEnabled}">
-                                <Grid>
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="*"/>
-                                        <ColumnDefinition Width="10"/>
-                                        <ColumnDefinition Width="40"/>
-                                    </Grid.ColumnDefinitions>
-                                    <Label Margin="0" Padding="0" VerticalAlignment="Center" Content="Sanctified Judgement"/>
-                                    <ComboBox Grid.Column="2" SelectedItem="{Binding SelectedTalents.SanctifiedJudgementRank}">
-                                        <ComboBox.ItemsSource>
-                                            <x:Array Type="{x:Type sys:Int32}">
-                                                <sys:Int32>1</sys:Int32>
-                                                <sys:Int32>2</sys:Int32>
-                                                <sys:Int32>3</sys:Int32>
-                                            </x:Array>
-                                        </ComboBox.ItemsSource>
-                                    </ComboBox>
-                                </Grid>
-                            </CheckBox>
-                            <CheckBox Margin="0,2,0,2" VerticalContentAlignment="Center" HorizontalContentAlignment="Stretch" IsChecked="{Binding SelectedTalents.SanctifiedSealsEnabled}">
-                                <Grid>
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="*"/>
-                                        <ColumnDefinition Width="10"/>
-                                        <ColumnDefinition Width="40"/>
-                                    </Grid.ColumnDefinitions>
-                                    <Label Margin="0" Padding="0" VerticalAlignment="Center" Content="Sanctified Seals"/>
-                                    <ComboBox Grid.Column="2" SelectedItem="{Binding SelectedTalents.SanctifiedSealsRank}">
-                                        <ComboBox.ItemsSource>
-                                            <x:Array Type="{x:Type sys:Int32}">
-                                                <sys:Int32>1</sys:Int32>
-                                                <sys:Int32>2</sys:Int32>
-                                                <sys:Int32>3</sys:Int32>
-                                            </x:Array>
-                                        </ComboBox.ItemsSource>
-                                    </ComboBox>
-                                </Grid>
-                            </CheckBox>
-                            <CheckBox Margin="0,2,0,2" VerticalContentAlignment="Center" HorizontalContentAlignment="Stretch" IsChecked="{Binding SelectedTalents.FanaticismEnabled}">
-                                <Grid>
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="*"/>
-                                        <ColumnDefinition Width="10"/>
-                                        <ColumnDefinition Width="40"/>
-                                    </Grid.ColumnDefinitions>
-                                    <Label Margin="0" Padding="0" VerticalAlignment="Center" Content="Fanaticism"/>
-                                    <ComboBox Grid.Column="2" SelectedItem="{Binding SelectedTalents.FanaticismRank}">
-                                        <ComboBox.ItemsSource>
-                                            <x:Array Type="{x:Type sys:Int32}">
-                                                <sys:Int32>1</sys:Int32>
-                                                <sys:Int32>2</sys:Int32>
-                                                <sys:Int32>3</sys:Int32>
-                                                <sys:Int32>4</sys:Int32>
-                                                <sys:Int32>5</sys:Int32>
-                                            </x:Array>
-                                        </ComboBox.ItemsSource>
-                                    </ComboBox>
-                                </Grid>
-                            </CheckBox>
-                        </StackPanel>
-                    </GroupBox>
-                </WrapPanel>
-            </Expander>
-            <Expander IsExpanded="True" Margin="10" Header="Consumables">
-                <WrapPanel>
-                    <GroupBox Margin="5" Width="200" Height="180" VerticalAlignment="Top" HorizontalAlignment="Left">
-                        <GroupBox.Header>
-                            Battle Elixir
-                        </GroupBox.Header>
-                        <StackPanel>
-                            <RadioButton Margin="0,2,0,2" x:Name="NoBattleElixir" Content="None" GroupName="BattleElixir" IsChecked="{Binding Path=SelectedConsumables.SelectedBattleElixir, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:BattleElixir.None}}"/>
-                            <RadioButton Margin="0,2,0,2" x:Name="FlaskofRelentlessAssault" Content="Flask of Relentless Assault" GroupName="BattleElixir" IsChecked="{Binding Path=SelectedConsumables.SelectedBattleElixir, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:BattleElixir.FlaskofRelentlessAssault}}"/>
-                            <RadioButton Margin="0,2,0,2" x:Name="ElixirofDemonslaying" Content="Elixir of Demonslaying" GroupName="BattleElixir" IsChecked="{Binding Path=SelectedConsumables.SelectedBattleElixir, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:BattleElixir.ElixirofDemonslaying}}"/>
-                            <RadioButton Margin="0,2,0,2" x:Name="FelStrengthElixir" Content="Fel Strength Elixir" GroupName="BattleElixir" IsChecked="{Binding Path=SelectedConsumables.SelectedBattleElixir, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:BattleElixir.FelStrengthElixir}}"/>
-                            <RadioButton Margin="0,2,0,2" x:Name="ElixirofMajorStrength" Content="Elixir of Major Strength" GroupName="BattleElixir" IsChecked="{Binding Path=SelectedConsumables.SelectedBattleElixir, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:BattleElixir.ElixirofMajorStrength}}"/>
-                            <RadioButton Margin="0,2,0,2" x:Name="ElixirofMajorAgility" Content="Elixir of Major Agility" GroupName="BattleElixir" IsChecked="{Binding Path=SelectedConsumables.SelectedBattleElixir, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:BattleElixir.ElixirofMajorAgility}}"/>
-                            <RadioButton Margin="0,2,0,2" x:Name="ElixirofMastery" Content="Elixir of Mastery" GroupName="BattleElixir" IsChecked="{Binding Path=SelectedConsumables.SelectedBattleElixir, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:BattleElixir.ElixirofMastery}}"/>
-                            <RadioButton Margin="0,2,0,2" x:Name="ElixiroftheMongoose" Content="Elixir of the Mongoose" GroupName="BattleElixir" IsChecked="{Binding Path=SelectedConsumables.SelectedBattleElixir, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:BattleElixir.ElixiroftheMongoose}}"/>
-                        </StackPanel>
-                    </GroupBox>
-                    <GroupBox Margin="5" Width="200" Height="180" VerticalAlignment="Top" HorizontalAlignment="Left">
-                        <GroupBox.Header>
-                            Guardian Elixir
-                        </GroupBox.Header>
-                        <StackPanel>
-                            <RadioButton Margin="0,2,0,2" x:Name="NoGuardianElixir" Content="None" GroupName="GuardianElixir" IsChecked="{Binding Path=SelectedConsumables.SelectedGuardianElixir, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:GuardianElixir.None}}"/>
-                            <RadioButton Margin="0,2,0,2" x:Name="ElixirofMajorMageblood" Content="Elixir of Major Mageblood" GroupName="GuardianElixir" IsChecked="{Binding Path=SelectedConsumables.SelectedGuardianElixir, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:GuardianElixir.ElixirofMajorMageblood}}"/>
-                            <RadioButton Margin="0,2,0,2" x:Name="ElixirofDraenicWisdom" Content="Elixir of Draenic Wisdom" GroupName="GuardianElixir" IsChecked="{Binding Path=SelectedConsumables.SelectedGuardianElixir, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:GuardianElixir.ElixirofDraenicWisdom}}"/>
-                            <RadioButton Margin="0,2,0,2" x:Name="ElixirofMajorFortitude" Content="Elixir of Major Fortitude" GroupName="GuardianElixir" IsChecked="{Binding Path=SelectedConsumables.SelectedGuardianElixir, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:GuardianElixir.ElixirofMajorFortitude}}"/>
-                            <RadioButton Margin="0,2,0,2" x:Name="SpiritofZanza" Content="Spirit of Zanza" GroupName="GuardianElixir" IsChecked="{Binding Path=SelectedConsumables.SelectedGuardianElixir, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:GuardianElixir.SpiritofZanza}}"/>
-                        </StackPanel>
-                    </GroupBox>
-                    <GroupBox Margin="5" Width="200" Height="180" VerticalAlignment="Top" HorizontalAlignment="Left">
-                        <GroupBox.Header>
-                            Temporary Weapon Enchantment
-                        </GroupBox.Header>
-                        <StackPanel>
-                            <RadioButton Checked="TemporaryWeaponEnchantment_Checked" Margin="0,2,0,2" x:Name="NoTemporaryWeaponEnchantment" Content="None" GroupName="TemporaryWeaponEnchantment" IsChecked="{Binding Path=SelectedConsumables.SelectedTemporaryWeaponEnchantment, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:TemporaryWeaponEnchantment.None}}"/>
-                            <RadioButton Checked="TemporaryWeaponEnchantment_Checked" Margin="0,2,0,2" x:Name="AdamantiteSharpeningStone" Content="Adamantite Sharpening Stone" GroupName="TemporaryWeaponEnchantment" IsChecked="{Binding Path=SelectedConsumables.SelectedTemporaryWeaponEnchantment, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:TemporaryWeaponEnchantment.AdamantiteSharpeningStone}}"/>
-                            <RadioButton Checked="TemporaryWeaponEnchantment_Checked" Margin="0,2,0,2" x:Name="ElementalSharpeningStone" Content="Elemental Sharpening Stone" GroupName="TemporaryWeaponEnchantment" IsChecked="{Binding Path=SelectedConsumables.SelectedTemporaryWeaponEnchantment, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:TemporaryWeaponEnchantment.ElementalSharpeningStone}}"/>
-                            <RadioButton Checked="TemporaryWeaponEnchantment_Checked" Margin="0,2,0,2" x:Name="SuperiorWizardOil" Content="Superior Wizard Oil" GroupName="TemporaryWeaponEnchantment" IsChecked="{Binding Path=SelectedConsumables.SelectedTemporaryWeaponEnchantment, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:TemporaryWeaponEnchantment.SuperiorWizardOil}}"/>
-                            <RadioButton Checked="TemporaryWeaponEnchantment_Checked" Margin="0,2,0,2" x:Name="BrilliantWizardOil" Content="Brilliant Wizard Oil" GroupName="TemporaryWeaponEnchantment" IsChecked="{Binding Path=SelectedConsumables.SelectedTemporaryWeaponEnchantment, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:TemporaryWeaponEnchantment.BrilliantWizardOil}}"/>
-                        </StackPanel>
-                    </GroupBox>
-                    <GroupBox Margin="5" Width="200" Height="180" VerticalAlignment="Top" HorizontalAlignment="Left">
-                        <GroupBox.Header>
-                            Food
-                        </GroupBox.Header>
-                        <StackPanel>
-                            <RadioButton Margin="0,2,0,2" x:Name="NoFood" Content="None" GroupName="Food" IsChecked="{Binding Path=SelectedConsumables.SelectedFood, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:Food.None}}"/>
-                            <RadioButton Margin="0,2,0,2" x:Name="Strength20Food" Content="20 Strength" GroupName="Food" IsChecked="{Binding Path=SelectedConsumables.SelectedFood, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:Food.Strength20Food}}"/>
-                            <RadioButton Margin="0,2,0,2" x:Name="Agility20Food" Content="20 Agility" GroupName="Food" IsChecked="{Binding Path=SelectedConsumables.SelectedFood, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:Food.Agility20Food}}"/>
-                            <RadioButton Margin="0,2,0,2" x:Name="SpellPower23Food" Content="23 Spell Power" GroupName="Food" IsChecked="{Binding Path=SelectedConsumables.SelectedFood, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:Food.SpellPower23Food}}"/>
-                            <RadioButton Margin="0,2,0,2" x:Name="HitRating20Food" Content="20 Hit Rating" GroupName="Food" IsChecked="{Binding Path=SelectedConsumables.SelectedFood, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:Food.HitRating20Food}}"/>
-                            <RadioButton Margin="0,2,0,2" x:Name="MP58Food" Content="8 MP5" GroupName="Food" IsChecked="{Binding Path=SelectedConsumables.SelectedFood, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:Food.MP58Food}}"/>
-                        </StackPanel>
-                    </GroupBox>
-                    <GroupBox Margin="5" Width="200" Height="180" VerticalAlignment="Top" HorizontalAlignment="Left">
-                        <GroupBox.Header>
-                            Primary Potion
-                        </GroupBox.Header>
-                        <StackPanel>
-                            <RadioButton Margin="0,2,0,2" x:Name="NoPrimaryPotion" Content="None" GroupName="PrimaryPotion" IsChecked="{Binding Path=SelectedCooldowns.SelectedPrimaryPotion, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:PrimaryPotion.None}}"/>
-                            <RadioButton Margin="0,2,0,2" x:Name="HastePotion" Content="Haste Potion" GroupName="PrimaryPotion" IsChecked="{Binding Path=SelectedCooldowns.SelectedPrimaryPotion, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:PrimaryPotion.HastePotion}}"/>
-                            <RadioButton Margin="0,2,0,2" x:Name="InsaneStrengthPotion" Content="Insane Strength Potion" GroupName="PrimaryPotion" IsChecked="{Binding Path=SelectedCooldowns.SelectedPrimaryPotion, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:PrimaryPotion.InsaneStrengthPotion}}"/>
-                            <RadioButton Margin="0,2,0,2" x:Name="SuperManaPotion" Content="Super Mana Potion" GroupName="PrimaryPotion" IsChecked="{Binding Path=SelectedCooldowns.SelectedPrimaryPotion, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:PrimaryPotion.SuperManaPotion}}"/>
-                            <RadioButton Margin="0,2,0,2" x:Name="MadAlchemistsPotion" Content="Mad Alchemist's Potion" GroupName="PrimaryPotion" IsChecked="{Binding Path=SelectedCooldowns.SelectedPrimaryPotion, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:PrimaryPotion.MadAlchemistsPotion}}"/>
-                        </StackPanel>
-                    </GroupBox>
-                    <GroupBox Margin="5" Width="200" Height="180" VerticalAlignment="Top" HorizontalAlignment="Left">
-                        <GroupBox.Header>
-                            Secondary Potion
-                        </GroupBox.Header>
-                        <StackPanel>
-                            <RadioButton Margin="0,2,0,2" x:Name="NoSecondaryPotion" Content="None" GroupName="SecondaryPotion" IsChecked="{Binding Path=SelectedCooldowns.SelectedSecondaryPotion, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:SecondaryPotion.None}}"/>
-                            <RadioButton Margin="0,2,0,2" x:Name="DemonicDarkRune" Content="Demonic/Dark Rune" GroupName="SecondaryPotion" IsChecked="{Binding Path=SelectedCooldowns.SelectedSecondaryPotion, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:SecondaryPotion.DemonicDarkRune}}"/>
-                            <RadioButton Margin="0,2,0,2" x:Name="FlameCap" Content="Flame Cap" GroupName="SecondaryPotion" IsChecked="{Binding Path=SelectedCooldowns.SelectedSecondaryPotion, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:SecondaryPotion.FlameCap}}"/>
-                        </StackPanel>
-                    </GroupBox>
-                    <GroupBox Margin="5" Width="200" Height="180" VerticalAlignment="Top" HorizontalAlignment="Left">
-                        <GroupBox.Header>
-                            Miscellaneous
-                        </GroupBox.Header>
-                        <StackPanel>
-                            <CheckBox Margin="0,2,0,2" VerticalContentAlignment="Center"  x:Name="ScrollofStrength" IsChecked="{Binding SelectedConsumables.ScrollOfStrengthEnabled}">
-                                <ComboBox Width="168" >
-                                    <ComboBoxItem IsSelected="{Binding Path=SelectedConsumables.SelectedScrollOfStrength, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:ScrollOfStrength.ScrollofStrength}}">
-                                        Scroll of Strength
-                                    </ComboBoxItem>
-                                    <ComboBoxItem IsSelected="{Binding Path=SelectedConsumables.SelectedScrollOfStrength, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:ScrollOfStrength.ScrollofStrengthII}}">
-                                        Scroll of Strength II
-                                    </ComboBoxItem>
-                                    <ComboBoxItem IsSelected="{Binding Path=SelectedConsumables.SelectedScrollOfStrength, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:ScrollOfStrength.ScrollofStrengthIII}}">
-                                        Scroll of Strength III
-                                    </ComboBoxItem>
-                                    <ComboBoxItem IsSelected="{Binding Path=SelectedConsumables.SelectedScrollOfStrength, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:ScrollOfStrength.ScrollofStrengthIV}}">
-                                        Scroll of Strength IV
-                                    </ComboBoxItem>
-                                    <ComboBoxItem IsSelected="{Binding Path=SelectedConsumables.SelectedScrollOfStrength, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:ScrollOfStrength.ScrollofStrengthV}}">
-                                        Scroll of Strength V
-                                    </ComboBoxItem>
-                                </ComboBox>
-                            </CheckBox>
-                            <CheckBox Margin="0,2,0,2" VerticalContentAlignment="Center" x:Name="ScrollofAgility" IsChecked="{Binding SelectedConsumables.ScrollOfAgilityEnabled}">
-                                <ComboBox Width="168" >
-                                    <ComboBoxItem IsSelected="{Binding Path=SelectedConsumables.SelectedScrollOfAgility, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:ScrollOfAgility.ScrollOfAgility}}">
-                                        Scroll of Agility
-                                    </ComboBoxItem>
-                                    <ComboBoxItem IsSelected="{Binding Path=SelectedConsumables.SelectedScrollOfAgility, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:ScrollOfAgility.ScrollOfAgilityII}}">
-                                        Scroll of Agility II
-                                    </ComboBoxItem>
-                                    <ComboBoxItem IsSelected="{Binding Path=SelectedConsumables.SelectedScrollOfAgility, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:ScrollOfAgility.ScrollOfAgilityIII}}">
-                                        Scroll of Agility III
-                                    </ComboBoxItem>
-                                    <ComboBoxItem IsSelected="{Binding Path=SelectedConsumables.SelectedScrollOfAgility, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:ScrollOfAgility.ScrollOfAgilityIV}}">
-                                        Scroll of Agility IV
-                                    </ComboBoxItem>
-                                    <ComboBoxItem IsSelected="{Binding Path=SelectedConsumables.SelectedScrollOfAgility, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:ScrollOfAgility.ScrollOfAgilityV}}">
-                                        Scroll of Agility V
-                                    </ComboBoxItem>
-                                </ComboBox>
-                            </CheckBox>
-                            <CheckBox Margin="0,2,0,2" VerticalContentAlignment="Center" x:Name="Drum" IsChecked="{Binding SelectedCooldowns.DrumEnabled}">
-                                <ComboBox Width="168">
-                                    <ComboBoxItem IsSelected="{Binding Path=SelectedCooldowns.SelectedDrum, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:Drum.DrumsOfBattle}}">
-                                        Drums of Battle
-                                    </ComboBoxItem>
-                                    <ComboBoxItem IsSelected="{Binding Path=SelectedCooldowns.SelectedDrum, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:Drum.DrumsOfWar}}">
-                                        Drums of War
-                                    </ComboBoxItem>
-                                </ComboBox>
-                            </CheckBox>
-                            <CheckBox Margin="0,4,0,4" x:Name="SuperSapperCharge" Content="Super Sapper Charge" IsChecked="{Binding SelectedCooldowns.SuperSapperChargeEnabled}"/>
-                            <CheckBox Margin="0,2,0,2" VerticalContentAlignment="Center" HorizontalContentAlignment="Stretch" x:Name="GnomishBattleChicken" IsChecked="{Binding SelectedConsumables.GnomishBattleChickenEnabled}">
-                                <Grid>
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="*"/>
-                                        <ColumnDefinition Width="10"/>
-                                        <ColumnDefinition Width="40"/>
-                                    </Grid.ColumnDefinitions>
-                                    <Label Padding="0" VerticalAlignment="Center" Content="Gnomish Battle Chicken" Grid.ColumnSpan="2" Height="15"/>
-                                    <ComboBox Grid.Column="2" SelectedItem="{Binding SelectedConsumables.GnomishBattleChickenCount}" Margin="5,1,0,0">
-                                        <ComboBox.ItemsSource>
-                                            <x:Array Type="{x:Type sys:Int32}">
-                                                <sys:Int32>1</sys:Int32>
-                                                <sys:Int32>2</sys:Int32>
-                                                <sys:Int32>3</sys:Int32>
-                                                <sys:Int32>4</sys:Int32>
-                                                <sys:Int32>5</sys:Int32>
-                                            </x:Array>
-                                        </ComboBox.ItemsSource>
-                                    </ComboBox>
-                                </Grid>
-                            </CheckBox>
-                        </StackPanel>
-                    </GroupBox>
-                </WrapPanel>
-            </Expander>
-            <Expander IsExpanded="True" Margin="10" Header="Buffs &amp; Debuffs">
-                <WrapPanel>
-                    <GroupBox Margin="5" Padding="0,4,0,0" Width="240" Height="385" VerticalAlignment="Top" HorizontalAlignment="Left">
-                        <GroupBox.Header>
-                            Group Buffs
-                        </GroupBox.Header>
-                        <StackPanel>
-                            <CheckBox x:Name="BattleShout" Margin="0,2,0,2" VerticalContentAlignment="Center" IsChecked="{Binding SelectedBuffs.BattleShoutEnabled}">
-                                <ComboBox Width="200">
-                                    <ComboBoxItem IsSelected="{Binding Path=SelectedBuffs.SelectedBattleShout, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:BattleShout.BattleShout}}">Battle Shout</ComboBoxItem>
-                                    <ComboBoxItem IsSelected="{Binding Path=SelectedBuffs.SelectedBattleShout, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:BattleShout.BattleShoutT2}}">Battle Shout (T2)</ComboBoxItem>
-                                    <ComboBoxItem IsSelected="{Binding Path=SelectedBuffs.SelectedBattleShout, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:BattleShout.ImpBattleShoutSolarian}}">Battle Shout (Solarian)</ComboBoxItem>
-                                    <ComboBoxItem IsSelected="{Binding Path=SelectedBuffs.SelectedBattleShout, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:BattleShout.BattleShoutSolarianAndT2}}">Battle Shout (Solarian + T2)</ComboBoxItem>
-                                    <ComboBoxItem IsSelected="{Binding Path=SelectedBuffs.SelectedBattleShout, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:BattleShout.ImpBattleShout}}">Imp. Battle Shout</ComboBoxItem>
-                                    <ComboBoxItem IsSelected="{Binding Path=SelectedBuffs.SelectedBattleShout, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:BattleShout.ImpBattleShoutT2}}">Imp. Battle Shout (T2)</ComboBoxItem>
-                                    <ComboBoxItem IsSelected="{Binding Path=SelectedBuffs.SelectedBattleShout, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:BattleShout.ImpBattleShoutSolarian}}">Imp. Battle Shout (Solarian)</ComboBoxItem>
-                                    <ComboBoxItem IsSelected="{Binding Path=SelectedBuffs.SelectedBattleShout, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:BattleShout.ImpBattleShoutSolarianAndT2}}">Imp. Battle Shout (Solarian + T2)</ComboBoxItem>
-                                </ComboBox>
-                            </CheckBox>
-                            <CheckBox Margin="0,4,0,4" x:Name="TrueshotAura" Content="Trueshot Aura" HorizontalAlignment = "Left" VerticalAlignment = "Top" IsChecked="{Binding SelectedBuffs.TrueshotAuraEnabled}">
-                            </CheckBox>
-                            <CheckBox Margin="0,4,0,4" x:Name="FerociousInspiration" Content="Ferocious Inspiration" HorizontalAlignment = "Left" VerticalAlignment = "Top" IsChecked="{Binding SelectedBuffs.FerociousInspirationEnabled}">
-                            </CheckBox>
-                            <CheckBox x:Name="EarthTotem"  Margin="0,2,0,2" VerticalContentAlignment="Center" IsChecked="{Binding SelectedBuffs.EarthTotemEnabled}">
-                                <ComboBox Width="200">
-                                    <ComboBoxItem IsSelected="{Binding Path=SelectedBuffs.SelectedEarthTotem, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:EarthTotem.StrengthOfEarthTotem}}">Strength of Earth Totem</ComboBoxItem>
-                                    <ComboBoxItem IsSelected="{Binding Path=SelectedBuffs.SelectedEarthTotem, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:EarthTotem.ImpStrengthOfEarthTotem}}">Imp. Strength of Earth Totem</ComboBoxItem>
-                                </ComboBox>
-                            </CheckBox>
-                            <CheckBox Checked="AirTotem1_Checked" x:Name="AirTotem1"  Margin="0,2,0,2" VerticalContentAlignment="Center" IsChecked="{Binding SelectedBuffs.AirTotem1Enabled}">
-                                <ComboBox Width="200">
-                                    <ComboBoxItem IsSelected="{Binding Path=SelectedBuffs.SelectedAirTotem1, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:AirTotem1.WindfuryTotem}}">Windfury Totem</ComboBoxItem>
-                                    <ComboBoxItem IsSelected="{Binding Path=SelectedBuffs.SelectedAirTotem1, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:AirTotem1.ImpWindfuryTotem}}">Imp. Windfury Totem</ComboBoxItem>
-                                </ComboBox>
-                            </CheckBox>
-                            <CheckBox x:Name="AirTotem2"  Margin="0,2,0,2" VerticalContentAlignment="Center" IsChecked="{Binding SelectedBuffs.AirTotem2Enabled}">
-                                <ComboBox Width="200">
-                                    <ComboBoxItem IsSelected="{Binding Path=SelectedBuffs.SelectedAirTotem2, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:AirTotem2.GraceOfAirTotem}}">Grace of Air Totem</ComboBoxItem>
-                                    <ComboBoxItem IsSelected="{Binding Path=SelectedBuffs.SelectedAirTotem2, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:AirTotem2.ImpGraceOfAirTotem}}">Imp. Grace of Air Totem</ComboBoxItem>
-                                </ComboBox>
-                            </CheckBox>
-                            <CheckBox x:Name="WaterTotem"  Margin="0,2,0,2" VerticalContentAlignment="Center" IsChecked="{Binding SelectedBuffs.WaterTotemEnabled}">
-                                <ComboBox Width="200">
-                                    <ComboBoxItem IsSelected="{Binding Path=SelectedBuffs.SelectedWaterTotem, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:WaterTotem.ManaSpringTotem}}">Mana Spring Totem</ComboBoxItem>
-                                    <ComboBoxItem IsSelected="{Binding Path=SelectedBuffs.SelectedWaterTotem, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:WaterTotem.ImpManaSpringTotem}}">Imp. Mana Spring Totem</ComboBoxItem>
-                                </ComboBox>
-                            </CheckBox>
-                            <CheckBox Margin="0,4,0,4" x:Name="UnleashedRage" Content="Unleashed Rage"  IsChecked="{Binding SelectedBuffs.UnleashedRageEnabled}">
-                            </CheckBox>
-                            <CheckBox Margin="0,4,0,4" x:Name="Heroism" Content="Heroism / Bloodlust"  IsChecked="{Binding SelectedBuffs.HeroismEnabled}">
-                            </CheckBox>
-                            <CheckBox Margin="0,4,0,4" x:Name="LeaderofthePack" Content="Leader of the Pack"  IsChecked="{Binding SelectedBuffs.LeaderofthePackEnabled}">
-                            </CheckBox>
-                            <CheckBox Margin="0,4,0,4" x:Name="HeroicPresence" Content="Heroic Presence"  IsChecked="{Binding SelectedBuffs.HeroicPresenceEnabled}">
-                            </CheckBox>
-                            <CheckBox Margin="0,4,0,4" x:Name="InspiringPresence" Content="Inspiring Presence" IsChecked="{Binding SelectedBuffs.InspiringPresenceEnabled}">
-                            </CheckBox>
-                            <CheckBox Margin="0,4,0,4" x:Name="BraidedEterniumChain" Content="Braided Eternium Chain" IsChecked="{Binding SelectedBuffs.BraidedEterniumChainEnabled}">
-                            </CheckBox>
-                            <CheckBox Margin="0,4,0,4" x:Name="EmbraceoftheDawn" Content="Embrace of the Dawn" IsChecked="{Binding SelectedBuffs.EmbraceoftheDawnEnabled}">
-                            </CheckBox>
-                            <CheckBox Margin="0,4,0,4" x:Name="EyeoftheNight" Content="Eye of the Night" IsChecked="{Binding SelectedBuffs.EyeoftheNightEnabled}">
-                            </CheckBox>
-                        </StackPanel>
-                    </GroupBox>
-                    <GroupBox Margin="5" Padding="0,4,0,0" Width="240" Height="385" VerticalAlignment="Top" HorizontalAlignment="Left">
-                        <GroupBox.Header>
-                            Raid Buffs
-                        </GroupBox.Header>
-                        <StackPanel>
-                            <CheckBox x:Name="BlessingofMight" Margin="0,2,0,2" VerticalContentAlignment="Center" IsChecked="{Binding SelectedBuffs.BlessingofMightEnabled}">
-                                <ComboBox Width="200">
-                                    <ComboBoxItem IsSelected="{Binding Path=SelectedBuffs.SelectedBlessingofMight, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:BlessingofMight.BlessingofMight}}">Blessing of Might</ComboBoxItem>
-                                    <ComboBoxItem IsSelected="{Binding Path=SelectedBuffs.SelectedBlessingofMight, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:BlessingofMight.ImpBlessingofMight}}">Imp. Blessing of Might</ComboBoxItem>
-                                </ComboBox>
-                            </CheckBox>
-                            <CheckBox Margin="0,4,0,4" x:Name="BlessingofKings" Content="Blessing of Kings" IsChecked="{Binding SelectedBuffs.BlessingofKingsEnabled}">
-                            </CheckBox>
-                            <CheckBox x:Name="BlessingofWisdom"  Margin="0,2,0,2" VerticalContentAlignment="Center" IsChecked="{Binding SelectedBuffs.BlessingofWisdomEnabled}">
-                                <ComboBox Width="200">
-                                    <ComboBoxItem IsSelected="{Binding Path=SelectedBuffs.SelectedBlessingofWisdom, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:BlessingofWisdom.BlessingofWisdom}}">Blessing of Wisdom</ComboBoxItem>
-                                    <ComboBoxItem IsSelected="{Binding Path=SelectedBuffs.SelectedBlessingofWisdom, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:BlessingofWisdom.ImpBlessingofWisdom}}">Imp. Blessing of Wisdom</ComboBoxItem>
-                                </ComboBox>
-                            </CheckBox>
-                            <CheckBox x:Name="MarkoftheWild"  Margin="0,2,0,2" VerticalContentAlignment="Center" IsChecked="{Binding SelectedBuffs.MarkoftheWildEnabled}">
-                                <ComboBox Width="200">
-                                    <ComboBoxItem IsSelected="{Binding Path=SelectedBuffs.SelectedMarkoftheWild, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:MarkoftheWild.MarkoftheWild}}">Mark of the Wild</ComboBoxItem>
-                                    <ComboBoxItem IsSelected="{Binding Path=SelectedBuffs.SelectedMarkoftheWild, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:MarkoftheWild.ImpMarkoftheWild}}">Imp. Mark of the Wild</ComboBoxItem>
-                                </ComboBox>
-                            </CheckBox>
-                            <CheckBox x:Name="PowerWordFortitude"  Margin="0,2,0,2" VerticalContentAlignment="Center" IsChecked="{Binding SelectedBuffs.PowerWordFortitudeEnabled}">
-                                <ComboBox Width="200">
-                                    <ComboBoxItem IsSelected="{Binding Path=SelectedBuffs.SelectedPowerWordFortitude, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:PowerWordFortitude.PowerWordFortitude}}">Power Word: Fortitude</ComboBoxItem>
-                                    <ComboBoxItem IsSelected="{Binding Path=SelectedBuffs.SelectedPowerWordFortitude, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:PowerWordFortitude.ImpPowerWordFortitude}}">Imp. Power Word: Fortitude</ComboBoxItem>
-                                </ComboBox>
-                            </CheckBox>
-                            <CheckBox x:Name="DivineSpirit"  Margin="0,2,0,2" VerticalContentAlignment="Center" IsChecked="{Binding SelectedBuffs.DivineSpiritEnabled}">
-                                <ComboBox Width="200">
-                                    <ComboBoxItem IsSelected="{Binding Path=SelectedBuffs.SelectedDivineSpirit, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:DivineSpirit.DivineSpirit}}">Divine Spirit</ComboBoxItem>
-                                    <ComboBoxItem IsSelected="{Binding Path=SelectedBuffs.SelectedDivineSpirit, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:DivineSpirit.ImpDivineSpirit}}">Imp. Divine Spirit</ComboBoxItem>
-                                </ComboBox>
-                            </CheckBox>
-                            <CheckBox Margin="0,4,0,4" x:Name="ArcaneIntellect" Content="Arcane Intellect" IsChecked="{Binding SelectedBuffs.ArcaneIntellectEnabled}">
-                            </CheckBox>
-                        </StackPanel>
-                    </GroupBox>
-                    <GroupBox Margin="5" Padding="0,4,0,0" Width="240" Height="385" VerticalAlignment="Top" HorizontalAlignment="Left">
-                        <GroupBox.Header>
-                            Raid Debuffs
-                        </GroupBox.Header>
-                        <WrapPanel>
+                        </GroupBox>
+                        <GroupBox Margin="5" Height="110">
+                            <GroupBox.Header>
+                                Encounter
+                            </GroupBox.Header>
                             <StackPanel>
-                                <CheckBox x:Name="JudgementoftheCrusader" Margin="0,2,0,2" VerticalContentAlignment="Center" IsChecked="{Binding SelectedDebuffs.JudgementoftheCrusaderEnabled}">
-                                    <ComboBox Width="200">
-                                        <ComboBoxItem IsSelected="{Binding Path=SelectedDebuffs.SelectedJudgementoftheCrusader, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:JudgementoftheCrusader.JudgementoftheCrusader}}">Judgement of the Crusader</ComboBoxItem>
-                                        <ComboBoxItem IsSelected="{Binding Path=SelectedDebuffs.SelectedJudgementoftheCrusader, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:JudgementoftheCrusader.ImpJudgementoftheCrusader}}">Imp. Judgement of the Crusader</ComboBoxItem>
-                                    </ComboBox>
-                                </CheckBox>
-                                <CheckBox Margin="0,4,0,4" x:Name="JudgementofWisdom" Content="Judgement of Wisdom" IsChecked="{Binding SelectedDebuffs.JudgementofWisdomEnabled}">
-                                </CheckBox>
-                                <CheckBox x:Name="ArmorDebuff" Margin="0,2,0,2" VerticalContentAlignment="Center" IsChecked="{Binding SelectedDebuffs.ArmorDebuffEnabled}">
-                                    <ComboBox Width="200">
-                                        <ComboBoxItem IsSelected="{Binding Path=SelectedDebuffs.SelectedArmorDebuff, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:ArmorDebuff.ExposeArmor}}">Expose Armor</ComboBoxItem>
-                                        <ComboBoxItem IsSelected="{Binding Path=SelectedDebuffs.SelectedArmorDebuff, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:ArmorDebuff.SunderArmor}}">Sunder Armor</ComboBoxItem>
-                                        <ComboBoxItem IsSelected="{Binding Path=SelectedDebuffs.SelectedArmorDebuff, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:ArmorDebuff.ImpExposeArmor}}">Imp. Expose Armor</ComboBoxItem>
-                                    </ComboBox>
-                                </CheckBox>
-                                <CheckBox Margin="0,4,0,4" x:Name="BloodFrenzy" Content="Blood Frenzy" IsChecked="{Binding SelectedDebuffs.BloodFrenzyEnabled}">
-                                </CheckBox>
-                                <CheckBox Margin="0,4,0,4" x:Name="HuntersMark" Content="Improved Hunter's Mark" IsChecked="{Binding SelectedDebuffs.HuntersMarkEnabled}">
-                                </CheckBox>
+                                <Grid Margin="0,2,0,2" Width="180">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <ComboBox x:Name="BossesComboBox" DisplayMemberPath="Name" SelectedItem="{Binding EncounterSettings.EncounterID, Converter={StaticResource BossToIDConverter}}"></ComboBox>
+                                </Grid>
                                 <Grid Margin="0,2,0,2">
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="*"/>
                                         <ColumnDefinition Width="10"/>
-                                        <ColumnDefinition Width="40"/>
+                                        <ColumnDefinition Width="60"/>
                                     </Grid.ColumnDefinitions>
-                                    <CheckBox Margin="0,2,0,2" x:Name="ExposeWeakness" Content="Expose Weakness" IsChecked="{Binding SelectedDebuffs.ExposeWeaknessEnabled}">
-                                    </CheckBox>
-                                    <TextBox Grid.Column="2" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" ToolTipService.InitialShowDelay="0" ToolTip="The Survival Hunter's Agility value." PreviewTextInput="NumberValidationTextBox" Text="{Binding SelectedDebuffs.HunterAgility, Converter={StaticResource StringEmptyConverter}, ConverterParameter='4'}" />
+                                    <Label Margin="0" Padding="0" VerticalAlignment="Center" Content="Fight Duration (min)"/>
+                                    <TextBox Grid.Column="2" HorizontalContentAlignment="Right" PreviewTextInput="NumberValidationTextBox" ToolTipService.InitialShowDelay="0" ToolTip="Time in seconds." Text="{Binding EncounterSettings.MinFightDurationSeconds, Converter={StaticResource StringEmptyConverter}, ConverterParameter='1'}" />
                                 </Grid>
-                                <CheckBox x:Name="FaerieFire" Margin="0,2,0,2" VerticalContentAlignment="Center" IsChecked="{Binding SelectedDebuffs.FaerieFireEnabled}">
-                                    <ComboBox Width="200">
-                                        <ComboBoxItem IsSelected="{Binding Path=SelectedDebuffs.SelectedFaerieFire, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:FaerieFire.FaerieFire}}">Faerie Fire</ComboBoxItem>
-                                        <ComboBoxItem IsSelected="{Binding Path=SelectedDebuffs.SelectedFaerieFire, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:FaerieFire.ImpFaerieFire}}">Imp. Faerie Fire</ComboBoxItem>
-                                    </ComboBox>
+                                <Grid Margin="0,2,0,2">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="10"/>
+                                        <ColumnDefinition Width="60"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Label Margin="0" Padding="0" VerticalAlignment="Center" Content="Fight Duration (max)"/>
+                                    <TextBox Grid.Column="2" HorizontalContentAlignment="Right" PreviewTextInput="NumberValidationTextBox" ToolTipService.InitialShowDelay="0" ToolTip="Time in seconds." Text="{Binding EncounterSettings.MaxFightDurationSeconds, Converter={StaticResource StringEmptyConverter}, ConverterParameter='1'}" />
+                                </Grid>
+                            </StackPanel>
+                        </GroupBox>
+                        <GroupBox Margin="5" Height="110" VerticalAlignment="Top" HorizontalAlignment="Left">
+                            <GroupBox.Header>
+                                Sim
+                            </GroupBox.Header>
+                            <StackPanel>
+                                <Grid Margin="0,2,0,2">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="10"/>
+                                        <ColumnDefinition Width="60"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Label Margin="0" Padding="0" VerticalAlignment="Center" Content="Simulations"/>
+                                    <TextBox Grid.Column="2" HorizontalContentAlignment="Right" PreviewTextInput="NumberValidationTextBox" Text="{Binding SimSettings.SimulationCount, Converter={StaticResource StringEmptyConverter}, ConverterParameter='1'}" />
+                                </Grid>
+                                <Grid Margin="0,2,0,2" x:Name="MaxCSDelay" ToolTipService.InitialShowDelay="0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="10"/>
+                                        <ColumnDefinition Width="60"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Label Margin="0" Padding="0" VerticalAlignment="Center" Content="Max CS Delay"/>
+                                    <TextBox Grid.Column="2" HorizontalContentAlignment="Right" PreviewTextInput="NumberValidationTextBox" Text="{Binding SimSettings.MaxCSDelay, Converter={StaticResource StringEmptyConverter}, ConverterParameter='1'}" />
+                                </Grid>
+                            </StackPanel>
+                        </GroupBox>
+                        <GroupBox Margin="5" Height="110" >
+                            <GroupBox.Header>
+                                Phases
+                            </GroupBox.Header>
+                            <StackPanel>
+                                <CheckBox Content = "Phase 1" HorizontalAlignment = "Left" IsChecked="{Binding SelectedPhases.Phase1Selected}" VerticalAlignment = "Top"  />
+                                <CheckBox Content = "Phase 2" HorizontalAlignment = "Left" IsChecked="{Binding SelectedPhases.Phase2Selected}" VerticalAlignment = "Top"  />
+                                <CheckBox Content = "Phase 3" HorizontalAlignment = "Left" IsChecked="{Binding SelectedPhases.Phase3Selected}" VerticalAlignment = "Top"  />
+                                <CheckBox Content = "Phase 4" HorizontalAlignment = "Left" IsChecked="{Binding SelectedPhases.Phase4Selected}"  VerticalAlignment = "Top"  />
+                                <CheckBox Content = "Phase 5" HorizontalAlignment = "Left" IsChecked="{Binding SelectedPhases.Phase5Selected}"  VerticalAlignment = "Top"  />
+                            </StackPanel>
+                        </GroupBox>
+                        <GroupBox Margin="5" VerticalAlignment="Top" HorizontalAlignment="Left" Height="110">
+                            <GroupBox.Header>
+                                Gems
+                            </GroupBox.Header>
+                            <StackPanel>
+                                <Grid Margin="0,2,0,2">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="10"/>
+                                        <ColumnDefinition Width="50"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Label Margin="0" Padding="0" VerticalAlignment="Center" Content="Red Sockets"/>
+                                    <Button Grid.Column="2" Padding="0" Click="RedSocketSelect_Click">...</Button>
+                                </Grid>
+                                <Grid Margin="0,2,0,2">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="10"/>
+                                        <ColumnDefinition Width="50"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Label Margin="0" Padding="0" VerticalAlignment="Center" Content="Yellow Sockets"/>
+                                    <Button Grid.Column="2" Padding="0" Click="YellowSocketSelect_Click">...</Button>
+                                </Grid>
+                                <Grid Margin="0,2,0,2">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="10"/>
+                                        <ColumnDefinition Width="50"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Label Margin="0" Padding="0" VerticalAlignment="Center" Content="Blue Sockets"/>
+                                    <Button Grid.Column="2" Padding="0" Click="BlueSocketSelect_Click">...</Button>
+                                </Grid>
+                                <Grid Margin="0,2,0,2">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="10"/>
+                                        <ColumnDefinition Width="50"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Label Margin="0" Padding="0" VerticalAlignment="Center" Content="Meta Sockets"/>
+                                    <Button Grid.Column="2" Padding="0" Click="MetaSocketSelect_Click">...</Button>
+                                </Grid>
+                            </StackPanel>
+                        </GroupBox>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <GroupBox Margin="5" Width="230" Height="295" VerticalAlignment="Top" HorizontalAlignment="Left">
+                            <GroupBox.Header>
+                                Holy
+                            </GroupBox.Header>
+                            <StackPanel>
+                                <CheckBox Margin="0,2,0,2" VerticalContentAlignment="Center" HorizontalContentAlignment="Stretch" IsChecked="{Binding SelectedTalents.DivineStrengthEnabled}">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="10"/>
+                                            <ColumnDefinition Width="40"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Label Margin="0" Padding="0" VerticalAlignment="Center" Content="Divine Strength"/>
+                                        <ComboBox Grid.Column="2" SelectedItem="{Binding SelectedTalents.DivineStrengthRank}">
+                                            <ComboBox.ItemsSource>
+                                                <x:Array Type="{x:Type sys:Int32}">
+                                                    <sys:Int32>1</sys:Int32>
+                                                    <sys:Int32>2</sys:Int32>
+                                                    <sys:Int32>3</sys:Int32>
+                                                    <sys:Int32>4</sys:Int32>
+                                                    <sys:Int32>5</sys:Int32>
+                                                </x:Array>
+                                            </ComboBox.ItemsSource>
+                                        </ComboBox>
+                                    </Grid>
                                 </CheckBox>
-                                <CheckBox Margin="0,4,0,4" x:Name="CurseofRecklessness" Content="Curse of Recklessness" IsChecked="{Binding SelectedDebuffs.CurseofRecklessnessEnabled}">
-                                </CheckBox>
-                                <CheckBox x:Name="CurseoftheElements" Margin="0,2,0,2" VerticalContentAlignment="Center" IsChecked="{Binding SelectedDebuffs.CurseoftheElementsEnabled}">
-                                    <ComboBox Width="200">
-                                        <ComboBoxItem IsSelected="{Binding Path=SelectedDebuffs.SelectedCurseoftheElements, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:CurseoftheElements.CurseoftheElements}}">Curse of the Elements</ComboBoxItem>
-                                        <ComboBoxItem IsSelected="{Binding Path=SelectedDebuffs.SelectedCurseoftheElements, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:CurseoftheElements.Malediction}}">Malediction</ComboBoxItem>
-                                    </ComboBox>
-                                </CheckBox>
-                                <CheckBox Margin="0,4,0,4" x:Name="ImprovedShadowBolt" Content="Improved Shadow Bolt" IsChecked="{Binding SelectedDebuffs.ImprovedShadowBoltEnabled}">
-                                </CheckBox>
-                                <CheckBox Margin="0,4,0,4" x:Name="Misery" Content="Misery" IsChecked="{Binding SelectedDebuffs.MiseryEnabled}">
-                                </CheckBox>
-                                <CheckBox Margin="0,4,0,4" x:Name="ShadowWeaving" Content="Shadow Weaving" IsChecked="{Binding SelectedDebuffs.ShadowWeavingEnabled}">
-                                </CheckBox>
-                                <CheckBox Margin="0,4,0,4" x:Name="ImprovedScorch" Content="Improved Scorch" IsChecked="{Binding SelectedDebuffs.ImprovedScorchEnabled}">
+                                <CheckBox Margin="0,2,0,2" VerticalContentAlignment="Center" HorizontalContentAlignment="Stretch" IsChecked="{Binding SelectedTalents.DivineIntellectEnabled}">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="10"/>
+                                            <ColumnDefinition Width="40"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Label Margin="0" Padding="0" VerticalAlignment="Center" Content="Divine Intellect"/>
+                                        <ComboBox Grid.Column="2" SelectedItem="{Binding SelectedTalents.DivineIntellectRank}">
+                                            <ComboBox.ItemsSource>
+                                                <x:Array Type="{x:Type sys:Int32}">
+                                                    <sys:Int32>1</sys:Int32>
+                                                    <sys:Int32>2</sys:Int32>
+                                                    <sys:Int32>3</sys:Int32>
+                                                    <sys:Int32>4</sys:Int32>
+                                                    <sys:Int32>5</sys:Int32>
+                                                </x:Array>
+                                            </ComboBox.ItemsSource>
+                                        </ComboBox>
+                                    </Grid>
                                 </CheckBox>
                             </StackPanel>
-                        </WrapPanel>
-                    </GroupBox>
-                </WrapPanel>
-            </Expander>
-        </StackPanel>
-    </ScrollViewer>
+                        </GroupBox>
+                        <GroupBox Margin="5" Width="230" Height="295" VerticalAlignment="Top" HorizontalAlignment="Left">
+                            <GroupBox.Header>
+                                Protection
+                            </GroupBox.Header>
+                            <StackPanel>
+                                <CheckBox Margin="0,2,0,2" VerticalContentAlignment="Center" HorizontalContentAlignment="Stretch" IsChecked="{Binding SelectedTalents.PrecisionEnabled}">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="10"/>
+                                            <ColumnDefinition Width="40"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Label Margin="0" Padding="0" VerticalAlignment="Center" Content="Precision"/>
+                                        <ComboBox Grid.Column="2" SelectedItem="{Binding SelectedTalents.PrecisionRank}">
+                                            <ComboBox.ItemsSource>
+                                                <x:Array Type="{x:Type sys:Int32}">
+                                                    <sys:Int32>1</sys:Int32>
+                                                    <sys:Int32>2</sys:Int32>
+                                                    <sys:Int32>3</sys:Int32>
+                                                </x:Array>
+                                            </ComboBox.ItemsSource>
+                                        </ComboBox>
+                                    </Grid>
+                                </CheckBox>
+                            </StackPanel>
+                        </GroupBox>
+                        <GroupBox Margin="5" Width="230" Height="295" VerticalAlignment="Top" HorizontalAlignment="Left">
+                            <GroupBox.Header>
+                                Retribution
+                            </GroupBox.Header>
+                            <StackPanel>
+                                <CheckBox Margin="0,2,0,2" VerticalContentAlignment="Center" HorizontalContentAlignment="Stretch" IsChecked="{Binding SelectedTalents.BenedictionEnabled}">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="10"/>
+                                            <ColumnDefinition Width="40"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Label Margin="0" Padding="0" VerticalAlignment="Center" Content="Benediction"/>
+                                        <ComboBox Grid.Column="2" SelectedItem="{Binding SelectedTalents.BenedictionRank}">
+                                            <ComboBox.ItemsSource>
+                                                <x:Array Type="{x:Type sys:Int32}">
+                                                    <sys:Int32>1</sys:Int32>
+                                                    <sys:Int32>2</sys:Int32>
+                                                    <sys:Int32>3</sys:Int32>
+                                                    <sys:Int32>4</sys:Int32>
+                                                    <sys:Int32>5</sys:Int32>
+                                                </x:Array>
+                                            </ComboBox.ItemsSource>
+                                        </ComboBox>
+                                    </Grid>
+                                </CheckBox>
+                                <CheckBox Margin="0,2,0,2" VerticalContentAlignment="Center" HorizontalContentAlignment="Stretch" IsChecked="{Binding SelectedTalents.ImprovedJudgementEnabled}">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="10"/>
+                                            <ColumnDefinition Width="40"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Label Margin="0" Padding="0" VerticalAlignment="Center" Content="Improved Judgement"/>
+                                        <ComboBox Grid.Column="2" SelectedItem="{Binding SelectedTalents.ImprovedJudgementRank}">
+                                            <ComboBox.ItemsSource>
+                                                <x:Array Type="{x:Type sys:Int32}">
+                                                    <sys:Int32>1</sys:Int32>
+                                                    <sys:Int32>2</sys:Int32>
+                                                </x:Array>
+                                            </ComboBox.ItemsSource>
+                                        </ComboBox>
+                                    </Grid>
+                                </CheckBox>
+                                <CheckBox Margin="0,2,0,2" VerticalContentAlignment="Center" HorizontalContentAlignment="Stretch" IsChecked="{Binding SelectedTalents.ConvictionEnabled}">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="10"/>
+                                            <ColumnDefinition Width="40"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Label Margin="0" Padding="0" VerticalAlignment="Center" Content="Conviction"/>
+                                        <ComboBox Grid.Column="2" SelectedItem="{Binding SelectedTalents.ConvictionRank}">
+                                            <ComboBox.ItemsSource>
+                                                <x:Array Type="{x:Type sys:Int32}">
+                                                    <sys:Int32>1</sys:Int32>
+                                                    <sys:Int32>2</sys:Int32>
+                                                    <sys:Int32>3</sys:Int32>
+                                                    <sys:Int32>4</sys:Int32>
+                                                    <sys:Int32>5</sys:Int32>
+                                                </x:Array>
+                                            </ComboBox.ItemsSource>
+                                        </ComboBox>
+                                    </Grid>
+                                </CheckBox>
+                                <CheckBox Margin="0,2,0,2" VerticalContentAlignment="Center" HorizontalContentAlignment="Stretch" IsChecked="{Binding SelectedTalents.CrusadeEnabled}">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="10"/>
+                                            <ColumnDefinition Width="40"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Label Margin="0" Padding="0" VerticalAlignment="Center" Content="Crusade"/>
+                                        <ComboBox Grid.Column="2" SelectedItem="{Binding SelectedTalents.CrusadeRank}">
+                                            <ComboBox.ItemsSource>
+                                                <x:Array Type="{x:Type sys:Int32}">
+                                                    <sys:Int32>1</sys:Int32>
+                                                    <sys:Int32>2</sys:Int32>
+                                                    <sys:Int32>3</sys:Int32>
+                                                </x:Array>
+                                            </ComboBox.ItemsSource>
+                                        </ComboBox>
+                                    </Grid>
+                                </CheckBox>
+                                <CheckBox Margin="0,2,0,2" VerticalContentAlignment="Center" HorizontalContentAlignment="Stretch" IsChecked="{Binding SelectedTalents.TwoHandedWeaponSpecializationEnabled}">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="10"/>
+                                            <ColumnDefinition Width="40"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Label Margin="0" Padding="0" VerticalAlignment="Center" Content="Two-Handed Weapon Spec."/>
+                                        <ComboBox Grid.Column="2" SelectedItem="{Binding SelectedTalents.TwoHandedWeaponSpecializationRank}">
+                                            <ComboBox.ItemsSource>
+                                                <x:Array Type="{x:Type sys:Int32}">
+                                                    <sys:Int32>1</sys:Int32>
+                                                    <sys:Int32>2</sys:Int32>
+                                                    <sys:Int32>3</sys:Int32>
+                                                </x:Array>
+                                            </ComboBox.ItemsSource>
+                                        </ComboBox>
+                                    </Grid>
+                                </CheckBox>
+                                <CheckBox Margin="0,4,0,4" VerticalContentAlignment="Center" HorizontalContentAlignment="Stretch" IsChecked="{Binding SelectedTalents.SanctityAuraEnabled}">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="10"/>
+                                            <ColumnDefinition Width="40"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Label Margin="0" Padding="0" VerticalAlignment="Center" Content="Sanctity Aura"/>
+                                    </Grid>
+                                </CheckBox>
+                                <CheckBox Margin="0,2,0,2" VerticalContentAlignment="Center" HorizontalContentAlignment="Stretch" IsChecked="{Binding SelectedTalents.ImprovedSanctityAuraEnabled}">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="10"/>
+                                            <ColumnDefinition Width="40"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Label Margin="0" Padding="0" VerticalAlignment="Center" Content="Improved Sanctity Aura"/>
+                                        <ComboBox Grid.Column="2" SelectedItem="{Binding SelectedTalents.ImprovedSanctityAuraRank}">
+                                            <ComboBox.ItemsSource>
+                                                <x:Array Type="{x:Type sys:Int32}">
+                                                    <sys:Int32>1</sys:Int32>
+                                                    <sys:Int32>2</sys:Int32>
+                                                </x:Array>
+                                            </ComboBox.ItemsSource>
+                                        </ComboBox>
+                                    </Grid>
+                                </CheckBox>
+                                <CheckBox Margin="0,2,0,2" VerticalContentAlignment="Center" HorizontalContentAlignment="Stretch" IsChecked="{Binding SelectedTalents.VengeanceEnabled}">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="10"/>
+                                            <ColumnDefinition Width="40"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Label Margin="0" Padding="0" VerticalAlignment="Center" Content="Vengeance"/>
+                                        <ComboBox Grid.Column="2" SelectedItem="{Binding SelectedTalents.VengeanceRank}">
+                                            <ComboBox.ItemsSource>
+                                                <x:Array Type="{x:Type sys:Int32}">
+                                                    <sys:Int32>1</sys:Int32>
+                                                    <sys:Int32>2</sys:Int32>
+                                                    <sys:Int32>3</sys:Int32>
+                                                    <sys:Int32>4</sys:Int32>
+                                                    <sys:Int32>5</sys:Int32>
+                                                </x:Array>
+                                            </ComboBox.ItemsSource>
+                                        </ComboBox>
+                                    </Grid>
+                                </CheckBox>
+                                <CheckBox Margin="0,2,0,2" VerticalContentAlignment="Center" HorizontalContentAlignment="Stretch" IsChecked="{Binding SelectedTalents.SanctifiedJudgementEnabled}">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="10"/>
+                                            <ColumnDefinition Width="40"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Label Margin="0" Padding="0" VerticalAlignment="Center" Content="Sanctified Judgement"/>
+                                        <ComboBox Grid.Column="2" SelectedItem="{Binding SelectedTalents.SanctifiedJudgementRank}">
+                                            <ComboBox.ItemsSource>
+                                                <x:Array Type="{x:Type sys:Int32}">
+                                                    <sys:Int32>1</sys:Int32>
+                                                    <sys:Int32>2</sys:Int32>
+                                                    <sys:Int32>3</sys:Int32>
+                                                </x:Array>
+                                            </ComboBox.ItemsSource>
+                                        </ComboBox>
+                                    </Grid>
+                                </CheckBox>
+                                <CheckBox Margin="0,2,0,2" VerticalContentAlignment="Center" HorizontalContentAlignment="Stretch" IsChecked="{Binding SelectedTalents.SanctifiedSealsEnabled}">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="10"/>
+                                            <ColumnDefinition Width="40"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Label Margin="0" Padding="0" VerticalAlignment="Center" Content="Sanctified Seals"/>
+                                        <ComboBox Grid.Column="2" SelectedItem="{Binding SelectedTalents.SanctifiedSealsRank}">
+                                            <ComboBox.ItemsSource>
+                                                <x:Array Type="{x:Type sys:Int32}">
+                                                    <sys:Int32>1</sys:Int32>
+                                                    <sys:Int32>2</sys:Int32>
+                                                    <sys:Int32>3</sys:Int32>
+                                                </x:Array>
+                                            </ComboBox.ItemsSource>
+                                        </ComboBox>
+                                    </Grid>
+                                </CheckBox>
+                                <CheckBox Margin="0,2,0,2" VerticalContentAlignment="Center" HorizontalContentAlignment="Stretch" IsChecked="{Binding SelectedTalents.FanaticismEnabled}">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="10"/>
+                                            <ColumnDefinition Width="40"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Label Margin="0" Padding="0" VerticalAlignment="Center" Content="Fanaticism"/>
+                                        <ComboBox Grid.Column="2" SelectedItem="{Binding SelectedTalents.FanaticismRank}">
+                                            <ComboBox.ItemsSource>
+                                                <x:Array Type="{x:Type sys:Int32}">
+                                                    <sys:Int32>1</sys:Int32>
+                                                    <sys:Int32>2</sys:Int32>
+                                                    <sys:Int32>3</sys:Int32>
+                                                    <sys:Int32>4</sys:Int32>
+                                                    <sys:Int32>5</sys:Int32>
+                                                </x:Array>
+                                            </ComboBox.ItemsSource>
+                                        </ComboBox>
+                                    </Grid>
+                                </CheckBox>
+                            </StackPanel>
+                        </GroupBox>
+                    </StackPanel>
+                </StackPanel>
+            </TabItem>
+            <TabItem Header="Buffs / Debuffs">
+                <StackPanel HorizontalAlignment="Center">
+                    <Grid HorizontalAlignment="Center">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+                        <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Center">
+                            <GroupBox Margin="5" Width="200" Height="180" VerticalAlignment="Top" HorizontalAlignment="Left">
+                                <GroupBox.Header>
+                                    Battle Elixir
+                                </GroupBox.Header>
+                                <StackPanel>
+                                    <RadioButton Margin="0,2,0,2" x:Name="NoBattleElixir" Content="None" GroupName="BattleElixir" IsChecked="{Binding Path=SelectedConsumables.SelectedBattleElixir, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:BattleElixir.None}}"/>
+                                    <RadioButton Margin="0,2,0,2" x:Name="FlaskofRelentlessAssault" Content="Flask of Relentless Assault" GroupName="BattleElixir" IsChecked="{Binding Path=SelectedConsumables.SelectedBattleElixir, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:BattleElixir.FlaskofRelentlessAssault}}"/>
+                                    <RadioButton Margin="0,2,0,2" x:Name="ElixirofDemonslaying" Content="Elixir of Demonslaying" GroupName="BattleElixir" IsChecked="{Binding Path=SelectedConsumables.SelectedBattleElixir, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:BattleElixir.ElixirofDemonslaying}}"/>
+                                    <RadioButton Margin="0,2,0,2" x:Name="FelStrengthElixir" Content="Fel Strength Elixir" GroupName="BattleElixir" IsChecked="{Binding Path=SelectedConsumables.SelectedBattleElixir, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:BattleElixir.FelStrengthElixir}}"/>
+                                    <RadioButton Margin="0,2,0,2" x:Name="ElixirofMajorStrength" Content="Elixir of Major Strength" GroupName="BattleElixir" IsChecked="{Binding Path=SelectedConsumables.SelectedBattleElixir, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:BattleElixir.ElixirofMajorStrength}}"/>
+                                    <RadioButton Margin="0,2,0,2" x:Name="ElixirofMajorAgility" Content="Elixir of Major Agility" GroupName="BattleElixir" IsChecked="{Binding Path=SelectedConsumables.SelectedBattleElixir, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:BattleElixir.ElixirofMajorAgility}}"/>
+                                    <RadioButton Margin="0,2,0,2" x:Name="ElixirofMastery" Content="Elixir of Mastery" GroupName="BattleElixir" IsChecked="{Binding Path=SelectedConsumables.SelectedBattleElixir, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:BattleElixir.ElixirofMastery}}"/>
+                                    <RadioButton Margin="0,2,0,2" x:Name="ElixiroftheMongoose" Content="Elixir of the Mongoose" GroupName="BattleElixir" IsChecked="{Binding Path=SelectedConsumables.SelectedBattleElixir, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:BattleElixir.ElixiroftheMongoose}}"/>
+                                </StackPanel>
+                            </GroupBox>
+                            <GroupBox Margin="5" Width="200" Height="180" VerticalAlignment="Top" HorizontalAlignment="Left">
+                                <GroupBox.Header>
+                                    Guardian Elixir
+                                </GroupBox.Header>
+                                <StackPanel>
+                                    <RadioButton Margin="0,2,0,2" x:Name="NoGuardianElixir" Content="None" GroupName="GuardianElixir" IsChecked="{Binding Path=SelectedConsumables.SelectedGuardianElixir, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:GuardianElixir.None}}"/>
+                                    <RadioButton Margin="0,2,0,2" x:Name="ElixirofMajorMageblood" Content="Elixir of Major Mageblood" GroupName="GuardianElixir" IsChecked="{Binding Path=SelectedConsumables.SelectedGuardianElixir, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:GuardianElixir.ElixirofMajorMageblood}}"/>
+                                    <RadioButton Margin="0,2,0,2" x:Name="ElixirofDraenicWisdom" Content="Elixir of Draenic Wisdom" GroupName="GuardianElixir" IsChecked="{Binding Path=SelectedConsumables.SelectedGuardianElixir, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:GuardianElixir.ElixirofDraenicWisdom}}"/>
+                                    <RadioButton Margin="0,2,0,2" x:Name="ElixirofMajorFortitude" Content="Elixir of Major Fortitude" GroupName="GuardianElixir" IsChecked="{Binding Path=SelectedConsumables.SelectedGuardianElixir, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:GuardianElixir.ElixirofMajorFortitude}}"/>
+                                    <RadioButton Margin="0,2,0,2" x:Name="SpiritofZanza" Content="Spirit of Zanza" GroupName="GuardianElixir" IsChecked="{Binding Path=SelectedConsumables.SelectedGuardianElixir, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:GuardianElixir.SpiritofZanza}}"/>
+                                </StackPanel>
+                            </GroupBox>
+                            <GroupBox Margin="5" Width="200" Height="180" VerticalAlignment="Top" HorizontalAlignment="Left">
+                                <GroupBox.Header>
+                                    Temporary Weapon Enchantment
+                                </GroupBox.Header>
+                                <StackPanel>
+                                    <RadioButton Checked="TemporaryWeaponEnchantment_Checked" Margin="0,2,0,2" x:Name="NoTemporaryWeaponEnchantment" Content="None" GroupName="TemporaryWeaponEnchantment" IsChecked="{Binding Path=SelectedConsumables.SelectedTemporaryWeaponEnchantment, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:TemporaryWeaponEnchantment.None}}"/>
+                                    <RadioButton Checked="TemporaryWeaponEnchantment_Checked" Margin="0,2,0,2" x:Name="AdamantiteSharpeningStone" Content="Adamantite Sharpening Stone" GroupName="TemporaryWeaponEnchantment" IsChecked="{Binding Path=SelectedConsumables.SelectedTemporaryWeaponEnchantment, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:TemporaryWeaponEnchantment.AdamantiteSharpeningStone}}"/>
+                                    <RadioButton Checked="TemporaryWeaponEnchantment_Checked" Margin="0,2,0,2" x:Name="ElementalSharpeningStone" Content="Elemental Sharpening Stone" GroupName="TemporaryWeaponEnchantment" IsChecked="{Binding Path=SelectedConsumables.SelectedTemporaryWeaponEnchantment, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:TemporaryWeaponEnchantment.ElementalSharpeningStone}}"/>
+                                    <RadioButton Checked="TemporaryWeaponEnchantment_Checked" Margin="0,2,0,2" x:Name="SuperiorWizardOil" Content="Superior Wizard Oil" GroupName="TemporaryWeaponEnchantment" IsChecked="{Binding Path=SelectedConsumables.SelectedTemporaryWeaponEnchantment, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:TemporaryWeaponEnchantment.SuperiorWizardOil}}"/>
+                                    <RadioButton Checked="TemporaryWeaponEnchantment_Checked" Margin="0,2,0,2" x:Name="BrilliantWizardOil" Content="Brilliant Wizard Oil" GroupName="TemporaryWeaponEnchantment" IsChecked="{Binding Path=SelectedConsumables.SelectedTemporaryWeaponEnchantment, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:TemporaryWeaponEnchantment.BrilliantWizardOil}}"/>
+                                </StackPanel>
+                            </GroupBox>
+                            <GroupBox Margin="5" Width="200" Height="180" VerticalAlignment="Top" HorizontalAlignment="Left">
+                                <GroupBox.Header>
+                                    Food
+                                </GroupBox.Header>
+                                <StackPanel>
+                                    <RadioButton Margin="0,2,0,2" x:Name="NoFood" Content="None" GroupName="Food" IsChecked="{Binding Path=SelectedConsumables.SelectedFood, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:Food.None}}"/>
+                                    <RadioButton Margin="0,2,0,2" x:Name="Strength20Food" Content="20 Strength" GroupName="Food" IsChecked="{Binding Path=SelectedConsumables.SelectedFood, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:Food.Strength20Food}}"/>
+                                    <RadioButton Margin="0,2,0,2" x:Name="Agility20Food" Content="20 Agility" GroupName="Food" IsChecked="{Binding Path=SelectedConsumables.SelectedFood, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:Food.Agility20Food}}"/>
+                                    <RadioButton Margin="0,2,0,2" x:Name="SpellPower23Food" Content="23 Spell Power" GroupName="Food" IsChecked="{Binding Path=SelectedConsumables.SelectedFood, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:Food.SpellPower23Food}}"/>
+                                    <RadioButton Margin="0,2,0,2" x:Name="HitRating20Food" Content="20 Hit Rating" GroupName="Food" IsChecked="{Binding Path=SelectedConsumables.SelectedFood, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:Food.HitRating20Food}}"/>
+                                    <RadioButton Margin="0,2,0,2" x:Name="MP58Food" Content="8 MP5" GroupName="Food" IsChecked="{Binding Path=SelectedConsumables.SelectedFood, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:Food.MP58Food}}"/>
+                                </StackPanel>
+                            </GroupBox>
+                            <GroupBox Margin="5" Width="200" Height="180" VerticalAlignment="Top" HorizontalAlignment="Left">
+                                <GroupBox.Header>
+                                    Primary Potion
+                                </GroupBox.Header>
+                                <StackPanel>
+                                    <RadioButton Margin="0,2,0,2" x:Name="NoPrimaryPotion" Content="None" GroupName="PrimaryPotion" IsChecked="{Binding Path=SelectedCooldowns.SelectedPrimaryPotion, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:PrimaryPotion.None}}"/>
+                                    <RadioButton Margin="0,2,0,2" x:Name="HastePotion" Content="Haste Potion" GroupName="PrimaryPotion" IsChecked="{Binding Path=SelectedCooldowns.SelectedPrimaryPotion, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:PrimaryPotion.HastePotion}}"/>
+                                    <RadioButton Margin="0,2,0,2" x:Name="InsaneStrengthPotion" Content="Insane Strength Potion" GroupName="PrimaryPotion" IsChecked="{Binding Path=SelectedCooldowns.SelectedPrimaryPotion, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:PrimaryPotion.InsaneStrengthPotion}}"/>
+                                    <RadioButton Margin="0,2,0,2" x:Name="SuperManaPotion" Content="Super Mana Potion" GroupName="PrimaryPotion" IsChecked="{Binding Path=SelectedCooldowns.SelectedPrimaryPotion, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:PrimaryPotion.SuperManaPotion}}"/>
+                                    <RadioButton Margin="0,2,0,2" x:Name="MadAlchemistsPotion" Content="Mad Alchemist's Potion" GroupName="PrimaryPotion" IsChecked="{Binding Path=SelectedCooldowns.SelectedPrimaryPotion, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:PrimaryPotion.MadAlchemistsPotion}}"/>
+                                </StackPanel>
+                            </GroupBox>
+                        </StackPanel>
+                        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
+                            <GroupBox Margin="5" Width="200" Height="180" VerticalAlignment="Top" HorizontalAlignment="Left">
+                                <GroupBox.Header>
+                                    Secondary Potion
+                                </GroupBox.Header>
+                                <StackPanel>
+                                    <RadioButton Margin="0,2,0,2" x:Name="NoSecondaryPotion" Content="None" GroupName="SecondaryPotion" IsChecked="{Binding Path=SelectedCooldowns.SelectedSecondaryPotion, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:SecondaryPotion.None}}"/>
+                                    <RadioButton Margin="0,2,0,2" x:Name="DemonicDarkRune" Content="Demonic/Dark Rune" GroupName="SecondaryPotion" IsChecked="{Binding Path=SelectedCooldowns.SelectedSecondaryPotion, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:SecondaryPotion.DemonicDarkRune}}"/>
+                                    <RadioButton Margin="0,2,0,2" x:Name="FlameCap" Content="Flame Cap" GroupName="SecondaryPotion" IsChecked="{Binding Path=SelectedCooldowns.SelectedSecondaryPotion, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:SecondaryPotion.FlameCap}}"/>
+                                </StackPanel>
+                            </GroupBox>
+                            <GroupBox Margin="5" Width="200" Height="180" VerticalAlignment="Top" HorizontalAlignment="Left">
+                                <GroupBox.Header>
+                                    Miscellaneous
+                                </GroupBox.Header>
+                                <StackPanel>
+                                    <CheckBox Margin="0,2,0,2" VerticalContentAlignment="Center"  x:Name="ScrollofStrength" IsChecked="{Binding SelectedConsumables.ScrollOfStrengthEnabled}">
+                                        <ComboBox Width="168" >
+                                            <ComboBoxItem IsSelected="{Binding Path=SelectedConsumables.SelectedScrollOfStrength, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:ScrollOfStrength.ScrollofStrength}}">
+                                                Scroll of Strength
+                                            </ComboBoxItem>
+                                            <ComboBoxItem IsSelected="{Binding Path=SelectedConsumables.SelectedScrollOfStrength, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:ScrollOfStrength.ScrollofStrengthII}}">
+                                                Scroll of Strength II
+                                            </ComboBoxItem>
+                                            <ComboBoxItem IsSelected="{Binding Path=SelectedConsumables.SelectedScrollOfStrength, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:ScrollOfStrength.ScrollofStrengthIII}}">
+                                                Scroll of Strength III
+                                            </ComboBoxItem>
+                                            <ComboBoxItem IsSelected="{Binding Path=SelectedConsumables.SelectedScrollOfStrength, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:ScrollOfStrength.ScrollofStrengthIV}}">
+                                                Scroll of Strength IV
+                                            </ComboBoxItem>
+                                            <ComboBoxItem IsSelected="{Binding Path=SelectedConsumables.SelectedScrollOfStrength, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:ScrollOfStrength.ScrollofStrengthV}}">
+                                                Scroll of Strength V
+                                            </ComboBoxItem>
+                                        </ComboBox>
+                                    </CheckBox>
+                                    <CheckBox Margin="0,2,0,2" VerticalContentAlignment="Center" x:Name="ScrollofAgility" IsChecked="{Binding SelectedConsumables.ScrollOfAgilityEnabled}">
+                                        <ComboBox Width="168" >
+                                            <ComboBoxItem IsSelected="{Binding Path=SelectedConsumables.SelectedScrollOfAgility, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:ScrollOfAgility.ScrollOfAgility}}">
+                                                Scroll of Agility
+                                            </ComboBoxItem>
+                                            <ComboBoxItem IsSelected="{Binding Path=SelectedConsumables.SelectedScrollOfAgility, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:ScrollOfAgility.ScrollOfAgilityII}}">
+                                                Scroll of Agility II
+                                            </ComboBoxItem>
+                                            <ComboBoxItem IsSelected="{Binding Path=SelectedConsumables.SelectedScrollOfAgility, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:ScrollOfAgility.ScrollOfAgilityIII}}">
+                                                Scroll of Agility III
+                                            </ComboBoxItem>
+                                            <ComboBoxItem IsSelected="{Binding Path=SelectedConsumables.SelectedScrollOfAgility, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:ScrollOfAgility.ScrollOfAgilityIV}}">
+                                                Scroll of Agility IV
+                                            </ComboBoxItem>
+                                            <ComboBoxItem IsSelected="{Binding Path=SelectedConsumables.SelectedScrollOfAgility, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:ScrollOfAgility.ScrollOfAgilityV}}">
+                                                Scroll of Agility V
+                                            </ComboBoxItem>
+                                        </ComboBox>
+                                    </CheckBox>
+                                    <CheckBox Margin="0,2,0,2" VerticalContentAlignment="Center" x:Name="Drum" IsChecked="{Binding SelectedCooldowns.DrumEnabled}">
+                                        <ComboBox Width="168">
+                                            <ComboBoxItem IsSelected="{Binding Path=SelectedCooldowns.SelectedDrum, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:Drum.DrumsOfBattle}}">
+                                                Drums of Battle
+                                            </ComboBoxItem>
+                                            <ComboBoxItem IsSelected="{Binding Path=SelectedCooldowns.SelectedDrum, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:Drum.DrumsOfWar}}">
+                                                Drums of War
+                                            </ComboBoxItem>
+                                        </ComboBox>
+                                    </CheckBox>
+                                    <CheckBox Margin="0,4,0,4" x:Name="SuperSapperCharge" Content="Super Sapper Charge" IsChecked="{Binding SelectedCooldowns.SuperSapperChargeEnabled}"/>
+                                    <CheckBox Margin="0,2,0,2" VerticalContentAlignment="Center" HorizontalContentAlignment="Stretch" x:Name="GnomishBattleChicken" IsChecked="{Binding SelectedConsumables.GnomishBattleChickenEnabled}">
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*"/>
+                                                <ColumnDefinition Width="10"/>
+                                                <ColumnDefinition Width="40"/>
+                                            </Grid.ColumnDefinitions>
+                                            <Label Padding="0" VerticalAlignment="Center" Content="Gnomish Battle Chicken" Grid.ColumnSpan="2" Height="15"/>
+                                            <ComboBox Grid.Column="2" SelectedItem="{Binding SelectedConsumables.GnomishBattleChickenCount}" Margin="5,1,0,0">
+                                                <ComboBox.ItemsSource>
+                                                    <x:Array Type="{x:Type sys:Int32}">
+                                                        <sys:Int32>1</sys:Int32>
+                                                        <sys:Int32>2</sys:Int32>
+                                                        <sys:Int32>3</sys:Int32>
+                                                        <sys:Int32>4</sys:Int32>
+                                                        <sys:Int32>5</sys:Int32>
+                                                    </x:Array>
+                                                </ComboBox.ItemsSource>
+                                            </ComboBox>
+                                        </Grid>
+                                    </CheckBox>
+                                </StackPanel>
+                            </GroupBox>
+                        </StackPanel>
+                    </Grid>
+                    <WrapPanel HorizontalAlignment="Center">
+                        <GroupBox Margin="5" Padding="0,4,0,0" Width="240" Height="385" VerticalAlignment="Top" HorizontalAlignment="Center">
+                            <GroupBox.Header>
+                                Group Buffs
+                            </GroupBox.Header>
+                            <StackPanel>
+                                <CheckBox x:Name="BattleShout" Margin="0,2,0,2" VerticalContentAlignment="Center" IsChecked="{Binding SelectedBuffs.BattleShoutEnabled}">
+                                    <ComboBox Width="200">
+                                        <ComboBoxItem IsSelected="{Binding Path=SelectedBuffs.SelectedBattleShout, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:BattleShout.BattleShout}}">Battle Shout</ComboBoxItem>
+                                        <ComboBoxItem IsSelected="{Binding Path=SelectedBuffs.SelectedBattleShout, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:BattleShout.BattleShoutT2}}">Battle Shout (T2)</ComboBoxItem>
+                                        <ComboBoxItem IsSelected="{Binding Path=SelectedBuffs.SelectedBattleShout, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:BattleShout.ImpBattleShoutSolarian}}">Battle Shout (Solarian)</ComboBoxItem>
+                                        <ComboBoxItem IsSelected="{Binding Path=SelectedBuffs.SelectedBattleShout, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:BattleShout.BattleShoutSolarianAndT2}}">Battle Shout (Solarian + T2)</ComboBoxItem>
+                                        <ComboBoxItem IsSelected="{Binding Path=SelectedBuffs.SelectedBattleShout, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:BattleShout.ImpBattleShout}}">Imp. Battle Shout</ComboBoxItem>
+                                        <ComboBoxItem IsSelected="{Binding Path=SelectedBuffs.SelectedBattleShout, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:BattleShout.ImpBattleShoutT2}}">Imp. Battle Shout (T2)</ComboBoxItem>
+                                        <ComboBoxItem IsSelected="{Binding Path=SelectedBuffs.SelectedBattleShout, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:BattleShout.ImpBattleShoutSolarian}}">Imp. Battle Shout (Solarian)</ComboBoxItem>
+                                        <ComboBoxItem IsSelected="{Binding Path=SelectedBuffs.SelectedBattleShout, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:BattleShout.ImpBattleShoutSolarianAndT2}}">Imp. Battle Shout (Solarian + T2)</ComboBoxItem>
+                                    </ComboBox>
+                                </CheckBox>
+                                <CheckBox Margin="0,4,0,4" x:Name="TrueshotAura" Content="Trueshot Aura" HorizontalAlignment = "Left" VerticalAlignment = "Top" IsChecked="{Binding SelectedBuffs.TrueshotAuraEnabled}">
+                                </CheckBox>
+                                <CheckBox Margin="0,4,0,4" x:Name="FerociousInspiration" Content="Ferocious Inspiration" HorizontalAlignment = "Left" VerticalAlignment = "Top" IsChecked="{Binding SelectedBuffs.FerociousInspirationEnabled}">
+                                </CheckBox>
+                                <CheckBox x:Name="EarthTotem"  Margin="0,2,0,2" VerticalContentAlignment="Center" IsChecked="{Binding SelectedBuffs.EarthTotemEnabled}">
+                                    <ComboBox Width="200">
+                                        <ComboBoxItem IsSelected="{Binding Path=SelectedBuffs.SelectedEarthTotem, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:EarthTotem.StrengthOfEarthTotem}}">Strength of Earth Totem</ComboBoxItem>
+                                        <ComboBoxItem IsSelected="{Binding Path=SelectedBuffs.SelectedEarthTotem, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:EarthTotem.ImpStrengthOfEarthTotem}}">Imp. Strength of Earth Totem</ComboBoxItem>
+                                    </ComboBox>
+                                </CheckBox>
+                                <CheckBox Checked="AirTotem1_Checked" x:Name="AirTotem1"  Margin="0,2,0,2" VerticalContentAlignment="Center" IsChecked="{Binding SelectedBuffs.AirTotem1Enabled}">
+                                    <ComboBox Width="200">
+                                        <ComboBoxItem IsSelected="{Binding Path=SelectedBuffs.SelectedAirTotem1, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:AirTotem1.WindfuryTotem}}">Windfury Totem</ComboBoxItem>
+                                        <ComboBoxItem IsSelected="{Binding Path=SelectedBuffs.SelectedAirTotem1, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:AirTotem1.ImpWindfuryTotem}}">Imp. Windfury Totem</ComboBoxItem>
+                                    </ComboBox>
+                                </CheckBox>
+                                <CheckBox x:Name="AirTotem2"  Margin="0,2,0,2" VerticalContentAlignment="Center" IsChecked="{Binding SelectedBuffs.AirTotem2Enabled}">
+                                    <ComboBox Width="200">
+                                        <ComboBoxItem IsSelected="{Binding Path=SelectedBuffs.SelectedAirTotem2, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:AirTotem2.GraceOfAirTotem}}">Grace of Air Totem</ComboBoxItem>
+                                        <ComboBoxItem IsSelected="{Binding Path=SelectedBuffs.SelectedAirTotem2, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:AirTotem2.ImpGraceOfAirTotem}}">Imp. Grace of Air Totem</ComboBoxItem>
+                                    </ComboBox>
+                                </CheckBox>
+                                <CheckBox x:Name="WaterTotem"  Margin="0,2,0,2" VerticalContentAlignment="Center" IsChecked="{Binding SelectedBuffs.WaterTotemEnabled}">
+                                    <ComboBox Width="200">
+                                        <ComboBoxItem IsSelected="{Binding Path=SelectedBuffs.SelectedWaterTotem, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:WaterTotem.ManaSpringTotem}}">Mana Spring Totem</ComboBoxItem>
+                                        <ComboBoxItem IsSelected="{Binding Path=SelectedBuffs.SelectedWaterTotem, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:WaterTotem.ImpManaSpringTotem}}">Imp. Mana Spring Totem</ComboBoxItem>
+                                    </ComboBox>
+                                </CheckBox>
+                                <CheckBox Margin="0,4,0,4" x:Name="UnleashedRage" Content="Unleashed Rage"  IsChecked="{Binding SelectedBuffs.UnleashedRageEnabled}">
+                                </CheckBox>
+                                <CheckBox Margin="0,4,0,4" x:Name="Heroism" Content="Heroism / Bloodlust"  IsChecked="{Binding SelectedBuffs.HeroismEnabled}">
+                                </CheckBox>
+                                <CheckBox Margin="0,4,0,4" x:Name="LeaderofthePack" Content="Leader of the Pack"  IsChecked="{Binding SelectedBuffs.LeaderofthePackEnabled}">
+                                </CheckBox>
+                                <CheckBox Margin="0,4,0,4" x:Name="HeroicPresence" Content="Heroic Presence"  IsChecked="{Binding SelectedBuffs.HeroicPresenceEnabled}">
+                                </CheckBox>
+                                <CheckBox Margin="0,4,0,4" x:Name="InspiringPresence" Content="Inspiring Presence" IsChecked="{Binding SelectedBuffs.InspiringPresenceEnabled}">
+                                </CheckBox>
+                                <CheckBox Margin="0,4,0,4" x:Name="BraidedEterniumChain" Content="Braided Eternium Chain" IsChecked="{Binding SelectedBuffs.BraidedEterniumChainEnabled}">
+                                </CheckBox>
+                                <CheckBox Margin="0,4,0,4" x:Name="EmbraceoftheDawn" Content="Embrace of the Dawn" IsChecked="{Binding SelectedBuffs.EmbraceoftheDawnEnabled}">
+                                </CheckBox>
+                                <CheckBox Margin="0,4,0,4" x:Name="EyeoftheNight" Content="Eye of the Night" IsChecked="{Binding SelectedBuffs.EyeoftheNightEnabled}">
+                                </CheckBox>
+                            </StackPanel>
+                        </GroupBox>
+                        <GroupBox Margin="5" Padding="0,4,0,0" Width="240" Height="385" VerticalAlignment="Top" HorizontalAlignment="Left">
+                            <GroupBox.Header>
+                                Raid Buffs
+                            </GroupBox.Header>
+                            <StackPanel>
+                                <CheckBox x:Name="BlessingofMight" Margin="0,2,0,2" VerticalContentAlignment="Center" IsChecked="{Binding SelectedBuffs.BlessingofMightEnabled}">
+                                    <ComboBox Width="200">
+                                        <ComboBoxItem IsSelected="{Binding Path=SelectedBuffs.SelectedBlessingofMight, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:BlessingofMight.BlessingofMight}}">Blessing of Might</ComboBoxItem>
+                                        <ComboBoxItem IsSelected="{Binding Path=SelectedBuffs.SelectedBlessingofMight, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:BlessingofMight.ImpBlessingofMight}}">Imp. Blessing of Might</ComboBoxItem>
+                                    </ComboBox>
+                                </CheckBox>
+                                <CheckBox Margin="0,4,0,4" x:Name="BlessingofKings" Content="Blessing of Kings" IsChecked="{Binding SelectedBuffs.BlessingofKingsEnabled}">
+                                </CheckBox>
+                                <CheckBox x:Name="BlessingofWisdom"  Margin="0,2,0,2" VerticalContentAlignment="Center" IsChecked="{Binding SelectedBuffs.BlessingofWisdomEnabled}">
+                                    <ComboBox Width="200">
+                                        <ComboBoxItem IsSelected="{Binding Path=SelectedBuffs.SelectedBlessingofWisdom, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:BlessingofWisdom.BlessingofWisdom}}">Blessing of Wisdom</ComboBoxItem>
+                                        <ComboBoxItem IsSelected="{Binding Path=SelectedBuffs.SelectedBlessingofWisdom, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:BlessingofWisdom.ImpBlessingofWisdom}}">Imp. Blessing of Wisdom</ComboBoxItem>
+                                    </ComboBox>
+                                </CheckBox>
+                                <CheckBox x:Name="MarkoftheWild"  Margin="0,2,0,2" VerticalContentAlignment="Center" IsChecked="{Binding SelectedBuffs.MarkoftheWildEnabled}">
+                                    <ComboBox Width="200">
+                                        <ComboBoxItem IsSelected="{Binding Path=SelectedBuffs.SelectedMarkoftheWild, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:MarkoftheWild.MarkoftheWild}}">Mark of the Wild</ComboBoxItem>
+                                        <ComboBoxItem IsSelected="{Binding Path=SelectedBuffs.SelectedMarkoftheWild, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:MarkoftheWild.ImpMarkoftheWild}}">Imp. Mark of the Wild</ComboBoxItem>
+                                    </ComboBox>
+                                </CheckBox>
+                                <CheckBox x:Name="PowerWordFortitude"  Margin="0,2,0,2" VerticalContentAlignment="Center" IsChecked="{Binding SelectedBuffs.PowerWordFortitudeEnabled}">
+                                    <ComboBox Width="200">
+                                        <ComboBoxItem IsSelected="{Binding Path=SelectedBuffs.SelectedPowerWordFortitude, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:PowerWordFortitude.PowerWordFortitude}}">Power Word: Fortitude</ComboBoxItem>
+                                        <ComboBoxItem IsSelected="{Binding Path=SelectedBuffs.SelectedPowerWordFortitude, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:PowerWordFortitude.ImpPowerWordFortitude}}">Imp. Power Word: Fortitude</ComboBoxItem>
+                                    </ComboBox>
+                                </CheckBox>
+                                <CheckBox x:Name="DivineSpirit"  Margin="0,2,0,2" VerticalContentAlignment="Center" IsChecked="{Binding SelectedBuffs.DivineSpiritEnabled}">
+                                    <ComboBox Width="200">
+                                        <ComboBoxItem IsSelected="{Binding Path=SelectedBuffs.SelectedDivineSpirit, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:DivineSpirit.DivineSpirit}}">Divine Spirit</ComboBoxItem>
+                                        <ComboBoxItem IsSelected="{Binding Path=SelectedBuffs.SelectedDivineSpirit, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:DivineSpirit.ImpDivineSpirit}}">Imp. Divine Spirit</ComboBoxItem>
+                                    </ComboBox>
+                                </CheckBox>
+                                <CheckBox Margin="0,4,0,4" x:Name="ArcaneIntellect" Content="Arcane Intellect" IsChecked="{Binding SelectedBuffs.ArcaneIntellectEnabled}">
+                                </CheckBox>
+                            </StackPanel>
+                        </GroupBox>
+                        <GroupBox Margin="5" Padding="0,4,0,0" Width="240" Height="385" VerticalAlignment="Top" HorizontalAlignment="Left">
+                            <GroupBox.Header>
+                                Raid Debuffs
+                            </GroupBox.Header>
+                            <WrapPanel>
+                                <StackPanel>
+                                    <CheckBox x:Name="JudgementoftheCrusader" Margin="0,2,0,2" VerticalContentAlignment="Center" IsChecked="{Binding SelectedDebuffs.JudgementoftheCrusaderEnabled}">
+                                        <ComboBox Width="200">
+                                            <ComboBoxItem IsSelected="{Binding Path=SelectedDebuffs.SelectedJudgementoftheCrusader, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:JudgementoftheCrusader.JudgementoftheCrusader}}">Judgement of the Crusader</ComboBoxItem>
+                                            <ComboBoxItem IsSelected="{Binding Path=SelectedDebuffs.SelectedJudgementoftheCrusader, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:JudgementoftheCrusader.ImpJudgementoftheCrusader}}">Imp. Judgement of the Crusader</ComboBoxItem>
+                                        </ComboBox>
+                                    </CheckBox>
+                                    <CheckBox Margin="0,4,0,4" x:Name="JudgementofWisdom" Content="Judgement of Wisdom" IsChecked="{Binding SelectedDebuffs.JudgementofWisdomEnabled}">
+                                    </CheckBox>
+                                    <CheckBox x:Name="ArmorDebuff" Margin="0,2,0,2" VerticalContentAlignment="Center" IsChecked="{Binding SelectedDebuffs.ArmorDebuffEnabled}">
+                                        <ComboBox Width="200">
+                                            <ComboBoxItem IsSelected="{Binding Path=SelectedDebuffs.SelectedArmorDebuff, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:ArmorDebuff.ExposeArmor}}">Expose Armor</ComboBoxItem>
+                                            <ComboBoxItem IsSelected="{Binding Path=SelectedDebuffs.SelectedArmorDebuff, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:ArmorDebuff.SunderArmor}}">Sunder Armor</ComboBoxItem>
+                                            <ComboBoxItem IsSelected="{Binding Path=SelectedDebuffs.SelectedArmorDebuff, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:ArmorDebuff.ImpExposeArmor}}">Imp. Expose Armor</ComboBoxItem>
+                                        </ComboBox>
+                                    </CheckBox>
+                                    <CheckBox Margin="0,4,0,4" x:Name="BloodFrenzy" Content="Blood Frenzy" IsChecked="{Binding SelectedDebuffs.BloodFrenzyEnabled}">
+                                    </CheckBox>
+                                    <CheckBox Margin="0,4,0,4" x:Name="HuntersMark" Content="Improved Hunter's Mark" IsChecked="{Binding SelectedDebuffs.HuntersMarkEnabled}">
+                                    </CheckBox>
+                                    <Grid Margin="0,2,0,2">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="10"/>
+                                            <ColumnDefinition Width="40"/>
+                                        </Grid.ColumnDefinitions>
+                                        <CheckBox Margin="0,2,0,2" x:Name="ExposeWeakness" Content="Expose Weakness" IsChecked="{Binding SelectedDebuffs.ExposeWeaknessEnabled}">
+                                        </CheckBox>
+                                        <TextBox Grid.Column="2" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" ToolTipService.InitialShowDelay="0" ToolTip="The Survival Hunter's Agility value." PreviewTextInput="NumberValidationTextBox" Text="{Binding SelectedDebuffs.HunterAgility, Converter={StaticResource StringEmptyConverter}, ConverterParameter='4'}" />
+                                    </Grid>
+                                    <CheckBox x:Name="FaerieFire" Margin="0,2,0,2" VerticalContentAlignment="Center" IsChecked="{Binding SelectedDebuffs.FaerieFireEnabled}">
+                                        <ComboBox Width="200">
+                                            <ComboBoxItem IsSelected="{Binding Path=SelectedDebuffs.SelectedFaerieFire, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:FaerieFire.FaerieFire}}">Faerie Fire</ComboBoxItem>
+                                            <ComboBoxItem IsSelected="{Binding Path=SelectedDebuffs.SelectedFaerieFire, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:FaerieFire.ImpFaerieFire}}">Imp. Faerie Fire</ComboBoxItem>
+                                        </ComboBox>
+                                    </CheckBox>
+                                    <CheckBox Margin="0,4,0,4" x:Name="CurseofRecklessness" Content="Curse of Recklessness" IsChecked="{Binding SelectedDebuffs.CurseofRecklessnessEnabled}">
+                                    </CheckBox>
+                                    <CheckBox x:Name="CurseoftheElements" Margin="0,2,0,2" VerticalContentAlignment="Center" IsChecked="{Binding SelectedDebuffs.CurseoftheElementsEnabled}">
+                                        <ComboBox Width="200">
+                                            <ComboBoxItem IsSelected="{Binding Path=SelectedDebuffs.SelectedCurseoftheElements, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:CurseoftheElements.CurseoftheElements}}">Curse of the Elements</ComboBoxItem>
+                                            <ComboBoxItem IsSelected="{Binding Path=SelectedDebuffs.SelectedCurseoftheElements, Converter={StaticResource ComparisonConverter}, ConverterParameter={x:Static model:CurseoftheElements.Malediction}}">Malediction</ComboBoxItem>
+                                        </ComboBox>
+                                    </CheckBox>
+                                    <CheckBox Margin="0,4,0,4" x:Name="ImprovedShadowBolt" Content="Improved Shadow Bolt" IsChecked="{Binding SelectedDebuffs.ImprovedShadowBoltEnabled}">
+                                    </CheckBox>
+                                    <CheckBox Margin="0,4,0,4" x:Name="Misery" Content="Misery" IsChecked="{Binding SelectedDebuffs.MiseryEnabled}">
+                                    </CheckBox>
+                                    <CheckBox Margin="0,4,0,4" x:Name="ShadowWeaving" Content="Shadow Weaving" IsChecked="{Binding SelectedDebuffs.ShadowWeavingEnabled}">
+                                    </CheckBox>
+                                    <CheckBox Margin="0,4,0,4" x:Name="ImprovedScorch" Content="Improved Scorch" IsChecked="{Binding SelectedDebuffs.ImprovedScorchEnabled}">
+                                    </CheckBox>
+                                </StackPanel>
+                            </WrapPanel>
+                        </GroupBox>
+                    </WrapPanel>
+                </StackPanel>
+            </TabItem>
+        </TabControl>
+        <Button Content="Reset" Grid.Row="1" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="100" Height="20" Margin="0,0,5,5" Click="ResetButton_Click" />
+    </Grid>
 </UserControl>

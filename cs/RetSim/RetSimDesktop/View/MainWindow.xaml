@@ -7,7 +7,7 @@
         xmlns:viewmodel="clr-namespace:RetSimDesktop.ViewModel"
         d:DataContext="{d:DesignInstance viewmodel:RetSimUIModel}"
         mc:Ignorable="d"
-        Title="RetSim" Name="Window" Height="710" Width="1100" MinHeight="690" MinWidth="900" Closing="Window_Closing">
+        Title="RetSim" Name="Window" Height="870" Width="1300" MinHeight="870" MinWidth="1300" Closing="Window_Closing">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="200" />
