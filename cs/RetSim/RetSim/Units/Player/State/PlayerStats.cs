@@ -69,7 +69,5 @@ public class PlayerStats : Stats
 
         this[StatName.CritDamage] = new DecimalStat(StatName.CritDamage, Constants.Stats.PhysicalCritBonus, 0);
         this[StatName.SpellCritDamage] = new DecimalStat(StatName.SpellCritDamage, Constants.Stats.SpellCritBonus, 0);
-
-        this[StatName.WeaponDamage] = new IntegerStat(StatName.WeaponDamage, race.Stats[StatName.WeaponDamage], gear[StatName.WeaponDamage]);
     }
 }
