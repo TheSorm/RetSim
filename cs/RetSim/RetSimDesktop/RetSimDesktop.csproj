@@ -526,8 +526,8 @@ Made by Sulis and Pride.</Description>
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.Web.WebView2" Version="1.0.1054.31" />
-    <PackageReference Include="ScottPlot.WPF" Version="4.1.31" />
+    <PackageReference Include="Microsoft.Web.WebView2" Version="1.0.1072.54" />
+    <PackageReference Include="ScottPlot.WPF" Version="4.1.32" />
   </ItemGroup>
 
   <ItemGroup>
