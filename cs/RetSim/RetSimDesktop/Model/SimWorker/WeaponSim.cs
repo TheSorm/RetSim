@@ -34,7 +34,7 @@ namespace RetSimDesktop.View
                 var encounterID = input.Item1.EncounterSettings.EncounterID;
 
                 var numberOfSimulations = input.Item1.SimSettings.SimulationCount;
-                var maxCSDelay = input.Item1.SimSettings.SimulationCount;
+                var maxCSDelay = input.Item1.SimSettings.MaxCSDelay;
 
                 var minDuration = input.Item1.EncounterSettings.MinFightDurationMilliseconds;
                 var maxDuration = input.Item1.EncounterSettings.MaxFightDurationMilliseconds;
