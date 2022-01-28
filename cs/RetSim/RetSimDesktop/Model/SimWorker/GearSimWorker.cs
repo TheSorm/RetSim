@@ -69,6 +69,7 @@ namespace RetSimDesktop.View
                     {
                         continue;
                     }
+                    //TODO: Move out of loop, fetch equipment once, and make copys instead of fetching multiple times (Also change weapon sim)
                     Equipment playerEquipment = input.Item1.SelectedGear.GetEquipment();
                     playerEquipment.PlayerEquipment[input.Item3] = item.Item;
 
