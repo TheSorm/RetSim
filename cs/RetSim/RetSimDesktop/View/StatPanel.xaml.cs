@@ -31,6 +31,8 @@ namespace RetSimDesktop
                     retSimUIModel.SelectedTalents.PropertyChanged += Model_PropertyChanged;
                     retSimUIModel.PlayerSettings.PropertyChanged += Model_PropertyChanged;
                     retSimUIModel.EncounterSettings.PropertyChanged += Model_PropertyChanged;
+                    retSimUIModel.SelectedBuffs.PropertyChanged += Model_PropertyChanged;
+                    retSimUIModel.SelectedConsumables.PropertyChanged += Model_PropertyChanged;
 
                     Model_PropertyChanged(this, new PropertyChangedEventArgs(""));
                 }
@@ -44,7 +46,6 @@ namespace RetSimDesktop
             {
                 List<Spell> buffs = new();
                 List<Spell> groupTalents = new();
-                List<Spell> debuffs = new();
                 List<Spell> consumables = new();
 
                 if (buffed)
@@ -52,14 +53,13 @@ namespace RetSimDesktop
                     buffs = retSimUIModel.SelectedBuffs.GetBuffs();
                     groupTalents = retSimUIModel.SelectedBuffs.GetGroupTalents();
                     groupTalents.AddRange(retSimUIModel.SelectedDebuffs.GetGroupTalents());
-                    debuffs = retSimUIModel.SelectedDebuffs.GetDebuffs();
                     consumables = retSimUIModel.SelectedConsumables.GetConsumables();
                 }
 
                 var equipment = retSimUIModel.SelectedGear.GetEquipment();
                 var player = new Player("Brave Hero", Collections.Races[retSimUIModel.PlayerSettings.SelectedRace.ToString()], ShattrathFaction.Aldor,
                     equipment, retSimUIModel.SelectedTalents.GetTalentList());
-                FightSimulation fight = new(player, new Enemy(Collections.Bosses[retSimUIModel.EncounterSettings.EncounterID]), new EliteTactic(0), groupTalents, buffs, debuffs, consumables, 0, 0, new List<Spell>(), new List<int>());
+                FightSimulation fight = new(player, new Enemy(Collections.Bosses[retSimUIModel.EncounterSettings.EncounterID]), new EliteTactic(0), groupTalents, buffs, new List<Spell>(), consumables, 0, 0, new List<Spell>(), new List<int>());
 
                 StatPanelBoxHeader.Content = "Level 70 " + Collections.Races[retSimUIModel.PlayerSettings.SelectedRace.ToString()].Name + " Paladin";
 
