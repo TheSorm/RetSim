@@ -74,11 +74,11 @@ namespace RetSimDesktop
                     }
                     foreach (var displayWeapon in retSimUIModel.AllWeapons.Values)
                     {
-                        for (int i = 0; i < displayWeapon.Weapon.Sockets.Length; i++)
+                        for (int i = 0; i < displayWeapon.Item.Sockets.Length; i++)
                         {
-                            if (displayWeapon.Weapon.Sockets[i] != null && displayWeapon.Weapon.Sockets[i].Color == color)
+                            if (displayWeapon.Item.Sockets[i] != null && displayWeapon.Item.Sockets[i].Color == color)
                             {
-                                displayWeapon.Weapon.Sockets[i].SocketedGem = gemPicker.SelectedGem;
+                                displayWeapon.Item.Sockets[i].SocketedGem = gemPicker.SelectedGem;
                                 displayWeapon.OnPropertyChanged("");
                             }
                         }

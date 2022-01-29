@@ -11,19 +11,19 @@
     <Grid >
         <TabControl x:Name="WeaponTabs">
             <TabItem Header="All">
-                <local:WeaponSlotSelect x:Name="AllWeaponSelect" SelectedItem="{Binding SelectedGear.SelectedWeapon, Mode=TwoWay}" SelectedWeaponEnchant="{Binding SelectedGear.WeaponEnchant, Mode=TwoWay}"/>
+                <local:GearSlotSelect x:Name="AllWeaponSelect" SlotID="15" SelectedItem="{Binding SelectedGear.SelectedWeapon, Mode=TwoWay}" SelectedEnchant="{Binding SelectedGear.WeaponEnchant, Mode=TwoWay}"/>
             </TabItem>
             <TabItem Header="Sword">
-                <local:WeaponSlotSelect x:Name="SwordSelect" SelectedItem="{Binding SelectedGear.SelectedWeapon, Mode=TwoWay}" SelectedWeaponEnchant="{Binding SelectedGear.WeaponEnchant, Mode=TwoWay}"/>
+                <local:GearSlotSelect x:Name="SwordSelect" SlotID="15" SelectedItem="{Binding SelectedGear.SelectedWeapon, Mode=TwoWay}" SelectedEnchant="{Binding SelectedGear.WeaponEnchant, Mode=TwoWay}"/>
             </TabItem>
             <TabItem Header="Mace">
-                <local:WeaponSlotSelect x:Name="MaceSelect" SelectedItem="{Binding SelectedGear.SelectedWeapon, Mode=TwoWay}" SelectedWeaponEnchant="{Binding SelectedGear.WeaponEnchant, Mode=TwoWay}"/>
+                <local:GearSlotSelect x:Name="MaceSelect" SlotID="15" SelectedItem="{Binding SelectedGear.SelectedWeapon, Mode=TwoWay}" SelectedEnchant="{Binding SelectedGear.WeaponEnchant, Mode=TwoWay}"/>
             </TabItem>
             <TabItem Header="Axe">
-                <local:WeaponSlotSelect x:Name="AxeSelect" SelectedItem="{Binding SelectedGear.SelectedWeapon, Mode=TwoWay}" SelectedWeaponEnchant="{Binding SelectedGear.WeaponEnchant, Mode=TwoWay}"/>
+                <local:GearSlotSelect x:Name="AxeSelect" SlotID="15" SelectedItem="{Binding SelectedGear.SelectedWeapon, Mode=TwoWay}" SelectedEnchant="{Binding SelectedGear.WeaponEnchant, Mode=TwoWay}"/>
             </TabItem>
             <TabItem Header="Polearm">
-                <local:WeaponSlotSelect x:Name="PolearmSelect" SelectedItem="{Binding SelectedGear.SelectedWeapon, Mode=TwoWay}" SelectedWeaponEnchant="{Binding SelectedGear.WeaponEnchant, Mode=TwoWay}"/>
+                <local:GearSlotSelect x:Name="PolearmSelect" SlotID="15" SelectedItem="{Binding SelectedGear.SelectedWeapon, Mode=TwoWay}" SelectedEnchant="{Binding SelectedGear.WeaponEnchant, Mode=TwoWay}"/>
             </TabItem>
         </TabControl>
     </Grid>

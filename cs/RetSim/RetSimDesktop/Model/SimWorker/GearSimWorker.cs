@@ -25,29 +25,27 @@ namespace RetSimDesktop.View
 
         static void BackgroundWorker_DoWork(object? sender, DoWorkEventArgs e)
         {
-            if (e.Argument is (RetSimUIModel, List<DisplayGear>, int))
+            if (e.Argument is ValueTuple<RetSimUIModel, List<DisplayGear>, int> (var retSimUiModel, var gearList, var slotID))
             {
-                Tuple<RetSimUIModel, IEnumerable<DisplayGear>, int> input = (Tuple<RetSimUIModel, IEnumerable<DisplayGear>, int>)e.Argument;
+                var race = retSimUiModel.PlayerSettings.SelectedRace;
+                var shattrathFaction = retSimUiModel.PlayerSettings.SelectedShattrathFaction;
+                var encounterID = retSimUiModel.EncounterSettings.EncounterID;
 
-                var race = input.Item1.PlayerSettings.SelectedRace;
-                var shattrathFaction = input.Item1.PlayerSettings.SelectedShattrathFaction;
-                var encounterID = input.Item1.EncounterSettings.EncounterID;
+                var numberOfSimulations = retSimUiModel.SimSettings.SimulationCount;
+                var maxCSDelay = retSimUiModel.SimSettings.MaxCSDelay;
 
-                var numberOfSimulations = input.Item1.SimSettings.SimulationCount;
-                var maxCSDelay = input.Item1.SimSettings.MaxCSDelay;
+                var minDuration = retSimUiModel.EncounterSettings.MinFightDurationMilliseconds;
+                var maxDuration = retSimUiModel.EncounterSettings.MaxFightDurationMilliseconds;
 
-                var minDuration = input.Item1.EncounterSettings.MinFightDurationMilliseconds;
-                var maxDuration = input.Item1.EncounterSettings.MaxFightDurationMilliseconds;
-
-                var talents = input.Item1.SelectedTalents.GetTalentList();
-                var groupTalents = input.Item1.SelectedBuffs.GetGroupTalents();
-                groupTalents.AddRange(input.Item1.SelectedDebuffs.GetGroupTalents());
-                var buffs = input.Item1.SelectedBuffs.GetBuffs();
-                var debuffs = input.Item1.SelectedDebuffs.GetDebuffs();
-                var consumables = input.Item1.SelectedConsumables.GetConsumables();
-                var cooldowns = input.Item1.SelectedCooldowns.GetCooldowns();
+                var talents = retSimUiModel.SelectedTalents.GetTalentList();
+                var groupTalents = retSimUiModel.SelectedBuffs.GetGroupTalents();
+                groupTalents.AddRange(retSimUiModel.SelectedDebuffs.GetGroupTalents());
+                var buffs = retSimUiModel.SelectedBuffs.GetBuffs();
+                var debuffs = retSimUiModel.SelectedDebuffs.GetDebuffs();
+                var consumables = retSimUiModel.SelectedConsumables.GetConsumables();
+                var cooldowns = retSimUiModel.SelectedCooldowns.GetCooldowns();
                 List<int> heroismUsage = new();
-                if (input.Item1.SelectedBuffs.HeroismEnabled)
+                if (retSimUiModel.SelectedBuffs.HeroismEnabled)
                 {
                     int time = 8000;
                     if (minDuration < 8000)
@@ -63,15 +61,15 @@ namespace RetSimDesktop.View
 
                 }
 
-                foreach (var item in input.Item2)
+                foreach (var item in gearList)
                 {
                     if (!item.EnabledForGearSim)
                     {
                         continue;
                     }
                     //TODO: Move out of loop, fetch equipment once, and make copys instead of fetching multiple times (Also change weapon sim)
-                    Equipment playerEquipment = input.Item1.SelectedGear.GetEquipment();
-                    playerEquipment.PlayerEquipment[input.Item3] = item.Item;
+                    Equipment playerEquipment = retSimUiModel.SelectedGear.GetEquipment();
+                    playerEquipment.PlayerEquipment[slotID] = item.Item;
 
                     int freeThread = -1;
                     while (freeThread == -1)
@@ -115,7 +113,7 @@ namespace RetSimDesktop.View
                         thread.Join();
                 }
 
-                input.Item1.SimButtonStatus.IsSimButtonEnabled = true;
+                retSimUiModel.SimButtonStatus.IsSimButtonEnabled = true;
             }
         }
     }

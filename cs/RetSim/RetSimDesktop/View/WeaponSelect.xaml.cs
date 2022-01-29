@@ -14,9 +14,9 @@ namespace RetSimDesktop
     /// 
     public partial class WeaponSelect : UserControl
     {
-        private Dictionary<WeaponType, WeaponSlotSelect> SelectorByType = new();
-        public Dictionary<WeaponType, List<DisplayWeapon>> ShownWeapons { get; set; }
-        public List<DisplayWeapon> AllShownWeapons { get; set; }
+        private Dictionary<WeaponType, GearSlotSelect> SelectorByType = new();
+        public Dictionary<WeaponType, List<DisplayGear>> ShownWeapons { get; set; }
+        public List<DisplayGear> AllShownWeapons { get; set; }
 
         public WeaponSelect()
         {
@@ -65,7 +65,7 @@ namespace RetSimDesktop
                         ShownWeapons[type].AddRange(retSimUIModel.WeaponsByPhases[type][5]);
                     }
 
-                    SelectorByType[type].SetBinding(WeaponSlotSelect.WeaponListProperty, new Binding("ShownWeapons[" + type + "]")
+                    SelectorByType[type].SetBinding(GearSlotSelect.SlotListProperty, new Binding("ShownWeapons[" + type + "]")
                     {
                         Source = this,
                         Mode = BindingMode.OneWay
@@ -74,7 +74,7 @@ namespace RetSimDesktop
                     SelectorByType[type].LevelColumn.SortDirection = ListSortDirection.Descending;
                     SelectorByType[type].gearSlot.Items.SortDescriptions.Add(new SortDescription(SelectorByType[type].LevelColumn.SortMemberPath, ListSortDirection.Descending));
 
-                    SelectorByType[type].SetBinding(WeaponSlotSelect.WeaponEnchantListProperty, new Binding("EnchantsBySlot[" + Slot.Weapon + "]")
+                    SelectorByType[type].SetBinding(GearSlotSelect.EnchantListProperty, new Binding("EnchantsBySlot[" + Slot.Weapon + "]")
                     {
                         Source = DataContext,
                         Mode = BindingMode.OneWay
@@ -86,7 +86,7 @@ namespace RetSimDesktop
                 {
                     AllShownWeapons.AddRange(weapons);
                 }
-                AllWeaponSelect.SetBinding(WeaponSlotSelect.WeaponListProperty, new Binding("AllShownWeapons")
+                AllWeaponSelect.SetBinding(GearSlotSelect.SlotListProperty, new Binding("AllShownWeapons")
                 {
                     Source = this,
                     Mode = BindingMode.OneWay
@@ -94,7 +94,7 @@ namespace RetSimDesktop
                 AllWeaponSelect.LevelColumn.SortDirection = ListSortDirection.Descending;
                 AllWeaponSelect.gearSlot.Items.SortDescriptions.Add(new SortDescription(AllWeaponSelect.LevelColumn.SortMemberPath, ListSortDirection.Descending));
 
-                AllWeaponSelect.SetBinding(WeaponSlotSelect.WeaponEnchantListProperty, new Binding("EnchantsBySlot[" + Slot.Weapon + "]")
+                AllWeaponSelect.SetBinding(GearSlotSelect.EnchantListProperty, new Binding("EnchantsBySlot[" + Slot.Weapon + "]")
                 {
                     Source = DataContext,
                     Mode = BindingMode.OneWay

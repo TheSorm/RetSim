@@ -2006,9 +2006,6 @@ Made by Sulis and Pride.</Description>
     <Compile Update="Model\SimWorker\CsDelayWorker.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Update="Model\SimWorker\WeaponSim.cs">
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Update="Model\SimWorker\GearSimWorker.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -2052,9 +2049,6 @@ Made by Sulis and Pride.</Description>
       <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
     </Page>
     <Page Update="View\WeaponSelect.xaml">
-      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
-    </Page>
-    <Page Update="View\WeaponSlotSelect.xaml">
       <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
     </Page>
   </ItemGroup>

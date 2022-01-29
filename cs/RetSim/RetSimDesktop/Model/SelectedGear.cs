@@ -26,7 +26,7 @@ namespace RetSimDesktop.Model
         private DisplayGear? selectedTrinket1 = new() { Item = AllItems[29383], DPS = 0, EnabledForGearSim = true };
         private DisplayGear? selectedTrinket2 = new() { Item = AllItems[28830], DPS = 0, EnabledForGearSim = true };
         private DisplayGear? selectedRelic = new() { Item = AllItems[27484], DPS = 0, EnabledForGearSim = true };
-        private DisplayWeapon? selectedWeapon = new() { Weapon = Weapons[32332], DPS = 0, EnabledForGearSim = true };
+        private DisplayGear? selectedWeapon = new() { Item = Weapons[32332], DPS = 0, EnabledForGearSim = true };
 
         private Enchant? headEnchant = Enchants[35452];
         private Enchant? shouldersEnchant = Enchants[35417];
@@ -189,7 +189,7 @@ namespace RetSimDesktop.Model
             }
         }
 
-        public DisplayWeapon? SelectedWeapon
+        public DisplayGear? SelectedWeapon
         {
             get { return selectedWeapon; }
             set
@@ -231,7 +231,7 @@ namespace RetSimDesktop.Model
                 Trinket1 = SelectedTrinket1?.Item,
                 Trinket2 = SelectedTrinket2?.Item,
                 Relic = SelectedRelic?.Item,
-                Weapon = SelectedWeapon?.Weapon,
+                Weapon = (SelectedWeapon?.Item) as EquippableWeapon,
 
                 HeadEnchant = HeadEnchant,
                 ShouldersEnchant = ShouldersEnchant,
@@ -424,7 +424,7 @@ namespace RetSimDesktop.Model
             }
             if (properties.ContainsKey("SelectedWeapon"))
             {
-                result.SelectedWeapon = new() { Weapon = Weapons[properties["SelectedWeapon"]], DPS = 0, EnabledForGearSim = true };
+                result.SelectedWeapon = new() { Item = Weapons[properties["SelectedWeapon"]], DPS = 0, EnabledForGearSim = true };
             }
             else
             {
@@ -588,7 +588,7 @@ namespace RetSimDesktop.Model
             }
             if (value.SelectedWeapon != null)
             {
-                writer.WriteNumber("SelectedWeapon", value.SelectedWeapon.Weapon.ID);
+                writer.WriteNumber("SelectedWeapon", value.SelectedWeapon.Item.ID);
             }
 
             if (value.HeadEnchant != null)

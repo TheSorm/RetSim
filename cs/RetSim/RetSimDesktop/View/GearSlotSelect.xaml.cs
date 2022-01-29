@@ -23,9 +23,9 @@ namespace RetSimDesktop
         private static GearSim gearSimWorker = new();
 
         public int SlotID { get; set; }
-        public IEnumerable<DisplayGear> SlotList
+        public List<DisplayGear> SlotList
         {
-            get => (IEnumerable<DisplayGear>)GetValue(SlotListProperty);
+            get => (List<DisplayGear>)GetValue(SlotListProperty);
             set => SetValue(SlotListProperty, value);
         }
 
@@ -82,6 +82,14 @@ namespace RetSimDesktop
                     else
                     {
                         EnchantComboBox.Visibility = Visibility.Visible;
+                    }
+
+                    if(SlotList.Count > 0 && SlotList[0].Item is EquippableWeapon && WeaponType.Visibility == Visibility.Collapsed)
+                    {
+                        WeaponMinDamage.Visibility = Visibility.Visible;
+                        WeaponMaxDamage.Visibility = Visibility.Visible;
+                        WeaponSpeed.Visibility = Visibility.Visible;
+                        WeaponDPS.Visibility = Visibility.Visible;
                     }
                 }
             };
@@ -155,7 +163,7 @@ namespace RetSimDesktop
             if (!gearSimWorker.IsBusy && DataContext is RetSimUIModel retSimUIModel)
             {
                 retSimUIModel.SimButtonStatus.IsSimButtonEnabled = false;
-                gearSimWorker.RunWorkerAsync(new Tuple<RetSimUIModel, IEnumerable<DisplayGear>, int>(retSimUIModel, SlotList, SlotID));
+                gearSimWorker.RunWorkerAsync((retSimUIModel, SlotList, SlotID));
             }
         }
 
@@ -532,6 +540,33 @@ namespace RetSimDesktop
         public object ConvertBack(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
         {
             return null;
+        }
+    }
+
+
+    public class WeaponSpeedConverter : IValueConverter
+    {
+        public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
+        {
+            return (((int)value) / 1000f).ToString("0.#");
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
+        {
+            throw new NotSupportedException();
+        }
+    }
+
+    public class WeaponDPSConverter : IValueConverter
+    {
+        public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
+        {
+            return ((float)value).ToString("0.##");
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
+        {
+            throw new NotSupportedException();
         }
     }
 }
