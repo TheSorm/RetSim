@@ -7,31 +7,30 @@
         xmlns:viewmodel="clr-namespace:RetSimDesktop.ViewModel"
         d:DataContext="{d:DesignInstance viewmodel:RetSimUIModel}"
         mc:Ignorable="d"
-        Title="RetSim" Name="Window" Height="870" Width="1300" MinHeight="870" MinWidth="1300" Closing="Window_Closing">
+        Title="RetSim" Name="Window" Height="870" Width="1400" MinHeight="870" MinWidth="1400" Closing="Window_Closing">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="200" />
+            <ColumnDefinition Width="330" />
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
-        <local:WoWTooltip x:Name="WoWTooltip" PlacementTarget="{Binding ElementName=Window}" XOffset="200" YOffset="80" ItemId="{Binding TooltipSettings.HoverItemID}"/>
-        <Border BorderBrush="Gray" BorderThickness="0,0,1,0" Margin="0,0,2,0">
+        <local:WoWTooltip x:Name="WoWTooltip" PlacementTarget="{Binding ElementName=Window}" OverlayControl="{Binding TooltipSettings.OverlayControl}" ItemId="{Binding TooltipSettings.HoverItemID}"/>
+        <Border  BorderBrush="Gray" BorderThickness="0,0,1,0" Margin="0,0,2,0">
             <Grid Margin="0,0,0,5">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="100" />
                     <RowDefinition Height="*" />
                     <RowDefinition Height="100" />
                 </Grid.RowDefinitions>
-                <StackPanel Grid.Row="0" VerticalAlignment="Top" HorizontalAlignment="Center" Width="200">
+                <StackPanel Grid.Row="0" VerticalAlignment="Top" HorizontalAlignment="Center" Width="330">
                     <Button BorderThickness="1,1,0,1" x:Name="GearButton" IsEnabled="False" Content="Gear" Click="Gear_Click"/>
                     <Button BorderThickness="1,0,0,1" x:Name="SettingsButton" Content="Settings" Click="Settings_Click"/>
                     <Button BorderThickness="1,0,0,1" x:Name="StatWeightsButton" Content="Stat Weights" Click="StatWeights_Click"/>
                     <Button BorderThickness="1,0,0,1" x:Name="CsDelayButton" Content="CS Delay" Click="CsDelay_Click"/>
                     <Button BorderThickness="1,0,0,1" x:Name="StatisticsButton" Content="Statistics" Click="Statistics_Click"/>
                 </StackPanel>
-                <local:StatPanel Grid.Row="1" Width="200" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                <local:PlayerPanel Grid.Row="1" Width="330" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                 <Border BorderBrush="LightGray" BorderThickness="1" CornerRadius="2" Grid.Row="2" Margin="5" Padding="2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
                     <StackPanel >
-
                         <Grid>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="*"/>

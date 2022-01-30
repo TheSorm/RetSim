@@ -23,7 +23,7 @@
             <RowDefinition Height="*" />
             <RowDefinition Height="30px" />
         </Grid.RowDefinitions>
-        <DataGrid Name="gearSlot" RowHeight="25" ColumnWidth="*" GridLinesVisibility="Horizontal" IsReadOnly="True" SelectionMode="Single" HeadersVisibility="Column" CanUserResizeColumns="False" CanUserResizeRows="False" AutoGenerateColumns="False">
+        <DataGrid Name="gearSlot" MouseEnter="gearSlot_MouseEnter" MouseLeave="gearSlot_MouseLeave" RowHeight="25" ColumnWidth="*" GridLinesVisibility="Horizontal" IsReadOnly="True" SelectionMode="Single" HeadersVisibility="Column" CanUserResizeColumns="False" CanUserResizeRows="False" AutoGenerateColumns="False">
             <DataGrid.Resources>
                 <Style TargetType="{x:Type DataGridCell}">
                     <Style.Triggers>

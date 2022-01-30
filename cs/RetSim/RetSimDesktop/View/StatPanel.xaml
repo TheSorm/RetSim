@@ -12,7 +12,7 @@
         <StackPanel>
             <GroupBox Margin="5" >
                 <GroupBox.Header>
-                    <Label Padding="0" x:Name="StatPanelBoxHeader">Level 70 Human Paladin</Label>
+                    <Label Padding="0" x:Name="StatPanelBoxHeader">Stats</Label>
                 </GroupBox.Header>
                 <Grid>
                     <Grid.RowDefinitions>
@@ -233,7 +233,7 @@
                     <StackPanel Grid.Row="0">
                         <Grid>
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="2.5*" />
+                                <ColumnDefinition Width="*" />
                                 <ColumnDefinition Width="*" />
                                 <ColumnDefinition Width="*" />
                             </Grid.ColumnDefinitions>
@@ -245,7 +245,7 @@
                     <StackPanel Grid.Row="1">
                         <Grid>
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="2.5*" />
+                                <ColumnDefinition Width="*" />
                                 <ColumnDefinition Width="*" />
                                 <ColumnDefinition Width="*" />
                             </Grid.ColumnDefinitions>
@@ -257,7 +257,7 @@
                     <StackPanel Grid.Row="2" >
                         <Grid>
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="2.5*" />
+                                <ColumnDefinition Width="*" />
                                 <ColumnDefinition Width="*" />
                                 <ColumnDefinition Width="*" />
                             </Grid.ColumnDefinitions>
@@ -269,7 +269,7 @@
                     <StackPanel Grid.Row="3" >
                         <Grid>
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="2.5*" />
+                                <ColumnDefinition Width="*" />
                                 <ColumnDefinition Width="*" />
                                 <ColumnDefinition Width="*" />
                             </Grid.ColumnDefinitions>

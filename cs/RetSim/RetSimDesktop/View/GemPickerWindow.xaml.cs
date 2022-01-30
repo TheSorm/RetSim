@@ -115,6 +115,16 @@ namespace RetSimDesktop
                 Tooltip.Browser = null;
             }
         }
+
+        private void Grid_MouseEnter(object sender, MouseEventArgs e)
+        {
+            Tooltip.OverlayControl = this;
+        }
+
+        private void Grid_MouseLeave(object sender, MouseEventArgs e)
+        {
+            Tooltip.OverlayControl = null;
+        }
     }
     public class GemToImageConverter : IValueConverter
     {

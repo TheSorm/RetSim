@@ -11,7 +11,7 @@
     <Window.Resources>
         <local:GemToImageConverter x:Key="GemToImageConverter" />
     </Window.Resources>
-    <Grid>
+    <Grid MouseEnter="Grid_MouseEnter" MouseLeave="Grid_MouseLeave">
         <local:WoWTooltip x:Name="Tooltip" PlacementTarget="{Binding ElementName=GemPicker}"/>
         <DataGrid Name="gemGrid" ColumnWidth="*" RowHeight="25" GridLinesVisibility="Horizontal" PreviewMouseDown="GemGrid_PreviewMouseDown" IsReadOnly="True" SelectionMode="Single" HeadersVisibility="Column" CanUserResizeColumns="False" CanUserResizeRows="False" AutoGenerateColumns="False">
             <DataGrid.Columns>

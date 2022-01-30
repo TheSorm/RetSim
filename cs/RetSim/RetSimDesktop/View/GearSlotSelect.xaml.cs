@@ -342,6 +342,22 @@ namespace RetSimDesktop
                 retSimUIModel.TooltipSettings.HoverItemID = 0;
             }
         }
+
+        private void gearSlot_MouseEnter(object sender, MouseEventArgs e)
+        {
+            if (DataContext is RetSimUIModel retSimUIModel)
+            {
+                retSimUIModel.TooltipSettings.OverlayControl = gearSlot;
+            }
+        }
+
+        private void gearSlot_MouseLeave(object sender, MouseEventArgs e)
+        {
+            if (DataContext is RetSimUIModel retSimUIModel)
+            {
+                retSimUIModel.TooltipSettings.OverlayControl = null;
+            }
+        }
     }
     public class QualityToBrushConverter : IValueConverter
     {

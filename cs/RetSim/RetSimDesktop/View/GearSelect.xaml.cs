@@ -44,6 +44,11 @@ namespace RetSimDesktop
             SelectorBySlot.Add(Slot.Relic, new() { RelicSelect });
         }
 
+        public void SwitchToSlotSelection(int slot)
+        {
+            GearTabs.SelectedIndex = (slot + 1) % 16;
+        }
+
         private void Model_PropertyChanged(object? sender, PropertyChangedEventArgs e)
         {
             if (DataContext is RetSimUIModel retSimUIModel)

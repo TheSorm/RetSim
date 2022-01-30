@@ -61,8 +61,6 @@ namespace RetSimDesktop
                     equipment, retSimUIModel.SelectedTalents.GetTalentList());
                 FightSimulation fight = new(player, new Enemy(Collections.Bosses[retSimUIModel.EncounterSettings.EncounterID]), new EliteTactic(0), groupTalents, buffs, new List<Spell>(), consumables, 0, 0, new List<Spell>(), new List<int>());
 
-                StatPanelBoxHeader.Content = "Level 70 " + Collections.Races[retSimUIModel.PlayerSettings.SelectedRace.ToString()].Name + " Paladin";
-
                 Stamina.Content = player.Stats[StatName.Stamina].Value;
                 Health.Content = player.Stats[StatName.Health].Value;
                 Intellect.Content = player.Stats[StatName.Intellect].Value;

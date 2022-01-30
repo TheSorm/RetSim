@@ -1,0 +1,69 @@
+﻿<UserControl x:Class="RetSimDesktop.PlayerPanel"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:RetSimDesktop"
+             xmlns:viewmodel="clr-namespace:RetSimDesktop.ViewModel"
+             d:DataContext="{d:DesignInstance viewmodel:RetSimUIModel}"
+             mc:Ignorable="d" Name="PlayerPanelControl"
+             d:DesignHeight="650" d:DesignWidth="300">
+    <UserControl.Resources>
+        <local:ItemToImageConverter x:Key="ItemToImageConverter" />
+        <local:SocketToImageConverter x:Key="SocketToImageConverter" />
+    </UserControl.Resources>
+    <Grid Background="White">
+        <GroupBox x:Name="PlayerBox" Margin="5" MouseEnter="PlayerBox_MouseEnter" MouseLeave="PlayerBox_MouseLeave">
+            <GroupBox.Header>
+                <Label Padding="0" x:Name="StatPanelBoxHeader">Level 70 Human Paladin</Label>
+            </GroupBox.Header>
+            <StackPanel>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="52"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="52"/>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel VerticalAlignment="Center">
+                        <StackPanel.Resources>
+                            <Style TargetType="{x:Type local:GearImage}">
+                                <Setter Property="Margin" Value="0,6,0,6"/>
+                            </Style>
+                        </StackPanel.Resources>
+                        <local:GearImage SlotId="0" Gear="{Binding SelectedGear.SelectedHead}"/>
+                        <local:GearImage SlotId="1" Gear="{Binding SelectedGear.SelectedNeck}"/>
+                        <local:GearImage SlotId="2" Gear="{Binding SelectedGear.SelectedShoulders}"/>
+                        <local:GearImage SlotId="3" Gear="{Binding SelectedGear.SelectedBack}"/>
+                        <local:GearImage SlotId="4" Gear="{Binding SelectedGear.SelectedChest}"/>
+                        <local:GearImage SlotId="5" Gear="{Binding SelectedGear.SelectedWrists}"/>
+                        <local:GearImage SlotId="6" Gear="{Binding SelectedGear.SelectedHands}"/>
+                    </StackPanel>
+                    <local:StatPanel Margin="3,0,3,0" Grid.Column="1"/>
+                    <StackPanel VerticalAlignment="Center" Grid.Column="2">
+                        <StackPanel.Resources>
+                            <Style TargetType="{x:Type local:GearImage}">
+                                <Setter Property="Margin" Value="0,6,0,6"/>
+                            </Style>
+                        </StackPanel.Resources>
+                        <local:GearImage SlotId="7" Gear="{Binding SelectedGear.SelectedWaist}"/>
+                        <local:GearImage SlotId="8" Gear="{Binding SelectedGear.SelectedLegs}"/>
+                        <local:GearImage SlotId="9" Gear="{Binding SelectedGear.SelectedFeet}"/>
+                        <local:GearImage SlotId="10" Gear="{Binding SelectedGear.SelectedFinger1}"/>
+                        <local:GearImage SlotId="11" Gear="{Binding SelectedGear.SelectedFinger2}"/>
+                        <local:GearImage SlotId="12" Gear="{Binding SelectedGear.SelectedTrinket1}"/>
+                        <local:GearImage SlotId="13" Gear="{Binding SelectedGear.SelectedTrinket2}"/>
+                    </StackPanel>
+                </Grid>
+                <StackPanel Margin="0,2,0,2" Height="52" Orientation="Horizontal" HorizontalAlignment="Center">
+                    <StackPanel.Resources>
+                        <Style TargetType="{x:Type local:GearImage}">
+                            <Setter Property="Margin" Value="15,0,15,0"/>
+                        </Style>
+                    </StackPanel.Resources>
+                    <local:GearImage SlotId="15" Gear="{Binding SelectedGear.SelectedWeapon}"/>
+                    <local:GearImage SlotId="14" Gear="{Binding SelectedGear.SelectedRelic}"/>
+                </StackPanel>
+            </StackPanel>
+        </GroupBox>
+    </Grid>
+</UserControl>

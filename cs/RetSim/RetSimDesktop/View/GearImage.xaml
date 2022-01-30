@@ -1,0 +1,62 @@
+﻿<UserControl x:Class="RetSimDesktop.GearImage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:RetSimDesktop"
+             mc:Ignorable="d" Name="GearImageControll"
+             d:DesignHeight="50" d:DesignWidth="52">
+    <UserControl.Resources>
+        <local:ItemToImageConverterWithDefault x:Key="ItemToImageConverterWithDefault" />
+        <local:SocketToImageConverter x:Key="SocketToImageConverter" />
+        <local:SocketToSocketColorBrushConverter x:Key="SocketToSocketColorBrushConverter" />
+    </UserControl.Resources>
+    <Grid Background="White">
+        <Grid.Resources>
+            <Style TargetType="{x:Type Border}">
+                <Setter Property="BorderThickness" Value="2"/>
+                <Setter Property="CornerRadius" Value="1"/>
+                <Setter Property="BorderBrush" Value="Black"/>
+            </Style>
+            <Style TargetType="{x:Type Image}">
+                <Setter Property="Height" Value="50"/>
+                <Setter Property="Width" Value="50"/>
+                <Setter Property="RenderOptions.BitmapScalingMode" Value="HighQuality"/>
+                <EventSetter  Event="MouseEnter" Handler="Image_MouseEnter"/>
+                <EventSetter  Event="MouseLeave" Handler="Image_MouseLeave"/>
+                <EventSetter  Event="PreviewMouseDown" Handler="Image_PreviewMouseDown"/>
+            </Style>
+        </Grid.Resources>
+        <Border>
+            <Grid>
+                <Image x:Name="ItemImage" Source="{Binding ElementName=GearImageControll, Converter={StaticResource ItemToImageConverterWithDefault}}"/>
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom">
+                    <StackPanel.Resources>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="BorderThickness" Value="1"/>
+                            <Setter Property="CornerRadius" Value="1"/>
+                            <Setter Property="BorderBrush" Value="Black"/>
+                        </Style>
+                        <Style TargetType="{x:Type Image}">
+                            <Setter Property="Height" Value="14"/>
+                            <Setter Property="Width" Value="14"/>
+                            <Setter Property="RenderOptions.BitmapScalingMode" Value="HighQuality"/>
+                            <EventSetter  Event="MouseEnter" Handler="Socket_MouseEnter"/>
+                            <EventSetter  Event="MouseLeave" Handler="Socket_MouseLeave"/>
+                            <EventSetter  Event="PreviewMouseDown" Handler="Socket_PreviewMouseDown"/>
+                        </Style>
+                    </StackPanel.Resources>
+                    <Border BorderBrush="{Binding Gear.Item.Socket1, ElementName=GearImageControll, Converter={StaticResource SocketToSocketColorBrushConverter}}">
+                        <Image x:Name="Socket1Image" Source="{Binding Gear.Item.Socket1, ElementName=GearImageControll, Converter={StaticResource SocketToImageConverter}}"/>
+                    </Border>
+                    <Border BorderBrush="{Binding Gear.Item.Socket2, ElementName=GearImageControll, Converter={StaticResource SocketToSocketColorBrushConverter}}">
+                        <Image x:Name="Socket2Image" Source="{Binding Gear.Item.Socket2, ElementName=GearImageControll, Converter={StaticResource SocketToImageConverter}}"/>
+                    </Border>
+                    <Border BorderBrush="{Binding Gear.Item.Socket3, ElementName=GearImageControll, Converter={StaticResource SocketToSocketColorBrushConverter}}">
+                        <Image x:Name="Socket3Image" Source="{Binding Gear.Item.Socket3, ElementName=GearImageControll, Converter={StaticResource SocketToImageConverter}}"/>
+                    </Border>
+                </StackPanel>
+            </Grid>
+        </Border>
+    </Grid>
+</UserControl>

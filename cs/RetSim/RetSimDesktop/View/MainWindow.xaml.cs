@@ -102,6 +102,12 @@ namespace RetSimDesktop
             StatisticsButton.IsEnabled = true;
         }
 
+        public void SwitchToGearSelection(int slot)
+        {
+            Gear_Click(null, null);
+            GearSelect.SwitchToSlotSelection(slot);
+        }
+
         private void DpsSimClick(object sender, RoutedEventArgs e)
         {
             if (!simWorker.IsBusy)

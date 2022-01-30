@@ -3,6 +3,7 @@ using RetSim.Items;
 using RetSimDesktop.ViewModel;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
@@ -26,6 +27,18 @@ namespace RetSimDesktop
             typeof(WoWTooltip),
             new PropertyMetadata(new PropertyChangedCallback(PlacementTarget_PropertyChanged)));
 
+        public Control OverlayControl
+        {
+            get => (Control)GetValue(OverlayControlProperty);
+            set => SetValue(OverlayControlProperty, value);
+        }
+
+        public static readonly DependencyProperty OverlayControlProperty = DependencyProperty.Register(
+            "OverlayControl",
+            typeof(Control),
+            typeof(WoWTooltip),
+            new PropertyMetadata(new PropertyChangedCallback(OverlayControl_PropertyChanged)));
+
         public int ItemId
         {
             get => (int)GetValue(ItemIdProperty);
@@ -38,41 +51,10 @@ namespace RetSimDesktop
             typeof(WoWTooltip),
             new PropertyMetadata(new PropertyChangedCallback(TooltipSettings_PropertyChanged)));
 
-        public int XOffset
-        {
-            get => (int)GetValue(XOffsetProperty);
-            set => SetValue(XOffsetProperty, value);
-        }
-
-        public static readonly DependencyProperty XOffsetProperty = DependencyProperty.Register(
-            "XOffset",
-            typeof(int),
-            typeof(WoWTooltip));
-
-        public int YOffset
-        {
-            get => (int)GetValue(YOffsetProperty);
-            set => SetValue(YOffsetProperty, value);
-        }
-
-        public static readonly DependencyProperty YOffsetProperty = DependencyProperty.Register(
-            "YOffset",
-            typeof(int),
-            typeof(WoWTooltip));
-
         public WoWTooltip()
         {
             InitializeComponent();
             InitializeAsync();
-
-            TooltipPopUp.SetBinding(Popup.HorizontalOffsetProperty, new Binding("XOffset")
-            {
-                Source = this,
-            });
-            TooltipPopUp.SetBinding(Popup.VerticalOffsetProperty, new Binding("YOffset")
-            {
-                Source = this,
-            });
         }
 
         private async void InitializeAsync()
@@ -88,9 +70,28 @@ namespace RetSimDesktop
             if (d is WoWTooltip wowTooltip)
             {
                 wowTooltip.PlacementTarget.MouseMove += wowTooltip.Parent_MouseMove;
-                wowTooltip.PlacementTarget.SizeChanged += wowTooltip.Parent_SizeChanged;
-                wowTooltip.Browser.Height = Math.Max(wowTooltip.PlacementTarget.ActualWidth - wowTooltip.TooltipPopUp.HorizontalOffset - 20, 0);
-                wowTooltip.Browser.Width = Math.Max(wowTooltip.PlacementTarget.ActualHeight - wowTooltip.TooltipPopUp.HorizontalOffset + 40, 0);
+            }
+        }
+
+        private static void OverlayControl_PropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            if (d is WoWTooltip wowTooltip && wowTooltip.OverlayControl != null)
+            {
+                wowTooltip.OverlayControl.SizeChanged += wowTooltip.OverlayControl_SizeChanged;
+
+                if (wowTooltip.PlacementTarget != null && wowTooltip.OverlayControl != null)
+                {
+                    wowTooltip.Browser.Width = Math.Max(wowTooltip.OverlayControl.ActualWidth, 800);
+                    wowTooltip.Browser.Height = Math.Max(wowTooltip.OverlayControl.ActualHeight, 600);
+                    Point position = wowTooltip.PlacementTarget.PointToScreen(new Point(0d, 0d));
+                    Point controlPosition = wowTooltip.OverlayControl.PointToScreen(new Point(0d, 0d));
+
+                    wowTooltip.TooltipPopUp.HorizontalOffset = controlPosition.X - position.X;
+                    wowTooltip.TooltipPopUp.VerticalOffset = controlPosition.Y - position.Y;
+                }
+                //wowTooltip.OverlayControl.LayoutUpdated
+                //wowTooltip.Browser.Height = Math.Max(wowTooltip.PlacementTarget.ActualWidth - wowTooltip.TooltipPopUp.HorizontalOffset - 20, 0);
+                //wowTooltip.Browser.Width = Math.Max(wowTooltip.PlacementTarget.ActualHeight - wowTooltip.TooltipPopUp.HorizontalOffset + 40, 0);
             }
         }
 
@@ -194,10 +195,18 @@ namespace RetSimDesktop
         }
 
 
-        private void Parent_SizeChanged(object sender, SizeChangedEventArgs e)
+        private void OverlayControl_SizeChanged(object sender, SizeChangedEventArgs e)
         {
-            Browser.Width = Math.Max(PlacementTarget.ActualWidth - TooltipPopUp.HorizontalOffset - 20, 0);
-            Browser.Height = Math.Max(PlacementTarget.ActualHeight - TooltipPopUp.HorizontalOffset + 40, 0);
+            if(PlacementTarget != null && OverlayControl != null)
+            {
+                Browser.Width = Math.Max(OverlayControl.ActualWidth, 800);
+                Browser.Height = Math.Max(OverlayControl.ActualHeight, 600);
+                Point position = PlacementTarget.PointToScreen(new Point(0d, 0d));
+                Point controlPosition = OverlayControl.PointToScreen(new Point(0d, 0d));
+
+                TooltipPopUp.HorizontalOffset = controlPosition.X - position.X;
+                TooltipPopUp.VerticalOffset = controlPosition.Y - position.Y;
+            }
         }
 
         private async void UpdateTooltip(int itemId, string gemString, string enchantString)
