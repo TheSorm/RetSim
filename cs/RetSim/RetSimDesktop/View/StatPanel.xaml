@@ -35,6 +35,15 @@
                     </Grid.RowDefinitions>
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
                         <Border BorderThickness="1" Margin="-3,-3,-3,0" CornerRadius="8" BorderBrush="LightGray">
+                            <Border.Style>
+                                <Style>
+                                    <Style.Triggers>
+                                        <Trigger Property="Border.IsMouseOver" Value="True">
+                                            <Setter Property="Border.Background" Value="#bee6fd" />
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Border.Style>
                             <Label x:Name="BuffIndicatorText" PreviewMouseDown="BuffIndicatorText_PreviewMouseDown" FontSize="11" Width="52" Foreground="DimGray" Padding="2,0,2,0" Content="Unbuffed" HorizontalContentAlignment="Center"/>
                         </Border>
                     </StackPanel>

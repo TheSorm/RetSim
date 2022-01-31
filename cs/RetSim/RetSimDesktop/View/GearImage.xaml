@@ -10,6 +10,7 @@
         <local:ItemToImageConverterWithDefault x:Key="ItemToImageConverterWithDefault" />
         <local:SocketToImageConverter x:Key="SocketToImageConverter" />
         <local:SocketToSocketColorBrushConverter x:Key="SocketToSocketColorBrushConverter" />
+        <local:SocketToVisibilityConverter x:Key="SocketToVisibilityConverter" />
     </UserControl.Resources>
     <Grid Background="White">
         <Grid.Resources>
@@ -30,7 +31,7 @@
         <Border>
             <Grid>
                 <Image x:Name="ItemImage" Source="{Binding ElementName=GearImageControll, Converter={StaticResource ItemToImageConverterWithDefault}}"/>
-                <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom">
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Center">
                     <StackPanel.Resources>
                         <Style TargetType="{x:Type Border}">
                             <Setter Property="BorderThickness" Value="1"/>
@@ -46,13 +47,13 @@
                             <EventSetter  Event="PreviewMouseDown" Handler="Socket_PreviewMouseDown"/>
                         </Style>
                     </StackPanel.Resources>
-                    <Border BorderBrush="{Binding Gear.Item.Socket1, ElementName=GearImageControll, Converter={StaticResource SocketToSocketColorBrushConverter}}">
+                    <Border Visibility="{Binding Gear.Item.Socket1, ElementName=GearImageControll, Converter={StaticResource SocketToVisibilityConverter}}" BorderBrush="{Binding Gear.Item.Socket1, ElementName=GearImageControll, Converter={StaticResource SocketToSocketColorBrushConverter}}">
                         <Image x:Name="Socket1Image" Source="{Binding Gear.Item.Socket1, ElementName=GearImageControll, Converter={StaticResource SocketToImageConverter}}"/>
                     </Border>
-                    <Border BorderBrush="{Binding Gear.Item.Socket2, ElementName=GearImageControll, Converter={StaticResource SocketToSocketColorBrushConverter}}">
+                    <Border Visibility="{Binding Gear.Item.Socket2, ElementName=GearImageControll, Converter={StaticResource SocketToVisibilityConverter}}" BorderBrush="{Binding Gear.Item.Socket2, ElementName=GearImageControll, Converter={StaticResource SocketToSocketColorBrushConverter}}">
                         <Image x:Name="Socket2Image" Source="{Binding Gear.Item.Socket2, ElementName=GearImageControll, Converter={StaticResource SocketToImageConverter}}"/>
                     </Border>
-                    <Border BorderBrush="{Binding Gear.Item.Socket3, ElementName=GearImageControll, Converter={StaticResource SocketToSocketColorBrushConverter}}">
+                    <Border Visibility="{Binding Gear.Item.Socket3, ElementName=GearImageControll, Converter={StaticResource SocketToVisibilityConverter}}" BorderBrush="{Binding Gear.Item.Socket3, ElementName=GearImageControll, Converter={StaticResource SocketToSocketColorBrushConverter}}">
                         <Image x:Name="Socket3Image" Source="{Binding Gear.Item.Socket3, ElementName=GearImageControll, Converter={StaticResource SocketToImageConverter}}"/>
                     </Border>
                 </StackPanel>
