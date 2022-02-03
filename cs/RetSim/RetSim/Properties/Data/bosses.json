@@ -353,7 +353,7 @@
     "ID": 50,
     "Name": "Veras Darkshadow",
     "CreatureType": "Humanoid",
-    "ArmorCategory": "Warrior",
+    "ArmorCategory": "None",
     "Raid": "Black Temple"
   },
   {
