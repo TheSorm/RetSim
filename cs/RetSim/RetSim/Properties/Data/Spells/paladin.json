@@ -271,5 +271,52 @@
         "DieSides": 73
       }
     ]
+  },
+
+  "27173": {
+    "ID": 27173,
+    "Name": "Consecration",
+    "Rank": 6,
+    "ManaCost": 660,
+    "Cooldown": 8000,
+    "GCD": {
+      "Duration": 1500,
+      "Category": "Spell"
+    },
+    "Target": "Enemy",
+    "Effects": [
+      {
+        "EffectType": "PeriodicDamage",
+        "SpellID": 271730,
+        "Ticks": 8,
+        "Interval":  1000,
+        "School": "Holy",
+        "DefenseCategory": "Magic",
+        "OnCast": 0,
+        "OnHit": 512,
+        "OnCrit": 1
+      }
+    ]
+  },
+
+  "271730": {
+    "ID": 271730,
+    "Name": "Consecration",
+    "Rank": 6,
+    "Target": "Enemy",
+    "Effects": [
+      {
+        "EffectType": "Damage",
+        "School": "Holy",
+        "Coefficient": 0.119,
+        "DefenseCategory": "Magic",
+        "CritCategory": "None",
+        "OnCast": 0,
+        "OnHit": 0,
+        "OnCrit": 0,
+        "Value": 64,
+        "DieSides": 0
+      }
+    ]
   }
 }

@@ -46,6 +46,22 @@ public class SpellEffectConverter : JsonConverter<SpellEffect>
 
                 break;
 
+            case "PeriodicDamage":
+
+                int spellID = (int)jo["SpellID"];
+                int ticks = (int)jo["Ticks"];
+                int interval = (int)jo["Interval"];
+
+                School periodicSchool = Enum.Parse<School>((string)jo["School"]);
+                DefenseType periodicDefense = Enum.Parse<DefenseType>((string)jo["DefenseCategory"]);                
+
+                ProcMask periodicOnCast = (ProcMask)(int)jo["OnCast"];
+                ProcMask periodicOnHit = (ProcMask)(int)jo["OnCast"];
+
+                effect = new PeriodicDamage(value, dieSides, spellID, ticks, interval, periodicSchool, periodicDefense, periodicOnCast, periodicOnHit);
+
+                break;
+
             case "ExtraAttacks":
                 effect = new ExtraAttacks((int)(jo["ProcID"] ?? 1), (int)(jo["Amount"] ?? 1));
                 break;
@@ -123,6 +139,22 @@ public class SpellEffectConverter : JsonConverter<SpellEffect>
             writer.WriteData("OnCast", (int)damage.OnCast);
             writer.WriteData("OnHit", (int)damage.OnHit);
             writer.WriteData("OnCrit", (int)damage.OnCrit);
+        }
+
+        else if (value is PeriodicDamage periodicDamage)
+        {
+            writer.WriteData("EffectType", "PeriodicDamage");
+
+            writer.WriteData("SpellID", periodicDamage.Spell.ID);
+            writer.WriteData("Ticks", periodicDamage.Ticks);
+            writer.WriteData("Interval", periodicDamage.Interval);
+
+            writer.WriteData("School", periodicDamage.School.ToString());
+
+            writer.WriteData("DefenseCategory", periodicDamage.DefenseCategory.ToString());
+
+            writer.WriteData("OnCast", (int)periodicDamage.OnCast);
+            writer.WriteData("OnHit", (int)periodicDamage.OnHit);
         }
 
         else if (value is CancelAura)
