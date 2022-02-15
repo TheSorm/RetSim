@@ -244,5 +244,32 @@
         "Value": 1.1
       }
     ]
+  },
+
+  "27138": {
+    "ID": 27138,
+    "Name": "Exorcism",
+    "Rank": 7,
+    "ManaCost": 340,
+    "Cooldown": 15000,
+    "GCD": {
+      "Duration": 1500,
+      "Category": "Spell"
+    },
+    "Target": "Enemy",
+    "Effects": [
+      {
+        "EffectType": "Damage",
+        "School": "Holy",
+        "Coefficient": 0.429,
+        "DefenseCategory": "Magic",
+        "CritCategory": "Spell",
+        "OnCast": 0,
+        "OnHit": 512,
+        "OnCrit": 1,
+        "Value": 626,
+        "DieSides": 73
+      }
+    ]
   }
 }

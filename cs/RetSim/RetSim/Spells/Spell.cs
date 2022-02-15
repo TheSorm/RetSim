@@ -79,6 +79,11 @@ public class SpellGCD
     public int Duration { get; init; } = Constants.Numbers.DefaultGCD;
 
     public AttackCategory Category { get; init; } = AttackCategory.Physical;
+
+    public override string ToString()
+    {
+        return $"{Duration} ms {Category} GCD";
+    }
 }
 
 [Flags]
