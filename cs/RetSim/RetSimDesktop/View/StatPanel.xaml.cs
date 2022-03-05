@@ -119,10 +119,10 @@ namespace RetSimDesktop
                 var attackPowerBonus = $"Bonus: {player.Stats[StatName.AttackPower].Gear + player.Stats[StatName.AttackPower].Bonus}";
                 var attackPowerStrength = $"Strength Bonus: {player.Stats[StatName.AttackPower].SupportValue}";
                 var attackPowerModifier = $"Multiplier: {player.Stats[StatName.AttackPower].Modifier * 100 - 100}% (+{(int)(player.Stats[StatName.AttackPower].Value - player.Stats[StatName.AttackPower].Value / player.Stats[StatName.AttackPower].Modifier)})";
-                var attackPowerDebuff = buffed? $"Debuff Bonuses: {fight.Enemy.Stats[StatName.IncreasedAttackerAttackPower].Value}" : "";
-                var attackPowerEffective = $"Effective AP: {player.Stats[StatName.AttackPower].Value + fight.Enemy.Stats[StatName.IncreasedAttackerAttackPower].Value}";
+                var attackPowerDebuff = buffed? $"\n\nDebuff Bonuses: {fight.Enemy.Stats[StatName.IncreasedAttackerAttackPower].Value}" : string.Empty;
+                var attackPowerEffective = buffed ? $"\nEffective AP: {player.Stats[StatName.AttackPower].Value + fight.Enemy.Stats[StatName.IncreasedAttackerAttackPower].Value}" : string.Empty;
 
-                AttackPower.ToolTip = new ToolTip { Content = $"{attackPowerBase}\n{attackPowerBonus}\n{attackPowerStrength}\n{attackPowerModifier}\n\n{attackPowerDebuff}\n{attackPowerEffective}" };
+                AttackPower.ToolTip = new ToolTip { Content = $"{attackPowerBase}\n{attackPowerBonus}\n{attackPowerStrength}\n{attackPowerModifier}{attackPowerDebuff}{attackPowerEffective}" };
 
                 var agilityBase = $"Base: {player.Stats[StatName.Agility].Race}";
                 var agilityBonus = $"Bonus: {player.Stats[StatName.Agility].Gear + player.Stats[StatName.Agility].Bonus}";
@@ -134,7 +134,7 @@ namespace RetSimDesktop
                 var critChanceBonus = $"Bonus: {player.Stats[StatName.CritChance].Gear + player.Stats[StatName.CritChance].Bonus}%";
                 var critChanceAgility = $"Agility Bonus: {player.Stats[StatName.CritChance].SupportValue:0.##}%";
                 var critRating = $"Rating: {player.Stats[StatName.CritRating].Value} (+{player.Stats[StatName.CritChance].RatingValue:0.##}%)";
-                var critChanceDebuffs = buffed? $"Debuff bonuses: {fight.Enemy.Stats[StatName.IncreasedAttackerCritChance].Value}%" : "";
+                var critChanceDebuffs = buffed? $"\nDebuff bonuses: {fight.Enemy.Stats[StatName.IncreasedAttackerCritChance].Value}%" : string.Empty;
                 var critEffective = $"Crit % vs bosses: {player.Stats.EffectiveCritChance + fight.Enemy.Stats[StatName.IncreasedAttackerCritChance].Value:0.##}%";
 
                 var missChance = Math.Max(player.Stats.EffectiveMissChance - fight.Enemy.Stats[StatName.IncreasedAttackerHitChance].Value, 0);
@@ -144,14 +144,14 @@ namespace RetSimDesktop
                 var autoCap = specialCap - RetSim.Misc.Constants.Boss.GlancingChance;
                 var critCaps = $"Crit caps\nWhite: {autoCap:0.##}%\nSpecial: {specialCap:0.##}%";
 
-                CritPercentage.ToolTip = new ToolTip { Content = $"{critChanceBase}\n{critRating}\n{critChanceBonus}\n{critChanceAgility}\n{critChanceDebuffs}\n\n{critEffective}\n\n{critCaps}" };
+                CritPercentage.ToolTip = new ToolTip { Content = $"{critChanceBase}\n{critRating}\n{critChanceBonus}\n{critChanceAgility}{critChanceDebuffs}\n\n{critEffective}\n\n{critCaps}" };
 
                 var hitChanceBonus = $"Bonus: {player.Stats[StatName.HitChance].Gear + player.Stats[StatName.HitChance].Bonus}%";
                 var hitChanceRating = $"Rating: {player.Stats[StatName.HitRating].Value} (+{player.Stats[StatName.HitChance].RatingValue:0.##}%)";
-                var hitChanceDebuffs = buffed? $"Debuff bonuses: {fight.Enemy.Stats[StatName.IncreasedAttackerHitChance].Value}%" : "";
+                var hitChanceDebuffs = buffed? $"\nDebuff bonuses: {fight.Enemy.Stats[StatName.IncreasedAttackerHitChance].Value}%" : string.Empty;
                 var hitChanceResult = $"Miss chance: {missChance:0.##}%";
 
-                HitPercentage.ToolTip = new ToolTip { Content = $"{hitChanceRating}\n{hitChanceBonus}\n{hitChanceDebuffs}\n\n{hitChanceResult}" };
+                HitPercentage.ToolTip = new ToolTip { Content = $"{hitChanceRating}\n{hitChanceBonus}{hitChanceDebuffs}\n\n{hitChanceResult}" };
 
                 var hasteRating = $"Rating: {player.Stats[StatName.HasteRating].Value} (+{player.Stats[StatName.Haste].RatingValue:0.##}%)";
                 var hasteResult = $"Weapon speed \nBase: {fight.Player.Weapon.BaseSpeed / 1000f}\nCurrent: {fight.Player.Weapon.EffectiveSpeed / 1000f}";
