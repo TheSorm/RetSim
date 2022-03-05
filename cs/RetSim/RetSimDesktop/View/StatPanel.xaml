@@ -44,7 +44,7 @@
                                     </Style.Triggers>
                                 </Style>
                             </Border.Style>
-                            <Label x:Name="BuffIndicatorText" PreviewMouseDown="BuffIndicatorText_PreviewMouseDown" FontSize="11" Width="52" Foreground="DimGray" Padding="2,0,2,0" Content="Unbuffed" HorizontalContentAlignment="Center"/>
+                            <Label x:Name="BuffIndicatorText" PreviewMouseDown="BuffIndicatorText_PreviewMouseDown" FontSize="11" Width="52" Foreground="DimGray" Padding="2,0,2,0" Content="Buffed" HorizontalContentAlignment="Center"/>
                         </Border>
                     </StackPanel>
                     <StackPanel Grid.Row="1">

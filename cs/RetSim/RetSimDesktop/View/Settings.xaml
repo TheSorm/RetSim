@@ -756,7 +756,7 @@
                                         </Grid.ColumnDefinitions>
                                         <CheckBox Margin="0,2,0,2" x:Name="ExposeWeakness" Content="Expose Weakness" IsChecked="{Binding SelectedDebuffs.ExposeWeaknessEnabled}">
                                         </CheckBox>
-                                        <TextBox Grid.Column="2" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" ToolTipService.InitialShowDelay="0" ToolTip="The Survival Hunter's Agility value." PreviewTextInput="NumberValidationTextBox" Text="{Binding SelectedDebuffs.HunterAgility, Converter={StaticResource StringEmptyConverter}, ConverterParameter='4'}" />
+                                        <TextBox Grid.Column="2" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" ToolTipService.InitialShowDelay="0" ToolTip="The Survival Hunter's Agility value." PreviewTextInput="NumberValidationTextBox" Text="{Binding SelectedDebuffs.HunterAgility, Converter={StaticResource StringEmptyConverter}, ConverterParameter='0', UpdateSourceTrigger=PropertyChanged}" />
                                     </Grid>
                                     <CheckBox x:Name="FaerieFire" Margin="0,2,0,2" VerticalContentAlignment="Center" IsChecked="{Binding SelectedDebuffs.FaerieFireEnabled}">
                                         <ComboBox Width="200">
