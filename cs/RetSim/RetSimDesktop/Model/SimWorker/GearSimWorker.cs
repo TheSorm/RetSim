@@ -25,7 +25,7 @@ namespace RetSimDesktop.View
 
         static void BackgroundWorker_DoWork(object? sender, DoWorkEventArgs e)
         {
-            if (e.Argument is ValueTuple<RetSimUIModel, List<DisplayGear>, int> (var retSimUIModel, var gearList, var slotID))
+            if (e.Argument is ValueTuple<RetSimUIModel, List<DisplayGear>, int>(var retSimUIModel, var gearList, var slotID))
             {
                 var race = retSimUIModel.PlayerSettings.SelectedRace;
                 var shattrathFaction = retSimUIModel.PlayerSettings.SelectedShattrathFaction;

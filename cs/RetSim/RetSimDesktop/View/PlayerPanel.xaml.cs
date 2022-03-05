@@ -1,24 +1,11 @@
 ﻿using RetSim.Data;
 using RetSim.Items;
-using RetSimDesktop.Model;
 using RetSimDesktop.ViewModel;
-using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using static RetSim.Misc.Constants;
 
 namespace RetSimDesktop
 {
@@ -85,7 +72,7 @@ namespace RetSimDesktop
 
         private void Image_PreviewMouseDown(object sender, MouseButtonEventArgs e)
         {
-            if(Window.GetWindow(this) is MainWindow window && sender is Image image)
+            if (Window.GetWindow(this) is MainWindow window && sender is Image image)
             {
                 window.SwitchToGearSelection(ImageToSlot[image]);
             }

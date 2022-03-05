@@ -84,7 +84,7 @@ namespace RetSimDesktop
                         EnchantComboBox.Visibility = Visibility.Visible;
                     }
 
-                    if(SlotList.Count > 0 && SlotList[0].Item is EquippableWeapon && WeaponType.Visibility == Visibility.Collapsed)
+                    if (SlotList.Count > 0 && SlotList[0].Item is EquippableWeapon && WeaponType.Visibility == Visibility.Collapsed)
                     {
                         WeaponMinDamage.Visibility = Visibility.Visible;
                         WeaponMaxDamage.Visibility = Visibility.Visible;

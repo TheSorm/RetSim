@@ -1,5 +1,4 @@
 ﻿using RetSim.Items;
-using RetSim.Misc;
 using RetSimDesktop.Model;
 using RetSimDesktop.ViewModel;
 using System;
@@ -81,22 +80,22 @@ namespace RetSimDesktop
             }
             else if (e.ChangedButton == MouseButton.Right && e.ButtonState == MouseButtonState.Pressed && DataContext is RetSimUIModel retSimUIModel)
             {
-                if(SlotId == 0)          retSimUIModel.SelectedGear.SelectedHead = null;
-                else if(SlotId == 1)     retSimUIModel.SelectedGear.SelectedNeck = null;
-                else if(SlotId == 2) retSimUIModel.SelectedGear.SelectedShoulders = null;
-                else if(SlotId == 3)     retSimUIModel.SelectedGear.SelectedBack = null;
-                else if(SlotId == 4)    retSimUIModel.SelectedGear.SelectedChest = null;
-                else if(SlotId == 5)   retSimUIModel.SelectedGear.SelectedWrists = null;
-                else if(SlotId == 6)    retSimUIModel.SelectedGear.SelectedHands = null;
-                else if(SlotId == 7)    retSimUIModel.SelectedGear.SelectedWaist = null;
-                else if(SlotId == 8)     retSimUIModel.SelectedGear.SelectedLegs = null;
-                else if(SlotId == 9)     retSimUIModel.SelectedGear.SelectedFeet = null;
-                else if(SlotId == 10)  retSimUIModel.SelectedGear.SelectedFinger1 = null;
-                else if(SlotId == 11)  retSimUIModel.SelectedGear.SelectedFinger2 = null;
-                else if(SlotId == 12) retSimUIModel.SelectedGear.SelectedTrinket1 = null;
-                else if(SlotId == 13) retSimUIModel.SelectedGear.SelectedTrinket2 = null;
-                else if(SlotId == 14)    retSimUIModel.SelectedGear.SelectedRelic = null;
-                else if(SlotId == 15) retSimUIModel.SelectedGear.SelectedWeapon = null;
+                if (SlotId == 0) retSimUIModel.SelectedGear.SelectedHead = null;
+                else if (SlotId == 1) retSimUIModel.SelectedGear.SelectedNeck = null;
+                else if (SlotId == 2) retSimUIModel.SelectedGear.SelectedShoulders = null;
+                else if (SlotId == 3) retSimUIModel.SelectedGear.SelectedBack = null;
+                else if (SlotId == 4) retSimUIModel.SelectedGear.SelectedChest = null;
+                else if (SlotId == 5) retSimUIModel.SelectedGear.SelectedWrists = null;
+                else if (SlotId == 6) retSimUIModel.SelectedGear.SelectedHands = null;
+                else if (SlotId == 7) retSimUIModel.SelectedGear.SelectedWaist = null;
+                else if (SlotId == 8) retSimUIModel.SelectedGear.SelectedLegs = null;
+                else if (SlotId == 9) retSimUIModel.SelectedGear.SelectedFeet = null;
+                else if (SlotId == 10) retSimUIModel.SelectedGear.SelectedFinger1 = null;
+                else if (SlotId == 11) retSimUIModel.SelectedGear.SelectedFinger2 = null;
+                else if (SlotId == 12) retSimUIModel.SelectedGear.SelectedTrinket1 = null;
+                else if (SlotId == 13) retSimUIModel.SelectedGear.SelectedTrinket2 = null;
+                else if (SlotId == 14) retSimUIModel.SelectedGear.SelectedRelic = null;
+                else if (SlotId == 15) retSimUIModel.SelectedGear.SelectedWeapon = null;
 
                 retSimUIModel.SelectedGear.OnPropertyChanged("");
             }
@@ -120,7 +119,7 @@ namespace RetSimDesktop
                 switch (image.GetBindingExpression(Image.SourceProperty).ResolvedSourcePropertyName)
                 {
                     case "Socket1":
-                        if(Gear.Item.Socket1.SocketedGem != null)
+                        if (Gear.Item.Socket1.SocketedGem != null)
                             retSimUIModel.TooltipSettings.HoverItemID = Gear.Item.Socket1.SocketedGem.ID;
                         break;
                     case "Socket2":
@@ -220,7 +219,7 @@ namespace RetSimDesktop
 
         private static void Gear_PropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
-            if(d is GearImage gearImage)
+            if (d is GearImage gearImage)
             {
                 gearImage.ItemImage.GetBindingExpression(Image.SourceProperty).UpdateTarget();
             }
@@ -269,7 +268,7 @@ namespace RetSimDesktop
 
     public class SocketToVisibilityConverter : IValueConverter
     {
-        
+
         public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
         {
             if (value is Socket socket)

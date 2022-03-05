@@ -3,11 +3,8 @@ using RetSim.Items;
 using RetSimDesktop.ViewModel;
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Controls.Primitives;
-using System.Windows.Data;
 using System.Windows.Input;
 
 namespace RetSimDesktop
@@ -197,7 +194,7 @@ namespace RetSimDesktop
 
         private void OverlayControl_SizeChanged(object sender, SizeChangedEventArgs e)
         {
-            if(PlacementTarget != null && OverlayControl != null)
+            if (PlacementTarget != null && OverlayControl != null)
             {
                 Browser.Width = Math.Max(OverlayControl.ActualWidth, 800);
                 Browser.Height = Math.Max(OverlayControl.ActualHeight, 600);
