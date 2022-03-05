@@ -582,29 +582,21 @@
     }
   },
 
-  //TODO: Uncomment when Consecration is implemented
-
-  //"37763": {
-  //  "ID": 37763,
-  //  "Name": "Improved Consecration (Libram of Eternal Rest)",
-  //  "Target": "Ally",
-  //  "Aura": {
-  //    "Effects": [
-  //      {
-  //        "EffectType": "ModSpell",
-  //        "Spells": [
-  //          26573,
-  //          20116,
-  //          20922,
-  //          20923,
-  //          20924,
-  //          27173
-  //        ],
-  //        "Effect1": 47
-  //      }
-  //    ]
-  //  }
-  //},
+  "34252": {
+    "ID": 34252,
+    "Name": "Improved Consecration (Libram of Eternal Rest)",
+    "Aura": {
+      "Effects": [
+        {
+          "EffectType": "ModSpell",
+          "Spells": [            
+            271730
+          ],
+          "Effect1": 6
+        }
+      ]
+    }
+  },
 
   "34258": {
     "ID": 34258,
