@@ -32,6 +32,7 @@ namespace RetSimDesktop
                     retSimUIModel.PlayerSettings.PropertyChanged += Model_PropertyChanged;
                     retSimUIModel.EncounterSettings.PropertyChanged += Model_PropertyChanged;
                     retSimUIModel.SelectedBuffs.PropertyChanged += Model_PropertyChanged;
+                    retSimUIModel.SelectedDebuffs.PropertyChanged += Model_PropertyChanged;
                     retSimUIModel.SelectedConsumables.PropertyChanged += Model_PropertyChanged;
 
                     Model_PropertyChanged(this, new PropertyChangedEventArgs(""));
@@ -45,12 +46,14 @@ namespace RetSimDesktop
             if (DataContext is RetSimUIModel retSimUIModel)
             {
                 List<Spell> buffs = new();
+                List<Spell> debuffs = new();
                 List<Spell> groupTalents = new();
                 List<Spell> consumables = new();
 
                 if (buffed)
                 {
                     buffs = retSimUIModel.SelectedBuffs.GetBuffs();
+                    debuffs = retSimUIModel.SelectedDebuffs.GetDebuffs();
                     groupTalents = retSimUIModel.SelectedBuffs.GetGroupTalents();
                     groupTalents.AddRange(retSimUIModel.SelectedDebuffs.GetGroupTalents());
                     consumables = retSimUIModel.SelectedConsumables.GetConsumables();
@@ -59,7 +62,7 @@ namespace RetSimDesktop
                 var equipment = retSimUIModel.SelectedGear.GetEquipment();
                 var player = new Player("Brave Hero", Collections.Races[retSimUIModel.PlayerSettings.SelectedRace.ToString()], ShattrathFaction.Aldor,
                     equipment, retSimUIModel.SelectedTalents.GetTalentList());
-                FightSimulation fight = new(player, new Enemy(Collections.Bosses[retSimUIModel.EncounterSettings.EncounterID]), new EliteTactic(0, false, false), groupTalents, buffs, new List<Spell>(), consumables, 0, 0, new List<Spell>(), new List<int>());
+                FightSimulation fight = new(player, new Enemy(Collections.Bosses[retSimUIModel.EncounterSettings.EncounterID]), new EliteTactic(0, false, false), groupTalents, buffs, debuffs, consumables, 0, 0, new List<Spell>(), new List<int>());
 
                 Stamina.Content = player.Stats[StatName.Stamina].Value;
                 Health.Content = player.Stats[StatName.Health].Value;
@@ -116,8 +119,10 @@ namespace RetSimDesktop
                 var attackPowerBonus = $"Bonus: {player.Stats[StatName.AttackPower].Gear + player.Stats[StatName.AttackPower].Bonus}";
                 var attackPowerStrength = $"Strength Bonus: {player.Stats[StatName.AttackPower].SupportValue}";
                 var attackPowerModifier = $"Multiplier: {player.Stats[StatName.AttackPower].Modifier * 100 - 100}% (+{(int)(player.Stats[StatName.AttackPower].Value - player.Stats[StatName.AttackPower].Value / player.Stats[StatName.AttackPower].Modifier)})";
+                var attackPowerDebuff = $"Debuff Bonuses: {fight.Enemy.Stats[StatName.IncreasedAttackerAttackPower].Value}";
+                var attackPowerEffective = $"Effective AP: {player.Stats[StatName.AttackPower].Value + fight.Enemy.Stats[StatName.IncreasedAttackerAttackPower].Value}";
 
-                AttackPower.ToolTip = new ToolTip { Content = $"{attackPowerBase}\n{attackPowerBonus}\n{attackPowerStrength}\n{attackPowerModifier}" };
+                AttackPower.ToolTip = new ToolTip { Content = $"{attackPowerBase}\n{attackPowerBonus}\n{attackPowerStrength}\n{attackPowerModifier}\n\n{attackPowerDebuff}\n{attackPowerEffective}" };
 
                 var agilityBase = $"Base: {player.Stats[StatName.Agility].Race}";
                 var agilityBonus = $"Bonus: {player.Stats[StatName.Agility].Gear + player.Stats[StatName.Agility].Bonus}";
@@ -129,7 +134,8 @@ namespace RetSimDesktop
                 var critChanceBonus = $"Bonus: {player.Stats[StatName.CritChance].Gear + player.Stats[StatName.CritChance].Bonus}%";
                 var critChanceAgility = $"Agility Bonus: {player.Stats[StatName.CritChance].SupportValue:0.##}%";
                 var critRating = $"Rating: {player.Stats[StatName.CritRating].Value} (+{player.Stats[StatName.CritChance].RatingValue:0.##}%)";
-                var critEffective = $"Crit % vs bosses: {player.Stats.EffectiveCritChance:0.##}%";
+                var critChanceDebuffs = $"Debuff bonuses: {fight.Enemy.Stats[StatName.IncreasedAttackerCritChance].Value}%";
+                var critEffective = $"Crit % vs bosses: {player.Stats.EffectiveCritChance + fight.Enemy.Stats[StatName.IncreasedAttackerCritChance].Value:0.##}%";
 
                 var missChance = Math.Max(player.Stats.EffectiveMissChance - fight.Enemy.Stats[StatName.IncreasedAttackerHitChance].Value, 0);
                 var dodgeChance = player.Stats.EffectiveDodgeChance;
@@ -138,13 +144,14 @@ namespace RetSimDesktop
                 var autoCap = specialCap - RetSim.Misc.Constants.Boss.GlancingChance;
                 var critCaps = $"Crit caps\nWhite: {autoCap:0.##}%\nSpecial: {specialCap:0.##}%";
 
-                CritPercentage.ToolTip = new ToolTip { Content = $"{critChanceBase}\n{critRating}\n{critChanceBonus}\n{critChanceAgility}\n\n{critEffective}\n\n{critCaps}" };
+                CritPercentage.ToolTip = new ToolTip { Content = $"{critChanceBase}\n{critRating}\n{critChanceBonus}\n{critChanceAgility}\n{critChanceDebuffs}\n\n{critEffective}\n\n{critCaps}" };
 
                 var hitChanceBonus = $"Bonus: {player.Stats[StatName.HitChance].Gear + player.Stats[StatName.HitChance].Bonus}%";
                 var hitChanceRating = $"Rating: {player.Stats[StatName.HitRating].Value} (+{player.Stats[StatName.HitChance].RatingValue:0.##}%)";
+                var hitChanceDebuffs = $"Debuff bonuses: {fight.Enemy.Stats[StatName.IncreasedAttackerHitChance].Value}%";
                 var hitChanceResult = $"Miss chance: {missChance:0.##}%";
 
-                HitPercentage.ToolTip = new ToolTip { Content = $"{hitChanceRating}\n{hitChanceBonus}\n\n{hitChanceResult}" };
+                HitPercentage.ToolTip = new ToolTip { Content = $"{hitChanceRating}\n{hitChanceBonus}\n{hitChanceDebuffs}\n\n{hitChanceResult}" };
 
                 var hasteRating = $"Rating: {player.Stats[StatName.HasteRating].Value} (+{player.Stats[StatName.Haste].RatingValue:0.##}%)";
                 var hasteResult = $"Weapon speed \nBase: {fight.Player.Weapon.BaseSpeed / 1000f}\nCurrent: {fight.Player.Weapon.EffectiveSpeed / 1000f}";
@@ -162,7 +169,7 @@ namespace RetSimDesktop
                 var currentDR = Attack.GetArmorDR(player.Stats[StatName.ArmorPenetration].Value, fight.Enemy.Stats[StatName.Armor].Value);
 
                 var arpLine1 = $"{fight.Enemy.Name}'s Armor";
-                var arpLine2 = $"Base: {fight.Enemy.Stats[StatName.Armor].Permanent} ({1 - baseDR:0.##%} Damage Reduction)";
+                var arpLine2 = $"Base: {fight.Enemy.Stats[StatName.Armor].Value} ({1 - baseDR:0.##%} Damage Reduction)";
                 var arpLine3 = $"Remaining: {remainingArmor:0} ({1 - currentDR:0.##%} Damage Reduction)";
 
                 var arpLine4 = "Armor Penetration damage increase";
