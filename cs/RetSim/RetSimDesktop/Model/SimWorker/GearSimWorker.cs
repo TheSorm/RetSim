@@ -25,27 +25,31 @@ namespace RetSimDesktop.View
 
         static void BackgroundWorker_DoWork(object? sender, DoWorkEventArgs e)
         {
-            if (e.Argument is ValueTuple<RetSimUIModel, List<DisplayGear>, int> (var retSimUiModel, var gearList, var slotID))
+            if (e.Argument is ValueTuple<RetSimUIModel, List<DisplayGear>, int> (var retSimUIModel, var gearList, var slotID))
             {
-                var race = retSimUiModel.PlayerSettings.SelectedRace;
-                var shattrathFaction = retSimUiModel.PlayerSettings.SelectedShattrathFaction;
-                var encounterID = retSimUiModel.EncounterSettings.EncounterID;
+                var race = retSimUIModel.PlayerSettings.SelectedRace;
+                var shattrathFaction = retSimUIModel.PlayerSettings.SelectedShattrathFaction;
+                var encounterID = retSimUIModel.EncounterSettings.EncounterID;
 
-                var numberOfSimulations = retSimUiModel.SimSettings.SimulationCount;
-                var maxCSDelay = retSimUiModel.SimSettings.MaxCSDelay;
+                var numberOfSimulations = retSimUIModel.SimSettings.SimulationCount;
+                var maxCSDelay = retSimUIModel.SimSettings.MaxCSDelay;
 
-                var minDuration = retSimUiModel.EncounterSettings.MinFightDurationMilliseconds;
-                var maxDuration = retSimUiModel.EncounterSettings.MaxFightDurationMilliseconds;
+                var minDuration = retSimUIModel.EncounterSettings.MinFightDurationMilliseconds;
+                var maxDuration = retSimUIModel.EncounterSettings.MaxFightDurationMilliseconds;
 
-                var talents = retSimUiModel.SelectedTalents.GetTalentList();
-                var groupTalents = retSimUiModel.SelectedBuffs.GetGroupTalents();
-                groupTalents.AddRange(retSimUiModel.SelectedDebuffs.GetGroupTalents());
-                var buffs = retSimUiModel.SelectedBuffs.GetBuffs();
-                var debuffs = retSimUiModel.SelectedDebuffs.GetDebuffs();
-                var consumables = retSimUiModel.SelectedConsumables.GetConsumables();
-                var cooldowns = retSimUiModel.SelectedCooldowns.GetCooldowns();
+                var talents = retSimUIModel.SelectedTalents.GetTalentList();
+                var groupTalents = retSimUIModel.SelectedBuffs.GetGroupTalents();
+                groupTalents.AddRange(retSimUIModel.SelectedDebuffs.GetGroupTalents());
+                var buffs = retSimUIModel.SelectedBuffs.GetBuffs();
+                var debuffs = retSimUIModel.SelectedDebuffs.GetDebuffs();
+                var consumables = retSimUIModel.SelectedConsumables.GetConsumables();
+                var cooldowns = retSimUIModel.SelectedCooldowns.GetCooldowns();
+
+                var useExorcism = retSimUIModel.SimSettings.UseExorcism && Collections.Bosses[encounterID].CreatureType == CreatureType.Demon;
+                var useConsecration = retSimUIModel.SimSettings.UseConsecration;
+
                 List<int> heroismUsage = new();
-                if (retSimUiModel.SelectedBuffs.HeroismEnabled)
+                if (retSimUIModel.SelectedBuffs.HeroismEnabled)
                 {
                     int time = 8000;
                     if (minDuration < 8000)
@@ -67,8 +71,8 @@ namespace RetSimDesktop.View
                     {
                         continue;
                     }
-                    //TODO: Move out of loop, fetch equipment once, and make copys instead of fetching multiple times (Also change weapon sim)
-                    Equipment playerEquipment = retSimUiModel.SelectedGear.GetEquipment();
+                    //TODO: Move out of loop, fetch equipment once, and make copys instead of fetching multiple times
+                    Equipment playerEquipment = retSimUIModel.SelectedGear.GetEquipment();
                     playerEquipment.PlayerEquipment[slotID] = item.Item;
 
                     int freeThread = -1;
@@ -101,7 +105,9 @@ namespace RetSimDesktop.View
                         MaxFightDuration = maxDuration,
                         NumberOfSimulations = numberOfSimulations,
                         MaxCSDelay = maxCSDelay,
-                        Item = item
+                        UseExorcism = useExorcism,
+                        UseConsecration = useConsecration,
+                        Item = item,
                     };
                     threads[freeThread] = new(new ThreadStart(simExecuter[freeThread].Execute));
                     threads[freeThread].Start();
@@ -113,7 +119,7 @@ namespace RetSimDesktop.View
                         thread.Join();
                 }
 
-                retSimUiModel.SimButtonStatus.IsSimButtonEnabled = true;
+                retSimUIModel.SimButtonStatus.IsSimButtonEnabled = true;
             }
         }
     }
@@ -127,7 +133,8 @@ namespace RetSimDesktop.View
             float overallDPS = 0;
             for (int i = 0; i < NumberOfSimulations; i++)
             {
-                FightSimulation fight = new(new Player("Brave Hero", Race, ShattrathFaction, PlayerEquipment, Talents), new Enemy(Encounter), new EliteTactic(MaxCSDelay), GroupTalents, Buffs, Debuffs, Consumables, MinFightDuration, MaxFightDuration, Cooldowns, HeroismUsage);
+                FightSimulation fight = new(new Player("Brave Hero", Race, ShattrathFaction, PlayerEquipment, Talents), new Enemy(Encounter),
+                    new EliteTactic(MaxCSDelay, UseExorcism, UseConsecration), GroupTalents, Buffs, Debuffs, Consumables, MinFightDuration, MaxFightDuration, Cooldowns, HeroismUsage);
                 fight.Run();
                 overallDPS += fight.CombatLog.DPS;
                 Item.DPS = overallDPS / (i + 1);

@@ -47,6 +47,9 @@ namespace RetSimDesktop.Model
                 var cooldowns = retSimUIModel.SelectedCooldowns.GetCooldowns();
                 var delayElements = retSimUIModel.DisplayCsDelay;
 
+                var useExorcism = retSimUIModel.SimSettings.UseExorcism && Collections.Bosses[encounterID].CreatureType == CreatureType.Demon;
+                var useConsecration = retSimUIModel.SimSettings.UseConsecration;
+
                 List<int> heroismUsage = new();
                 if (retSimUIModel.SelectedBuffs.HeroismEnabled)
                 {
@@ -71,7 +74,7 @@ namespace RetSimDesktop.Model
                     FightSimulation fight = new(
                         new Player("Brave Hero", Collections.Races[race.ToString()], shattrathFaction, playerEquipment, talents),
                         new Enemy(Collections.Bosses[encounterID]),
-                        new EliteTactic(0), groupTalents, buffs, debuffs, consumables, minDuration, maxDuration, cooldowns, heroismUsage);
+                        new EliteTactic(0, useExorcism, useConsecration), groupTalents, buffs, debuffs, consumables, minDuration, maxDuration, cooldowns, heroismUsage);
                     fight.Run();
                     baseDps += fight.CombatLog.DPS;
                     retSimUIModel.DisplayCsDelay[0].DpsDelta = baseDps / i;
@@ -117,6 +120,8 @@ namespace RetSimDesktop.Model
                         BaseSeed = baseSeed,
                         BaseDps = baseDps,
                         CsDelayDisplay = item,
+                        UseExorcism = useExorcism,
+                        UseConsecration = useConsecration,
                     };
 
                     threads[freeThread] = new(new ThreadStart(simExecuter[freeThread].Execute));
@@ -146,7 +151,9 @@ namespace RetSimDesktop.Model
             for (int i = 0; i < NumberOfSimulations; i++)
             {
                 RNG.local = new(BaseSeed + i);
-                FightSimulation fight = new(new Player("Brave Hero", Race, ShattrathFaction, PlayerEquipment, Talents), new Enemy(Encounter), new EliteTactic((int)(CsDelayDisplay.Delay * 1000)), GroupTalents, Buffs, Debuffs, Consumables, MinFightDuration, MaxFightDuration, Cooldowns, HeroismUsage);
+                FightSimulation fight = new(new Player("Brave Hero", Race, ShattrathFaction, PlayerEquipment, Talents), new Enemy(Encounter),
+                    new EliteTactic((int)(CsDelayDisplay.Delay * 1000), UseExorcism, UseConsecration),
+                    GroupTalents, Buffs, Debuffs, Consumables, MinFightDuration, MaxFightDuration, Cooldowns, HeroismUsage);
                 fight.Run();
                 dps += fight.CombatLog.DPS;
                 CsDelayDisplay.DpsDelta = ((dps / i) - BaseDps);

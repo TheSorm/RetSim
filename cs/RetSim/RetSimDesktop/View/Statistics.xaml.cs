@@ -7,6 +7,7 @@ using ScottPlot.Plottable;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Windows;
@@ -289,7 +290,7 @@ namespace RetSimDesktop
                     Damage = damage,
                     DPS = dps.Rounded(),
                     DPSPercentage = (dps / log.DPS * 100f).Rounded(),
-                    Casts = count,
+                    Casts = casts,
                     Crits = crit,
                     CritPercentage = (crit / ((float)hit) * 100).Rounded(),
                     Hits = hit,

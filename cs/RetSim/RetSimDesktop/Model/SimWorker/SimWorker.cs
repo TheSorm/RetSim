@@ -45,6 +45,10 @@ namespace RetSimDesktop.View
                 var debuffs = retSimUIModel.SelectedDebuffs.GetDebuffs();
                 var consumables = retSimUIModel.SelectedConsumables.GetConsumables();
                 var cooldowns = retSimUIModel.SelectedCooldowns.GetCooldowns();
+
+                var useExorcism = retSimUIModel.SimSettings.UseExorcism && Collections.Bosses[encounterID].CreatureType == CreatureType.Demon;
+                var useConsecration = retSimUIModel.SimSettings.UseConsecration;
+
                 List<int> heroismUsage = new();
                 if (retSimUIModel.SelectedBuffs.HeroismEnabled)
                 {
@@ -70,54 +74,39 @@ namespace RetSimDesktop.View
                 {
                     if (simulationsDistributed < numberOfSimulations)
                     {
+                        int numberOfSimulationsForThisThreat = 0;
                         if (simulationsDistributed + simulationsPerThread <= numberOfSimulations)
                         {
-                            simExecuter[i] = new()
-                            {
-                                Race = Collections.Races[race.ToString()],
-                                ShattrathFaction = shattrathFaction,
-                                Encounter = Collections.Bosses[encounterID],
-                                PlayerEquipment = playerEquipment,
-                                Talents = talents,
-                                GroupTalents = groupTalents,
-                                Buffs = buffs,
-                                Debuffs = debuffs,
-                                Consumables = consumables,
-                                Cooldowns = cooldowns,
-                                HeroismUsage = heroismUsage,
-                                MinFightDuration = minDuration,
-                                MaxFightDuration = maxDuration,
-                                CombatLogs = combatLogs,
-                                StartIndex = simulationsDistributed,
-                                NumberOfSimulations = simulationsPerThread,
-                                MaxCSDelay = maxCSDelay
-                            };
-                            simulationsDistributed += simulationsPerThread;
+                            numberOfSimulationsForThisThreat = simulationsPerThread;
+                            simulationsDistributed += numberOfSimulationsForThisThreat;
                         }
                         else
                         {
-                            simExecuter[i] = new()
-                            {
-                                Race = Collections.Races[race.ToString()],
-                                ShattrathFaction = shattrathFaction,
-                                Encounter = Collections.Bosses[encounterID],
-                                PlayerEquipment = playerEquipment,
-                                Talents = talents,
-                                GroupTalents = groupTalents,
-                                Buffs = buffs,
-                                Debuffs = debuffs,
-                                Consumables = consumables,
-                                Cooldowns = cooldowns,
-                                HeroismUsage = heroismUsage,
-                                MinFightDuration = minDuration,
-                                MaxFightDuration = maxDuration,
-                                CombatLogs = combatLogs,
-                                StartIndex = simulationsDistributed,
-                                NumberOfSimulations = numberOfSimulations - simulationsDistributed,
-                                MaxCSDelay = maxCSDelay,
-                            };
-                            simulationsDistributed += numberOfSimulations - simulationsDistributed;
+                            numberOfSimulationsForThisThreat = numberOfSimulations - simulationsDistributed;
+                            simulationsDistributed += numberOfSimulationsForThisThreat;
                         }
+                        simExecuter[i] = new()
+                        {
+                            Race = Collections.Races[race.ToString()],
+                            ShattrathFaction = shattrathFaction,
+                            Encounter = Collections.Bosses[encounterID],
+                            PlayerEquipment = playerEquipment,
+                            Talents = talents,
+                            GroupTalents = groupTalents,
+                            Buffs = buffs,
+                            Debuffs = debuffs,
+                            Consumables = consumables,
+                            Cooldowns = cooldowns,
+                            HeroismUsage = heroismUsage,
+                            MinFightDuration = minDuration,
+                            MaxFightDuration = maxDuration,
+                            CombatLogs = combatLogs,
+                            StartIndex = simulationsDistributed - numberOfSimulationsForThisThreat,
+                            NumberOfSimulations = numberOfSimulationsForThisThreat,
+                            MaxCSDelay = maxCSDelay,
+                            UseExorcism = useExorcism,
+                            UseConsecration = useConsecration,
+                        };
                         threads[i] = new(new ThreadStart(simExecuter[i].Execute));
                         threads[i].Start();
                     }
@@ -194,7 +183,8 @@ namespace RetSimDesktop.View
         {
             for (int i = StartIndex; i < StartIndex + NumberOfSimulations; i++)
             {
-                FightSimulation fight = new(new Player("Brave Hero", Race, ShattrathFaction, PlayerEquipment, Talents), new Enemy(Encounter), new EliteTactic(MaxCSDelay), GroupTalents, Buffs, Debuffs, Consumables, MinFightDuration, MaxFightDuration, Cooldowns, HeroismUsage);
+                FightSimulation fight = new(new Player("Brave Hero", Race, ShattrathFaction, PlayerEquipment, Talents), new Enemy(Encounter),
+                    new EliteTactic(MaxCSDelay, UseExorcism, UseConsecration), GroupTalents, Buffs, Debuffs, Consumables, MinFightDuration, MaxFightDuration, Cooldowns, HeroismUsage);
                 fight.Run();
                 CombatLogs[i] = fight.CombatLog;
             }

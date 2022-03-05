@@ -13,8 +13,10 @@ public class EliteTactic : Tactic
     Spell Consecration;
 
     private int csDelay = 0;
+    private bool useExorcism = true;
+    private bool useConsecration = true;
 
-    public EliteTactic(int maxCSDelay)
+    public EliteTactic(int maxCSDelay, bool useExorcism, bool useConsecration)
     {
         CrusaderStrike = Data.Collections.Spells[35395];
         SealOfCommand = Data.Collections.Spells[27170];
@@ -24,6 +26,8 @@ public class EliteTactic : Tactic
         Consecration = Data.Collections.Spells[27173];
 
         csDelay = maxCSDelay;
+        this.useExorcism = useExorcism;
+        this.useConsecration = useConsecration;
     }
 
     public override List<Event> PreFight(FightSimulation fight)
@@ -54,6 +58,8 @@ public class EliteTactic : Tactic
         int swing = fight.Player.EffectiveNextAuto;
         int swingLeeway = swing - hasteLeeway;
 
+        int spellGCD = fight.Player.Stats.EffectiveGCD(SealOfBlood);
+
         if (fight.Player.GCD.Active)
         {
             if (!fight.Player.Spellbook.IsOnCooldown(Judgement)
@@ -64,37 +70,41 @@ public class EliteTactic : Tactic
                 return new CastEvent(Judgement, fight.Player, fight.Enemy, fight, start);
             }
         }
-
         else
         {
             if (fight.Player.Auras[SealOfCommand.Aura].Active)
             {
-                int sobTwistWindowStart = swing - 399;
-                int sobTwistWindowEnd = swing - 1;
+                if(fight.Player.Weapon.EffectiveSpeed > 2 * spellGCD && start + spellGCD < swingLeeway)
+                {
+                    return CastFiller(start, end, fight);
+                }
+                else
+                {
+                    int sobTwistWindowStart = swing - 399;
+                    int sobTwistWindowEnd = swing - 1;
 
-                if (end >= sobTwistWindowStart && start <= sobTwistWindowEnd)
-                    return new CastEvent(SealOfBlood, fight.Player, fight.Player, fight, Math.Max(start, sobTwistWindowStart));
+                    if (end >= sobTwistWindowStart && start <= sobTwistWindowEnd)
+                        return new CastEvent(SealOfBlood, fight.Player, fight.Player, fight, Math.Max(start, sobTwistWindowStart));
+                } 
             }
-
             else
             {
                 if (fight.Player.Spellbook.IsOnCooldown(CrusaderStrike)
                 && !(fight.Player.Spellbook[CrusaderStrike.ID].CooldownEnd.Timestamp < swingLeeway
-                     && swingLeeway - 400 + fight.Player.Stats.EffectiveGCD(SealOfBlood) > fight.Player.Spellbook[CrusaderStrike.ID].CooldownEnd.Timestamp + maxCSDelay))
+                     && swingLeeway - 400 + spellGCD > fight.Player.Spellbook[CrusaderStrike.ID].CooldownEnd.Timestamp + maxCSDelay))
                 {
-                    if (start + fight.Player.Stats.EffectiveGCD(SealOfBlood) < swingLeeway)
+                    if (start + spellGCD < swingLeeway)
                     {
                         if (fight.Player.Auras[SealOfBlood.Aura].Active && !fight.Player.Spellbook.IsOnCooldown(Judgement))
                             return new CastEvent(Judgement, fight.Player, fight.Enemy, fight, start);
 
                         else if (!fight.Player.Auras[SealOfCommand.Aura].Active
                             && (!fight.Player.Auras[SealOfBlood.Aura].Active
-                            || (fight.Player.Spellbook.IsOnCooldown(Judgement) && fight.Player.Spellbook[Judgement.ID].CooldownEnd.Timestamp + fight.Player.Stats.EffectiveGCD(SealOfBlood) > swingLeeway)))
+                            || (fight.Player.Spellbook.IsOnCooldown(Judgement) && fight.Player.Spellbook[Judgement.ID].CooldownEnd.Timestamp + spellGCD > swingLeeway)))
                         {
                             return new CastEvent(SealOfCommand, fight.Player, fight.Player, fight, start);
                         }
                     }
-
                     else
                     {
                         if (!fight.Player.Auras[SealOfBlood.Aura].Active)
@@ -102,20 +112,39 @@ public class EliteTactic : Tactic
 
                         else if (!fight.Player.Spellbook.IsOnCooldown(Judgement) && start < swingLeeway)
                             return new CastEvent(Judgement, fight.Player, fight.Enemy, fight, start);
+
+                        else if(fight.Player.Weapon.EffectiveSpeed > 2 * spellGCD && start + spellGCD < fight.Player.Spellbook[CrusaderStrike.ID].CooldownEnd.Timestamp) { }
+                            return CastFiller(start, end, fight);
                     }
                 }
-
                 else if (!fight.Player.Spellbook.IsOnCooldown(CrusaderStrike))
                 {
-                    if (fight.Player.Auras[SealOfBlood.Aura].Active || start + fight.Player.Stats.EffectiveGCD(CrusaderStrike) < swingLeeway)
+                    if (fight.Player.Auras[SealOfBlood.Aura].Active || start + spellGCD < swingLeeway)
                         return new CastEvent(CrusaderStrike, fight.Player, fight.Enemy, fight, start);
 
                     else
                         return new CastEvent(SealOfBlood, fight.Player, fight.Player, fight, start);
                 }
+                else if (fight.Player.Weapon.EffectiveSpeed > 2 * spellGCD && start + spellGCD < fight.Player.Spellbook[CrusaderStrike.ID].CooldownEnd.Timestamp)
+                {
+                    return CastFiller(start, end, fight);
+                }
             }
         }
 
+        return null;
+    }
+
+    private Event CastFiller(int start, int end, FightSimulation fight)
+    {
+        if (!fight.Player.Spellbook.IsOnCooldown(Exorcism) && useExorcism)
+        {
+            return new CastEvent(Exorcism, fight.Player, fight.Player, fight, start);
+        }
+        else if(!fight.Player.Spellbook.IsOnCooldown(Consecration) && useConsecration)
+        {
+            return new CastEvent(Consecration, fight.Player, fight.Player, fight, start);
+        }
         return null;
     }
 }

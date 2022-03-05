@@ -59,7 +59,7 @@ namespace RetSimDesktop
                 var equipment = retSimUIModel.SelectedGear.GetEquipment();
                 var player = new Player("Brave Hero", Collections.Races[retSimUIModel.PlayerSettings.SelectedRace.ToString()], ShattrathFaction.Aldor,
                     equipment, retSimUIModel.SelectedTalents.GetTalentList());
-                FightSimulation fight = new(player, new Enemy(Collections.Bosses[retSimUIModel.EncounterSettings.EncounterID]), new EliteTactic(0), groupTalents, buffs, new List<Spell>(), consumables, 0, 0, new List<Spell>(), new List<int>());
+                FightSimulation fight = new(player, new Enemy(Collections.Bosses[retSimUIModel.EncounterSettings.EncounterID]), new EliteTactic(0, false, false), groupTalents, buffs, new List<Spell>(), consumables, 0, 0, new List<Spell>(), new List<int>());
 
                 Stamina.Content = player.Stats[StatName.Stamina].Value;
                 Health.Content = player.Stats[StatName.Health].Value;

@@ -24,6 +24,8 @@ namespace RetSimDesktop.Model.SimWorker
         public int MaxFightDuration { get; init; }
         public int NumberOfSimulations { get; init; }
         public int MaxCSDelay { get; init; }
+        public bool UseExorcism { get; init; }
+        public bool UseConsecration { get; init; }
 
 
         public abstract void Execute();

@@ -6,6 +6,8 @@ namespace RetSimDesktop.Model
     {
         private int simulationCount = 10000;
         private int maxCSDelay = 0;
+        private bool useExorcism = true;
+        private bool useConsecration = true;
 
         public int SimulationCount
         {
@@ -24,6 +26,26 @@ namespace RetSimDesktop.Model
             {
                 maxCSDelay = value;
                 OnPropertyChanged(nameof(MaxCSDelay));
+            }
+        }
+
+        public bool UseExorcism
+        {
+            get { return useExorcism; }
+            set
+            {
+                useExorcism = value;
+                OnPropertyChanged(nameof(UseExorcism));
+            }
+        }
+
+        public bool UseConsecration
+        {
+            get { return useConsecration; }
+            set
+            {
+                useConsecration = value;
+                OnPropertyChanged(nameof(UseConsecration));
             }
         }
 

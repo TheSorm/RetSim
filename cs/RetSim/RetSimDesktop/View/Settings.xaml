@@ -103,6 +103,8 @@
                                     <Label Margin="0" Padding="0" VerticalAlignment="Center" Content="Max CS Delay"/>
                                     <TextBox Grid.Column="2" HorizontalContentAlignment="Right" PreviewTextInput="NumberValidationTextBox" Text="{Binding SimSettings.MaxCSDelay, Converter={StaticResource StringEmptyConverter}, ConverterParameter='0'}" />
                                 </Grid>
+                                <CheckBox Margin="0,4,0,4" Content = "Use Exorcism" IsChecked="{Binding SimSettings.UseExorcism}"/>
+                                <CheckBox Margin="0,4,0,4" Content = "Use Consecration" IsChecked="{Binding SimSettings.UseConsecration}"/>
                             </StackPanel>
                         </GroupBox>
                         <GroupBox Margin="5" Height="110" >
