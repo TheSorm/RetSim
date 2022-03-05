@@ -589,7 +589,7 @@
       "Effects": [
         {
           "EffectType": "ModSpell",
-          "Spells": [            
+          "Spells": [
             271730
           ],
           "Effect1": 6
@@ -1398,6 +1398,26 @@
   "40472": {
     "ID": 40472,
     "Name": "Enduring Judgement",
+    "Target": "Enemy",
+    "Effects": [
+      {
+        "EffectType": "PeriodicDamage",
+        "SpellID": 404720,
+        "Ticks": 4,
+        "Interval": 2000,
+        "School": "Holy",
+        "DefenseCategory": "None",
+        "OnCast": 0,
+        "OnHit": 0,
+        "OnCrit": 1
+      }
+    ]
+  },
+
+  "404720": {
+    "ID": 404720,
+    "Name": "Enduring Judgement",
+    "Target": "Enemy",
     "Effects": [
       {
         "EffectType": "Damage",
@@ -1407,7 +1427,7 @@
         "OnCast": 0,
         "OnHit": 0,
         "OnCrit": 0,
-        "Value": 480,
+        "Value": 120,
         "DieSides": 0
       }
     ]
