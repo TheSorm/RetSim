@@ -76,16 +76,17 @@ public class EliteTactic : Tactic
             {
                 if(fight.Player.Weapon.EffectiveSpeed > 2 * spellGCD && start + spellGCD < swingLeeway)
                 {
-                    return CastFiller(start, end, fight);
+                    var fillerEvent = CastFiller(start, end, fight);
+                    if(fillerEvent != null)
+                        return fillerEvent;
                 }
-                else
-                {
-                    int sobTwistWindowStart = swing - 399;
-                    int sobTwistWindowEnd = swing - 1;
+               
+                int sobTwistWindowStart = swing - 399;
+                int sobTwistWindowEnd = swing - 1;
 
-                    if (end >= sobTwistWindowStart && start <= sobTwistWindowEnd)
-                        return new CastEvent(SealOfBlood, fight.Player, fight.Player, fight, Math.Max(start, sobTwistWindowStart));
-                } 
+                if (end >= sobTwistWindowStart && start <= sobTwistWindowEnd)
+                    return new CastEvent(SealOfBlood, fight.Player, fight.Player, fight, Math.Max(start, sobTwistWindowStart));
+                
             }
             else
             {
