@@ -48,7 +48,7 @@ namespace RetSimDesktop.Model
                 var consumables = retSimUIModel.SelectedConsumables.GetConsumables();
                 var cooldowns = retSimUIModel.SelectedCooldowns.GetCooldowns();
 
-                var useExorcism = retSimUIModel.SimSettings.UseExorcism && Collections.Bosses[encounterID].CreatureType == CreatureType.Demon;
+                var useExorcism = retSimUIModel.SimSettings.UseExorcism && (Collections.Bosses[encounterID].CreatureType == CreatureType.Demon || Collections.Bosses[encounterID].CreatureType == CreatureType.Undead);
                 var useConsecration = retSimUIModel.SimSettings.UseConsecration;
 
                 List<int> heroismUsage = new();
