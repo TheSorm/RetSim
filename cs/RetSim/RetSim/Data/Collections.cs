@@ -16,6 +16,11 @@ namespace RetSim.Data
 
         public static readonly Dictionary<string, Race> Races = new();
 
-        public static readonly Boss[] Bosses = new Boss[52];
+        public static Boss[] Bosses { get; private set; }
+
+        public static void InstantiateBosses(Boss[] bosses)
+        {
+            Bosses = bosses;
+        }
     }
 }

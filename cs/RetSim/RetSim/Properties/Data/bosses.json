@@ -353,7 +353,7 @@
     "ID": 50,
     "Name": "Veras Darkshadow",
     "CreatureType": "Humanoid",
-    "ArmorCategory": "None",
+    "ArmorCategory": "Veras",
     "Raid": "Black Temple"
   },
   {
@@ -362,5 +362,61 @@
     "CreatureType": "Demon",
     "ArmorCategory": "Warrior",
     "Raid": "Black Temple"
+  },
+  {
+    "ID": 52,
+    "Name": "Kalecgos",
+    "CreatureType": "Dragonkin",
+    "ArmorCategory": "Paladin",
+    "Raid": "Sunwell Plateau"
+  },
+  {
+    "ID": 53,
+    "Name": "Sathrovarr the Corruptor",
+    "CreatureType": "Demon",
+    "ArmorCategory": "Paladin",
+    "Raid": "Sunwell Plateau"
+  },
+  {
+    "ID": 54,
+    "Name": "Brutallus",
+    "CreatureType": "Demon",
+    "ArmorCategory": "Warrior",
+    "Raid": "Sunwell Plateau"
+  },
+  {
+    "ID": 55,
+    "Name": "Felmyst",
+    "CreatureType": "Undead",
+    "ArmorCategory": "Paladin",
+    "Raid": "Sunwell Plateau"
+  },
+  {
+    "ID": 56,
+    "Name": "Eredar Twins",
+    "CreatureType": "Demon",
+    "ArmorCategory": "Paladin",
+    "Raid": "Sunwell Plateau"
+  },
+  {
+    "ID": 57,
+    "Name": "M'uru",
+    "CreatureType": "Uncategorized",
+    "ArmorCategory": "Warrior",
+    "Raid": "Sunwell Plateau"
+  },
+  {
+    "ID": 58,
+    "Name": "Entropius",
+    "CreatureType": "Demon",
+    "ArmorCategory": "Warrior",
+    "Raid": "Sunwell Plateau"
+  },
+  {
+    "ID": 59,
+    "Name": "Kil'Jaeden",
+    "CreatureType": "Demon",
+    "ArmorCategory": "Paladin",
+    "Raid": "Sunwell Plateau"
   }
 ]

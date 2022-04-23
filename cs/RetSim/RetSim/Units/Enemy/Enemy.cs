@@ -29,6 +29,7 @@ namespace RetSim.Units.Enemy
     public enum ArmorCategory
     {
         None = 0,
+        Veras = 146,
         Mage = 3878,
         Netherspite = 5474,
         Paladin = 6193,

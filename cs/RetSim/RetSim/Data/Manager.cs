@@ -122,8 +122,7 @@ public static class Manager
 
         Boss[] bosses = LoadBosses();
 
-        foreach (Boss boss in bosses)
-            Collections.Bosses[boss.ID] = boss;
+        Collections.InstantiateBosses(bosses);
 
         RecalculateExposeWeakness(1000);
     }
