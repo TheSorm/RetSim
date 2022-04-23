@@ -7,7 +7,7 @@ namespace RetSimDesktop.Model
     {
         private int minFightDurationSeconds = 160;
         private int maxFightDurationSeconds = 180;
-        private int encounterID = 17;
+        private int encounterID = 54;
 
         public int EncounterID
         {

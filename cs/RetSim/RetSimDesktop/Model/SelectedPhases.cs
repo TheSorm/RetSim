@@ -7,8 +7,8 @@ namespace RetSimDesktop.Model
         private bool phase1Selected = true;
         private bool phase2Selected = true;
         private bool phase3Selected = true;
-        private bool phase4Selected = false;
-        private bool phase5Selected = false;
+        private bool phase4Selected = true;
+        private bool phase5Selected = true;
 
         public bool Phase1Selected
         {

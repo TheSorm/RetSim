@@ -19,7 +19,7 @@ namespace RetSimDesktop.Model
         private bool bloodFrenzyEnabled = true;
         private bool huntersMarkEnabled = true;
         private bool exposeWeaknessEnabled = true;
-        private int hunterAgility = 1000;
+        private int hunterAgility = 1300;
 
         private bool faerieFireEnabled = true;
         private FaerieFire selectedFaerieFire = FaerieFire.ImpFaerieFire;
