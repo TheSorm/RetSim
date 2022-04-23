@@ -74,7 +74,7 @@ public class EliteTactic : Tactic
         {
             if (fight.Player.Auras[SealOfCommand.Aura].Active)
             {
-                if(fight.Player.Weapon.EffectiveSpeed > 2 * spellGCD && start + spellGCD < swingLeeway)
+                if(fight.Player.Weapon.EffectiveSpeed > 1.75 * spellGCD && start + spellGCD < swingLeeway)
                 {
                     var fillerEvent = CastFiller(start, end, fight);
                     if(fillerEvent != null)
@@ -114,7 +114,7 @@ public class EliteTactic : Tactic
                         else if (!fight.Player.Spellbook.IsOnCooldown(Judgement) && start < swingLeeway)
                             return new CastEvent(Judgement, fight.Player, fight.Enemy, fight, start);
 
-                        else if(fight.Player.Weapon.EffectiveSpeed > 2 * spellGCD && start + spellGCD < fight.Player.Spellbook[CrusaderStrike.ID].CooldownEnd.Timestamp) { }
+                        else if(fight.Player.Weapon.EffectiveSpeed > 1.75 * spellGCD && start + spellGCD < fight.Player.Spellbook[CrusaderStrike.ID].CooldownEnd.Timestamp)
                             return CastFiller(start, end, fight);
                     }
                 }
@@ -126,7 +126,7 @@ public class EliteTactic : Tactic
                     else
                         return new CastEvent(SealOfBlood, fight.Player, fight.Player, fight, start);
                 }
-                else if (fight.Player.Weapon.EffectiveSpeed > 2 * spellGCD && start + spellGCD < fight.Player.Spellbook[CrusaderStrike.ID].CooldownEnd.Timestamp)
+                else if (fight.Player.Weapon.EffectiveSpeed > 1.75 * spellGCD && start + spellGCD < fight.Player.Spellbook[CrusaderStrike.ID].CooldownEnd.Timestamp)
                 {
                     return CastFiller(start, end, fight);
                 }
