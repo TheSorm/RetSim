@@ -315,6 +315,14 @@
     "SpellID": 28715,
     "ProcMask": 6,
     "PPM": 10
+  },
+  "44": {
+    "ID": 44,
+    "Name": "Righteous Weapon Coating",
+    "SpellID": 45401,
+    "ProcMask": 94,
+    "Chance":  15,
+    "Cooldown": 45000
   }
 }
 

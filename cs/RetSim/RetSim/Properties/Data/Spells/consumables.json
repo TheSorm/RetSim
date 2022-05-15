@@ -771,5 +771,36 @@
         }
       ]
     }
+  },
+
+  "45398": {
+    "ID": 45398,
+    "Name": "Righteous Weapon Coating",
+    "Aura": {
+      "Effects": [
+        {
+          "EffectType": "GainProc",
+          "Value": 44
+        }
+      ]
+    }
+  },
+
+  "45401": {
+    "ID": 45401,
+    "Name": "Righteousness",
+    "Target": "Self",
+    "Aura": {
+      "Duration": 10000,
+      "Effects": [
+        {
+          "EffectType": "ModStat",
+          "Stats": [
+            "AttackPower"
+          ],
+          "Value": 300
+        }
+      ]
+    }
   }
 }
