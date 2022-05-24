@@ -184,7 +184,13 @@ namespace RetSimDesktop
                             selectedSocket.SocketedGem = gemPicker.SelectedGem;
 
                             retSimUIModel.SelectedGear.OnPropertyChanged("");
-                            retSimUIModel.AllGear[Gear.Item.ID].OnPropertyChanged("");
+
+                            if (Gear.Item.Slot == Slot.Weapon)
+                                retSimUIModel.AllWeapons[Gear.Item.ID].OnPropertyChanged("");
+
+                            else
+                                retSimUIModel.AllGear[Gear.Item.ID].OnPropertyChanged("");
+
                             Socket1Image.GetBindingExpression(Image.SourceProperty).UpdateTarget();
                             Socket2Image.GetBindingExpression(Image.SourceProperty).UpdateTarget();
                             Socket3Image.GetBindingExpression(Image.SourceProperty).UpdateTarget();
@@ -196,8 +202,15 @@ namespace RetSimDesktop
                     if (selectedSocket != null)
                     {
                         selectedSocket.SocketedGem = null;
+
                         retSimUIModel.SelectedGear.OnPropertyChanged("");
-                        retSimUIModel.AllGear[Gear.Item.ID].OnPropertyChanged("");
+
+                        if (Gear.Item.Slot == Slot.Weapon)
+                            retSimUIModel.AllWeapons[Gear.Item.ID].OnPropertyChanged("");
+
+                        else
+                            retSimUIModel.AllGear[Gear.Item.ID].OnPropertyChanged("");
+
                         Socket1Image.GetBindingExpression(Image.SourceProperty).UpdateTarget();
                         Socket2Image.GetBindingExpression(Image.SourceProperty).UpdateTarget();
                         Socket3Image.GetBindingExpression(Image.SourceProperty).UpdateTarget();
