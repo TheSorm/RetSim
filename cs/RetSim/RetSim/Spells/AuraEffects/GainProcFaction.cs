@@ -19,14 +19,12 @@ public class GainProcFaction : AuraEffect
 
     public override void Apply(Aura aura, Unit caster, Unit target, FightSimulation fight)
     {
-        if (Proc == null && fight.Player.Faction != ShattrathFaction.None)
+        Proc = fight.Player.Faction switch
         {
-            if (fight.Player.Faction == ShattrathFaction.Aldor)
-                Proc = Aldor;
-
-            else
-                Proc = Scryer;
-        }
+            ShattrathFaction.Aldor => Aldor,
+            ShattrathFaction.Scryer => Scryer,
+            _ => null
+        };
 
         if (Proc != null)
             fight.Player.Procs.Add(Proc);
