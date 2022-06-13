@@ -38,7 +38,9 @@ namespace RetSimDesktop
             StatWeights.Visibility = Visibility.Hidden;
             CsDelay.Visibility = Visibility.Hidden;
             Statistics.Visibility = Visibility.Hidden;
-            GearSelect.Visibility = Visibility.Visible;
+            GearSelect.Visibility = Visibility.Visible; 
+            PlayerImport.Visibility = Visibility.Hidden;
+            PlayerImportButton.IsEnabled = true;
             GearButton.IsEnabled = false;
             SettingsButton.IsEnabled = true;
             CsDelayButton.IsEnabled = true;
@@ -53,6 +55,8 @@ namespace RetSimDesktop
             CsDelay.Visibility = Visibility.Hidden;
             Statistics.Visibility = Visibility.Hidden;
             GearSelect.Visibility = Visibility.Hidden;
+            PlayerImport.Visibility = Visibility.Hidden;
+            PlayerImportButton.IsEnabled = true;
             GearButton.IsEnabled = true;
             SettingsButton.IsEnabled = false;
             CsDelayButton.IsEnabled = true;
@@ -67,6 +71,8 @@ namespace RetSimDesktop
             CsDelay.Visibility = Visibility.Hidden;
             Statistics.Visibility = Visibility.Visible;
             GearSelect.Visibility = Visibility.Hidden;
+            PlayerImport.Visibility = Visibility.Hidden;
+            PlayerImportButton.IsEnabled = true;
             GearButton.IsEnabled = true;
             SettingsButton.IsEnabled = true;
             CsDelayButton.IsEnabled = true;
@@ -81,6 +87,8 @@ namespace RetSimDesktop
             CsDelay.Visibility = Visibility.Hidden;
             Statistics.Visibility = Visibility.Hidden;
             GearSelect.Visibility = Visibility.Hidden;
+            PlayerImport.Visibility = Visibility.Hidden;
+            PlayerImportButton.IsEnabled = true;
             GearButton.IsEnabled = true;
             CsDelayButton.IsEnabled = true;
             SettingsButton.IsEnabled = true;
@@ -95,11 +103,29 @@ namespace RetSimDesktop
             StatWeights.Visibility = Visibility.Hidden;
             Statistics.Visibility = Visibility.Hidden;
             GearSelect.Visibility = Visibility.Hidden;
+            PlayerImport.Visibility = Visibility.Hidden;
+            PlayerImportButton.IsEnabled = true;
             GearButton.IsEnabled = true;
             SettingsButton.IsEnabled = true;
             StatWeightsButton.IsEnabled = true;
             CsDelayButton.IsEnabled = false;
             StatisticsButton.IsEnabled = true;
+        }
+
+        private void Import_Click(object sender, RoutedEventArgs e)
+        {
+            Settings.Visibility = Visibility.Hidden;
+            StatWeights.Visibility = Visibility.Hidden;
+            CsDelay.Visibility = Visibility.Hidden;
+            Statistics.Visibility = Visibility.Hidden;
+            GearSelect.Visibility = Visibility.Hidden;
+            PlayerImport.Visibility = Visibility.Visible;
+            PlayerImportButton.IsEnabled = false;
+            GearButton.IsEnabled = true;
+            SettingsButton.IsEnabled = true;
+            CsDelayButton.IsEnabled = true;
+            StatWeightsButton.IsEnabled = true;
+            StatisticsButton.IsEnabled = true;         
         }
 
         public void SwitchToGearSelection(int slot)
@@ -151,5 +177,7 @@ namespace RetSimDesktop
                 timeTaken.Stop();
             }
         }
+
+
     }
 }
